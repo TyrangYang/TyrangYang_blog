@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/categories/note/</link>
+    <description>Recent content in Note on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Traverse a tree</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid>
+      <description>Idea to traverse a tree
+Tree structure The tree structure:
+1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
+Iterative Loop for BFS:
+1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&amp;lt;TreeNode *&amp;gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.</description>
+    </item>
+    
+    <item>
+      <title>SASS (SCSS) features</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
+      <description>SCSS features  Variables  Operator  String interpolation  Nesting  The parent selector  Imports  Nested Media Queries  General control  Mixins  Functions  Extending  Placeholders     SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .</description>
+    </item>
+    
+    <item>
+      <title>Web development review</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
+      <pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
+      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;] ], displayMath: [ [&#39;$$&#39;, &#39;$$&#39;]], processEscapes: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] }, messageStyle: &#34;none&#34;, &#34;HTML-CSS&#34;: { preferredFont: &#34;TeX&#34;, availableFonts: [&#34;STIX&#34;,&#34;TeX&#34;] } });   Document constructor $$f(x) = sin(x)$$</description>
+    </item>
+    
+  </channel>
+</rss>

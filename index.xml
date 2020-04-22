@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>TyrangYang_Blog | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/</link>
+        <description>TyrangYang_Blog | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/" rel="self" type="application/rss+xml" /><item>
+                <title>Posts</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link>
+                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate><guid>https://tyrangyang.github.io/TyrangYang_blog/posts/</guid>
+                <description></description>
+            </item></channel>
+</rss>

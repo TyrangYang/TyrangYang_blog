@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link>
+    <description>Recent content in javascript on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 29 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Web development review</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
+      <pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
+      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;] ], displayMath: [ [&#39;$$&#39;, &#39;$$&#39;]], processEscapes: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] }, messageStyle: &#34;none&#34;, &#34;HTML-CSS&#34;: { preferredFont: &#34;TeX&#34;, availableFonts: [&#34;STIX&#34;,&#34;TeX&#34;] } });   Document constructor $$f(x) = sin(x)$$</description>
+    </item>
+    
+  </channel>
+</rss>

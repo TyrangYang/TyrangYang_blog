@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Miller Rabin Algorithm | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="Miller Rabin Algorithm" />
+<meta property="og:description" content="What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/" />
+<meta property="article:published_time" content="2020-01-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-13T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Miller Rabin Algorithm"/>
+<meta name="twitter:description" content="What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis."/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Miller Rabin Algorithm",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/miller-rabin\/"
+        },"genre": "posts","wordcount":  760 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/miller-rabin\/","datePublished": "2020-01-13","dateModified": "2020-01-13","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Miller Rabin Algorithm</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/algdatastr">
+                                <i class="far fa-folder fa-fw"></i>Alg&amp; data str
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-13>2020-01-13</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 760 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="what-is-millerrabin-algorithm">What is millerRabin algorithm</h2>
+<p>The Miller–Rabin primality test or Rabin–Miller primality test is a <strong>primality test</strong>: <em>an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test.</em> It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis.[2] Michael O. Rabin modified it to obtain an unconditional probabilistic algorithm in 1980.[3]</p>
+<h2 id="powermod">PowerMod</h2>
+<h3 id="what-problem-it-solve">What problem it solve</h3>
+<p>When you want to mod a number which is the product of two big numbers, this algorithm is necessary.</p>
+<p>Like <code>a^n mod m</code>.</p>
+<h3 id="code">Code</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// a^n mod m
+</span><span class="c1"></span><span class="kt">uint64_t</span> <span class="nf">powermod</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">a</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">n</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">m</span><span class="p">){</span>
+	<span class="kt">uint64_t</span> <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="c1">// a^11 11 = 8 + 2 + 1 = 01011 // a^11 = a^(1+2+8) = a^1 * a^2 * a^8
+</span><span class="c1"></span>	<span class="c1">// the basic idea is shift the bit. It will more understandable than odd/even number.
+</span><span class="c1"></span>	<span class="c1">// if the last bit is 0, we make a become a^2.
+</span><span class="c1"></span>	<span class="c1">// if the last bit is 1, prod * a.
+</span><span class="c1"></span>	<span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// n&amp;1 // n is odd, n&amp;1 is true
+</span><span class="c1"></span>			<span class="n">prod</span> <span class="o">=</span> <span class="n">prod</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span> <span class="c1">// can not be prod = prod * prod % m
+</span><span class="c1"></span>		<span class="c1">// Because prod * prod will multipul extra a inside.
+</span><span class="c1"></span>		<span class="c1">// For n = 11, n(binary)=01011, (((prod * a)^2 * a)^2^2 * a)^2. this is wrong
+</span><span class="c1"></span>		<span class="c1">// However, prod should be prod * a * a^2 * a^8.
+</span><span class="c1"></span>		<span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// compiler n&gt;&gt;=1
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">prod</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">//O(logn)
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="how-miller-rabin-works">How Miller-Rabin works</h2>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2020-01-13-miller-rabin/millerRabin1.jpeg,  1.5x,  2x"
+        data-src=""
+        alt="millerRabin1"
+        title="millerRabin1" /></p>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2020-01-13-miller-rabin/millerRabin2.jpeg,  1.5x,  2x"
+        data-src=""
+        alt="millerRabin2"
+        title="millerRabin2" /></p>
+<h2 id="example-code">Example code</h2>
+<p>Here is the sample code</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">uint64_t</span> <span class="nf">powermod</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">a</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">n</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">m</span><span class="p">){</span>
+	<span class="kt">uint64_t</span> <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="c1">// a^11 11 = 8 + 2 + 1 = 01011 // a^11 = a^(1+2+8) = a^1 * a^2 * a^8
+</span><span class="c1"></span>	<span class="c1">// the basic idea is shift the bit. It will more understandable than odd/even number.
+</span><span class="c1"></span>	<span class="c1">// if the last bit is 0, we make a become a^2.
+</span><span class="c1"></span>	<span class="c1">// if the last bit is 1, prod * a.
+</span><span class="c1"></span>	<span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// n&amp;1 // n is odd, n&amp;1 is true
+</span><span class="c1"></span>			<span class="n">prod</span> <span class="o">=</span> <span class="n">prod</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">m</span><span class="p">;</span> <span class="c1">// can not be prod = prod * prod % m
+</span><span class="c1"></span>		<span class="c1">// Because prod * prod will multiple extra a inside.
+</span><span class="c1"></span>		<span class="c1">// For n = 11, n(binary)=01011, (((prod * a)^2 * a)^2^2 * a)^2. this is wrong
+</span><span class="c1"></span>		<span class="c1">// However, prod should be prod * a * a^2 * a^8.
+</span><span class="c1"></span>		<span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// compiler n&gt;&gt;=1
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">prod</span><span class="p">;</span>
+<span class="p">}</span><span class="c1">//O(logn)
+</span><span class="c1"></span>
+<span class="c1">// https://www.cnblogs.com/Norlan/p/5350243.html
+</span><span class="c1"></span><span class="kt">bool</span> <span class="nf">MillerRabin</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">p</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span> <span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kt">uint64_t</span> <span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">p</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+		<span class="kt">uint64_t</span> <span class="n">d</span> <span class="o">=</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+		<span class="kt">uint64_t</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="c1">// cout &lt;&lt; &#34;MillerRabin a= &#34;&lt;&lt; a &lt;&lt; &#34; p=&#34;&lt;&lt;	 p&lt;&lt; endl;
+</span><span class="c1"></span>		<span class="k">while</span> <span class="p">(</span><span class="n">d</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="c1">// d &amp; 1 == 0
+</span><span class="c1"></span>			<span class="n">s</span><span class="o">++</span><span class="p">;</span>
+			<span class="n">d</span> <span class="o">/=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//d &gt;&gt; =1
+</span><span class="c1"></span>		<span class="p">}</span>
+		<span class="c1">// cout &lt;&lt;&#34;d=&#34; &lt;&lt; d &lt;&lt; &#34;  s=&#34; &lt;&lt; s &lt;&lt; endl;
+</span><span class="c1"></span>		<span class="c1">// d*2^s = p-1 (d is odd number)
+</span><span class="c1"></span>		<span class="c1">// d contains high-order, non-zero bits(stripedd low zreo bits off)
+</span><span class="c1"></span>		<span class="c1">// s = #of bits that were stripp off
+</span><span class="c1"></span>		<span class="kt">uint64_t</span> <span class="n">x</span> <span class="o">=</span> <span class="n">powermod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">p</span><span class="p">);</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;x= &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="n">x</span> <span class="o">==</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">continue</span><span class="p">;</span>
+		<span class="c1">// kurger version //
+</span><span class="c1"></span>		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+			<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">p</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+				<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+				<span class="k">goto</span> <span class="n">nextTry</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+		<span class="nl">nextTry</span><span class="p">:;</span>
+		<span class="c1">// ************** //
+</span><span class="c1"></span>		<span class="c1">// my version //
+</span><span class="c1"></span>		<span class="c1">// for (int j = 0; j &lt; s-1; ++j)
+</span><span class="c1"></span>		<span class="c1">// {
+</span><span class="c1"></span>		<span class="c1">// 	x = x * x % p
+</span><span class="c1"></span>		<span class="c1">// 	if(x == 1)
+</span><span class="c1"></span>		<span class="c1">// 		return false;
+</span><span class="c1"></span>		<span class="c1">// 	if(x == p-1)
+</span><span class="c1"></span>		<span class="c1">// 		break;
+</span><span class="c1"></span>		<span class="c1">// }
+</span><span class="c1"></span>		<span class="c1">// if(x != p-1)
+</span><span class="c1"></span>		<span class="c1">// 	return false;
+</span><span class="c1"></span>		<span class="c1">// ************** //
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// probably?
+</span><span class="c1"></span><span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2020-01-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/miller-rabin/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/makefile-overview/" class="prev" rel="prev" title="Makefile overview"><i class="fas fa-angle-left fa-fw"></i>Makefile overview</a>
+            <a href="/TyrangYang_blog/dfs-bfs/" class="next" rel="next" title="DFS &amp; BFS">DFS &amp; BFS<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>container on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/container/</link>
+    <description>Recent content in container on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/container/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Container in c&#43;&#43;</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/containers/</link>
+      <pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/containers/</guid>
+      <description>Classification  Sequence container  array (build in) vector  heap  priority queue  list  slist (not standard) deque  stack (adopter) queue (adopter)   Associative container  RB-tree (not public) set  map  multiset multemap hashtable (not standard) hash_set (not standard) hash_map (not standard) hash_multimap (not standard) hash_multiset (not standard)    Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.</description>
+    </item>
+    
+    <item>
+      <title>Container comparison - c&#43;&#43; &amp; java</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-containor/</link>
+      <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-containor/</guid>
+      <description>Container comparison C++ version is c++11. Java version is java se8.
+   C++ JAVA Description     array / [ ] [ ] 固定大小的数组   vector ArrayList 可变长度的数组    Vector 可变长度的数组，支持同步操作，效率比 ArrayList 略差   list LinkedList 双链表，便于增删   forward_list  单链表，c++没有给他提供 size()的方法   deque ArrayDeque 双向队列   stack Stack 栈，先进后出   queue Queue 队，先进先出   priority_queue PriorityQueue 支持优先级的队列   set TreeSet 集合，数据有序，红黑树   unordered_set HashSet 集合，数据无序，hash   map TreeMap key-value 映射，key 有序，红黑树   unordered_map HashMap map, 无序，hash   multiset  集合，允许重复元素   multimap  map，允许重复的 key   unordered_multiset  无序允许重复元素集合   unordered_multimap  无序允许重复 key 的 map    LinkedHashSet 按照插入顺序，支持 hash 查找    LinkedHashMap 按照插入顺序，支持 hash 查找    HashTable 类似 HashMap，效率略低   bitset BitSet 位操作    HashTable &amp;amp; HashMap The HashMap class is roughly equivalent to Hashtable, except that it is asynchronized and permits nulls.</description>
+    </item>
+    
+  </channel>
+</rss>

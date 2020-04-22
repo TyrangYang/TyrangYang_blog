@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Git overview | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="Git overview" />
+<meta property="og:description" content="Here have some good pictures that is helpful for understanding git and contain the record for git commend
+Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
+This photo is provide by osteele" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/" />
+<meta property="article:published_time" content="2019-06-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-06-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git overview"/>
+<meta name="twitter:description" content="Here have some good pictures that is helpful for understanding git and contain the record for git commend
+Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
+This photo is provide by osteele"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git overview",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/"
+        },"genre": "posts","wordcount":  390 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/","datePublished": "2019-06-17","dateModified": "2019-06-17","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Git overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/overview">
+                                <i class="far fa-folder fa-fw"></i>Overview
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-06-17>2019-06-17</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 390 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div><div class="content" id="content"><p>Here have some good pictures that is helpful for understanding git and contain the record for git commend</p>
+<h2 id="concept-map">Concept Map</h2>
+<p>Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.</p>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-06-17-gitLearningNote/conceptMap.png,  1.5x,  2x"
+        data-src=""
+        alt="Concept map"
+        title="Concept map" /></p>
+<h2 id="git-data-transport-map">Git Data Transport Map</h2>
+<p>Git have four working zones. This map shows that using which commend to shift your code from one zone to another.</p>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-06-17-gitLearningNote/git-transport.png,  1.5x,  2x"
+        data-src=""
+        alt="Git Data Transport Map"
+        title="Git Data Transport Map" /></p>
+<p><em>This photo is provide by <a href="https://blog.osteele.com/2008/05/my-git-workflow/" target="_blank" rel="noopener noreffer">osteele</a>
+</em></p>
+<h2 id="git-commend-and-usage">Git commend and usage</h2>
+<ul>
+<li>Initialize the git repository</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git init
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Clone a repository by giving the URL (github)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone &lt;repository URL&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Show the status (Status of Index)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git status
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Show the log of commit</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git log
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>+ show all logs in graph and each log in one line
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git log --graph --oneline &lt;branch name&gt; &lt;branch name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>+ show specific number of log
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git log -n &lt;number&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Compare workspace and index</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git diff
+git diff &lt;commit ID&gt; &lt;commit ID&gt;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git diff --stage
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>这是用来对比两个 commit 的区别.
+如果没有写两个 ID，就是对比暂存区和工作区 （暂存区是最近 commit 的 commit 的 copy)</p>
+<p>这就是对比暂存区和最近的 commit</p>
+</blockquote>
+<ul>
+<li>Add</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git add &lt;filename&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Commit</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git commit
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Branch
+<ul>
+<li>show all branch</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git branch
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>- Open a new branch
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git branch &lt;branch name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>- Open a new branch and checkout
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git checkout -b &lt;new branch name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Merge</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git merge &lt;branch2&gt; &lt;branch3&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>this is merge branch3 into branch2</p>
+<p>Eg: <code>git merge master test</code> or <code>git merge test</code> (when you on master branch)</p>
+<blockquote>
+<p>merge branch test into master.</p>
+</blockquote>
+<blockquote>
+<p>git merge 还将在合并的版本中包含当前检出的分支。因此，如果检出了 branch1，并且运行 git merge branch2 branch3，则合并的版本会将 branch1 以及 branch2 和 branch3 组合起来。由于在你进行合并提交后 branch1 标签将会更新，因此，你不想将 branch1 中的更改包含在合并中是不可能的。有鉴于此，在合并之前应始终检出你打算合并的两个分支之一。应检出哪个分支取决于你想让哪个分支标签指向新的提交。</p>
+<p>由于检出的分支始终包含在合并中，在合并两个分支时，无需在命令行上将两者都指定为 git merge 的参数。如果想将 branch2 合并到 branch1 中，只需键入 git checkout branch1，然后键入 git merge branch2 即可。键入 git merge branch1 branch2 的唯一原因是，它能帮助你对要合并的分支更加心中有数。</p>
+</blockquote>
+<ul>
+<li>Remote
+<ul>
+<li>show all remote</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>- show all remote detail
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote -v
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>- giving a new remote name and connect it to a URL
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git remote add &lt;remote name&gt; &lt;URL&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>建立一个新的 remote,并和你的 repository 联系起来。 一般只有一个的时候都叫做 origin。
+因此一般是 git remote add origin <URL></p>
+</blockquote>
+<ul>
+<li>Push</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git push &lt;remote name&gt; &lt;branch name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Pull</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git pull &lt;remote name&gt; &lt;branch name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Fetch</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git fetch &lt;remote name&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>使得本地的 master 不变更新远端的 master 分支 <remote name>/master</p>
+</blockquote>
+<ul>
+<li>Roll back 1 commit</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git reset --soft HEAD~1//
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Remove some file in Index</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git rm --cached &lt;file name&gt;
+git rm -r --cached .
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>用于更新.gitignore
+因为一旦 git 追踪到了一个文件</p>
+</blockquote>
+<ul>
+<li>rebase</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git rebase
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-06-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/gitlearningnote/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/markdowntutorial/" class="prev" rel="prev" title="MarkDown overview"><i class="fas fa-angle-left fa-fw"></i>MarkDown overview</a>
+            <a href="/TyrangYang_blog/java-review-variable/" class="next" rel="next" title="Review java - Variable">Review java - Variable<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Web development review | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="Web development review" />
+<meta property="og:description" content="MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;] ], displayMath: [ [&#39;$$&#39;, &#39;$$&#39;]], processEscapes: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] }, messageStyle: &#34;none&#34;, &#34;HTML-CSS&#34;: { preferredFont: &#34;TeX&#34;, availableFonts: [&#34;STIX&#34;,&#34;TeX&#34;] } });   Document constructor $$f(x) = sin(x)$$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/" />
+<meta property="article:published_time" content="2019-08-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web development review"/>
+<meta name="twitter:description" content="MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;] ], displayMath: [ [&#39;$$&#39;, &#39;$$&#39;]], processEscapes: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] }, messageStyle: &#34;none&#34;, &#34;HTML-CSS&#34;: { preferredFont: &#34;TeX&#34;, availableFonts: [&#34;STIX&#34;,&#34;TeX&#34;] } });   Document constructor $$f(x) = sin(x)$$"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Web development review",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/web-develop-review\/"
+        },"genre": "posts","keywords": "web, nodejs, express, javascript","wordcount":  40 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/web-develop-review\/","datePublished": "2019-08-29","dateModified": "2019-08-29","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Web development review</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/note">
+                                <i class="far fa-folder fa-fw"></i>Note
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-08-29>2019-08-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 40 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
+        </div><div class="content" id="content"><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+<h2 id="document-constructor">Document constructor</h2>
+<p>$$f(x) = sin(x)$$</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-08-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/web-develop-review/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="/TyrangYang_blog/tags/nodejs">nodejs</a>,&nbsp;<a href="/TyrangYang_blog/tags/express">express</a>,&nbsp;<a href="/TyrangYang_blog/tags/javascript">javascript</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/concurrent-programming-1/" class="prev" rel="prev" title="Concurrent Programming Course note 1"><i class="fas fa-angle-left fa-fw"></i>Concurrent Programming Course note 1</a>
+            <a href="/TyrangYang_blog/software-development-1/" class="next" rel="next" title="Software Development Course note">Software Development Course note<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Erlang overview | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="Erlang overview" />
+<meta property="og:description" content="Basic Documentation: https://erlang.org/doc/search/ Functional language Erlang is a functional language. Code need compile and running line by line.
+Every line need finish by a .. like: A = 1..
+Module Every erlang file will consider as a module. You console will compile all module you want.
+You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
+In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/erlang/" />
+<meta property="article:published_time" content="2019-12-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Erlang overview"/>
+<meta name="twitter:description" content="Basic Documentation: https://erlang.org/doc/search/ Functional language Erlang is a functional language. Code need compile and running line by line.
+Every line need finish by a .. like: A = 1..
+Module Every erlang file will consider as a module. You console will compile all module you want.
+You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
+In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(."/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/erlang/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Erlang overview",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/erlang\/"
+        },"genre": "posts","wordcount":  546 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/erlang\/","datePublished": "2019-12-14","dateModified": "2019-12-14","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Erlang overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/overview">
+                                <i class="far fa-folder fa-fw"></i>Overview
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-12-14>2019-12-14</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 546 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="basic">Basic</h2>
+<p>Documentation: <a href="https://erlang.org/doc/search/" target="_blank" rel="noopener noreffer">https://erlang.org/doc/search/</a>
+</p>
+<h3 id="functional-language">Functional language</h3>
+<p>Erlang is a functional language. Code need compile and running line by line.</p>
+<p>Every line need finish by a <code>.</code>. like: <code>A = 1.</code>.</p>
+<h3 id="module">Module</h3>
+<p>Every erlang file will consider as a module. You console will compile all module you want.</p>
+<p>You have to add <code>-module(&lt;filename&gt;).</code> into first line. Module should be same with filename without suffix.</p>
+<p>In erl console, run <code>c(&lt;filename&gt;).</code> to compile it. Run a function is like: <code>&lt;moduleName&gt;: &lt;functionName&gt;(...&lt;argument&gt;)</code></p>
+<p>Also you need export a list contained all function you expect to export. Like <code>-export([append/2,distance/2, double/1, drop/2]).</code> or <code>-compile(export_all).</code> to export all function.</p>
+<blockquote>
+<p><code>append/2</code> means a function called append with 2 arguments.</p>
+</blockquote>
+<h3 id="variable--item">Variable &amp; item</h3>
+<p>Variable a word starting with upper case. like <code>A</code> or <code>Result</code>.</p>
+<p>item is a word starting from lower case. like <code>request</code> or <code>add</code>.</p>
+<p>Variable store the value.</p>
+<p>item use for matching.</p>
+<h3 id="bind">Bind</h3>
+<p>In erlang, <strong>No concept</strong> about assigning a value to a variable. It is actually bind a variable to a value. Once they are bound together you cannot to assign a new value to it.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-erl" data-lang="erl"><span class="nv">A</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span> <span class="err">#</span> <span class="n">right</span>
+<span class="nv">B</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span> <span class="err">#</span> <span class="n">right</span>
+<span class="nv">A</span> <span class="o">=</span> <span class="nv">B</span><span class="p">,</span> <span class="err">#</span> <span class="n">wrong</span><span class="p">.</span> <span class="nv">Because</span> <span class="nv">A</span> <span class="n">is</span> <span class="n">already</span> <span class="n">bound</span><span class="p">.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="function">Function</h2>
+<p>Sample function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-erl" data-lang="erl"><span class="nf">sample</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">A</span><span class="p">.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The last line of Function is the return value. Use <code>;</code> to represent end point of a branch.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-erl" data-lang="erl"><span class="k">if</span>
+    <span class="p">(</span><span class="nv">A</span> <span class="o">==</span> <span class="n">true</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nv">B</span> <span class="o">==</span> <span class="n">true</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="n">true</span><span class="p">;</span>
+    <span class="n">true</span> <span class="o">-&gt;</span>
+        <span class="n">false</span>
+<span class="k">end</span><span class="p">.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="multi-thread">Multi-thread</h2>
+<p>Erlang use message passing module to deal with multi thread. Each thread have own mailbox, stack and heap.</p>
+<h3 id="thread-id">thread id</h3>
+<p>Each thread have a id called Pid. You need use Pid as an address and sending the message through it.</p>
+<h3 id="receive-and-send-message">receive and send message</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-erl" data-lang="erl"><span class="nf">echo</span><span class="p">()</span> <span class="o">-&gt;</span>
+    <span class="k">receive</span>
+        <span class="p">{</span><span class="n">echo</span><span class="p">,</span> <span class="nv">From</span><span class="p">,</span> <span class="nv">Ref</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">}</span> <span class="o">-&gt;</span>
+    <span class="nv">From</span> <span class="o">!</span> <span class="p">{</span><span class="n">responds</span><span class="p">,</span> <span class="n">self</span><span class="p">(),</span> <span class="nv">Ref</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">},</span> <span class="n">echo</span><span class="p">();</span>
+        <span class="p">{</span><span class="n">stop</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">ok</span>
+<span class="k">end</span><span class="p">.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="spawn">spawn</h3>
+<p>Reference: <a href="http://erlang.org/doc/man/erlang.html#spawn-1">http://erlang.org/doc/man/erlang.html#spawn-1</a></p>
+<p>We need <code>spawn/1, spawn/2, spawn/3</code> to generate new thread, usually we use <code>spawn/3</code>. The basic idea is giving a function that running initially at new thread. This function can calling another function inside the module.</p>
+<p><code>Pid = spawn(?MODULE, echo, [])</code>. This line means we generate a new thread with a function called echo in unknown module (usually self module). The argument list is empty and the thread id bind with <code>Pid</code>.</p>
+<h2 id="special">special</h2>
+<h3 id="fold">fold</h3>
+<p>This is a basic function which is same as <code>reduce()</code> in javascript.</p>
+<p>In standard library, erlang have <code>lists:foldl(F,A,[H|T])</code>.</p>
+<p>foldl is folding the list by a given function from left to right. foldr is from right to left.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">foldl(_F, A, []) -&gt; A;
+foldl(F, A, [H|T]) -&gt; fold(F, F(H, A), [T]).
+
+foldr(_F, A, []) -&gt; A;
+foldr(F, A, [H|T]) -&gt; F(H, foldr(F, A, T)).
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>_F</code> means <code>F</code> is unnecessary since first part of function not use <code>F</code>.</p>
+</blockquote>
+<blockquote>
+<p><code>[H|T]</code> is unique characteristic of erlang. <code>H</code> is the first element. <code>T</code> is the rest.
+[H|T] = [1,2,3,4,5]. <code>H</code> is 1. <code>T</code> is [2,3,4,5]</p>
+</blockquote>
+<p>We can run this function:<code>foldl(fun (H, A) -&gt; H + A end, 0 , [1,2,3,4,5])</code>.</p>
+<h2 id="makefile">MakeFile</h2>
+<p>Sample makefile from a erlang homework:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">all</span><span class="o">:</span>
+	erlc *erl
+	erl -eval <span class="s2">&#34;lexgrm:start(), halt()&#34;</span> -noshell -detached
+
+<span class="nf">run</span><span class="o">:</span> <span class="n">all</span>
+	erl
+
+<span class="nf">clean</span><span class="o">:</span>
+	rm -f *beam grm.erl lex.erl
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-12-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/erlang/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/ssh-vscode/" class="prev" rel="prev" title="SSH in Vscode"><i class="fas fa-angle-left fa-fw"></i>SSH in Vscode</a>
+            <a href="/TyrangYang_blog/my-zsh-setting/" class="next" rel="next" title="My Zsh setting">My Zsh setting<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

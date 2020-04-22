@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>React overview | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="React overview" />
+<meta property="og:description" content="init react Commend
+1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
+Structure package.json react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
+public/index.html signal page application which is index.html
+Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;
+src/index.js Entry point for react
+src/App.js All the component.
+Inside the class, the render() method is called life cycle method and to render the page." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/react/" />
+<meta property="article:published_time" content="2019-10-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-10-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React overview"/>
+<meta name="twitter:description" content="init react Commend
+1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
+Structure package.json react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
+public/index.html signal page application which is index.html
+Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;
+src/index.js Entry point for react
+src/App.js All the component.
+Inside the class, the render() method is called life cycle method and to render the page."/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/react/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/cool-website/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "React overview",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/"
+        },"genre": "posts","wordcount":  186 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/","datePublished": "2019-10-03","dateModified": "2019-10-03","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">React overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/overview">
+                                <i class="far fa-folder fa-fw"></i>Overview
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-10-03>2019-10-03</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 186 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>1 min&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="init-react">init react</h2>
+<p>Commend</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    npx create-react-app .
+</code></pre></td></tr></table>
+</div>
+</div><p>npx means you use this package but don&rsquo;t download it.</p>
+<h2 id="structure">Structure</h2>
+<h3 id="packagejson">package.json</h3>
+<p>react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.</p>
+<h3 id="publicindexhtml">public/index.html</h3>
+<p>signal page application which is index.html</p>
+<p>Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;</p>
+<h3 id="srcindexjs">src/index.js</h3>
+<p>Entry point for react</p>
+<h3 id="srcappjs">src/App.js</h3>
+<p>All the component.</p>
+<p>Inside the class, the render() method is called life cycle method and to render the page.</p>
+<p>In JSX, you cannot use HTML class attribute. you have to use className.</p>
+<h2 id="react">react</h2>
+<p>states is statement</p>
+<p>props is property</p>
+<h2 id="life-cycle">life cycle</h2>
+<p>Class component:
+<img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-10-03-react/rcc.png,  1.5x,  2x"
+        data-src=""
+        alt="rfc"
+        title="rfc" /></p>
+<p>Functional component:</p>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-10-03-react/rfc.jpg,  1.5x,  2x"
+        data-src=""
+        alt="rfc"
+        title="rfc" /></p>
+<h3 id="connection">Connection</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Class component</th>
+<th align="center">Functional component</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">state + setState</td>
+<td align="center">useState()</td>
+</tr>
+<tr>
+<td align="center">componentDidMount()</td>
+<td align="center">useEffect() with a empty input list</td>
+</tr>
+<tr>
+<td align="center">componentDidUpdate()</td>
+<td align="center">useEffect() with a input list contained which you want to change</td>
+</tr>
+<tr>
+<td align="center">componentWillUnmount()</td>
+<td align="center">useEffect() with a return callback function</td>
+</tr>
+<tr>
+<td align="center">shouldComponentUpdate()</td>
+<td align="center">React.memo()</td>
+</tr>
+</tbody>
+</table>
+<p>useState() =&gt;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setstate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>useEffect() =&gt;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="o">&lt;</span><span class="nx">effect</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="o">&lt;</span><span class="nx">cleanup</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">},</span> <span class="p">[</span><span class="o">&lt;</span><span class="nx">input</span><span class="o">&gt;</span><span class="p">]);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>React.memo() =&gt;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="k">default</span> <span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(</span><span class="nx">App</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><a href="https://www.jianshu.com/p/ce5451287f1c" target="_blank" rel="noopener noreffer">link</a>
+</p>
+<h2 id="how-to-connect-your-react-app-to-a-backend-on-the-same-origin">How to connect your React app to a backend on the same origin</h2>
+<p><a href="https://flaviocopes.com/how-to-serve-react-from-same-origin/">https://flaviocopes.com/how-to-serve-react-from-same-origin/</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-10-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/react/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/concurrent-programming-4/" class="prev" rel="prev" title="Concurrent Programming Course note 4"><i class="fas fa-angle-left fa-fw"></i>Concurrent Programming Course note 4</a>
+            <a href="/TyrangYang_blog/cool-website/" class="next" rel="next" title="Some cool websites">Some cool websites<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

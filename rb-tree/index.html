@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>RB tree | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="RB tree" />
+<meta property="og:description" content="2-3 tree &amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
+A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
+ Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth  insertion deletion 2-4 tree ==&gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/rb-tree/" />
+<meta property="article:published_time" content="2019-08-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RB tree"/>
+<meta name="twitter:description" content="2-3 tree &amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
+A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
+ Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth  insertion deletion 2-4 tree ==&gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree."/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/rb-tree/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "RB tree",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/rb-tree\/"
+        },"genre": "posts","keywords": "c\x2b\x2b, java, binary tree","wordcount":  265 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/rb-tree\/","datePublished": "2019-08-17","dateModified": "2019-08-17","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">RB tree</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/algdatastr">
+                                <i class="far fa-folder fa-fw"></i>Alg&amp; data str
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-08-17>2019-08-17</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 265 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="2-3-tree--2-4-tree">2-3 tree &amp; 2-4 tree</h2>
+<p>2-node: 1 key and 2 children
+3-node: 2 keys and 3 children
+4-node: 3 keys and 4 children</p>
+<p>A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:</p>
+<ul>
+<li>Node-Size Property: every internal node has at most four children</li>
+<li>Depth Property: all the external nodes have the same depth</li>
+</ul>
+<h3 id="insertion">insertion</h3>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-8-17-RB-tree/2-4-insertion.png,  1.5x,  2x"
+        data-src=""
+        alt="2-4insertion"
+        title="2-4insertion" /></p>
+<h3 id="deletion">deletion</h3>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-8-17-RB-tree/2-4-deletion.png,  1.5x,  2x"
+        data-src=""
+        alt="2-4deletion"
+        title="2-4deletion" /></p>
+<h2 id="2-4-tree--rb-tree">2-4 tree ==&gt; RB tree</h2>
+<p>If break down 3-node and 4-node, 2-4 tree will become RB tree.</p>
+<ul>
+<li>2-node ==&gt; black node</li>
+<li>3-node ==&gt; left/right side red node and black node</li>
+<li>4-node ==&gt; two red node and a black node</li>
+</ul>
+<p>RB tree represent a 2-4 tree in binary by providing a special balance strategy.</p>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-8-17-RB-tree/2-4-rb-tree.png,  1.5x,  2x"
+        data-src=""
+        alt="2-4-rb-tree"
+        title="2-4-rb-tree" /></p>
+<h2 id="rb-tree-rotate">RB tree rotate</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">* New node --&gt; X
+* Parent --&gt; P
+* Grandparent --&gt; G
+* Parent sibling --&gt; S
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li><strong>X</strong> must be <em>red</em></li>
+<li><strong><em>while loop</em></strong>: <strong>P</strong> is <em>red</em>
+<ol>
+<li><strong>P</strong> is on the left of <strong>G</strong>
+<ol>
+<li><strong>S</strong> is <em>red</em>
+<ul>
+<li>Change <strong>P</strong> and <strong>S</strong> to <em>black</em></li>
+<li>Change <strong>G</strong> to <em>red</em></li>
+<li>Let <strong>G</strong> become <strong>X</strong> and back to <strong><em>while loop</em></strong></li>
+</ul>
+</li>
+<li><strong>S</strong> is <em>Black</em> or Null
+<ul>
+<li><strong><em>IF</em></strong>: <strong>X</strong> on the right of <strong>P</strong>. <strong><em>Then</em></strong>: <strong><em>Rotate_left()</em></strong></li>
+<li>Change <strong>P</strong> to <em>black</em></li>
+<li>Change <strong>G</strong> to <em>red</em></li>
+<li><strong><em>Rotate_right()</em></strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>P</strong> is on the right of <strong>G</strong>
+<ol>
+<li><strong>S</strong> is <em>red</em>
+<ul>
+<li>Change <strong>P</strong> and <strong>S</strong> to <em>black</em></li>
+<li>Change <strong>G</strong> to <em>red</em></li>
+<li>Let <strong>G</strong> become <strong>X</strong> and back to while loop</li>
+</ul>
+</li>
+<li><strong>S</strong> is <em>Black</em> or Null
+<ul>
+<li><strong><em>IF</em></strong>: <strong>X</strong> on the left of <strong>P</strong>. <strong><em>Then</em></strong>: <strong><em>Rotate_right()</em></strong></li>
+<li>Change <strong>P</strong> to <em>black</em></li>
+<li>Change <strong>G</strong> to <em>red</em></li>
+<li><strong><em>Rotate_left()</em></strong></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>ROOT</strong> = <em>black</em> // In case change root.</li>
+</ol>
+<h2 id="rb-tree-structure">RB tree structure</h2>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-8-17-RB-tree/rbtree-structure.png,  1.5x,  2x"
+        data-src=""
+        alt="2-4-rb-tree"
+        title="2-4-rb-tree" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-08-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/rb-tree/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="/TyrangYang_blog/tags/java">java</a>,&nbsp;<a href="/TyrangYang_blog/tags/binary-tree">binary tree</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/operator-overwrite/" class="prev" rel="prev" title="Operator overwrite in c&#43;&#43;"><i class="fas fa-angle-left fa-fw"></i>Operator overwrite in c&#43;&#43;</a>
+            <a href="/TyrangYang_blog/c-bit-operation/" class="next" rel="next" title="Bit operation in C&#43;&#43;">Bit operation in C&#43;&#43;<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

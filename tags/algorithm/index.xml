@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithm on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm/</link>
+    <description>Recent content in algorithm on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>All algorithm in C&#43;&#43;</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</link>
+      <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</guid>
+      <description>Content  Content  Algorithm Overview  Copy  For each  Generation  Heap  Merge  Move  Number  Partition  Permutation  Remove  Replace  Reverse  rotate  Search  Set  Shuffle  Sort  Swap  Test range  Unique   Algorithm Overview * &amp;ndash;&amp;gt; new feature from C++11
+   Algorithm Name Usage Mutating? Head File Complexity     accumulate  Accumulate values in range N numeric O(n)   adjacent_difference  Compute adjacent difference of range and return to another place N numeric O(n)   adjacent_find  Find first equal adjacent elements in range N algorithm O(n)   all_of*  Test condition on all elements in range N algorithm O(n)   any_of*  Test if any element in range fulfills condition N algorithm O(n)   binary_search  Test if value exists in sorted sequence N algorithm On average O(logn + 2).</description>
+    </item>
+    
+    <item>
+      <title>Algorithm feature in c&#43;&#43; STL</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</link>
+      <pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</guid>
+      <description>See all algorithm click here  Mutating and Non-mutating algorithms Mutating algorithms Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.
+If your give these algorithms a const iterator, only error will be returned.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  #include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;gt;using namespace std; int main(int argc, char const *argv[]) { std::vector&amp;lt;int&amp;gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&amp;lt;int&amp;gt;::iterator ib = iv.</description>
+    </item>
+    
+  </channel>
+</rss>

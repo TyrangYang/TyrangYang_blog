@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link>
+    <description>Recent content in Posts on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to demonstrate your front end application on Github by gh-page</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid>
+      <description>Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&amp;lt;github username&amp;gt;.github.io}/{&amp;lt;repository name&amp;gt;}
+gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
+Read more detail in repository command line usage This package also provide a command line tool:</description>
+    </item>
+    
+    <item>
+      <title>How to check the Chinese ID is correct</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid>
+      <description>This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.
+Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62  checkChineseId = id =&amp;gt; { const ID_LENGTH = 18; // check type  if (typeof id !</description>
+    </item>
+    
+    <item>
+      <title>Safari Shortcut</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</guid>
+      <description>Some keyboards shortcuts when using safari
+Navigating Webpages Use arrow keys to go up and down.
+Use Option+up/down or Shift+Space / Space to scroll quickly.
+Use Command+up/down goto the top &amp;amp; button.
+Open Pages in Tabs Use Command+T to open a new Tab.
+Use Shift+Command+Left/right arrow or Control+Tab / Control+Shift+Tab to move from tab to tab.
+Use Command+W to close current tab.
+Use Command+Z to reopen a closed tab.
+Use Command+Option+W to close all tabs expect current tab.</description>
+    </item>
+    
+    <item>
+      <title>Callback, Promise and Async/await in js</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</link>
+      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid>
+      <description>Synchronous &amp;amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&amp;rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
+But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</description>
+    </item>
+    
+    <item>
+      <title>What is &#34;this&#34; in javascript</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link>
+      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid>
+      <description>author: Dmitri Pavlutin
+reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt(&#39;15&#39;). Context of an invocation is the value of this within function body. For example the invocation of map.set(&#39;key&#39;, &#39;value&#39;) has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</description>
+    </item>
+    
+    <item>
+      <title>How to have a dynamic class name</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
+      <description>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+classNames This is a javascript for conditionally joining classNames.
+Here is: Github Basically, you can combine any number of classNames.
+1 2  const classNames = require(&amp;#39;classNames&amp;#39;); classNames(&amp;#39;foo&amp;#39;, { bar: true, duck: false }, &amp;#39;baz&amp;#39;, { quux: true }); // =&amp;gt; &amp;#39;foo bar baz quux&amp;#39;   ES6 template literals You can just use template literals.</description>
+    </item>
+    
+    <item>
+      <title>A simple application apollo server and react</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/spacex/</guid>
+      <description>graphql Design Graphql is base on what your want
+github https://github.com/TyrangYang/SpaceX_graphql_react </description>
+    </item>
+    
+    <item>
+      <title>VSCode shortCut</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/</link>
+      <pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/</guid>
+      <description>Vscode page for shortcut Short cut Source from Traversy Media
+YouTube Channel YouTube Github  </description>
+    </item>
+    
+    <item>
+      <title>Why Can’t I Open My React App By Clicking Index.html?</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</guid>
+      <description>The app should Run when you open up your index.html file The conclusion is add &amp;quot;homepage&amp;quot;:&amp;quot;.&amp;quot;, in package.json.
+medium.com/@louis.raymond Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
+Click: Different between them </description>
+    </item>
+    
+    <item>
+      <title>Learning Jekyll</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/first-learning-post/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/first-learning-post/</guid>
+      <description>This is learning note for Jekyll
+Folder  _posts   Store all the blog post
+The naming convention is like 2019-01-01-this-is-the-name.md(.html)
+  _site   Store all the static file for your page
+  _config.yml   The setting for your jekyll website
+  Gemfile   Use with Ruby and contain all the dependency
+  index.md   Main page
+ Commend for Jekyll Initialize the bundle:</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Jekyll!</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/welcome-to-jekyll/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/welcome-to-jekyll/</guid>
+      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
+To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.</description>
+    </item>
+    
+  </channel>
+</rss>

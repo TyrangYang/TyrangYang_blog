@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.69.0" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="TyrangYang_Blog" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
+<meta property="og:updated_time" content="2020-04-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TyrangYang_Blog"/>
+<meta name="twitter:description" content=""/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="alternate" href="/TyrangYang_blog/index.xml" type="application/rss+xml" title="TyrangYang_Blog">
+    <link rel="feed" href="/TyrangYang_blog/index.xml" type="application/rss+xml" title="TyrangYang_Blog"><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/","inLanguage": "en","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"name": "TyrangYang_Blog"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><div class="page home"><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/TyrangYang_blog/zshell-overview/">Z-shell overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-12-12>2019-12-12</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="/TyrangYang_blog/categories/terminal">
+                        <i class="far fa-folder fa-fw"></i>Terminal
+                    </a></span></div><div class="content">Reference Very useful blog:
+http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname http://zsh.sourceforge.net/Intro/intro_12.html#SEC12 Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell single quotes &amp; double quotes 1 2  RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed   Date man Date</div><div class="post-footer">
+        <a href="/TyrangYang_blog/zshell-overview/">Read More</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/TyrangYang_blog/callback-promise-async/">Callback, Promise and Async/await in js</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-11-17>2019-11-17</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
+But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</div><div class="post-footer">
+        <a href="/TyrangYang_blog/callback-promise-async/">Read More</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/TyrangYang_blog/what-is-this-in-js/">What is &#34;this&#34; in javascript</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-11-17>2019-11-17</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">author: Dmitri Pavlutin
+reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</div><div class="post-footer">
+        <a href="/TyrangYang_blog/what-is-this-in-js/">Read More</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/TyrangYang_blog/how-to-have-dynamic-classname/">How to have a dynamic class name</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-11-15>2019-11-15</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+classNames This is a javascript for conditionally joining classNames.
+Here is: Github Basically, you can combine any number of classNames.
+1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals.</div><div class="post-footer">
+        <a href="/TyrangYang_blog/how-to-have-dynamic-classname/">Read More</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/TyrangYang_blog/spacex/">A simple application apollo server and react</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-11-14>2019-11-14</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">graphql Design Graphql is base on what your want
+github https://github.com/TyrangYang/SpaceX_graphql_react </div><div class="post-footer">
+        <a href="/TyrangYang_blog/spacex/">Read More</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/TyrangYang_blog/vscode-shortcut/">VSCode shortCut</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-11-01>2019-11-01</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">Vscode page for shortcut Short cut Source from Traversy Media
+YouTube Channel YouTube Github  </div><div class="post-footer">
+        <a href="/TyrangYang_blog/vscode-shortcut/">Read More</a></div>
+</article>
+<ul class="pagination"><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/">1</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link" aria-hidden="true">&hellip;</span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/page/3/">3</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/page/4/">4</a>
+                    </span>
+                </li><li class="page-item active">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/page/5/">5</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/page/6/">6</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/page/7/">7</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link" aria-hidden="true">&hellip;</span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/TyrangYang_blog/page/11/">11</a>
+                    </span>
+                </li></ul></div></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

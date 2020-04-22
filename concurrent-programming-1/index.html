@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Concurrent Programming Course note 1 | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="Concurrent Programming Course note 1" />
+<meta property="og:description" content="What is concurrency Systems of interacting computer programs which share resource and run concurrently.
+parallelism and concurrency Parallelism: Occurring physically at the same time.
+Concurrency: Occurring logically at the same time.
+synchronization Process synchronization: Ensure the instructions are executed in certain order.
+Synchronization is irrelevant if processes do not interact with each other.
+Concurrency, and hence process synchronized, is useful only when processes interact with each other.
+interaction Share memory is kind of interact." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/" />
+<meta property="article:published_time" content="2019-08-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Concurrent Programming Course note 1"/>
+<meta name="twitter:description" content="What is concurrency Systems of interacting computer programs which share resource and run concurrently.
+parallelism and concurrency Parallelism: Occurring physically at the same time.
+Concurrency: Occurring logically at the same time.
+synchronization Process synchronization: Ensure the instructions are executed in certain order.
+Synchronization is irrelevant if processes do not interact with each other.
+Concurrency, and hence process synchronized, is useful only when processes interact with each other.
+interaction Share memory is kind of interact."/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Concurrent Programming Course note 1",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-1\/"
+        },"genre": "posts","keywords": "concurrent, course note","wordcount":  222 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-1\/","datePublished": "2019-08-28","dateModified": "2019-08-28","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Concurrent Programming Course note 1</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/concurrent-programming">
+                                <i class="far fa-folder fa-fw"></i>Concurrent programming
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-08-28>2019-08-28</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 222 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="what-is-concurrency">What is concurrency</h2>
+<p>Systems of interacting computer programs which share resource and run concurrently.</p>
+<h3 id="parallelism-and-concurrency">parallelism and concurrency</h3>
+<p>Parallelism: Occurring physically at the same time.</p>
+<p>Concurrency: Occurring logically at the same time.</p>
+<h3 id="synchronization">synchronization</h3>
+<p>Process synchronization: Ensure the instructions are executed in certain order.</p>
+<p>Synchronization is irrelevant if processes do not interact with each other.</p>
+<p>Concurrency, and hence process synchronized, is useful only when processes interact with each other.</p>
+<h3 id="interaction">interaction</h3>
+<p>Share memory is kind of interact.</p>
+<p>Two kind of interaction:</p>
+<ol>
+<li>Shared memory - variable is visible for each thread. : java</li>
+<li>Message passing - communicate other thread, I&rsquo;m using this resource.</li>
+</ol>
+<h2 id="process-scheduling-error">Process scheduling error</h2>
+<p>Deadlock: Each thread take a resource and wait for next one which is hold by other thread.</p>
+<p>Livelock: Each thread take a resource and see other thread take next one. Therefore, each thread return it back. But this process will keep repeating.</p>
+<p>Starvation: One thread always take resource before other thread.</p>
+<h2 id="modelling-program-execution">Modelling program execution</h2>
+<p>If the program is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">thread p:{
+    print(&#34;a&#34;);
+    print(&#34;b&#34;);
+}
+
+thread q:{
+    print(&#34;c&#34;);
+    print(&#34;d&#34;);
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>If P has m instructions and Q has n instructions, then there
+are:</p>
+<p><img
+        class="lazyload"
+        src="/TyrangYang_blog/svg/loading.small.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/2019-08-28-concurrent-programming-1/interleaving.png,  1.5x,  2x"
+        data-src=""
+        alt="interleaving"
+        title="interleaving" /></p>
+<p>interleaving.</p>
+<p>For this one. m = n = 2. That will have 4!/2!2! = 24 / 4 = 6.</p>
+<p>There are 6 interleaving.</p>
+<p>All 6 interleaving are called transition system.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-08-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/concurrent-programming-1/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/TyrangYang_blog/tags/concurrent">concurrent</a>,&nbsp;<a href="/TyrangYang_blog/tags/course-note">course note</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/algorithm-feature/" class="prev" rel="prev" title="Algorithm feature in c&#43;&#43; STL"><i class="fas fa-angle-left fa-fw"></i>Algorithm feature in c&#43;&#43; STL</a>
+            <a href="/TyrangYang_blog/web-develop-review/" class="next" rel="next" title="Web development review">Web development review<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>

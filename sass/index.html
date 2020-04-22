@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>SASS (SCSS) features | TyrangYang_Blog</title>
+        <meta name="Description" content=""><meta property="og:title" content="SASS (SCSS) features" />
+<meta property="og:description" content="SCSS features  Variables  Operator  String interpolation  Nesting  The parent selector  Imports  Nested Media Queries  General control  Mixins  Functions  Extending  Placeholders     SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/sass/" />
+<meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SASS (SCSS) features"/>
+<meta name="twitter:description" content="SCSS features  Variables  Operator  String interpolation  Nesting  The parent selector  Imports  Nested Media Queries  General control  Mixins  Functions  Extending  Placeholders     SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  ."/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/sass/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SASS (SCSS) features",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/sass\/"
+        },"genre": "posts","wordcount":  568 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/sass\/","datePublished": "2019-09-18","dateModified": "2019-09-18","author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/TyrangYang_blog/">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode =  null ;
+    window.mobileHeaderMode =  null ;
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">SASS (SCSS) features</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/note">
+                                <i class="far fa-folder fa-fw"></i>Note
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-09-18>2019-09-18</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 568 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">Contents</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>Contents</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#scss-features">SCSS features</a>
+      <ul>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#operator">Operator</a></li>
+        <li><a href="#string-interpolation">String interpolation</a></li>
+        <li><a href="#nesting">Nesting</a></li>
+        <li><a href="#the-parent-selector">The parent selector</a></li>
+        <li><a href="#imports">Imports</a></li>
+        <li><a href="#nested-media-queries">Nested Media Queries</a></li>
+        <li><a href="#general-control">General control</a></li>
+        <li><a href="#mixins">Mixins</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#extending">Extending</a></li>
+        <li><a href="#placeholders">Placeholders</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><ul>
+<li><a href="#scss-features" rel="noopener noreffer">SCSS features</a>
+
+<ul>
+<li><a href="#variables" rel="noopener noreffer">Variables</a>
+</li>
+<li><a href="#operator" rel="noopener noreffer">Operator</a>
+</li>
+<li><a href="#string-interpolation" rel="noopener noreffer">String interpolation</a>
+</li>
+<li><a href="#nesting" rel="noopener noreffer">Nesting</a>
+</li>
+<li><a href="#the-parent-selector" rel="noopener noreffer">The parent selector</a>
+</li>
+<li><a href="#imports" rel="noopener noreffer">Imports</a>
+</li>
+<li><a href="#nested-media-queries" rel="noopener noreffer">Nested Media Queries</a>
+</li>
+<li><a href="#general-control" rel="noopener noreffer">General control</a>
+</li>
+<li><a href="#mixins" rel="noopener noreffer">Mixins</a>
+</li>
+<li><a href="#functions" rel="noopener noreffer">Functions</a>
+</li>
+<li><a href="#extending" rel="noopener noreffer">Extending</a>
+</li>
+<li><a href="#placeholders" rel="noopener noreffer">Placeholders</a>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="scss-features">SCSS features</h2>
+<h3 id="variables">Variables</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$font-stack</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="no">sans-serif</span><span class="p">;</span>
+<span class="nv">$primary-color</span><span class="o">:</span> <span class="mh">#333</span><span class="p">;</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nt">font</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span> <span class="err">$</span><span class="nt">font-stack</span><span class="p">;</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">primary-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="operator">Operator</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.container</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nt">float</span><span class="nd">:</span> <span class="nt">left</span><span class="p">;</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">600px</span> <span class="o">/</span> <span class="nt">960px</span> <span class="o">*</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;complementary&#39;</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="p">;</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">300px</span> <span class="o">/</span> <span class="nt">960px</span> <span class="o">*</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="string-interpolation">String interpolation</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$name</span><span class="o">:</span> <span class="n">foo</span><span class="p">;</span>
+<span class="nv">$attr</span><span class="o">:</span> <span class="no">border</span><span class="p">;</span>
+<span class="nt">p</span><span class="nc">.</span><span class="si">#{</span><span class="nv">$name</span><span class="si">}</span> <span class="p">{</span>
+    <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">attr</span><span class="p">}</span><span class="nt">-color</span><span class="nd">:</span> <span class="nt">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is compile to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">.</span><span class="nc">foo</span> <span class="p">{</span>
+    <span class="k">border-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="nesting">Nesting</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#main</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="nn">#00ff00</span><span class="p">;</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">90</span><span class="err">%</span><span class="p">;</span>
+
+    <span class="nc">.redbod</span> <span class="p">{</span>
+        <span class="nt">background-color</span><span class="nd">:</span> <span class="nn">#ff0000</span><span class="p">;</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="nn">#000000</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is compile to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">main</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#00ff00</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">main</span> <span class="nt">p</span> <span class="p">.</span><span class="nc">redbod</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ff0000</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#000000</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="the-parent-selector">The parent selector</h3>
+<p>We can use the &amp; symbol to state “for the selector I am nested inside with these other selectors” or “with this selector than the current selector”</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt">a</span> <span class="p">{</span>
+    <span class="nt">font-weight</span><span class="nd">:</span> <span class="nt">bold</span><span class="p">;</span>
+    <span class="nt">text-decoration</span><span class="nd">:</span> <span class="nt">none</span><span class="p">;</span>
+    <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+        <span class="nt">text-decoration</span><span class="nd">:</span> <span class="nt">underline</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">body</span><span class="nc">.firebox</span> <span class="k">&amp;</span> <span class="p">{</span>
+        <span class="nt">font-weight</span><span class="nd">:</span> <span class="nt">normal</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is compile to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">a</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">body</span><span class="p">.</span><span class="nc">firebox</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="imports">Imports</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@import</span> <span class="err">’</span><span class="n">filename</span><span class="o">.</span><span class="n">scss</span><span class="err">’</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="nested-media-queries">Nested Media Queries</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.sidebar</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">300px</span><span class="p">;</span>
+    <span class="k">@media</span> <span class="n">screen</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">or</span><span class="n">ientation</span><span class="o">:</span> <span class="no">landscape</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nt">width</span><span class="nd">:</span> <span class="nt">500px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is compile to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="o">:</span> <span class="nt">landscape</span><span class="o">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
+        <span class="k">width</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="general-control">General control</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$type</span><span class="o">:</span> <span class="n">monster</span><span class="p">;</span>
+<span class="nt">p</span> <span class="p">{</span>
+    <span class="k">@if</span> <span class="nv">$type</span> <span class="o">==</span> <span class="n">ocean</span> <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="nt">blue</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">type</span> <span class="o">==</span> <span class="nt">matador</span> <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="nt">red</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">type</span> <span class="o">==</span> <span class="nt">monster</span> <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="nt">green</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
+        <span class="nt">color</span><span class="nd">:</span> <span class="nt">black</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="mi">1</span> <span class="ow">through</span> <span class="mi">3</span> <span class="p">{</span>
+    <span class="nc">.item-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span> <span class="p">{</span>
+        <span class="nt">width</span><span class="nd">:</span> <span class="nt">2em</span> <span class="o">*</span> <span class="err">$</span><span class="nt">i</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@each</span> <span class="err">$</span><span class="nt">animal</span> <span class="nt">in</span> <span class="nt">puma</span><span class="o">,</span> <span class="nt">sea-slug</span><span class="o">,</span> <span class="nt">egret</span><span class="o">,</span> <span class="nt">salamander</span> <span class="p">{</span>
+    <span class="nc">.</span><span class="si">#{</span><span class="nv">$animal</span><span class="si">}</span><span class="nc">-icon</span> <span class="p">{</span>
+        <span class="nt">background-image</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/image/</span><span class="si">#{</span><span class="nv">$animal</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="o">)</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mixins">Mixins</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> box-shadow</span><span class="p">(</span><span class="nv">$shadows</span><span class="o">...</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nt">-moz-box-shadow</span><span class="nd">:</span> <span class="err">$</span><span class="nt">shadows</span><span class="p">;</span>
+    <span class="nt">-webkit-box-shadow</span><span class="nd">:</span> <span class="err">$</span><span class="nt">shadows</span><span class="p">;</span>
+    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="err">$</span><span class="nt">shadows</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.shadows</span> <span class="p">{</span>
+    <span class="k">@include</span><span class="nd"> box-shadow</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mh">#666</span><span class="o">,</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">6</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mh">#999</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is compile to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt">box-shadow</span> <span class="p">{</span>
+    <span class="nt">-moz-box-shadow</span><span class="nd">:</span> <span class="nt">0px</span> <span class="nt">4px</span> <span class="nt">5px</span> <span class="nn">#666</span><span class="o">,</span> <span class="nt">2px</span> <span class="nt">6px</span> <span class="nt">10px</span> <span class="nn">#999</span><span class="p">;</span>
+    <span class="nt">-webkit-box-shadow</span><span class="nd">:</span> <span class="nt">0px</span> <span class="nt">4px</span> <span class="nt">5px</span> <span class="nn">#666</span><span class="o">,</span> <span class="nt">2px</span> <span class="nt">6px</span> <span class="nt">10px</span> <span class="nn">#999</span><span class="p">;</span>
+    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="nt">0px</span> <span class="nt">4px</span> <span class="nt">5px</span> <span class="nn">#666</span><span class="o">,</span> <span class="nt">2px</span> <span class="nt">6px</span> <span class="nt">10px</span> <span class="nn">#999</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="functions">Functions</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$grid-width</span><span class="o">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<span class="nv">$gutter-width</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="k">@function</span> <span class="nt">grid-width</span><span class="o">(</span><span class="err">$</span><span class="nt">n</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">@return</span> <span class="err">$</span><span class="nt">n</span> <span class="o">*</span> <span class="err">$</span><span class="nt">grid-width</span> <span class="o">+</span> <span class="o">(</span><span class="err">$</span><span class="nt">n</span> <span class="nt">-</span> <span class="nt">1</span><span class="o">)</span> <span class="o">*</span> <span class="err">$</span><span class="nt">gutter-width</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nn">#sidebar</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">grid-width</span><span class="o">(</span><span class="nt">5</span><span class="o">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is compile to:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#sidebar</span> <span class="p">{</span>
+    <span class="nt">width</span><span class="nd">:</span> <span class="nt">240px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="extending">Extending</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.error</span> <span class="p">{</span>
+    <span class="nt">border</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nn">#f00</span><span class="p">;</span>
+    <span class="nt">background-color</span><span class="nd">:</span> <span class="nn">#fdd</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.seriousError</span> <span class="p">{</span>
+    <span class="k">@extend</span> <span class="nc">.error</span><span class="p">;</span>
+    <span class="nt">border-width</span><span class="nd">:</span> <span class="nt">3px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="placeholders">Placeholders</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#context</span> <span class="nt">a</span><span class="err">%</span><span class="nt">extreme</span> <span class="p">{</span>
+    <span class="nt">color</span><span class="nd">:</span> <span class="nt">blue</span><span class="p">;</span>
+    <span class="nt">font-weight</span><span class="nd">:</span> <span class="nt">bold</span><span class="p">;</span>
+    <span class="nt">font-size</span><span class="nd">:</span> <span class="nt">2em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.notice</span> <span class="p">{</span>
+    <span class="k">@extend</span> <span class="err">%</span><span class="nt">extreme</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2019-09-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/sass/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section></section>
+        <section>
+            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/TyrangYang_blog/concurrent-programming-3/" class="prev" rel="prev" title="Concurrent Programming Course note 3"><i class="fas fa-angle-left fa-fw"></i>Concurrent Programming Course note 3</a>
+            <a href="/TyrangYang_blog/all-algorithm/" class="next" rel="next" title="All algorithm in C&#43;&#43;">All algorithm in C&#43;&#43;<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>
