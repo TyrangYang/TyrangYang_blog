@@ -1,4 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "https://tyrangyang.github.io/TyrangYang_blog/"
+
+# all relative URLs would instead be canonicalized using baseURL
+# really necessary when you have sub-path in baseUrl
+# https://gohugo.io/content-management/urls/#canonicalization
+canonifyURLs = true 
+
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
@@ -17,9 +23,9 @@ theme = "LoveIt"
   defaultTheme = "light"
   [params.home]
     [params.home.profile]
-      enable = false
-      avatarURL = "/images/avatar.png"
-      subtitle = "这是我的全新 Hugo 网站"
+      enable = true
+      avatarURL = "/images/art2.png"
+      subtitle = "Hello word?!"
       typeit = true
       social = true
     [params.home.posts]
