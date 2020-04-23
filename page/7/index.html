@@ -35,7 +35,7 @@
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');
@@ -79,93 +79,22 @@
         data-src=""
         alt="avatar"
         title="Home" /></a>
-        </div><h2 class="home-description"><div id="id-8cee24" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
+        </div><h2 class="home-description"><div id="id-fe32c1" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
 <a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a>
 <a href="mailto:haolinyang95@gamil.com" title="Email" rel="noopener noreffer me"><i class="far fa-envelope fa-fw"></i></a>
 </div>
 </div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/">All algorithm in C&#43;&#43;</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/welcome-to-jekyll/">Welcome to Jekyll!</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-09-20>2019-09-20</time>
+            published on&nbsp;<time datetime=2019-06-11>2019-06-11</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
-                        <i class="far fa-folder fa-fw"></i>S t l study note
-                    </a></span></div><div class="content">Content  Content  Algorithm Overview  Copy  For each  Generation  Heap  Merge  Move  Number  Partition  Permutation  Remove  Replace  Reverse  rotate  Search  Set  Shuffle  Sort  Swap  Test range  Unique   Algorithm Overview * &ndash;&gt; new feature from C++11
-   Algorithm Name Usage Mutating? Head File Complexity     accumulate  Accumulate values in range N numeric O(n)   adjacent_difference  Compute adjacent difference of range and return to another place N numeric O(n)   adjacent_find  Find first equal adjacent elements in range N algorithm O(n)   all_of*  Test condition on all elements in range N algorithm O(n)   any_of*  Test if any element in range fulfills condition N algorithm O(n)   binary_search  Test if value exists in sorted sequence N algorithm On average O(logn + 2).</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl">STL</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm">algorithm</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/sass/">SASS (SCSS) features</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-09-18>2019-09-18</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note">
-                        <i class="far fa-folder fa-fw"></i>Note
-                    </a></span></div><div class="content">SCSS features  Variables  Operator  String interpolation  Nesting  The parent selector  Imports  Nested Media Queries  General control  Mixins  Functions  Extending  Placeholders     SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/sass/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/css">css</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/">Concurrent Programming Course note 3</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-09-16>2019-09-16</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming">
-                        <i class="far fa-folder fa-fw"></i>Concurrent programming
-                    </a></span></div><div class="content">Semaphore Initialize how many permissions you will use.
-acquire() will add one permission.
-release() will remove one permission.
-Permission must ≥ 0.
-Semaphore solution for the MEP  #criticalSection + permissions = 1 #criticalSection = #acquires − #releases  Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
-Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared  static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &lt; 50; i++){ mutex.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent">concurrent</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/">Concurrent Programming Course note 2</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-09-04>2019-09-04</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming">
-                        <i class="far fa-folder fa-fw"></i>Concurrent programming
-                    </a></span></div><div class="content">Race condition Multiple thread access one same variables of object concurrently and at least one does update.
-Bad situation.
-Atomic operation An operation is atomic if it execute until it completion without interruption
-Critical section A part of program that accesses shared memory and which we which to execute automatically.
-mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent">concurrent</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/">Software Development Course note</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-09-03>2019-09-03</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/software-development">
-                        <i class="far fa-folder fa-fw"></i>Software development
-                    </a></span></div><div class="content">Agile Vs Traditional SDLC Models Agile is based on the adaptive software development methods, whereas the traditional SDLC models like the waterfall model is based on a predictive approach. Predictive teams in the traditional SDLC models usually work with detailed planning and have a complete forecast of the exact tasks and features to be delivered in the next few months or during the product life cycle.
-Predictive methods entirely depend on the requirement analysis and planning done in the beginning of cycle.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/ssw">ssw</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/">Web development review</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-08-29>2019-08-29</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note">
-                        <i class="far fa-folder fa-fw"></i>Note
-                    </a></span></div><div class="content">MathJax.Hub.Config({ jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$']], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }, messageStyle: "none", "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } });   Document constructor $$f(x) = sin(x)$$</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/express">express</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
+To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/welcome-to-jekyll/">Read More</a></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
@@ -184,20 +113,6 @@ Predictive methods entirely depend on the requirement analysis and planning done
                 </li><li class="page-item active">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/page/7/">7</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/8/">8</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/9/">9</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link" aria-hidden="true">&hellip;</span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/11/">11</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
@@ -222,8 +137,8 @@ Predictive methods entirely depend on the requirement analysis and planning done
             });
         });
     </script><script>
-        window.typeitArr = [["id-8cee24"]];
+        window.typeitArr = [["id-fe32c1"]];
     </script><script>
-        window.contentMap = {"id-8cee24":"Stay Home \u0026 Be safe!"};
+        window.contentMap = {"id-fe32c1":"Stay Home \u0026 Be safe!"};
     </script><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/typeit/typeit.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

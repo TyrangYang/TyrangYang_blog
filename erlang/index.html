@@ -48,7 +48,7 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');

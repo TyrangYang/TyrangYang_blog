@@ -35,7 +35,7 @@
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');
@@ -79,92 +79,148 @@
         data-src=""
         alt="avatar"
         title="Home" /></a>
-        </div><h2 class="home-description"><div id="id-3266ef" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
+        </div><h2 class="home-description"><div id="id-382112" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
 <a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a>
 <a href="mailto:haolinyang95@gamil.com" title="Email" rel="noopener noreffer me"><i class="far fa-envelope fa-fw"></i></a>
 </div>
 </div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/">Z-shell overview</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/">Software Development Course note</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-12-12>2019-12-12</time>
+            published on&nbsp;<time datetime=2019-09-03>2019-09-03</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/terminal">
-                        <i class="far fa-folder fa-fw"></i>Terminal
-                    </a></span></div><div class="content">Reference Very useful blog:
-http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname http://zsh.sourceforge.net/Intro/intro_12.html#SEC12 Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell single quotes &amp; double quotes 1 2  RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed   Date man Date</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/zsh">zsh</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/bash">bash</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/software-development">
+                        <i class="far fa-folder fa-fw"></i>Software development
+                    </a></span></div><div class="content">Agile Vs Traditional SDLC Models Agile is based on the adaptive software development methods, whereas the traditional SDLC models like the waterfall model is based on a predictive approach. Predictive teams in the traditional SDLC models usually work with detailed planning and have a complete forecast of the exact tasks and features to be delivered in the next few months or during the product life cycle.
+Predictive methods entirely depend on the requirement analysis and planning done in the beginning of cycle.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/ssw">ssw</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/">Callback, Promise and Async/await in js</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/">Web development review</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-11-17>2019-11-17</time>
+            published on&nbsp;<time datetime=2019-08-29>2019-08-29</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
-But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note">
+                        <i class="far fa-folder fa-fw"></i>Note
+                    </a></span></div><div class="content">MathJax.Hub.Config({ jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$']], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }, messageStyle: "none", "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } });   Document constructor $$f(x) = sin(x)$$</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/express">express</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/">What is &#34;this&#34; in javascript</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/">Concurrent Programming Course note 1</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-11-17>2019-11-17</time>
+            published on&nbsp;<time datetime=2019-08-28>2019-08-28</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">author: Dmitri Pavlutin
-reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming">
+                        <i class="far fa-folder fa-fw"></i>Concurrent programming
+                    </a></span></div><div class="content">What is concurrency Systems of interacting computer programs which share resource and run concurrently.
+parallelism and concurrency Parallelism: Occurring physically at the same time.
+Concurrency: Occurring logically at the same time.
+synchronization Process synchronization: Ensure the instructions are executed in certain order.
+Synchronization is irrelevant if processes do not interact with each other.
+Concurrency, and hence process synchronized, is useful only when processes interact with each other.
+interaction Share memory is kind of interact.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent">concurrent</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/">How to have a dynamic class name</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/">Algorithm feature in c&#43;&#43; STL</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-11-15>2019-11-15</time>
+            published on&nbsp;<time datetime=2019-08-25>2019-08-25</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
-classNames This is a javascript for conditionally joining classNames.
-Here is: Github Basically, you can combine any number of classNames.
-1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/html">html</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/react">react</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">See all algorithm click here  Mutating and Non-mutating algorithms Mutating algorithms Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.
+If your give these algorithms a const iterator, only error will be returned.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  #include &lt;iostream&gt;#include &lt;vector&gt;using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl">STL</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm">algorithm</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/spacex/">A simple application apollo server and react</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/">Bit operation in C&#43;&#43;</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-11-14>2019-11-14</time>
+            published on&nbsp;<time datetime=2019-08-18>2019-08-18</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">graphql Design Graphql is base on what your want
-github https://github.com/TyrangYang/SpaceX_graphql_react </div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/spacex/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/react">react</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/apollo">apollo</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">Bit operator    operator function example     &laquo; left shift 0001 &ndash;&gt; 0010   &raquo; right shift 0010 &ndash;&gt; 0001   &amp; and (bit by bit) 1100 &amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp; x is a bit</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/bit">bit</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/">VSCode shortCut</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/rb-tree/">RB tree</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-11-01>2019-11-01</time>
+            published on&nbsp;<time datetime=2019-08-17>2019-08-17</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">Vscode page for shortcut Short cut Source from Traversy Media
-YouTube Channel YouTube Github  </div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vscode">vscode</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/shortcut">shortcut</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr">
+                        <i class="far fa-folder fa-fw"></i>Alg&amp; data str
+                    </a></span></div><div class="content">2-3 tree &amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
+A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
+ Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth  insertion deletion 2-4 tree ==&gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/rb-tree/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/binary-tree">binary tree</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/">Operator overwrite in c&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-08-13>2019-08-13</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">Example increment and decrement operator
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72  #include &lt;iostream&gt;using namespace std; class INT { private: int m_i; public: INT(int i):m_i(i){}; friend bool operator==(INT&amp; test1, INT&amp; test2){ return test1.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/operator">operator</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/containers/">Container in c&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-31>2019-07-31</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">Classification  Sequence container  array (build in) vector  heap  priority queue  list  slist (not standard) deque  stack (adopter) queue (adopter)   Associative container  RB-tree (not public) set  map  multiset multemap hashtable (not standard) hash_set (not standard) hash_map (not standard) hash_multimap (not standard) hash_multiset (not standard)    Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/containers/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl">STL</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/container">container</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/">explicit and implicit in c&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-25>2019-07-25</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/c&#43;&#43;">
+                        <i class="far fa-folder fa-fw"></i>C&#43;&#43;
+                    </a></span></div><div class="content">explicit and implicit In C++, constructor can be explicit and implicit.
+The reserve word explicit affect constructor with only one parameter or only one parameter without given initial value.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56  #include &lt;iostream&gt;using namespace std; class test1 { int data; public: test1(int t = 0):data(t){}; ~test1(){}; test1 operator + (const test1 &amp;a) const{ return test1(data + a.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/iterators/">Iterator in c&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-24>2019-07-24</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">Iterator 设计思维 STL 中 container 和 algorithm 是相对独立的，本身设计也是泛型化的。Iterator 就是用来将这两者联系在一起的。
+Iterator 是一种 smart pointer 可以不用 delete
+Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 value type)的。
+这是 iterator 中常见的五种属性。
+1 2 3 4 5 6 7 8 9  template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category  typedef typename I::value_type value_type; // type  typedef typename I::difference_type difference_type; //  typedef typename I::pointer pointer; // T*  typedef typename I::reference reference; // T&amp; };   1 2 3 4 5 6 7 8 9 10 11 12 13 14  #include &lt;iostream&gt; // std::cout#include &lt;iterator&gt; // std::iterator_traits#include &lt;typeinfo&gt; // typeidusing namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/iterators/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl">STL</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
@@ -192,12 +248,6 @@ YouTube Channel YouTube Github  </div><div class="post-footer">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/page/7/">7</a>
                     </span>
-                </li><li class="page-item ">
-                    <span class="page-link" aria-hidden="true">&hellip;</span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/11/">11</a>
-                    </span>
                 </li></ul></div></div>
             </main><footer class="footer">
     <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
@@ -221,8 +271,8 @@ YouTube Channel YouTube Github  </div><div class="post-footer">
             });
         });
     </script><script>
-        window.typeitArr = [["id-3266ef"]];
+        window.typeitArr = [["id-382112"]];
     </script><script>
-        window.contentMap = {"id-3266ef":"Stay Home \u0026 Be safe!"};
+        window.contentMap = {"id-382112":"Stay Home \u0026 Be safe!"};
     </script><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/typeit/typeit.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

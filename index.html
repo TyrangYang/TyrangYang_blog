@@ -35,7 +35,7 @@
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');
@@ -79,7 +79,7 @@
         data-src=""
         alt="avatar"
         title="Home" /></a>
-        </div><h2 class="home-description"><div id="id-14ec76" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
+        </div><h2 class="home-description"><div id="id-6af3fb" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
 <a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a>
 <a href="mailto:haolinyang95@gamil.com" title="Email" rel="noopener noreffer me"><i class="far fa-envelope fa-fw"></i></a>
 </div>
@@ -183,6 +183,83 @@ Reference from MDN Draw on canvas Get start Jquery to get canvas. ctx mean canva
         <a href="https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/js">js</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/array">array</a></div></div>
 </article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/express/">Express Overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-03-30>2020-03-30</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
+                        <i class="far fa-folder fa-fw"></i>Overview
+                    </a></span></div><div class="content">Express.js is a web framework for Node.js
+Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   </div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/express/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/express">express</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/gh-pages/">How to demonstrate your front end application on Github by gh-page</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-03-29>2020-03-29</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
+                        <i class="far fa-folder fa-fw"></i>Posts
+                    </a></span></div><div class="content">Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
+gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
+Read more detail in repository command line usage This package also provide a command line tool:</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/gh-pages/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/github">github</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/gh-page">gh-page</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/npm">npm</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/css/">CSS Overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-03-17>2020-03-17</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
+                        <i class="far fa-folder fa-fw"></i>Overview
+                    </a></span></div><div class="content">Font font-size size
+font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;; font-family: Lobster monospace;
+GENERIC_NAME: sans-serif serif monospace;
+sans-serif force on connected and serif force on single alphabet.
+line-height: 25px;
+Import font Could use google font and add link into index.html
+Control space There are three important properties to control the space: padding, margin and border
+Border border-size
+border-color
+border-width
+border-style
+padding Padding control the amount of space between the element&rsquo;s content and its border;</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/css/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/css">css</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/">Basic Terminal command</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-03-16>2020-03-16</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/terminal">
+                        <i class="far fa-folder fa-fw"></i>Terminal
+                    </a></span></div><div class="content">Basic cd route
+ls list
+pwd show current path
+cat concatenate and print file (usually as read file)
+touch change file access and modification time; (usually as create file)
+Routing cd &lt;directory&gt;
+cd . current
+cd .. last
+cd ~ home
+cd / root
+List ls
+ls -a list all included hiding file
+ls -l list detail
+Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
+mv &lt;name1&gt; &lt;name2&gt; rename
+ move one file within this directory to another name.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal">terminal</a></div></div>
+</article>
 <ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>
@@ -199,7 +276,7 @@ Reference from MDN Draw on canvas Get start Jquery to get canvas. ctx mean canva
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/11/">11</a>
+                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/7/">7</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
@@ -224,8 +301,8 @@ Reference from MDN Draw on canvas Get start Jquery to get canvas. ctx mean canva
             });
         });
     </script><script>
-        window.typeitArr = [["id-14ec76"]];
+        window.typeitArr = [["id-6af3fb"]];
     </script><script>
-        window.contentMap = {"id-14ec76":"Stay Home \u0026 Be safe!"};
+        window.contentMap = {"id-6af3fb":"Stay Home \u0026 Be safe!"};
     </script><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/typeit/typeit.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

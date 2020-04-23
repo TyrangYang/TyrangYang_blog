@@ -44,7 +44,7 @@ A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');

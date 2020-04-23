@@ -25,7 +25,7 @@
 <link rel="mask-icon" href="https://tyrangyang.github.io/TyrangYang_blog/safari-pinned-tab.svg" color="#5bbad5"><link rel="alternate" href="https://tyrangyang.github.io/TyrangYang_blog/tags/leetcode/index.xml" type="application/rss+xml" title="TyrangYang_Blog">
     <link rel="feed" href="https://tyrangyang.github.io/TyrangYang_blog/tags/leetcode/index.xml" type="application/rss+xml" title="TyrangYang_Blog"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');

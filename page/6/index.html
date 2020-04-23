@@ -35,7 +35,7 @@
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');
@@ -79,101 +79,155 @@
         data-src=""
         alt="avatar"
         title="Home" /></a>
-        </div><h2 class="home-description"><div id="id-f2cf1e" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
+        </div><h2 class="home-description"><div id="id-faf1a8" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
 <a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a>
 <a href="mailto:haolinyang95@gamil.com" title="Email" rel="noopener noreffer me"><i class="far fa-envelope fa-fw"></i></a>
 </div>
 </div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/">Concurrent Programming Course note 5</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/allocator/">Allocator in c&#43;&#43;</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-10-31>2019-10-31</time>
+            published on&nbsp;<time datetime=2019-07-21>2019-07-21</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming">
-                        <i class="far fa-folder fa-fw"></i>Concurrent programming
-                    </a></span></div><div class="content">Message passing 1 2 3 4 5 6 7  echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop  stop -&gt; true %^pattern^ ^a return value and stop receiving  end.   </div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent">concurrent</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">Allocator is for memory 配置内存空间 -&gt; 构建(constructor) -&gt; 解构(destructor) -&gt; 释放内存空间
+construct() and destroy() 用于建构和解构
+Memory allocate and release 双层配置器。第一级是区块大于 128 bytes 的，使用 malloc()和 free()。第二级是区块小于 128 bytes 的，使用 memory pool 和 freelist。
+第一級配置器 第一級配置器以 malloc(), free(), realloc() 等 C 函式執行實際的記憶體配置、釋放、重配置動作，並實作出類似 C++ new-handler7 機制。是的，它不能直接運用 C++ new-handler 機制，因為它並非使用 ::operator new 來配置記 憶體。
+所謂 C++ new handler 機制是，你可以要求系統在記憶體配置需求無法被滿足時， 喚起一個你所指定的函式。換句話說一旦 ::operator new 無法達成任務，在丟出 std::bad_alloc 異常狀態之前，會先呼叫由客端指定的處理常式。此處理常式 通常即被稱為 new-handler。new-handler 解決記憶體不足的作法有特定的模式。
+注意，SGI 以 malloc 而非 ::operator new 來配置記憶體(我所能夠想像的一 個原因是歷史因素，另一個原因是 C++ 並未提供相應於 realloc() 的記憶體配 置動作)，因此 SGI 不能直接使用 C++ 的 set_new_handler()，必須模擬一個 類似的 set_malloc_handler()。</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/allocator/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl">STL</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/">Why Can’t I Open My React App By Clicking Index.html?</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/functor/">Functor in C&#43;&#43;</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-10-28>2019-10-28</time>
+            published on&nbsp;<time datetime=2019-07-20>2019-07-20</time>
         </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">The app should Run when you open up your index.html file The conclusion is add &quot;homepage&quot;:&quot;.&quot;, in package.json.
-medium.com/@louis.raymond Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
-Click: Different between them </div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/react">react</a></div></div>
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">Basically, Functor have same functionality with interface in java.
+Think about this code. You want count all string whose length is less than 5.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  #include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;string&gt;using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia+5); int res = count_if(iv.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/functor/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl">STL</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/redis/">Redis overview</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/language-comparison-common-method/">Common method comparison - c&#43;&#43; &amp; java</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-10-15>2019-10-15</time>
+            published on&nbsp;<time datetime=2019-07-12>2019-07-12</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/language-comparison">
+                        <i class="far fa-folder fa-fw"></i>Language comparison
+                    </a></span></div><div class="content">Sort C++ For c++, here is official document sort() This method sorts elements in the range [first, last).
+Result is in ascending order by deflaut.
+Introsort.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  // sort algorithm example #include &lt;iostream&gt; // std::cout#include &lt;algorithm&gt; // std::sort#include &lt;vector&gt; // std::vector bool myfunction (int i,int j) { return (i&gt;j); } int main () { int myints[] = {32,71,12,45,26,80,53,33}; std::vector&lt;int&gt; myvector (myints, myints+8); // 32 71 12 45 26 80 53 33  // using default comparison (operator &lt;):  std::sort (myvector.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/language-comparison-common-method/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/language-comparison-containor/">Container comparison - c&#43;&#43; &amp; java</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-11>2019-07-11</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/language-comparison">
+                        <i class="far fa-folder fa-fw"></i>Language comparison
+                    </a></span></div><div class="content">Container comparison C++ version is c++11. Java version is java se8.
+   C++ JAVA Description     array / [ ] [ ] 固定大小的数组   vector ArrayList 可变长度的数组    Vector 可变长度的数组，支持同步操作，效率比 ArrayList 略差   list LinkedList 双链表，便于增删   forward_list  单链表，c++没有给他提供 size()的方法   deque ArrayDeque 双向队列   stack Stack 栈，先进后出   queue Queue 队，先进先出   priority_queue PriorityQueue 支持优先级的队列   set TreeSet 集合，数据有序，红黑树   unordered_set HashSet 集合，数据无序，hash   map TreeMap key-value 映射，key 有序，红黑树   unordered_map HashMap map, 无序，hash   multiset  集合，允许重复元素   multimap  map，允许重复的 key   unordered_multiset  无序允许重复元素集合   unordered_multimap  无序允许重复 key 的 map    LinkedHashSet 按照插入顺序，支持 hash 查找    LinkedHashMap 按照插入顺序，支持 hash 查找    HashTable 类似 HashMap，效率略低   bitset BitSet 位操作    HashTable &amp; HashMap The HashMap class is roughly equivalent to Hashtable, except that it is asynchronized and permits nulls.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/language-comparison-containor/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/container">container</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-array/">Review java - Array</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-10>2019-07-10</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/java">
+                        <i class="far fa-folder fa-fw"></i>Java
+                    </a></span></div><div class="content">Declaring an array Both are allow
+1 2  string argc[]; string[] argc;   Int array 1 2  int[] nums = new int[7]; nums[0] = 10;   1 2  Rabbit[] racers = new Rabbit[10];//10 empty rabbit array; racers[0] = new Rabbit(&#34;B&#34;,&#34;F&#34;);   arraycopy() 1  System.arraycopy(nums, 0, nums, 0, nums.length);   Array vs ArrayList  An array needs to know its size at the time of creation, arrayList does not.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-array/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/review">review</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/">Review java - javadoc</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-09>2019-07-09</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/java">
+                        <i class="far fa-folder fa-fw"></i>Java
+                    </a></span></div><div class="content">JavaDocs JavaDocs is able to easily generate a code &ldquo;maintenance manual&rdquo;
+A doc comment is made up of two parts &ndash; a description and two or more tag.
+1 2 3 4 5  /** * Here is description * * @tag Comment for tag */   Tags  @author (classes and interfaces only, required) @version (classes and interfaces only, required) @param (methods and constructors only) @return (methods only) @exception @see @since @serial (or @serialField or @serialData) @deprecated  JDK Docs External documentation can be created with javadoc</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/review">review</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/">Review java - OO</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-05>2019-07-05</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/java">
+                        <i class="far fa-folder fa-fw"></i>Java
+                    </a></span></div><div class="content">Class &amp; Object A class only exists at compile time;
+An object only exists at runtime.
+Data Encapsulation Data Encapsulation/information hiding: where the internal state and operation are hidden from others.
+The more information Class A knows about Class B, the greater the possibility that changing Class A will adversely affect Class B. In an ideal world, making internal changes to Class A should have no, or very little, effect on other classes.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/review">review</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/">Review java - Variable</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-07-01>2019-07-01</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/java">
+                        <i class="far fa-folder fa-fw"></i>Java
+                    </a></span></div><div class="content">Basic types Every type have a default value:
+   Type Representation Initial value Storage Max. value     byte singed integer 0 8 bits 127   short singed integer 0 16 bits 32767   int singed integer 0 32 bits 2147483647   long singed integer 0 64 bits over 10^18   float floating point 0.0 32 bits over 10^38   double floating point 0.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/review">review</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java">java</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/">Git overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2019-06-17>2019-06-17</time>
         </span>&nbsp;
             <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
                         <i class="far fa-folder fa-fw"></i>Overview
-                    </a></span></div><div class="content">Installation For mac
-1  sudo brew install redis-server   open redis server
-1  redis-server   test is work or not
-1  redis-cli ping   basic command 1 2 3  ECHO &#39;hello word QUIT   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144  SET foo 100 GET foo // 100 SET bar &#39;hello world&#39; GET bar // hello world INCR foo // 101 DECR foo // 100 EXISTS foo // 1 EXISTS foo1 // 0 DEL bar EXISTS bar // 0 GET bar //(nir) FLUSHALL // all empty SET server:name someserver GET server:name // &#34;someserver&#34; SET server:port 8000 GET server:port SET greeting &#34;Hello world&#34; GET greeting EXPIRE greeting 50 // set expirations to 50 second TTL greeting SETEX greeting 30 &#34;hello world&#34; // set value and expiration PERSIST greeting // key will not expire TTL greeting // -1 MSET key1 &#34;hello&#34; key2 &#34;world&#34; APPEND key1 &#34; world&#34; RENAME key1 greeting LPUSH people &#34;Brad&#34; // 1 LPUSH people &#34;Jen&#34; // 2 LPUSH people &#34;Tom&#34; // 3 LRANGE people 0 -1 // return all // Tom Jen Brad LRANGE people 1 2 // Jen Brad RPUSH people &#34;Harry&#34; LRANGE people 0 -1 // Tom Jen Brad Harry LLEN people // 4 RPOP people // Harry LPOP people LINSERT people BEFORE &#34;Brad&#34; &#34;TOM&#34; LRANGE people 0 -1 // Jen Tom Brad SADD cars &#34;Ford&#34; SADD cars &#34;Honda&#34; SADD cars &#34;BMW&#34; SISMEMBER cars &#34;Ford&#34; // 1 SISMEMBER cars &#34;Chevy&#34; // 0 SMEMBER cars // Honda BMW Ford SCARD cars // 3 SMOVE cars mycars &#34;Ford&#34; SMEMBER cars // Honda BMW SMEMBER mycars // Ford SRAM cars &#34;BMW&#34; SMEMBER cars // Honda ZADD users 1980 &#34;Brad&#34; ZADD users 1975 &#34;Jen&#34; ZADD users 1990 &#34;Mike&#34; ZADD users 1990 &#34;Kate&#34; ZRANK users &#34;Mike&#34; // 3 ZRANK users &#34;Jen&#34; // 0 ZRANK users &#34;Brad&#34; // 1 ZRANGE users 0 -1 // Jen Brad Kate Mike ZINCRBY users 1 &#34;Jen&#34; // 1976 HSET user:brad name &#34;Brad&#34; HSET user:brad email &#34;brad@gmail.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/redis/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/redis">redis</a></div></div>
+                    </a></span></div><div class="content">Here have some good pictures that is helpful for understanding git and contain the record for git commend
+Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
+This photo is provide by osteele</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/git">git</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/cool-website/">Some cool websites</a>
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/">MarkDown overview</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
 </span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-10-12>2019-10-12</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note">
-                        <i class="far fa-folder fa-fw"></i>Note
-                    </a></span></div><div class="content">Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
-https://sourabhbajaj.com/mac-setup/ shapeCatcher Draw a character and find the ASCII code
-http://shapecatcher.com/index.html draw.io Draw diagram online
-https://www.draw.io regular expression Good online tool to test and learn regular expression
-https://regexr.com 100 front end component design 100 react component design challenge
-https://www.florin-pop.com/blog/2019/09/100-days-100-projects/ bootswatch Several bootstrap scheme.
-https://bootswatch.com shields.io Get or create Readme badge</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/cool-website/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/website">website</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/react/">React overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-10-03>2019-10-03</time>
+            published on&nbsp;<time datetime=2019-06-16>2019-06-16</time>
         </span>&nbsp;
             <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
                         <i class="far fa-folder fa-fw"></i>Overview
-                    </a></span></div><div class="content">init react Commend
-1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
-Structure package.json react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
-public/index.html signal page application which is index.html
-Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;
-src/index.js Entry point for react
-src/App.js All the component.
-Inside the class, the render() method is called life cycle method and to render the page.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/react/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/react">react</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/">Concurrent Programming Course note 4</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2019-09-25>2019-09-25</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming">
-                        <i class="far fa-folder fa-fw"></i>Concurrent programming
-                    </a></span></div><div class="content">Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while  empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while  full.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent">concurrent</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note">course note</a></div></div>
+                    </a></span></div><div class="content">This is learning note for MarkDown
+Heading 1 or
+Heading 1 Heading 2 or
+Heading 2 Italic and bold italic or italic bold or bold italic and bold or italic and bold
+Unordered list  line 1 line 2 line 3  sub 1 sub 2    or
+ line 1 line 2 line 3  sub 1 sub 2    Ordered list  line 1 line 2  sub 1 sub 2   line 3  BlockQuotes Use &lsquo;&gt;&rsquo; for a quotes</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/">Read More</a></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
@@ -196,16 +250,6 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
                 </li><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/page/7/">7</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/8/">8</a>
-                    </span>
-                </li><li class="page-item ">
-                    <span class="page-link" aria-hidden="true">&hellip;</span>
-                </li><li class="page-item ">
-                    <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/11/">11</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
@@ -230,8 +274,8 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
             });
         });
     </script><script>
-        window.typeitArr = [["id-f2cf1e"]];
+        window.typeitArr = [["id-faf1a8"]];
     </script><script>
-        window.contentMap = {"id-f2cf1e":"Stay Home \u0026 Be safe!"};
+        window.contentMap = {"id-faf1a8":"Stay Home \u0026 Be safe!"};
     </script><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/typeit/typeit.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

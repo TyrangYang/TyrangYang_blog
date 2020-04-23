@@ -35,7 +35,7 @@
     }
     </script></head>
     <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = 'light' === 'dark';} else {
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
                 window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
             }
             window.isDark && document.body.classList.add('dark-theme');
@@ -79,88 +79,11 @@
         data-src=""
         alt="avatar"
         title="Home" /></a>
-        </div><h2 class="home-description"><div id="id-ffda87" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
+        </div><h2 class="home-description"><div id="id-daee00" class="typeit"></div></h2><div class="home-social-links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a>
 <a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a>
 <a href="mailto:haolinyang95@gamil.com" title="Email" rel="noopener noreffer me"><i class="far fa-envelope fa-fw"></i></a>
 </div>
 </div>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/express/">Express Overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2020-03-30>2020-03-30</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
-                        <i class="far fa-folder fa-fw"></i>Overview
-                    </a></span></div><div class="content">Express.js is a web framework for Node.js
-Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   </div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/express/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web">web</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/express">express</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/gh-pages/">How to demonstrate your front end application on Github by gh-page</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2020-03-29>2020-03-29</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts">
-                        <i class="far fa-folder fa-fw"></i>Posts
-                    </a></span></div><div class="content">Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
-gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
-Read more detail in repository command line usage This package also provide a command line tool:</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/gh-pages/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/github">github</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/gh-page">gh-page</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/npm">npm</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/css/">CSS Overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2020-03-17>2020-03-17</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
-                        <i class="far fa-folder fa-fw"></i>Overview
-                    </a></span></div><div class="content">Font font-size size
-font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;; font-family: Lobster monospace;
-GENERIC_NAME: sans-serif serif monospace;
-sans-serif force on connected and serif force on single alphabet.
-line-height: 25px;
-Import font Could use google font and add link into index.html
-Control space There are three important properties to control the space: padding, margin and border
-Border border-size
-border-color
-border-width
-border-style
-padding Padding control the amount of space between the element&rsquo;s content and its border;</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/css/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/css">css</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/">Basic Terminal command</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;<span class="post-publish">
-            published on&nbsp;<time datetime=2020-03-16>2020-03-16</time>
-        </span>&nbsp;
-            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/terminal">
-                        <i class="far fa-folder fa-fw"></i>Terminal
-                    </a></span></div><div class="content">Basic cd route
-ls list
-pwd show current path
-cat concatenate and print file (usually as read file)
-touch change file access and modification time; (usually as create file)
-Routing cd &lt;directory&gt;
-cd . current
-cd .. last
-cd ~ home
-cd / root
-List ls
-ls -a list all included hiding file
-ls -l list detail
-Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
-mv &lt;name1&gt; &lt;name2&gt; rename
- move one file within this directory to another name.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal">terminal</a></div></div>
-</article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/">How to check the Chinese ID is correct</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
@@ -188,6 +111,123 @@ Bind array 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  int main(int argc, c
         <a href="https://tyrangyang.github.io/TyrangYang_blog/structured-binding/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a></div></div>
 </article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/">Traverse a tree</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-02-10>2020-02-10</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note">
+                        <i class="far fa-folder fa-fw"></i>Note
+                    </a></span></div><div class="content">Idea to traverse a tree
+Tree structure The tree structure:
+1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
+Iterative Loop for BFS:
+1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree">Traverse a tree</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/next-permutation/">How to find next permutation</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-02-05>2020-02-05</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note">
+                        <i class="far fa-folder fa-fw"></i>S t l study note
+                    </a></span></div><div class="content">This is introduce how to find the next lexicographically permutation.
+Suppose the permutation is 1 2 3. The next one is 1 3 2.
+Algorithm in C++ C++ provide an algorithm called next_permutation to support that. Reference Example:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  #include &lt;iostream&gt; // std::cout#include &lt;algorithm&gt; // std::next_permutation, std::sort int main () { int myints[] = {1,2,3}; std::sort (myints,myints+3); std::cout &lt;&lt; &#34;The 3!</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/next-permutation/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm">algorithm</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/permutation">permutation</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/leetcode-idea/">Learn from leetCode</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-01-31>2020-01-31</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/leetcode">
+                        <i class="far fa-folder fa-fw"></i>Leet code
+                    </a></span></div><div class="content">Some strategy learning from leetCode
+C++ 2d array Better use a vector(don&rsquo;t need to consider allocator)
+1 2 3 4  int row = 10; int col = 10; int init = 1; vector&lt;vector &lt;int&gt;&gt; memos(row, vector&lt;int&gt;(col, init)) // init can ignore   1 2 3 4 5  int** a = new int*[rowCount]; for(int i = 0; i &lt; rowCount; ++i) a[i] = new int[colCount]; delete ...   Traverse a tree The tree structure:</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/leetcode-idea/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/leetcode">leetCode</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/">Lambda in C&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-01-26>2020-01-26</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/c&#43;&#43;">
+                        <i class="far fa-folder fa-fw"></i>C&#43;&#43;
+                    </a></span></div><div class="content">Introduction of Lambda expression in C++ and how to use it.
+What is Lambda in C++ Lambda expression is a new feature since c++11. It is used to create anonymous function object to simplify programming process.
+How Lambda expressions are composed [capture](parameters) mutable -&gt; return type {statement}
+1 2 3 4  // ... #include &lt;functional&gt;// ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a+b;};   capture Capture variables from context.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/lambda">lambda</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;">c&#43;&#43;</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/crontab/">Crontab overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-01-23>2020-01-23</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/terminal">
+                        <i class="far fa-folder fa-fw"></i>Terminal
+                    </a></span></div><div class="content">What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
+Basic command crontab [-u user] {-l | -e | -r}
+   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/crontab/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal">terminal</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/crontab">crontab</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/">DFS &amp; BFS</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-01-14>2020-01-14</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr">
+                        <i class="far fa-folder fa-fw"></i>Alg&amp; data str
+                    </a></span></div><div class="content">DFS &amp; BFS are two basic algorithms to traverse a graph(or a tree). DFS is Deep-first search and BFS is Breath-first search.
+Basic idea The idea behind two algorithms are identical but use different auxiliary data structure. DFS use stack and BFS use Queue.
+First, Every node have a mark to identify is already be visited or not(it could be a list or an attribute in node).
+Second, Push the start point into the auxiliary data structure and loop until structure is empty.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm">algorithm</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/">Miller Rabin Algorithm</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-01-13>2020-01-13</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr">
+                        <i class="far fa-folder fa-fw"></i>Alg&amp; data str
+                    </a></span></div><div class="content">What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/algorithm">algorithm</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/data-structure">data structure</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/">Makefile overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
+</span>&nbsp;<span class="post-publish">
+            published on&nbsp;<time datetime=2020-01-12>2020-01-12</time>
+        </span>&nbsp;
+            <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
+                        <i class="far fa-folder fa-fw"></i>Overview
+                    </a></span></div><div class="content">What is makefile. How to write a makefile.
+Ref: https://opensource.com/article/18/8/what-how-makefile What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
+You may have used make to compile a program from source code.
+How to write makefile To summarize, below is the syntax of a typical rule:
+1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/makefile">makefile</a></div></div>
+</article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>
@@ -208,7 +248,7 @@ Bind array 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  int main(int argc, c
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/11/">11</a>
+                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/7/">7</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
@@ -233,8 +273,8 @@ Bind array 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  int main(int argc, c
             });
         });
     </script><script>
-        window.typeitArr = [["id-ffda87"]];
+        window.typeitArr = [["id-daee00"]];
     </script><script>
-        window.contentMap = {"id-ffda87":"Stay Home \u0026 Be safe!"};
+        window.contentMap = {"id-daee00":"Stay Home \u0026 Be safe!"};
     </script><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/typeit/typeit.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>
