@@ -2,8 +2,8 @@
 title: Heroku overview
 date: 2020-04-15
 author: Haolin Yang
-categories: ["Heroku"]
-tag:
+categories: ['Heroku']
+tags:
     - heroku
     - dev
     - deploy

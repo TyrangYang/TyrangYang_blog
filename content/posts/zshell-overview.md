@@ -2,8 +2,8 @@
 title: Z-shell overview
 date: 2019-12-12
 author: Haolin Yang
-categories: ["Terminal"]
-tag:
+categories: ['Terminal']
+tags:
     - zsh
     - bash
 ---

@@ -2,8 +2,8 @@
 title: VSCode shortCut
 date: 2019-11-01
 author: Haolin Yang
-Categories: ["Posts"]
-tag:
+Categories: ['Posts']
+tags:
     - vscode
     - shortcut
 ---

@@ -2,8 +2,8 @@
 title: Redis overview
 date: 2019-10-15
 author: Haolin Yang
-categories: ["Overview"]
-tag:
+categories: ['Overview']
+tags:
     - web
     - redis
 ---

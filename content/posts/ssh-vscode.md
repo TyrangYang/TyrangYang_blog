@@ -2,8 +2,8 @@
 title: SSH in Vscode
 date: 2019-12-13
 author: Haolin Yang
-categories: ["SSH"]
-tag:
+categories: ['SSH']
+tags:
     - ssh
     - vscode
 ---

@@ -1,0 +1,24 @@
+{
+    "name": "tyrangyang_blog",
+    "version": "1.0.0",
+    "description": "THis is my personal blog supported by [hugo](https://gohugo.io/) and Themes is provided by [loveIt](https://github.com/dillonzq/LoveIt)",
+    "main": "deploy.js",
+    "scripts": {
+        "predeploy": "hugo",
+        "deploy": "gh-pages -d public",
+        "clean": "rm -rf node_modules && rm package-lock.json && rm -rf public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TyrangYang/TyrangYang_blog.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/TyrangYang/TyrangYang_blog/issues"
+    },
+    "homepage": "https://github.com/TyrangYang/TyrangYang_blog#readme",
+    "devDependencies": {
+        "gh-pages": "^2.2.0"
+    }
+}

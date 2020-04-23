@@ -2,8 +2,8 @@
 title: Structured binding
 date: 2020-03-01
 author: Haolin Yang
-categories: ["C++"]
-tag:
+categories: ['C++']
+tags:
     - c++
 ---
 

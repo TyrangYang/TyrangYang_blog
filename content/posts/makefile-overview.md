@@ -2,8 +2,8 @@
 title: Makefile overview
 date: 2020-01-12
 author: Haolin Yang
-categories: ["Overview"]
-tag:
+categories: ['Overview']
+tags:
     - makefile
 ---
 

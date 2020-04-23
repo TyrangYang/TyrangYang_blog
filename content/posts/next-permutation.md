@@ -2,8 +2,8 @@
 title: How to find next permutation
 date: 2020-02-05
 author: Haolin Yang
-categories: ["STL-study-note"]
-tag:
+categories: ['STL-study-note']
+tags:
     - c++
     - algorithm
     - permutation

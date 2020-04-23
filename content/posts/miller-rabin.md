@@ -2,8 +2,8 @@
 title: Miller Rabin Algorithm
 date: 2020-01-13
 author: Haolin Yang
-categories: ["Alg&DataStr"]
-tag:
+categories: ['Alg&DataStr']
+tags:
     - algorithm
     - data structure
 ---

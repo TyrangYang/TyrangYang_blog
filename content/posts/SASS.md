@@ -2,8 +2,8 @@
 title: SASS (SCSS) features
 date: 2019-09-18
 author: Haolin Yang
-categories: ["Note"]
-tag:
+categories: ['Note']
+tags:
     - css
     - course note
 toc: true

@@ -2,8 +2,8 @@
 title: Lambda in C++
 date: 2020-01-26
 author: Haolin Yang
-categories: ["C++"]
-tag:
+categories: ['C++']
+tags:
     - lambda
     - c++
 ---

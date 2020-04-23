@@ -2,8 +2,8 @@
 title: How to have a dynamic class name
 date: 2019-11-15
 author: Haolin Yang
-categories: ["Posts"]
-tag:
+categories: ['Posts']
+tags:
     - html
     - javascript
     - react
