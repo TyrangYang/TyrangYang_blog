@@ -6,7 +6,7 @@ This check method will help you find out whether one digit is wrong or 2 adjacen
 ## Sample code
 
 ```js
-checkChineseId = id => {
+checkChineseId = (id) => {
     const ID_LENGTH = 18;
     // check type
     if (typeof id !== 'string') {
@@ -66,7 +66,7 @@ checkChineseId = id => {
 };
 
 module.exports = {
-    checkChineseId
+    checkChineseId,
 };
 ```
 

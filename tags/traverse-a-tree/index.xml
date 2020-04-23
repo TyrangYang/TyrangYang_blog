@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Traverse a tree on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/</link>
+    <description>Recent content in Traverse a tree on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Traverse a tree</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid>
+      <description>Idea to traverse a tree
+Tree structure The tree structure:
+1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
+Iterative Loop for BFS:
+1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&amp;lt;TreeNode *&amp;gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.</description>
+    </item>
+    
+  </channel>
+</rss>

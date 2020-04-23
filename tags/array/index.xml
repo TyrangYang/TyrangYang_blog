@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>array on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/array/</link>
+    <description>Recent content in array on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/array/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>All array method in Nodejs</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
+      <description>All methods  foreach  map  filter  reduce  slice  splice  sort  concat  fill  include  join  reverse  push  pop  unshift  shift  indexOf &amp;amp; lastIndexOf  every  some  find  findIndex  from  isArray  flat     All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.</description>
+    </item>
+    
+  </channel>
+</rss>

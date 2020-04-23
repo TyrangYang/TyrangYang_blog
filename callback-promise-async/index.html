@@ -36,7 +36,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/"
-        },"genre": "posts","wordcount":  883 ,
+        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  883 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/","datePublished": "2019-11-17","dateModified": "2019-11-17","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
@@ -53,7 +53,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
         <div class="header-title">
             <a href="https://tyrangyang.github.io/TyrangYang_blog/">TyrangYang_Blog</a>
         </div>
-        <div class="menu"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+        <div class="menu"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="noopener noreffer"><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" rel="noopener noreffer"><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" rel="noopener noreffer"><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><span class="menu-item">|</span>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
@@ -68,7 +68,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title="" rel="noopener noreffer"><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title="" rel="noopener noreffer"><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title="" rel="noopener noreffer"><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -278,7 +278,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
 
 <span class="nx">getData</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">printData</span><span class="p">)</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>resolve will get val and passing to the next step which then() and reject is for handle error which catch by catch().</p>
@@ -306,7 +306,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
     <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">val</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
 <span class="c1">// [ &#39;First&#39;, &#39;Second&#39;, &#39;Goodbye&#39; ] (after one second)
 </span></code></pre></td></tr></table>
 </div>
@@ -433,7 +433,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
     </div>
 
     <div class="post-info-more">
-        <section></section>
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a></section>
         <section>
             <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssh on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/ssh/</link>
+    <description>Recent content in ssh on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSH Overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link>
+      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid>
+      <description>ssh-keygen ssh-keygen
+-b specific the number of bits(1024 2048 4069)
+-m specific type
+-y get public key
+-f specific file name
+public key public key should give to server. Usually put in file ~/.ssh/authorized_key
+access via SSH ssh &amp;lt;username&amp;gt;@&amp;lt;hostname | ip address&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>SSH in Vscode</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</guid>
+      <description>Extension Reference https://letswp.io/remote-development-visual-studio-code-amazon-ec2/</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -119,7 +119,7 @@ function getData() {
 
 getData()
     .then(printData)
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 ```
 
 resolve will get val and passing to the next step which then() and reject is for handle error which catch by catch().
@@ -137,7 +137,7 @@ let promise3 = new Promise((resolve, reject) => {
     }, 1000);
 });
 
-Promise.all([promise1, promise2, promise3]).then(val => console.log(val));
+Promise.all([promise1, promise2, promise3]).then((val) => console.log(val));
 // [ 'First', 'Second', 'Goodbye' ] (after one second)
 ```
 

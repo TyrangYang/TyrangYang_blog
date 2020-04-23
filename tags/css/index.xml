@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/css/</link>
+    <description>Recent content in css on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Canvas in html5</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
+      <description>Canvas is a new feature since html5 that allows you draw something on your web page
+Reference from MDN Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
+1 2  const canvas = document.getElementById(&amp;#39;canvas&amp;#39;); const ctx = canvas.getContext(&amp;#39;2d&amp;#39;);   fill &amp;amp; stroke rectangle 1 2 3 4 5 6 7 8  // fillRect() ctx.fillStyle = &amp;#39;red&amp;#39;; ctx.fillRect(20, 20, 150, 100); // up left point and weight and height  // strokeRect() ctx.</description>
+    </item>
+    
+    <item>
+      <title>CSS Overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid>
+      <description>Font font-size size
+font-family: &amp;lt;FAMILY_NAME&amp;gt;, &amp;lt;GENERIC_NAME&amp;gt;; font-family: Lobster monospace;
+GENERIC_NAME: sans-serif serif monospace;
+sans-serif force on connected and serif force on single alphabet.
+line-height: 25px;
+Import font Could use google font and add link into index.html
+Control space There are three important properties to control the space: padding, margin and border
+Border border-size
+border-color
+border-width
+border-style
+padding Padding control the amount of space between the element&amp;rsquo;s content and its border;</description>
+    </item>
+    
+    <item>
+      <title>SASS (SCSS) features</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
+      <description>SCSS features  Variables  Operator  String interpolation  Nesting  The parent selector  Imports  Nested Media Queries  General control  Mixins  Functions  Extending  Placeholders     SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .</description>
+    </item>
+    
+  </channel>
+</rss>

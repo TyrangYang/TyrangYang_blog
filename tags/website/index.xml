@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>website on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/website/</link>
+    <description>Recent content in website on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Some cool websites</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/cool-website/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website/</guid>
+      <description>Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
+https://sourabhbajaj.com/mac-setup/ shapeCatcher Draw a character and find the ASCII code
+http://shapecatcher.com/index.html draw.io Draw diagram online
+https://www.draw.io regular expression Good online tool to test and learn regular expression
+https://regexr.com 100 front end component design 100 react component design challenge
+https://www.florin-pop.com/blog/2019/09/100-days-100-projects/ bootswatch Several bootstrap scheme.
+https://bootswatch.com shields.io Get or create Readme badge</description>
+    </item>
+    
+  </channel>
+</rss>

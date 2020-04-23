@@ -6,10 +6,45 @@
     <description>Recent content in c&#43;&#43; on TyrangYang_Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Structured binding</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</guid>
+      <description>Structured binding is a new feature since c++17
+cppreference.com auto [ identifier-list ] = expression
+Bind array 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  int main(int argc, char const *argv[]) { int test[3] = {1, 2, 3}; auto [a, b, c] = test; // an new array e copy from test and a = e[0]; b = e[1]; c = e[2]; 	auto &amp;amp;[x, y, z] = test; // x = test[0]; x = test[1]; x = test[2]  cout &amp;lt;&amp;lt; ++a &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++b &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++c &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; endl; for (int &amp;amp;i : test) cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;#34; &amp;#34;; cout &amp;lt;&amp;lt; endl; cout &amp;lt;&amp;lt; ++x &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++y &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++z &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; endl; for (int &amp;amp;i : test) cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;#34; &amp;#34;; cout &amp;lt;&amp;lt; endl; return 0; }   tuple 1 2 3 4 5 6 7 8 9 10 11 12  int main(int argc, char const *argv[]) { tuple&amp;lt;int, int, int&amp;gt; test(1, 2, 3); auto &amp;amp;[a, b, c] = test; // 1 2 3  pair&amp;lt;int, char&amp;gt; test2(1, &amp;#39;c&amp;#39;); auto &amp;amp;[a2, b2] = test2; // 1 c  return 0; }   struct 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  struct test { int a; int b; }; int main(int argc, char const *argv[]) { test one; one.</description>
+    </item>
+    
+    <item>
+      <title>How to find next permutation</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</guid>
+      <description>This is introduce how to find the next lexicographically permutation.
+Suppose the permutation is 1 2 3. The next one is 1 3 2.
+Algorithm in C++ C++ provide an algorithm called next_permutation to support that. Reference Example:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  #include &amp;lt;iostream&amp;gt; // std::cout#include &amp;lt;algorithm&amp;gt; // std::next_permutation, std::sort int main () { int myints[] = {1,2,3}; std::sort (myints,myints+3); std::cout &amp;lt;&amp;lt; &amp;#34;The 3!</description>
+    </item>
+    
+    <item>
+      <title>Lambda in C&#43;&#43;</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</guid>
+      <description>Introduction of Lambda expression in C++ and how to use it.
+What is Lambda in C++ Lambda expression is a new feature since c++11. It is used to create anonymous function object to simplify programming process.
+How Lambda expressions are composed [capture](parameters) mutable -&amp;gt; return type {statement}
+1 2 3 4  // ... #include &amp;lt;functional&amp;gt;// ... std:function&amp;lt;int(int, int)&amp;gt; add = [](int a, int b) -&amp;gt; int {return a+b;};   capture Capture variables from context.</description>
+    </item>
     
     <item>
       <title>All algorithm in C&#43;&#43;</title>

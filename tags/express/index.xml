@@ -6,10 +6,20 @@
     <description>Recent content in express on TyrangYang_Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/express/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Express Overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
+      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
+      <description>Express.js is a web framework for Node.js
+Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&amp;#39;express&amp;#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&amp;#39;/&amp;#39;, (req, res) =&amp;gt; { return res.send({hello:&amp;#34;world&amp;#34;}); }) const PORT = 4000; app.listen(PORT, ()=&amp;gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   </description>
+    </item>
     
     <item>
       <title>Web development review</title>

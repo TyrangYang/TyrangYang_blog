@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/linux/</link>
+    <description>Recent content in linux on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>chmod Overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
+      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
+      <description>chmod is linux command to control file permission
+usage chmod [u|g|o|a][=|+|-] [r|w|x] 
+u =&amp;gt; user
+g =&amp;gt; group
+o =&amp;gt; other
+a =&amp;gt; all
+r =&amp;gt; read
+w =&amp;gt; write
+x =&amp;gt; execute
+example chmod +wr test.txt give write and read permission for user
+chmod -r test.txt remove read permission for user
+chmod g=wrx test.txt give write, read and execute permission for group
+use number specific the bits 011101110111 =&amp;gt; -rwx-rwx-rwx</description>
+    </item>
+    
+  </channel>
+</rss>

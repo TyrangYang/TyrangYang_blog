@@ -29,7 +29,7 @@ Read more detail in repository command line usage This package also provide a co
       
       <guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid>
       <description>This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.
-Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62  checkChineseId = id =&amp;gt; { const ID_LENGTH = 18; // check type  if (typeof id !</description>
+Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62  checkChineseId = (id) =&amp;gt; { const ID_LENGTH = 18; // check type  if (typeof id !</description>
     </item>
     
     <item>
@@ -111,22 +111,6 @@ YouTube Channel YouTube Github  </description>
       <description>The app should Run when you open up your index.html file The conclusion is add &amp;quot;homepage&amp;quot;:&amp;quot;.&amp;quot;, in package.json.
 medium.com/@louis.raymond Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
 Click: Different between them </description>
-    </item>
-    
-    <item>
-      <title>Learning Jekyll</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/first-learning-post/</link>
-      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/first-learning-post/</guid>
-      <description>This is learning note for Jekyll
-Folder  _posts   Store all the blog post
-The naming convention is like 2019-01-01-this-is-the-name.md(.html)
-  _site   Store all the static file for your page
-  _config.yml   The setting for your jekyll website
-  Gemfile   Use with Ruby and contain all the dependency
-  index.md   Main page
- Commend for Jekyll Initialize the bundle:</description>
     </item>
     
     <item>

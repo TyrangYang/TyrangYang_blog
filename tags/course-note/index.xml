@@ -31,6 +31,15 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
     </item>
     
     <item>
+      <title>SASS (SCSS) features</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
+      <description>SCSS features  Variables  Operator  String interpolation  Nesting  The parent selector  Imports  Nested Media Queries  General control  Mixins  Functions  Extending  Placeholders     SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .</description>
+    </item>
+    
+    <item>
       <title>Concurrent Programming Course note 3</title>
       <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</link>
       <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>

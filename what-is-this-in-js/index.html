@@ -34,7 +34,7 @@ reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/what-is-this-in-js\/"
-        },"genre": "posts","wordcount":  283 ,
+        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  284 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/what-is-this-in-js\/","datePublished": "2019-11-17","dateModified": "2019-11-17","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
@@ -51,7 +51,7 @@ reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ 
         <div class="header-title">
             <a href="https://tyrangyang.github.io/TyrangYang_blog/">TyrangYang_Blog</a>
         </div>
-        <div class="menu"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="noopener noreffer">Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" rel="noopener noreffer">Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" rel="noopener noreffer">Categories</a><span class="menu-item">|</span>
+        <div class="menu"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="noopener noreffer"><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" rel="noopener noreffer"><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" rel="noopener noreffer"><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><span class="menu-item">|</span>
             <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
@@ -66,7 +66,7 @@ reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ 
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title="" rel="noopener noreffer">Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title="" rel="noopener noreffer">Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title="" rel="noopener noreffer">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title="" rel="noopener noreffer"><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title="" rel="noopener noreffer"><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title="" rel="noopener noreffer"><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -84,7 +84,7 @@ reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ 
                                 <i class="far fa-folder fa-fw"></i>Posts
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-11-17>2019-11-17</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 283 words&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 284 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
         </div><div class="content" id="content"><p>author: Dmitri Pavlutin</p>
 <p>reference: <a href="https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/" target="_blank" rel="noopener noreffer">https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/</a>
@@ -135,7 +135,7 @@ reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ 
     <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">legs</span> <span class="o">=</span> <span class="nx">legs</span><span class="p">;</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">logInfo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">logInfo</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span> <span class="o">===</span> <span class="nx">myCat</span><span class="p">);</span> <span class="c1">// =&gt; false
 </span><span class="c1"></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`The </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">type</span><span class="si">}</span><span class="sb"> has </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">legs</span><span class="si">}</span><span class="sb"> legs`</span><span class="p">);</span>
     <span class="p">};</span>
@@ -177,7 +177,7 @@ reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ 
     </div>
 
     <div class="post-info-more">
-        <section></section>
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a></section>
         <section>
             <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>

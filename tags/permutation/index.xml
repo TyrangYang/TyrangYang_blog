@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>permutation on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/permutation/</link>
+    <description>Recent content in permutation on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/permutation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to find next permutation</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</guid>
+      <description>This is introduce how to find the next lexicographically permutation.
+Suppose the permutation is 1 2 3. The next one is 1 3 2.
+Algorithm in C++ C++ provide an algorithm called next_permutation to support that. Reference Example:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  #include &amp;lt;iostream&amp;gt; // std::cout#include &amp;lt;algorithm&amp;gt; // std::next_permutation, std::sort int main () { int myints[] = {1,2,3}; std::sort (myints,myints+3); std::cout &amp;lt;&amp;lt; &amp;#34;The 3!</description>
+    </item>
+    
+  </channel>
+</rss>

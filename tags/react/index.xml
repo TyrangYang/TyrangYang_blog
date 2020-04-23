@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link>
+    <description>Recent content in react on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to have a dynamic class name</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
+      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
+      <description>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+classNames This is a javascript for conditionally joining classNames.
+Here is: Github Basically, you can combine any number of classNames.
+1 2  const classNames = require(&amp;#39;classNames&amp;#39;); classNames(&amp;#39;foo&amp;#39;, { bar: true, duck: false }, &amp;#39;baz&amp;#39;, { quux: true }); // =&amp;gt; &amp;#39;foo bar baz quux&amp;#39;   ES6 template literals You can just use template literals.</description>
+    </item>
+    
+    <item>
+      <title>A simple application apollo server and react</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link>
+      <pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/spacex/</guid>
+      <description>graphql Design Graphql is base on what your want
+github https://github.com/TyrangYang/SpaceX_graphql_react </description>
+    </item>
+    
+    <item>
+      <title>Why Can’t I Open My React App By Clicking Index.html?</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</guid>
+      <description>The app should Run when you open up your index.html file The conclusion is add &amp;quot;homepage&amp;quot;:&amp;quot;.&amp;quot;, in package.json.
+medium.com/@louis.raymond Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
+Click: Different between them </description>
+    </item>
+    
+    <item>
+      <title>React overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/react/</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/react/</guid>
+      <description>init react Commend
+1  npx create-react-app .   npx means you use this package but don&amp;rsquo;t download it.
+Structure package.json react &amp;amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
+public/index.html signal page application which is index.html
+Everything your do will inside &amp;lt;div id=&amp;quot;root&amp;rdquo;&amp;gt;&amp;lt;/div&amp;gt;
+src/index.js Entry point for react
+src/App.js All the component.
+Inside the class, the render() method is called life cycle method and to render the page.</description>
+    </item>
+    
+  </channel>
+</rss>

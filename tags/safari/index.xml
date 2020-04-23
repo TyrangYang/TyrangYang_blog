@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>safari on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/safari/</link>
+    <description>Recent content in safari on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/safari/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Safari Shortcut</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</guid>
+      <description>Some keyboards shortcuts when using safari
+Navigating Webpages Use arrow keys to go up and down.
+Use Option+up/down or Shift+Space / Space to scroll quickly.
+Use Command+up/down goto the top &amp;amp; button.
+Open Pages in Tabs Use Command+T to open a new Tab.
+Use Shift+Command+Left/right arrow or Control+Tab / Control+Shift+Tab to move from tab to tab.
+Use Command+W to close current tab.
+Use Command+Z to reopen a closed tab.
+Use Command+Option+W to close all tabs expect current tab.</description>
+    </item>
+    
+  </channel>
+</rss>

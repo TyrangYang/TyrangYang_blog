@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>socket.io on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/socket.io/</link>
+    <description>Recent content in socket.io on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/socket.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SocketIo Overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
+      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
+      <description>socket.io enable realtime, bidirectional communication for Nodejs
+backend We use Express as backend framework.
+1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
+    </item>
+    
+  </channel>
+</rss>

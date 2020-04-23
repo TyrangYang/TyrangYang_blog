@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zsh on TyrangYang_Blog</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/zsh/</link>
+    <description>Recent content in zsh on TyrangYang_Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Zsh setting</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid>
+      <description>Zsh &amp;amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
+Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&amp;rsquo;s recommended to use zsh over bash.</description>
+    </item>
+    
+    <item>
+      <title>Z-shell overview</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</link>
+      <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</guid>
+      <description>Reference Very useful blog:
+http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname http://zsh.sourceforge.net/Intro/intro_12.html#SEC12 Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&amp;rsquo;s Guide to the Z-Shell single quotes &amp;amp; double quotes 1 2  RPROMPT=&amp;#34;$(command)&amp;#34; # this will run command, then set RPROMPT to the result RPROMPT=&amp;#39;$(command)&amp;#39; # this will set RPROMPT to run command each time it is printed   Date man Date</description>
+    </item>
+    
+  </channel>
+</rss>

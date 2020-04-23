@@ -49,7 +49,7 @@ function Pet(type, legs) {
     this.type = type;
     this.legs = legs;
 
-    this.logInfo = function() {
+    this.logInfo = function () {
         console.log(this === myCat); // => false
         console.log(`The ${this.type} has ${this.legs} legs`);
     };

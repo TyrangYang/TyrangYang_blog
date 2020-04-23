@@ -25,6 +25,21 @@ Iterative Loop for BFS:
     </item>
     
     <item>
+      <title>Some cool websites</title>
+      <link>https://tyrangyang.github.io/TyrangYang_blog/cool-website/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website/</guid>
+      <description>Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
+https://sourabhbajaj.com/mac-setup/ shapeCatcher Draw a character and find the ASCII code
+http://shapecatcher.com/index.html draw.io Draw diagram online
+https://www.draw.io regular expression Good online tool to test and learn regular expression
+https://regexr.com 100 front end component design 100 react component design challenge
+https://www.florin-pop.com/blog/2019/09/100-days-100-projects/ bootswatch Several bootstrap scheme.
+https://bootswatch.com shields.io Get or create Readme badge</description>
+    </item>
+    
+    <item>
       <title>SASS (SCSS) features</title>
       <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>
       <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
