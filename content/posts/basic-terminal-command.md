@@ -2,8 +2,8 @@
 title: Basic Terminal command
 date: 2020-03-16
 author: Haolin Yang
-categories: ["Terminal"]
-tag:
+categories: ['Terminal']
+tags:
     - terminal
 ---
 

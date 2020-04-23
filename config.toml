@@ -5,6 +5,8 @@ baseURL = "https://tyrangyang.github.io/TyrangYang_blog/"
 # https://gohugo.io/content-management/urls/#canonicalization
 canonifyURLs = true 
 
+enableEmoji = true
+
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
@@ -20,47 +22,55 @@ theme = "LoveIt"
 [params]
   # LoveIt theme version
   version = "0.1.X"
-  defaultTheme = "light"
+  defaultTheme = "auto"
   [params.home]
     [params.home.profile]
       enable = true
       avatarURL = "/images/art2.png"
-      subtitle = "Hello word?!"
+      subtitle = "Stay Home & Be safe!"
       typeit = true
       social = true
     [params.home.posts]
       enable = true
-      paginate = 6
+      paginate = 10
       defaultHiddenFromHomePage = false
     [params.social]
-      GitHub = "https://github.com/TyrangYang"
-      # Linkedin = "xxxx"
+      GitHub = "TyrangYang"
+      Linkedin = "haolin-yang-2b3a061a3"
       Email = "haolinyang95@gamil.com"
 
 [menu]
   [[menu.main]]
     identifier = "posts"
     # you can add extra information before the name (HTML format is allowed), such as icons
-    pre = ""
-    name = "Posts"
+    pre = "<i class='fas fa-book-open'></i>"
+    name = " Posts"
     url = "/posts/"
     # title will be shown when you hover on this menu link
     title = ""
     weight = 1
   [[menu.main]]
     identifier = "tags"
-    pre = ""
-    name = "Tags"
+    pre = "<i class='fas fa-tags'></i>"
+    name = " Tags"
     url = "/tags/"
     title = ""
     weight = 2
   [[menu.main]]
     identifier = "categories"
-    pre = ""
-    name = "Categories"
+    pre = "<i class='fab fa-buffer'></i>"
+    name = " Categories"
     url = "/categories/"
     title = ""
     weight = 3
+
+  [[menu.main]]
+    identifier = "github"
+    pre = "<i class='fab fa-github fa-fw fa-fw'></i>"
+    name = ""
+    url = "https://github.com/TyrangYang/TyrangYang_blog"
+    title = "Blog github"
+    weight = 4
 
 # Hugo 解析文档的配置
 [markup]

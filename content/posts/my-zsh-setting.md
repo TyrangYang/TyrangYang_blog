@@ -2,8 +2,8 @@
 title: My Zsh setting
 date: 2020-01-08
 author: Haolin Yang
-categories: ["Terminal"]
-tag:
+categories: ['Terminal']
+tags:
     - ohmyzsh
     - zsh
     - bash

@@ -2,8 +2,8 @@
 title: Traverse a tree
 date: 2020-02-10
 author: Haolin Yang
-categories: ["Note"]
-tag:
+categories: ['Note']
+tags:
     - Traverse a tree
 ---
 

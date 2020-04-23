@@ -2,8 +2,8 @@
 title: Canvas in html5
 date: 2020-04-08
 author: Haolin Yang
-categories: ["Overview"]
-tag:
+categories: ['Overview']
+tags:
     - html
     - js
     - css

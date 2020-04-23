@@ -2,8 +2,8 @@
 title: Some cool websites
 date: 2019-10-12
 author: Haolin Yang
-catagories: ["Note"]
-tag:
+categories: ['Note']
+tags:
     - website
 ---
 

@@ -2,8 +2,8 @@
 title: What is "this" in javascript
 date: 2019-11-17
 author: Haolin Yang
-categories: ["Posts"]
-tag:
+categories: ['Posts']
+tags:
     - javascript
     - nodejs
 ---
@@ -56,7 +56,7 @@ function Pet(type, legs) {
     this.type = type;
     this.legs = legs;
 
-    this.logInfo = function() {
+    this.logInfo = function () {
         console.log(this === myCat); // => false
         console.log(`The ${this.type} has ${this.legs} legs`);
     };

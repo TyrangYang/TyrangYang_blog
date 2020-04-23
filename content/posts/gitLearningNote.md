@@ -2,10 +2,11 @@
 title: Git overview
 date: 2019-06-17
 author: Haolin Yang
-categories: ["Overview"]
-tag:
+categories: ['Overview']
+tags:
     - git
 ---
+
 Here have some good pictures that is helpful for understanding git and contain the record for git commend
 
 ## Concept Map

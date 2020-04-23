@@ -2,8 +2,8 @@
 title: Learn from leetCode
 date: 2020-01-31
 author: Haolin Yang
-categories: ["LeetCode"]
-tag:
+categories: ['LeetCode']
+tags:
     - leetCode
 ---
 

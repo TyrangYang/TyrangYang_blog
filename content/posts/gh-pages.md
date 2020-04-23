@@ -2,8 +2,8 @@
 title: How to demonstrate your front end application on Github by gh-page
 date: 2020-03-29
 author: Haolin Yang
-categories: ["Posts"]
-tag:
+categories: ['Posts']
+tags:
     - github
     - gh-page
     - npm

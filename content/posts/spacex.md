@@ -2,8 +2,8 @@
 title: A simple application apollo server and react
 date: 2019-11-14
 author: Haolin Yang
-categories: ["Posts"]
-tag:
+categories: ['Posts']
+tags:
     - react
     - apollo
 ---

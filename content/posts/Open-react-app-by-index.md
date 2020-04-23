@@ -2,8 +2,8 @@
 title: Why Can’t I Open My React App By Clicking Index.html?
 date: 2019-10-28
 author: Haolin Yang
-categories: ["Posts"]
-tag:
+categories: ['Posts']
+tags:
     - react
 ---
 

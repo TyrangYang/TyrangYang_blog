@@ -2,8 +2,8 @@
 title: Erlang overview
 date: 2019-12-14
 author: Haolin Yang
-categories: ["Overview"]
-tag:
+categories: ['Overview']
+tags:
     - erlang
 ---
 

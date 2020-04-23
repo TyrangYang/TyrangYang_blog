@@ -2,8 +2,8 @@
 title: DFS & BFS
 date: 2020-01-14
 author: Haolin Yang
-categories: ["Alg&DataStr"]
-tag:
+categories: ['Alg&DataStr']
+tags:
     - algorithm
 ---
 

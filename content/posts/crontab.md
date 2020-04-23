@@ -2,8 +2,8 @@
 title: Crontab overview
 date: 2020-01-23
 author: Haolin Yang
-categories: ["Terminal"]
-tag:
+categories: ['Terminal']
+tags:
     - terminal
     - crontab
 ---

@@ -2,8 +2,8 @@
 title: All array method in Nodejs
 date: 2020-04-06
 author: Haolin Yang
-categories: ["Overview"]
-tag:
+categories: ['Overview']
+tags:
     - js
     - nodejs
     - array

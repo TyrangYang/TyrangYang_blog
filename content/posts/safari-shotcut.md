@@ -2,8 +2,8 @@
 title: Safari Shortcut
 date: 2020-01-10
 author: Haolin Yang
-categories: ["Posts"]
-tag:
+categories: ['Posts']
+tags:
     - safari
     - shortcut
 ---
