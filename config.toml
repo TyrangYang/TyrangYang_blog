@@ -37,6 +37,7 @@ theme = "LoveIt"
     [params.social]
       GitHub = "TyrangYang"
       Linkedin = "haolin-yang-2b3a061a3"
+      Twitter = "@TyrangYang"
       Email = "haolinyang95@gamil.com"
 
 [menu]
@@ -72,6 +73,13 @@ theme = "LoveIt"
     title = "Blog github"
     weight = 4
 
+  [[menu.main]]
+    identifier = "home"
+    pre = '<i class="fas fa-home"></i>'
+    name = ""
+    url = "https://tyrangyang.github.io/"
+    title = "home page"
+    weight = "5"
 # Hugo 解析文档的配置
 [markup]
   # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)

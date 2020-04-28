@@ -13,6 +13,13 @@ Canvas is a new feature since **html5** that allows you draw something on your w
 
 Reference from [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 
+## Project by using Canvas
+
+-   [Chaos Game](https://tyrangyang.github.io/chaos-game/):
+Use canvas to draw the chaos game
+-   [Draw panel with socket.io](https://scribble-panel.herokuapp.com):
+A scribble panel with Websocket. Multi user can draw panel on simultaneously
+
 ## Draw on canvas
 
 ### Get start
@@ -91,14 +98,7 @@ ctx.stroke();
 ### locate a point on canvas
 
 When you add listener for canvas, event object have `e.clientX` and `e.clientY` to locate the position one canvas. Or using `e.pageX - canvas.offsetLeft` and `e.pageY - canvas.offsetTop`. (This means the position on the page, include scroll down, minus canvas offset)
-
-## Project by using Canvas
-
--   [Chaos Game](https://tyrangyang.github.io/chaos-game/)
-    > Use canvas to draw the chaos game
--   [Draw panel with socket.io](https://scribble-panel.herokuapp.com)
-    > A scribble panel with Websocket. Multi user can draw panel on simultaneously
-
+h
 ## Reference
 
 [https://wesbos.com/html5-canvas-websockets-nodejs/](https://wesbos.com/html5-canvas-websockets-nodejs/) && [https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse](https://stackoverflow.com/questions/2368784/draw-on-html5-canvas-using-a-mouse)

@@ -10,7 +10,7 @@ tags:
 
 socket.io enable realtime, bidirectional communication for Nodejs
 
-## backend
+## Backend
 
 We use **Express** as backend framework.
 
@@ -29,7 +29,7 @@ io.on('connection', (server_socket) => {
 }
 ```
 
-## frontend
+## Frontend
 
 1. bring client side socket.io in your html file
 
@@ -43,16 +43,44 @@ io.on('connection', (server_socket) => {
 const clientSocket = io();
 ```
 
-## function
+## Function
 
-`on()` receive
+### Receive -> on()
 
-`emit()` send
+```js
+socket.on("<head>", (data) => {
+    // deal with data
+})
+``` 
 
-`socket.broadcast.emit()` send to all client socket except itself
+### Send -> emit()
 
-`io.emit()` sent to all client socket include itself
+```js
+socket.emit("<head>", data)
+```
 
-`join()` join a room
+### Send to all client socket except itself -> socket.broadcast.emit()
 
-`to()` sent to some room
+```js
+socket.broadcast.emit("<head>", data)
+```
+
+### Sent to all client socket include itself -> io.emit()
+
+```js
+io.emit("<head>", data)
+```
+
+### Group socket together
+
+```js
+socket.join("<name>")
+```
+
+### Send to a group
+
+```js
+socket.to("<name>").emit()
+socket.broadcast.to("<name>").emit()
+io.to("<name>").emit()
+```

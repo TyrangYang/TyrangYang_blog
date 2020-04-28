@@ -21,7 +21,7 @@ sans-serif force on connected and serif force on single alphabet.
 
 ### Import font
 
-Could use google font and add link into index.html
+Could use google font and add link into index.html or in style.css
 
 ## Control space
 
@@ -47,6 +47,10 @@ or specify them all in one line clockwise:
 
 `padding: 20px 10px 20px 10px;`
 
+or specify top-bottom and left-right
+
+`padding: 20px 10px;`
+
 ### Margin
 
 `margin` controls the amount of space between an element's border and surrounding elements.
@@ -56,6 +60,10 @@ or specify them all in one line clockwise:
 or specify them all in one line clockwise:
 
 `margin: 20px 10px 20px 10px;`
+
+or specify top-bottom and left-right
+
+`margin: 20px 10px;`
 
 ## CSS inheritance
 
@@ -108,14 +116,15 @@ Id will always take precedence.
 ### transform
 
 The text-transform property in CSS is used to change the appearance of text. It's a convenient way to make sure text on a webpage appears consistently, without having to change the text content of the actual HTML elements.
-| Value | Result |
+
+|   Value    |                        Result                        |
 | :--------: | :--------------------------------------------------: |
-| lowercase | "transform me" |
-| uppercase | "TRANSFORM ME" |
-| capitalize | "Transform Me" |
-| initial | Use the default value |
-| inherit | Use the text-transform value from the parent element |
-| none | Default: Use the original text |
+| lowercase  |                    "transform me"                    |
+| uppercase  |                    "TRANSFORM ME"                    |
+| capitalize |                    "Transform Me"                    |
+|  initial   |                Use the default value                 |
+|  inherit   | Use the text-transform value from the parent element |
+|    none    |            Default: Use the original text            |
 
 ## Box shadow
 
@@ -253,3 +262,31 @@ Use two point to decide the curve
 `grid-row-gap` `grid-column-gap`
 
 `grid-gap: 10px 20px;`
+
+## z-index
+
+Move some element to the front or back.
+
+`z-index = 10;`
+
+
+
+## Personal default style
+
+### button
+
+```css
+.btn {
+    display: inline-block;
+    padding: 5px 30px;
+    background: var(--primarily-color);
+    color: #fff;
+    border: 1px #fff solid;
+    border-radius: 5px;
+    margin-top: 25px;
+    opacity: 0.7;
+}
+.btn:hover {
+    transform: scale(0.98);
+}
+```
