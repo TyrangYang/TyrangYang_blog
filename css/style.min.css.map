@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/Users/yanghaolin/Google Drive/TyrangYang_blog",
+	"sourceRoot": "/Users/yanghaolin/Google Drive/myProject/TyrangYang_blog",
 	"sources": [
 		"themes/LoveIt/assets/css/style.template.scss",
 		"themes/LoveIt/assets/css/_variables.scss",

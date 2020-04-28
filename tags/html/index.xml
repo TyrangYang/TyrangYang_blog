@@ -18,8 +18,7 @@
       
       <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
       <description>Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2  const canvas = document.getElementById(&amp;#39;canvas&amp;#39;); const ctx = canvas.getContext(&amp;#39;2d&amp;#39;);   fill &amp;amp; stroke rectangle 1 2 3 4 5 6 7 8  // fillRect() ctx.fillStyle = &amp;#39;red&amp;#39;; ctx.fillRect(20, 20, 150, 100); // up left point and weight and height  // strokeRect() ctx.</description>
+Reference from MDN Project by using Canvas  Chaos Game : Use canvas to draw the chaos game Draw panel with socket.io : A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas</description>
     </item>
     
     <item>

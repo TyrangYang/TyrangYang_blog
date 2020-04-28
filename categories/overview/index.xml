@@ -39,8 +39,8 @@ use number specific the bits 011101110111 =&amp;gt; -rwx-rwx-rwx</description>
       
       <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
       <description>socket.io enable realtime, bidirectional communication for Nodejs
-backend We use Express as backend framework.
-1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
+Backend We use Express as backend framework.
+1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
     </item>
     
     <item>
@@ -65,8 +65,7 @@ access via SSH ssh &amp;lt;username&amp;gt;@&amp;lt;hostname | ip address&amp;gt
       
       <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
       <description>Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2  const canvas = document.getElementById(&amp;#39;canvas&amp;#39;); const ctx = canvas.getContext(&amp;#39;2d&amp;#39;);   fill &amp;amp; stroke rectangle 1 2 3 4 5 6 7 8  // fillRect() ctx.fillStyle = &amp;#39;red&amp;#39;; ctx.fillRect(20, 20, 150, 100); // up left point and weight and height  // strokeRect() ctx.</description>
+Reference from MDN Project by using Canvas  Chaos Game : Use canvas to draw the chaos game Draw panel with socket.io : A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas</description>
     </item>
     
     <item>
@@ -99,7 +98,7 @@ font-family: &amp;lt;FAMILY_NAME&amp;gt;, &amp;lt;GENERIC_NAME&amp;gt;; font-fam
 GENERIC_NAME: sans-serif serif monospace;
 sans-serif force on connected and serif force on single alphabet.
 line-height: 25px;
-Import font Could use google font and add link into index.html
+Import font Could use google font and add link into index.html or in style.css
 Control space There are three important properties to control the space: padding, margin and border
 Border border-size
 border-color

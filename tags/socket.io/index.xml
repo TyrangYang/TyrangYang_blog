@@ -18,8 +18,8 @@
       
       <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
       <description>socket.io enable realtime, bidirectional communication for Nodejs
-backend We use Express as backend framework.
-1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
+Backend We use Express as backend framework.
+1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
     </item>
     
   </channel>
