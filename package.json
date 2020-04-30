@@ -4,7 +4,8 @@
     "description": "THis is my personal blog supported by [hugo](https://gohugo.io/) and Themes is provided by [loveIt](https://github.com/dillonzq/LoveIt)",
     "main": "deploy.js",
     "scripts": {
-        "predeploy": "hugo",
+        "algolia": "atomic-algolia",
+        "predeploy": "hugo & ALGOLIA_APP_ID=QXEV52XWDS ALGOLIA_ADMIN_KEY=06e102f295c5ae8175333dc4f3dab5dd ALGOLIA_INDEX_NAME=blog ALGOLIA_INDEX_FILE=./public/index.json npm run algolia",
         "deploy": "gh-pages -d public",
         "clean": "rm -rf node_modules && rm package-lock.json && rm -rf public"
     },
@@ -20,5 +21,8 @@
     "homepage": "https://github.com/TyrangYang/TyrangYang_blog#readme",
     "devDependencies": {
         "gh-pages": "^2.2.0"
+    },
+    "dependencies": {
+        "atomic-algolia": "^0.3.17"
     }
 }

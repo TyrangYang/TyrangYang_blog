@@ -35,10 +35,9 @@ theme = "LoveIt"
     # 搜索结果中高亮部分的 HTML 标签
     highlightTag = "em"
     [params.search.algolia]
-      index = "blog2"
+      index = "blog"
       appID = "QXEV52XWDS"
-      searchKey = "06e102f295c5ae8175333dc4f3dab5dd"
-      adminKey = "06e102f295c5ae8175333dc4f3dab5dd"
+      searchKey = "4f5ad8cd84d2b88ffbe1a127367d3912"
   [params.home]
     [params.home.profile]
       enable = true
