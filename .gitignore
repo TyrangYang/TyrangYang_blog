@@ -6,5 +6,4 @@ package-lock.json
 static/.DS_Store
 
 .DS_Store
-config.toml
 package.json
