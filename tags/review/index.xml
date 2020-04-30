@@ -1,58 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>review on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/review/</link>
-    <description>Recent content in review on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/review/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Review java - Array</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</link>
-      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</guid>
-      <description>Declaring an array Both are allow
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>review | Tag | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/review/</link>
+        <description>review | Tag | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 10 Jul 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/review/" rel="self" type="application/rss+xml" /><item>
+                <title>Review java - Array</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</link>
+                <pubDate>Wed, 10 Jul 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</guid>
+                <description>Declaring an array Both are allow
 1 2  string argc[]; string[] argc;   Int array 1 2  int[] nums = new int[7]; nums[0] = 10;   1 2  Rabbit[] racers = new Rabbit[10];//10 empty rabbit array; racers[0] = new Rabbit(&amp;#34;B&amp;#34;,&amp;#34;F&amp;#34;);   arraycopy() 1  System.arraycopy(nums, 0, nums, 0, nums.length);   Array vs ArrayList  An array needs to know its size at the time of creation, arrayList does not.</description>
-    </item>
-    
-    <item>
-      <title>Review java - javadoc</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</link>
-      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</guid>
-      <description>JavaDocs JavaDocs is able to easily generate a code &amp;ldquo;maintenance manual&amp;rdquo;
+            </item><item>
+                <title>Review java - javadoc</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</link>
+                <pubDate>Tue, 09 Jul 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</guid>
+                <description>JavaDocs JavaDocs is able to easily generate a code &amp;ldquo;maintenance manual&amp;rdquo;
 A doc comment is made up of two parts &amp;ndash; a description and two or more tag.
 1 2 3 4 5  /** * Here is description * * @tag Comment for tag */   Tags  @author (classes and interfaces only, required) @version (classes and interfaces only, required) @param (methods and constructors only) @return (methods only) @exception @see @since @serial (or @serialField or @serialData) @deprecated  JDK Docs External documentation can be created with javadoc</description>
-    </item>
-    
-    <item>
-      <title>Review java - OO</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</link>
-      <pubDate>Fri, 05 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</guid>
-      <description>Class &amp;amp; Object A class only exists at compile time;
+            </item><item>
+                <title>Review java - OO</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</link>
+                <pubDate>Fri, 05 Jul 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</guid>
+                <description>Class &amp;amp; Object A class only exists at compile time;
 An object only exists at runtime.
 Data Encapsulation Data Encapsulation/information hiding: where the internal state and operation are hidden from others.
 The more information Class A knows about Class B, the greater the possibility that changing Class A will adversely affect Class B. In an ideal world, making internal changes to Class A should have no, or very little, effect on other classes.</description>
-    </item>
-    
-    <item>
-      <title>Review java - Variable</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</link>
-      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</guid>
-      <description>Basic types Every type have a default value:
+            </item><item>
+                <title>Review java - Variable</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</link>
+                <pubDate>Mon, 01 Jul 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</guid>
+                <description>Basic types Every type have a default value:
    Type Representation Initial value Storage Max. value     byte singed integer 0 8 bits 127   short singed integer 0 16 bits 32767   int singed integer 0 32 bits 2147483647   long singed integer 0 64 bits over 10^18   float floating point 0.0 32 bits over 10^38   double floating point 0.</description>
-    </item>
-    
-  </channel>
+            </item></channel>
 </rss>

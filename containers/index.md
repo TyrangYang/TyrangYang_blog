@@ -71,14 +71,14 @@ List have an empty node which end() point to. The next of this empty node is beg
 
 {{< mermaid >}}
 graph TD;
-    begin_node_0 --> node_1;
-    node_1 --> begin_node_0;
-    node_1 --> node_2;
-    node_2 --> node_1;
-    node_2 --> end_node_empty;
-    end_node_empty --> node_2;
-    end_node_empty --> begin_node_0;
-    begin_node_0 --> end_node_empty
+begin_node_0 --> node_1;
+node_1 --> begin_node_0;
+node_1 --> node_2;
+node_2 --> node_1;
+node_2 --> end_node_empty;
+end_node_empty --> node_2;
+end_node_empty --> begin_node_0;
+begin_node_0 --> end_node_empty
 {{< /mermaid >}}
 
 ### transfer()

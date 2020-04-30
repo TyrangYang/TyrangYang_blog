@@ -1,44 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>js on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/js/</link>
-    <description>Recent content in js on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/js/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Canvas in html5</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-      <description>Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN Project by using Canvas  Chaos Game : Use canvas to draw the chaos game Draw panel with socket.io : A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas</description>
-    </item>
-    
-    <item>
-      <title>All array method in Nodejs</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
-      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
-      <description>All methods  foreach  map  filter  reduce  slice  splice  sort  concat  fill  include  join  reverse  push  pop  unshift  shift  indexOf &amp;amp; lastIndexOf  every  some  find  findIndex  from  isArray  flat     All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.</description>
-    </item>
-    
-    <item>
-      <title>How to check the Chinese ID is correct</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link>
-      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid>
-      <description>This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>js | Tag | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/js/</link>
+        <description>js | Tag | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/js/" rel="self" type="application/rss+xml" /><item>
+                <title>Canvas in html5</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
+                <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
+                <description>Canvas is a new feature since html5 that allows you draw something on your web page
+Reference from MDN
+Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
+1 2  const canvas = document.</description>
+            </item><item>
+                <title>All array method in Nodejs</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
+                <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
+                <description>All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp;amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&amp;gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&amp;gt; [] (some size) let numbers2 = numbers.</description>
+            </item><item>
+                <title>How to check the Chinese ID is correct</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link>
+                <pubDate>Sun, 15 Mar 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid>
+                <description>This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.
 Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62  checkChineseId = (id) =&amp;gt; { const ID_LENGTH = 18; // check type  if (typeof id !</description>
-    </item>
-    
-  </channel>
+            </item></channel>
 </rss>

@@ -1,49 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>C&#43;&#43; on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/categories/c&#43;&#43;/</link>
-    <description>Recent content in C&#43;&#43; on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/c++/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Structured binding</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</link>
-      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</guid>
-      <description>Structured binding is a new feature since c++17
-cppreference.com auto [ identifier-list ] = expression
-Bind array 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  int main(int argc, char const *argv[]) { int test[3] = {1, 2, 3}; auto [a, b, c] = test; // an new array e copy from test and a = e[0]; b = e[1]; c = e[2]; 	auto &amp;amp;[x, y, z] = test; // x = test[0]; x = test[1]; x = test[2]  cout &amp;lt;&amp;lt; ++a &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++b &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++c &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; endl; for (int &amp;amp;i : test) cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;#34; &amp;#34;; cout &amp;lt;&amp;lt; endl; cout &amp;lt;&amp;lt; ++x &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++y &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; ++z &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; endl; for (int &amp;amp;i : test) cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;#34; &amp;#34;; cout &amp;lt;&amp;lt; endl; return 0; }   tuple 1 2 3 4 5 6 7 8 9 10 11 12  int main(int argc, char const *argv[]) { tuple&amp;lt;int, int, int&amp;gt; test(1, 2, 3); auto &amp;amp;[a, b, c] = test; // 1 2 3  pair&amp;lt;int, char&amp;gt; test2(1, &amp;#39;c&amp;#39;); auto &amp;amp;[a2, b2] = test2; // 1 c  return 0; }   struct 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  struct test { int a; int b; }; int main(int argc, char const *argv[]) { test one; one.</description>
-    </item>
-    
-    <item>
-      <title>Lambda in C&#43;&#43;</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</link>
-      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</guid>
-      <description>Introduction of Lambda expression in C++ and how to use it.
-What is Lambda in C++ Lambda expression is a new feature since c++11. It is used to create anonymous function object to simplify programming process.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>C&#43;&#43; | Category | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/categories/c&#43;&#43;/</link>
+        <description>C&#43;&#43; | Category | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 01 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
+                <title>Structured binding</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</link>
+                <pubDate>Sun, 01 Mar 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</guid>
+                <description>Structured binding is a new feature since c&#43;&#43;17
+cppreference.com
+auto [ identifier-list ] = expression
+Bind array 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  int main(int argc, char const *argv[]) { int test[3] = {1, 2, 3}; auto [a, b, c] = test; // an new array e copy from test and a = e[0]; b = e[1]; c = e[2]; 	auto &amp;amp;[x, y, z] = test; // x = test[0]; x = test[1]; x = test[2]  cout &amp;lt;&amp;lt; &#43;&#43;a &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; &#43;&#43;b &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; &#43;&#43;c &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; endl; for (int &amp;amp;i : test) cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;#34; &amp;#34;; cout &amp;lt;&amp;lt; endl; cout &amp;lt;&amp;lt; &#43;&#43;x &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; &#43;&#43;y &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; &#43;&#43;z &amp;lt;&amp;lt; &amp;#34; &amp;#34; &amp;lt;&amp;lt; endl; for (int &amp;amp;i : test) cout &amp;lt;&amp;lt; i &amp;lt;&amp;lt; &amp;#34; &amp;#34;; cout &amp;lt;&amp;lt; endl; return 0; }   tuple 1 2 3 4 5 6 7 8 9 10 11 12  int main(int argc, char const *argv[]) { tuple&amp;lt;int, int, int&amp;gt; test(1, 2, 3); auto &amp;amp;[a, b, c] = test; // 1 2 3  pair&amp;lt;int, char&amp;gt; test2(1, &amp;#39;c&amp;#39;); auto &amp;amp;[a2, b2] = test2; // 1 c  return 0; }   struct 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  struct test { int a; int b; }; int main(int argc, char const *argv[]) { test one; one.</description>
+            </item><item>
+                <title>Lambda in C&#43;&#43;</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</link>
+                <pubDate>Sun, 26 Jan 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</guid>
+                <description>Introduction of Lambda expression in C&#43;&#43; and how to use it.
+What is Lambda in C&#43;&#43; Lambda expression is a new feature since c&#43;&#43;11. It is used to create anonymous function object to simplify programming process.
 How Lambda expressions are composed [capture](parameters) mutable -&amp;gt; return type {statement}
-1 2 3 4  // ... #include &amp;lt;functional&amp;gt;// ... std:function&amp;lt;int(int, int)&amp;gt; add = [](int a, int b) -&amp;gt; int {return a+b;};   capture Capture variables from context.</description>
-    </item>
-    
-    <item>
-      <title>explicit and implicit in c&#43;&#43;</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/</link>
-      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/</guid>
-      <description>explicit and implicit In C++, constructor can be explicit and implicit.
+1 2 3 4  // ... #include &amp;lt;functional&amp;gt;// ... std:function&amp;lt;int(int, int)&amp;gt; add = [](int a, int b) -&amp;gt; int {return a&#43;b;};   capture Capture variables from context.</description>
+            </item><item>
+                <title>explicit and implicit in c&#43;&#43;</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/</link>
+                <pubDate>Thu, 25 Jul 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/</guid>
+                <description>explicit and implicit In C&#43;&#43;, constructor can be explicit and implicit.
 The reserve word explicit affect constructor with only one parameter or only one parameter without given initial value.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56  #include &amp;lt;iostream&amp;gt;using namespace std; class test1 { int data; public: test1(int t = 0):data(t){}; ~test1(){}; test1 operator + (const test1 &amp;amp;a) const{ return test1(data + a.</description>
-    </item>
-    
-  </channel>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56  #include &amp;lt;iostream&amp;gt;using namespace std; class test1 { int data; public: test1(int t = 0):data(t){}; ~test1(){}; test1 operator &#43; (const test1 &amp;amp;a) const{ return test1(data &#43; a.</description>
+            </item></channel>
 </rss>

@@ -1,24 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>SSH on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/categories/ssh/</link>
-    <description>Recent content in SSH on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/ssh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>SSH in Vscode</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</link>
-      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</guid>
-      <description>Extension Reference https://letswp.io/remote-development-visual-studio-code-amazon-ec2/</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>SSH | Category | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/categories/ssh/</link>
+        <description>SSH | Category | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 13 Dec 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/ssh/" rel="self" type="application/rss+xml" /><item>
+                <title>SSH in Vscode</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</link>
+                <pubDate>Fri, 13 Dec 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</guid>
+                <description>Extension Reference https://letswp.io/remote-development-visual-studio-code-amazon-ec2/</description>
+            </item></channel>
 </rss>

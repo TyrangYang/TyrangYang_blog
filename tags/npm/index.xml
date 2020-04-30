@@ -1,26 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>npm on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/npm/</link>
-    <description>Recent content in npm on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/npm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>How to demonstrate your front end application on Github by gh-page</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
-      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid>
-      <description>Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&amp;lt;github username&amp;gt;.github.io}/{&amp;lt;repository name&amp;gt;}
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>npm | Tag | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/npm/</link>
+        <description>npm | Tag | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/npm/" rel="self" type="application/rss+xml" /><item>
+                <title>How to demonstrate your front end application on Github by gh-page</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
+                <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid>
+                <description>Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&amp;lt;github username&amp;gt;.github.io}/{&amp;lt;repository name&amp;gt;}
 gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
-Read more detail in repository command line usage This package also provide a command line tool:</description>
-    </item>
-    
-  </channel>
+Read more detail in repository
+command line usage This package also provide a command line tool:</description>
+            </item></channel>
 </rss>

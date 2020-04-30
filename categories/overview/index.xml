@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Overview on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
-    <description>Recent content in Overview on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>chmod Overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
-      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
-      <description>chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|+|-] [r|w|x] 
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Overview | Category | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
+        <description>Overview | Category | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 28 Apr 2020 16:43:12 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+                <title>Python Overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</link>
+                <pubDate>Tue, 28 Apr 2020 16:43:12 -0400</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</guid>
+                <description>This posts only use as a remainder
+Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &amp;#39;a name&amp;#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &amp;#39;Brad&amp;#39; age = 37 print(&amp;#39;name is&amp;#39; &#43; name &#43; &amp;#39; and age is &amp;#39; &#43; str(age)) print(&amp;#39;name is {name} and age is {age}&amp;#39;.</description>
+            </item><item>
+                <title>chmod Overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
+                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
+                <description>chmod is linux command to control file permission
+usage chmod [u|g|o|a][=|&#43;|-] [r|w|x] 
 u =&amp;gt; user
 g =&amp;gt; group
 o =&amp;gt; other
@@ -26,74 +26,65 @@ a =&amp;gt; all
 r =&amp;gt; read
 w =&amp;gt; write
 x =&amp;gt; execute
-example chmod +wr test.txt give write and read permission for user
+example chmod &#43;wr test.txt give write and read permission for user
 chmod -r test.txt remove read permission for user
 chmod g=wrx test.txt give write, read and execute permission for group
 use number specific the bits 011101110111 =&amp;gt; -rwx-rwx-rwx</description>
-    </item>
-    
-    <item>
-      <title>SocketIo Overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
-      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
-      <description>socket.io enable realtime, bidirectional communication for Nodejs
+            </item><item>
+                <title>SocketIo Overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
+                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
+                <description>socket.io enable realtime, bidirectional communication for Nodejs
 Backend We use Express as backend framework.
 1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
-    </item>
-    
-    <item>
-      <title>SSH Overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link>
-      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid>
-      <description>ssh-keygen ssh-keygen
+            </item><item>
+                <title>SSH Overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link>
+                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid>
+                <description>ssh-keygen ssh-keygen
 -b specific the number of bits(1024 2048 4069)
 -m specific type
 -y get public key
 -f specific file name
 public key public key should give to server. Usually put in file ~/.ssh/authorized_key
 access via SSH ssh &amp;lt;username&amp;gt;@&amp;lt;hostname | ip address&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>Canvas in html5</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-      <description>Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN Project by using Canvas  Chaos Game : Use canvas to draw the chaos game Draw panel with socket.io : A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas</description>
-    </item>
-    
-    <item>
-      <title>All array method in Nodejs</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
-      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
-      <description>All methods  foreach  map  filter  reduce  slice  splice  sort  concat  fill  include  join  reverse  push  pop  unshift  shift  indexOf &amp;amp; lastIndexOf  every  some  find  findIndex  from  isArray  flat     All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.</description>
-    </item>
-    
-    <item>
-      <title>Express Overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
-      <pubDate>Mon, 30 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
-      <description>Express.js is a web framework for Node.js
+            </item><item>
+                <title>Canvas in html5</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
+                <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
+                <description>Canvas is a new feature since html5 that allows you draw something on your web page
+Reference from MDN
+Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
+1 2  const canvas = document.</description>
+            </item><item>
+                <title>All array method in Nodejs</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
+                <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
+                <description>All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp;amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&amp;gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&amp;gt; [] (some size) let numbers2 = numbers.</description>
+            </item><item>
+                <title>Express Overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
+                <pubDate>Mon, 30 Mar 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
+                <description>Express.js is a web framework for Node.js
 Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&amp;#39;express&amp;#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&amp;#39;/&amp;#39;, (req, res) =&amp;gt; { return res.send({hello:&amp;#34;world&amp;#34;}); }) const PORT = 4000; app.listen(PORT, ()=&amp;gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   </description>
-    </item>
-    
-    <item>
-      <title>CSS Overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
-      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid>
-      <description>Font font-size size
+            </item><item>
+                <title>CSS Overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
+                <pubDate>Tue, 17 Mar 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid>
+                <description>CSS cheat sheet: html &amp;amp; css provided by Traversy Media
+Font font-size size
 font-family: &amp;lt;FAMILY_NAME&amp;gt;, &amp;lt;GENERIC_NAME&amp;gt;; font-family: Lobster monospace;
 GENERIC_NAME: sans-serif serif monospace;
 sans-serif force on connected and serif force on single alphabet.
@@ -105,87 +96,29 @@ border-color
 border-width
 border-style
 padding Padding control the amount of space between the element&amp;rsquo;s content and its border;</description>
-    </item>
-    
-    <item>
-      <title>Makefile overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link>
-      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid>
-      <description>What is makefile. How to write a makefile.
-Ref: https://opensource.com/article/18/8/what-how-makefile What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
+            </item><item>
+                <title>Makefile overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link>
+                <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid>
+                <description>What is makefile. How to write a makefile.
+Ref: https://opensource.com/article/18/8/what-how-makefile
+What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
 1 2  target: prerequisites &amp;lt;TAB&amp;gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).</description>
-    </item>
-    
-    <item>
-      <title>Erlang overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link>
-      <pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid>
-      <description>Basic Documentation: https://erlang.org/doc/search/ Functional language Erlang is a functional language. Code need compile and running line by line.
+            </item><item>
+                <title>Erlang overview</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link>
+                <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid>
+                <description>Basic Documentation: https://erlang.org/doc/search/
+Functional language Erlang is a functional language. Code need compile and running line by line.
 Every line need finish by a .. like: A = 1..
 Module Every erlang file will consider as a module. You console will compile all module you want.
 You have to add -module(&amp;lt;filename&amp;gt;). into first line. Module should be same with filename without suffix.
 In erl console, run c(&amp;lt;filename&amp;gt;). to compile it. Run a function is like: &amp;lt;moduleName&amp;gt;: &amp;lt;functionName&amp;gt;(.</description>
-    </item>
-    
-    <item>
-      <title>Redis overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/redis/</link>
-      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/redis/</guid>
-      <description>Installation For mac
-1  sudo brew install redis-server   open redis server
-1  redis-server   test is work or not
-1  redis-cli ping   basic command 1 2 3  ECHO &amp;#39;hello word QUIT   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144  SET foo 100 GET foo // 100 SET bar &amp;#39;hello world&amp;#39; GET bar // hello world INCR foo // 101 DECR foo // 100 EXISTS foo // 1 EXISTS foo1 // 0 DEL bar EXISTS bar // 0 GET bar //(nir) FLUSHALL // all empty SET server:name someserver GET server:name // &amp;#34;someserver&amp;#34; SET server:port 8000 GET server:port SET greeting &amp;#34;Hello world&amp;#34; GET greeting EXPIRE greeting 50 // set expirations to 50 second TTL greeting SETEX greeting 30 &amp;#34;hello world&amp;#34; // set value and expiration PERSIST greeting // key will not expire TTL greeting // -1 MSET key1 &amp;#34;hello&amp;#34; key2 &amp;#34;world&amp;#34; APPEND key1 &amp;#34; world&amp;#34; RENAME key1 greeting LPUSH people &amp;#34;Brad&amp;#34; // 1 LPUSH people &amp;#34;Jen&amp;#34; // 2 LPUSH people &amp;#34;Tom&amp;#34; // 3 LRANGE people 0 -1 // return all // Tom Jen Brad LRANGE people 1 2 // Jen Brad RPUSH people &amp;#34;Harry&amp;#34; LRANGE people 0 -1 // Tom Jen Brad Harry LLEN people // 4 RPOP people // Harry LPOP people LINSERT people BEFORE &amp;#34;Brad&amp;#34; &amp;#34;TOM&amp;#34; LRANGE people 0 -1 // Jen Tom Brad SADD cars &amp;#34;Ford&amp;#34; SADD cars &amp;#34;Honda&amp;#34; SADD cars &amp;#34;BMW&amp;#34; SISMEMBER cars &amp;#34;Ford&amp;#34; // 1 SISMEMBER cars &amp;#34;Chevy&amp;#34; // 0 SMEMBER cars // Honda BMW Ford SCARD cars // 3 SMOVE cars mycars &amp;#34;Ford&amp;#34; SMEMBER cars // Honda BMW SMEMBER mycars // Ford SRAM cars &amp;#34;BMW&amp;#34; SMEMBER cars // Honda ZADD users 1980 &amp;#34;Brad&amp;#34; ZADD users 1975 &amp;#34;Jen&amp;#34; ZADD users 1990 &amp;#34;Mike&amp;#34; ZADD users 1990 &amp;#34;Kate&amp;#34; ZRANK users &amp;#34;Mike&amp;#34; // 3 ZRANK users &amp;#34;Jen&amp;#34; // 0 ZRANK users &amp;#34;Brad&amp;#34; // 1 ZRANGE users 0 -1 // Jen Brad Kate Mike ZINCRBY users 1 &amp;#34;Jen&amp;#34; // 1976 HSET user:brad name &amp;#34;Brad&amp;#34; HSET user:brad email &amp;#34;brad@gmail.</description>
-    </item>
-    
-    <item>
-      <title>React overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/react/</link>
-      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/react/</guid>
-      <description>init react Commend
-1  npx create-react-app .   npx means you use this package but don&amp;rsquo;t download it.
-Structure package.json react &amp;amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
-public/index.html signal page application which is index.html
-Everything your do will inside &amp;lt;div id=&amp;quot;root&amp;rdquo;&amp;gt;&amp;lt;/div&amp;gt;
-src/index.js Entry point for react
-src/App.js All the component.
-Inside the class, the render() method is called life cycle method and to render the page.</description>
-    </item>
-    
-    <item>
-      <title>Git overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</guid>
-      <description>Here have some good pictures that is helpful for understanding git and contain the record for git commend
-Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
-Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
-This photo is provide by osteele</description>
-    </item>
-    
-    <item>
-      <title>MarkDown overview</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</link>
-      <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</guid>
-      <description>This is learning note for MarkDown
-Heading 1 or
-Heading 1 Heading 2 or
-Heading 2 Italic and bold italic or italic bold or bold italic and bold or italic and bold
-Unordered list  line 1 line 2 line 3  sub 1 sub 2    or
- line 1 line 2 line 3  sub 1 sub 2    Ordered list  line 1 line 2  sub 1 sub 2   line 3  BlockQuotes Use &amp;lsquo;&amp;gt;&amp;rsquo; for a quotes</description>
-    </item>
-    
-  </channel>
+            </item></channel>
 </rss>

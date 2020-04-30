@@ -1,57 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>javascript on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link>
-    <description>Recent content in javascript on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 17 Nov 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Callback, Promise and Async/await in js</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</link>
-      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid>
-      <description>Synchronous &amp;amp; asynchronous Function run synchronously means code is running as same as your writing.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>javascript | Tag | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link>
+        <description>javascript | Tag | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 Nov 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+                <title>Callback, Promise and Async/await in js</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</link>
+                <pubDate>Sun, 17 Nov 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid>
+                <description>Synchronous &amp;amp; asynchronous Function run synchronously means code is running as same as your writing.
 But in real situation, some code may need time to running but you don&amp;rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
 But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</description>
-    </item>
-    
-    <item>
-      <title>What is &#34;this&#34; in javascript</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link>
-      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid>
-      <description>author: Dmitri Pavlutin
-reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/ Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt(&#39;15&#39;). Context of an invocation is the value of this within function body. For example the invocation of map.set(&#39;key&#39;, &#39;value&#39;) has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</description>
-    </item>
-    
-    <item>
-      <title>How to have a dynamic class name</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
-      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
-      <description>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+            </item><item>
+                <title>What is &#34;this&#34; in javascript</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link>
+                <pubDate>Sun, 17 Nov 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid>
+                <description>author: Dmitri Pavlutin
+reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
+Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt(&#39;15&#39;). Context of an invocation is the value of this within function body. For example the invocation of map.set(&#39;key&#39;, &#39;value&#39;) has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</description>
+            </item><item>
+                <title>How to have a dynamic class name</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
+                <pubDate>Fri, 15 Nov 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
+                <description>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
 classNames This is a javascript for conditionally joining classNames.
-Here is: Github Basically, you can combine any number of classNames.
+Here is: Github
+Basically, you can combine any number of classNames.
 1 2  const classNames = require(&amp;#39;classNames&amp;#39;); classNames(&amp;#39;foo&amp;#39;, { bar: true, duck: false }, &amp;#39;baz&amp;#39;, { quux: true }); // =&amp;gt; &amp;#39;foo bar baz quux&amp;#39;   ES6 template literals You can just use template literals.</description>
-    </item>
-    
-    <item>
-      <title>Web development review</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
-      <pubDate>Thu, 29 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;] ], displayMath: [ [&#39;$$&#39;, &#39;$$&#39;]], processEscapes: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] }, messageStyle: &#34;none&#34;, &#34;HTML-CSS&#34;: { preferredFont: &#34;TeX&#34;, availableFonts: [&#34;STIX&#34;,&#34;TeX&#34;] } });   Document constructor $$f(x) = sin(x)$$</description>
-    </item>
-    
-  </channel>
+            </item><item>
+                <title>Web development review</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
+                <pubDate>Thu, 29 Aug 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
+                <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [ [&#39;$&#39;, &#39;$&#39;] ], displayMath: [ [&#39;$$&#39;, &#39;$$&#39;]], processEscapes: true, skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;, &#39;code&#39;] }, messageStyle: &#34;none&#34;, &#34;HTML-CSS&#34;: { preferredFont: &#34;TeX&#34;, availableFonts: [&#34;STIX&#34;,&#34;TeX&#34;] } });   Document constructor $$f(x) = sin(x)$$</description>
+            </item></channel>
 </rss>

@@ -1,37 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>html on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/html/</link>
-    <description>Recent content in html on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 08 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/html/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Canvas in html5</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-      <description>Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN Project by using Canvas  Chaos Game : Use canvas to draw the chaos game Draw panel with socket.io : A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas</description>
-    </item>
-    
-    <item>
-      <title>How to have a dynamic class name</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
-      <pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
-      <description>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>html | Tag | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/html/</link>
+        <description>html | Tag | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/html/" rel="self" type="application/rss+xml" /><item>
+                <title>Canvas in html5</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
+                <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
+                <description>Canvas is a new feature since html5 that allows you draw something on your web page
+Reference from MDN
+Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
+1 2  const canvas = document.</description>
+            </item><item>
+                <title>How to have a dynamic class name</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
+                <pubDate>Fri, 15 Nov 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
+                <description>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
 classNames This is a javascript for conditionally joining classNames.
-Here is: Github Basically, you can combine any number of classNames.
+Here is: Github
+Basically, you can combine any number of classNames.
 1 2  const classNames = require(&amp;#39;classNames&amp;#39;); classNames(&amp;#39;foo&amp;#39;, { bar: true, duck: false }, &amp;#39;baz&amp;#39;, { quux: true }); // =&amp;gt; &amp;#39;foo bar baz quux&amp;#39;   ES6 template literals You can just use template literals.</description>
-    </item>
-    
-  </channel>
+            </item></channel>
 </rss>

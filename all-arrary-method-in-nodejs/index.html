@@ -7,23 +7,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>All array method in Nodejs | TyrangYang_Blog</title>
         <meta name="Description" content=""><meta property="og:title" content="All array method in Nodejs" />
-<meta property="og:description" content="All methods  foreach  map  filter  reduce  slice  splice  sort  concat  fill  include  join  reverse  push  pop  unshift  shift  indexOf &amp; lastIndexOf  every  some  find  findIndex  from  isArray  flat     All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers." />
+<meta property="og:description" content="All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/" />
 <meta property="article:published_time" content="2020-04-06T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-04-06T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="All array method in Nodejs"/>
-<meta name="twitter:description" content="All methods  foreach  map  filter  reduce  slice  splice  sort  concat  fill  include  join  reverse  push  pop  unshift  shift  indexOf &amp; lastIndexOf  every  some  find  findIndex  from  isArray  flat     All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers."/>
-<meta name="theme-color" content="#ffffff">
-<meta name="msapplication-TileColor" content="#da532c">
-<link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/" />
-<link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png">
-<link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest">
-<link rel="mask-icon" href="https://tyrangyang.github.io/TyrangYang_blog/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/express/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/canvas/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><script type="application/ld+json">
+<meta name="twitter:description" content="All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers."/>
+<meta name="application-name" content="TyrangYang_Blog">
+<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/express/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/canvas/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -33,70 +28,92 @@
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/all-arrary-method-in-nodejs\/"
         },"genre": "posts","keywords": "js, nodejs, array","wordcount":  1073 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/all-arrary-method-in-nodejs\/","datePublished": "2020-04-06","dateModified": "2020-04-06","author": {
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/all-arrary-method-in-nodejs\/","datePublished": "2020-04-06T00:00:00+00:00","dateModified": "2020-04-06T00:00:00+00:00","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
             },"description": ""
     }
     </script></head>
-    <body><script>
-            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
-                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
-            }
-            window.isDark && document.body.classList.add('dark-theme');
-        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/">TyrangYang_Blog</a>
+            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
         </div>
-        <div class="menu"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="noopener noreffer"><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" rel="noopener noreffer"><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" rel="noopener noreffer"><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><span class="menu-item">|</span>
-            <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </header><header class="mobile" id="header-mobile">
-    <div class="header-wrapper">
-        <div class="header-container">
+    <div class="header-container">
+        <div class="header-wrapper">
             <div class="header-title">
-                <a href="https://tyrangyang.github.io/TyrangYang_blog/">TyrangYang_Blog</a>
+                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title="" rel="noopener noreffer"><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title="" rel="noopener noreffer"><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title="" rel="noopener noreffer"><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
 </header>
-
-<script>
-    window.desktopHeaderMode =  null ;
-    window.mobileHeaderMode =  null ;
-</script>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">All array method in Nodejs</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a>
-</span>&nbsp;
-                    <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">All array method in Nodejs</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/TyrangYang" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;
+                    <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/">
                                 <i class="far fa-folder fa-fw"></i>Overview
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-06>2020-04-06</time>&nbsp;
                 <i class="fas fa-pencil-alt fa-fw"></i>about 1073 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
-        </div><div class="toc" id="toc-auto">
-                <h2 class="toc-title">Contents</h2>
-                <div class="toc-content" id="toc-content-auto"></div>
-            </div>
-            <div class="toc" id="toc-static">
-                <details>
-                    <summary>
-                        <div class="toc-title">
-                            <span>Contents</span>
-                            <span><i class="details icon fas fa-angle-down"></i></span>
-                        </div>
-                    </summary>
-                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+        </div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#all-methods">All methods</a>
       <ul>
@@ -128,59 +145,33 @@
     </li>
   </ul>
 </nav></div>
-                </details>
             </div><div class="content" id="content"><ul>
-<li><a href="#all-methods" rel="noopener noreffer">All methods</a>
-
+<li><a href="#all-methods" rel="">All methods</a>
 <ul>
-<li><a href="#foreach" rel="noopener noreffer">foreach</a>
-</li>
-<li><a href="#map" rel="noopener noreffer">map</a>
-</li>
-<li><a href="#filter" rel="noopener noreffer">filter</a>
-</li>
-<li><a href="#reduce" rel="noopener noreffer">reduce</a>
-</li>
-<li><a href="#slice" rel="noopener noreffer">slice</a>
-</li>
-<li><a href="#splice" rel="noopener noreffer">splice</a>
-</li>
-<li><a href="#sort" rel="noopener noreffer">sort</a>
-</li>
-<li><a href="#concat" rel="noopener noreffer">concat</a>
-</li>
-<li><a href="#fill" rel="noopener noreffer">fill</a>
-</li>
-<li><a href="#include" rel="noopener noreffer">include</a>
-</li>
-<li><a href="#join" rel="noopener noreffer">join</a>
-</li>
-<li><a href="#reverse" rel="noopener noreffer">reverse</a>
-</li>
-<li><a href="#push" rel="noopener noreffer">push</a>
-</li>
-<li><a href="#pop" rel="noopener noreffer">pop</a>
-</li>
-<li><a href="#unshift" rel="noopener noreffer">unshift</a>
-</li>
-<li><a href="#shift" rel="noopener noreffer">shift</a>
-</li>
-<li><a href="#indexof--lastindexof" rel="noopener noreffer">indexOf &amp; lastIndexOf</a>
-</li>
-<li><a href="#every" rel="noopener noreffer">every</a>
-</li>
-<li><a href="#some" rel="noopener noreffer">some</a>
-</li>
-<li><a href="#find" rel="noopener noreffer">find</a>
-</li>
-<li><a href="#findindex" rel="noopener noreffer">findIndex</a>
-</li>
-<li><a href="#from" rel="noopener noreffer">from</a>
-</li>
-<li><a href="#isarray" rel="noopener noreffer">isArray</a>
-</li>
-<li><a href="#flat" rel="noopener noreffer">flat</a>
-</li>
+<li><a href="#foreach" rel="">foreach</a></li>
+<li><a href="#map" rel="">map</a></li>
+<li><a href="#filter" rel="">filter</a></li>
+<li><a href="#reduce" rel="">reduce</a></li>
+<li><a href="#slice" rel="">slice</a></li>
+<li><a href="#splice" rel="">splice</a></li>
+<li><a href="#sort" rel="">sort</a></li>
+<li><a href="#concat" rel="">concat</a></li>
+<li><a href="#fill" rel="">fill</a></li>
+<li><a href="#include" rel="">include</a></li>
+<li><a href="#join" rel="">join</a></li>
+<li><a href="#reverse" rel="">reverse</a></li>
+<li><a href="#push" rel="">push</a></li>
+<li><a href="#pop" rel="">pop</a></li>
+<li><a href="#unshift" rel="">unshift</a></li>
+<li><a href="#shift" rel="">shift</a></li>
+<li><a href="#indexof--lastindexof" rel="">indexOf &amp; lastIndexOf</a></li>
+<li><a href="#every" rel="">every</a></li>
+<li><a href="#some" rel="">some</a></li>
+<li><a href="#find" rel="">find</a></li>
+<li><a href="#findindex" rel="">findIndex</a></li>
+<li><a href="#from" rel="">from</a></li>
+<li><a href="#isarray" rel="">isArray</a></li>
+<li><a href="#flat" rel="">flat</a></li>
 </ul>
 </li>
 </ul>
@@ -739,37 +730,28 @@
     </div>
 
     <div class="post-info-more">
-        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/js">js</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs">nodejs</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/array">array</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/js/">js</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs/">nodejs</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/array/">array</a></section>
         <section>
-            <span><a href="javascript:window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>
     </div>
 
     <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/express/" class="prev" rel="prev" title="Express Overview"><i class="fas fa-angle-left fa-fw"></i>Express Overview</a>
             <a href="https://tyrangyang.github.io/TyrangYang_blog/canvas/" class="next" rel="next" title="Canvas in html5">Canvas in html5<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-<div class="comment"></div>
-    </article></div>
+</article></div>
             </main><footer class="footer">
-    <div class="copyright"><div class="copyright-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.2"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
         </div>
+    </footer></div>
 
-        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/TyrangYang" target="_blank">Haolin Yang</a></span></div>
-    </div>
-</footer>
-</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
-            <i class="fas fa-chevron-up fa-fw"></i>
-        </a><script>
-        document.addEventListener('DOMContentLoaded', function () {
-            lightGallery(document.getElementById('content'), {
-                selector: '.lightgallery',
-                speed: 400,
-                hideBarsDelay: 2000,
-                thumbnail: true,
-                exThumbImage: 'data-thumbnail',
-                thumbWidth: 80,
-                thumbContHeight: 80,
-            });
-        });
-    </script><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.css"><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/sharer/sharer.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lightgallery.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-thumbnail.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/lib/lightgallery/lg-zoom.min.js"></script><script src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"headerMode":{"desktop":null,"mobile":null},"search":{"algoliaAppID":"","algoliaIndex":"","algoliaSearchKey":"","noResultsFound":"No results found","type":"algolia"}};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

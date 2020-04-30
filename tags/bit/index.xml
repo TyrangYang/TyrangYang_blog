@@ -1,24 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>bit on TyrangYang_Blog</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/tags/bit/</link>
-    <description>Recent content in bit on TyrangYang_Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bit/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Bit operation in C&#43;&#43;</title>
-      <link>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</link>
-      <pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</guid>
-      <description>Bit operator    operator function example     &amp;laquo; left shift 0001 &amp;ndash;&amp;gt; 0010   &amp;raquo; right shift 0010 &amp;ndash;&amp;gt; 0001   &amp;amp; and (bit by bit) 1100 &amp;amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp;amp; x is a bit</description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>bit | Tag | TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/bit/</link>
+        <description>bit | Tag | TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Aug 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bit/" rel="self" type="application/rss+xml" /><item>
+                <title>Bit operation in C&#43;&#43;</title>
+                <link>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</link>
+                <pubDate>Sun, 18 Aug 2019 00:00:00 &#43;0000</pubDate>
+                <author>Haolin Yang</author>
+                <guid>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</guid>
+                <description>Bit operator    operator function example     &amp;laquo; left shift 0001 &amp;ndash;&amp;gt; 0010   &amp;raquo; right shift 0010 &amp;ndash;&amp;gt; 0001   &amp;amp; and (bit by bit) 1100 &amp;amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp;amp; x is a bit</description>
+            </item></channel>
 </rss>
