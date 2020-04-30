@@ -125,7 +125,11 @@ Without changing workspace, update local repository from remote repository
 
 `git rm --cached <file name>`
 
-`git rm -r --cached .`
+`git rm -r --cached .` This command will set file to be untracked.
+
+`-r` means recursively
+
+`--cached` means remove file in index
 
 > Update **.gitignore**. delete something that you add in gitignore and commit before
 
