@@ -3,10 +3,10 @@ title: 'Python Overview'
 date: 2020-04-28T16:43:12-04:00
 Categories: ['Overview']
 tags: ['python']
-toc: false
-autoCollapseToc: false
-linkToMarkdown: true
-math: false
+toc:
+    enable: true
+    auto: true
+hiddenFromSearch: false
 ---
 
 This posts only use as a remainder

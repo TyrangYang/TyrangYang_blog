@@ -7,8 +7,9 @@ tags:
     - js
     - nodejs
     - array
-toc: true
-autoCollapseToc: true
+toc:
+    enable: true
+    auto: true
 ---
 
 -   [All methods](#all-methods)

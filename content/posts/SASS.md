@@ -6,8 +6,9 @@ categories: ['Note']
 tags:
     - css
     - course note
-toc: true
-autoCollapseToc: true
+toc:
+    enable: true
+    auto: true
 ---
 
 -   [SCSS features](#scss-features)

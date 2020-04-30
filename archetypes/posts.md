@@ -3,8 +3,10 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 Categories: [""]
 tags: [""]
-toc: false
-autoCollapseToc: false
+toc:
+  enable: true
+  auto: true
 linkToMarkdown: true
-math: false
+math:
+  enable: false
 ---
