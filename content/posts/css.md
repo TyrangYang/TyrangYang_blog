@@ -7,6 +7,8 @@ tags:
     - css
 ---
 
+CSS cheat sheet: [html](/csscrashcourse/csscheatsheet/index.html) & [css](/csscrashcourse/csscheatsheet/css/style.css) provided by [Traversy Media](https://youtu.be/yfoY53QXEnI)
+
 ## Font
 
 `font-size` size
@@ -164,12 +166,14 @@ a:hover {
 
 The position property specifies the type of positioning method used for an element.
 
+you have `top left bottom right` to set the position
+
 There are five different position values:
 
--   static
--   relative
--   fixed
--   absolute
+-   static: default
+-   relative: relative to normal position
+-   absolute: target wherever position inside of a relative element (
+-   fixed: fix to browser window
 -   sticky
 
 ## color
@@ -268,8 +272,6 @@ Use two point to decide the curve
 Move some element to the front or back.
 
 `z-index = 10;`
-
-
 
 ## Personal default style
 
