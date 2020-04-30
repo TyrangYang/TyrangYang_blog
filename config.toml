@@ -17,7 +17,7 @@ title = "TyrangYang_Blog"
 theme = "LoveIt"
 [author]
   name = "Haolin Yang"
-  link = "https://github.com/TyrangYang"
+  link = "https://tyrangyang.github.io/"
 
 [params]
   # LoveIt theme version
@@ -35,9 +35,10 @@ theme = "LoveIt"
     # 搜索结果中高亮部分的 HTML 标签
     highlightTag = "em"
     [params.search.algolia]
-      index = ""
-      appID = ""
-      searchKey = ""
+      index = "blog2"
+      appID = "QXEV52XWDS"
+      searchKey = "06e102f295c5ae8175333dc4f3dab5dd"
+      adminKey = "06e102f295c5ae8175333dc4f3dab5dd"
   [params.home]
     [params.home.profile]
       enable = true
@@ -65,6 +66,21 @@ theme = "LoveIt"
       copy = true
       # 默认展开显示的代码行数
       maxShownLines = 1000
+  [params.footer]
+    enable = true
+    # LoveIt 新增 | 0.2.0 自定义内容 (支持 HTML 格式)
+    custom = ''
+    # LoveIt 新增 | 0.2.0 是否显示 Hugo 和主题信息
+    hugo = true
+    # LoveIt 新增 | 0.2.0 是否显示版权信息
+    copyright = true
+    # LoveIt 新增 | 0.2.0 是否显示作者
+    author = true
+    # 网站创立年份
+    # since = 2019
+    # 许可协议信息 (支持 HTML 格式)
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
 [menu]
   [[menu.main]]
     identifier = "posts"
@@ -105,6 +121,7 @@ theme = "LoveIt"
     url = "https://tyrangyang.github.io/"
     title = "home page"
     weight = "5"
+
 # Hugo 解析文档的配置
 [markup]
   # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
@@ -147,9 +164,6 @@ theme = "LoveIt"
 
 # 隐私信息设置 (https://gohugo.io/about/hugo-and-gdpr/)
 [privacy]
-  [privacy.googleAnalytics]
-    anonymizeIP = true
-
   [privacy.youtube]
     privacyEnhanced = true
 
@@ -166,7 +180,8 @@ theme = "LoveIt"
 
 # 用于 Hugo 输出文档的设置
 [outputs]
-  home = ["HTML", "RSS"]
+  # LoveIt 更改 | 0.2.0
+  home = ["HTML", "RSS", "JSON"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
