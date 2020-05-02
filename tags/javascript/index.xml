@@ -18,8 +18,8 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
                 <pubDate>Sun, 17 Nov 2019 00:00:00 &#43;0000</pubDate>
                 <author>Haolin Yang</author>
                 <guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid>
-                <description>author: Dmitri Pavlutin
-reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
+                <description>Author: Dmitri Pavlutin
+Reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
 Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt(&#39;15&#39;). Context of an invocation is the value of this within function body. For example the invocation of map.set(&#39;key&#39;, &#39;value&#39;) has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</description>
             </item><item>
                 <title>How to have a dynamic class name</title>

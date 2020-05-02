@@ -26,9 +26,9 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
 所謂 C&#43;&#43; new handler 機制是，你可以要求系統在記憶體配置需求無法被滿足時， 喚起一個你所指定的函式。換句話說一旦 ::operator new 無法達成任務，在丟出 std::bad_alloc 異常狀態之前，會先呼叫由客端指定的處理常式。此處理常式 通常即被稱為 new-handler。new-handler 解決記憶體不足的作法有特定的模式。
 注意，SGI 以 malloc 而非 ::operator new 來配置記憶體(我所能夠想像的一 個原因是歷史因素，另一個原因是 C&#43;&#43; 並未提供相應於 realloc() 的記憶體配 置動作)，因此 SGI 不能直接使用 C&#43;&#43; 的 set_new_handler()，必須模擬一個 類似的 set_malloc_handler()。"/>
 <meta name="application-name" content="TyrangYang_Blog">
-<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/allocator/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/functor/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/iterators/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/allocator/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/functor/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/iterators/" /><link rel="stylesheet" href="/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -49,10 +49,10 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
+            <a href="/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tyrangyang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tyrangyang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tyrangyang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw"></i>
@@ -73,7 +73,7 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
+                <a href="/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -95,7 +95,7 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tyrangyang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tyrangyang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="/TyrangYang_blog/TyrangYang_blog/tyrangyang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -107,43 +107,15 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Allocator in c&#43;&#43;</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Allocator in c&#43;&#43;</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;
-                    <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/">
+                    <span class="post-category">included in<a href="/TyrangYang_blog/categories/stl-study-note/">
                                 <i class="far fa-folder fa-fw"></i>STL-study-note
                             </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-07-21>2019-07-21</time>&nbsp;
                 <i class="fas fa-pencil-alt fa-fw"></i>about 314 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>2 min&nbsp;</div>
-        </div><div class="details toc" id="toc-static">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#allocator-is-for-memory">Allocator is for memory</a></li>
-    <li><a href="#construct-and-destroy">construct() and destroy()</a></li>
-    <li><a href="#memory-allocate-and-release">Memory allocate and release</a>
-      <ul>
-        <li><a href="#第一級配置器">第一級配置器</a></li>
-        <li><a href="#第二級配置器">第二級配置器</a></li>
-      </ul>
-    </li>
-    <li><a href="#memory-basic-processing-function">Memory basic processing function</a>
-      <ul>
-        <li><a href="#uninitialized_copybeginendbegin2">uninitialized_copy(begin,end,begin2)</a></li>
-        <li><a href="#uninitialized_fillbeginendt">uninitialized_fill(begin,end,t)</a></li>
-        <li><a href="#uninitialized_fill_nbeginnt">uninitialized_fill_n(begin,n,t)</a></li>
-      </ul>
-    </li>
-    <li><a href="#summary">Summary</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h2 id="allocator-is-for-memory">Allocator is for memory</h2>
+        </div><div class="content" id="content"><h2 id="allocator-is-for-memory">Allocator is for memory</h2>
 <p>配置内存空间 -&gt; 构建(constructor) -&gt; 解构(destructor) -&gt; 释放内存空间</p>
 <h2 id="construct-and-destroy">construct() and destroy()</h2>
 <p>用于建构和解构</p>
@@ -203,7 +175,7 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/allocator/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/TyrangYang_blog/allocator/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -212,14 +184,14 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=""></a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl/">STL</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=""></a>,&nbsp;<a href="/TyrangYang_blog/tags/stl/">STL</a></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/TyrangYang_blog/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/functor/" class="prev" rel="prev" title="Functor in C&#43;&#43;"><i class="fas fa-angle-left fa-fw"></i>Functor in C&#43;&#43;</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/iterators/" class="next" rel="next" title="Iterator in c&#43;&#43;">Iterator in c&#43;&#43;<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/TyrangYang_blog/functor/" class="prev" rel="prev" title="Functor in C&#43;&#43;"><i class="fas fa-angle-left fa-fw"></i>Functor in C&#43;&#43;</a>
+            <a href="/TyrangYang_blog/iterators/" class="next" rel="next" title="Iterator in c&#43;&#43;">Iterator in c&#43;&#43;<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
@@ -235,5 +207,5 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
             </a>
         </div><script type="text/javascript">
     window.config = {"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"headerMode":{"desktop":null,"mobile":null},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","noResultsFound":"No results found","type":"algolia"}};
-</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/TyrangYang_blog/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

@@ -235,13 +235,17 @@ Use two point to decide the curve
 
 ## Display
 
+[Sample code](https://jsfiddle.net/bradtraversy/bu0ecodm/1/) provided by [Traversy Media](https://youtu.be/JJSoEo8JSnc)
+
 ### flex
 
 `display: flex`
 
 `flex-direction: row` (column)
 
-`flex-wrap: wrap`
+`flex-wrap: wrap` element can go to next line
+
+`flex-basis: 27%` each box will horizontal base on this value
 
 `justify-content: center` (space-evenly space-between space-around flex-start flex-end) horizontal
 
