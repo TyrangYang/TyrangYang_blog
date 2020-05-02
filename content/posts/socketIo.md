@@ -4,7 +4,7 @@ date: 2020-04-18
 author: Haolin Yang
 categories: ['Overview']
 tags:
-    - socket.io
+    - socketIo
     - nodejs
 ---
 
@@ -48,39 +48,39 @@ const clientSocket = io();
 ### Receive -> on()
 
 ```js
-socket.on("<head>", (data) => {
+socket.on('<head>', (data) => {
     // deal with data
-})
-``` 
+});
+```
 
 ### Send -> emit()
 
 ```js
-socket.emit("<head>", data)
+socket.emit('<head>', data);
 ```
 
 ### Send to all client socket except itself -> socket.broadcast.emit()
 
 ```js
-socket.broadcast.emit("<head>", data)
+socket.broadcast.emit('<head>', data);
 ```
 
 ### Sent to all client socket include itself -> io.emit()
 
 ```js
-io.emit("<head>", data)
+io.emit('<head>', data);
 ```
 
 ### Group socket together
 
 ```js
-socket.join("<name>")
+socket.join('<name>');
 ```
 
 ### Send to a group
 
 ```js
-socket.to("<name>").emit()
-socket.broadcast.to("<name>").emit()
-io.to("<name>").emit()
+socket.to('<name>').emit();
+socket.broadcast.to('<name>').emit();
+io.to('<name>').emit();
 ```

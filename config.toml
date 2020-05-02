@@ -58,8 +58,8 @@ theme = "LoveIt"
     hiddenFromSearch = false
     linkToMarkdown = true
     [params.page.toc]
-      enable = true
-      auto = true
+      enable = false
+      auto = false
     [params.page.code]
       # 是否显示代码块的复制按钮
       copy = true
