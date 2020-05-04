@@ -4,7 +4,7 @@ date: 2020-03-15
 author: Haolin Yang
 categories: ['Posts']
 tags:
-    - js
+    - javascript
 ---
 
 This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.

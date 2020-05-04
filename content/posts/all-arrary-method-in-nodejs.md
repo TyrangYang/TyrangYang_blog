@@ -4,7 +4,7 @@ date: 2020-04-06
 author: Haolin Yang
 categories: ['Overview']
 tags:
-    - js
+    - javascript
     - nodejs
     - array
 toc:
@@ -101,11 +101,11 @@ let numbers = [1, 2, 3, 4, 5];
 // [start, end)
 // [start to end)
 let first2 = numbers.slice(0, 2);
-let sallowCopy = numbers.slice(); // could sallow copy an array
-sallowCopy[5] = 100;
+let shallowCopy = numbers.slice(); // could shallow copy an array
+shallowCopy[5] = 100;
 let last3 = numbers.slice(-3);
 let startFrom1 = numbers.slice(1);
-console.log([first2, sallowCopy, last3, startFrom1]);
+console.log([first2, shallowCopy, last3, startFrom1]);
 // [ [ 1, 2 ], [ 1, 2, 3, 4, 5, 100 ], [ 3, 4, 5 ], [ 2, 3, 4, 5 ] ]
 ```
 
@@ -123,10 +123,13 @@ console.log(numbers, deleted);
 
 ```js
 let numbers = [75, 22, 18, 10, 100, 214, 1];
-numbers.sort(); // not sort by number;
+numbers.sort(); // not sort by number
+// If compareFn not provided, sort everything base on string.
 console.log(numbers); // [1, 10, 100, 18, 214, 22,  75]
+
+// CompareFn return a Number. If return < 0, a goes first. If return > 0, b goes first. If return 0, not change
 numbers.sort((a, b) => {
-    return a - b; // cannot a > b; 100 < 18 ; 100 - 18 > 0;
+    return a - b; // if use a > b, function only return 0 and 1.
 });
 console.log(numbers); // [ 1, 10, 18, 22, 75, 100, 214]
 ```
@@ -140,7 +143,7 @@ let c = a.concat(b);
 let d = a.concat(c, 100, a);
 console.log(c); // [ 1, 2, 3, 10, 20, 30 ]
 console.log(d); // [ 1, 2, 3, 1, 2, 3, 10, 20, 30, 100, 1, 2, 3]
-sallowCopy = d.concat(); // also a sallow copy
+shallowCopy = d.concat(); // also a shallow copy
 ```
 
 ### fill
@@ -314,7 +317,7 @@ Make a shallow copy from a iterable object
 ```js
 const str = '1234567';
 
-const res = Array.from(str, (each) => Number(each));
+const res = Array.from(str, (each, index) => Number(each));
 
 console.log(res);
 

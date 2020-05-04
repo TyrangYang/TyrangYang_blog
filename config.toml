@@ -25,7 +25,7 @@ theme = "LoveIt"
   [params.search]
     enable = true
     # 搜索引擎的类型 ("lunr", "algolia")
-    type = "algolia"
+    type = "lunr"
     # 文章内容最长索引长度
     contentLength = 100
     # 搜索框的占位提示语
@@ -34,6 +34,7 @@ theme = "LoveIt"
     maxResultLength = 10
     # 搜索结果中高亮部分的 HTML 标签
     highlightTag = "em"
+    absoluteURL = true
     [params.search.algolia]
       index = "blog"
       appID = "QXEV52XWDS"
