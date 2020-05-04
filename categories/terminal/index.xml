@@ -1,20 +1,20 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Terminal | Category | TyrangYang_Blog</title>
+        <title>Terminal - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/terminal/</link>
-        <description>Terminal | Category | TyrangYang_Blog</description>
+        <description>Terminal - Category - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/terminal/" rel="self" type="application/rss+xml" /><item>
-                <title>Basic Terminal command</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</link>
-                <pubDate>Mon, 16 Mar 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</guid>
-                <description>Basic cd route
+    <title>Basic Terminal command</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</link>
+    <pubDate>Mon, 16 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</guid>
+    <description><![CDATA[Basic cd route
 ls list
 pwd show current path
 cat concatenate and print file (usually as read file)
 touch change file access and modification time; (usually as create file)
-Routing cd &amp;lt;directory&amp;gt;
+Routing cd &lt;directory&gt;
 cd . current
 cd .. last
 cd ~ home
@@ -22,36 +22,36 @@ cd / root
 List ls
 ls -a list all included hiding file
 ls -l list detail
-Move &amp;amp; Copy cp &amp;lt;name1&amp;gt; &amp;lt;name2&amp;gt; copy
-mv &amp;lt;name1&amp;gt; &amp;lt;name2&amp;gt; rename
- move one file within this directory to another name.</description>
-            </item><item>
-                <title>Crontab overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
-                <pubDate>Thu, 23 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
-                <description>What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
+Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
+mv &lt;name1&gt; &lt;name2&gt; rename
+ move one file within this directory to another name.]]></description>
+</item><item>
+    <title>Crontab overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
+    <pubDate>Thu, 23 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
+    <description><![CDATA[What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
 Basic command crontab [-u user] {-l | -e | -r}
-   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:</description>
-            </item><item>
-                <title>My Zsh setting</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link>
-                <pubDate>Wed, 08 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid>
-                <description>Zsh &amp;amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
-Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&amp;rsquo;s recommended to use zsh over bash.</description>
-            </item><item>
-                <title>Z-shell overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</link>
-                <pubDate>Thu, 12 Dec 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</guid>
-                <description>Reference Very useful blog:
+   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:]]></description>
+</item><item>
+    <title>My Zsh setting</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link>
+    <pubDate>Wed, 08 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid>
+    <description><![CDATA[Zsh &amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
+Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&rsquo;s recommended to use zsh over bash.]]></description>
+</item><item>
+    <title>Z-shell overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</link>
+    <pubDate>Thu, 12 Dec 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</guid>
+    <description><![CDATA[Reference Very useful blog:
 http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
 http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
 Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&amp;rsquo;s Guide to the Z-Shell</description>
-            </item></channel>
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell]]></description>
+</item></channel>
 </rss>

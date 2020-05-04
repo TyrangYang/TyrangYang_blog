@@ -1,16 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>crontab | Tag | TyrangYang_Blog</title>
+        <title>crontab - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/crontab/</link>
-        <description>crontab | Tag | TyrangYang_Blog</description>
+        <description>crontab - Tag - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 23 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/crontab/" rel="self" type="application/rss+xml" /><item>
-                <title>Crontab overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
-                <pubDate>Thu, 23 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
-                <description>What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
+    <title>Crontab overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
+    <pubDate>Thu, 23 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
+    <description><![CDATA[What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
 Basic command crontab [-u user] {-l | -e | -r}
-   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:</description>
-            </item></channel>
+   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:]]></description>
+</item></channel>
 </rss>

@@ -1,19 +1,19 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>makefile | Tag | TyrangYang_Blog</title>
+        <title>makefile - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/</link>
-        <description>makefile | Tag | TyrangYang_Blog</description>
+        <description>makefile - Tag - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/" rel="self" type="application/rss+xml" /><item>
-                <title>Makefile overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link>
-                <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid>
-                <description>What is makefile. How to write a makefile.
+    <title>Makefile overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link>
+    <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid>
+    <description><![CDATA[What is makefile. How to write a makefile.
 Ref: https://opensource.com/article/18/8/what-how-makefile
 What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
-1 2  target: prerequisites &amp;lt;TAB&amp;gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).</description>
-            </item></channel>
+1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).]]></description>
+</item></channel>
 </rss>

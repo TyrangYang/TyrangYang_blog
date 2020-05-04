@@ -1,58 +1,58 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>concurrent | Tag | TyrangYang_Blog</title>
+        <title>concurrent - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent/</link>
-        <description>concurrent | Tag | TyrangYang_Blog</description>
+        <description>concurrent - Tag - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 31 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent/" rel="self" type="application/rss+xml" /><item>
-                <title>Concurrent Programming Course note 5</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</link>
-                <pubDate>Thu, 31 Oct 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</guid>
-                <description>Message passing 1 2 3 4 5 6 7  echo() -&amp;gt; receive {From, Msg} -&amp;gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop  stop -&amp;gt; true %^pattern^ ^a return value and stop receiving  end.   </description>
-            </item><item>
-                <title>Concurrent Programming Course note 4</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</link>
-                <pubDate>Wed, 25 Sep 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</guid>
-                <description>Monitor signal condition &amp;ndash;&amp;gt; waiting monitor &amp;ndash;&amp;gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while  empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while  full.</description>
-            </item><item>
-                <title>Concurrent Programming Course note 3</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</link>
-                <pubDate>Mon, 16 Sep 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</guid>
-                <description>Semaphore Initialize how many permissions you will use.
+    <title>Concurrent Programming Course note 5</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</link>
+    <pubDate>Thu, 31 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</guid>
+    <description><![CDATA[Message passing 1 2 3 4 5 6 7  echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop  stop -&gt; true %^pattern^ ^a return value and stop receiving  end.   ]]></description>
+</item><item>
+    <title>Concurrent Programming Course note 4</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</link>
+    <pubDate>Wed, 25 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</guid>
+    <description><![CDATA[Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
+producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while  empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while  full.]]></description>
+</item><item>
+    <title>Concurrent Programming Course note 3</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</link>
+    <pubDate>Mon, 16 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</guid>
+    <description><![CDATA[Semaphore Initialize how many permissions you will use.
 acquire() will add one permission.
 release() will remove one permission.
 Permission must ≥ 0.
-Semaphore solution for the MEP  #criticalSection &#43; permissions = 1 #criticalSection = #acquires − #releases  Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
-Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared  static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &amp;lt; 50; i&#43;&#43;){ mutex.</description>
-            </item><item>
-                <title>Concurrent Programming Course note 2</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</link>
-                <pubDate>Wed, 04 Sep 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</guid>
-                <description>Race condition Multiple thread access one same variables of object concurrently and at least one does update.
+Semaphore solution for the MEP  #criticalSection + permissions = 1 #criticalSection = #acquires − #releases  Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
+Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared  static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &lt; 50; i++){ mutex.]]></description>
+</item><item>
+    <title>Concurrent Programming Course note 2</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</link>
+    <pubDate>Wed, 04 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</guid>
+    <description><![CDATA[Race condition Multiple thread access one same variables of object concurrently and at least one does update.
 Bad situation.
 Atomic operation An operation is atomic if it execute until it completion without interruption
 Critical section A part of program that accesses shared memory and which we which to execute automatically.
-mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.</description>
-            </item><item>
-                <title>Concurrent Programming Course note 1</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</link>
-                <pubDate>Wed, 28 Aug 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</guid>
-                <description>What is concurrency Systems of interacting computer programs which share resource and run concurrently.
+mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.]]></description>
+</item><item>
+    <title>Concurrent Programming Course note 1</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</link>
+    <pubDate>Wed, 28 Aug 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</guid>
+    <description><![CDATA[What is concurrency Systems of interacting computer programs which share resource and run concurrently.
 parallelism and concurrency Parallelism: Occurring physically at the same time.
 Concurrency: Occurring logically at the same time.
 synchronization Process synchronization: Ensure the instructions are executed in certain order.
 Synchronization is irrelevant if processes do not interact with each other.
 Concurrency, and hence process synchronized, is useful only when processes interact with each other.
-interaction Share memory is kind of interact.</description>
-            </item></channel>
+interaction Share memory is kind of interact.]]></description>
+</item></channel>
 </rss>

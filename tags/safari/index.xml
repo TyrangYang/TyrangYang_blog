@@ -1,22 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>safari | Tag | TyrangYang_Blog</title>
+        <title>safari - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/safari/</link>
-        <description>safari | Tag | TyrangYang_Blog</description>
+        <description>safari - Tag - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/safari/" rel="self" type="application/rss+xml" /><item>
-                <title>Safari Shortcut</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link>
-                <pubDate>Fri, 10 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</guid>
-                <description>Some keyboards shortcuts when using safari
+    <title>Safari Shortcut</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link>
+    <pubDate>Fri, 10 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</guid>
+    <description><![CDATA[Some keyboards shortcuts when using safari
 Navigating Webpages Use arrow keys to go up and down.
-Use Option&#43;up/down or Shift&#43;Space / Space to scroll quickly.
-Use Command&#43;up/down goto the top &amp;amp; button.
-Open Pages in Tabs Use Command&#43;T to open a new Tab.
-Use Shift&#43;Command&#43;Left/right arrow or Control&#43;Tab / Control&#43;Shift&#43;Tab to move from tab to tab.
-Use Command&#43;W to close current tab.
-Use Command&#43;Z to reopen a closed tab.
-Use Command&#43;Option&#43;W to close all tabs expect current tab.</description>
-            </item></channel>
+Use Option+up/down or Shift+Space / Space to scroll quickly.
+Use Command+up/down goto the top &amp; button.
+Open Pages in Tabs Use Command+T to open a new Tab.
+Use Shift+Command+Left/right arrow or Control+Tab / Control+Shift+Tab to move from tab to tab.
+Use Command+W to close current tab.
+Use Command+Z to reopen a closed tab.
+Use Command+Option+W to close all tabs expect current tab.]]></description>
+</item></channel>
 </rss>

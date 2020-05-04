@@ -1,91 +1,91 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Overview | Category | TyrangYang_Blog</title>
+        <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
-        <description>Overview | Category | TyrangYang_Blog</description>
+        <description>Overview - Category - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 28 Apr 2020 16:43:12 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
-                <title>Python Overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</link>
-                <pubDate>Tue, 28 Apr 2020 16:43:12 -0400</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</guid>
-                <description>This posts only use as a remainder
-Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &amp;#39;a name&amp;#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &amp;#39;Brad&amp;#39; age = 37 print(&amp;#39;name is&amp;#39; &#43; name &#43; &amp;#39; and age is &amp;#39; &#43; str(age)) print(&amp;#39;name is {name} and age is {age}&amp;#39;.</description>
-            </item><item>
-                <title>chmod Overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
-                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
-                <description>chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|&#43;|-] [r|w|x] 
-u =&amp;gt; user
-g =&amp;gt; group
-o =&amp;gt; other
-a =&amp;gt; all
-r =&amp;gt; read
-w =&amp;gt; write
-x =&amp;gt; execute
-example chmod &#43;wr test.txt give write and read permission for user
+    <title>Python Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</link>
+    <pubDate>Tue, 28 Apr 2020 16:43:12 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</guid>
+    <description><![CDATA[This posts only use as a remainder
+Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &#39;a name&#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &#39;Brad&#39; age = 37 print(&#39;name is&#39; + name + &#39; and age is &#39; + str(age)) print(&#39;name is {name} and age is {age}&#39;.]]></description>
+</item><item>
+    <title>chmod Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
+    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
+    <description><![CDATA[chmod is linux command to control file permission
+usage chmod [u|g|o|a][=|+|-] [r|w|x] 
+u =&gt; user
+g =&gt; group
+o =&gt; other
+a =&gt; all
+r =&gt; read
+w =&gt; write
+x =&gt; execute
+example chmod +wr test.txt give write and read permission for user
 chmod -r test.txt remove read permission for user
 chmod g=wrx test.txt give write, read and execute permission for group
-use number specific the bits 011101110111 =&amp;gt; -rwx-rwx-rwx</description>
-            </item><item>
-                <title>SocketIo Overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
-                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
-                <description>socket.io enable realtime, bidirectional communication for Nodejs
+use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
+</item><item>
+    <title>SocketIo Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
+    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
+    <description><![CDATA[socket.io enable realtime, bidirectional communication for Nodejs
 Backend We use Express as backend framework.
-1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&amp;#39;express&amp;#39;); const path = require(&amp;#39;path&amp;#39;); const http = require(&amp;#39;http&amp;#39;); const socket_io = require(&amp;#39;socket.io&amp;#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&amp;#39;connection&amp;#39;, (server_socket) =&amp;gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &amp;lt;script src=&amp;#34;/socket.</description>
-            </item><item>
-                <title>SSH Overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link>
-                <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid>
-                <description>ssh-keygen ssh-keygen
+1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&#39;express&#39;); const path = require(&#39;path&#39;); const http = require(&#39;http&#39;); const socket_io = require(&#39;socket.io&#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&#39;connection&#39;, (server_socket) =&gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &lt;script src=&#34;https://tyrangyang.github.io/TyrangYang_blog/socket.]]></description>
+</item><item>
+    <title>SSH Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link>
+    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid>
+    <description><![CDATA[ssh-keygen ssh-keygen
 -b specific the number of bits(1024 2048 4069)
 -m specific type
 -y get public key
 -f specific file name
 public key public key should give to server. Usually put in file ~/.ssh/authorized_key
-access via SSH ssh &amp;lt;username&amp;gt;@&amp;lt;hostname | ip address&amp;gt;</description>
-            </item><item>
-                <title>Canvas in html5</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-                <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-                <description>Canvas is a new feature since html5 that allows you draw something on your web page
+access via SSH ssh &lt;username&gt;@&lt;hostname | ip address&gt;]]></description>
+</item><item>
+    <title>Canvas in html5</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
+    <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
+    <description><![CDATA[Canvas is a new feature since html5 that allows you draw something on your web page
 Reference from MDN
 Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2  const canvas = document.</description>
-            </item><item>
-                <title>All array method in Nodejs</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
-                <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
-                <description>All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp;amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&amp;gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&amp;gt; [] (some size) let numbers2 = numbers.</description>
-            </item><item>
-                <title>Express Overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
-                <pubDate>Mon, 30 Mar 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
-                <description>Express.js is a web framework for Node.js
-Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&amp;#39;express&amp;#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&amp;#39;/&amp;#39;, (req, res) =&amp;gt; { return res.send({hello:&amp;#34;world&amp;#34;}); }) const PORT = 4000; app.listen(PORT, ()=&amp;gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   </description>
-            </item><item>
-                <title>CSS Overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
-                <pubDate>Tue, 17 Mar 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid>
-                <description>CSS cheat sheet: html &amp;amp; css provided by Traversy Media
+1 2  const canvas = document.]]></description>
+</item><item>
+    <title>All array method in Nodejs</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
+    <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
+    <description><![CDATA[All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
+</item><item>
+    <title>Express Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
+    <pubDate>Mon, 30 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
+    <description><![CDATA[Express.js is a web framework for Node.js
+Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   ]]></description>
+</item><item>
+    <title>CSS Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
+    <pubDate>Tue, 17 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid>
+    <description><![CDATA[CSS cheat sheet: html &amp; css provided by Traversy Media
 Font font-size size
-font-family: &amp;lt;FAMILY_NAME&amp;gt;, &amp;lt;GENERIC_NAME&amp;gt;; font-family: Lobster monospace;
+font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;; font-family: Lobster monospace;
 GENERIC_NAME: sans-serif serif monospace;
 sans-serif force on connected and serif force on single alphabet.
 line-height: 25px;
@@ -95,30 +95,30 @@ Border border-size
 border-color
 border-width
 border-style
-padding Padding control the amount of space between the element&amp;rsquo;s content and its border;</description>
-            </item><item>
-                <title>Makefile overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link>
-                <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid>
-                <description>What is makefile. How to write a makefile.
+padding Padding control the amount of space between the element&rsquo;s content and its border;]]></description>
+</item><item>
+    <title>Makefile overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link>
+    <pubDate>Sun, 12 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid>
+    <description><![CDATA[What is makefile. How to write a makefile.
 Ref: https://opensource.com/article/18/8/what-how-makefile
 What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
-1 2  target: prerequisites &amp;lt;TAB&amp;gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).</description>
-            </item><item>
-                <title>Erlang overview</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link>
-                <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid>
-                <description>Basic Documentation: https://erlang.org/doc/search/
+1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).]]></description>
+</item><item>
+    <title>Erlang overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link>
+    <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid>
+    <description><![CDATA[Basic Documentation: https://erlang.org/doc/search/
 Functional language Erlang is a functional language. Code need compile and running line by line.
 Every line need finish by a .. like: A = 1..
 Module Every erlang file will consider as a module. You console will compile all module you want.
-You have to add -module(&amp;lt;filename&amp;gt;). into first line. Module should be same with filename without suffix.
-In erl console, run c(&amp;lt;filename&amp;gt;). to compile it. Run a function is like: &amp;lt;moduleName&amp;gt;: &amp;lt;functionName&amp;gt;(.</description>
-            </item></channel>
+You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
+In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(.]]></description>
+</item></channel>
 </rss>

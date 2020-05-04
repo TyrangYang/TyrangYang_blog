@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>data structure | Tag | TyrangYang_Blog</title>
+        <title>data structure - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/data-structure/</link>
-        <description>data structure | Tag | TyrangYang_Blog</description>
+        <description>data structure - Tag - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 13 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/data-structure/" rel="self" type="application/rss+xml" /><item>
-                <title>Miller Rabin Algorithm</title>
-                <link>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</link>
-                <pubDate>Mon, 13 Jan 2020 00:00:00 &#43;0000</pubDate>
-                <author>Haolin Yang</author>
-                <guid>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</guid>
-                <description>What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&amp;rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis.</description>
-            </item></channel>
+    <title>Miller Rabin Algorithm</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</link>
+    <pubDate>Mon, 13 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</guid>
+    <description><![CDATA[What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis.]]></description>
+</item></channel>
 </rss>
