@@ -5,10 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Git overview - TyrangYang_Blog</title>
-        <meta name="Description" content=""><meta property="og:title" content="Git overview" />
+        <title>Git overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Git overview" />
 <meta property="og:description" content="Here have some good pictures that is helpful for understanding git and contain the record for git commend
-Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
 Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
 This photo is provide by osteele
 Git commend and usage Initialize the git repository git init" />
@@ -19,7 +18,7 @@ Git commend and usage Initialize the git repository git init" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git overview"/>
 <meta name="twitter:description" content="Here have some good pictures that is helpful for understanding git and contain the record for git commend
-Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
 Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
 This photo is provide by osteele
 Git commend and usage Initialize the git repository git init"/>
@@ -35,14 +34,14 @@ Git commend and usage Initialize the git repository git init"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/"
-        },"genre": "posts","keywords": "git","wordcount":  604 ,
+        },"genre": "posts","keywords": "git","wordcount":  608 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/","datePublished": "2019-06-17T00:00:00+00:00","dateModified": "2019-06-17T00:00:00+00:00","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
             },"description": ""
     }
     </script></head>
-    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -105,17 +104,76 @@ Git commend and usage Initialize the git repository git init"/>
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Git overview</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;
-                    <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/">
-                                <i class="far fa-folder fa-fw"></i>Overview
-                            </a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2019-06-17>2019-06-17</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 604 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>3 min&nbsp;</div>
-        </div><div class="content" id="content"><p>Here have some good pictures that is helpful for understanding git and contain the record for git commend</p>
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Git overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-06-17">2019-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;608 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#concept-map">Concept Map</a></li>
+    <li><a href="#git-data-transport-map">Git Data Transport Map</a></li>
+    <li><a href="#git-commend-and-usage">Git commend and usage</a>
+      <ul>
+        <li><a href="#initialize-the-git-repository">Initialize the git repository</a></li>
+        <li><a href="#clone-a-repository-by-giving-the-url-github">Clone a repository by giving the URL (github)</a></li>
+        <li><a href="#show-the-status-status-of-index">Show the status (Status of Index)</a></li>
+        <li><a href="#show-the-log-of-commit">Show the log of commit</a>
+          <ul>
+            <li><a href="#show-all-logs-in-graph-and-each-log-in-one-line">show all logs in graph and each log in one line</a></li>
+            <li><a href="#show-specific-number-of-log">show specific number of log</a></li>
+          </ul>
+        </li>
+        <li><a href="#compare-workspace-and-index">Compare workspace and index</a></li>
+        <li><a href="#add">Add</a></li>
+        <li><a href="#commit">Commit</a>
+          <ul>
+            <li><a href="#add-and-commit">add and commit</a></li>
+          </ul>
+        </li>
+        <li><a href="#branch">Branch</a>
+          <ul>
+            <li><a href="#show-all-branch">show all branch</a></li>
+            <li><a href="#open-a-new-branch">Open a new branch</a></li>
+            <li><a href="#open-a-new-branch-and-checkout">Open a new branch and checkout</a></li>
+          </ul>
+        </li>
+        <li><a href="#push">Push</a></li>
+        <li><a href="#pull">Pull</a></li>
+        <li><a href="#merge">Merge</a></li>
+        <li><a href="#remote">Remote</a>
+          <ul>
+            <li><a href="#show-all-remote">show all remote</a></li>
+            <li><a href="#show-all-remote-detail">show all remote detail</a></li>
+            <li><a href="#giving-a-new-remote-name-and-connect-it-to-a-url">giving a new remote name and connect it to a URL</a></li>
+          </ul>
+        </li>
+        <li><a href="#fetch">Fetch</a></li>
+        <li><a href="#roll-back">Roll back</a></li>
+        <li><a href="#remove-some-file-in-index">Remove some file in Index</a></li>
+        <li><a href="#rebase">Rebase</a></li>
+      </ul>
+    </li>
+    <li><a href="#compare-merge-merge---squash-and-rebase">Compare merge, merge &ndash;squash and rebase</a>
+      <ul>
+        <li><a href="#merge-1">merge</a></li>
+        <li><a href="#merge---squash">merge &ndash;squash</a></li>
+        <li><a href="#rebase-1">rebase</a></li>
+      </ul>
+    </li>
+    <li><a href="#delete-submodule">Delete submodule</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Here have some good pictures that is helpful for understanding git and contain the record for git commend</p>
 <h2 id="concept-map">Concept Map</h2>
-<p>Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.</p>
+<p>Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.</p>
 <p><img
         class="lazyload"
         src="https://tyrangyang.github.io/TyrangYang_blog/svg/loading/small.min.svg"
@@ -183,7 +241,8 @@ Git commend and usage Initialize the git repository git init"/>
 <p><code>git remote add &lt;remote name&gt; &lt;URL&gt;</code></p>
 <h3 id="fetch">Fetch</h3>
 <p><code>git fetch &lt;remote name&gt;</code></p>
-<p>Without changing workspace, update local repository from remote repository</p>
+<p><code>git fetch origin b</code>
+Without changing workspace, update local repository from remote repository</p>
 <h3 id="roll-back">Roll back</h3>
 <p><code>git reset --soft HEAD~1</code> Roll back 1 commit into index area</p>
 <p><code>git reset --hard HEAD~2</code> Roll back 2 commits into workspace</p>
@@ -305,7 +364,7 @@ D---E---F---G master
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>The article was updated on 2019-06-17</span>
+                <span>Updated on 2019-06-17</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -331,7 +390,7 @@ D---E---F---G master
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.4"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
@@ -341,7 +400,5 @@ D---E---F---G master
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><script type="text/javascript">
-    window.config = {"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"headerMode":{"desktop":null,"mobile":null},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","noResultsFound":"No results found","type":"algolia"}};
-</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

@@ -3,13 +3,20 @@
         <title>All Posts - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link>
         <description>All Posts | TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 May 2020 23:12:40 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 May 2020 16:51:23 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Vue Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
+    <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
+    <description><![CDATA[life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic Feature v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
+</item><item>
     <title>Js Trick</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy ]]></description>
+    <description><![CDATA[Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [...nums1]; let num3 = nums1.concat(); let num3 = nums1.slice(); // Object let obj1 = { test1: 1, test2: { test3: 2, test4: 3, }, }; let obj2 = { .]]></description>
 </item><item>
     <title>Python Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</link>
@@ -97,15 +104,5 @@ Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw pane
     <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
     <description><![CDATA[Express.js is a web framework for Node.js
 Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   ]]></description>
-</item><item>
-    <title>How to demonstrate your front end application on Github by gh-page</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
-    <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid>
-    <description><![CDATA[Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
-gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
-Read more detail in repository
-command line usage This package also provide a command line tool:]]></description>
 </item></channel>
 </rss>

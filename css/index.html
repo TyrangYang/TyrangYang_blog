@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>CSS Overview - TyrangYang_Blog</title>
-        <meta name="Description" content=""><meta property="og:title" content="CSS Overview" />
+        <title>CSS Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="CSS Overview" />
 <meta property="og:description" content="CSS cheat sheet: html &amp; css provided by Traversy Media
 Font font-size size
 font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;; font-family: Lobster monospace;
@@ -58,7 +57,7 @@ padding Padding control the amount of space between the element&rsquo;s content 
             },"description": ""
     }
     </script></head>
-    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -121,15 +120,63 @@ padding Padding control the amount of space between the element&rsquo;s content 
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">CSS Overview</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;
-                    <span class="post-category">included in<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/">
-                                <i class="far fa-folder fa-fw"></i>Overview
-                            </a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-17>2020-03-17</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 783 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>4 min&nbsp;</div>
-        </div><div class="content" id="content"><p>CSS cheat sheet: <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/index.html" rel="">html</a> &amp; <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/css/style.css" rel="">css</a> provided by <a href="https://youtu.be/yfoY53QXEnI" target="_blank" rel="noopener noreffer">Traversy Media</a></p>
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">CSS Overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;783 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#font">Font</a>
+      <ul>
+        <li><a href="#import-font">Import font</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-space">Control space</a>
+      <ul>
+        <li><a href="#border">Border</a></li>
+        <li><a href="#padding">padding</a></li>
+        <li><a href="#margin">Margin</a></li>
+      </ul>
+    </li>
+    <li><a href="#css-inheritance">CSS inheritance</a></li>
+    <li><a href="#text">text</a>
+      <ul>
+        <li><a href="#decoration">decoration</a></li>
+        <li><a href="#transform">transform</a></li>
+      </ul>
+    </li>
+    <li><a href="#box-shadow">Box shadow</a></li>
+    <li><a href="#opacity">opacity</a></li>
+    <li><a href="#pseudo-classes">pseudo-classes</a></li>
+    <li><a href="#position">position</a></li>
+    <li><a href="#color">color</a></li>
+    <li><a href="#linear-gradient">linear-gradient</a></li>
+    <li><a href="#animate">animate</a></li>
+    <li><a href="#cubic-bezier">cubic-bezier</a></li>
+    <li><a href="#tabindex">tabindex</a></li>
+    <li><a href="#display">Display</a>
+      <ul>
+        <li><a href="#flex">flex</a></li>
+        <li><a href="#grid">grid</a></li>
+      </ul>
+    </li>
+    <li><a href="#z-index">z-index</a></li>
+    <li><a href="#personal-default-style">Personal default style</a>
+      <ul>
+        <li><a href="#button">button</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>CSS cheat sheet: <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/index.html" rel="">html</a> &amp; <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/css/style.css" rel="">css</a> provided by <a href="https://youtu.be/yfoY53QXEnI" target="_blank" rel="noopener noreffer">Traversy Media</a></p>
 <h2 id="font">Font</h2>
 <p><code>font-size</code> size</p>
 <p><code>font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;;</code> font-family: Lobster monospace;</p>
@@ -456,7 +503,7 @@ A value of 0 is completely transparent.</p>
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>The article was updated on 2020-03-17</span>
+                <span>Updated on 2020-03-17</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -482,7 +529,7 @@ A value of 0 is completely transparent.</p>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.4"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
@@ -492,7 +539,5 @@ A value of 0 is completely transparent.</p>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><script type="text/javascript">
-    window.config = {"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"headerMode":{"desktop":null,"mobile":null},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","noResultsFound":"No results found","type":"algolia"}};
-</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
 </html>

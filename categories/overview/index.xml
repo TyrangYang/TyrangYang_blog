@@ -3,7 +3,14 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 28 Apr 2020 16:43:12 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 May 2020 16:51:23 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Vue Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
+    <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
+    <description><![CDATA[life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic Feature v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
+</item><item>
     <title>Python Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</link>
     <pubDate>Tue, 28 Apr 2020 16:43:12 -0400</pubDate>
@@ -108,17 +115,5 @@ What is makefile A makefile is a file containing a set of directives used by a m
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
 1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).]]></description>
-</item><item>
-    <title>Erlang overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link>
-    <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid>
-    <description><![CDATA[Basic Documentation: https://erlang.org/doc/search/
-Functional language Erlang is a functional language. Code need compile and running line by line.
-Every line need finish by a .. like: A = 1..
-Module Every erlang file will consider as a module. You console will compile all module you want.
-You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
-In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(.]]></description>
 </item></channel>
 </rss>

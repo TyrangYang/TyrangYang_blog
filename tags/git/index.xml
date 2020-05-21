@@ -10,7 +10,7 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</guid>
     <description><![CDATA[Here have some good pictures that is helpful for understanding git and contain the record for git commend
-Concept Map Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
 Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
 This photo is provide by osteele
 Git commend and usage Initialize the git repository git init]]></description>

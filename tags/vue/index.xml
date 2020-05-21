@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>vue - Tag - TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/vue/</link>
+        <description>vue - Tag - TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 May 2020 16:51:23 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/" rel="self" type="application/rss+xml" /><item>
+    <title>Vue Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
+    <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
+    <description><![CDATA[life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic Feature v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
+</item></channel>
+</rss>

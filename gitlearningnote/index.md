@@ -5,7 +5,7 @@ Here have some good pictures that is helpful for understanding git and contain t
 
 ## Concept Map
 
-Here is a concept map given by Udcity.com. This picture shows the relationship between these basic git concept.
+Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
 
 ![Concept map](/images/2019-06-17-gitLearningNote/conceptMap.png)
 
@@ -113,6 +113,7 @@ Eg: `git merge test` (when you on master branch) --> merge branch test into mast
 
 `git fetch <remote name>`
 
+`git fetch origin b`
 Without changing workspace, update local repository from remote repository
 
 ### Roll back
