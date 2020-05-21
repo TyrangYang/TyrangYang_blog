@@ -5,6 +5,9 @@ author: Haolin Yang
 categories: ['Overview']
 tags:
     - css
+toc:
+    enable: true
+    auto: true
 ---
 
 CSS cheat sheet: [html](/csscrashcourse/csscheatsheet/index.html) & [css](/csscrashcourse/csscheatsheet/css/style.css) provided by [Traversy Media](https://youtu.be/yfoY53QXEnI)
