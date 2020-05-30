@@ -3,13 +3,23 @@
         <title>All Posts - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link>
         <description>All Posts | TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 17 May 2020 16:51:23 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 May 2020 16:54:43 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Vuex Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
+    <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
+    <description><![CDATA[Vuex Document: English 中文
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Basic structure In store/index.js
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
+</item><item>
     <title>Vue Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
     <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
-    <description><![CDATA[life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic Feature v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
+    <description><![CDATA[Vue Document: English 中文
+life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic vue function v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
 </item><item>
     <title>Js Trick</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
@@ -96,13 +106,5 @@ Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw pane
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
     <description><![CDATA[All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
-</item><item>
-    <title>Express Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
-    <pubDate>Mon, 30 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
-    <description><![CDATA[Express.js is a web framework for Node.js
-Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   ]]></description>
 </item></channel>
 </rss>

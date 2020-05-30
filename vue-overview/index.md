@@ -1,6 +1,8 @@
 # Vue Overview
 
 
+Vue Document: [English](https://vuejs.org/) [中文](https://cn.vuejs.org/)
+
 ## life cycle
 
 ![lifeCycyle](/images/2020-05-17-vue/lifecycle.png)
@@ -29,7 +31,7 @@
 <style lang="css"></style>
 ```
 
-## Basic Feature
+## Basic vue function
 
 ### v-bind
 
@@ -71,7 +73,11 @@
 
 #### Not use v-for & v-if in one tag
 
-`v-for` have higher priority than `v-if`, Therefore, `v-if` will be run multiple times.
+[Document](https://vuejs.org/v2/style-guide/#Avoid-v-if-with-v-for-essential)
+
+`v-for` have higher priority than `v-if`, Therefore, `v-if` will be run multiple times and all element will be render. However, you only need to render the element which `v-if` return true.
+
+The solution is to make a method or computed that filter the element and return them
 
 ### v-if
 
@@ -102,11 +108,23 @@
 </select>
 ```
 
-In <input> tag `v-module = "something"` is equal to `:value="something @input="something = $event.target.value`
+In `input` tag `v-model = "something"` is equal to `:value="something @input="something = $event.target.value`
+
+### v-text
+
+```html
+<span v-text="variable"></span>
+```
+
+This is equal to `<span> {{variable}} </span>`
+
+## Vuex
+
+See my another post: [Vuex Overview]({{< ref "posts/vuex-overview.md" >}})
 
 ## Question facing
 
-Vue can not use [] to modify an object in data;
+### Vue can not use `[]` to modify an object in data;
 
 We have to use `this.$set(<object name>, <key>, <val>)`
 
