@@ -5,10 +5,10 @@
         <description>bit - Tag - TyrangYang_Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Aug 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bit/" rel="self" type="application/rss+xml" /><item>
     <title>Bit operation in C&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</link>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</link>
     <pubDate>Sun, 18 Aug 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</guid>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</guid>
     <description><![CDATA[Bit operator    operator function example     &laquo; left shift 0001 &ndash;&gt; 0010   &raquo; right shift 0010 &ndash;&gt; 0001   &amp; and (bit by bit) 1100 &amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp; x is a bit]]></description>
 </item></channel>
 </rss>

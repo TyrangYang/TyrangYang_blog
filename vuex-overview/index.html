@@ -7,7 +7,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Vuex Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Vuex Overview" />
 <meta property="og:description" content="Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Basic structure In store/index.js
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
+Basic structure In store/index.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/" />
@@ -16,12 +17,13 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vuex Overview"/>
 <meta name="twitter:description" content="Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Basic structure In store/index.js
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
+Basic structure In store/index.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/go/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -30,7 +32,7 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/vuex-overview\/"
-        },"genre": "posts","keywords": "vue, vuex, javascript","wordcount":  440 ,
+        },"genre": "posts","keywords": "vue, vuex, javascript","wordcount":  447 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/vuex-overview\/","datePublished": "2020-05-29T16:54:43-04:00","dateModified": "2020-05-29T16:54:43-04:00","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
@@ -105,7 +107,7 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Vuex Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-29">2020-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;440 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-29">2020-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;447 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -146,6 +148,15 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
         data-sizes="auto"
         alt="vuex workflow"
         title="vuex workflow" /></p>
+<p>Vuex work flow is similar with Redux:</p>
+<p><img
+        class="lazyload"
+        src="https://tyrangyang.github.io/TyrangYang_blog/svg/loading/small.min.svg"
+        data-src="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg"
+        data-srcset="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg, https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg 1.5x, https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg 2x"
+        data-sizes="auto"
+        alt="redux workflow"
+        title="redux workflow" /></p>
 <h2 id="basic-structure">Basic structure</h2>
 <p>In <code>store/index.js</code></p>
 <div class="highlight"><div class="chroma">
@@ -430,7 +441,8 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/" class="prev" rel="prev" title="Vue Overview"><i class="fas fa-angle-left fa-fw"></i>Vue Overview</a></div>
+    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/" class="prev" rel="prev" title="Vue Overview"><i class="fas fa-angle-left fa-fw"></i>Vue Overview</a>
+            <a href="https://tyrangyang.github.io/TyrangYang_blog/go/" class="next" rel="next" title="Go overview">Go overview<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

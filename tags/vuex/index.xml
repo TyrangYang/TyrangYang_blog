@@ -10,7 +10,8 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Basic structure In store/index.js
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
+Basic structure In store/index.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
 </item></channel>
 </rss>

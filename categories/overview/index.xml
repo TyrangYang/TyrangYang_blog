@@ -3,14 +3,26 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 May 2020 16:54:43 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Jun 2020 00:25:10 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Go overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
+    <pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid>
+    <description><![CDATA[Download Go to this link
+workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
+In this workspace, file should structured as how you route your project:
+1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
+1 2 3 4 5 6 7 8  .]]></description>
+</item><item>
     <title>Vuex Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
     <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Basic structure In store/index.js
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
+Basic structure In store/index.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
 </item><item>
     <title>Vue Overview</title>
@@ -94,24 +106,5 @@ Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw pane
     <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
     <description><![CDATA[Express.js is a web framework for Node.js
 Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   ]]></description>
-</item><item>
-    <title>CSS Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
-    <pubDate>Tue, 17 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid>
-    <description><![CDATA[CSS cheat sheet: html &amp; css provided by Traversy Media
-Font font-size size
-font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;; font-family: Lobster monospace;
-GENERIC_NAME: sans-serif serif monospace;
-sans-serif force on connected and serif force on single alphabet.
-line-height: 25px;
-Import font Could use google font and add link into index.html or in style.css
-Control space There are three important properties to control the space: padding, margin and border
-Border border-size
-border-color
-border-width
-border-style
-padding Padding control the amount of space between the element&rsquo;s content and its border;]]></description>
 </item></channel>
 </rss>

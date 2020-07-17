@@ -3,16 +3,59 @@
         <title>TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/</link>
         <description>TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 May 2020 16:54:43 -0400</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate>
             <atom:link href="https://tyrangyang.github.io/TyrangYang_blog/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Dynamic Programming Example</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link>
+    <pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid>
+    <description><![CDATA[Longest common subsequence This is a typical recursive problem. The pseudocode is:
+1 2  If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:]))   Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12  int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.]]></description>
+</item><item>
+    <title>Dynamic Programming</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link>
+    <pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid>
+    <description><![CDATA[What is dp problem DP problem is a programming strategy which use extra space to save time.
+fibonacci&hellip;
+DP table State transaction equation DP problem Example I have another post to classify dp problem See this Post]]></description>
+</item><item>
+    <title>Programing language comparison - basic</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-basic/</link>
+    <pubDate>Sun, 21 Jun 2020 01:26:30 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-basic/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Data structure comparison</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-data-structure/</link>
+    <pubDate>Sun, 21 Jun 2020 00:26:30 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-data-structure/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Go overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
+    <pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid>
+    <description><![CDATA[Download Go to this link
+workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
+In this workspace, file should structured as how you route your project:
+1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
+1 2 3 4 5 6 7 8  .]]></description>
+</item><item>
     <title>Vuex Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
     <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Basic structure In store/index.js
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
+Basic structure In store/index.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
 </item><item>
     <title>Vue Overview</title>
@@ -56,57 +99,5 @@ example chmod +wr test.txt give write and read permission for user
 chmod -r test.txt remove read permission for user
 chmod g=wrx test.txt give write, read and execute permission for group
 use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
-</item><item>
-    <title>SocketIo Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
-    <description><![CDATA[socket.io enable realtime, bidirectional communication for Nodejs
-Backend We use Express as backend framework.
-1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&#39;express&#39;); const path = require(&#39;path&#39;); const http = require(&#39;http&#39;); const socket_io = require(&#39;socket.io&#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&#39;connection&#39;, (server_socket) =&gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &lt;script src=&#34;https://tyrangyang.github.io/TyrangYang_blog/socket.]]></description>
-</item><item>
-    <title>SSH Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid>
-    <description><![CDATA[ssh-keygen ssh-keygen
--b specific the number of bits(1024 2048 4069)
--m specific type
--y get public key
--f specific file name
-public key public key should give to server. Usually put in file ~/.ssh/authorized_key
-access via SSH ssh &lt;username&gt;@&lt;hostname | ip address&gt;]]></description>
-</item><item>
-    <title>Heroku overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/heroku/</link>
-    <pubDate>Wed, 15 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/heroku/</guid>
-    <description><![CDATA[Heroku can help us deploy our application(back end) rapidly and easy
-deploy The only we need to take care is the PORT of your app. You have to use the PORT in environment.
-In Node.js
-1  PORT = process.env.PORT || 3000; // 3000 can be anything else   heroku cli Home page
-heroku login
-heroku create
-git push heroku master]]></description>
-</item><item>
-    <title>Canvas in html5</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-    <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-    <description><![CDATA[Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN
-Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2  const canvas = document.]]></description>
-</item><item>
-    <title>All array method in Nodejs</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
-    <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
-    <description><![CDATA[All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
 </item></channel>
 </rss>

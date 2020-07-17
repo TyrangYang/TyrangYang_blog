@@ -3,7 +3,24 @@
         <title>Alg&amp;DataStr - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/</link>
         <description>Alg&amp;DataStr - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 14 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/" rel="self" type="application/rss+xml" /><item>
+    <title>Dynamic Programming Example</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link>
+    <pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid>
+    <description><![CDATA[Longest common subsequence This is a typical recursive problem. The pseudocode is:
+1 2  If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:]))   Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12  int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.]]></description>
+</item><item>
+    <title>Dynamic Programming</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link>
+    <pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid>
+    <description><![CDATA[What is dp problem DP problem is a programming strategy which use extra space to save time.
+fibonacci&hellip;
+DP table State transaction equation DP problem Example I have another post to classify dp problem See this Post]]></description>
+</item><item>
     <title>DFS &amp; BFS</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/</link>
     <pubDate>Tue, 14 Jan 2020 00:00:00 &#43;0000</pubDate>

@@ -33,10 +33,10 @@ If your give these algorithms a const iterator, only error will be returned.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  #include &lt;iostream&gt;#include &lt;vector&gt;using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.]]></description>
 </item><item>
     <title>Bit operation in C&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</link>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</link>
     <pubDate>Sun, 18 Aug 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/</guid>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</guid>
     <description><![CDATA[Bit operator    operator function example     &laquo; left shift 0001 &ndash;&gt; 0010   &raquo; right shift 0010 &ndash;&gt; 0001   &amp; and (bit by bit) 1100 &amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp; x is a bit]]></description>
 </item><item>
     <title>Operator overwrite in c&#43;&#43;</title>

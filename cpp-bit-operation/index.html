@@ -8,7 +8,7 @@
         <title>Bit operation in C&#43;&#43; - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Bit operation in C&#43;&#43;" />
 <meta property="og:description" content="Bit operator    operator function example     &laquo; left shift 0001 &ndash;&gt; 0010   &raquo; right shift 0010 &ndash;&gt; 0001   &amp; and (bit by bit) 1100 &amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp; x is a bit" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/" />
 <meta property="article:published_time" content="2019-08-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-08-18T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
@@ -17,7 +17,7 @@
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/rb-tree/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/rb-tree/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -25,9 +25,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/c-bit-operation\/"
-        },"genre": "posts","keywords": "c\x2b\x2b, bit","wordcount":  567 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/c-bit-operation\/","datePublished": "2019-08-18T00:00:00+00:00","dateModified": "2019-08-18T00:00:00+00:00","author": {
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/cpp-bit-operation\/"
+        },"genre": "posts","keywords": "c\x2b\x2b, bit","wordcount":  558 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/cpp-bit-operation\/","datePublished": "2019-08-18T00:00:00+00:00","dateModified": "2019-08-18T00:00:00+00:00","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
             },"description": ""
@@ -98,7 +98,7 @@
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Bit operation in C&#43;&#43;</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/"><i class="far fa-folder fa-fw"></i>STL-study-note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-18">2019-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;567 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-08-18">2019-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;558 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="content" id="content"><h2 id="bit-operator">Bit operator</h2>
 <table>
@@ -246,9 +246,9 @@
 <p>a ^ b = c &mdash;&gt; b = c ^ a</p>
 <hr>
 <h2 id="bitset">bitset</h2>
+<p><a href="http://www.cplusplus.com/reference/bitset/bitset/" target="_blank" rel="noopener noreffer">Official Doc</a></p>
 <p>bitset is stable structure that boolean value in only one bit. It need prefix the size.</p>
-<p><strong>vector&lt;bool&gt;</strong> have same feature but <strong>never use it</strong> because bitset was designed to replace it.</p>
-<p>The defect of bitset is that it cannot extend. <strong>vector&lt;bool&gt;</strong> don&rsquo;t need to array about the size however that is defective at design level. Instead, we can use vector&lt;char&gt;. (char is 4 bits in c++)</p>
+<p>The defect of bitset is that it <strong>cannot extend</strong>. <em>vector&lt;bool&gt;</em> don&rsquo;t need to array about the size however that is defective at design level. Instead, we can use vector&lt;char&gt;. (char is 4 bits in c++)</p>
 <p>bitset use for a huge mount of boolean data. Bitset need 8 bytes at beginning(64 bit memory). If the array of boolean data is small( &lt;8 bytes), you better use a integer or long integer to store and use bit operator to manipulate. Definitely, bitset is more easy to use.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -290,8 +290,8 @@
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
-
-    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span> <span class="n">foo</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span> <span class="c1">// 1001
+    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span> <span class="n">foo</span><span class="p">(</span><span class="n">val</span><span class="p">);</span> <span class="c1">// 1001
 </span><span class="c1"></span>    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span> <span class="n">bar</span><span class="p">(</span><span class="s">&#34;0011&#34;</span><span class="p">);</span> <span class="c1">// 0011
 </span><span class="c1"></span>    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span> <span class="n">baz</span><span class="p">(</span><span class="mh">0xf</span><span class="p">);</span>  <span class="c1">// 1111
 </span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">foo</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
@@ -324,7 +324,7 @@
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/c-bit-operation/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>

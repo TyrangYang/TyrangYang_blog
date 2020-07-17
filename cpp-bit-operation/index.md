@@ -82,11 +82,11 @@ a ^ b = c ---> b = c ^ a
 
 ## bitset
 
+[Official Doc](http://www.cplusplus.com/reference/bitset/bitset/)
+
 bitset is stable structure that boolean value in only one bit. It need prefix the size.
 
-**vector\<bool\>** have same feature but **never use it** because bitset was designed to replace it.
-
-The defect of bitset is that it cannot extend. **vector\<bool\>** don't need to array about the size however that is defective at design level. Instead, we can use vector\<char\>. (char is 4 bits in c++)
+The defect of bitset is that it **cannot extend**. _vector\<bool\>_ don't need to array about the size however that is defective at design level. Instead, we can use vector\<char\>. (char is 4 bits in c++)
 
 bitset use for a huge mount of boolean data. Bitset need 8 bytes at beginning(64 bit memory). If the array of boolean data is small( <8 bytes), you better use a integer or long integer to store and use bit operator to manipulate. Definitely, bitset is more easy to use.
 
@@ -98,8 +98,8 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-
-    bitset<4> foo(9); // 1001
+    int val = 9;
+    bitset<4> foo(val); // 1001
     bitset<4> bar("0011"); // 0011
     bitset<4> baz(0xf);  // 1111
     cout << foo << endl;

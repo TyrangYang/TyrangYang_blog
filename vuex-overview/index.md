@@ -15,6 +15,10 @@ Vuex Document: [English](https://vuex.vuejs.org) [中文](https://vuex.vuejs.org
 
 ![vuex workflow](/images/vuex/vuex.png)
 
+Vuex work flow is similar with Redux:
+
+![redux workflow](/images/vuex/redux.jpeg)
+
 ## Basic structure
 
 In `store/index.js`

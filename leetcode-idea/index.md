@@ -223,3 +223,15 @@ Any new element only entry at the end of the queue and tick out the elements in 
 
 leetcode 581: [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)
 
+## Convert a number to a binary string (and back) in C++
+
+[Reference](https://peter.bloomfield.online/convert-a-number-to-a-binary-string-and-back-in-cpp/)
+
+Use bitset to easily achieve that.
+
+See my [previous post]({{<relref "cpp-bit-operation.md#bitset" >}})
+
+### Question
+
+leetCode 190:[Reverse Bits](https://leetcode.com/problems/reverse-bits/submissions/)
+
