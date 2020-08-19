@@ -357,6 +357,8 @@ const brokenCar = Vehicle('Broken Car', 3);
 
 **Indirect invocation** is performed when a function is called using `myFun.call()` or `myFun.apply()` methods.
 
+`myFun.call()` means function be called with given context.
+
 The main difference between the two is that `.call()` accepts a list of arguments, for example `myFun.call(thisValue, 'val1', 'val2')`. But `.apply()` accepts a list of values in an array-like object, e.g. `myFunc.apply(thisValue, ['val1', 'val2'])`.
 
 ```js
@@ -392,6 +394,8 @@ myRabbit; // { name: 'White Rabbit', countLegs: 4 }
 
 **A bound function** is a function whose context and/or arguments are bound to specific values.
 
+The different between `.call()` and `.bind()` is that `.bind()` bind context and function to a new function but `call()` calling function directly with a given context.
+
 ```js
 function multiply(number) {
     'use strict';
@@ -416,18 +420,25 @@ const numbers = {
         return this.array;
     },
 };
-
+let another = {
+    array: 'Array from another scope',
+};
 // method invocation
-const getNumbersResult = numbers.getNumbers(numbers);
+const getNumbersResult = numbers.getNumbers();
 console.log(getNumbersResult); // => [3, 5, 10]
+
+// Extract method from object
+const simpleGetNumbers = numbers.getNumbers;
+// This is a function invocation
+console.log(simpleGetNumbers()); // => undefined or throws an error in strict mode
 
 // Create a bound function
 const boundGetNumbers = numbers.getNumbers.bind(numbers);
 console.log(boundGetNumbers()); // => [3, 5, 10]
 
-// Extract method from object
-const simpleGetNumbers = numbers.getNumbers;
-console.log(simpleGetNumbers()); // => undefined or throws an error in strict mode
+// bind to another scope
+const anotherBindFunction = numbers.getNumbers.bind(another);
+console.log(anotherBindFunction()); // => "Array from another scope"
 ```
 
 #### Tight context binding
@@ -524,6 +535,11 @@ walkPeriod.format(); // => 'undefined hours and undefined minutes'
 In this particular situation, better use regular function.
 
 ## Conclusion
+
+-   Function invocation --> windows
+-   Method invocation --> Scope where method belongs to
+-   Constructor invocation --> Object scope
+-   Indirection invocation --> Depends on your given context
 
 Because the function invocation has the biggest impact on this, from now on **do not ask yourself**:
 

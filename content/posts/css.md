@@ -242,37 +242,27 @@ Use two point to decide the curve
 </p>
 ```
 
-## Display
+## Layout
 
 [Sample code](https://jsfiddle.net/bradtraversy/bu0ecodm/1/) provided by [Traversy Media](https://youtu.be/JJSoEo8JSnc)
 
-### flex
+> **There is an another compare flex and grid**: [Flex and Grid in CSS]({{< ref "posts/flex-grid.md">}})
 
-`display: flex`
+### Flex
 
-`flex-direction: row` (column)
+> [**More Detail**]({{< relref "posts/flex-grid.md#flex">}}) in Flex and Grid in CSS
 
-`flex-wrap: wrap` element can go to next line
+[**Cheat Sheet**](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) provide by CSS-tricks.com
 
-`flex-basis: 27%` each box will horizontal base on this value
-
-`justify-content: center` (space-evenly space-between space-around flex-start flex-end) horizontal
-
-`align-items: center` vertical
-
-`flex: 1 0 10px;` will set the item to `flex-grow: 1;`, `flex-shrink: 0;`, and `flex-basis: 10px;`.
+A [Flexbox code Example](https://jsfiddle.net/tyrang/oqu9p5ch/)
 
 ### grid
 
-`display: grid`
+[**More Detail**]({{< relref "posts/flex-grid.md#grid">}}) in Flex and Grid in CSS
 
-`grid-template-columns: 100px 100px 100px;`
+[**Cheat Sheet**](https://css-tricks.com/snippets/css/complete-guide-grid/) provide by CSS-tricks.com
 
-`grid-template-rows: 50px 50px;`
-
-`grid-row-gap` `grid-column-gap`
-
-`grid-gap: 10px 20px;`
+A [Grid code Example](https://jsfiddle.net/tyrang/Ljbd3gy4/)
 
 ## z-index
 
