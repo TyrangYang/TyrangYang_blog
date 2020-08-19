@@ -1,7 +1,7 @@
-# Programing language comparison - basic
+# Programing language comparison - basic 🏗
 
 ---
-title: 'Programing language comparison - basic'
+title: 'Programing language comparison - basic 🏗'
 date: 2020-06-21T01:26:30-04:00
 Categories: ['Language-comparison']
 tags: ['']

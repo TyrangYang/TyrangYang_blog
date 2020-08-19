@@ -3,7 +3,15 @@
         <title>css - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/css/</link>
         <description>css - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/" rel="self" type="application/rss+xml" /><item>
+    <title>Flex and Grid in CSS</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
+    <pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
+    <description><![CDATA[Flex A Flexbox code Example
+display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
+</item><item>
     <title>Canvas in html5</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
     <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>

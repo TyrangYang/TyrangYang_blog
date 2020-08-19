@@ -30,7 +30,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/what-is-this-in-js\/"
-        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  2003 ,
+        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  2101 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/what-is-this-in-js\/","datePublished": "2019-11-17T00:00:00+00:00","dateModified": "2019-11-17T00:00:00+00:00","author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
@@ -105,7 +105,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">What is &#34;this&#34; in javascript</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2003 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2101 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -729,6 +729,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
 </div>
 </div><h3 id="indirect-invocation">Indirect invocation</h3>
 <p><strong>Indirect invocation</strong> is performed when a function is called using <code>myFun.call()</code> or <code>myFun.apply()</code> methods.</p>
+<p><code>myFun.call()</code> means function be called with given context.</p>
 <p>The main difference between the two is that <code>.call()</code> accepts a list of arguments, for example <code>myFun.call(thisValue, 'val1', 'val2')</code>. But <code>.apply()</code> accepts a list of values in an array-like object, e.g. <code>myFunc.apply(thisValue, ['val1', 'val2'])</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -784,6 +785,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
 </div>
 </div><h3 id="bound-function">Bound function</h3>
 <p><strong>A bound function</strong> is a function whose context and/or arguments are bound to specific values.</p>
+<p>The different between <code>.call()</code> and <code>.bind()</code> is that <code>.bind()</code> bind context and function to a new function but <code>call()</code> calling function directly with a given context.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -831,6 +833,13 @@ Concept  Invocation of a function is executing the code that makes the body of a
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">{</span>
@@ -840,18 +849,25 @@ Concept  Invocation of a function is executing the code that makes the body of a
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">array</span><span class="p">;</span>
     <span class="p">},</span>
 <span class="p">};</span>
-
+<span class="kd">let</span> <span class="nx">another</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">array</span><span class="o">:</span> <span class="s1">&#39;Array from another scope&#39;</span><span class="p">,</span>
+<span class="p">};</span>
 <span class="c1">// method invocation
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">getNumbersResult</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">getNumbers</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">getNumbersResult</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">getNumbers</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getNumbersResult</span><span class="p">);</span> <span class="c1">// =&gt; [3, 5, 10]
+</span><span class="c1"></span>
+<span class="c1">// Extract method from object
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">simpleGetNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">getNumbers</span><span class="p">;</span>
+<span class="c1">// This is a function invocation
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">simpleGetNumbers</span><span class="p">());</span> <span class="c1">// =&gt; undefined or throws an error in strict mode
 </span><span class="c1"></span>
 <span class="c1">// Create a bound function
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">boundGetNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">getNumbers</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">numbers</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">boundGetNumbers</span><span class="p">());</span> <span class="c1">// =&gt; [3, 5, 10]
 </span><span class="c1"></span>
-<span class="c1">// Extract method from object
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">simpleGetNumbers</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">getNumbers</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">simpleGetNumbers</span><span class="p">());</span> <span class="c1">// =&gt; undefined or throws an error in strict mode
+<span class="c1">// bind to another scope
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">anotherBindFunction</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">getNumbers</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">another</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">anotherBindFunction</span><span class="p">());</span> <span class="c1">// =&gt; &#34;Array from another scope&#34;
 </span></code></pre></td></tr></table>
 </div>
 </div><h4 id="tight-context-binding">Tight context binding</h4>
@@ -1011,6 +1027,12 @@ Concept  Invocation of a function is executing the code that makes the body of a
 </div>
 </div><p>In this particular situation, better use regular function.</p>
 <h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Function invocation &ndash;&gt; windows</li>
+<li>Method invocation &ndash;&gt; Scope where method belongs to</li>
+<li>Constructor invocation &ndash;&gt; Object scope</li>
+<li>Indirection invocation &ndash;&gt; Depends on your given context</li>
+</ul>
 <p>Because the function invocation has the biggest impact on this, from now on <strong>do not ask yourself</strong>:</p>
 <p><em>Where is this taken from?</em></p>
 <p>but <strong>do</strong> ask yourself:</p>

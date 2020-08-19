@@ -3,7 +3,15 @@
         <title>Posts - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link>
         <description>Posts - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Flex and Grid in CSS</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
+    <pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
+    <description><![CDATA[Flex A Flexbox code Example
+display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
+</item><item>
     <title>How to demonstrate your front end application on Github by gh-page</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
     <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
@@ -95,13 +103,5 @@ Github
 medium.com/@louis.raymond
 Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
 Click: Different between them]]></description>
-</item><item>
-    <title>Welcome to Jekyll!</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/welcome-to-jekyll/</link>
-    <pubDate>Tue, 11 Jun 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/welcome-to-jekyll/</guid>
-    <description><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
-To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.]]></description>
 </item></channel>
 </rss>

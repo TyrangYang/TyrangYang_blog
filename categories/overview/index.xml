@@ -3,8 +3,25 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Jun 2020 00:25:10 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
-    <title>Go overview</title>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2020 14:11:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Http Status Code Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</link>
+    <pubDate>Thu, 13 Aug 2020 14:11:38 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</guid>
+    <description><![CDATA[Reference: https://www.restapitutorial.com/httpstatuscodes.html
+ ⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
+ 1XX Information  100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV)  2XX Success  ⭐︎200 OK &ndash; The request has succeeded.  General status code. Most common code used to indicate success.
+  ⭐︎201 Created &ndash; A new resource has been created and should return a URI.]]></description>
+</item><item>
+    <title>Html5 Overview 🏗</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</link>
+    <pubDate>Thu, 13 Aug 2020 14:02:26 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Go overview 🏗</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
     <pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate>
     <author>Author</author>
@@ -91,20 +108,5 @@ access via SSH ssh &lt;username&gt;@&lt;hostname | ip address&gt;]]></descriptio
 Reference from MDN
 Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
 1 2  const canvas = document.]]></description>
-</item><item>
-    <title>All array method in Nodejs</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
-    <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
-    <description><![CDATA[All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
-</item><item>
-    <title>Express Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/express/</link>
-    <pubDate>Mon, 30 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
-    <description><![CDATA[Express.js is a web framework for Node.js
-Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   ]]></description>
 </item></channel>
 </rss>

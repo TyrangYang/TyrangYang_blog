@@ -3,7 +3,43 @@
         <title>All Posts - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link>
         <description>All Posts | TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Flex and Grid in CSS</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
+    <pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
+    <description><![CDATA[Flex A Flexbox code Example
+display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
+</item><item>
+    <title>Hugo Blog CheatSheet</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</link>
+    <pubDate>Mon, 17 Aug 2020 16:43:42 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid>
+    <description><![CDATA[Create new post hugo new posts/new.md
+Add a picture   Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
+  hugo build-in shortcut &ndash;&gt; figure   
+  Add a reference link Documentation of ref and relref
+1 2  \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}})   ]]></description>
+</item><item>
+    <title>Http Status Code Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</link>
+    <pubDate>Thu, 13 Aug 2020 14:11:38 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</guid>
+    <description><![CDATA[Reference: https://www.restapitutorial.com/httpstatuscodes.html
+ ⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
+ 1XX Information  100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV)  2XX Success  ⭐︎200 OK &ndash; The request has succeeded.  General status code. Most common code used to indicate success.
+  ⭐︎201 Created &ndash; A new resource has been created and should return a URI.]]></description>
+</item><item>
+    <title>Html5 Overview 🏗</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</link>
+    <pubDate>Thu, 13 Aug 2020 14:02:26 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Dynamic Programming Example</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link>
     <pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate>
@@ -12,7 +48,7 @@
     <description><![CDATA[Longest common subsequence This is a typical recursive problem. The pseudocode is:
 1 2  If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:]))   Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12  int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.]]></description>
 </item><item>
-    <title>Dynamic Programming</title>
+    <title>Dynamic Programming 🏗</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link>
     <pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate>
     <author>Author</author>
@@ -21,21 +57,21 @@
 fibonacci&hellip;
 DP table State transaction equation DP problem Example I have another post to classify dp problem See this Post]]></description>
 </item><item>
-    <title>Programing language comparison - basic</title>
+    <title>Programing language comparison - basic 🏗</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-basic/</link>
     <pubDate>Sun, 21 Jun 2020 01:26:30 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-basic/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Data structure comparison</title>
+    <title>Data structure comparison 🏗</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-data-structure/</link>
     <pubDate>Sun, 21 Jun 2020 00:26:30 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-data-structure/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>Go overview</title>
+    <title>Go overview 🏗</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
     <pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate>
     <author>Author</author>
@@ -55,47 +91,5 @@ In this workspace, file should structured as how you route your project:
 Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
 Basic structure In store/index.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
-</item><item>
-    <title>Vue Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
-    <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
-    <description><![CDATA[Vue Document: English 中文
-life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic vue function v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
-</item><item>
-    <title>Js Trick</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
-    <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [...nums1]; let num3 = nums1.concat(); let num3 = nums1.slice(); // Object let obj1 = { test1: 1, test2: { test3: 2, test4: 3, }, }; let obj2 = { .]]></description>
-</item><item>
-    <title>Python Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</link>
-    <pubDate>Tue, 28 Apr 2020 16:43:12 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</guid>
-    <description><![CDATA[This posts only use as a remainder
-Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &#39;a name&#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &#39;Brad&#39; age = 37 print(&#39;name is&#39; + name + &#39; and age is &#39; + str(age)) print(&#39;name is {name} and age is {age}&#39;.]]></description>
-</item><item>
-    <title>chmod Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
-    <description><![CDATA[chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|+|-] [r|w|x] 
-u =&gt; user
-g =&gt; group
-o =&gt; other
-a =&gt; all
-r =&gt; read
-w =&gt; write
-x =&gt; execute
-example chmod +wr test.txt give write and read permission for user
-chmod -r test.txt remove read permission for user
-chmod g=wrx test.txt give write, read and execute permission for group
-use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
 </item></channel>
 </rss>
