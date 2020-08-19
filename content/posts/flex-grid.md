@@ -439,4 +439,56 @@ If use `grid-auto-columns`:
 
 ### grid-auto-flow
 
+If you have grid items that you don’t explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items.
+
+```css
+.container {
+    grid-auto-flow: row | column | row dense | column dense;
+}
+```
+
+Example:
+
+```css
+.container {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px;
+    grid-template-rows: 30px 30px;
+    grid-auto-flow: column;
+}
+
+.container div {
+    border: 1px #ccc solid;
+}
+
+.item-a {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+.item-e {
+    grid-column: 5;
+    grid-row: 1 / 3;
+}
+```
+
+{{< figure src="/images/flex-grid/grid-auto-flow-01.svg" title="implicit grid" width="50%" height="50%" >}}
+
+```css
+.container {
+    grid-auto-flow: column;
+}
+```
+
+{{< figure src="/images/flex-grid/grid-auto-flow-02.svg" title="implicit grid" width="50%" height="50%" >}}
+
 ### grid
+
+A shorthand for setting all of the following properties in a single declaration: `grid-template-rows`, `grid-template-columns`, `grid-template-areas`, `grid-auto-rows`, `grid-auto-columns`, and `grid-auto-flow`
+
+### The Most Powerful Lines in Grid
+
+> ```css
+> .container {
+>     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+> }
+> ```
