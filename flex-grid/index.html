@@ -28,8 +28,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/"
-        },"genre": "posts","keywords": "css, grid, flex","wordcount":  923 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/","datePublished": "2020-08-18T12:04:51-07:00","dateModified": "2020-08-18T12:04:51-07:00","author": {
+        },"genre": "posts","keywords": "css, grid, flex","wordcount":  1072 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/","datePublished": "2020-08-18T12:04:51-07:00","dateModified": "2020-08-18T12:04:51-07:00","publisher": {
+            "@type": "Organization",
+            "name": "Haolin Yang"},"author": {
                 "@type": "Person",
                 "name": "Haolin Yang"
             },"description": ""
@@ -103,8 +105,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flex and Grid in CSS</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;923 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1072 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -147,6 +149,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
         <li><a href="#grid-auto-columns--grid-auto-rows">grid-auto-columns &amp; grid-auto-rows</a></li>
         <li><a href="#grid-auto-flow">grid-auto-flow</a></li>
         <li><a href="#grid-1">grid</a></li>
+        <li><a href="#the-most-powerful-lines-in-grid">The Most Powerful Lines in Grid</a></li>
       </ul>
     </li>
   </ul>
@@ -896,7 +899,105 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </figure>
 
 <h3 id="grid-auto-flow">grid-auto-flow</h3>
+<p>If you have grid items that you don’t explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">row</span> <span class="n">dense</span> <span class="o">|</span> <span class="kc">column</span> <span class="n">dense</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">container</span> <span class="nt">div</span> <span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ccc</span> <span class="kc">solid</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
+    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">item-e</span> <span class="p">{</span>
+    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-01.svg" width="50%" height="50%"/> <figcaption>
+            <h4>implicit grid</h4>
+        </figcaption>
+</figure>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-02.svg" width="50%" height="50%"/> <figcaption>
+            <h4>implicit grid</h4>
+        </figcaption>
+</figure>
+
 <h3 id="grid-1">grid</h3>
+<p>A shorthand for setting all of the following properties in a single declaration: <code>grid-template-rows</code>, <code>grid-template-columns</code>, <code>grid-template-areas</code>, <code>grid-auto-rows</code>, <code>grid-auto-columns</code>, and <code>grid-auto-flow</code></p>
+<h3 id="the-most-powerful-lines-in-grid">The Most Powerful Lines in Grid</h3>
+<blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="o">-</span><span class="kc">fill</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="mi">200</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -926,7 +1027,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.9"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
