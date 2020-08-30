@@ -254,15 +254,15 @@ Use two point to decide the curve
 
 [**Cheat Sheet**](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) provide by CSS-tricks.com
 
-A [Flexbox code Example](https://jsfiddle.net/tyrang/oqu9p5ch/)
+A [Flexbox code Example](https://codepen.io/TyrangYang/pen/GRZjQgg)
 
 ### grid
 
-[**More Detail**]({{< relref "posts/flex-grid.md#grid">}}) in Flex and Grid in CSS
+> [**More Detail**]({{< relref "posts/flex-grid.md#grid">}}) in Flex and Grid in CSS
 
 [**Cheat Sheet**](https://css-tricks.com/snippets/css/complete-guide-grid/) provide by CSS-tricks.com
 
-A [Grid code Example](https://jsfiddle.net/tyrang/Ljbd3gy4/)
+A [Grid code Example](https://codepen.io/TyrangYang/pen/jOqMZVG)
 
 ## z-index
 

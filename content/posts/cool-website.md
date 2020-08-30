@@ -60,3 +60,11 @@ https://daneden.github.io/animate.css/
 A Good library
 
 http://gen.lib.rus.ec
+
+## jsfiddle & codepen
+
+These are online coding panel for web-dev. `codepen.io` looks better
+
+https://jsfiddle.net
+
+https://codepen.io

@@ -1,5 +1,5 @@
 ---
-title: All array method in Nodejs
+title: All array method in Javascript
 date: 2020-04-06
 author: Haolin Yang
 categories: ['Overview']
@@ -12,35 +12,9 @@ toc:
     auto: true
 ---
 
--   [All methods](#all-methods)
-    -   [foreach](#foreach)
-    -   [map](#map)
-    -   [filter](#filter)
-    -   [reduce](#reduce)
-    -   [slice](#slice)
-    -   [splice](#splice)
-    -   [sort](#sort)
-    -   [concat](#concat)
-    -   [fill](#fill)
-    -   [include](#include)
-    -   [join](#join)
-    -   [reverse](#reverse)
-    -   [push](#push)
-    -   [pop](#pop)
-    -   [unshift](#unshift)
-    -   [shift](#shift)
-    -   [indexOf & lastIndexOf](#indexof--lastindexof)
-    -   [every](#every)
-    -   [some](#some)
-    -   [find](#find)
-    -   [findIndex](#findindex)
-    -   [from](#from)
-    -   [isArray](#isarray)
-    -   [flat](#flat)
+Show all function: `Array.prototype` & `Array.prototype.constructor`
 
-## All methods
-
-### foreach
+## foreach
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -55,7 +29,7 @@ numbers.forEach((element, index, arr) => {
 // a[4] = 5
 ```
 
-### map
+## map
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -67,7 +41,7 @@ let numbers2 = numbers.map((e, index, arr) => {
 console.log(numbers2); // [0, 2, 6, 12, 20]
 ```
 
-### filter
+## filter
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -77,7 +51,7 @@ let numbers3 = numbers.filter((e, index, arr) => {
 }); // remove duplication
 ```
 
-### reduce
+## reduce
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -94,7 +68,7 @@ let maxValue = numbers.reduce((prev, cur) => {
 console.log(maxValue); // 5
 ```
 
-### slice
+## slice
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -109,7 +83,7 @@ console.log([first2, shallowCopy, last3, startFrom1]);
 // [ [ 1, 2 ], [ 1, 2, 3, 4, 5, 100 ], [ 3, 4, 5 ], [ 2, 3, 4, 5 ] ]
 ```
 
-### splice
+## splice
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -119,7 +93,7 @@ console.log(numbers, deleted);
 //[ 1, 'add', 'add', 4, 5 ] [ 2, 3 ]
 ```
 
-### sort
+## sort
 
 ```js
 let numbers = [75, 22, 18, 10, 100, 214, 1];
@@ -134,7 +108,7 @@ numbers.sort((a, b) => {
 console.log(numbers); // [ 1, 10, 18, 22, 75, 100, 214]
 ```
 
-### concat
+## concat
 
 ```js
 let a = [1, 2, 3];
@@ -146,7 +120,7 @@ console.log(d); // [ 1, 2, 3, 1, 2, 3, 10, 20, 30, 100, 1, 2, 3]
 shallowCopy = d.concat(); // also a shallow copy
 ```
 
-### fill
+## fill
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -162,14 +136,14 @@ let fillInNumber = (n) => {
 console.log(fillInNumber(10)); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 ```
 
-### include
+## include
 
 ```js
 let names = ['andy', 'bob', 'eve'];
 console.log(names.includes('bob')); // true
 ```
 
-### join
+## join
 
 ```js
 let names = ['andy', 'bob', 'eve'];
@@ -180,7 +154,7 @@ res = names.join(' - ');
 console.log(res); // andy - bob - eve
 ```
 
-### reverse
+## reverse
 
 ```js
 let names = ['andy', 'bob', 'eve'];
@@ -189,7 +163,7 @@ res = str.split(' ').reverse().join(' ');
 console.log(res); // fun is coding
 ```
 
-### push
+## push
 
 ```js
 let numbers = [0];
@@ -199,7 +173,7 @@ console.log(len); // 6
 console.log(numbers); // [ 0, 1, 2, 3, 4, 5 ]
 ```
 
-### pop
+## pop
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -209,7 +183,7 @@ console.log(lastItem); // 5
 console.log(numbers); // [1,2,3,4]
 ```
 
-### unshift
+## unshift
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -219,7 +193,7 @@ console.log(len); // 7
 console.log(numbers); // [-1, -2, 1, 2, 3, 4, 5]
 ```
 
-### shift
+## shift
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -227,7 +201,7 @@ let res = numbers.shift();
 console.log(res, numbers); // 1 [2, 3, 4, 5]
 ```
 
-### indexOf & lastIndexOf
+## indexOf & lastIndexOf
 
 ```js
 let names = ['florin', 'ivan', 'liam', 'ivan', 'liam'];
@@ -245,7 +219,7 @@ idx = names.lastIndexOf('liam');
 console.log(idx); // 4
 ```
 
-### every
+## every
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -261,7 +235,7 @@ res = people.every((each) => each.name !== undefined);
 console.log(res); // false
 ```
 
-### some
+## some
 
 ```js
 let numbers = [1, 2, 3, 4, 5];
@@ -273,7 +247,7 @@ let res = numbers.some((each) => {
 console.log(res); // true
 ```
 
-### find
+## find
 
 ```js
 let people = [
@@ -298,7 +272,7 @@ let res = people.find((each) => {
 console.log(res); // 20
 ```
 
-### findIndex
+## findIndex
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
@@ -310,7 +284,78 @@ let res = numbers.findIndex((each) => {
 console.log(res); // 3
 ```
 
-### from
+## flat
+
+```js
+let array = [1, [2, [3, [4, [5]]]]];
+
+console.log(array.flat()); // [1, 2, [3, [4, [5]]]]
+console.log(array.flat(3)); // [1, 2, 3, 4, [5]]
+console.log(array.flat(Infinity)); // [1, 2, 3, 4, 5]
+```
+
+## flatMap
+
+## keys & values & entries
+
+These 3 methods returns a new `Array Iterator` object
+
+```js
+let numbers = [10, 20, 30, 40, 50];
+
+let iterator_keys = numbers.keys();
+
+console.log(iterator_keys.next().value); // 0
+for (let i of iterator_keys) {
+    console.log(i); // 1 2 3 4
+}
+
+let iterator_values = numbers.values();
+
+console.log(iterator_values.next().value); // 10
+for (let i of iterator_values) {
+    console.log(i); // 20 30 40 50
+}
+
+let iterator = numbers.entries();
+
+console.log(iterator.next().value); // [0,10]
+for (let i of iterator) {
+    console.log(i); // [1,20] [2,30] [3,40] [4,50]
+}
+```
+
+## copyWithin
+
+```js
+const array1 = ['a', 'b', 'c', 'd', 'e'];
+
+// copy to index 0 the element at index 3
+console.log(array1.copyWithin(0, 3, 4));
+// expected output: Array ["d", "b", "c", "d", "e"]
+
+// copy to index 1 all elements from index 3 to the end
+console.log(array1.copyWithin(1, 3));
+// expected output: Array ["d", "d", "e", "d", "e"]
+```
+
+## toLocaleString & toString
+
+```js
+const array1 = [1, 2, 'a', '1a'];
+
+console.log(array1.toString());
+// expected output: "1,2,a,1a"
+
+const array1 = [1, 'a', new Date('21 Dec 1997 14:12:00 UTC')];
+const localeString = array1.toLocaleString('en', { timeZone: 'UTC' });
+
+console.log(localeString);
+// expected output: "1,a,12/21/1997, 2:12:00 PM",
+// This assumes "en" locale and UTC timezone - your results may vary
+```
+
+## from
 
 Make a shallow copy from a iterable object
 
@@ -330,7 +375,17 @@ numbers = Array.from(s);
 console.log(numbers);
 ```
 
-### isArray
+## of
+
+```js
+Array.of(7); // [7]
+Array.of(1, 2, 3); // [1, 2, 3]
+
+Array(7); // [ , , , , , , ]
+Array(1, 2, 3); // [1, 2, 3]
+```
+
+## isArray
 
 ```js
 let numbers = [1, 2, 3, 4, 3, 2, 1, 3, 3, 4, 3, 5, 2];
@@ -340,9 +395,4 @@ let number = 12;
 console.log(Array.isArray(numbers)); // true
 console.log(Array.isArray(str)); // false
 console.log(Array.isArray(number)); // false
-```
-
-### flat
-
-```js
 ```
