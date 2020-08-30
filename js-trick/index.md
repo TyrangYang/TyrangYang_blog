@@ -1,6 +1,19 @@
 # Js Trick
 
 
+## Convert to boolean
+
+```js
+!!false; // false
+!!undefined; // false
+!!null; // false
+!!NaN; // false
+!!0; // false
+!!''; // false
+
+!!variable == Boolean(variable);
+```
+
 ## Convert to integer
 
 ```js
@@ -43,6 +56,8 @@ let copy = JSON.parse(JSON.stringify(orig));
 
 ## Exponential
 
+ES7 feature
+
 ```js
 let res = Math.pow(x, 2);
 // new operator added in ES7
@@ -63,6 +78,9 @@ console.log(res); // { a: 1, b: 2, c: 3 }
 ```
 
 ## Destruct
+
+Array destructing is ES6 feature
+Object destructing is ES9 feature....
 
 ```js
 let array = [1, 2, 3, 4];

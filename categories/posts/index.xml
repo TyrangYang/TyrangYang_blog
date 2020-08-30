@@ -3,13 +3,23 @@
         <title>Posts - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link>
         <description>Posts - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Prototype Inheritance in Javascript</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
+    <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
+    <description><![CDATA[Prototype   prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+f1 instantiate a Foo:
+ f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object.]]></description>
+</item><item>
     <title>Flex and Grid in CSS</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
     <pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
-    <description><![CDATA[Flex A Flexbox code Example
+    <description><![CDATA[Flex Cheat Sheet provide by CSS-tricks.com
+A Flexbox code Example
 display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
 </item><item>
     <title>How to demonstrate your front end application on Github by gh-page</title>
@@ -93,15 +103,5 @@ YouTube Channel
 YouTube
 Github
  ]]></description>
-</item><item>
-    <title>Why Can’t I Open My React App By Clicking Index.html?</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</link>
-    <pubDate>Mon, 28 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</guid>
-    <description><![CDATA[The app should Run when you open up your index.html file The conclusion is add &quot;homepage&quot;:&quot;.&quot;, in package.json.
-medium.com/@louis.raymond
-Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
-Click: Different between them]]></description>
 </item></channel>
 </rss>

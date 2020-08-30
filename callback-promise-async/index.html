@@ -30,7 +30,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/"
-        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  883 ,
+        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  910 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/","datePublished": "2019-11-17T00:00:00+00:00","dateModified": "2019-11-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -104,7 +104,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Callback, Promise and Async/await in js</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;883 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;910 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="content" id="content"><h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
 <p>Function run synchronously means code is running as same as your writing.</p>
@@ -314,6 +314,9 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">promise1</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">);</span>
@@ -326,6 +329,9 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
 
 <span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
 <span class="c1">// [ &#39;First&#39;, &#39;Second&#39;, &#39;Goodbye&#39; ] (after one second)
+</span><span class="c1"></span><span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
+<span class="c1">// as soon as one of the promises in an iterable fulfills or rejects
+</span><span class="c1">// probably: &#39;Second&#39; goes fast
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="async--await">Async &amp; Await</h2>

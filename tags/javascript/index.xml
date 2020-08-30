@@ -3,7 +3,16 @@
         <title>javascript - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link>
         <description>javascript - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 May 2020 16:54:43 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>Prototype Inheritance in Javascript</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
+    <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
+    <description><![CDATA[Prototype   prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+f1 instantiate a Foo:
+ f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object.]]></description>
+</item><item>
     <title>Vuex Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
     <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
@@ -27,7 +36,7 @@ life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [...nums1]; let num3 = nums1.concat(); let num3 = nums1.slice(); // Object let obj1 = { test1: 1, test2: { test3: 2, test4: 3, }, }; let obj2 = { .]]></description>
+    <description><![CDATA[Convert to boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [.]]></description>
 </item><item>
     <title>Canvas in html5</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
@@ -39,12 +48,13 @@ Reference from MDN
 Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
 1 2  const canvas = document.]]></description>
 </item><item>
-    <title>All array method in Nodejs</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</link>
+    <title>All array method in Javascript</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-javascript/</link>
     <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-nodejs/</guid>
-    <description><![CDATA[All methods  foreach map filter reduce slice splice sort concat fill include join reverse push pop unshift shift indexOf &amp; lastIndexOf every some find findIndex from isArray flat    All methods foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-javascript/</guid>
+    <description><![CDATA[Show all function: Array.prototype &amp; Array.prototype.constructor
+foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
 </item><item>
     <title>How to check the Chinese ID is correct</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link>
@@ -82,12 +92,5 @@ classNames This is a javascript for conditionally joining classNames.
 Here is: Github
 Basically, you can combine any number of classNames.
 1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals.]]></description>
-</item><item>
-    <title>Web development review</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
-    <pubDate>Thu, 29 Aug 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
-    <description><![CDATA[MathJax.Hub.Config({ jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$']], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }, messageStyle: "none", "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } });   Document constructor $$f(x) = sin(x)$$]]></description>
 </item></channel>
 </rss>

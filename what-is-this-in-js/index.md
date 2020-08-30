@@ -467,7 +467,7 @@ console.log(sumArguments(5, 5, 6)); // => 16
 
 #### _this_ in arrow function
 
-_this_ is the enclosing context
+arrow function is already bind _this_ is the enclosing context
 
 ```js
 class Point {
@@ -485,6 +485,37 @@ class Point {
 }
 const myPoint = new Point(95, 165);
 myPoint.log();
+```
+
+If use a regular function for `setTimeout` will be `setTimeout(function(){...}.bind{this})`
+
+Another example shows how allow function bind to context.
+
+```js
+function test() {
+    console.log('1.', this);
+    function inner1() {
+        console.log('2.', this);
+    }
+    let inner2 = () => {
+        console.log('3.', this);
+    };
+    inner1();
+    inner2();
+}
+test(); // 1.window 2.window 3.window
+new test(); // 1.test 2.window(function invocation) 3.test(function invocation but bind this)
+```
+
+If the arrow function is defined in the topmost scope (outside any function), the context is always the global object (window in a browser):
+
+```js
+const getContext = () => {
+    console.log(this === window); // => true
+    return this;
+};
+
+console.log(getContext() === window); // => true
 ```
 
 An arrow function is bound with the lexical context **once and forever**.

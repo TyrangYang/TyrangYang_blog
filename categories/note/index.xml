@@ -9,7 +9,7 @@
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [...nums1]; let num3 = nums1.concat(); let num3 = nums1.slice(); // Object let obj1 = { test1: 1, test2: { test3: 2, test4: 3, }, }; let obj2 = { .]]></description>
+    <description><![CDATA[Convert to boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [.]]></description>
 </item><item>
     <title>Traverse a tree</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link>
@@ -46,7 +46,7 @@ shields.io Get or create Readme badge]]></description>
     <pubDate>Wed, 18 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
-    <description><![CDATA[SCSS features  Variables Operator String interpolation Nesting The parent selector Imports Nested Media Queries General control Mixins Functions Extending Placeholders    SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p.]]></description>
+    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p.]]></description>
 </item><item>
     <title>Web development review</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>

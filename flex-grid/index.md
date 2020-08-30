@@ -6,7 +6,9 @@
 
 ## Flex
 
-A [Flexbox code Example](https://jsfiddle.net/tyrang/oqu9p5ch/)
+[**Cheat Sheet**](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) provide by CSS-tricks.com
+
+A [Flexbox code Example](https://codepen.io/TyrangYang/pen/GRZjQgg)
 
 ### display
 
@@ -149,7 +151,9 @@ This allows the alignment to be overridden for individual flex items.
 
 ## grid
 
-A [Grid code Example](https://jsfiddle.net/tyrang/Ljbd3gy4/)
+[**Cheat Sheet**](https://css-tricks.com/snippets/css/complete-guide-grid/) provide by CSS-tricks.com
+
+A [Grid code Example](https://codepen.io/TyrangYang/pen/jOqMZVG)
 
 ### display
 

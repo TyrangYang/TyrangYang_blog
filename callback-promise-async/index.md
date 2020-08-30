@@ -139,6 +139,9 @@ let promise3 = new Promise((resolve, reject) => {
 
 Promise.all([promise1, promise2, promise3]).then((val) => console.log(val));
 // [ 'First', 'Second', 'Goodbye' ] (after one second)
+Promise.race([promise1, promise2, promise3]).then((val) => console.log(val));
+// as soon as one of the promises in an iterable fulfills or rejects
+// probably: 'Second' goes fast
 ```
 
 ## Async & Await

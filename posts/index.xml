@@ -3,13 +3,23 @@
         <title>All Posts - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link>
         <description>All Posts | TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Prototype Inheritance in Javascript</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
+    <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
+    <description><![CDATA[Prototype   prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+f1 instantiate a Foo:
+ f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object.]]></description>
+</item><item>
     <title>Flex and Grid in CSS</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
     <pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
-    <description><![CDATA[Flex A Flexbox code Example
+    <description><![CDATA[Flex Cheat Sheet provide by CSS-tricks.com
+A Flexbox code Example
 display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
 </item><item>
     <title>Hugo Blog CheatSheet</title>
@@ -81,15 +91,5 @@ workspace Run go env in terminal. The variable GOPATH is the default workspace p
 In this workspace, file should structured as how you route your project:
 1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
 1 2 3 4 5 6 7 8  .]]></description>
-</item><item>
-    <title>Vuex Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
-    <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
-    <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
-Basic structure In store/index.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
 </item></channel>
 </rss>

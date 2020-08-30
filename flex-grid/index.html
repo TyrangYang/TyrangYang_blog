@@ -6,7 +6,8 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Flex and Grid in CSS - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Flex and Grid in CSS" />
-<meta property="og:description" content="Flex A Flexbox code Example
+<meta property="og:description" content="Flex Cheat Sheet provide by CSS-tricks.com
+A Flexbox code Example
 display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" />
@@ -14,12 +15,13 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <meta property="article:modified_time" content="2020-08-18T12:04:51-07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flex and Grid in CSS"/>
-<meta name="twitter:description" content="Flex A Flexbox code Example
+<meta name="twitter:description" content="Flex Cheat Sheet provide by CSS-tricks.com
+A Flexbox code Example
 display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,7 +30,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/"
-        },"genre": "posts","keywords": "css, grid, flex","wordcount":  1072 ,
+        },"genre": "posts","keywords": "css, grid, flex","wordcount":  1082 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/","datePublished": "2020-08-18T12:04:51-07:00","dateModified": "2020-08-18T12:04:51-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -105,7 +107,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flex and Grid in CSS</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1072 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1082 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -163,7 +165,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </figure>
 </p>
 <h2 id="flex">Flex</h2>
-<p>A <a href="https://jsfiddle.net/tyrang/oqu9p5ch/" target="_blank" rel="noopener noreffer">Flexbox code Example</a></p>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreffer"><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
+<p>A <a href="https://codepen.io/TyrangYang/pen/GRZjQgg" target="_blank" rel="noopener noreffer">Flexbox code Example</a></p>
 <h3 id="display">display</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -386,7 +389,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </figure>
 
 <h2 id="grid">grid</h2>
-<p>A <a href="https://jsfiddle.net/tyrang/Ljbd3gy4/" target="_blank" rel="noopener noreffer">Grid code Example</a></p>
+<p><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener noreffer"><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
+<p>A <a href="https://codepen.io/TyrangYang/pen/jOqMZVG" target="_blank" rel="noopener noreffer">Grid code Example</a></p>
 <h3 id="display-1">display</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1023,7 +1027,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" class="prev" rel="prev" title="Hugo Blog CheatSheet"><i class="fas fa-angle-left fa-fw"></i>Hugo Blog CheatSheet</a></div>
+    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" class="prev" rel="prev" title="Hugo Blog CheatSheet"><i class="fas fa-angle-left fa-fw"></i>Hugo Blog CheatSheet</a>
+            <a href="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" class="next" rel="next" title="Prototype Inheritance in Javascript">Prototype Inheritance in Javascript<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

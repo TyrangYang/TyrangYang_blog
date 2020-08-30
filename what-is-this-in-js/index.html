@@ -30,7 +30,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/what-is-this-in-js\/"
-        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  2101 ,
+        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  2228 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/what-is-this-in-js\/","datePublished": "2019-11-17T00:00:00+00:00","dateModified": "2019-11-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -107,8 +107,8 @@ Concept  Invocation of a function is executing the code that makes the body of a
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">What is &#34;this&#34; in javascript</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2101 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2228 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -926,7 +926,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
 </span></code></pre></td></tr></table>
 </div>
 </div><h4 id="_this_-in-arrow-function"><em>this</em> in arrow function</h4>
-<p><em>this</em> is the enclosing context</p>
+<p>arrow function is already bind <em>this</em> is the enclosing context</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -962,6 +962,59 @@ Concept  Invocation of a function is executing the code that makes the body of a
 <span class="kr">const</span> <span class="nx">myPoint</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Point</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">165</span><span class="p">);</span>
 <span class="nx">myPoint</span><span class="p">.</span><span class="nx">log</span><span class="p">();</span>
 </code></pre></td></tr></table>
+</div>
+</div><p>If use a regular function for <code>setTimeout</code> will be <code>setTimeout(function(){...}.bind{this})</code></p>
+<p>Another example shows how allow function bind to context.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;1.&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">inner1</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;2.&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">inner2</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;3.&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="nx">inner1</span><span class="p">();</span>
+    <span class="nx">inner2</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">test</span><span class="p">();</span> <span class="c1">// 1.window 2.window 3.window
+</span><span class="c1"></span><span class="k">new</span> <span class="nx">test</span><span class="p">();</span> <span class="c1">// 1.test 2.window(function invocation) 3.test(function invocation but bind this)
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If the arrow function is defined in the topmost scope (outside any function), the context is always the global object (window in a browser):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">getContext</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span> <span class="o">===</span> <span class="nb">window</span><span class="p">);</span> <span class="c1">// =&gt; true
+</span><span class="c1"></span>    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getContext</span><span class="p">()</span> <span class="o">===</span> <span class="nb">window</span><span class="p">);</span> <span class="c1">// =&gt; true
+</span></code></pre></td></tr></table>
 </div>
 </div><p>An arrow function is bound with the lexical context <strong>once and forever</strong>.</p>
 <div class="highlight"><div class="chroma">

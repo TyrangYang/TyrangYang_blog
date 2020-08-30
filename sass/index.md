@@ -1,20 +1,6 @@
 # SASS (SCSS) features
 
 
--   [SCSS features](#scss-features)
-    -   [Variables](#variables)
-    -   [Operator](#operator)
-    -   [String interpolation](#string-interpolation)
-    -   [Nesting](#nesting)
-    -   [The parent selector](#the-parent-selector)
-    -   [Imports](#imports)
-    -   [Nested Media Queries](#nested-media-queries)
-    -   [General control](#general-control)
-    -   [Mixins](#mixins)
-    -   [Functions](#functions)
-    -   [Extending](#extending)
-    -   [Placeholders](#placeholders)
-
 ## SCSS features
 
 ### Variables
@@ -199,7 +185,7 @@ p {
 
 This is compile to:
 
-```scss
+```css
 box-shadow {
     -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
     -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
