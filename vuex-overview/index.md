@@ -13,11 +13,11 @@ Vuex Document: [English](https://vuex.vuejs.org) [中文](https://vuex.vuejs.org
 
 ## Work flow
 
-![vuex workflow](/images/vuex/vuex.png)
+{{<figure src="/images/vuex/vuex.png" title="Vuex Workflow" width="100%" height="100%" >}}
 
-Vuex work flow is similar with Redux:
+> Vuex work flow is similar with Redux => [More Detail about Redux]({{< ref "posts/redux-overview.md" >}})
 
-![redux workflow](/images/vuex/redux.jpeg)
+{{<figure src="/images/vuex/redux.jpeg" title="Redux Workflow" width="70%" height="70%" >}}
 
 ## Basic structure
 

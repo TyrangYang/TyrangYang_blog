@@ -9,7 +9,9 @@
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Convert to boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [.]]></description>
+    <description><![CDATA[Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).
+  You can read this Article to know What new feature brings in since ES6
+ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   String =&gt; Integer 1 2 3 4  Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100  +&#39;abc&#39;; // NAN   Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
 </item><item>
     <title>Traverse a tree</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link>
@@ -21,25 +23,6 @@ Tree structure The tree structure:
 1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
 Iterative Loop for BFS:
 1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.]]></description>
-</item><item>
-    <title>Some cool websites</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/cool-website/</link>
-    <pubDate>Sat, 12 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website/</guid>
-    <description><![CDATA[Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
-https://sourabhbajaj.com/mac-setup/
-shapeCatcher Draw a character and find the ASCII code
-http://shapecatcher.com/index.html
-draw.io Draw diagram online
-https://www.draw.io
-regular expression Good online tool to test and learn regular expression
-https://regexr.com
-100 front end component design 100 react component design challenge
-https://www.florin-pop.com/blog/2019/09/100-days-100-projects/
-bootswatch Several bootstrap scheme.
-https://bootswatch.com
-shields.io Get or create Readme badge]]></description>
 </item><item>
     <title>SASS (SCSS) features</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>

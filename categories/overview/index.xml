@@ -3,7 +3,18 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2020 14:11:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Sep 2020 14:30:17 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Redux Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link>
+    <pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid>
+    <description><![CDATA[Redux Document: English 中文
+What is Redux  Redux is a predictable state container for JavaScript apps.
+ Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
+When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
+Workflow   Redux Workflow   Example for Redux core In index.]]></description>
+</item><item>
     <title>Http Status Code Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</link>
     <pubDate>Thu, 13 Aug 2020 14:11:38 -0700</pubDate>
@@ -38,9 +49,7 @@ In this workspace, file should structured as how you route your project:
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
-Basic structure In store/index.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow   Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux]]></description>
 </item><item>
     <title>Vue Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
@@ -98,15 +107,5 @@ Backend We use Express as backend framework.
 -f specific file name
 public key public key should give to server. Usually put in file ~/.ssh/authorized_key
 access via SSH ssh &lt;username&gt;@&lt;hostname | ip address&gt;]]></description>
-</item><item>
-    <title>Canvas in html5</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-    <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-    <description><![CDATA[Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN
-Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2  const canvas = document.]]></description>
 </item></channel>
 </rss>

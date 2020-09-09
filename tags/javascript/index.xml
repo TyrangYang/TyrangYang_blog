@@ -19,9 +19,7 @@ f1 instantiate a Foo:
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
-Basic structure In store/index.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;.]]></description>
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow   Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux]]></description>
 </item><item>
     <title>Vue Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
@@ -36,7 +34,9 @@ life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Convert to boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   Convert to integer 1 2  Number(&#39;100&#39;); +&#39;100&#39;;   Shallow copy &amp; Deep copy Shallow copy 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  // array let nums1 = [1, 2, 3, 4, 5]; let nums2 = [.]]></description>
+    <description><![CDATA[Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).
+  You can read this Article to know What new feature brings in since ES6
+ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   String =&gt; Integer 1 2 3 4  Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100  +&#39;abc&#39;; // NAN   Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
 </item><item>
     <title>Canvas in html5</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
@@ -53,8 +53,8 @@ Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw pane
     <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-javascript/</guid>
-    <description><![CDATA[Show all function: Array.prototype &amp; Array.prototype.constructor
-foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
+    <description><![CDATA[Show all function: Try Array.prototype &amp; Array.prototype.constructor in browser console.
+ foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
 </item><item>
     <title>How to check the Chinese ID is correct</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link>
@@ -69,9 +69,9 @@ Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
     <pubDate>Sun, 17 Nov 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid>
-    <description><![CDATA[Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
-But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.]]></description>
+    <description><![CDATA[Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.]]></description>
 </item><item>
     <title>What is &#34;this&#34; in javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link>

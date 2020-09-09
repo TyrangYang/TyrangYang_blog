@@ -3,9 +3,30 @@
         <title>TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/</link>
         <description>TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Sep 2020 14:30:17 -0700</lastBuildDate>
             <atom:link href="https://tyrangyang.github.io/TyrangYang_blog/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Redux Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link>
+    <pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid>
+    <description><![CDATA[Redux Document: English 中文
+What is Redux  Redux is a predictable state container for JavaScript apps.
+ Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
+When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
+Workflow   Redux Workflow   Example for Redux core In index.]]></description>
+</item><item>
+    <title>React Posts Archive</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link>
+    <pubDate>Thu, 03 Sep 2020 12:25:26 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid>
+    <description><![CDATA[React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
+Why Can’t I Open My React App By Clicking Index.html? From My Own Post
+Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf
+How To Use an IntersectionObserver in a React Hook Original source: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5]]></description>
+</item><item>
     <title>Prototype Inheritance in Javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
     <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
@@ -75,23 +96,5 @@ DP table State transaction equation DP problem Example I have another post to cl
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-basic/</guid>
     <description><![CDATA[]]></description>
-</item><item>
-    <title>Data structure comparison 🏗</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-data-structure/</link>
-    <pubDate>Sun, 21 Jun 2020 00:26:30 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/language-comparison-data-structure/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Go overview 🏗</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
-    <pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid>
-    <description><![CDATA[Download Go to this link
-workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
-In this workspace, file should structured as how you route your project:
-1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
-1 2 3 4 5 6 7 8  .]]></description>
 </item></channel>
 </rss>

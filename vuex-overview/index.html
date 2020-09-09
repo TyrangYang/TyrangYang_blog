@@ -7,9 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Vuex Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Vuex Overview" />
 <meta property="og:description" content="Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
-Basic structure In store/index.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;." />
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow   Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/" />
 <meta property="article:published_time" content="2020-05-29T16:54:43-04:00" />
@@ -17,9 +15,7 @@ Basic structure In store/index.js
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vuex Overview"/>
 <meta name="twitter:description" content="Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow Vuex work flow is similar with Redux:
-Basic structure In store/index.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  // import vue and vuex import Vuex from &#39;vuex&#39;; import Vue from &#39;vue&#39;; // import module import users from &#39;."/>
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow   Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux"/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -32,7 +28,7 @@ Basic structure In store/index.js
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/vuex-overview\/"
-        },"genre": "posts","keywords": "vue, vuex, javascript","wordcount":  447 ,
+        },"genre": "posts","keywords": "vue, vuex, javascript, redux","wordcount":  456 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/vuex-overview\/","datePublished": "2020-05-29T16:54:43-04:00","dateModified": "2020-05-29T16:54:43-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -109,7 +105,7 @@ Basic structure In store/index.js
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Vuex Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-29">2020-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;447 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-29">2020-05-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;456 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -142,23 +138,21 @@ Basic structure In store/index.js
 <li><strong>Modules</strong> - Each module can have its own state, getters, actions and mutations</li>
 </ul>
 <h2 id="work-flow">Work flow</h2>
-<p><img
-        class="lazyload"
-        src="https://tyrangyang.github.io/TyrangYang_blog/svg/loading.min.svg"
-        data-src="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/vuex.png"
-        data-srcset="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/vuex.png, https://tyrangyang.github.io/TyrangYang_blog/images/vuex/vuex.png 1.5x, https://tyrangyang.github.io/TyrangYang_blog/images/vuex/vuex.png 2x"
-        data-sizes="auto"
-        alt="/images/vuex/vuex.png"
-        title="vuex workflow" /></p>
-<p>Vuex work flow is similar with Redux:</p>
-<p><img
-        class="lazyload"
-        src="https://tyrangyang.github.io/TyrangYang_blog/svg/loading.min.svg"
-        data-src="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg"
-        data-srcset="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg, https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg 1.5x, https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg 2x"
-        data-sizes="auto"
-        alt="/images/vuex/redux.jpeg"
-        title="redux workflow" /></p>
+<figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/vuex.png" width="100%" height="100%"/> <figcaption>
+            <h4>Vuex Workflow</h4>
+        </figcaption>
+</figure>
+
+<blockquote>
+<p>Vuex work flow is similar with Redux =&gt; <a href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" rel="">More Detail about Redux</a></p>
+</blockquote>
+<figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/vuex/redux.jpeg" width="70%" height="70%"/> <figcaption>
+            <h4>Redux Workflow</h4>
+        </figcaption>
+</figure>
+
 <h2 id="basic-structure">Basic structure</h2>
 <p>In <code>store/index.js</code></p>
 <div class="highlight"><div class="chroma">
@@ -437,7 +431,7 @@ Basic structure In store/index.js
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/">vue</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vuex/">vuex</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/">vue</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vuex/">vuex</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/redux/">redux</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>

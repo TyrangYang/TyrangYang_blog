@@ -3,7 +3,28 @@
         <title>react - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link>
         <description>react - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 15 Nov 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Sep 2020 14:30:17 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml" /><item>
+    <title>Redux Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link>
+    <pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid>
+    <description><![CDATA[Redux Document: English 中文
+What is Redux  Redux is a predictable state container for JavaScript apps.
+ Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
+When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
+Workflow   Redux Workflow   Example for Redux core In index.]]></description>
+</item><item>
+    <title>React Posts Archive</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link>
+    <pubDate>Thu, 03 Sep 2020 12:25:26 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid>
+    <description><![CDATA[React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
+Why Can’t I Open My React App By Clicking Index.html? From My Own Post
+Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf
+How To Use an IntersectionObserver in a React Hook Original source: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5]]></description>
+</item><item>
     <title>How to have a dynamic class name</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
     <pubDate>Fri, 15 Nov 2019 00:00:00 &#43;0000</pubDate>

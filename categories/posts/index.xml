@@ -60,9 +60,9 @@ Use Command+Option+W to close all tabs expect current tab.]]></description>
     <pubDate>Sun, 17 Nov 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid>
-    <description><![CDATA[Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
-But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.]]></description>
+    <description><![CDATA[Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.]]></description>
 </item><item>
     <title>What is &#34;this&#34; in javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link>

@@ -6,18 +6,18 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Callback, Promise and Async/await in js - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Callback, Promise and Async/await in js" />
-<meta property="og:description" content="Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
-But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously." />
+<meta property="og:description" content="Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/" />
 <meta property="article:published_time" content="2019-11-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-11-17T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Callback, Promise and Async/await in js"/>
-<meta name="twitter:description" content="Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.
-But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously."/>
+<meta name="twitter:description" content="Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -30,7 +30,7 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/"
-        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  910 ,
+        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  944 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/","datePublished": "2019-11-17T00:00:00+00:00","dateModified": "2019-11-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -102,11 +102,30 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Callback, Promise and Async/await in js</h1><div class="post-meta">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Callback, Promise and Async/await in js</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;910 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;944 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
-        </div><div class="content" id="content"><h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#js-event-loop--call-stack--task-queue">Js event loop | Call stack | task queue</a></li>
+    <li><a href="#synchronous--asynchronous">Synchronous &amp; asynchronous</a></li>
+    <li><a href="#callback">Callback</a></li>
+    <li><a href="#promise">Promise</a></li>
+    <li><a href="#async--await">Async &amp; Await</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="js-event-loop--call-stack--task-queue">Js event loop | Call stack | task queue</h2>
+<p>This <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener noreffer"><strong>website</strong></a> shows how js running with single thread to handle concurrency</p>
+<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
 <p>Function run synchronously means code is running as same as your writing.</p>
 <p>But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.</p>
 <p>But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</p>
@@ -168,7 +187,8 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
 </div><p>The reason is that js have two thread running background. The main thread find async part of code and let another thread (which is a queue) to process. In my example, all three print will processed by main thread and two async part process by queue. Actually you want the fist two print is process in sequence, therefore you need to move these two print into queue so that they can running synchronously. For print title, it really doesn&rsquo;t matter when is actual running and it still processed by main thread.</p>
 <p>There are three different ways to move some part of code into queue. Callback, Promise and Async/await.</p>
 <h2 id="callback">Callback</h2>
-<p>Callback is not a technique just for asynchronous code. It exist in any language actually. It means you pass a function as a parameter.</p>
+<p>When talk about <em>callback</em> actually it has two means:</p>
+<p>First, Callback exist in any language actually. It means you pass a function as a parameter.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -193,7 +213,10 @@ But things going ridiculous. Sometimes, the all code need to be async so that ma
 <span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>The basic idea using callback to solve async is that bundle two function into one async function.</p>
+</div><blockquote>
+<p>These functions are running synchronously.</p>
+</blockquote>
+<p>The second means is using asynchronous function as a callback to solve async problem. In short, we call this strategy as callback as well.</p>
 <p>setTimeout(callback, time) is a async function which means callback will be run after a given time.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
