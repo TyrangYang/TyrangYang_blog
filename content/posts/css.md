@@ -167,6 +167,8 @@ a:hover {
 
 ## position
 
+[**Reference**](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
 The position property specifies the type of positioning method used for an element.
 
 you have `top left bottom right` to set the position
@@ -242,14 +244,19 @@ Use two point to decide the curve
 </p>
 ```
 
+## display
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+
 ## Layout
 
-[Sample code](https://jsfiddle.net/bradtraversy/bu0ecodm/1/) provided by [Traversy Media](https://youtu.be/JJSoEo8JSnc)
+[**MDN Reference**](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction)
 
 > **There is an another compare flex and grid**: [Flex and Grid in CSS]({{< ref "posts/flex-grid.md">}})
 
 ### Flex
 
+[Sample code](https://jsfiddle.net/bradtraversy/bu0ecodm/1/) provided by [Traversy Media](https://youtu.be/JJSoEo8JSnc)
 > [**More Detail**]({{< relref "posts/flex-grid.md#flex">}}) in Flex and Grid in CSS
 
 [**Cheat Sheet**](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) provide by CSS-tricks.com

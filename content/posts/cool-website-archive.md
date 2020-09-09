@@ -1,10 +1,16 @@
 ---
-title: Some cool websites
+title: Some cool websites archive
 date: 2019-10-12
 author: Haolin Yang
-categories: ['Note']
+categories: ['Archive']
 tags:
     - website
+toc:
+    enable: true
+    auto: false
+linkToMarkdown: true
+math:
+    enable: false
 ---
 
 ## Development setting up for Mac

@@ -5,13 +5,19 @@ Categories: ['Note']
 tags: ['javascript']
 toc:
     enable: true
-    auto: true
+    auto: false
 linkToMarkdown: true
 math:
     enable: false
 ---
 
-## Convert to boolean
+> Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).
+
+> You can read this [Article to know What new feature brings in since ES6](https://medium.com/engineered-publicis-sapient/javascript-es6-es7-es10-where-are-we-8ac044dfd964)
+
+## Conversion
+
+### Any => Boolean
 
 ```js
 !!false; // false
@@ -24,12 +30,60 @@ math:
 !!variable == Boolean(variable);
 ```
 
-## Convert to integer
+### String => Integer
 
 ```js
-Number('100');
-+'100';
+Number('100'); //100
++'100'; // 100
+
++'abc'; // NAN
 ```
+
+### Object <=> Array
+
+#### Array => Object
+
+```js
+let arr = [1, 2, 3, 4, 5];
+
+let objFromArr1 = Object.assign({}, arr);
+
+let objFromArr2 = { ...arr };
+
+console.log(objFromArr1); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 }
+
+console.log(objFromArr2); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 }
+
+let pair = [
+    ['key1', 'val1'],
+    ['key2', 'val2'],
+]; // Map works as well
+
+let objFromPair = Object.fromEntries(arr); // ES10
+
+console.log(objFromPair); //{ key1: 'val1', key2: 'val2' }
+```
+
+> `Object.fromEntries(arr)` included in ES10 (ES2019). Before ES10 or convert a complex array, `arr.reduce(()=>{}, {})` is a good method
+
+#### Object => Array
+
+```js
+let obj = {
+    name: 1,
+    age: 2,
+};
+
+let keys = Object.keys(obj);
+let values = Object.values(obj);
+let entries = Object.entries(obj);
+
+console.log(keys); // [ 'name', 'age' ]
+console.log(values); // [  1, 2 ]
+console.log(entries); // [ [ 'name', 1 ], [ 'age', 2 ] ]
+```
+
+> `Object.values` & `Object.entries` are from ES8 (ES2017)
 
 ## Shallow copy & Deep copy
 
@@ -89,8 +143,7 @@ console.log(res); // { a: 1, b: 2, c: 3 }
 
 ## Destruct
 
-Array destructing is ES6 feature
-Object destructing is ES9 feature....
+> _Array destructing_ is ES6 feature, **But** _Object destructing_ is ES9 feature....
 
 ```js
 let array = [1, 2, 3, 4];
@@ -117,3 +170,17 @@ let {
 
 console.log(a, b, d, e, f); // 1 2 3 4 { f: 5, g: 6 }
 ```
+
+### Add space for every four digit
+
+```js
+let value = '123456789';
+value = value
+    .replace(/\W/gi, '')
+    .replace(/(.{4})/g, '$1 ')
+    .trim();
+
+console.log(value); // 1234 5678 9
+```
+
+> `.trim()` for supporting deletion

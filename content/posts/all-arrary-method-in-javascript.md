@@ -12,7 +12,7 @@ toc:
     auto: true
 ---
 
-Show all function: `Array.prototype` & `Array.prototype.constructor`
+> Show all function: Try `Array.prototype` & `Array.prototype.constructor` in browser console.
 
 ## foreach
 

@@ -6,7 +6,17 @@ categories: ['Posts']
 tags:
     - javascript
     - nodejs
+toc:
+    enable: true
+    auto: false
+linkToMarkdown: true
+math:
+    enable: false
 ---
+
+## Js event loop | Call stack | task queue
+
+This [**website**](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) shows how js running with single thread to handle concurrency
 
 ## Synchronous & asynchronous
 
@@ -54,7 +64,9 @@ There are three different ways to move some part of code into queue. Callback, P
 
 ## Callback
 
-Callback is not a technique just for asynchronous code. It exist in any language actually. It means you pass a function as a parameter.
+When talk about _callback_ actually it has two means:
+
+First, Callback exist in any language actually. It means you pass a function as a parameter.
 
 ```js
 let calculate = (num1, num2, callback) => {
@@ -68,7 +80,9 @@ console.log(
 );
 ```
 
-The basic idea using callback to solve async is that bundle two function into one async function.
+> These functions are running synchronously.
+
+The second means is using asynchronous function as a callback to solve async problem. In short, we call this strategy as callback as well.
 
 setTimeout(callback, time) is a async function which means callback will be run after a given time.
 
