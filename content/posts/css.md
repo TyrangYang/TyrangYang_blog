@@ -106,7 +106,7 @@ Id will always take precedence.
 
 `text-align: right`; right-aligns the text
 
-`And text-align: left`; (the default) left-aligns the text.
+`text-align: left`; (the default) left-aligns the text.
 
 ### decoration
 
@@ -165,6 +165,10 @@ a:hover {
 }
 ```
 
+## transform
+
+MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
 ## position
 
 [**Reference**](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
@@ -180,6 +184,8 @@ There are five different position values:
 -   absolute: target wherever position inside of a relative element (
 -   fixed: fix to browser window
 -   sticky
+
+[This is another post shows different](https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6)
 
 ## color
 
@@ -200,6 +206,10 @@ There are five different position values:
 0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
 
 ## animate
+
+### Example
+
+[Try in CodePen](https://codepen.io/TyrangYang/pen/BaKxwdB)
 
 ```html
 <style>
@@ -222,6 +232,20 @@ There are five different position values:
 </style>
 <button>Register</button>
 ```
+
+### keyframes
+
+MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes
+
+### animation
+
+MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+
+## transition
+
+CSS transitions provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized.
+
+MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
 
 ## cubic-bezier
 
@@ -257,6 +281,7 @@ https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
 ### Flex
 
 [Sample code](https://jsfiddle.net/bradtraversy/bu0ecodm/1/) provided by [Traversy Media](https://youtu.be/JJSoEo8JSnc)
+
 > [**More Detail**]({{< relref "posts/flex-grid.md#flex">}}) in Flex and Grid in CSS
 
 [**Cheat Sheet**](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) provide by CSS-tricks.com

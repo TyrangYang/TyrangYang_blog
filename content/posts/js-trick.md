@@ -184,3 +184,43 @@ console.log(value); // 1234 5678 9
 ```
 
 > `.trim()` for supporting deletion
+
+## Function compose
+
+Compose a list of function into one. I saw this in create middleware
+
+```js
+const f1 = (val) => `1<${val}>`;
+const f2 = (val) => `2<${val}>`;
+
+const compose = (...functionList) => {
+    return functionList.reduce((prevFn, curFn) => {
+        return (val) => curFn(prevFn(val));
+    });
+};
+
+const composedFun = compose(f1, f2);
+console.log(composedFun('hello world')); // 2<1<hello world>>
+```
+
+But we can improve this compose function.
+
+1. not need those `return`
+2. the final reduced function `(val) => curFn(prevFn(val));` may have several arguments, therefore `val` change to `...args`
+3. reduce function should give the second parameter as initial state in case the function list is empty
+
+```js
+const f1 = (val) => `1<${val}>`;
+const f2 = (val) => `2<${val}>`;
+
+const compose = (...functionList) =>
+    functionList.reduce(
+        (prevFn, curFn) => (...args) => curFn(prevFn(...args)),
+        (val) => val
+    );
+
+const composedFun = compose(f1, f2);
+console.log(composedFun('hello world')); // 2<1<hello world>>
+const composedFun2 = compose();
+console.log(composedFun2('hello world')); // hello world
+```
