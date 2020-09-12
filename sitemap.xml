@@ -2,20 +2,23 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/posts/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/posts/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/web/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/webpack/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</loc><lastmod>2020-09-09T19:12:38-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/redux/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/</loc><lastmod>2020-09-07T14:30:17-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/archive/</loc><lastmod>2020-09-03T12:25:26-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</loc><lastmod>2020-09-03T12:25:26-07:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/java/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/archive/</loc><lastmod>2020-09-03T12:25:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</loc><lastmod>2020-09-03T12:25:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/java/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</loc><lastmod>2020-08-21T16:37:45-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/css/</loc><lastmod>2020-08-18T12:04:51-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/flex/</loc><lastmod>2020-08-18T12:04:51-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</loc><lastmod>2020-08-18T12:04:51-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
@@ -24,12 +27,11 @@
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/</loc><lastmod>2020-08-17T16:43:42-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/</loc><lastmod>2020-08-17T16:43:42-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</loc><lastmod>2020-08-17T16:43:42-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/http/</loc><lastmod>2020-08-13T14:11:38-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</loc><lastmod>2020-08-13T14:11:38-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/html/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/web/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/http/</loc><lastmod>2020-08-13T14:11:38-07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</loc><lastmod>2020-08-13T14:11:38-07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/html/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</loc><lastmod>2020-08-13T14:02:26-07:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/</loc><lastmod>2020-07-10T18:49:03-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/</loc><lastmod>2020-07-10T18:49:03-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://tyrangyang.github.io/TyrangYang_blog/tags/dp/</loc><lastmod>2020-07-10T18:49:03-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

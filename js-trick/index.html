@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"
-        },"genre": "posts","keywords": "javascript","wordcount":  572 ,
+        },"genre": "posts","keywords": "javascript","wordcount":  741 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished": "2020-05-03T23:12:40-04:00","dateModified": "2020-05-03T23:12:40-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;572 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;741 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -141,6 +141,7 @@
         <li><a href="#add-space-for-every-four-digit">Add space for every four digit</a></li>
       </ul>
     </li>
+    <li><a href="#function-compose">Function compose</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
@@ -440,7 +441,75 @@
 </div><blockquote>
 <p><code>.trim()</code> for supporting deletion</p>
 </blockquote>
-</div><div class="post-footer" id="post-footer">
+<h2 id="function-compose">Function compose</h2>
+<p>Compose a list of function into one. I saw this in create middleware</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">f2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`2&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">functionList</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">functionList</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prevFn</span><span class="p">,</span> <span class="nx">curFn</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">curFn</span><span class="p">(</span><span class="nx">prevFn</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">composedFun</span> <span class="o">=</span> <span class="nx">compose</span><span class="p">(</span><span class="nx">f1</span><span class="p">,</span> <span class="nx">f2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">composedFun</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">));</span> <span class="c1">// 2&lt;1&lt;hello world&gt;&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>But we can improve this compose function.</p>
+<ol>
+<li>not need those <code>return</code></li>
+<li>the final reduced function <code>(val) =&gt; curFn(prevFn(val));</code> may have several arguments, therefore <code>val</code> change to <code>...args</code></li>
+<li>reduce function should give the second parameter as initial state in case the function list is empty</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">f2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`2&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">functionList</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="nx">functionList</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+        <span class="p">(</span><span class="nx">prevFn</span><span class="p">,</span> <span class="nx">curFn</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">curFn</span><span class="p">(</span><span class="nx">prevFn</span><span class="p">(...</span><span class="nx">args</span><span class="p">)),</span>
+        <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">val</span>
+    <span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">composedFun</span> <span class="o">=</span> <span class="nx">compose</span><span class="p">(</span><span class="nx">f1</span><span class="p">,</span> <span class="nx">f2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">composedFun</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">));</span> <span class="c1">// 2&lt;1&lt;hello world&gt;&gt;
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">composedFun2</span> <span class="o">=</span> <span class="nx">compose</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">composedFun2</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">));</span> <span class="c1">// hello world
+</span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

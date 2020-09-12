@@ -50,7 +50,7 @@ padding Padding control the amount of space between the element&rsquo;s content 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/"
-        },"genre": "posts","keywords": "css","wordcount":  771 ,
+        },"genre": "posts","keywords": "css","wordcount":  868 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/","datePublished": "2020-03-17T00:00:00+00:00","dateModified": "2020-03-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -127,8 +127,8 @@ padding Padding control the amount of space between the element&rsquo;s content 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CSS Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;771 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;868 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -158,10 +158,18 @@ padding Padding control the amount of space between the element&rsquo;s content 
     <li><a href="#box-shadow">Box shadow</a></li>
     <li><a href="#opacity">opacity</a></li>
     <li><a href="#pseudo-classes">pseudo-classes</a></li>
+    <li><a href="#transform-1">transform</a></li>
     <li><a href="#position">position</a></li>
     <li><a href="#color">color</a></li>
     <li><a href="#linear-gradient">linear-gradient</a></li>
-    <li><a href="#animate">animate</a></li>
+    <li><a href="#animate">animate</a>
+      <ul>
+        <li><a href="#example">Example</a></li>
+        <li><a href="#keyframes">keyframes</a></li>
+        <li><a href="#animation">animation</a></li>
+      </ul>
+    </li>
+    <li><a href="#transition">transition</a></li>
     <li><a href="#cubic-bezier">cubic-bezier</a></li>
     <li><a href="#tabindex">tabindex</a></li>
     <li><a href="#display">display</a></li>
@@ -260,7 +268,7 @@ padding Padding control the amount of space between the element&rsquo;s content 
 <p><code>text-align: justify</code>; causes all lines of text except the last line to meet the left and right edges of the line box.</p>
 <p><code>text-align: center</code>; centers the text</p>
 <p><code>text-align: right</code>; right-aligns the text</p>
-<p><code>And text-align: left</code>; (the default) left-aligns the text.</p>
+<p><code>text-align: left</code>; (the default) left-aligns the text.</p>
 <h3 id="decoration">decoration</h3>
 <p><code>font-weight: bold;</code> <strong></strong></p>
 <p><code>text-decoration: underline;</code> <u></u></p>
@@ -335,7 +343,9 @@ A value of 0 is completely transparent.</p>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="position">position</h2>
+</div><h2 id="transform-1">transform</h2>
+<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a></p>
+<h2 id="position">position</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noopener noreffer"><strong>Reference</strong></a></p>
 <p>The position property specifies the type of positioning method used for an element.</p>
 <p>you have <code>top left bottom right</code> to set the position</p>
@@ -347,6 +357,7 @@ A value of 0 is completely transparent.</p>
 <li>fixed: fix to browser window</li>
 <li>sticky</li>
 </ul>
+<p><a href="https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6" target="_blank" rel="noopener noreffer">This is another post shows different</a></p>
 <h2 id="color">color</h2>
 <h2 id="linear-gradient">linear-gradient</h2>
 <p><code>background: linear-gradient(30deg, #cff, #fcc);</code></p>
@@ -372,6 +383,8 @@ A value of 0 is completely transparent.</p>
 </div>
 </div><p>0px [yellow &ndash; blend &ndash; blue] 40px [green &ndash; blend &ndash; red] 80px</p>
 <h2 id="animate">animate</h2>
+<h3 id="example">Example</h3>
+<p><a href="https://codepen.io/TyrangYang/pen/BaKxwdB" target="_blank" rel="noopener noreffer">Try in CodePen</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -416,7 +429,14 @@ A value of 0 is completely transparent.</p>
 <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Register<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="cubic-bezier">cubic-bezier</h2>
+</div><h3 id="keyframes">keyframes</h3>
+<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes</a></p>
+<h3 id="animation">animation</h3>
+<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">https://developer.mozilla.org/en-US/docs/Web/CSS/animation</a></p>
+<h2 id="transition">transition</h2>
+<p>CSS transitions provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized.</p>
+<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">https://developer.mozilla.org/en-US/docs/Web/CSS/transition</a></p>
+<h2 id="cubic-bezier">cubic-bezier</h2>
 <p>A curve about about animation speed.</p>
 <p>Use two point to decide the curve</p>
 <p><img

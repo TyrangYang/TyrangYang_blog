@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Webpack Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Webpack Overview" />
+<meta property="og:description" content="webpack is a static module bundler for modern JavaScript applications.
+Document: https://webpack.js.org/concepts/
+webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Output The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/" />
+<meta property="article:published_time" content="2020-09-09T19:12:38-07:00" />
+<meta property="article:modified_time" content="2020-09-09T19:12:38-07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webpack Overview"/>
+<meta name="twitter:description" content="webpack is a static module bundler for modern JavaScript applications.
+Document: https://webpack.js.org/concepts/
+webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Output The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ."/>
+<meta name="application-name" content="TyrangYang_Blog">
+<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Webpack Overview",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/webpack-overview\/"
+        },"genre": "posts","keywords": "webpack","wordcount":  312 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/webpack-overview\/","datePublished": "2020-09-09T19:12:38-07:00","dateModified": "2020-09-09T19:12:38-07:00","publisher": {
+            "@type": "Organization",
+            "name": "Haolin Yang"},"author": {
+                "@type": "Person",
+                "name": "Haolin Yang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Webpack Overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-09">2020-09-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;312 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#webpack-core-concept">webpack core concept</a>
+      <ul>
+        <li><a href="#entry">Entry</a></li>
+        <li><a href="#output">Output</a></li>
+        <li><a href="#loaders">Loaders</a></li>
+        <li><a href="#plugin">Plugin</a></li>
+        <li><a href="#mode">Mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#example">Example</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>webpack is a static module bundler for modern JavaScript applications.</p>
+<p>Document: <a href="https://webpack.js.org/concepts/">https://webpack.js.org/concepts/</a></p>
+<h2 id="webpack-core-concept">webpack core concept</h2>
+<h3 id="entry">Entry</h3>
+<p>An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).</p>
+<h3 id="output">Output</h3>
+<p>The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ./dist/main.js for the main output file and to the ./dist folder for any other generated file.</p>
+<h3 id="loaders">Loaders</h3>
+<p>Out of the box, webpack only understands JavaScript and JSON files. Loaders allow webpack to process other types of files and convert them into valid modules that can be consumed by your application and added to the dependency graph.</p>
+<h3 id="plugin">Plugin</h3>
+<p>While loaders are used to transform certain types of modules, plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management and injection of environment variables.</p>
+<h3 id="mode">Mode</h3>
+<p>By setting the mode parameter to either <code>development</code>, <code>production</code> or <code>none</code>, you can <strong><em>enable webpack&rsquo;s built-in optimizations</em></strong> that correspond to each environment</p>
+<h2 id="example">Example</h2>
+<p>In <code>webpack.config.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">&#39;production&#39;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;webpack&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
+    <span class="nx">context</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">devtool</span><span class="o">:</span> <span class="nx">debug</span> <span class="o">?</span> <span class="s1">&#39;inline-sourcemap&#39;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./js/client.js&#39;</span><span class="p">,</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.jsx?$/</span><span class="p">,</span>
+                <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/(node_modules|bower_components)/</span><span class="p">,</span>
+                <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span>
+                <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+                    <span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;react&#39;</span><span class="p">,</span> <span class="s1">&#39;es2015&#39;</span><span class="p">,</span> <span class="s1">&#39;stage-0&#39;</span><span class="p">],</span>
+                    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+                        <span class="s1">&#39;react-html-attrs&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;transform-decorators-legacy&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;transform-class-properties&#39;</span><span class="p">,</span>
+                    <span class="p">],</span>
+                <span class="p">},</span>
+            <span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/src/&#39;</span><span class="p">,</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;client.min.js&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nx">plugins</span><span class="o">:</span> <span class="nx">debug</span>
+        <span class="o">?</span> <span class="p">[]</span>
+        <span class="o">:</span> <span class="p">[</span>
+              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">DedupePlugin</span><span class="p">(),</span>
+              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">OccurrenceOrderPlugin</span><span class="p">(),</span>
+              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">UglifyJsPlugin</span><span class="p">({</span>
+                  <span class="nx">mangle</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+                  <span class="nx">sourcemap</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+              <span class="p">}),</span>
+          <span class="p">],</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-09-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/webpack/">webpack</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" class="prev" rel="prev" title="Redux Overview"><i class="fas fa-angle-left fa-fw"></i>Redux Overview</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
+</html>
