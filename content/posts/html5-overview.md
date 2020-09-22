@@ -10,3 +10,18 @@ linkToMarkdown: true
 math:
     enable: false
 ---
+
+## table
+
+```
+table
+├── thead
+│   └── tr
+│       └── th
+├── tbody
+│   └── tr
+│       └── td
+└── tfoot
+    └── tr
+        └── td
+```

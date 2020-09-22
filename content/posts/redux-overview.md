@@ -216,6 +216,34 @@ Document: https://react-redux.js.org/introduction/quick-start
 2. separate reducer
 3. separate action
 
+Skeleton:
+
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import addUserAction from '../action/addUserAction';
+
+export class ClassComponent extends Component {
+    render() {
+        return <div></div>;
+    }
+}
+
+const mapStateToProps = (state) => ({
+    user: state.user,
+});
+
+const mapDispatchToProps = { addUserAction };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClassComponent);
+```
+
+### useSelector & useDispatch
+
+`useSelector` is a hook provided by react-redux that approximately equivalent to `mapStateToProps`
+
+`useDispatch` dispatch a action to store which is to replace `mapDispatchToProps`
+
 ## Use @reduxjs/toolkit with react
 
 Document: https://redux-toolkit.js.org/introduction/quick-start

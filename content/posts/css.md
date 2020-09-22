@@ -108,6 +108,8 @@ Id will always take precedence.
 
 `text-align: left`; (the default) left-aligns the text.
 
+`text-overflow: ellipsis;` ellipsis text overflow (...)
+
 ### decoration
 
 `font-weight: bold;` <strong></strong>
