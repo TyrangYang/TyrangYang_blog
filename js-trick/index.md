@@ -215,3 +215,49 @@ const composedFun2 = compose();
 console.log(composedFun2('hello world')); // hello world
 ```
 
+## Debounce & throttle
+
+> Here is my Example: [Try it Now](/html/debounce&throttle.html)
+>
+> Play in [CodePen](https://codepen.io/TyrangYang/pen/YzqJZJX)
+
+### Debounce
+
+The debounce function delays the processing of event until the user has stopped trigger it.
+
+The core logic is using HOF to only keep the last trigger.
+
+```js
+const debounce = (fn, delay) => {
+    let timer = null;
+    return (...arguments) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn(...arguments);
+        }, delay);
+    };
+};
+```
+
+### Throttle
+
+The Throttle function only allows one event running in a period of time
+
+The core logic is using HOF to only keep the first trigger.
+
+```js
+const throttle = (fn, delay) => {
+    let timer = null;
+    return (...arguments) => {
+        if (timer !== null) {
+            return;
+        }
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            timer = null;
+            fn(...arguments);
+        }, delay);
+    };
+};
+```
+

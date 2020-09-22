@@ -3,7 +3,17 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 09 Sep 2020 19:12:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 18:36:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Jest Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</link>
+    <pubDate>Mon, 14 Sep 2020 18:36:51 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</guid>
+    <description><![CDATA[Jest is a JavaScript Testing Framework
+ Document: https://jestjs.io/docs/en/getting-started
+How to use Jest function.js
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
+</item><item>
     <title>Webpack Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link>
     <pubDate>Wed, 09 Sep 2020 19:12:38 -0700</pubDate>
@@ -40,7 +50,7 @@ Workflow   Redux Workflow   Example for Redux core In index.]]></description>
     <pubDate>Thu, 13 Aug 2020 14:02:26 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[table 1 2 3 4 5 6 7 8 9 10  table ├── thead │ └── tr │ └── th ├── tbody │ └── tr │ └── td └── tfoot └── tr └── td   ]]></description>
 </item><item>
     <title>Go overview 🏗</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
@@ -95,14 +105,5 @@ example chmod +wr test.txt give write and read permission for user
 chmod -r test.txt remove read permission for user
 chmod g=wrx test.txt give write, read and execute permission for group
 use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
-</item><item>
-    <title>SocketIo Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/socketio/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/socketio/</guid>
-    <description><![CDATA[socket.io enable realtime, bidirectional communication for Nodejs
-Backend We use Express as backend framework.
-1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&#39;express&#39;); const path = require(&#39;path&#39;); const http = require(&#39;http&#39;); const socket_io = require(&#39;socket.io&#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&#39;connection&#39;, (server_socket) =&gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &lt;script src=&#34;https://tyrangyang.github.io/TyrangYang_blog/socket.]]></description>
 </item></channel>
 </rss>

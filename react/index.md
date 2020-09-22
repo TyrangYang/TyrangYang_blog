@@ -1,56 +1,29 @@
 # React overview
 
 
-## init react
+## Init react
 
 Commend
 
 ```
-    npx create-react-app .
+npx create-react-app .
 ```
 
 npx means you use this package but don't download it.
 
-## Structure
+or with redux
 
-### package.json
-
-react & react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
-
-### public/index.html
-
-signal page application which is index.html
-
-Everything your do will inside \<div id="root"\>\</div\>
-
-### src/index.js
-
-Entry point for react
-
-### src/App.js
-
-All the component.
-
-Inside the class, the render() method is called life cycle method and to render the page.
-
-In JSX, you cannot use HTML class attribute. you have to use className.
-
-## react
-
-states is statement
-
-props is property
+```
+npx create-react-app my-app --template redux
+```
 
 ## life cycle
 
-Class component:
-![rfc](/images/2019-10-03-react/rcc.png)
+{{<figure src="/images/2019-10-03-react/rcc.png" title="Class component lifecycle" width="100%" height="100%" >}}
 
-Functional component:
+{{<figure src="/images/2019-10-03-react/rfc.jpg" title="Function component method" width="100%" height="100%" >}}
 
-![rfc](/images/2019-10-03-react/rfc.jpg)
-
-### Connection
+## Class Component ==> Functional Component
 
 |     Class component     |                       Functional component                       |
 | :---------------------: | :--------------------------------------------------------------: |
@@ -85,7 +58,31 @@ export default React.memo(App);
 
 [link](https://www.jianshu.com/p/ce5451287f1c)
 
-## How to connect your React app to a backend on the same origin
+## React Posts Archive
 
-https://flaviocopes.com/how-to-serve-react-from-same-origin/
+> [See my other post]({{< ref "/react-posts-archive.md" >}})
+
+## Structure
+
+### package.json
+
+react & react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
+
+### public/index.html
+
+signal page application which is index.html
+
+Everything your do will inside `<div id="root"></div>`
+
+### src/index.js
+
+Entry point for react
+
+### src/App.js
+
+All the component.
+
+Inside the class, the render() method is called life cycle method and to render the page.
+
+In JSX, you cannot use HTML class attribute. you have to use className.
 

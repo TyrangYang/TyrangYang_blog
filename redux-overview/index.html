@@ -34,7 +34,7 @@ Workflow   Redux Workflow   Example for Redux core In index."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/redux-overview\/"
-        },"genre": "posts","keywords": "redux, react","wordcount":  922 ,
+        },"genre": "posts","keywords": "redux, react","wordcount":  1014 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/redux-overview\/","datePublished": "2020-09-07T14:30:17-07:00","dateModified": "2020-09-07T14:30:17-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -111,7 +111,7 @@ Workflow   Redux Workflow   Example for Redux core In index."/>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Redux Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-07">2020-09-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;922 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-07">2020-09-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1014 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -125,7 +125,11 @@ Workflow   Redux Workflow   Example for Redux core In index."/>
     <li><a href="#workflow">Workflow</a></li>
     <li><a href="#example-for-redux-core">Example for Redux core</a></li>
     <li><a href="#async-action">Async Action</a></li>
-    <li><a href="#use-with-react-react-redux">Use with react (react-redux)</a></li>
+    <li><a href="#use-with-react-react-redux">Use with react (react-redux)</a>
+      <ul>
+        <li><a href="#useselector--usedispatch">useSelector &amp; useDispatch</a></li>
+      </ul>
+    </li>
     <li><a href="#use-reduxjstoolkit-with-react">Use @reduxjs/toolkit with react</a></li>
   </ul>
 </nav></div>
@@ -497,6 +501,50 @@ Workflow   Redux Workflow   Example for Redux core In index."/>
 <li>separate reducer</li>
 <li>separate action</li>
 </ol>
+<p>Skeleton:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">addUserAction</span> <span class="nx">from</span> <span class="s1">&#39;../action/addUserAction&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">ClassComponent</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">const</span> <span class="nx">mapStateToProps</span> <span class="o">=</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">user</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">user</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="kr">const</span> <span class="nx">mapDispatchToProps</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">addUserAction</span> <span class="p">};</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">ClassComponent</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="useselector--usedispatch">useSelector &amp; useDispatch</h3>
+<p><code>useSelector</code> is a hook provided by react-redux that approximately equivalent to <code>mapStateToProps</code></p>
+<p><code>useDispatch</code> dispatch a action to store which is to replace <code>mapDispatchToProps</code></p>
 <h2 id="use-reduxjstoolkit-with-react">Use @reduxjs/toolkit with react</h2>
 <p>Document: <a href="https://redux-toolkit.js.org/introduction/quick-start">https://redux-toolkit.js.org/introduction/quick-start</a></p>
 <blockquote>

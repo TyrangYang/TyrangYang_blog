@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            h2 {
+                font-size: 50px;
+            }
+            label {
+                font-size: 40px;
+            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .buttonContainer {
+                text-align: center;
+            }
+            #btn {
+                width: 200px;
+                height: 80px;
+                font-size: 40px;
+            }
+
+            .displayScroll {
+                font-size: 100px;
+            }
+
+            .displayGroup {
+                display: flex;
+                align-items: center;
+            }
+            input {
+                font-size: 40px;
+            }
+            .displayGroup > p {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>For scroll</h2>
+            <label>Normal:</label>
+            <div id="displayScrollNormal" class="displayScroll"></div>
+            <label>Debounce:</label>
+            <div id="displayScrollDebounce" class="displayScroll"></div>
+            <label>throttle:(keep scroll to see the different)</label>
+            <div id="displayScrollThrottle" class="displayScroll"></div>
+            <div class="buttonContainer">
+                <button id="btn">clean</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>For Input(input event)</h2>
+            <label
+                >Keep typing to see different:
+                <input id="inputText" type="text"
+            /></label>
+            <div class="displayGroup">
+                <label>Normal: </label>
+                <p id="forNormalTextDisplay"></p>
+            </div>
+            <div class="displayGroup">
+                <label>Debounce: </label>
+                <p id="forDebounceDisplay"></p>
+            </div>
+            <div class="displayGroup">
+                <label>Throttle: </label>
+                <p id="forThrottleDisplay"></p>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const debounce = (fn, delay) => {
+            let timer = null;
+            return (...arguments) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    fn(...arguments);
+                }, delay);
+            };
+        };
+        const throttle = (fn, delay) => {
+            let timer = null;
+            return (...arguments) => {
+                if (timer !== null) {
+                    return;
+                }
+                timer = setTimeout(() => {
+                    clearTimeout(timer);
+                    timer = null;
+                    fn(...arguments);
+                }, delay);
+            };
+        };
+
+        const displayScrollDebounce = document.getElementById(
+            'displayScrollDebounce'
+        );
+        const displayScrollNormal = document.getElementById(
+            'displayScrollNormal'
+        );
+        const displayScrollThrottle = document.getElementById(
+            'displayScrollThrottle'
+        );
+
+        const btn = document.getElementById('btn');
+        let count = 0;
+        let count2 = 0;
+        let count3 = 0;
+
+        displayScrollDebounce.textContent = count;
+        displayScrollNormal.textContent = count2;
+        displayScrollThrottle.textContent = count3;
+
+        window.addEventListener('scroll', (e) => {
+            count2++;
+            displayScrollNormal.textContent = count2;
+        });
+
+        window.addEventListener(
+            'scroll',
+            debounce((e) => {
+                count++;
+                displayScrollDebounce.textContent = count;
+            }, 500)
+        );
+
+        window.addEventListener(
+            'scroll',
+            throttle((e) => {
+                count3++;
+                displayScrollThrottle.textContent = count3;
+            }, 500)
+        );
+
+        // clean scroll display
+        btn.addEventListener('click', () => {
+            count = 0;
+            count2 = 0;
+            count3 = 0;
+            displayScrollDebounce.textContent = count;
+            displayScrollNormal.textContent = count2;
+            displayScrollThrottle.textContent = count3;
+        });
+
+        const inputText = document.getElementById('inputText');
+        const displayNormalInput = document.getElementById(
+            'forNormalTextDisplay'
+        );
+        const displayDebounce = document.getElementById('forDebounceDisplay');
+        const displayThrottle = document.getElementById('forThrottleDisplay');
+
+        inputText.addEventListener('input', (e) => {
+            displayNormalInput.textContent = e.target.value;
+        });
+
+        inputText.addEventListener(
+            'input',
+            debounce((e) => {
+                displayDebounce.textContent = e.target.value;
+            }, 1000)
+        );
+
+        inputText.addEventListener(
+            'input',
+            throttle((e) => {
+                displayThrottle.textContent = e.target.value;
+            }, 1000)
+        );
+    </script>
+</html>

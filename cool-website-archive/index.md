@@ -63,3 +63,7 @@ https://jsfiddle.net
 
 https://codepen.io
 
+## HTML symbol entity
+
+https://dev.w3.org/html5/html-author/charref
+

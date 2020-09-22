@@ -3,7 +3,17 @@
         <title>javascript - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link>
         <description>javascript - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 18:36:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>Jest Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</link>
+    <pubDate>Mon, 14 Sep 2020 18:36:51 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</guid>
+    <description><![CDATA[Jest is a JavaScript Testing Framework
+ Document: https://jestjs.io/docs/en/getting-started
+How to use Jest function.js
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
+</item><item>
     <title>Prototype Inheritance in Javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
     <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
@@ -81,16 +91,5 @@ But in real situation, some code may need time to running but you don&rsquo;t wa
     <description><![CDATA[Author: Dmitri Pavlutin
 Reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
 Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.]]></description>
-</item><item>
-    <title>How to have a dynamic class name</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
-    <pubDate>Fri, 15 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
-    <description><![CDATA[In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
-classNames This is a javascript for conditionally joining classNames.
-Here is: Github
-Basically, you can combine any number of classNames.
-1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals.]]></description>
 </item></channel>
 </rss>

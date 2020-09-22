@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"
-        },"genre": "posts","keywords": "javascript","wordcount":  741 ,
+        },"genre": "posts","keywords": "javascript","wordcount":  892 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished": "2020-05-03T23:12:40-04:00","dateModified": "2020-05-03T23:12:40-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;741 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;892 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -142,6 +142,12 @@
       </ul>
     </li>
     <li><a href="#function-compose">Function compose</a></li>
+    <li><a href="#debounce--throttle">Debounce &amp; throttle</a>
+      <ul>
+        <li><a href="#debounce">Debounce</a></li>
+        <li><a href="#throttle">Throttle</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
@@ -508,6 +514,73 @@
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">composedFun2</span> <span class="o">=</span> <span class="nx">compose</span><span class="p">();</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">composedFun2</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">));</span> <span class="c1">// hello world
 </span></code></pre></td></tr></table>
+</div>
+</div><h2 id="debounce--throttle">Debounce &amp; throttle</h2>
+<blockquote>
+<p>Here is my Example: <a href="https://tyrangyang.github.io/TyrangYang_blog/html/debounce&amp;throttle.html" rel="">Try it Now</a></p>
+<p>Play in <a href="https://codepen.io/TyrangYang/pen/YzqJZJX" target="_blank" rel="noopener noreffer">CodePen</a></p>
+</blockquote>
+<h3 id="debounce">Debounce</h3>
+<p>The debounce function delays the processing of event until the user has stopped trigger it.</p>
+<p>The core logic is using HOF to only keep the last trigger.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">debounce</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(...</span><span class="nx">arguments</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+        <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">fn</span><span class="p">(...</span><span class="nx">arguments</span><span class="p">);</span>
+        <span class="p">},</span> <span class="nx">delay</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="throttle">Throttle</h3>
+<p>The Throttle function only allows one event running in a period of time</p>
+<p>The core logic is using HOF to only keep the first trigger.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">throttle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(...</span><span class="nx">arguments</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">timer</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
+        <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="nx">fn</span><span class="p">(...</span><span class="nx">arguments</span><span class="p">);</span>
+        <span class="p">},</span> <span class="nx">delay</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

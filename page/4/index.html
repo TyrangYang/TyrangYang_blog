@@ -10,7 +10,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
-<meta property="og:updated_time" content="2020-09-09T19:12:38-07:00" />
+<meta property="og:updated_time" content="2020-09-14T18:36:51-07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TyrangYang_Blog"/>
 <meta name="twitter:description" content=""/>
@@ -100,6 +100,15 @@
         alt="/images/art2.png"
         title="/images/art2.png" /></a></div><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/@TyrangYang" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="mailto:haolinyang95@gamil.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/">Traverse a tree</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-02-10">2020-02-10</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div><div class="content">Idea to traverse a tree
+Tree structure The tree structure:
+1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
+Iterative Loop for BFS:
+1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/">Traverse a tree</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/next-permutation/">How to find next permutation</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-02-05">2020-02-05</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/"><i class="far fa-folder fa-fw"></i>STL-study-note</a></span></div><div class="content">This is introduce how to find the next lexicographically permutation.
 Suppose the permutation is 1 2 3. The next one is 1 3 2.
@@ -172,16 +181,6 @@ Use Command+Option+W to close all tabs expect current tab.</div><div class="post
 Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&rsquo;s recommended to use zsh over bash.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/ohmyzsh/">ohmyzsh</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/zsh/">zsh</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/bash/">bash</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/">terminal</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/erlang/">Erlang overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-12-14">2019-12-14</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Basic Documentation: https://erlang.org/doc/search/
-Functional language Erlang is a functional language. Code need compile and running line by line.
-Every line need finish by a .. like: A = 1..
-Module Every erlang file will consider as a module. You console will compile all module you want.
-You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
-In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/erlang/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/">erlang</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>

@@ -6,28 +6,20 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>React overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="React overview" />
-<meta property="og:description" content="init react Commend
+<meta property="og:description" content="Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
-Structure package.json react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
-public/index.html signal page application which is index.html
-Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;
-src/index.js Entry point for react
-src/App.js All the component.
-Inside the class, the render() method is called life cycle method and to render the page." />
+or with redux
+1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   Class Component ==&gt; Functional Component    Class component Functional component     state &#43; setState useState()   componentDidMount() useEffect() with a empty input list   componentDidUpdate() useEffect() with a input list contained which you want to change   componentWillUnmount() useEffect() with a return callback function   shouldComponentUpdate() React." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/react/" />
 <meta property="article:published_time" content="2019-10-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-03T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="React overview"/>
-<meta name="twitter:description" content="init react Commend
+<meta name="twitter:description" content="Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
-Structure package.json react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.
-public/index.html signal page application which is index.html
-Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;
-src/index.js Entry point for react
-src/App.js All the component.
-Inside the class, the render() method is called life cycle method and to render the page."/>
+or with redux
+1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   Class Component ==&gt; Functional Component    Class component Functional component     state &#43; setState useState()   componentDidMount() useEffect() with a empty input list   componentDidUpdate() useEffect() with a input list contained which you want to change   componentWillUnmount() useEffect() with a return callback function   shouldComponentUpdate() React."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -40,7 +32,7 @@ Inside the class, the render() method is called life cycle method and to render 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/"
-        },"genre": "posts","keywords": "web, react","wordcount":  186 ,
+        },"genre": "posts","keywords": "web, react","wordcount":  187 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/","datePublished": "2019-10-03T00:00:00+00:00","dateModified": "2019-10-03T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -114,54 +106,42 @@ Inside the class, the render() method is called life cycle method and to render 
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">React overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;186 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;187 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
-        </div><div class="content" id="content"><h2 id="init-react">init react</h2>
+        </div><div class="content" id="content"><h2 id="init-react">Init react</h2>
 <p>Commend</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    npx create-react-app .
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npx create-react-app .
 </code></pre></td></tr></table>
 </div>
 </div><p>npx means you use this package but don&rsquo;t download it.</p>
-<h2 id="structure">Structure</h2>
-<h3 id="packagejson">package.json</h3>
-<p>react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.</p>
-<h3 id="publicindexhtml">public/index.html</h3>
-<p>signal page application which is index.html</p>
-<p>Everything your do will inside &lt;div id=&quot;root&rdquo;&gt;&lt;/div&gt;</p>
-<h3 id="srcindexjs">src/index.js</h3>
-<p>Entry point for react</p>
-<h3 id="srcappjs">src/App.js</h3>
-<p>All the component.</p>
-<p>Inside the class, the render() method is called life cycle method and to render the page.</p>
-<p>In JSX, you cannot use HTML class attribute. you have to use className.</p>
-<h2 id="react">react</h2>
-<p>states is statement</p>
-<p>props is property</p>
-<h2 id="life-cycle">life cycle</h2>
-<p>Class component:
-<img
-        class="lazyload"
-        src="https://tyrangyang.github.io/TyrangYang_blog/svg/loading.min.svg"
-        data-src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png"
-        data-srcset="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png, https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png 1.5x, https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png 2x"
-        data-sizes="auto"
-        alt="/images/2019-10-03-react/rcc.png"
-        title="rfc" /></p>
-<p>Functional component:</p>
-<p><img
-        class="lazyload"
-        src="https://tyrangyang.github.io/TyrangYang_blog/svg/loading.min.svg"
-        data-src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg"
-        data-srcset="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg, https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg 1.5x, https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg 2x"
-        data-sizes="auto"
-        alt="/images/2019-10-03-react/rfc.jpg"
-        title="rfc" /></p>
-<h3 id="connection">Connection</h3>
+<p>or with redux</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npx create-react-app my-app --template redux
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="life-cycle">life cycle</h2>
+<figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png" width="100%" height="100%"/> <figcaption>
+            <h4>Class component lifecycle</h4>
+        </figcaption>
+</figure>
+
+<figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg" width="100%" height="100%"/> <figcaption>
+            <h4>Function component method</h4>
+        </figcaption>
+</figure>
+
+<h2 id="class-component--functional-component">Class Component ==&gt; Functional Component</h2>
 <table>
 <thead>
 <tr>
@@ -230,8 +210,22 @@ Inside the class, the render() method is called life cycle method and to render 
 </code></pre></td></tr></table>
 </div>
 </div><p><a href="https://www.jianshu.com/p/ce5451287f1c" target="_blank" rel="noopener noreffer">link</a></p>
-<h2 id="how-to-connect-your-react-app-to-a-backend-on-the-same-origin">How to connect your React app to a backend on the same origin</h2>
-<p><a href="https://flaviocopes.com/how-to-serve-react-from-same-origin/">https://flaviocopes.com/how-to-serve-react-from-same-origin/</a></p>
+<h2 id="react-posts-archive">React Posts Archive</h2>
+<blockquote>
+<p><a href="https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/" rel="">See my other post</a></p>
+</blockquote>
+<h2 id="structure">Structure</h2>
+<h3 id="packagejson">package.json</h3>
+<p>react &amp; react-dom is necessary for web app. For mobile app need react-native instead of react-dom.</p>
+<h3 id="publicindexhtml">public/index.html</h3>
+<p>signal page application which is index.html</p>
+<p>Everything your do will inside <code>&lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</code></p>
+<h3 id="srcindexjs">src/index.js</h3>
+<p>Entry point for react</p>
+<h3 id="srcappjs">src/App.js</h3>
+<p>All the component.</p>
+<p>Inside the class, the render() method is called life cycle method and to render the page.</p>
+<p>In JSX, you cannot use HTML class attribute. you have to use className.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
