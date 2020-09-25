@@ -44,12 +44,12 @@ Workflow   Redux Workflow   Example for Redux core In index.]]></description>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid>
     <description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
 React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
+Why We Switched to React Hooks Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
 Why Can’t I Open My React App By Clicking Index.html? From My Own Post
 Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf
 How To Use an IntersectionObserver in a React Hook Original source: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5
 React for Vue developers Original source: https://sebastiandedeyne.com/react-for-vue-developers/
-How is getSnapshotBeforeUpdate implemented with Hooks? Original source: https://blog.logrocket.com/how-is-getsnapshotbeforeupdate-implemented-with-hooks/
-The one thing that no one properly explains about React — Why Virtual DOM Original source: https://hashnode.]]></description>
+How is getSnapshotBeforeUpdate implemented with Hooks?]]></description>
 </item><item>
     <title>Prototype Inheritance in Javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>

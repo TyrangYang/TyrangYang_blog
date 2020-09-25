@@ -1,7 +1,7 @@
 # All array method in Javascript
 
 
-> Show all function: Try `Array.prototype` & `Array.prototype.constructor` in browser console.
+> Show all function: Try `Array.prototype` & `Array` in browser console.
 
 ## foreach
 

@@ -9,7 +9,8 @@
 <meta property="og:description" content="Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   Class Component ==&gt; Functional Component    Class component Functional component     state &#43; setState useState()   componentDidMount() useEffect() with a empty input list   componentDidUpdate() useEffect() with a input list contained which you want to change   componentWillUnmount() useEffect() with a return callback function   shouldComponentUpdate() React." />
+1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/react/" />
 <meta property="article:published_time" content="2019-10-03T00:00:00+00:00" />
@@ -19,7 +20,8 @@ or with redux
 <meta name="twitter:description" content="Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   Class Component ==&gt; Functional Component    Class component Functional component     state &#43; setState useState()   componentDidMount() useEffect() with a empty input list   componentDidUpdate() useEffect() with a input list contained which you want to change   componentWillUnmount() useEffect() with a return callback function   shouldComponentUpdate() React."/>
+1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not"/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -32,7 +34,7 @@ or with redux
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/"
-        },"genre": "posts","keywords": "web, react","wordcount":  187 ,
+        },"genre": "posts","keywords": "web, react","wordcount":  890 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/","datePublished": "2019-10-03T00:00:00+00:00","dateModified": "2019-10-03T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -106,8 +108,8 @@ or with redux
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">React overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;187 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;890 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="content" id="content"><h2 id="init-react">Init react</h2>
 <p>Commend</p>
 <div class="highlight"><div class="chroma">
@@ -141,7 +143,42 @@ or with redux
         </figcaption>
 </figure>
 
-<h2 id="class-component--functional-component">Class Component ==&gt; Functional Component</h2>
+<h3 id="shouldcomponentupdate">shouldComponentUpdate()</h3>
+<p>Run before <code>render()</code> to check this component need to render or not.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">shouldComponentUpdate</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextStates</span><span class="p">){</span>
+    <span class="k">return</span> <span class="kr">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>PureComponent</code> can automatically do a shallow comparison to determine need to update or not</p>
+<p><code>export default React.memo(&lt;component name&gt;)</code> only compare props but it works for functional component</p>
+<h3 id="getsnapshotbeforeupdate">getSnapshotBeforeUpdate</h3>
+<p>it is invoked right before the most recently rendered output is committed</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">getSnapshotBeforeUpdate</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;snapshot&#39;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>getSnapshotBeforeUpdate</code> must pair with <code>componentDidUpdate()</code></p>
+<h3 id="class-component-lifecycle--functional-component-hooks">Class Component lifecycle ==&gt; Functional Component hooks</h3>
 <table>
 <thead>
 <tr>
@@ -168,11 +205,202 @@ or with redux
 </tr>
 <tr>
 <td align="center">shouldComponentUpdate()</td>
-<td align="center">React.memo()</td>
+<td align="center">export default React.memo(<component name>)</td>
 </tr>
 </tbody>
 </table>
-<p>useState() =&gt;</p>
+<h2 id="context-api">Context API</h2>
+<p>Doc: <a href="https://reactjs.org/docs/context.html#reactcreatecontext">https://reactjs.org/docs/context.html#reactcreatecontext</a></p>
+<p>Use a context:</p>
+<ol>
+<li>React.createContext({defaultValue})</li>
+<li>import the context your create. Warp you root component which you want to use this context in &lt;ContextName.provider &gt;&lt;/ContextName.provider&gt;</li>
+<li>component under root context component will access to this context
+<ol>
+<li>static contextType = MyContext</li>
+<li>Warp component like <code>&lt;MyContext.Consumer&gt; {value =&gt; /_ render something based on the context value _/} &lt;/MyContext.Consumer&gt;</code></li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p><strong>All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.</strong> The propagation from Provider to its descendant consumers (including .contextType and useContext) is not subject to the <code>shouldComponentUpdate</code> method, so the consumer is updated even when an ancestor component skips an update.</p>
+</blockquote>
+<p>Context API is not for solve all state sharing problem. Think like Context provider change(even prevent update by <code>shouldComponentUpdate</code>) all consumer will re-render.</p>
+<blockquote>
+<p>The defaultValue argument is <strong>only</strong> used when a component does not have a matching Provider above it in the tree. This can be helpful for testing components in isolation without wrapping them. Note: passing undefined as a Provider value does not cause consuming components to use defaultValue.</p>
+</blockquote>
+<h2 id="ref">Ref</h2>
+<blockquote>
+<p><code>React.createRef()</code> API introduced in React 16.3. If you are using an earlier release of React, we recommend using callback refs instead.</p>
+</blockquote>
+<p>There are a few good use cases for refs:</p>
+<ul>
+<li>Managing focus, text selection, or media playback.</li>
+<li>Triggering imperative animations.</li>
+<li>Integrating with third-party DOM libraries.</li>
+</ul>
+<h3 id="create-ref">create ref</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">MyComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">myRef</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">myRef</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="access-ref">access ref</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">myRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="adding-a-ref-to-a-class-component">Adding a Ref to a Class Component</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">CustomTextInput</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+        <span class="c1">// create a ref to store the textInput DOM element
+</span><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">textInput</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">focusTextInput</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">focusTextInput</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">focusTextInput</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Explicitly focus the text input using the raw DOM API
+</span><span class="c1"></span>        <span class="c1">// Note: we&#39;re accessing &#34;current&#34; to get the DOM node
+</span><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">textInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// tell React that we want to associate the &lt;input&gt; ref
+</span><span class="c1"></span>        <span class="c1">// with the `textInput` that we created in the constructor
+</span><span class="c1"></span>        <span class="k">return</span> <span class="p">(</span>
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text&#34;</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">textInput</span><span class="p">}</span> <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;button&#34;</span>
+                    <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;Focus the text input&#34;</span>
+                    <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">focusTextInput</span><span class="p">}</span>
+                <span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">class</span> <span class="nx">AutoFocusTextInput</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">textInput</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">textInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focusTextInput</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">CustomTextInput</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">textInput</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="adding-a-ref-to-a-functional-component">Adding a Ref to a Functional Component</h3>
+<p>By default, <strong>you may not use the ref attribute on function components</strong> because they don’t have instances:</p>
+<p>If you want to allow people to take a ref to your function component, you can use <code>forwardRef</code> (possibly in conjunction with <code>useImperativeHandle</code>), or you can convert the component to a class.</p>
+<h4 id="useimperativehandle--forwardref">useImperativeHandle + ForwardRef</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">FancyInput</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">ref</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+    <span class="nx">useImperativeHandle</span><span class="p">(</span><span class="nx">ref</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span>
+        <span class="nx">focus</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">inputRef</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+        <span class="p">},</span>
+    <span class="p">}));</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">inputRef</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">FancyInput</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">forwardRef</span><span class="p">(</span><span class="nx">FancyInput</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In this example, a parent component that renders <code>&lt;FancyInput ref={inputRef} /&gt;</code> would be able to call <code>inputRef.current.focus()</code>.</p>
+<h2 id="react-hooks">React Hooks</h2>
+<h3 id="usestate">useState</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -181,7 +409,7 @@ or with redux
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setstate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>useEffect() =&gt;</p>
+</div><h3 id="useeffect">useEffect</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -200,7 +428,29 @@ or with redux
 <span class="p">},</span> <span class="p">[</span><span class="o">&lt;</span><span class="nx">input</span><span class="o">&gt;</span><span class="p">]);</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>React.memo() =&gt;</p>
+</div><h3 id="usecontext">useContext</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">MyContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">();</span>
+
+<span class="c1">// inside rfc
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">useContext</span><span class="p">(</span><span class="nx">MyContext</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>useContext(MyContext)</code> is equivalent to <code>static contextType = MyContext</code> in a <strong>class</strong>, or to <code>&lt;MyContext.Consumer&gt;</code></p>
+<p><strong>But You still need a <code>&lt;MyContext.Provider&gt;</code> above in the tree to provide the value for this context.</strong></p>
+<h3 id="useref">useRef</h3>
+<blockquote>
+<p><code>useRef()</code> creates a plain JavaScript object. The only <strong>difference</strong> between <code>useRef()</code> and creating a <code>{current: ...}</code> object yourself is that useRef will give you <strong>the same ref object</strong> on every render.</p>
+</blockquote>
+<h2 id="reactmemo">React.memo()</h2>
+<p>React.memo() =&gt;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1

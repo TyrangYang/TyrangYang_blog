@@ -9,6 +9,10 @@ https://flaviocopes.com/how-to-serve-react-from-same-origin/
 
 Original source: https://www.robinwieruch.de/conditional-rendering-react
 
+## Why We Switched to React Hooks
+
+Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
+
 ## Why Can’t I Open My React App By Clicking Index.html?
 
 [From My Own Post]({{< ref "/posts/Open-react-app-by-index.md" >}})

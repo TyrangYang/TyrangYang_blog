@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width= , initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .toggler {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 60px;
+                height: 60px;
+                z-index: 2;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .hamburger {
+                border: 1px #f00 solid;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50px;
+                height: 50px;
+                padding: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hamburger > div {
+                position: relative;
+                background-color: #000;
+                height: 2px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s ease;
+            }
+
+            .hamburger > div:before,
+            .hamburger > div:after {
+                content: '';
+                position: absolute;
+                background-color: #000;
+                height: 2px;
+                width: 100%;
+                top: -15px;
+                z-index: 1;
+            }
+            .hamburger > div:after {
+                top: 15px;
+            }
+
+            .toggler:checked + .hamburger > div {
+                transform: rotate(135deg);
+            }
+
+            .toggler:checked + .hamburger > div:before,
+            .toggler:checked + .hamburger > div:after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            .toggler:checked:hover + .hamburger > div {
+                transform: rotate(225deg);
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" class="toggler" />
+        <div class="hamburger">
+            <div></div>
+        </div>
+    </body>
+</html>

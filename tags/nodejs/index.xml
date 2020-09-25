@@ -13,12 +13,20 @@
 Backend We use Express as backend framework.
 1 2 3 4 5 6 7 8 9 10 11 12  const express = require(&#39;express&#39;); const path = require(&#39;path&#39;); const http = require(&#39;http&#39;); const socket_io = require(&#39;socket.io&#39;); const app = express(); const server = http.createServer(app); const io = socket_io(server); io.on(&#39;connection&#39;, (server_socket) =&gt; { // ... }   Frontend  bring client side socket.io in your html file  1  &lt;script src=&#34;https://tyrangyang.github.io/TyrangYang_blog/socket.]]></description>
 </item><item>
+    <title>All String Method in Javascript</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/</link>
+    <pubDate>Tue, 07 Apr 2020 12:49:38 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/</guid>
+    <description><![CDATA[Show all function: Try String.prototype &amp; String in browser console.
+ fromCharCode 1 2  console.log(String.fromCharCode(189, 43, 190, 61)); // expected output: &#34;½+¾=&#34;   fromCodePoint 1 2  console.log(String.fromCodePoint(9731, 9733, 9842, 0x2f804)); // expected output: &#34;☃★♲你&#34;   raw 1 2 3 4 5 6  // Create a variable that uses a Windows // path without escaping the backslashes: const filePath = String.raw`C:\Development\profile\aboutme.html`; console.log(`The file was uploaded from: ${filePath}`); // expected output: &#34;The file was uploaded from: C:\Development\profile\aboutme.]]></description>
+</item><item>
     <title>All array method in Javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-javascript/</link>
     <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-javascript/</guid>
-    <description><![CDATA[Show all function: Try Array.prototype &amp; Array.prototype.constructor in browser console.
+    <description><![CDATA[Show all function: Try Array.prototype &amp; Array in browser console.
  foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
 </item><item>
     <title>Callback, Promise and Async/await in js</title>

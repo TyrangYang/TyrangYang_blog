@@ -22,12 +22,12 @@ Workflow   Redux Workflow   Example for Redux core In index.]]></description>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid>
     <description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
 React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
+Why We Switched to React Hooks Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
 Why Can’t I Open My React App By Clicking Index.html? From My Own Post
 Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf
 How To Use an IntersectionObserver in a React Hook Original source: https://medium.com/the-non-traditional-developer/how-to-use-an-intersectionobserver-in-a-react-hook-9fb061ac6cb5
 React for Vue developers Original source: https://sebastiandedeyne.com/react-for-vue-developers/
-How is getSnapshotBeforeUpdate implemented with Hooks? Original source: https://blog.logrocket.com/how-is-getsnapshotbeforeupdate-implemented-with-hooks/
-The one thing that no one properly explains about React — Why Virtual DOM Original source: https://hashnode.]]></description>
+How is getSnapshotBeforeUpdate implemented with Hooks?]]></description>
 </item><item>
     <title>How to have a dynamic class name</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
@@ -66,6 +66,7 @@ Click: Different between them]]></description>
     <description><![CDATA[Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   Class Component ==&gt; Functional Component    Class component Functional component     state + setState useState()   componentDidMount() useEffect() with a empty input list   componentDidUpdate() useEffect() with a input list contained which you want to change   componentWillUnmount() useEffect() with a return callback function   shouldComponentUpdate() React.]]></description>
+1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not]]></description>
 </item></channel>
 </rss>
