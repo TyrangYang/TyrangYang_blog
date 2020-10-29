@@ -51,15 +51,7 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 
 `getSnapshotBeforeUpdate` must pair with `componentDidUpdate()`
 
-### Class Component lifecycle ==> Functional Component hooks
-
-|     Class component     |                       Functional component                       |
-| :---------------------: | :--------------------------------------------------------------: |
-|    state + setState     |                            useState()                            |
-|   componentDidMount()   |               useEffect() with a empty input list                |
-|  componentDidUpdate()   | useEffect() with a input list contained which you want to change |
-| componentWillUnmount()  |           useEffect() with a return callback function            |
-| shouldComponentUpdate() |           export default React.memo(<component name>)            |
+           |
 
 ## Context API
 
@@ -213,19 +205,164 @@ const value = useContext(MyContext);
 
 **But You still need a `<MyContext.Provider>` above in the tree to provide the value for this context.**
 
+### useReduce
+
+```js
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+    switch (action.type) {
+        case 'increment':
+            return { count: state.count + 1 };
+        case 'decrement':
+            return { count: state.count - 1 };
+        case 'clean':
+            return { count: 0 };
+        default:
+            throw new Error();
+    }
+}
+
+function Counter() {
+    const [state, dispatch] = useReducer(reducer, initialState);
+    useEffect(() => {
+        dispatch({ type: 'clean' });
+    }, []);
+    return (
+        <>
+            Count: {state.count}
+            <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+            <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+        </>
+    );
+}
+```
+
+> Unlike Redux `dispatch` function doesn't need to add in `useEffect` or `useCallback` dependence list
+
 ### useRef
 
 > `useRef()` creates a plain JavaScript object. The only **difference** between `useRef()` and creating a `{current: ...}` object yourself is that useRef will give you **the same ref object** on every render.
 
-## React.memo()
+### useLayoutEffect
 
-React.memo() =>
+The only different between `useLayoutEffect` and `useEffect` is that the `useLayoutEffect` is synchronous. Just same as `componentDidMount` and `componentDidUpdate`.
+
+### useImperativeHandle
+
+`useImperativeHandle` customizes the instance value that is exposed to parent components when using ref. It is rare to use.
+
+This is use for handle using ref to access functional component.
+
+[See Usage in Ref]({{< ref "React.md/#adding-a-ref-to-a-functional-component" >}})
+
+## React.lazy()
+
+> The `React.lazy` function lets you render a dynamic import as a regular component.
+
+Component only be loaded when it will be rendered
 
 ```js
-export default React.memo(App);
+import React, { Suspense } from 'react';
+
+// these import code better put the end of import code
+const OtherComponent = React.lazy(() => import('./OtherComponent'));
+const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
+
+function MyComponent() {
+    return (
+        <div>
+            <Suspense fallback={<div>Loading...</div>}>
+                <section>
+                    <OtherComponent />
+                    <AnotherComponent />
+                </section>
+            </Suspense>
+        </div>
+    );
+}
 ```
 
-[link](https://www.jianshu.com/p/ce5451287f1c)
+> these import code better put the end of import code
+
+> You can even wrap **multiple** lazy components with a **single** `Suspense` component.
+
+## Class Component vs Functional Component
+
+### Class Component lifecycle ==> Functional Component hooks
+
+|     Class component     |                       Functional component                       |
+| :---------------------: | :--------------------------------------------------------------: |
+|    state + setState     |                            useState()                            |
+|   componentDidMount()   |               useEffect() with a empty input list                |
+|  componentDidUpdate()   | useEffect() with a input list contained which you want to change |
+| componentWillUnmount()  |           useEffect() with a return callback function            |
+| shouldComponentUpdate() |           export default React.memo(<component name>)            |
+
+### Performance difference
+
+When React introduce hooks for functional component, closure problem will be brought in as well. This will cause different performance between class component and function component with same logic.
+
+These two component have same logic:
+
+```js
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+export class ClassProfilePage extends React.Component {
+    showMessage = () => {
+        alert('Followed ' + this.props.user);
+    };
+
+    handleClick = () => {
+        setTimeout(this.showMessage, 3000);
+    };
+
+    render() {
+        return <button onClick={this.handleClick}>Follow</button>;
+    }
+}
+
+export function FunctionProfilePage(props) {
+    const showMessage = () => {
+        alert('Followed ' + props.user);
+    };
+
+    const handleClick = () => {
+        setTimeout(showMessage, 3000);
+    };
+
+    return <button onClick={handleClick}>Follow</button>;
+}
+
+function App() {
+    const [state, setState] = useState(1);
+    return (
+        <div className="App">
+            <button
+                onClick={() => {
+                    setState((x) => x + x);
+                }}
+            >
+                double
+            </button>
+            <div>state:{state}</div>
+            <FunctionProfilePage user={state} /> // 点击始终显示的是快照值
+            <ClassProfilePage user={state} /> // 点击始终显示的是最新值
+        </div>
+    );
+}
+```
+
+Click `Follow` button first and then click `double`. Class component will alert current value, however function component will alert snapshot.
+
+This is not a bug. Because `props` is immutable(assign a new obj when you want to change it) in React, each `setTimeout()` should passing different data. The pitfall is `this` in class component. Since `this` not change, all `setTimeout()` have same reference to `this`. `this.props` only have the current value.
+
+See a another example: [closure loop problem]({{< ref "js-trick#snapshot--current-value" >}})
+
+To get snapshot in class component, just assign the data that will alert to a new variable.
+
+To get current value in functional component, add a ref(react) / create a value outside the component and store value to it.
 
 ## React Posts Archive
 
@@ -254,4 +391,8 @@ All the component.
 Inside the class, the render() method is called life cycle method and to render the page.
 
 In JSX, you cannot use HTML class attribute. you have to use className.
+
+## 16.3 && before 16.3
+
+[link](https://www.jianshu.com/p/ce5451287f1c)
 

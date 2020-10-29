@@ -35,3 +35,7 @@ Original source: https://blog.logrocket.com/how-is-getsnapshotbeforeupdate-imple
 
 Original source: https://hashnode.com/post/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-cisczhfj41bmssp53mvfwmgrq
 
+## React + D3.js
+
+Original source: https://wattenberger.com/blog/react-and-d3
+
