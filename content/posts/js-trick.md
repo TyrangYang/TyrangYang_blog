@@ -225,6 +225,37 @@ const composedFun2 = compose();
 console.log(composedFun2('hello world')); // hello world
 ```
 
+## tagged template
+
+Since es6, js provide a special function called tagged template which use template string as parameter
+
+```js
+function normal(...args) {
+    console.log(args);
+}
+
+normal(1, 2, 'string1', 'string2');
+// [ 1, 2, 'string1', 'string2' ]
+
+function tag(...args) {
+    console.log(args);
+}
+
+tag`string1${1}string2${2}string3`;
+// [ [ 'string1', 'string2', 'string3' ], 1, 2 ]
+```
+
+Normally, the tagged template function will handle arguments like:
+
+```js
+function tag(strings, ...args) {
+    console.log(strings, args);
+}
+
+tag`string1${1}string2${2}string3`;
+// [ 'string1', 'string2', 'string3' ] [ 1, 2 ]
+```
+
 ## Debounce & throttle
 
 > Here is my Example: [Try it Now](/html/debounce&throttle.html)
@@ -270,3 +301,41 @@ const throttle = (fn, delay) => {
     };
 };
 ```
+
+## Snapshot & current value
+
+```js
+for (var i = 0; i < 10; i++) {
+    setTimeout(() => console.log('val:', i)); // current value
+}
+// 10 10 ... 10 10
+
+for (var i = 0; i < 10; i++) {
+    setTimeout(((val) => console.log('val:', val)).bind(null, i)); // snapshot
+}
+// 1 2 3 4 ... 9
+
+const ref = { current: null };
+for (var i = 0; i < 10; i++) {
+    ref.current = i;
+    setTimeout(((val) => console.log('val:', val.current)).bind(null, ref)); // current val
+}
+// 9 9 ... 9 9
+
+for (var i = 0; i < 10; i++) {
+    // snapshot
+    const t = i;
+    setTimeout(() => {
+        console.log('t:', t);
+    });
+}
+// 1 2 3 4 ... 9
+```
+
+## bind <==> callback
+
+`fn.bind(context, ...args)` will return a new function with a given context and given several arguments.
+
+If `context` is **null**, `bind()` same like callback
+
+`newFn = fn.bind(null, ...args);` == `newFn = (...newArgs) => fn(...args,...newArgs);`

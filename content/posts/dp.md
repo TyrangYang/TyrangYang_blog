@@ -19,6 +19,8 @@ fibonacci...
 
 ## DP table
 
+## State machine
+
 ## State transaction equation
 
 ## DP problem Example

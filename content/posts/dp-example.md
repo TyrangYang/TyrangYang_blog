@@ -72,3 +72,5 @@ int longestCommonSubsequence(string text1, string text2) {
 [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
 
 ## 0/1 backpack
+
+## Best Time to Buy and Sell Stock
