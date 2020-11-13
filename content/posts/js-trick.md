@@ -271,10 +271,10 @@ The core logic is using HOF to only keep the last trigger.
 ```js
 const debounce = (fn, delay) => {
     let timer = null;
-    return (...arguments) => {
+    return (...args) => {
         clearTimeout(timer);
         timer = setTimeout(() => {
-            fn(...arguments);
+            fn(...args);
         }, delay);
     };
 };
@@ -289,14 +289,14 @@ The core logic is using HOF to only keep the first trigger.
 ```js
 const throttle = (fn, delay) => {
     let timer = null;
-    return (...arguments) => {
+    return (...args) => {
         if (timer !== null) {
             return;
         }
         clearTimeout(timer);
         timer = setTimeout(() => {
             timer = null;
-            fn(...arguments);
+            fn(...args);
         }, delay);
     };
 };

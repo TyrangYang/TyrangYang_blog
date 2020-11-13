@@ -143,7 +143,7 @@ test('User fetched name should be Leanne Graham', async () => {
 
 ### Matchers
 
-> Doc : https://jestjs.io/docs/en/using-matchers
+> Doc: https://jestjs.io/docs/en/using-matchers and https://jestjs.io/docs/en/expect
 
 ## Jest with react
 
@@ -154,3 +154,60 @@ test('User fetched name should be Leanne Graham', async () => {
 This library provide better test workflow for react. It is imported by `Create-react-app` in default
 
 > Doc: https://testing-library.com/docs/react-testing-library/intro
+
+> Tutorial Post: https://www.robinwieruch.de/react-testing-library
+
+#### Search element
+
+-   **getByText**
+-   **getByRole**
+-   **getByLabelText**: getByLabelText: <label for="search" />
+-   **getByPlaceholderText**: getByPlaceholderText: <input placeholder="Search" />
+-   **getByAltText**: getByAltText: <img alt="profile" />
+-   **getByDisplayValue**: getByDisplayValue: <input value="JavaScript" />
+
+#### getBy vs. queryBy vs. findBy
+
+`getBy` returns an element or an error.
+
+`queryBy` returns an element or null.
+
+The `findBy` search variant is used for asynchronous elements which will be there eventually.
+
+### @testing-library/react with Material UI
+
+#### Query a Multi-select
+
+> Reference: https://stackoverflow.com/a/61491607/12104603
+
+```js
+import React from "react";
+import { render, within, screen } from "react-testing-library";
+import userEvent from '@testing-library/user-event';
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+
+it('selects the correct option', () => {
+   render(
+     <>
+       <Select fullWidth value={selectedTab} onChange={onTabChange}>
+         <MenuItem value="privacy">Privacy</MenuItem>
+         <MenuItem value="my-account">My Account</MenuItem>
+       </Select>
+       <Typography variant="h1">{/* value set in state */}</Typography>
+     </>
+  );
+
+  userEvent.click(screen.getByRole('button'));
+
+  const listbox = within(screen.getByRole('listbox'));
+
+  userEvent.click(listbox.getByText(/my account/i));
+
+  expect(screen.getByRole('heading').toHaveTextContent(/my account/i);
+});
+```
+
+#### Common mistakes with React Testing Library
+
+https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
