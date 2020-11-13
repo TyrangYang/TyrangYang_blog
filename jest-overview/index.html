@@ -32,7 +32,7 @@ How to use Jest function.js
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/jest-overview\/"
-        },"genre": "posts","keywords": "jest, javascript, test","wordcount":  511 ,
+        },"genre": "posts","keywords": "jest, javascript, test","wordcount":  662 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/jest-overview\/","datePublished": "2020-09-14T18:36:51-07:00","dateModified": "2020-09-14T18:36:51-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -109,8 +109,8 @@ How to use Jest function.js
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Jest Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-14">2020-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;511 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-14">2020-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;662 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -125,7 +125,18 @@ How to use Jest function.js
     </li>
     <li><a href="#jest-with-react">Jest with react</a>
       <ul>
-        <li><a href="#testing-libraryreact">@testing-library/react</a></li>
+        <li><a href="#testing-libraryreact">@testing-library/react</a>
+          <ul>
+            <li><a href="#search-element">Search element</a></li>
+            <li><a href="#getby-vs-queryby-vs-findby">getBy vs. queryBy vs. findBy</a></li>
+          </ul>
+        </li>
+        <li><a href="#testing-libraryreact-with-material-ui">@testing-library/react with Material UI</a>
+          <ul>
+            <li><a href="#query-a-multi-select">Query a Multi-select</a></li>
+            <li><a href="#common-mistakes-with-react-testing-library">Common mistakes with React Testing Library</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -379,7 +390,7 @@ How to use Jest function.js
 </div>
 </div><h3 id="matchers">Matchers</h3>
 <blockquote>
-<p>Doc : <a href="https://jestjs.io/docs/en/using-matchers">https://jestjs.io/docs/en/using-matchers</a></p>
+<p>Doc: <a href="https://jestjs.io/docs/en/using-matchers">https://jestjs.io/docs/en/using-matchers</a> and <a href="https://jestjs.io/docs/en/expect">https://jestjs.io/docs/en/expect</a></p>
 </blockquote>
 <h2 id="jest-with-react">Jest with react</h2>
 <blockquote>
@@ -390,6 +401,85 @@ How to use Jest function.js
 <blockquote>
 <p>Doc: <a href="https://testing-library.com/docs/react-testing-library/intro">https://testing-library.com/docs/react-testing-library/intro</a></p>
 </blockquote>
+<blockquote>
+<p>Tutorial Post: <a href="https://www.robinwieruch.de/react-testing-library">https://www.robinwieruch.de/react-testing-library</a></p>
+</blockquote>
+<h4 id="search-element">Search element</h4>
+<ul>
+<li><strong>getByText</strong></li>
+<li><strong>getByRole</strong></li>
+<li><strong>getByLabelText</strong>: getByLabelText: <label for="search" /></li>
+<li><strong>getByPlaceholderText</strong>: getByPlaceholderText: <input placeholder="Search" /></li>
+<li><strong>getByAltText</strong>: getByAltText: <img alt="profile" /></li>
+<li><strong>getByDisplayValue</strong>: getByDisplayValue: <input value="JavaScript" /></li>
+</ul>
+<h4 id="getby-vs-queryby-vs-findby">getBy vs. queryBy vs. findBy</h4>
+<p><code>getBy</code> returns an element or an error.</p>
+<p><code>queryBy</code> returns an element or null.</p>
+<p>The <code>findBy</code> search variant is used for asynchronous elements which will be there eventually.</p>
+<h3 id="testing-libraryreact-with-material-ui">@testing-library/react with Material UI</h3>
+<h4 id="query-a-multi-select">Query a Multi-select</h4>
+<blockquote>
+<p>Reference: <a href="https://stackoverflow.com/a/61491607/12104603">https://stackoverflow.com/a/61491607/12104603</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">render</span><span class="p">,</span> <span class="nx">within</span><span class="p">,</span> <span class="nx">screen</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;react-testing-library&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">userEvent</span> <span class="nx">from</span> <span class="s1">&#39;@testing-library/user-event&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Select</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/Select&#34;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">MenuItem</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/MenuItem&#34;</span><span class="p">;</span>
+
+<span class="nx">it</span><span class="p">(</span><span class="s1">&#39;selects the correct option&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+   <span class="nx">render</span><span class="p">(</span>
+     <span class="o">&lt;&gt;</span>
+       <span class="o">&lt;</span><span class="nx">Select</span> <span class="nx">fullWidth</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">selectedTab</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onTabChange</span><span class="p">}</span><span class="o">&gt;</span>
+         <span class="o">&lt;</span><span class="nx">MenuItem</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;privacy&#34;</span><span class="o">&gt;</span><span class="nx">Privacy</span><span class="o">&lt;</span><span class="err">/MenuItem&gt;</span>
+         <span class="o">&lt;</span><span class="nx">MenuItem</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;my-account&#34;</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Account</span><span class="o">&lt;</span><span class="err">/MenuItem&gt;</span>
+       <span class="o">&lt;</span><span class="err">/Select&gt;</span>
+       <span class="o">&lt;</span><span class="nx">Typography</span> <span class="nx">variant</span><span class="o">=</span><span class="s2">&#34;h1&#34;</span><span class="o">&gt;</span><span class="p">{</span><span class="cm">/* value set in state */</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Typography&gt;</span>
+     <span class="o">&lt;</span><span class="err">/&gt;</span>
+  <span class="p">);</span>
+
+  <span class="nx">userEvent</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">));</span>
+
+  <span class="kr">const</span> <span class="nx">listbox</span> <span class="o">=</span> <span class="nx">within</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">&#39;listbox&#39;</span><span class="p">));</span>
+
+  <span class="nx">userEvent</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">listbox</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="sr">/my account/i</span><span class="p">));</span>
+
+  <span class="nx">expect</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">&#39;heading&#39;</span><span class="p">).</span><span class="nx">toHaveTextContent</span><span class="p">(</span><span class="sr">/my account/i</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="common-mistakes-with-react-testing-library">Common mistakes with React Testing Library</h4>
+<p><a href="https://kentcdodds.com/blog/common-mistakes-with-react-testing-library">https://kentcdodds.com/blog/common-mistakes-with-react-testing-library</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -39,3 +39,7 @@ Original source: https://hashnode.com/post/the-one-thing-that-no-one-properly-ex
 
 Original source: https://wattenberger.com/blog/react-and-d3
 
+## React Hook Form + Material UI Example
+
+https://codesandbox.io/s/react-hook-form-v6-controller-qsd8r?file=/src/Mui.js
+

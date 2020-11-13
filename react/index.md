@@ -168,7 +168,7 @@ function FancyInput(props, ref) {
     }));
     return <input ref={inputRef} />;
 }
-FancyInput = React.forwardRef(FancyInput);
+FancyInput = React.forwardRef(FancyInpacut);
 ```
 
 In this example, a parent component that renders `<FancyInput ref={inputRef} />` would be able to call `inputRef.current.focus()`.
