@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React Different performances</title>
+        <style>
+            * {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>
+            Different performance between Functional component & class component
+        </h2>
+        <div id="root"></div>
+        <p>Click Get button and click double</p>
+    </body>
+    <script
+        src="https://unpkg.com/react@17/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <script>
+        'use strict';
+
+        const e = React.createElement;
+
+        class ClassProfilePage extends React.Component {
+            showMessage = () => {
+                alert('Followed ' + this.props.user);
+            };
+
+            handleClick = () => {
+                setTimeout(this.showMessage, 3000);
+            };
+
+            render() {
+                return e(
+                    'button',
+                    { onClick: this.handleClick },
+                    'Get Current value (class component)'
+                );
+            }
+        }
+
+        function FunctionProfilePage(props) {
+            const showMessage = () => {
+                alert('Followed ' + props.user);
+            };
+
+            const handleClick = () => {
+                setTimeout(showMessage, 3000);
+            };
+
+            return e(
+                'button',
+                { onClick: handleClick },
+                'Get Snapshot (functional component)'
+            );
+        }
+
+        function App() {
+            const [state, setState] = React.useState(1);
+
+            return e(
+                'div',
+                {
+                    style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    },
+                },
+                [
+                    e(
+                        'button',
+                        {
+                            key: 1,
+                            onClick: () => {
+                                setState((x) => x + x);
+                            },
+                        },
+                        'double'
+                    ),
+                    e('div', { key: 2 }, `state: ${state}`),
+                    e(FunctionProfilePage, { key: 3, user: state }),
+                    e(ClassProfilePage, { key: 4, user: state }),
+                ]
+            );
+        }
+
+        const root = document.getElementById('root');
+        ReactDOM.render(e(App), root);
+    </script>
+</html>

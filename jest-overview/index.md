@@ -151,10 +151,10 @@ This library provide better test workflow for react. It is imported by `Create-r
 
 -   **getByText**
 -   **getByRole**
--   **getByLabelText**: getByLabelText: <label for="search" />
--   **getByPlaceholderText**: getByPlaceholderText: <input placeholder="Search" />
--   **getByAltText**: getByAltText: <img alt="profile" />
--   **getByDisplayValue**: getByDisplayValue: <input value="JavaScript" />
+-   **getByLabelText**: getByLabelText: `<label for="search" />`
+-   **getByPlaceholderText**: getByPlaceholderText: `<input placeholder="Search" />`
+-   **getByAltText**: getByAltText: `<img alt="profile" />`
+-   **getByDisplayValue**: getByDisplayValue: `<input value="JavaScript" />`
 
 #### getBy vs. queryBy vs. findBy
 
