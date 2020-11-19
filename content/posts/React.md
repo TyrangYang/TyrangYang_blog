@@ -312,7 +312,7 @@ function MyComponent() {
 | componentWillUnmount()  |           useEffect() with a return callback function            |
 | shouldComponentUpdate() |           export default React.memo(<component name>)            |
 
-### Performance difference
+### Performance difference (SnapShot vs Current value)
 
 When React introduce hooks for functional component, closure problem will be brought in as well. This will cause different performance between class component and function component with same logic.
 
@@ -332,7 +332,11 @@ export class ClassProfilePage extends React.Component {
     };
 
     render() {
-        return <button onClick={this.handleClick}>Follow</button>;
+        return (
+            <button onClick={this.handleClick}>
+                Get Current value (class component)
+            </button>
+        );
     }
 }
 
@@ -345,7 +349,11 @@ export function FunctionProfilePage(props) {
         setTimeout(showMessage, 3000);
     };
 
-    return <button onClick={handleClick}>Follow</button>;
+    return (
+        <button onClick={handleClick}>
+            Get Snapshot (functional component)
+        </button>
+    );
 }
 
 function App() {
@@ -360,22 +368,64 @@ function App() {
                 double
             </button>
             <div>state:{state}</div>
-            <FunctionProfilePage user={state} /> // 点击始终显示的是快照值
-            <ClassProfilePage user={state} /> // 点击始终显示的是最新值
+            {/* snapshot */}
+            <FunctionProfilePage user={state} />
+            {/* current value */}
+            <ClassProfilePage user={state} />
         </div>
     );
 }
 ```
 
-Click `Follow` button first and then click `double`. Class component will alert current value, however function component will alert snapshot.
+> Play with this example: <a href="../html/reactDifferentPerformance.html" target="_blank">Link</a>
 
-This is not a bug. Because `props` is immutable(assign a new obj when you want to change it) in React, each `setTimeout()` should passing different data. The pitfall is `this` in class component. Since `this` not change, all `setTimeout()` have same reference to `this`. `this.props` only have the current value.
+Click `Get` button first and then click `double`. Class component will alert current value, however function component will alert snapshot.
 
-See a another example: [closure loop problem]({{< ref "js-trick#snapshot--current-value" >}})
+This is not a bug. This is a common question in Javascript due to the fact that every time you passing same reference or not.
 
-To get snapshot in class component, just assign the data that will alert to a new variable.
+> See another example: [closure loop problem]({{< ref "js-trick#snapshot--current-value" >}})
 
-To get current value in functional component, add a ref(react) / create a value outside the component and store value to it.
+In React, Because `props` is immutable(assign a new obj when you want to change it) in functional component, each rendering has different `props`. Every click will generate a new props and `setTimeout()` display the value when you click. However, in Class component. After class generated, `props` is associated with class itself. Every rendering in class component have same `this.props` and `this.props.user` change overtime. Therefore, `setTimeout()` use same `this.props` and access `this.props.user` which is current value.
+
+This flowing code simulate this problem
+
+```js
+let props = { count: 10 };
+
+const fnA = ({ count }) => {
+    click = setTimeout(() => {
+        console.log(count);
+    }, 1000);
+    click;
+};
+
+class fnB {
+    constructor(input) {
+        this.props = input;
+    }
+
+    click = setTimeout(() => {
+        console.log(this.props.count);
+    }, 1000);
+}
+
+fnA(props);
+
+let res2 = new fnB(props);
+res2.click;
+
+props.count--;
+props.count--;
+props.count--;
+```
+
+#### Solution
+
+Since we know different props display snapshot and same reference display current value.
+
+To get snapshot in class component, just assign the data that will alert to a new variable. (give several different value)
+
+To get current value in functional component, add a ref(react) / create a value outside the component and store value to it. (give a same reference)
 
 ## React Posts Archive
 
