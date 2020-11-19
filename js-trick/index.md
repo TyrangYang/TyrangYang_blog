@@ -75,6 +75,26 @@ console.log(entries); // [ [ 'name', 1 ], [ 'age', 2 ] ]
 
 > `Object.values` & `Object.entries` are from ES8 (ES2017)
 
+## let vs var
+
+-   var is function-scoped
+-   let (and const) are block-scoped
+
+```js
+function doMoreStuff() {
+    if (2 + 4 === 4) {
+        // Here, `a` will be available for the whole function
+        var a = 5;
+        // But `b` will be available only inside this if block
+        let b = 5;
+    }
+    console.log(a); // undefined
+    console.log(b); // ​​b is not defined​​
+}
+
+doMoreStuff(); // ​​b is not defined​​
+```
+
 ## Shallow copy & Deep copy
 
 ### Shallow copy
@@ -294,11 +314,20 @@ const throttle = (fn, delay) => {
 
 ## Snapshot & current value
 
+This problem due to the fact that every time you log out base on same reference or different variable
+
 ```js
 for (var i = 0; i < 10; i++) {
     setTimeout(() => console.log('val:', i)); // current value
 }
 // 10 10 ... 10 10
+
+for (let i = 0; i < 10; i++) {
+    setTimeout(() => console.log('val:', i)); // snapshot
+}
+// 1 2 ... 8 9
+
+// var is function scope, let is block scope
 
 for (var i = 0; i < 10; i++) {
     setTimeout(((val) => console.log('val:', val)).bind(null, i)); // snapshot

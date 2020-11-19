@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"
-        },"genre": "posts","keywords": "javascript","wordcount":  1167 ,
+        },"genre": "posts","keywords": "javascript","wordcount":  1304 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished": "2020-05-03T23:12:40-04:00","dateModified": "2020-05-03T23:12:40-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -107,8 +107,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1167 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1304 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -128,6 +128,7 @@
         </li>
       </ul>
     </li>
+    <li><a href="#let-vs-var">let vs var</a></li>
     <li><a href="#shallow-copy--deep-copy">Shallow copy &amp; Deep copy</a>
       <ul>
         <li><a href="#shallow-copy">Shallow copy</a></li>
@@ -279,7 +280,42 @@
 </div><blockquote>
 <p><code>Object.values</code> &amp; <code>Object.entries</code> are from ES8 (ES2017)</p>
 </blockquote>
-<h2 id="shallow-copy--deep-copy">Shallow copy &amp; Deep copy</h2>
+<h2 id="let-vs-var">let vs var</h2>
+<ul>
+<li>var is function-scoped</li>
+<li>let (and const) are block-scoped</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">doMoreStuff</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Here, `a` will be available for the whole function
+</span><span class="c1"></span>        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="c1">// But `b` will be available only inside this if block
+</span><span class="c1"></span>        <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// undefined
+</span><span class="c1"></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// ​​b is not defined​​
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="nx">doMoreStuff</span><span class="p">();</span> <span class="c1">// ​​b is not defined​​
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="shallow-copy--deep-copy">Shallow copy &amp; Deep copy</h2>
 <h3 id="shallow-copy">Shallow copy</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -639,6 +675,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="snapshot--current-value">Snapshot &amp; current value</h2>
+<p>This problem due to the fact that every time you log out base on same reference or different variable</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -666,12 +703,26 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;val:&#39;</span><span class="p">,</span> <span class="nx">i</span><span class="p">));</span> <span class="c1">// current value
 </span><span class="c1"></span><span class="p">}</span>
 <span class="c1">// 10 10 ... 10 10
+</span><span class="c1"></span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;val:&#39;</span><span class="p">,</span> <span class="nx">i</span><span class="p">));</span> <span class="c1">// snapshot
+</span><span class="c1"></span><span class="p">}</span>
+<span class="c1">// 1 2 ... 8 9
+</span><span class="c1"></span>
+<span class="c1">// var is function scope, let is block scope
 </span><span class="c1"></span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">setTimeout</span><span class="p">(((</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;val:&#39;</span><span class="p">,</span> <span class="nx">val</span><span class="p">)).</span><span class="nx">bind</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">i</span><span class="p">));</span> <span class="c1">// snapshot

@@ -34,7 +34,7 @@ or with redux
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/"
-        },"genre": "posts","keywords": "web, react","wordcount":  1618 ,
+        },"genre": "posts","keywords": "web, react","wordcount":  1689 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/","datePublished": "2019-10-03T00:00:00+00:00","dateModified": "2019-10-03T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -111,7 +111,7 @@ or with redux
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">React overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1618 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1689 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -155,7 +155,11 @@ or with redux
     <li><a href="#class-component-vs-functional-component">Class Component vs Functional Component</a>
       <ul>
         <li><a href="#class-component-lifecycle--functional-component-hooks">Class Component lifecycle ==&gt; Functional Component hooks</a></li>
-        <li><a href="#performance-difference-snapshot-vs-current-value">Performance difference (SnapShot vs Current value)</a></li>
+        <li><a href="#performance-difference-snapshot-vs-current-value">Performance difference (SnapShot vs Current value)</a>
+          <ul>
+            <li><a href="#solution">Solution</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#react-posts-archive">React Posts Archive</a></li>
@@ -762,8 +766,12 @@ or with redux
 <p>Play with this example: <a href="../html/reactDifferentPerformance.html" target="_blank">Link</a></p>
 </blockquote>
 <p>Click <code>Get</code> button first and then click <code>double</code>. Class component will alert current value, however function component will alert snapshot.</p>
-<p>This is not a bug. Because <code>props</code> is immutable(assign a new obj when you want to change it) in React, each <code>setTimeout()</code> should passing different data. The pitfall is <code>this</code> in class component. Since <code>this</code> not change, all <code>setTimeout()</code> have same reference to <code>this</code>. <code>this.props</code> only have the current value.</p>
-<p>this flowing code can example this problem</p>
+<p>This is not a bug. This is a common question in Javascript due to the fact that every time you passing same reference or not.</p>
+<blockquote>
+<p>See another example: <a href="https://tyrangyang.github.io/TyrangYang_blog/js-trick/#snapshot--current-value" rel="">closure loop problem</a></p>
+</blockquote>
+<p>In React, Because <code>props</code> is immutable(assign a new obj when you want to change it) in functional component, each rendering has different <code>props</code>. Every click will generate a new props and <code>setTimeout()</code> display the value when you click. However, in Class component. After class generated, <code>props</code> is associated with class itself. Every rendering in class component have same <code>this.props</code> and <code>this.props.user</code> change overtime. Therefore, <code>setTimeout()</code> use same <code>this.props</code> and access <code>this.props.user</code> which is current value.</p>
+<p>This flowing code simulate this problem</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -824,11 +832,10 @@ or with redux
 <span class="nx">props</span><span class="p">.</span><span class="nx">count</span><span class="o">--</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>See another example: <a href="https://tyrangyang.github.io/TyrangYang_blog/js-trick/#snapshot--current-value" rel="">closure loop problem</a></p>
-</blockquote>
-<p>To get snapshot in class component, just assign the data that will alert to a new variable.</p>
-<p>To get current value in functional component, add a ref(react) / create a value outside the component and store value to it.</p>
+</div><h4 id="solution">Solution</h4>
+<p>Since we know different props display snapshot and same reference display current value.</p>
+<p>To get snapshot in class component, just assign the data that will alert to a new variable. (give several different value)</p>
+<p>To get current value in functional component, add a ref(react) / create a value outside the component and store value to it. (give a same reference)</p>
 <h2 id="react-posts-archive">React Posts Archive</h2>
 <blockquote>
 <p><a href="https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/" rel="">See my other post</a></p>
