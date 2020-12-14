@@ -178,6 +178,8 @@ There are five different position values:
 -   fixed: fix to browser window
 -   sticky
 
+{{<figure src="/images/2020-03-17-css/position.png" title="position" width="100%" height="100%" >}}
+
 [This is another post shows different](https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6)
 
 ## color
@@ -246,7 +248,7 @@ A curve about about animation speed.
 
 Use two point to decide the curve
 
-![curve](/images/2020-03-17-css/curve.jpg)
+{{<figure src="/images/2020-03-17-css/curve.jpg" title="curve line" width="100%" height="100%" >}}
 
 ## tabindex
 
