@@ -5,6 +5,7 @@
         <meta name="viewport" content="width= , initial-scale=1.0" />
         <title>Document</title>
         <style>
+            /* transparent clickable styling */
             .toggler {
                 position: absolute;
                 top: 0;
@@ -15,9 +16,9 @@
                 opacity: 0;
                 cursor: pointer;
             }
+            /* hamburger button container */
             .hamburger {
-                border: 1px #f00 solid;
-
+                /* border: 1px #f00 solid; */
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -28,11 +29,11 @@
                 justify-content: center;
                 align-items: center;
             }
-
+            /* line in the middle */
             .hamburger > div {
                 position: relative;
                 background-color: #000;
-                height: 2px;
+                height: 4px;
                 width: 100%;
                 display: flex;
                 justify-content: center;
@@ -40,12 +41,13 @@
                 transition: 0.4s ease;
             }
 
+            /* line on the top and bottoms */
             .hamburger > div:before,
             .hamburger > div:after {
                 content: '';
                 position: absolute;
                 background-color: #000;
-                height: 2px;
+                height: 4px;
                 width: 100%;
                 top: -15px;
                 z-index: 1;
@@ -54,6 +56,7 @@
                 top: 15px;
             }
 
+            /* after click */
             .toggler:checked + .hamburger > div {
                 transform: rotate(135deg);
             }

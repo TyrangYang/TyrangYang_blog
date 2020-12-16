@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .loading {
+                width: 100%;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #000;
+            }
+
+            .loading p {
+                position: relative;
+                font-size: 5rem;
+                color: #fff;
+
+                text-transform: uppercase;
+            }
+
+            .loading p:before {
+                content: 'Loading...';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                color: #03a9f4;
+                overflow: hidden;
+                border-bottom: 15px #03a9f4 solid;
+                animation: loading-animate 3s linear infinite;
+            }
+
+            @keyframes loading-animate {
+                0% {
+                    width: 0;
+                }
+                100% {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loading">
+            <p>Loading...</p>
+        </div>
+    </body>
+</html>

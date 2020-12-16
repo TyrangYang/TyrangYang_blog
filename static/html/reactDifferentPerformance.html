@@ -30,9 +30,9 @@
 
         const e = React.createElement;
 
-        class ClassProfilePage extends React.Component {
+        class ClassCurrentValueDisplay extends React.Component {
             showMessage = () => {
-                alert('Followed ' + this.props.user);
+                alert('State Value: ' + this.props.user);
             };
 
             handleClick = () => {
@@ -48,9 +48,9 @@
             }
         }
 
-        function FunctionProfilePage(props) {
+        function FunctionSnapshotValueDisplay(props) {
             const showMessage = () => {
-                alert('Followed ' + props.user);
+                alert('State Value: ' + props.user);
             };
 
             const handleClick = () => {
@@ -61,6 +61,48 @@
                 'button',
                 { onClick: handleClick },
                 'Get Snapshot (functional component)'
+            );
+        }
+
+        class ClassSnapshotValueDisplay extends React.Component {
+            showMessage = (msg) => {
+                alert('State Value: ' + msg);
+            };
+
+            handleClick = () => {
+                // assign to a new variable
+                let res = this.props.user;
+                setTimeout(this.showMessage.bind(null, res), 3000);
+            };
+
+            render() {
+                return e(
+                    'button',
+                    { onClick: this.handleClick },
+                    'Get Snapshot value (class component)'
+                );
+            }
+        }
+
+        function FunctionCurrentValueDisplay(props) {
+            const ref = React.useRef('');
+
+            React.useEffect(() => {
+                ref.current = props.user;
+            });
+
+            const showMessage = () => {
+                alert('State Value: ' + ref.current);
+            };
+
+            const handleClick = () => {
+                setTimeout(showMessage, 3000);
+            };
+
+            return e(
+                'button',
+                { onClick: handleClick },
+                'Get Current value (functional component)'
             );
         }
 
@@ -87,9 +129,26 @@
                         },
                         'double'
                     ),
-                    e('div', { key: 2 }, `state: ${state}`),
-                    e(FunctionProfilePage, { key: 3, user: state }),
-                    e(ClassProfilePage, { key: 4, user: state }),
+                    e(
+                        'button',
+                        {
+                            key: 2,
+                            onClick: () => {
+                                setState(1);
+                            },
+                        },
+                        'reset'
+                    ),
+                    e(
+                        'div',
+                        { key: 3, style: { fontSize: '40px' } },
+                        `state: ${state}`
+                    ),
+                    e(FunctionSnapshotValueDisplay, { key: 4, user: state }),
+                    e(ClassCurrentValueDisplay, { key: 5, user: state }),
+                    e('h2', { key: 6 }, 'Solution'),
+                    e(FunctionCurrentValueDisplay, { key: 7, user: state }),
+                    e(ClassSnapshotValueDisplay, { key: 8, user: state }),
                 ]
             );
         }

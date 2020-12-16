@@ -64,8 +64,6 @@ getSnapshotBeforeUpdate(prevProps, prevState) {
 
 `getSnapshotBeforeUpdate` must pair with `componentDidUpdate()`
 
-           |
-
 ## Context API
 
 Doc: https://reactjs.org/docs/context.html#reactcreatecontext
@@ -76,7 +74,13 @@ Use a context:
 2. import the context your create. Warp you root component which you want to use this context in <ContextName.provider ></ContextName.provider>
 3. component under root context component will access to this context
     1. static contextType = MyContext
-    2. Warp component like `<MyContext.Consumer> {value => /_ render something based on the context value _/} </MyContext.Consumer>`
+    2. Warp component like
+
+```js
+<MyContext.Consumer>
+    {(value) => /_ render something based on the context value _/}
+</MyContext.Consumer>
+```
 
 > **All consumers that are descendants of a Provider will re-render whenever the Provider’s value prop changes.** The propagation from Provider to its descendant consumers (including .contextType and useContext) is not subject to the `shouldComponentUpdate` method, so the consumer is updated even when an ancestor component skips an update.
 
@@ -261,6 +265,10 @@ function Counter() {
 
 The only different between `useLayoutEffect` and `useEffect` is that the `useLayoutEffect` is synchronous. Just same as `componentDidMount` and `componentDidUpdate`.
 
+1. useLayoutEffect()
+2. render
+3. useEffect()
+
 ### useImperativeHandle
 
 `useImperativeHandle` customizes the instance value that is exposed to parent components when using ref. It is rare to use.
@@ -311,6 +319,8 @@ function MyComponent() {
 |  componentDidUpdate()   | useEffect() with a input list contained which you want to change |
 | componentWillUnmount()  |           useEffect() with a return callback function            |
 | shouldComponentUpdate() |           export default React.memo(<component name>)            |
+
+## Common Pitfall
 
 ### Performance difference (SnapShot vs Current value)
 
@@ -426,6 +436,55 @@ Since we know different props display snapshot and same reference display curren
 To get snapshot in class component, just assign the data that will alert to a new variable. (give several different value)
 
 To get current value in functional component, add a ref(react) / create a value outside the component and store value to it. (give a same reference)
+
+### Initial state from props
+
+Ref: https://reactjs.org/docs/react-component.html#constructor
+
+> It is **NOT RECOMMEND** that initialized state from props directly. Update _props_ won't be reflected in the _state_. **Only use this pattern if you intentionally want to ignore prop updates.**
+
+Class Base:
+
+```js
+constructor(props) {
+    super(props);
+    // Don't do this!
+    this.state = { color: props.color };
+}
+```
+
+Functional Base:
+
+```js
+//  Don't do this!
+const [state, setState] = useState(props.color);
+```
+
+The correct way is:
+
+Class Base:
+
+```js
+constructor(props) {
+    super(props);
+    this.state = {};
+}
+
+componentDidMount(){
+    this.setState({color: props.color})
+}
+```
+
+Functional Base:
+
+```js
+const { color } = props;
+const [state, setState] = useState(null);
+
+useEffect(() => {
+    setState(color);
+}, [color]);
+```
 
 ## React Posts Archive
 
