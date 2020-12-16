@@ -178,7 +178,7 @@ There are five different position values:
 -   fixed: fix to browser window
 -   sticky
 
-{{<figure src="/images/2020-03-17-css/position.png" title="position" width="100%" height="100%" >}}
+{{<figure src="/images/2020-03-17-css/position.png" title="position" width="70%" height="70%" >}}
 
 [This is another post shows different](https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6)
 
@@ -248,7 +248,7 @@ A curve about about animation speed.
 
 Use two point to decide the curve
 
-{{<figure src="/images/2020-03-17-css/curve.jpg" title="curve line" width="100%" height="100%" >}}
+{{<figure src="/images/2020-03-17-css/curve.jpg" title="curve line" width="50%" height="50%" >}}
 
 ## tabindex
 
@@ -266,6 +266,10 @@ Use two point to decide the curve
 ## display
 
 https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model
+
+### block vs inline vs inline-block
+
+https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
 
 ## Layout
 
@@ -317,9 +321,19 @@ Move some element to the front or back.
 }
 ```
 
-### Pure Css hamburger button
+## pseudo-classes & pseudo-elements
 
-This is a hamburger button using pure css to style it.
+Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
 
-> [Have a look](/html/hamburgerBtnManu.html)
+A CSS **pseudo-element** is a keyword added to a selector that lets you style **a specific part** of the selected element(s).
+
+> Pseudo-elements create abstractions about the document tree beyond those specified by the document language. For instance, document languages do not offer mechanisms to access the first letter or first line of an element’s content. Pseudo-elements allow authors to refer to this otherwise inaccessible information. Pseudo-elements may also provide authors a way to refer to content that does not exist in the source document (e.g., the ::before and ::after pseudo-elements give access to generated content).
+
+A CSS **pseudo-class** is a keyword added to a selector that specifies **a special state** of the selected element(s).
+
+> The pseudo-class concept is introduced to permit selection based on information that lies outside of the document tree or that cannot be expressed using the other simple selectors.
+
+pseudo-elements use (::) like `::before`
+pseudo-class use (:) like `:hover`, `:nth-child()`
 

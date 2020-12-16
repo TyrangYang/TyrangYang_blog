@@ -3,7 +3,19 @@
         <title>css - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/css/</link>
         <description>css - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Dec 2020 15:52:02 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/" rel="self" type="application/rss+xml" /><item>
+    <title>HTML Effect with vanilla html js css</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link>
+    <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
+    <description><![CDATA[Modal box  Demo
+ Cursor &amp; hover effect  Demo
+ Pure Css hamburger button This is a hamburger button using pure css to style it.
+ Demo
+ Loading  Demo
+ ]]></description>
+</item><item>
     <title>Flex and Grid in CSS</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
     <pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate>

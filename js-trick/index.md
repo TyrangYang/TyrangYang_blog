@@ -1,7 +1,9 @@
 # Js Trick
 
 
-> Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).
+{{< admonition type=warning title="warning" open=true >}}
+Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).
+{{< /admonition >}}
 
 > You can read this [Article to know What new feature brings in since ES6](https://medium.com/engineered-publicis-sapient/javascript-es6-es7-es10-where-are-we-8ac044dfd964)
 

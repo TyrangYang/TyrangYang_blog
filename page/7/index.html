@@ -10,7 +10,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
-<meta property="og:updated_time" content="2020-09-14T18:36:51-07:00" />
+<meta property="og:updated_time" content="2020-12-14T15:52:02-08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TyrangYang_Blog"/>
 <meta name="twitter:description" content=""/>
@@ -100,6 +100,12 @@
         alt="/images/art2.png"
         title="/images/art2.png" /></a></div><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/@TyrangYang" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="mailto:haolinyang95@gamil.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/">Software Development Course note</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-09-03">2019-09-03</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/software-development/"><i class="far fa-folder fa-fw"></i>Software-development</a></span></div><div class="content">Agile Vs Traditional SDLC Models Agile is based on the adaptive software development methods, whereas the traditional SDLC models like the waterfall model is based on a predictive approach. Predictive teams in the traditional SDLC models usually work with detailed planning and have a complete forecast of the exact tasks and features to be delivered in the next few months or during the product life cycle.
+Predictive methods entirely depend on the requirement analysis and planning done in the beginning of cycle.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/software-development-1/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/ssw/">ssw</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/">course note</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/">Web development review</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-08-29">2019-08-29</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div><div class="content">MathJax.Hub.Config({ jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$']], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }, messageStyle: "none", "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } });   Document constructor $$f(x) = sin(x)$$</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/">Read More</a><div class="post-tags">
@@ -161,16 +167,6 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 1 2 3 4 5 6 7 8 9  template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category  typedef typename I::value_type value_type; // type  typedef typename I::difference_type difference_type; //  typedef typename I::pointer pointer; // T*  typedef typename I::reference reference; // T&amp; };   1 2 3 4 5 6 7 8 9 10 11 12 13 14  #include &lt;iostream&gt; // std::cout#include &lt;iterator&gt; // std::iterator_traits#include &lt;typeinfo&gt; // typeidusing namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/iterators/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl/">STL</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/allocator/">Allocator in c&#43;&#43;</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-07-21">2019-07-21</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/"><i class="far fa-folder fa-fw"></i>STL-study-note</a></span></div><div class="content">Allocator is for memory 配置内存空间 -&gt; 构建(constructor) -&gt; 解构(destructor) -&gt; 释放内存空间
-construct() and destroy() 用于建构和解构
-Memory allocate and release 双层配置器。第一级是区块大于 128 bytes 的，使用 malloc()和 free()。第二级是区块小于 128 bytes 的，使用 memory pool 和 freelist。
-第一級配置器 第一級配置器以 malloc(), free(), realloc() 等 C 函式執行實際的記憶體配置、釋放、重配置動作，並實作出類似 C++ new-handler7 機制。是的，它不能直接運用 C++ new-handler 機制，因為它並非使用 ::operator new 來配置記 憶體。
-所謂 C++ new handler 機制是，你可以要求系統在記憶體配置需求無法被滿足時， 喚起一個你所指定的函式。換句話說一旦 ::operator new 無法達成任務，在丟出 std::bad_alloc 異常狀態之前，會先呼叫由客端指定的處理常式。此處理常式 通常即被稱為 new-handler。new-handler 解決記憶體不足的作法有特定的模式。
-注意，SGI 以 malloc 而非 ::operator new 來配置記憶體(我所能夠想像的一 個原因是歷史因素，另一個原因是 C++ 並未提供相應於 realloc() 的記憶體配 置動作)，因此 SGI 不能直接使用 C++ 的 set_new_handler()，必須模擬一個 類似的 set_malloc_handler()。</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/allocator/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl/">STL</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>
@@ -192,6 +188,10 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
                 </li><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/page/8/">8</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="https://tyrangyang.github.io/TyrangYang_blog/page/9/">9</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

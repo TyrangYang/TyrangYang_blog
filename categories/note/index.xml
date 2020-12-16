@@ -3,14 +3,25 @@
         <title>Note - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/note/</link>
         <description>Note - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 May 2020 23:12:40 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Dec 2020 15:52:02 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/" rel="self" type="application/rss+xml" /><item>
+    <title>HTML Effect with vanilla html js css</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link>
+    <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
+    <description><![CDATA[Modal box  Demo
+ Cursor &amp; hover effect  Demo
+ Pure Css hamburger button This is a hamburger button using pure css to style it.
+ Demo
+ Loading  Demo
+ ]]></description>
+</item><item>
     <title>Js Trick</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).
-  You can read this Article to know What new feature brings in since ES6
+    <description><![CDATA[warning  Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).    You can read this Article to know What new feature brings in since ES6
  Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   String =&gt; Integer 1 2 3 4  Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100  +&#39;abc&#39;; // NAN   Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
 </item><item>
     <title>Traverse a tree</title>

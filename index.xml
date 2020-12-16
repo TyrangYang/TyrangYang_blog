@@ -3,9 +3,21 @@
         <title>TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/</link>
         <description>TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 18:36:51 -0700</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Dec 2020 15:52:02 -0800</lastBuildDate>
             <atom:link href="https://tyrangyang.github.io/TyrangYang_blog/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HTML Effect with vanilla html js css</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link>
+    <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
+    <description><![CDATA[Modal box  Demo
+ Cursor &amp; hover effect  Demo
+ Pure Css hamburger button This is a hamburger button using pure css to style it.
+ Demo
+ Loading  Demo
+ ]]></description>
+</item><item>
     <title>Jest Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</link>
     <pubDate>Mon, 14 Sep 2020 18:36:51 -0700</pubDate>
@@ -96,13 +108,5 @@ Add a picture   Basic markdown ![&lt;alt name](&lt; The route start from static 
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</guid>
     <description><![CDATA[table 1 2 3 4 5 6 7 8 9 10  table ├── thead │ └── tr │ └── th ├── tbody │ └── tr │ └── td └── tfoot └── tr └── td   Intersection Observer API 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  const option = { root: null, rootMargin: &#39;0px&#39;, threshold: 0.]]></description>
-</item><item>
-    <title>Dynamic Programming Example</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link>
-    <pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid>
-    <description><![CDATA[Longest common subsequence This is a typical recursive problem. The pseudocode is:
-1 2  If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:]))   Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12  int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.]]></description>
 </item></channel>
 </rss>

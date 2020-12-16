@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Curser Hover Effect</title>
+        <script
+            src="https://kit.fontawesome.com/67bf073e9a.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="cursorHover.css" />
+    </head>
+    <body>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fas fa-heart"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-book-open"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-globe-americas"></i>
+                </a>
+            </li>
+            <div class="cursor"></div>
+        </ul>
+
+        <script>
+            const cursor = document.querySelector('.cursor');
+
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + 'px';
+            });
+        </script>
+    </body>
+</html>

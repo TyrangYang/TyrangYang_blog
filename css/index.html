@@ -50,7 +50,7 @@ padding Padding control the amount of space between the element&rsquo;s content 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/"
-        },"genre": "posts","keywords": "css","wordcount":  895 ,
+        },"genre": "posts","keywords": "css","wordcount":  1043 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/","datePublished": "2020-03-17T00:00:00+00:00","dateModified": "2020-03-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -127,7 +127,7 @@ padding Padding control the amount of space between the element&rsquo;s content 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CSS Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;895 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1043 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -172,7 +172,11 @@ padding Padding control the amount of space between the element&rsquo;s content 
     <li><a href="#transition">transition</a></li>
     <li><a href="#cubic-bezier">cubic-bezier</a></li>
     <li><a href="#tabindex">tabindex</a></li>
-    <li><a href="#display">display</a></li>
+    <li><a href="#display">display</a>
+      <ul>
+        <li><a href="#block-vs-inline-vs-inline-block">block vs inline vs inline-block</a></li>
+      </ul>
+    </li>
     <li><a href="#layout">Layout</a>
       <ul>
         <li><a href="#flex">Flex</a></li>
@@ -183,9 +187,9 @@ padding Padding control the amount of space between the element&rsquo;s content 
     <li><a href="#personal-default-style">Personal default style</a>
       <ul>
         <li><a href="#button">button</a></li>
-        <li><a href="#pure-css-hamburger-button">Pure Css hamburger button</a></li>
       </ul>
     </li>
+    <li><a href="#pseudo-classes--pseudo-elements">pseudo-classes &amp; pseudo-elements</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>CSS cheat sheet: <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/index.html" rel="">html</a> &amp; <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/css/style.css" rel="">css</a> provided by <a href="https://youtu.be/yfoY53QXEnI" target="_blank" rel="noopener noreffer">Traversy Media</a></p>
@@ -360,7 +364,7 @@ A value of 0 is completely transparent.</p>
 <li>sticky</li>
 </ul>
 <figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/position.png" width="100%" height="100%"/> <figcaption>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/position.png" width="70%" height="70%"/> <figcaption>
             <h4>position</h4>
         </figcaption>
 </figure>
@@ -448,7 +452,7 @@ A value of 0 is completely transparent.</p>
 <p>A curve about about animation speed.</p>
 <p>Use two point to decide the curve</p>
 <figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/curve.jpg" width="100%" height="100%"/> <figcaption>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/curve.jpg" width="50%" height="50%"/> <figcaption>
             <h4>curve line</h4>
         </figcaption>
 </figure>
@@ -478,6 +482,8 @@ A value of 0 is completely transparent.</p>
 </div>
 </div><h2 id="display">display</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model</a></p>
+<h3 id="block-vs-inline-vs-inline-block">block vs inline vs inline-block</h3>
+<p><a href="https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block">https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block</a></p>
 <h2 id="layout">Layout</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction" target="_blank" rel="noopener noreffer"><strong>MDN Reference</strong></a></p>
 <blockquote>
@@ -533,11 +539,19 @@ A value of 0 is completely transparent.</p>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="pure-css-hamburger-button">Pure Css hamburger button</h3>
-<p>This is a hamburger button using pure css to style it.</p>
+</div><h2 id="pseudo-classes--pseudo-elements">pseudo-classes &amp; pseudo-elements</h2>
+<p>Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a>
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements</a></p>
+<p>A CSS <strong>pseudo-element</strong> is a keyword added to a selector that lets you style <strong>a specific part</strong> of the selected element(s).</p>
 <blockquote>
-<p><a href="https://tyrangyang.github.io/TyrangYang_blog/html/hamburgerBtnManu.html" rel="">Have a look</a></p>
+<p>Pseudo-elements create abstractions about the document tree beyond those specified by the document language. For instance, document languages do not offer mechanisms to access the first letter or first line of an element’s content. Pseudo-elements allow authors to refer to this otherwise inaccessible information. Pseudo-elements may also provide authors a way to refer to content that does not exist in the source document (e.g., the ::before and ::after pseudo-elements give access to generated content).</p>
 </blockquote>
+<p>A CSS <strong>pseudo-class</strong> is a keyword added to a selector that specifies <strong>a special state</strong> of the selected element(s).</p>
+<blockquote>
+<p>The pseudo-class concept is introduced to permit selection based on information that lies outside of the document tree or that cannot be expressed using the other simple selectors.</p>
+</blockquote>
+<p>pseudo-elements use (::) like <code>::before</code>
+pseudo-class use (:) like <code>:hover</code>, <code>:nth-child()</code></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
