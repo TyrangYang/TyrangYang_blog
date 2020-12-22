@@ -337,3 +337,67 @@ A CSS **pseudo-class** is a keyword added to a selector that specifies **a speci
 pseudo-elements use (::) like `::before`
 pseudo-class use (:) like `:hover`, `:nth-child()`
 
+## symbols in CSS selectors
+
+{{< admonition type=info title=Reference open=false >}}
+https://levelup.gitconnected.com/understanding-use-of-the-and-symbols-in-css-selectors-95552eb436f5
+{{< /admonition >}}
+
+-   Descendant Selector (space)
+-   Child Selector (>)
+-   Adjacent Sibling Selector (+)
+-   General Sibling Selector (~)
+
+For a Same HTML part
+
+```html
+<div class="container">
+    <p>Apple</p>
+    <div>
+        <p>An apple a day keeps doctor away!</p>
+    </div>
+    <p>Banana</p>
+    <p>Cherry</p>
+</div>
+```
+
+### space
+
+```css
+div.container p {
+    font-size: 20px;
+}
+```
+
+**Choose all `p` tag**
+
+### (>)
+
+```css
+div.container > p {
+    border-bottom: 1px dashed black;
+}
+```
+
+{{<figure src="/images/2020-03-17-css/ChildSelector.png" title="Child Selector" width="70%" height="70%" >}}
+
+### (+)
+
+```css
+div + p {
+    background-color: yellow;
+}
+```
+
+{{<figure src="/images/2020-03-17-css/AdjacentSiblingSelector.png" title="Adjacent Sibling Selector" width="70%" height="70%" >}}
+
+### (~)
+
+```css
+div ~ p {
+    background-color: yellow;
+}
+```
+
+{{<figure src="/images/2020-03-17-css/GeneralSiblingSelector.png" title="General Sibling Selector" width="70%" height="70%" >}}
+

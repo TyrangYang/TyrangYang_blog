@@ -19,3 +19,7 @@ This is a hamburger button using pure css to style it.
 
 > [Demo](/html/htmlEffect/loading.html)
 
+## Sidebar
+
+> [Demo](/html/htmlEffect/sidebar.html)
+

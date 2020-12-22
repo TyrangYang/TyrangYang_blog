@@ -50,7 +50,7 @@ padding Padding control the amount of space between the element&rsquo;s content 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/"
-        },"genre": "posts","keywords": "css","wordcount":  1043 ,
+        },"genre": "posts","keywords": "css","wordcount":  1148 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/","datePublished": "2020-03-17T00:00:00+00:00","dateModified": "2020-03-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -127,8 +127,8 @@ padding Padding control the amount of space between the element&rsquo;s content 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CSS Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1043 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1148 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -190,6 +190,14 @@ padding Padding control the amount of space between the element&rsquo;s content 
       </ul>
     </li>
     <li><a href="#pseudo-classes--pseudo-elements">pseudo-classes &amp; pseudo-elements</a></li>
+    <li><a href="#symbols-in-css-selectors">symbols in CSS selectors</a>
+      <ul>
+        <li><a href="#space">space</a></li>
+        <li><a href="#heading">(&gt;)</a></li>
+        <li><a href="#heading-1">(+)</a></li>
+        <li><a href="#heading-2">(~)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>CSS cheat sheet: <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/index.html" rel="">html</a> &amp; <a href="https://tyrangyang.github.io/TyrangYang_blog/csscrashcourse/csscheatsheet/css/style.css" rel="">css</a> provided by <a href="https://youtu.be/yfoY53QXEnI" target="_blank" rel="noopener noreffer">Traversy Media</a></p>
@@ -552,6 +560,115 @@ Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements">
 </blockquote>
 <p>pseudo-elements use (::) like <code>::before</code>
 pseudo-class use (:) like <code>:hover</code>, <code>:nth-child()</code></p>
+<h2 id="symbols-in-css-selectors">symbols in CSS selectors</h2>
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Reference<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://levelup.gitconnected.com/understanding-use-of-the-and-symbols-in-css-selectors-95552eb436f5">https://levelup.gitconnected.com/understanding-use-of-the-and-symbols-in-css-selectors-95552eb436f5</a></div>
+        </div>
+    </div>
+<ul>
+<li>Descendant Selector (space)</li>
+<li>Child Selector (&gt;)</li>
+<li>Adjacent Sibling Selector (+)</li>
+<li>General Sibling Selector (~)</li>
+</ul>
+<p>For a Same HTML part</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Apple<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>An apple a day keeps doctor away!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Banana<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Cherry<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="space">space</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">div</span><span class="p">.</span><span class="nc">container</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Choose all <code>p</code> tag</strong></p>
+<h3 id="heading">(&gt;)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">div</span><span class="p">.</span><span class="nc">container</span> <span class="o">&gt;</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">dashed</span> <span class="kc">black</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/ChildSelector.png" width="70%" height="70%"/> <figcaption>
+            <h4>Child Selector</h4>
+        </figcaption>
+</figure>
+
+<h3 id="heading-1">(+)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">div</span> <span class="o">+</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/AdjacentSiblingSelector.png" width="70%" height="70%"/> <figcaption>
+            <h4>Adjacent Sibling Selector</h4>
+        </figcaption>
+</figure>
+
+<h3 id="heading-2">(~)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">div</span> <span class="o">~</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2020-03-17-css/GeneralSiblingSelector.png" width="70%" height="70%"/> <figcaption>
+            <h4>General Sibling Selector</h4>
+        </figcaption>
+</figure>
+
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

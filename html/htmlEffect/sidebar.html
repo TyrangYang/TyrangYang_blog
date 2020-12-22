@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sidebar</title>
+        <script
+            src="https://kit.fontawesome.com/67bf073e9a.js"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                min-height: 100vh;
+                background-color: #fff;
+            }
+
+            /*---- style navigation ----*/
+            .navigation {
+                position: fixed;
+                width: 60px;
+                height: 100%;
+                transition: 0.3s;
+                background-color: teal;
+                overflow: hidden;
+            }
+            .navigation ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .navigation ul li {
+                position: relative;
+                list-style: none;
+                width: 100%;
+                transition: 0.5s;
+            }
+            .navigation ul li:first-child {
+                height: 60px;
+            }
+            .navigation ul li:not(:first-child):not(:last-child):hover {
+                background-color: rgba(0, 0, 0, 0.2);
+            } /* hover list item expect the first one and the last one */
+            .navigation ul li:last-child span {
+                transition: 0.5s;
+            }
+            .navigation ul li a {
+                position: relative;
+                width: 100%;
+                display: block;
+                display: flex;
+
+                text-decoration: none;
+                color: #fff;
+            }
+            .navigation ul li a .icon {
+                position: relative;
+                min-width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+
+            .navigation ul li a .title {
+                position: relative;
+                padding: 0 10px;
+                height: 60px;
+                display: block;
+                line-height: 60px;
+                text-align: start;
+                /* justify-content: flex-start; */
+                /* align-items: center; */
+
+                white-space: nowrap;
+            }
+
+            .navigation.showTitle {
+                width: 250px;
+            } /* show more detail */
+            .navigation.showTitle ul li:last-child span {
+                transform: rotate(-180deg);
+            } /* last item */
+
+            .navigation.closed {
+                width: 0px;
+            }
+            /* ---------------------- */
+
+            /* open side bar */
+            .hamburger {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 3;
+                width: 60px;
+                height: 60px;
+                padding: 0 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.3s;
+            }
+
+            .hamburger div {
+                position: relative;
+                top: 0;
+                transition: 0.3s;
+                width: 100%;
+                height: 4px;
+                background-color: teal;
+                border-radius: 5px;
+                margin: 6px 0;
+            }
+            .hamburger:hover {
+                transform: scale(0.9);
+            }
+
+            .hamburger.checked div:nth-child(1),
+            .hamburger.checked div:nth-child(2) {
+                position: relative;
+                background-color: #fff;
+                top: 8px;
+                transform: rotate(-45deg);
+            }
+            .hamburger.checked div:nth-child(2) {
+                top: -8px;
+                transform: rotate(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hamburger checked" onclick="toggleSidebar()">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li></li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-comment"></i></span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"
+                            ><i class="fas fa-question-circle"></i
+                        ></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-cog"></i></span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fas fa-lock"></i></span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </span>
+                        <span class="title">Sign out</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span
+                            class="icon"
+                            class="close-sidebar"
+                            onclick="toggleSidebarDetail()"
+                        >
+                            <i class="fas fa-chevron-right"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </body>
+
+    <script>
+        const toggleSidebarDetail = () => {
+            let navbar = document.querySelector('.navigation');
+            navbar.classList.toggle('showTitle');
+        };
+
+        const toggleSidebar = () => {
+            let navbar = document.querySelector('.navigation');
+            navbar.classList.toggle('closed');
+            let hamburgerBtn = document.querySelector('.hamburger');
+            hamburgerBtn.classList.toggle('checked');
+        };
+    </script>
+</html>
