@@ -52,3 +52,11 @@ Original source: https://wattenberger.com/blog/react-and-d3
 ## React Hook Form + Material UI Example
 
 https://codesandbox.io/s/react-hook-form-v6-controller-qsd8r?file=/src/Mui.js
+
+## Recoil.js — High-Performance State Management for React Simplified
+
+https://medium.com/weekly-webtips/recoil-js-high-performance-state-management-for-react-simplified-cb520464a667
+
+## Example of advantage of concurrent mode in react
+
+https://codesandbox.io/s/koyz664q35?file=/src/index.js:861-862

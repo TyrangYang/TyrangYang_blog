@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React key efficiency problem</title>
+    </head>
+    <body>
+        <h2>React key efficiency problem</h2>
+        <div id="root"></div>
+        <p>Click Get button and click double</p>
+    </body>
+    <script
+        src="https://unpkg.com/react@17/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <script>
+        'use strict';
+        const e = React.createElement;
+
+        function EachLine({ data, removeData }) {
+            return e('div', {}, [
+                e('div', {}, data.id),
+                e('div', {}, data.name),
+                e('button', { onClick: () => removeData(data.id) }, 'delete'),
+            ]);
+        }
+        function App() {
+            const [fakeData, setFakeData] = React.useState([
+                { id: 'user1', name: 'tom' },
+                { id: 'user2', name: 'leo' },
+                { id: 'user3', name: 'rick' },
+            ]);
+
+            const removeData = (id) => {
+                setFakeData((ori) => ori.filter((e) => e.id !== id));
+            };
+
+            return e(
+                'div',
+                {
+                    style: {
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                    },
+                },
+                fakeData.map((eachData, idx) =>
+                    e(EachLine, {
+                        key: eachData.id,
+                        data: eachData,
+                        removeData: removeData,
+                    })
+                )
+            );
+        }
+        const root = document.getElementById('root');
+        ReactDOM.render(e(App), root);
+    </script>
+</html>
