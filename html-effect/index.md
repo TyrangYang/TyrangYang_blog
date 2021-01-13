@@ -23,3 +23,7 @@ This is a hamburger button using pure css to style it.
 
 > [Demo](/html/htmlEffect/sidebar.html)
 
+## Profile
+
+> [Demo](/html/htmlEffect/profile.html)
+

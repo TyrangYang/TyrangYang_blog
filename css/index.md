@@ -33,6 +33,8 @@ There are three important properties to control the space: `padding`, `margin` a
 
 `border-style`
 
+`border: <border-width> <border-style> <border-color>`
+
 ### padding
 
 `Padding` control the amount of space between the element's content and its border;

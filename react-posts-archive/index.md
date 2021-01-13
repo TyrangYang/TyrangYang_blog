@@ -51,3 +51,7 @@ https://medium.com/weekly-webtips/recoil-js-high-performance-state-management-fo
 
 https://codesandbox.io/s/koyz664q35?file=/src/index.js:861-862
 
+## Understanding React Portals and Its Use-Cases
+
+https://blog.bitsrc.io/understanding-react-portals-ab79827732c7
+
