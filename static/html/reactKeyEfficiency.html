@@ -21,12 +21,18 @@
     <script>
         'use strict';
         const e = React.createElement;
+        const nextId = (() => {
+            let curNum = 3;
+            return () => {
+                curNum++;
+                return `user${curNum}`;
+            };
+        })();
 
-        function EachLine({ data, removeData }) {
+        function EachLine({ data }) {
             return e('div', {}, [
-                e('div', {}, data.id),
-                e('div', {}, data.name),
-                e('button', { onClick: () => removeData(data.id) }, 'delete'),
+                e('label', { key: `line-label-${data.id}` }, data.name),
+                e('input', { key: `line-input-${data.id}`, type: 'text' }),
             ]);
         }
         function App() {
@@ -35,10 +41,6 @@
                 { id: 'user2', name: 'leo' },
                 { id: 'user3', name: 'rick' },
             ]);
-
-            const removeData = (id) => {
-                setFakeData((ori) => ori.filter((e) => e.id !== id));
-            };
 
             return e(
                 'div',
@@ -49,13 +51,27 @@
                         alignItems: 'center',
                     },
                 },
-                fakeData.map((eachData, idx) =>
-                    e(EachLine, {
-                        key: eachData.id,
-                        data: eachData,
-                        removeData: removeData,
-                    })
-                )
+                [
+                    e(
+                        'button',
+                        {
+                            key: 'add-btn',
+                            onClick: () => {
+                                setFakeData((ori) => [
+                                    { id: nextId(), name: 'newUser' },
+                                    ...ori,
+                                ]);
+                            },
+                        },
+                        'test'
+                    ),
+                    ...fakeData.map((eachData, idx) =>
+                        e(EachLine, {
+                            key: eachData.id,
+                            data: eachData,
+                        })
+                    ),
+                ]
             );
         }
         const root = document.getElementById('root');

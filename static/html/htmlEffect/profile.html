@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dropdown Profile</title>
+        <script
+            src="https://kit.fontawesome.com/67bf073e9a.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+            * {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+                font-family: 'Roboto', sans-serif;
+            }
+            h1 {
+                visibility: visible;
+                position: absolute;
+            }
+            body {
+                background-color: #ffccbc;
+            }
+            .action {
+                position: fixed;
+                top: 20px;
+                right: 30px;
+            }
+            .action .profile-photo {
+                position: absolute;
+                right: 15px;
+                font-size: 30px;
+                color: teal;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 50%;
+            }
+            .action .profile-menu {
+                position: relative;
+                background-color: white;
+                padding: 5px 15px;
+                margin-top: 3.4em;
+                border-radius: 5px;
+                width: 200px;
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.5s;
+                top: 20px;
+            }
+            .profile-menu.active {
+                opacity: 1;
+                visibility: visible;
+                top: 0;
+            }
+            .profile-menu::before {
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                width: 20px;
+                height: 20px;
+                top: -5px;
+                right: 20px;
+                transform: rotate(45deg);
+            }
+
+            .action .profile-menu ul li {
+                list-style: none;
+            }
+            .action .profile-menu-item {
+                font-size: 20px;
+                padding: 7px 0;
+                border-top: 1px #ddd solid;
+                display: flex;
+                align-items: center;
+            }
+
+            .profile-menu h3 {
+                text-align: center;
+                font-size: 25px;
+                margin: 10px 0;
+            }
+            .profile-menu h3 span {
+                font-size: 18px;
+                color: rgba(0, 0, 0, 0.4);
+            }
+
+            .profile-menu-item-icon {
+                margin-right: 10px;
+                font-size: 1.2em;
+                opacity: 0.5;
+            }
+            .profile-menu-item-title {
+                text-decoration: none;
+                color: #111;
+            }
+
+            .profile-menu-item:hover .profile-menu-item-icon {
+                opacity: 1;
+            }
+            .profile-menu-item:hover .profile-menu-item-title {
+                color: #ff5d94;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="action">
+            <h1>click -></h1>
+            <div class="profile-photo"><i class="fas fa-user"></i></div>
+            <div class="profile-menu">
+                <h3>Someone <br /><span>website designer</span></h3>
+                <ul class="profile-menu-list">
+                    <li class="profile-menu-item">
+                        <i
+                            class="far fa-user-circle profile-menu-item-icon"
+                        ></i>
+                        <a href="#" class="profile-menu-item-title"
+                            >My Profile</a
+                        >
+                    </li>
+                    <li class="profile-menu-item">
+                        <i class="far fa-edit profile-menu-item-icon"></i>
+                        <a href="#" class="profile-menu-item-title"
+                            >Edit Profile</a
+                        >
+                    </li>
+                    <li class="profile-menu-item">
+                        <i class="far fa-envelope profile-menu-item-icon"></i>
+                        <a href="#" class="profile-menu-item-title">Inbox</a>
+                    </li>
+                    <li class="profile-menu-item">
+                        <i class="fas fa-cog profile-menu-item-icon"></i>
+                        <a href="#" class="profile-menu-item-title">Settings</a>
+                    </li>
+                    <li class="profile-menu-item">
+                        <i
+                            class="far fa-question-circle profile-menu-item-icon"
+                        ></i>
+                        <a href="#" class="profile-menu-item-title">Help</a>
+                    </li>
+                    <li class="profile-menu-item">
+                        <i
+                            class="fas fa-sign-out-alt profile-menu-item-icon"
+                        ></i>
+                        <a href="#" class="profile-menu-item-title">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script>
+        const menu = document.querySelector('.profile-menu');
+
+        const toggleMenu = () => {
+            menu.classList.toggle('active');
+        };
+
+        document
+            .querySelector('.profile-photo')
+            .addEventListener('click', toggleMenu);
+    </script>
+</html>

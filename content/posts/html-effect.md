@@ -32,3 +32,7 @@ This is a hamburger button using pure css to style it.
 ## Sidebar
 
 > [Demo](/html/htmlEffect/sidebar.html)
+
+## Profile
+
+> [Demo](/html/htmlEffect/profile.html)

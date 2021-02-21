@@ -150,6 +150,59 @@ let res = Math.pow(x, 2);
 res = x ** 2;
 ```
 
+## Nullish coalescing
+
+MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
+
+The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is _null_ or _undefined_, and otherwise returns its left-hand side operand.
+
+This operator used to replace `||` in some situations that `or` logic cannot handle elegantly.
+
+```js
+let calTax = (price, taxRate) => {
+    taxRate = taxRate || 0.05; // if taxRate not provided (undefined), set default to 0.05
+    // But there is a problem when taxRate to 0
+    return price * (1 + taxRate);
+};
+
+let res1 = calTax(100, 0); // 105 WRONG X
+let res2 = calTax(100); // 105 correct ✓
+
+let calTax2 = (price, taxRate) => {
+    taxRate = taxRate ?? 0.05; // if taxRate not provided (undefined), set default to 0.05
+    // But there is a problem when taxRate to 0
+    return price * (1 + taxRate);
+};
+
+let res3 = calTax2(100, 0); // 100 correct X
+let res4 = calTax2(100); // 105 correct ✓
+
+console.log(res3, res4);
+```
+
+## Optional chaining
+
+```js
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    getAge() {
+        return this.age;
+    }
+}
+
+let p1 = new Person(undefined, 12);
+
+console.log(p1.getAge()); // 12
+console.log(p1.name.firstName); // Error
+console.log(p1.getSex()); // Error
+console.log(p1.name?.firstName); // undefined
+console.log(p1.getSex?.()); // undefined
+```
+
 ## Naming object
 
 If object key has same name with the variable in value, just use variable name.

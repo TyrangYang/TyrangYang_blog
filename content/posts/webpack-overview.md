@@ -1,6 +1,6 @@
 ---
 title: 'Webpack Overview'
-date: 2020-09-09T19:12:38-07:00
+date: 2020-12-09T19:12:38-07:00
 Categories: ['Overview']
 tags: ['webpack']
 toc:
@@ -15,11 +15,17 @@ webpack is a static module bundler for modern JavaScript applications.
 
 Document: https://webpack.js.org/concepts/
 
+## Installation
+
+```
+npm i -D webpack webpack-cli
+```
+
 ## webpack core concept
 
 ### Entry
 
-An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+An entry point indicates which module webpack should use to **begin** building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 
 ### Output
 
