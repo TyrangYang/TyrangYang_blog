@@ -5,11 +5,17 @@ webpack is a static module bundler for modern JavaScript applications.
 
 Document: https://webpack.js.org/concepts/
 
+## Installation
+
+```
+npm i -D webpack webpack-cli
+```
+
 ## webpack core concept
 
 ### Entry
 
-An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+An entry point indicates which module webpack should use to **begin** building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 
 ### Output
 

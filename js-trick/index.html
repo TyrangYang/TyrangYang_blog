@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"
-        },"genre": "posts","keywords": "javascript","wordcount":  1305 ,
+        },"genre": "posts","keywords": "javascript","wordcount":  1548 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished": "2020-05-03T23:12:40-04:00","dateModified": "2020-05-03T23:12:40-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -105,8 +105,8 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1305 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1548 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -134,6 +134,8 @@
       </ul>
     </li>
     <li><a href="#exponential">Exponential</a></li>
+    <li><a href="#nullish-coalescing">Nullish coalescing</a></li>
+    <li><a href="#optional-chaining">Optional chaining</a></li>
     <li><a href="#naming-object">Naming object</a></li>
     <li><a href="#destruct">Destruct</a>
       <ul>
@@ -388,6 +390,97 @@
 <span class="c1">// new operator added in ES7
 </span><span class="c1"></span><span class="nx">res</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span>
 </code></pre></td></tr></table>
+</div>
+</div><h2 id="nullish-coalescing">Nullish coalescing</h2>
+<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator</a></p>
+<p>The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is <em>null</em> or <em>undefined</em>, and otherwise returns its left-hand side operand.</p>
+<p>This operator used to replace <code>||</code> in some situations that <code>or</code> logic cannot handle elegantly.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">calTax</span> <span class="o">=</span> <span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">taxRate</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">taxRate</span> <span class="o">=</span> <span class="nx">taxRate</span> <span class="o">||</span> <span class="mf">0.05</span><span class="p">;</span> <span class="c1">// if taxRate not provided (undefined), set default to 0.05
+</span><span class="c1"></span>    <span class="c1">// But there is a problem when taxRate to 0
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nx">taxRate</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">res1</span> <span class="o">=</span> <span class="nx">calTax</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 105 WRONG X
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">res2</span> <span class="o">=</span> <span class="nx">calTax</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// 105 correct ✓
+</span><span class="c1"></span>
+<span class="kd">let</span> <span class="nx">calTax2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">taxRate</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">taxRate</span> <span class="o">=</span> <span class="nx">taxRate</span> <span class="o">??</span> <span class="mf">0.05</span><span class="p">;</span> <span class="c1">// if taxRate not provided (undefined), set default to 0.05
+</span><span class="c1"></span>    <span class="c1">// But there is a problem when taxRate to 0
+</span><span class="c1"></span>    <span class="k">return</span> <span class="nx">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nx">taxRate</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">res3</span> <span class="o">=</span> <span class="nx">calTax2</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 100 correct X
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">res4</span> <span class="o">=</span> <span class="nx">calTax2</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// 105 correct ✓
+</span><span class="c1"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res3</span><span class="p">,</span> <span class="nx">res4</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="optional-chaining">Optional chaining</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">getAge</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p1</span><span class="p">.</span><span class="nx">getAge</span><span class="p">());</span> <span class="c1">// 12
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p1</span><span class="p">.</span><span class="nx">name</span><span class="p">.</span><span class="nx">firstName</span><span class="p">);</span> <span class="c1">// Error
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p1</span><span class="p">.</span><span class="nx">getSex</span><span class="p">());</span> <span class="c1">// Error
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p1</span><span class="p">.</span><span class="nx">name</span><span class="o">?</span><span class="p">.</span><span class="nx">firstName</span><span class="p">);</span> <span class="c1">// undefined
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">p1</span><span class="p">.</span><span class="nx">getSex</span><span class="o">?</span><span class="p">.());</span> <span class="c1">// undefined
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="naming-object">Naming object</h2>
 <p>If object key has same name with the variable in value, just use variable name.</p>

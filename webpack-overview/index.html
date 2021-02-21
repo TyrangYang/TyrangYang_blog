@@ -8,22 +8,22 @@
         <title>Webpack Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Webpack Overview" />
 <meta property="og:description" content="webpack is a static module bundler for modern JavaScript applications.
 Document: https://webpack.js.org/concepts/
-webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
-Output The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ." />
+Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Output The output property tells webpack where to emit the bundles it creates and how to name these files." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/" />
-<meta property="article:published_time" content="2020-09-09T19:12:38-07:00" />
-<meta property="article:modified_time" content="2020-09-09T19:12:38-07:00" />
+<meta property="article:published_time" content="2020-12-09T19:12:38-07:00" />
+<meta property="article:modified_time" content="2020-12-09T19:12:38-07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Webpack Overview"/>
 <meta name="twitter:description" content="webpack is a static module bundler for modern JavaScript applications.
 Document: https://webpack.js.org/concepts/
-webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
-Output The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ."/>
+Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Output The output property tells webpack where to emit the bundles it creates and how to name these files."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/jest-overview/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/jest-overview/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/html-effect/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -32,8 +32,8 @@ Output The output property tells webpack where to emit the bundles it creates an
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/webpack-overview\/"
-        },"genre": "posts","keywords": "webpack","wordcount":  312 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/webpack-overview\/","datePublished": "2020-09-09T19:12:38-07:00","dateModified": "2020-09-09T19:12:38-07:00","publisher": {
+        },"genre": "posts","keywords": "webpack","wordcount":  319 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/webpack-overview\/","datePublished": "2020-12-09T19:12:38-07:00","dateModified": "2020-12-09T19:12:38-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
                 "@type": "Person",
@@ -109,7 +109,7 @@ Output The output property tells webpack where to emit the bundles it creates an
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Webpack Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-09">2020-09-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;312 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-09">2020-12-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;319 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -118,6 +118,7 @@ Output The output property tells webpack where to emit the bundles it creates an
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#webpack-core-concept">webpack core concept</a>
       <ul>
         <li><a href="#entry">Entry</a></li>
@@ -132,9 +133,18 @@ Output The output property tells webpack where to emit the bundles it creates an
 </nav></div>
             </div><div class="content" id="content"><p>webpack is a static module bundler for modern JavaScript applications.</p>
 <p>Document: <a href="https://webpack.js.org/concepts/">https://webpack.js.org/concepts/</a></p>
-<h2 id="webpack-core-concept">webpack core concept</h2>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">npm i -D webpack webpack-cli
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="webpack-core-concept">webpack core concept</h2>
 <h3 id="entry">Entry</h3>
-<p>An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).</p>
+<p>An entry point indicates which module webpack should use to <strong>begin</strong> building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).</p>
 <h3 id="output">Output</h3>
 <p>The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to ./dist/main.js for the main output file and to the ./dist folder for any other generated file.</p>
 <h3 id="loaders">Loaders</h3>
@@ -237,7 +247,7 @@ Output The output property tells webpack where to emit the bundles it creates an
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2020-09-09</span>
+                <span>Updated on 2020-12-09</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -258,8 +268,8 @@ Output The output property tells webpack where to emit the bundles it creates an
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" class="prev" rel="prev" title="Redux Overview"><i class="fas fa-angle-left fa-fw"></i>Redux Overview</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/jest-overview/" class="next" rel="next" title="Jest Overview">Jest Overview<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/jest-overview/" class="prev" rel="prev" title="Jest Overview"><i class="fas fa-angle-left fa-fw"></i>Jest Overview</a>
+            <a href="https://tyrangyang.github.io/TyrangYang_blog/html-effect/" class="next" rel="next" title="HTML Effect with vanilla html js css">HTML Effect with vanilla html js css<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

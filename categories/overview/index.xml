@@ -3,7 +3,17 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Sep 2020 18:36:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 09 Dec 2020 19:12:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Webpack Overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link>
+    <pubDate>Wed, 09 Dec 2020 19:12:38 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid>
+    <description><![CDATA[webpack is a static module bundler for modern JavaScript applications.
+Document: https://webpack.js.org/concepts/
+Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Output The output property tells webpack where to emit the bundles it creates and how to name these files.]]></description>
+</item><item>
     <title>Jest Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</link>
     <pubDate>Mon, 14 Sep 2020 18:36:51 -0700</pubDate>
@@ -13,16 +23,6 @@
  Document: https://jestjs.io/docs/en/getting-started
 How to use Jest function.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
-</item><item>
-    <title>Webpack Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link>
-    <pubDate>Wed, 09 Sep 2020 19:12:38 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid>
-    <description><![CDATA[webpack is a static module bundler for modern JavaScript applications.
-Document: https://webpack.js.org/concepts/
-webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
-Output The output property tells webpack where to emit the bundles it creates and how to name these files. It defaults to .]]></description>
 </item><item>
     <title>Redux Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link>
