@@ -248,7 +248,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(ClassComponent);
 
 Document: https://redux-toolkit.js.org/introduction/quick-start
 
-> slicer = reducer + action
+{{< admonition type=Tip title=Tip open=true >}}
+slicer = reducer + action
+{{< /admonition >}}
 
 ```js
 import { createSlice } from '@reduxjs/toolkit';

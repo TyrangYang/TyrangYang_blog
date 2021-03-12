@@ -124,6 +124,8 @@ Find some content inside a file
 
 `history`
 
+`!!` last command ex: `sudo !!`
+
 ### combine with grep
 
 `history | grep "ls"` show history have "ls"
