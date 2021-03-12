@@ -3,7 +3,21 @@
         <title>html - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/html/</link>
         <description>html - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Dec 2020 15:52:02 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/html/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 27 Feb 2021 22:57:47 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/html/" rel="self" type="application/rss+xml" /><item>
+    <title>Useful Post Archive</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</link>
+    <pubDate>Sat, 27 Feb 2021 22:57:47 -0800</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</guid>
+    <description><![CDATA[React &ndash;&gt;Look this post&lt;&ndash;
+WEB basic Please Stop Using Local Storage https://www.rdegges.com/2018/please-stop-using-local-storage/
+JWT authentication: When and how to use it https://blog.logrocket.com/jwt-authentication-best-practices/#:~:text=A%20JWT%20needs%20to%20be,storage%20(or%20session%20storage).
+Graphql Dispatch This: Using Apollo Client 3 as a State Management Solution https://www.apollographql.com/blog/dispatch-this-using-apollo-client-3-as-a-state-management-solution/
+Apollo Client update cache when delete an item from list https://github.com/apollographql/apollo-client/issues/6451#issuecomment-775242381
+Several things for Graphql Security https://ithelp.ithome.com.tw/articles/10208008
+should I put useQuery inside a useEffect and should I store returned data in state? https://github.com/trojanowski/react-apollo-hooks/issues/158
+How to Use GraphQL DataLoader https://rahmanfadhil.]]></description>
+</item><item>
     <title>HTML Effect with vanilla html js css</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link>
     <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>

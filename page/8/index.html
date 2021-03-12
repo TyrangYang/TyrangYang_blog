@@ -10,7 +10,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
-<meta property="og:updated_time" content="2020-12-14T15:52:02-08:00" />
+<meta property="og:updated_time" content="2021-03-12T04:04:08-08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TyrangYang_Blog"/>
 <meta name="twitter:description" content=""/>
@@ -100,6 +100,22 @@
         alt="/images/art2.png"
         title="/images/art2.png" /></a></div><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/@TyrangYang" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="mailto:haolinyang95@gamil.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/">explicit and implicit in c&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-07-25">2019-07-25</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/c++/"><i class="far fa-folder fa-fw"></i>C++</a></span></div><div class="content">explicit and implicit In C++, constructor can be explicit and implicit.
+The reserve word explicit affect constructor with only one parameter or only one parameter without given initial value.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56  #include &lt;iostream&gt;using namespace std; class test1 { int data; public: test1(int t = 0):data(t){}; ~test1(){}; test1 operator + (const test1 &amp;a) const{ return test1(data + a.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/explicit-and-implicit/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/iterators/">Iterator in c&#43;&#43;</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-07-24">2019-07-24</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/"><i class="far fa-folder fa-fw"></i>STL-study-note</a></span></div><div class="content">Iterator 设计思维 STL 中 container 和 algorithm 是相对独立的，本身设计也是泛型化的。Iterator 就是用来将这两者联系在一起的。
+Iterator 是一种 smart pointer 可以不用 delete
+Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 value type)的。
+这是 iterator 中常见的五种属性。
+1 2 3 4 5 6 7 8 9  template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category  typedef typename I::value_type value_type; // type  typedef typename I::difference_type difference_type; //  typedef typename I::pointer pointer; // T*  typedef typename I::reference reference; // T&amp; };   1 2 3 4 5 6 7 8 9 10 11 12 13 14  #include &lt;iostream&gt; // std::cout#include &lt;iterator&gt; // std::iterator_traits#include &lt;typeinfo&gt; // typeidusing namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/iterators/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl/">STL</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/allocator/">Allocator in c&#43;&#43;</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-07-21">2019-07-21</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/"><i class="far fa-folder fa-fw"></i>STL-study-note</a></span></div><div class="content">Allocator is for memory 配置内存空间 -&gt; 构建(constructor) -&gt; 解构(destructor) -&gt; 释放内存空间
 construct() and destroy() 用于建构和解构
@@ -158,24 +174,6 @@ The more information Class A knows about Class B, the greater the possibility th
    Type Representation Initial value Storage Max. value     byte singed integer 0 8 bits 127   short singed integer 0 16 bits 32767   int singed integer 0 32 bits 2147483647   long singed integer 0 64 bits over 10^18   float floating point 0.0 32 bits over 10^38   double floating point 0.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/review/">review</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/java/">java</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/">Git overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-06-17">2019-06-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Here have some good pictures that is helpful for understanding git and contain the record for git commend
-Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
-Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
-This photo is provide by osteele
-Git commend and usage Initialize the git repository git init</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/git/">git</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/">MarkDown overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-06-16">2019-06-16</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">This is learning note for MarkDown
-Heading 1 or
-Heading 1 Heading 2 or
-Heading 2 Italic and bold italic or italic bold or bold italic and bold or italic and bold
-Unordered list  line 1 line 2 line 3  sub 1 sub 2    or
- line 1 line 2 line 3  sub 1 sub 2    Ordered list  line 1 line 2  sub 1 sub 2   line 3  BlockQuotes Use &lsquo;&gt;&rsquo; for a quotes</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>

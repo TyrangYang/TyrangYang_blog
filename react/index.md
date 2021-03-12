@@ -198,18 +198,58 @@ useEffect(() => {
 
 ### useContext
 
-```js
-const MyContext = React.createContext();
+Given an Example for **useContext + useReducer**
 
-// inside rfc
-const value = useContext(MyContext);
+In `ContextProvider.jsx`
+
+```js
+import React, { useReducer, useEffect, createContext } from 'react';
+
+const initialState = {
+    ID: '',
+};
+
+export const store = createContext(initialState);
+const { Provider } = store;
+
+function ContextProvider({ children }) {
+    const [state, dispatch] = useReducer((state, action) => {
+        switch (action.type) {
+            case 'setID':
+                return { ...state, currentUserID: action.payload };
+            default:
+                throw new Error();
+        }
+    }, initialState);
+
+    return <Provider value={{ state, dispatch }}>{children}</Provider>;
+}
+
+export default ContextProvider;
+```
+
+In `ContextConsumer.jsx`:
+
+```js
+import React, { useContext, useEffect } from 'react';
+import { store } from './ContextProvider.jsx';
+
+const ContextConsumer = () => {
+    // get field that you pass in provider value
+    const { state, dispatch } = useContext(store);
+    useEffect(() => {
+        dispatch({ type: 'setID', payload: 'ID1' });
+    });
+    return <div> {state.ID} </div>;
+};
+export default ContextConsumer;
 ```
 
 `useContext(MyContext)` is equivalent to `static contextType = MyContext` in a **class**, or to `<MyContext.Consumer>`
 
 **But You still need a `<MyContext.Provider>` above in the tree to provide the value for this context.**
 
-### useReduce
+### useReducer
 
 ```js
 const initialState = { count: 0 };
@@ -217,9 +257,9 @@ const initialState = { count: 0 };
 function reducer(state, action) {
     switch (action.type) {
         case 'increment':
-            return { count: state.count + 1 };
+            return { count: state.count + action.payload };
         case 'decrement':
-            return { count: state.count - 1 };
+            return { count: state.count - action.payload };
         case 'clean':
             return { count: 0 };
         default:
@@ -235,14 +275,18 @@ function Counter() {
     return (
         <>
             Count: {state.count}
-            <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-            <button onClick={() => dispatch({ type: 'increment' })}>+</button>
+            <button onClick={() => dispatch({ type: 'decrement', payload: 1 })}>
+                -
+            </button>
+            <button onClick={() => dispatch({ type: 'increment', payload: 1 })}>
+                +
+            </button>
         </>
     );
 }
 ```
 
-> Unlike Redux `dispatch` function doesn't need to add in `useEffect` or `useCallback` dependence list
+> Unlike Redux `dispatch` function doesn't need to add in `useEffect` or `useCallback` dependence list since `dispatch` always be a same function
 
 ### useRef
 
@@ -273,7 +317,7 @@ Component only be loaded when it will be rendered
 ```js
 import React, { Suspense } from 'react';
 
-// these import code better put the end of import code
+// These lazy imports should put the end of other import code
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
 const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
 
@@ -291,7 +335,9 @@ function MyComponent() {
 }
 ```
 
-> these import code better put the end of import code
+{{< admonition type=tip title="" open=true >}}
+These lazy imports should put the end of other import code
+{{< /admonition >}}
 
 > You can even wrap **multiple** lazy components with a **single** `Suspense` component.
 
@@ -306,6 +352,94 @@ function MyComponent() {
 |  componentDidUpdate()   | useEffect() with a input list contained which you want to change |
 | componentWillUnmount()  |           useEffect() with a return callback function            |
 | shouldComponentUpdate() |           export default React.memo(<component name>)            |
+
+## Logic extraction
+
+Suppose we have two components `A` and `B` that `B` is depends on `A`, the common solution is wrapping `B` in `A`. However,
+when the logic in `A` need to reuse, we cannot copy and parse `A` to everywhere. Extracting the logic is essential.
+
+```js
+const A = () => {
+    // some logic will reuse
+    return (
+        <div>
+            // ... other component
+            <B_depends_on_A />
+        </div>
+    );
+};
+
+// render <A/>
+const App = () => {
+    return <A />;
+};
+```
+
+{{< admonition type=info title=NOTE open=true >}}
+There are THREE method in React to reuse component logic: **High-Order Component**, **Render Props**, **Customize Hook**(function component ONLY)
+{{< /admonition >}}
+
+This Blog is an example to extract logic by Three different way: [Check this Blog]({{< ref "posts/react-logic-reuse.md" >}})
+
+### High-Order Component
+
+Concretely, **a higher-order component is a function that takes a component and returns a new component.**
+
+```js
+const withA = (ComponentB) => {
+    return (props) => {
+        // some logic will reuse
+        return (
+            <div>
+                // ... other component
+                <ComponentB {...props} />
+            </div>
+        );
+    };
+};
+const BWithA = withA(<B />);
+const App = () => {
+    return <BWithA args={...}>;
+};
+```
+
+### Render props
+
+Concretely, **a render prop is a function prop that a component uses to know what to render.**
+
+```js
+const A = ({ render }) => {
+    // some logic will reuse
+    const [state, setState] = useState(1);
+    return (
+        <div>
+            // ... other component
+            {render(state)}
+        </div>
+    );
+};
+
+const App = () => {
+    return <A render={(args) => <B args={args} />} />;
+};
+```
+
+### Customize Hooks
+
+Concretely, **A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.**
+
+```js
+const useA = () => {
+    // some logic calculation
+    return [reuseLogicResult];
+};
+
+const App = () => {
+    const [reuseLogicRes] = useA()
+    return <B args={reuseLogicRes} />} />;
+};
+
+```
 
 ## Common Pitfall
 

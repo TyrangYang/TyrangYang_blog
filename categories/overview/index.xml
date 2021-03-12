@@ -3,7 +3,16 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 09 Dec 2020 19:12:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 12 Mar 2021 04:04:08 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>React Logic Reuse</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link>
+    <pubDate>Fri, 12 Mar 2021 04:04:08 -0800</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</guid>
+    <description><![CDATA[This example demonstrate one single feature using four different feature to archive code split
+Code running there: &ndash;&gt;Link&lt;&ndash;
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146  import { useState, useEffect } from React; const Styles = { redBorder: { border: &#39;1px solid #f00&#39;, }, }; const MouseDisplay = ({ x, y }) =&gt; { return ( &lt;div&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; const MouseDisplay2 = ({ x, y }) =&gt; { return ( &lt;div style={{ color: &#39;teal&#39; }}&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; // Normal export const MouseInfoAndDisplay = () =&gt; { const [x, setX] = useState(0); const [y, setY] = useState(0); const handleMove = (e) =&gt; { setX(e.]]></description>
+</item><item>
     <title>Webpack Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link>
     <pubDate>Wed, 09 Dec 2020 19:12:38 -0700</pubDate>
@@ -86,24 +95,5 @@ life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;
     <guid>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</guid>
     <description><![CDATA[This posts only use as a remainder
 Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &#39;a name&#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &#39;Brad&#39; age = 37 print(&#39;name is&#39; + name + &#39; and age is &#39; + str(age)) print(&#39;name is {name} and age is {age}&#39;.]]></description>
-</item><item>
-    <title>chmod Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
-    <description><![CDATA[chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|+|-] [r|w|x] 
-u =&gt; user
-g =&gt; group
-o =&gt; other
-a =&gt; all
-r =&gt; read
-w =&gt; write
-x =&gt; execute
-example chmod +wr test.txt give write and read permission for user
-chmod -r test.txt remove read permission for user
-chmod g=wrx test.txt give write, read and execute permission for group
-use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
 </item></channel>
 </rss>

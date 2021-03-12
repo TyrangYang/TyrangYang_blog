@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hoc Vs. Render Props Vs. hooks</title>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <!-- import react -->
+    <script
+        src="https://unpkg.com/react@17/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <!-- import jsx -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script
+        data-plugins="transform-es2015-modules-umd"
+        type="text/babel"
+        src="./MouseDisplay.jsx"
+    ></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel">
+        import {
+            MouseInfoAndDisplay,
+            HOCMouseDisplay,
+            HOCMouseDisplay2,
+            Mouse,
+            MouseUsingHook,
+        } from './MouseDisplay';
+        const App = () => {
+            return (
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '100vh',
+                        justifyContent: 'space-around',
+                    }}
+                >
+                    <div>
+                        Normal: <MouseInfoAndDisplay />
+                    </div>
+                    <div>
+                        HOC: <HOCMouseDisplay />
+                        <HOCMouseDisplay2 />
+                    </div>
+                    <div>
+                        Render Props: <Mouse />
+                    </div>
+                    <div>
+                        Hook: <MouseUsingHook />
+                    </div>
+                </div>
+            );
+        };
+        ReactDOM.render(<App />, document.querySelector('#app'));
+    </script>
+</html>
