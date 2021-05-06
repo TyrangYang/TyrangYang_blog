@@ -5,5 +5,4 @@ node_modules/
 static/.DS_Store
 
 .DS_Store
-package.json
 .vscode/
