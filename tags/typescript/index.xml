@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>typescript - Tag - TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/typescript/</link>
+        <description>typescript - Tag - TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Apr 2021 23:37:35 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/typescript/" rel="self" type="application/rss+xml" /><item>
+    <title>Typescript overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link>
+    <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
+    <description><![CDATA[type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2));   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.]]></description>
+</item></channel>
+</rss>

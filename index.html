@@ -10,7 +10,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
-<meta property="og:updated_time" content="2021-03-12T04:04:08-08:00" />
+<meta property="og:updated_time" content="2021-04-08T23:37:35-07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TyrangYang_Blog"/>
 <meta name="twitter:description" content=""/>
@@ -100,8 +100,14 @@
         alt="/images/art2.png"
         title="/images/art2.png" /></a></div><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/@TyrangYang" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="mailto:haolinyang95@gamil.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/">React Logic Reuse</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-03-12">2021-03-12</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">This example demonstrate one single feature using four different feature to archive code split
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/typescript/">Typescript overview</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-04-08">2021-04-08</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2));   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/typescript/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/">overview</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/typescript/">typescript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/">React Logic Reuse Example</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-03-12">2021-03-12</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">React logic extraction Check this post
+Example code This example demonstrate one single feature using four different feature to archive code split
 Code running there: &ndash;&gt;Link&lt;&ndash;
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146  import { useState, useEffect } from React; const Styles = { redBorder: { border: &#39;1px solid #f00&#39;, }, }; const MouseDisplay = ({ x, y }) =&gt; { return ( &lt;div&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; const MouseDisplay2 = ({ x, y }) =&gt; { return ( &lt;div style={{ color: &#39;teal&#39; }}&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; // Normal export const MouseInfoAndDisplay = () =&gt; { const [x, setX] = useState(0); const [y, setY] = useState(0); const handleMove = (e) =&gt; { setX(e.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/">Read More</a><div class="post-tags">
@@ -179,15 +185,6 @@ A Flexbox code Example
 display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/">css</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/grid/">grid</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/flex/">flex</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/">Hugo Blog CheatSheet</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-17">2020-08-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/cheatsheet/"><i class="far fa-folder fa-fw"></i>CheatSheet</a></span></div><div class="content">Create new post hugo new posts/new.md
-Add a picture   Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
-  hugo build-in shortcut &ndash;&gt; figure   
-  Add a reference link Documentation of ref and relref
-1 2  \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}})   </div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/">hugo</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/">cheatsheet</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>

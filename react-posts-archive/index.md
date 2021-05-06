@@ -69,3 +69,13 @@ https://blog.bitsrc.io/understanding-react-portals-ab79827732c7
 
 https://blog.logrocket.com/use-hooks-and-context-not-react-and-redux/
 
+## The 100% correct way to split your chunks with Webpack
+
+PDF archive: <a href="../pdf/The-correct-way-to-split-your-chunks-with-Webpack.pdf" target="_blank">-->Link<--</a>
+
+Chinese Translate: https://segmentfault.com/a/1190000018368885
+
+{{< admonition type=warning title=" Original Resource is NOT Free" open=false >}}
+**Medium** Original source: https://medium.com/hackernoon/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
+{{< /admonition >}}
+

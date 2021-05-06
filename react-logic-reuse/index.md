@@ -1,5 +1,11 @@
-# React Logic Reuse
+# React Logic Reuse Example
 
+
+## React logic extraction
+
+[Check this post]({{< ref "React.md#logic-extraction" >}})
+
+## Example code
 
 This example demonstrate one single feature using four different feature to archive code split
 

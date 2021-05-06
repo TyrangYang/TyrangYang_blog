@@ -5,53 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Some cool websites archive - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Some cool websites archive" />
-<meta property="og:description" content="Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
-https://sourabhbajaj.com/mac-setup/
-shapeCatcher Draw a character and find the ASCII code
-http://shapecatcher.com/index.html
-draw.io Draw diagram online
-https://www.draw.io
-regular expression Good online tool to test and learn regular expression
-https://regexr.com
-100 front end component design 100 react component design challenge
-https://www.florin-pop.com/blog/2019/09/100-days-100-projects/
-bootswatch Several bootstrap scheme.
-https://bootswatch.com
-shields.io Get or create Readme badge" />
+        <title>Typescript overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Typescript overview" />
+<meta property="og:description" content="type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() &#43; b.toString(); } else return &#43;a &#43; &#43;b; }; console.log(add(1, 2));   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/" />
-<meta property="article:published_time" content="2019-10-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-10-12T00:00:00+00:00" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/typescript/" />
+<meta property="article:published_time" content="2021-04-08T23:37:35-07:00" />
+<meta property="article:modified_time" content="2021-04-08T23:37:35-07:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Some cool websites archive"/>
-<meta name="twitter:description" content="Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
-https://sourabhbajaj.com/mac-setup/
-shapeCatcher Draw a character and find the ASCII code
-http://shapecatcher.com/index.html
-draw.io Draw diagram online
-https://www.draw.io
-regular expression Good online tool to test and learn regular expression
-https://regexr.com
-100 front end component design 100 react component design challenge
-https://www.florin-pop.com/blog/2019/09/100-days-100-projects/
-bootswatch Several bootstrap scheme.
-https://bootswatch.com
-shields.io Get or create Readme badge"/>
+<meta name="twitter:title" content="Typescript overview"/>
+<meta name="twitter:description" content="type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() &#43; b.toString(); } else return &#43;a &#43; &#43;b; }; console.log(add(1, 2));   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/react/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/redis/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/typescript/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Some cool websites archive",
+        "headline": "Typescript overview",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/cool-website-archive\/"
-        },"genre": "posts","keywords": "website","wordcount":  111 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/cool-website-archive\/","datePublished": "2019-10-12T00:00:00+00:00","dateModified": "2019-10-12T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/"
+        },"genre": "posts","keywords": "overview, typescript, javascript","wordcount":  108 ,
+        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/","datePublished": "2021-04-08T23:37:35-07:00","dateModified": "2021-04-08T23:37:35-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
                 "@type": "Person",
@@ -124,10 +100,10 @@ shields.io Get or create Readme badge"/>
 <main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Some cool websites archive</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/archive/"><i class="far fa-folder fa-fw"></i>Archive</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-12">2019-10-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;111 words&nbsp;
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Typescript overview</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;108 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -136,67 +112,86 @@ shields.io Get or create Readme badge"/>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#development-setting-up-for-mac">Development setting up for Mac</a></li>
-    <li><a href="#shapecatcher">shapeCatcher</a></li>
-    <li><a href="#drawio">draw.io</a></li>
-    <li><a href="#regular-expression">regular expression</a></li>
-    <li><a href="#100-front-end-component-design">100 front end component design</a></li>
-    <li><a href="#bootswatch">bootswatch</a></li>
-    <li><a href="#shieldsio">shields.io</a></li>
-    <li><a href="#animatecss">animate.css</a></li>
-    <li><a href="#library-genesis">Library Genesis</a></li>
-    <li><a href="#jsfiddle--codepen">jsfiddle &amp; codepen</a></li>
-    <li><a href="#html-symbol-entity">HTML symbol entity</a></li>
-    <li><a href="#excalidraw">excalidraw</a></li>
+    <li><a href="#type">type</a>
+      <ul>
+        <li><a href="#union-type--literal-type">Union type &amp; Literal type</a></li>
+        <li><a href="#unknown">unknown</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="development-setting-up-for-mac">Development setting up for Mac</h2>
-<p>This guide covers the basics of setting up a development environment on a new Mac.</p>
-<p><a href="https://sourabhbajaj.com/mac-setup/" target="_blank" rel="noopener noreffer">https://sourabhbajaj.com/mac-setup/</a></p>
-<h2 id="shapecatcher">shapeCatcher</h2>
-<p>Draw a character and find the ASCII code</p>
-<p><a href="http://shapecatcher.com/index.html" target="_blank" rel="noopener noreffer">http://shapecatcher.com/index.html</a></p>
-<h2 id="drawio">draw.io</h2>
-<p>Draw diagram online</p>
-<p><a href="https://www.draw.io" target="_blank" rel="noopener noreffer">https://www.draw.io</a></p>
-<h2 id="regular-expression">regular expression</h2>
-<p>Good online tool to test and learn regular expression</p>
-<p><a href="https://regexr.com" target="_blank" rel="noopener noreffer">https://regexr.com</a></p>
-<h2 id="100-front-end-component-design">100 front end component design</h2>
-<p>100 react component design challenge</p>
-<p><a href="https://www.florin-pop.com/blog/2019/09/100-days-100-projects/" target="_blank" rel="noopener noreffer">https://www.florin-pop.com/blog/2019/09/100-days-100-projects/</a></p>
-<h2 id="bootswatch">bootswatch</h2>
-<p>Several bootstrap scheme.</p>
-<p><a href="https://bootswatch.com" target="_blank" rel="noopener noreffer">https://bootswatch.com</a></p>
-<h2 id="shieldsio">shields.io</h2>
-<p>Get or create Readme badge</p>
-<p><a href="https://shields.io" target="_blank" rel="noopener noreffer">https://shields.io</a></p>
-<h2 id="animatecss">animate.css</h2>
-<p>CSS file add animation</p>
-<p><a href="https://daneden.github.io/animate.css/">https://daneden.github.io/animate.css/</a></p>
-<h2 id="library-genesis">Library Genesis</h2>
-<p>A Good library</p>
-<p><a href="http://gen.lib.rus.ec">http://gen.lib.rus.ec</a></p>
-<h2 id="jsfiddle--codepen">jsfiddle &amp; codepen</h2>
-<p>These are online coding panel for web-dev. <code>codepen.io</code> looks better</p>
-<p><a href="https://jsfiddle.net">https://jsfiddle.net</a></p>
-<p><a href="https://codepen.io">https://codepen.io</a></p>
-<h2 id="html-symbol-entity">HTML symbol entity</h2>
-<p><a href="https://dev.w3.org/html5/html-author/charref">https://dev.w3.org/html5/html-author/charref</a></p>
-<h2 id="excalidraw">excalidraw</h2>
-<p>Virtual whiteboard for sketching hand-drawn like diagrams</p>
-<p><a href="https://excalidraw.com">https://excalidraw.com</a></p>
-</div><div class="post-footer" id="post-footer">
+            </div><div class="content" id="content"><h2 id="type">type</h2>
+<h3 id="union-type--literal-type">Union type &amp; Literal type</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="nx">a</span>: <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span><span class="p">,</span>
+    <span class="nx">b</span>: <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span><span class="p">,</span>
+    <span class="nx">type</span><span class="o">?:</span> <span class="s1">&#39;number&#39;</span> <span class="o">|</span> <span class="s1">&#39;string&#39;</span>
+<span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">return</span> <span class="o">+</span><span class="nx">a</span> <span class="o">+</span> <span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="unknown">unknown</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kd">let</span> <span class="nx">test1</span>: <span class="kt">unknown</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">test2</span>: <span class="kt">string</span><span class="p">;</span>
+
+<span class="nx">test1</span> <span class="o">=</span> <span class="s1">&#39;xyz&#39;</span><span class="p">;</span> <span class="c1">// ok
+</span><span class="c1">// test2 = test1; // error
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="p">.</span><span class="nx">b</span><span class="p">();</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="p">}</span>
+<span class="kd">function</span> <span class="nx">f2</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">unknown</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="p">.</span><span class="nx">b</span><span class="p">();</span> <span class="c1">//error
+</span><span class="c1"></span>    <span class="c1">// Object is of type &#39;unknown&#39;.
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2019-10-12</span>
+                <span>Updated on 2021-04-08</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/typescript/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
                 <span></span>
@@ -205,14 +200,13 @@ shields.io Get or create Readme badge"/>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/website/">website</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/">overview</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/typescript/">typescript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/react/" class="prev" rel="prev" title="React overview"><i class="fas fa-angle-left fa-fw"></i>React overview</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/redis/" class="next" rel="next" title="Redis overview">Redis overview<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/" class="prev" rel="prev" title="React Logic Reuse Example"><i class="fas fa-angle-left fa-fw"></i>React Logic Reuse Example</a></div>
 </div>
 </article></div>
             </main><footer class="footer">

@@ -67,3 +67,9 @@ https://codepen.io
 
 https://dev.w3.org/html5/html-author/charref
 
+## excalidraw
+
+Virtual whiteboard for sketching hand-drawn like diagrams
+
+https://excalidraw.com
+
