@@ -1,5 +1,5 @@
 ---
-title: 'React Logic Reuse'
+title: 'React Logic Reuse Example'
 date: 2021-03-12T04:04:08-08:00
 author: Haolin Yang
 categories: ['Overview']
@@ -13,6 +13,12 @@ linkToMarkdown: true
 math:
     enable: false
 ---
+
+## React logic extraction
+
+[Check this post]({{< ref "React.md#logic-extraction" >}})
+
+## Example code
 
 This example demonstrate one single feature using four different feature to archive code split
 

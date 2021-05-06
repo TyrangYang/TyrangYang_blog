@@ -50,3 +50,15 @@ https://rahmanfadhil.com/graphql-dataloader/
 ### A Deep Dive on Apollo Data Sources
 
 https://www.apollographql.com/blog/a-deep-dive-on-apollo-data-sources/
+
+### Setting Up Authentication and Authorization with Apollo Federation
+
+https://www.apollographql.com/blog/setting-up-authentication-and-authorization-with-apollo-federation/
+
+## Library
+
+### npkill
+
+> List any node_modules directories in your system and erase them
+
+https://github.com/voidcosmos/npkill
