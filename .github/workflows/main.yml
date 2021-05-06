@@ -30,6 +30,6 @@ jobs:
               with:
                   hugo-version: '0.81.0'
             - run: npm ci
-            - run: hugo --minify
+            - run: hugo
             - run: ALGOLIA_APP_ID=QXEV52XWDS ALGOLIA_ADMIN_KEY=601862a0324b3cf8a8e6882791b6c80f ALGOLIA_INDEX_NAME=blog ALGOLIA_INDEX_FILE=./public/index.json npm run algolia
             - run: npx gh-pages -d public
