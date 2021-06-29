@@ -80,6 +80,17 @@ In this workspace, file should structured as how you route your project:
 1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
 1 2 3 4 5 6 7 8  .]]></description>
 </item><item>
+    <title>Git overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</link>
+    <pubDate>Wed, 17 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</guid>
+    <description><![CDATA[Here have some good pictures that is helpful for understanding git and contain the record for git commend
+Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
+Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
+This photo is provide by osteele
+Git commend and usage Initialize the git repository git init]]></description>
+</item><item>
     <title>Vuex Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
     <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
@@ -87,13 +98,5 @@ In this workspace, file should structured as how you route your project:
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
 Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow   Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux]]></description>
-</item><item>
-    <title>Vue Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
-    <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
-    <description><![CDATA[Vue Document: English 中文
-life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic vue function v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
 </item></channel>
 </rss>
