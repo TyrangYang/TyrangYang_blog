@@ -1,6 +1,6 @@
 ---
 title: Git overview
-date: 2019-06-17
+date: 2020-06-17
 author: Haolin Yang
 categories: ['Overview']
 tags:
@@ -135,7 +135,7 @@ Without changing workspace, update local repository from remote repository
 
 `git rm --cached <file name>`
 
-`git rm -r --cached .` This command will set file to be untracked.
+`git rm -r --cached .` This command will set file to be untraced.
 
 `-r` means recursively
 
@@ -212,6 +212,30 @@ You can `checkout` _master_ and run `git merge topic`:
 ```
 D---E---F---G---A'---B'---C' master/topic
 ```
+
+## Git config
+
+Usually config your github email account and username in global
+
+### list all global config
+
+`git config -l`
+
+### set user name and email
+
+```sh
+git config --global user.name "your name"
+git config --global user.email "your@email.com"
+```
+
+### set password cache
+
+`git config --global credential.helper cache` and **next password/token entering will be cache**
+`git config --global --unset credential.helper` will unset cache state
+
+### How to manage multiple github accounts
+
+https://www.heady.io/blog/how-to-manage-multiple-github-accounts
 
 ## Delete submodule
 

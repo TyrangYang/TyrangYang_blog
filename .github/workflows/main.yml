@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
     # This workflow contains a single job called "deploy"
-    deploy:
+    deploy_process:
         # The type of runner that the job will run on
         runs-on: ubuntu-latest
         # Steps represent a sequence of tasks that will be executed as part of the job
@@ -31,8 +31,10 @@ jobs:
                   hugo-version: '0.69.0'
             - run: npm ci
             - run: hugo
-            - run: ALGOLIA_APP_ID=QXEV52XWDS ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_ADMIN_KEY }} ALGOLIA_INDEX_NAME=blog ALGOLIA_INDEX_FILE=./public/index.json npm run algolia
-            - uses: peaceiris/actions-gh-pages@v3
+            - name: Algolia setup
+              run: ALGOLIA_APP_ID=QXEV52XWDS ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_ADMIN_KEY }} ALGOLIA_INDEX_NAME=blog ALGOLIA_INDEX_FILE=./public/index.json npm run algolia
+            - name: gh-page setup
+              uses: peaceiris/actions-gh-pages@v3
               with:
                 github_token: ${{ secrets.ACCESS_TOKEN }}
                 publish_dir: ./public
