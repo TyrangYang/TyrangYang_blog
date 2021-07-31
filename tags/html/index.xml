@@ -59,5 +59,17 @@ classNames This is a javascript for conditionally joining classNames.
 Here is: Github
 Basically, you can combine any number of classNames.
 1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals.]]></description>
+</item><item>
+    <title>MarkDown overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</link>
+    <pubDate>Sun, 16 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</guid>
+    <description><![CDATA[This is learning note for MarkDown
+Heading 1 or
+Heading 1 Heading 2 or
+Heading 2 Italic and bold italic or italic bold or bold italic and bold or italic and bold
+Unordered list  line 1 line 2 line 3  sub 1 sub 2    or
+ line 1 line 2 line 3  sub 1 sub 2    Ordered list  line 1 line 2  sub 1 sub 2   line 3  BlockQuotes Use &lsquo;&gt;&rsquo; for a quotes]]></description>
 </item></channel>
 </rss>

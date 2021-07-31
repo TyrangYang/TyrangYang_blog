@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>markdown - Tag - TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/markdown/</link>
+        <description>markdown - Tag - TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 16 Jun 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/markdown/" rel="self" type="application/rss+xml" /><item>
+    <title>MarkDown overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</link>
+    <pubDate>Sun, 16 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</guid>
+    <description><![CDATA[This is learning note for MarkDown
+Heading 1 or
+Heading 1 Heading 2 or
+Heading 2 Italic and bold italic or italic bold or bold italic and bold or italic and bold
+Unordered list  line 1 line 2 line 3  sub 1 sub 2    or
+ line 1 line 2 line 3  sub 1 sub 2    Ordered list  line 1 line 2  sub 1 sub 2   line 3  BlockQuotes Use &lsquo;&gt;&rsquo; for a quotes]]></description>
+</item></channel>
+</rss>

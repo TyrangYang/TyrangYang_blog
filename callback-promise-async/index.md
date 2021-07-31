@@ -213,3 +213,57 @@ async function main() {
 main();
 ```
 
+### Prevent tryCatch hell
+
+```js
+async function getDataTryCatchHell{
+    let a, b, c;
+    try {
+        a = await fetch();
+    } catch (err) {
+        handleErr(err);
+    }
+    try {
+        b = await fetch();
+    } catch (err) {
+        handleErr(err);
+    }
+    try {
+        c = await fetch();
+    } catch (err) {
+        handleErr(err);
+    }
+}
+```
+
+Usually just append `.catch()` function behind the await function,
+
+```js
+async function getData{
+    let a = await fetch(...).catch(err=> handleErr(err));
+    let b = await fetch(...).catch(err=> handleErr(err));
+    let c = await fetch(...).catch(err=> handleErr(err));
+}
+```
+
+A better way is creating a function return data and error.
+
+```js
+async function awesome() {
+    try {
+        const data = await fetch();
+        return [data, null];
+    } catch (err) {
+        return [null, err];
+    }
+}
+
+async function main() {
+    let [data, err] = awesome();
+    if (err) {
+        return;
+    }
+    console.log(err);
+}
+```
+

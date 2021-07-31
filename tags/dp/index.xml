@@ -18,7 +18,7 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid>
     <description><![CDATA[What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
-fibonacci&hellip; The classic recursive problem:
-1    DP table State machine State transaction equation DP problem Example I have another post to classify dp problem See this Post]]></description>
+ Memorization Tabulation  fibonacci example The classic recursive problem:
+1 2 3 4  const fib = (n) =&gt; { if (n &lt;= 2) return 1; return fib(n - 1) + fib(n - 2); };   How to memorize :]]></description>
 </item></channel>
 </rss>

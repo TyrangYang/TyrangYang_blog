@@ -9,6 +9,6 @@
     <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
-    <description><![CDATA[type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2));   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.]]></description>
+    <description><![CDATA[type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2));   Array 1 2 3 4 5 6  type Book = { id: string; name: string; }; let books: Book[] = [];   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.]]></description>
 </item></channel>
 </rss>

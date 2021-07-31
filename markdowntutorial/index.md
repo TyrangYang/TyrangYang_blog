@@ -110,11 +110,11 @@ This the official [guide](https://www.markdownguide.org/basic-syntax/ 'cool link
 
 ## Horizontal rule
 
-> ---
+`---`
 
-> ---
+---
 
-> ===
+`===`
 
 ## Subscript element
 
@@ -124,11 +124,16 @@ H<sub>2</sub>O
 
 E=MC<sup>2</sup>
 
-## Special sign using HTML
+## Special sign using HTML **(HTML symbol entity)**
+
+[Website for all symbol entity](https://dev.w3.org/html5/html-author/charref)
+[Blog for HTML]({{< ref "cool-website-archive#html-symbol-entity" >}})
 
 **&plusmn;** &plusmn; &radic; &rArr; &hArr;
 space: &nbsp;
+
 ![Special symbol](/images/markDownTutorial/specialSymbol.png)
+
 [Website](https://blog.csdn.net/qiao13633426513/article/details/85112664)
 
 ## Image
