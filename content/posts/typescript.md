@@ -29,6 +29,17 @@ const add = (
 console.log(add(1, 2));
 ```
 
+### Array
+
+```ts
+type Book = {
+    id: string;
+    name: string;
+};
+
+let books: Book[] = [];
+```
+
 ### unknown
 
 ```ts
@@ -43,5 +54,25 @@ function f1(a: any) {
 function f2(a: unknown) {
     a.b(); //error
     // Object is of type 'unknown'.
+}
+```
+
+## Function
+
+```ts
+type listenerType<EventType> = (event: EventType) => void;
+```
+
+## Type & interface
+
+```ts
+type Book = {
+    id: string;
+    name: string;
+};
+
+interface Book {
+    id: string;
+    name: string;
 }
 ```
