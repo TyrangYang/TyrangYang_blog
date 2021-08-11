@@ -1,5 +1,5 @@
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
+    git branch >/dev/null 2>/dev/null && echo ' ±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
     echo ''
 }
@@ -37,15 +37,6 @@ function timeClock {
     elif [[ $HOUR -eq 12 && MIN -ge 30 ]]; then echo '\U1F567'
     fi
 }
-
-PROMPT='%{$fg[yellow]%}🜲 %{$fg[red]%}%n%{$reset_color%} %{$fg_bold[green]%}%1~ $(git_prompt_info)%{$reset_color%}$(virtualenv_info)$(prompt_char) '
-
-RPROMPT='$(timeClock)'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="⥀ "
-ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # Echoes information about Git repository status when inside a Git repository
 # resource: https://joshdick.net/2017/06/08/my_git_prompt_for_zsh_revisited.html
@@ -103,5 +94,16 @@ function git_info {
   echo "${(j: :)GIT_INFO}"
 }
 
-# PROMPT='%{$fg[yellow]%}🜲 %{$fg[red]%}%n%{$reset_color%} %{$fg_bold[green]%}%1~ $(git_info)$'\n' '
+
+# PROMPT='%{$fg[yellow]%}🜲 %{$fg[red]%}%n%{$reset_color%} %{$fg_bold[green]%}%1~ $(git_prompt_info)%{$reset_color%}$(virtualenv_info)$(prompt_char) '
+
+# RPROMPT='$(timeClock)'
+
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}"
+# ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_DIRTY="⥀ "
+# ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+PROMPT='%{$fg[yellow]%}🜲 %{$fg[red]%}%n%{$reset_color%} %{$fg_bold[green]%}%1~ $(git_info)$'\n' 
+$(timeClock) '
 # RPROMPT='$(timeClock)'

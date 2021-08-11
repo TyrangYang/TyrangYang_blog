@@ -411,3 +411,27 @@ div ~ p {
 ```
 
 {{<figure src="/images/2020-03-17-css/GeneralSiblingSelector.png" title="General Sibling Selector" width="70%" height="70%" >}}
+
+## Different between initial, inherit, unset & revert
+
+### initial
+
+set field into **css default** value, **not** _browser default value_ (user agent stylesheet)
+
+### inherit
+
+inherit **parent** html container setting
+
+### unset
+
+**unset** = _inherit_ + _initial_
+
+if property can inherit parent, set to _inherit_. Otherwise, set to _initial_
+
+{{< admonition type=tip title=Set All properties  open=true >}}
+`{all: unset}` can set all properties to inherit or initial
+{{< /admonition >}}
+
+### revert
+
+set property to **browser default value** (user agent stylesheet)
