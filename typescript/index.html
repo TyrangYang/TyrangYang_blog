@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/"
-        },"genre": "posts","keywords": "overview, typescript, javascript","wordcount":  167 ,
+        },"genre": "posts","keywords": "overview, typescript, javascript","wordcount":  453 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/","datePublished": "2021-04-08T23:37:35-07:00","dateModified": "2021-04-08T23:37:35-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -103,8 +103,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Typescript overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;167 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;453 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -119,7 +119,10 @@
         <li><a href="#unknown">unknown</a></li>
       </ul>
     </li>
-    <li><a href="#function">Function</a></li>
+    <li><a href="#type-a-function">Type a Function</a></li>
+    <li><a href="#assign-a-plain-object">Assign a plain Object</a></li>
+    <li><a href="#assign-a-nested-plain-object">Assign a nested plain Object</a></li>
+    <li><a href="#type-template-arrow-function-example">Type Template arrow function example</a></li>
     <li><a href="#type--interface">Type &amp; interface</a></li>
   </ul>
 </nav></div>
@@ -203,13 +206,132 @@
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="function">Function</h2>
+</div><h2 id="type-a-function">Type a Function</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">type</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span>: <span class="kt">EventType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="assign-a-plain-object">Assign a plain Object</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">type</span> <span class="nx">Primitive</span> <span class="o">=</span> <span class="nx">bigint</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">|</span> <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">|</span> <span class="nx">symbol</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+
+<span class="nx">type</span> <span class="nx">PlainObject</span> <span class="o">=</span> <span class="nx">Record</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="nx">Primitive</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">obj1</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">1</span> <span class="p">};</span> <span class="c1">//✅
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">obj2</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">1</span> <span class="p">};</span> <span class="c1">//❌
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">obj3</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">();</span> <span class="c1">//❌
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="assign-a-nested-plain-object">Assign a nested plain Object</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="nx">type</span> <span class="nx">Primitive</span> <span class="o">=</span> <span class="nx">bigint</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">|</span> <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">|</span> <span class="nx">symbol</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+
+<span class="nx">type</span> <span class="nx">JSONValue</span> <span class="o">=</span> <span class="nx">Primitive</span> <span class="o">|</span> <span class="nx">JSONObject</span> <span class="o">|</span> <span class="nx">JSONArray</span><span class="p">;</span>
+<span class="kr">interface</span> <span class="nx">JSONObject</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">key</span>: <span class="kt">string</span><span class="p">]</span><span class="o">:</span> <span class="nx">JSONValue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">JSONArray</span> <span class="kr">extends</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">JSONValue</span><span class="o">&gt;</span> <span class="p">{}</span>
+
+<span class="kr">const</span> <span class="nx">obj1</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">1</span> <span class="p">};</span> <span class="c1">//✅
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">obj2</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span> <span class="p">{</span> <span class="nx">b</span><span class="o">:</span> <span class="p">{</span> <span class="nx">c</span>: <span class="kt">3</span> <span class="p">}</span> <span class="p">}</span> <span class="p">};</span> <span class="c1">//✅
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">obj3</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">();</span> <span class="c1">//❌
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="type-template-arrow-function-example">Type Template arrow function example</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ts" data-lang="ts"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useFetchAPI</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">T</span> <span class="kr">extends</span> <span class="nx">unknown</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">url</span>: <span class="kt">string</span><span class="p">,</span>
+    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span> <span class="o">|</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+    <span class="nx">body?</span>: <span class="kt">string</span> <span class="o">|</span> <span class="nx">JSONObject</span>
+<span class="p">)</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="nx">T</span> <span class="o">|</span> <span class="kc">null</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">fetchStatus</span><span class="p">,</span> <span class="nx">setFetchStatus</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="p">[</span><span class="nx">fetchResult</span><span class="p">,</span> <span class="nx">setFetchResult</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="nx">T</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">apiMockFetch</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="p">{</span>
+            <span class="nx">status</span>: <span class="kt">string</span><span class="p">;</span>
+            <span class="nx">requestId</span>: <span class="kt">string</span><span class="p">;</span>
+            <span class="nx">result</span>: <span class="kt">T</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">resolve</span><span class="p">(</span><span class="nx">someData</span><span class="p">);</span>
+                <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+            <span class="p">});</span>
+        <span class="p">};</span>
+
+        <span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="kr">const</span> <span class="p">{</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">result</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">apiMockFetch</span><span class="p">();</span>
+            <span class="nx">setFetchStatus</span><span class="p">(</span><span class="nx">status</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">setFetchResult</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">fetchStatus</span> <span class="o">!==</span> <span class="s1">&#39;success&#39;</span><span class="p">)</span> <span class="nx">fetchData</span><span class="p">();</span>
+    <span class="p">},</span> <span class="p">[</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">fetchStatus</span><span class="p">]);</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nx">fetchStatus</span><span class="p">,</span> <span class="nx">fetchResult</span><span class="p">];</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="type--interface">Type &amp; interface</h2>

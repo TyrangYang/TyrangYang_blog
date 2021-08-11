@@ -50,7 +50,7 @@ border: &lt;border-width&gt; &lt;border-style&gt; &lt;border-color&gt;"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/"
-        },"genre": "posts","keywords": "css","wordcount":  1152 ,
+        },"genre": "posts","keywords": "css","wordcount":  1220 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/css\/","datePublished": "2020-03-17T00:00:00+00:00","dateModified": "2020-03-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -127,7 +127,7 @@ border: &lt;border-width&gt; &lt;border-style&gt; &lt;border-color&gt;"/>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CSS Overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1152 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-17">2020-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1220 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -196,6 +196,14 @@ border: &lt;border-width&gt; &lt;border-style&gt; &lt;border-color&gt;"/>
         <li><a href="#heading">(&gt;)</a></li>
         <li><a href="#heading-1">(+)</a></li>
         <li><a href="#heading-2">(~)</a></li>
+      </ul>
+    </li>
+    <li><a href="#different-between-initial-inherit-unset--revert">Different between initial, inherit, unset &amp; revert</a>
+      <ul>
+        <li><a href="#initial">initial</a></li>
+        <li><a href="#inherit">inherit</a></li>
+        <li><a href="#unset">unset</a></li>
+        <li><a href="#revert">revert</a></li>
       </ul>
     </li>
   </ul>
@@ -670,6 +678,24 @@ pseudo-class use (:) like <code>:hover</code>, <code>:nth-child()</code></p>
         </figcaption>
 </figure>
 
+<h2 id="different-between-initial-inherit-unset--revert">Different between initial, inherit, unset &amp; revert</h2>
+<h3 id="initial">initial</h3>
+<p>set field into <strong>css default</strong> value, <strong>not</strong> <em>browser default value</em> (user agent stylesheet)</p>
+<h3 id="inherit">inherit</h3>
+<p>inherit <strong>parent</strong> html container setting</p>
+<h3 id="unset">unset</h3>
+<p><strong>unset</strong> = <em>inherit</em> + <em>initial</em></p>
+<p>if property can inherit parent, set to <em>inherit</em>. Otherwise, set to <em>initial</em></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Set All properties<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><code>{all: unset}</code> can set all properties to inherit or initial</div>
+        </div>
+    </div>
+<h3 id="revert">revert</h3>
+<p>set property to <strong>browser default value</strong> (user agent stylesheet)</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
