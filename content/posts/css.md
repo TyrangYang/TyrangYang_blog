@@ -428,7 +428,7 @@ inherit **parent** html container setting
 
 if property can inherit parent, set to _inherit_. Otherwise, set to _initial_
 
-{{< admonition type=tip title=Set All properties  open=true >}}
+{{< admonition type=tip title="Set All properties"  open=true >}}
 `{all: unset}` can set all properties to inherit or initial
 {{< /admonition >}}
 
