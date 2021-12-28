@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"
-        },"genre": "posts","keywords": "javascript","wordcount":  1548 ,
+        },"genre": "posts","keywords": "javascript","wordcount":  1611 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished": "2020-05-03T23:12:40-04:00","dateModified": "2020-05-03T23:12:40-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -105,7 +105,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1548 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1611 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -152,6 +152,7 @@
     </li>
     <li><a href="#snapshot--current-value">Snapshot &amp; current value</a></li>
     <li><a href="#bind--callback">bind &lt;==&gt; callback</a></li>
+    <li><a href="#format-time-string">Format time string</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
@@ -633,6 +634,8 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
@@ -640,7 +643,9 @@
 
 <span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">functionList</span><span class="p">)</span> <span class="p">=&gt;</span>
     <span class="nx">functionList</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
-        <span class="p">(</span><span class="nx">prevFn</span><span class="p">,</span> <span class="nx">curFn</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">curFn</span><span class="p">(</span><span class="nx">prevFn</span><span class="p">(...</span><span class="nx">args</span><span class="p">)),</span>
+        <span class="p">(</span><span class="nx">prevFn</span><span class="p">,</span> <span class="nx">curFn</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span>
+                <span class="nx">curFn</span><span class="p">(</span><span class="nx">prevFn</span><span class="p">(...</span><span class="nx">args</span><span class="p">)),</span>
         <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">val</span>
     <span class="p">);</span>
 
@@ -846,7 +851,43 @@
 <p><code>fn.bind(context, ...args)</code> will return a new function with a given context and given several arguments.</p>
 <p>If <code>context</code> is <strong>null</strong>, <code>bind()</code> same like callback</p>
 <p><code>newFn = fn.bind(null, ...args);</code> == <code>newFn = (...newArgs) =&gt; fn(...args,...newArgs);</code></p>
-</div><div class="post-footer" id="post-footer">
+<h2 id="format-time-string">Format time string</h2>
+<p>The direct way to format a date object is used the second attribute in <code>toLocaleString</code> also as <code>Intl.DateTimeFormat()</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s1">&#39;en-US&#39;</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">hour12</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">year</span><span class="o">:</span> <span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+        <span class="nx">month</span><span class="o">:</span> <span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+        <span class="nx">day</span><span class="o">:</span> <span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+        <span class="nx">minute</span><span class="o">:</span> <span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+        <span class="nx">hour</span><span class="o">:</span> <span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+        <span class="nx">second</span><span class="o">:</span> <span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+        <span class="nx">timeZoneName</span><span class="o">:</span> <span class="s1">&#39;short&#39;</span><span class="p">,</span>
+    <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
