@@ -301,6 +301,18 @@ function Counter() {
 
 > Unlike Redux `dispatch` function doesn't need to add in `useEffect` or `useCallback` dependence list since `dispatch` always be a same function
 
+#### some trick
+
+useReducer is the shortest way to create a state for toggle a boolean value
+
+```js
+const [switch, toggleSwitch] = useReducer((state) => !state, false);
+
+// switch is a boolean
+// toggleSwitch is a function
+<button onClick={()=>{toggleSwitch()}} value={switch} />
+```
+
 ### useRef
 
 > `useRef()` creates a plain JavaScript object. The only **difference** between `useRef()` and creating a `{current: ...}` object yourself is that useRef will give you **the same ref object** on every render.

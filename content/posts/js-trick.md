@@ -290,7 +290,9 @@ const f2 = (val) => `2<${val}>`;
 
 const compose = (...functionList) =>
     functionList.reduce(
-        (prevFn, curFn) => (...args) => curFn(prevFn(...args)),
+        (prevFn, curFn) =>
+            (...args) =>
+                curFn(prevFn(...args)),
         (val) => val
     );
 
@@ -423,3 +425,24 @@ for (var i = 0; i < 10; i++) {
 If `context` is **null**, `bind()` same like callback
 
 `newFn = fn.bind(null, ...args);` == `newFn = (...newArgs) => fn(...args,...newArgs);`
+
+## Format time string
+
+The direct way to format a date object is used the second attribute in `toLocaleString` also as `Intl.DateTimeFormat()`
+
+```js
+const today = new Date();
+
+console.log(
+    today.toLocaleString('en-US', {
+        hour12: true,
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit',
+        minute: '2-digit',
+        hour: '2-digit',
+        second: '2-digit',
+        timeZoneName: 'short',
+    })
+);
+```
