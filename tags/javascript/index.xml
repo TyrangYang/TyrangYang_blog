@@ -47,7 +47,7 @@ How to use Jest function.js
     <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
-    <description><![CDATA[Prototype   prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+    <description><![CDATA[Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
  f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object.]]></description>
 </item><item>
@@ -57,7 +57,7 @@ f1 instantiate a Foo:
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow   Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux]]></description>
+Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow  Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux]]></description>
 </item><item>
     <title>Vue Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>

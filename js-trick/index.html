@@ -9,9 +9,10 @@
 <meta property="og:description" content="warning  Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).    You can read this Article to know What new feature brings in since ES6
  Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   String =&gt; Integer 1 2 3 4  Number(&#39;100&#39;); //100 &#43;&#39;100&#39;; // 100  &#43;&#39;abc&#39;; // NAN   Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/js-trick/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/js-trick/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-03T23:12:40-04:00" />
 <meta property="article:modified_time" content="2020-05-03T23:12:40-04:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Js Trick"/>
 <meta name="twitter:description" content="warning  Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).    You can read this Article to know What new feature brings in since ES6
@@ -170,7 +171,7 @@
 <h3 id="any--boolean">Any =&gt; Boolean</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -180,7 +181,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="o">!!</span><span class="kc">false</span><span class="p">;</span> <span class="c1">// false
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">!!</span><span class="kc">false</span><span class="p">;</span> <span class="c1">// false
 </span><span class="c1"></span><span class="o">!!</span><span class="kc">undefined</span><span class="p">;</span> <span class="c1">// false
 </span><span class="c1"></span><span class="o">!!</span><span class="kc">null</span><span class="p">;</span> <span class="c1">// false
 </span><span class="c1"></span><span class="o">!!</span><span class="kc">NaN</span><span class="p">;</span> <span class="c1">// false
@@ -193,13 +194,13 @@
 </div><h3 id="string--integer">String =&gt; Integer</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">);</span> <span class="c1">//100
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">);</span> <span class="c1">//100
 </span><span class="c1"></span><span class="o">+</span><span class="s1">&#39;100&#39;</span><span class="p">;</span> <span class="c1">// 100
 </span><span class="c1"></span>
 <span class="o">+</span><span class="s1">&#39;abc&#39;</span><span class="p">;</span> <span class="c1">// NAN
@@ -209,7 +210,7 @@
 <h4 id="array--object">Array =&gt; Object</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -229,7 +230,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 
 <span class="kd">let</span> <span class="nx">objFromArr1</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">arr</span><span class="p">);</span>
 
@@ -255,7 +256,7 @@
 <h4 id="object--array-1">Object =&gt; Array</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -269,7 +270,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nx">age</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
 <span class="p">};</span>
@@ -293,7 +294,7 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -307,7 +308,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">doMoreStuff</span><span class="p">()</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">doMoreStuff</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">===</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
         <span class="c1">// Here, `a` will be available for the whole function
 </span><span class="c1"></span>        <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
@@ -325,7 +326,7 @@
 <h3 id="shallow-copy">Shallow copy</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -346,7 +347,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// array
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// array
 </span><span class="c1"></span><span class="kd">let</span> <span class="nx">nums1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
 
 <span class="kd">let</span> <span class="nx">nums2</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">nums1</span><span class="p">];</span>
@@ -370,11 +371,11 @@
 </div><h3 id="deep-copy">deep copy</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// array and obj`
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// array and obj`
 </span><span class="c1"></span><span class="kd">let</span> <span class="nx">copy</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">orig</span><span class="p">));</span>
 </code></pre></td></tr></table>
 </div>
@@ -382,23 +383,23 @@
 <p>ES7 feature</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
 <span class="c1">// new operator added in ES7
 </span><span class="c1"></span><span class="nx">res</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="nullish-coalescing">Nullish coalescing</h2>
-<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator</a></p>
+<p>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator" target="_blank" rel="noopener noreffer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator</a></p>
 <p>The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is <em>null</em> or <em>undefined</em>, and otherwise returns its left-hand side operand.</p>
 <p>This operator used to replace <code>||</code> in some situations that <code>or</code> logic cannot handle elegantly.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -419,7 +420,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">calTax</span> <span class="o">=</span> <span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">taxRate</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">calTax</span> <span class="o">=</span> <span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">taxRate</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">taxRate</span> <span class="o">=</span> <span class="nx">taxRate</span> <span class="o">||</span> <span class="mf">0.05</span><span class="p">;</span> <span class="c1">// if taxRate not provided (undefined), set default to 0.05
 </span><span class="c1"></span>    <span class="c1">// But there is a problem when taxRate to 0
 </span><span class="c1"></span>    <span class="k">return</span> <span class="nx">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nx">taxRate</span><span class="p">);</span>
@@ -443,7 +444,7 @@
 </div><h2 id="optional-chaining">Optional chaining</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -463,7 +464,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
@@ -487,7 +488,7 @@
 <p>If object key has same name with the variable in value, just use variable name.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -495,7 +496,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
     <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
     <span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 
@@ -509,7 +510,7 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -534,7 +535,7 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
 <span class="kd">let</span> <span class="p">[</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="p">...</span><span class="nx">a3</span><span class="p">]</span> <span class="o">=</span> <span class="nx">array</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">);</span> <span class="c1">// 1 2 [ 3, 4 ]
 </span><span class="c1"></span>
@@ -562,7 +563,7 @@
 </div><h3 id="add-space-for-every-four-digit">Add space for every four digit</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -571,7 +572,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;123456789&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;123456789&#39;</span><span class="p">;</span>
 <span class="nx">value</span> <span class="o">=</span> <span class="nx">value</span>
     <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\W/gi</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(.{4})/g</span><span class="p">,</span> <span class="s1">&#39;$1 &#39;</span><span class="p">)</span>
@@ -587,7 +588,7 @@
 <p>Compose a list of function into one. I saw this in create middleware</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -600,7 +601,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">f2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`2&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">functionList</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -621,7 +622,7 @@
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -638,7 +639,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">f1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`1&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">f2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="sb">`2&lt;</span><span class="si">${</span><span class="nx">val</span><span class="si">}</span><span class="sb">&gt;`</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">compose</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">functionList</span><span class="p">)</span> <span class="p">=&gt;</span>
@@ -659,7 +660,7 @@
 <p>Since es6, js provide a special function called tagged template which use template string as parameter</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -674,7 +675,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">normal</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">normal</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -692,7 +693,7 @@
 </div><p>Normally, the tagged template function will handle arguments like:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -700,7 +701,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">tag</span><span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">tag</span><span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strings</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -718,7 +719,7 @@
 <p>The core logic is using HOF to only keep the last trigger.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -729,7 +730,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">debounce</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">debounce</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">);</span>
@@ -745,7 +746,7 @@
 <p>The core logic is using HOF to only keep the first trigger.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -760,7 +761,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">throttle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">throttle</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">delay</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">timer</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">timer</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
@@ -779,7 +780,7 @@
 <p>This problem due to the fact that every time you log out base on same reference or different variable</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -813,7 +814,7 @@
 </span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;val:&#39;</span><span class="p">,</span> <span class="nx">i</span><span class="p">));</span> <span class="c1">// current value
 </span><span class="c1"></span><span class="p">}</span>
 <span class="c1">// 10 10 ... 10 10
@@ -855,7 +856,7 @@
 <p>The direct way to format a date object is used the second attribute in <code>toLocaleString</code> also as <code>Intl.DateTimeFormat()</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -871,7 +872,7 @@
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">today</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
     <span class="nx">today</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s1">&#39;en-US&#39;</span><span class="p">,</span> <span class="p">{</span>
@@ -917,7 +918,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

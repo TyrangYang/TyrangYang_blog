@@ -8,16 +8,17 @@
         <title>Flex and Grid in CSS - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Flex and Grid in CSS" />
 <meta property="og:description" content="Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties." />
+display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-18T12:04:51-07:00" />
 <meta property="article:modified_time" content="2020-08-18T12:04:51-07:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flex and Grid in CSS"/>
 <meta name="twitter:description" content="Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties."/>
+display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -156,12 +157,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/01-container.svg" width="30%" height="30%"/> 
+            </div><div class="content" id="content"><p><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/01-container.svg" width="30%" height="30%"/>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/02-items.svg" width="30%" height="30%"/> 
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/02-items.svg" width="30%" height="30%"/>
 </figure>
 </p>
 <h2 id="flex">Flex</h2>
@@ -170,12 +169,12 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="display">display</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -183,18 +182,17 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div><h3 id="flex-direction">flex-direction</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row</span><span class="o">-</span><span class="kc">reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column</span><span class="o">-</span><span class="kc">reverse</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-direction.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-direction.svg" width="50%" height="50%"/><figcaption>
             <h4>flex-direction</h4>
         </figcaption>
 </figure>
@@ -202,18 +200,17 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="flex-warp">flex-warp</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap</span><span class="o">-</span><span class="kc">reverse</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-wrap.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-wrap.svg" width="50%" height="50%"/><figcaption>
             <h4>flex-wrap</h4>
         </figcaption>
 </figure>
@@ -222,12 +219,12 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>This is a shorthand for the flex-direction and flex-wrap properties.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">column</span> <span class="kc">wrap</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -235,18 +232,17 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div><h3 id="order">order</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
     <span class="k">order</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span> <span class="c">/* default is 0 */</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/order.svg" width="40%" height="40%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/order.svg" width="40%" height="40%"/><figcaption>
             <h4>order</h4>
         </figcaption>
 </figure>
@@ -256,20 +252,19 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p><code>0</code> means fix</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
     <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* default 0 */</span>
     <span class="c">/* Negative numbers are invalid */</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-grow.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-grow.svg" width="50%" height="50%"/><figcaption>
             <h4>flex-grow</h4>
         </figcaption>
 </figure>
@@ -281,19 +276,18 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>This defines the default size of an element before the remaining space is distributed.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
     <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.</p>
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/rel-vs-abs-flex.svg" width="70%" height="70%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/rel-vs-abs-flex.svg" width="70%" height="70%"/><figcaption>
             <h4>All space distributed vs Extra space distributed</h4>
         </figcaption>
 </figure>
@@ -303,12 +297,12 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>Default is <code>0 1 auto</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
     <span class="k">flex</span><span class="p">:</span> <span class="kc">none</span> <span class="o">|</span> <span class="p">[</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-grow&#39;</span> <span class="o">&gt;</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-shrink&#39;</span> <span class="o">&gt;?</span> <span class="o">||</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-basis&#39;</span> <span class="o">&gt;</span> <span class="p">];</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -317,30 +311,28 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>This defines the alignment along the main axis.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">start</span> <span class="o">|</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">between</span> <span class="o">|</span>
-        <span class="kc">space</span><span class="o">-</span><span class="n">around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span> <span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">space-between</span> <span class="o">|</span>
+        <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span> <span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
         <span class="n">unsafe</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content.svg" width="40%" height="40%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content.svg" width="40%" height="40%"/><figcaption>
             <h4>justify-content</h4>
         </figcaption>
 </figure>
 
 <h3 id="align-content">align-content</h3>
 <p>This aligns a flex container’s lines within when there is extra space in the <strong>cross-axis</strong>, similar to how <code>justify-content</code> aligns individual items within the main-axis.</p>
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content.svg" width="40%" height="40%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content.svg" width="40%" height="40%"/><figcaption>
             <h4>align-content</h4>
         </figcaption>
 </figure>
@@ -348,22 +340,21 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="align-items">align-items</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">start</span> <span class="o">|</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">first</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">first</span>
         <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">last</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="n">self-start</span> <span class="o">|</span> <span class="n">self-end</span> <span class="o">+</span> <span class="o">...</span>
         <span class="n">safe</span> <span class="o">|</span> <span class="n">unsafe</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items.svg" width="40%" height="40%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items.svg" width="40%" height="40%"/><figcaption>
             <h4>align-items</h4>
         </figcaption>
 </figure>
@@ -372,18 +363,17 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>This allows the alignment to be overridden for individual flex items.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">align-self</span><span class="p">:</span> <span class="kc">auto</span> <span class="o">|</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">start</span> <span class="o">|</span> <span class="kc">flex</span><span class="o">-</span><span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+    <span class="k">align-self</span><span class="p">:</span> <span class="kc">auto</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-self.svg" width="40%" height="40%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-self.svg" width="40%" height="40%"/><figcaption>
             <h4>align-self</h4>
         </figcaption>
 </figure>
@@ -394,12 +384,12 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="display-1">display</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="k">grid</span> <span class="o">|</span> <span class="kc">inline</span><span class="o">-</span><span class="k">grid</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -412,13 +402,13 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
     <span class="k">grid-template-rows</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
 <span class="p">}</span>
@@ -427,20 +417,19 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div><p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="kc">auto</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-01.svg" width="40%" height="40%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-01.svg" width="40%" height="40%"/><figcaption>
             <h4>grid example</h4>
         </figcaption>
 </figure>
@@ -448,20 +437,19 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>If assign name to each line:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="p">[</span><span class="kc">first</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="n">line2</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">line3</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="n">col4-start</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">five</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="kc">end</span><span class="p">];</span>
     <span class="k">grid-template-rows</span><span class="p">:</span> <span class="p">[</span><span class="n">row1-start</span><span class="p">]</span> <span class="mi">25</span><span class="kt">%</span> <span class="p">[</span><span class="n">row1-end</span><span class="p">]</span> <span class="mi">100</span><span class="kt">px</span> <span class="p">[</span><span class="n">third-line</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="kc">last</span><span class="o">-</span><span class="n">line</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-02.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-02.svg" width="50%" height="50%"/><figcaption>
             <h4>grid example</h4>
         </figcaption>
 </figure>
@@ -470,13 +458,13 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>Determines a grid item’s location within the grid by referring to specific grid lines.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
     <span class="k">grid-column</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="k">grid-row</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -485,20 +473,19 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div><p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
     <span class="k">grid-column</span><span class="p">:</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">span</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* or 3/5 or line3/line5 */</span>
     <span class="k">grid-row</span><span class="p">:</span> <span class="n">third-line</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span> <span class="c">/* or 3/4 or 3/span 2 */</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-column-row.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-column-row.svg" width="50%" height="50%"/><figcaption>
             <h4>grid-column-row</h4>
         </figcaption>
 </figure>
@@ -506,7 +493,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="grid-template-areas--grid-area">grid-template-areas &amp; grid-area</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -529,7 +516,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">grid-template-rows</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
@@ -552,8 +539,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-template-areas.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-template-areas.svg" width="50%" height="50%"/><figcaption>
             <h4>grid-template-area</h4>
         </figcaption>
 </figure>
@@ -562,7 +548,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>A shorthand for setting <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-template-areas</code> in a single declaration.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -570,7 +556,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-template</span><span class="p">:</span>
         <span class="s1">&#39;header header header header&#39;</span> <span class="mi">1</span><span class="n">fr</span>
         <span class="s1">&#39;main main . sidebar&#39;</span> <span class="mi">1</span><span class="n">fr</span>
@@ -581,7 +567,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div><h3 id="gap-grid-gap">gap (grid-gap)</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -590,7 +576,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="n">gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
 
     <span class="c">/*equal to*/</span>
@@ -599,8 +585,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-gap.svg" width="40%" height="40%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-gap.svg" width="40%" height="40%"/><figcaption>
             <h4>grid-gap</h4>
         </figcaption>
 </figure>
@@ -608,37 +593,33 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="justify-items">justify-items</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">justify-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-center.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-center.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-items-center</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-start.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-start.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-items-start</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-end.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-end.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-items-end</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-stretch.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-stretch.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-items-stretch</h4>
         </figcaption>
 </figure>
@@ -647,37 +628,33 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="align-items-1">align-items</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">align-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-center.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-center.svg" width="60%" height="60%"/><figcaption>
             <h4>align-items-center</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-start.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-start.svg" width="60%" height="60%"/><figcaption>
             <h4>align-items-start</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-end.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-end.svg" width="60%" height="60%"/><figcaption>
             <h4>align-items-end</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-stretch.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-stretch.svg" width="60%" height="60%"/><figcaption>
             <h4>align-items-stretch</h4>
         </figcaption>
 </figure>
@@ -688,57 +665,50 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="justify-content-1">justify-content</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">around</span> <span class="o">|</span>
-        <span class="kc">space</span><span class="o">-</span><span class="n">between</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span>
+        <span class="kc">space-between</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-center.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-center.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-center</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-start.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-start.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-start</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-end.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-end.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-end</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-stretch.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-stretch.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-stretch</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-around.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-around.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-space-around</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-between.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-between.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-space-between</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-evenly.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-evenly.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-content-space-evenly</h4>
         </figcaption>
 </figure>
@@ -747,57 +717,50 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="align-content-1">align-content</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">align-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">between</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">align-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space-between</span>
         <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-center.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-center.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-center</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-start.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-start.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-start</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-end.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-end.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-end</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-stretch.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-stretch.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-stretch</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-around.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-around.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-space-around</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-between.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-between.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-space-between</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-evenly.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-evenly.svg" width="60%" height="60%"/><figcaption>
             <h4>align-content-space-evenly</h4>
         </figcaption>
 </figure>
@@ -808,37 +771,33 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <h3 id="justify-self">justify-self</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
     <span class="k">justify-self</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-center.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-center.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-self-center</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-start.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-start.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-self-start</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-end.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-end.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-self-end</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-stretch.svg" width="60%" height="60%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-stretch.svg" width="60%" height="60%"/><figcaption>
             <h4>justify-self-stretch</h4>
         </figcaption>
 </figure>
@@ -849,7 +808,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -863,7 +822,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">90</span><span class="kt">px</span> <span class="mi">90</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -877,8 +836,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-01.svg" width="60%" height="60%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-01.svg" width="60%" height="60%"/><figcaption>
             <h4>explicit grid</h4>
         </figcaption>
 </figure>
@@ -886,18 +844,17 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>If use <code>grid-auto-columns</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-auto-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-02.svg" width="60%" height="60%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-02.svg" width="60%" height="60%"/><figcaption>
             <h4>implicit grid</h4>
         </figcaption>
 </figure>
@@ -906,12 +863,12 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <p>If you have grid items that you don’t explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">row</span> <span class="n">dense</span> <span class="o">|</span> <span class="kc">column</span> <span class="n">dense</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -919,7 +876,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div><p>Example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -940,7 +897,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
@@ -961,26 +918,24 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-01.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-01.svg" width="50%" height="50%"/><figcaption>
             <h4>implicit grid</h4>
         </figcaption>
 </figure>
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-02.svg" width="50%" height="50%"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-02.svg" width="50%" height="50%"/><figcaption>
             <h4>implicit grid</h4>
         </figcaption>
 </figure>
@@ -991,12 +946,12 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="o">-</span><span class="kc">fill</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="mi">200</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -1032,7 +987,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

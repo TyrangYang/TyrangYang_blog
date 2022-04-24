@@ -8,9 +8,10 @@
         <title>SASS (SCSS) features - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="SASS (SCSS) features" />
 <meta property="og:description" content="SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/sass/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/sass/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-18T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SASS (SCSS) features"/>
 <meta name="twitter:description" content="SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p."/>
@@ -26,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/sass\/"
-        },"genre": "posts","keywords": "css, course note","wordcount":  548 ,
+        },"genre": "posts","keywords": "css, course note","wordcount":  547 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/sass\/","datePublished": "2019-09-18T00:00:00+00:00","dateModified": "2019-09-18T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -103,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">SASS (SCSS) features</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-18">2019-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;548 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-18">2019-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;547 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -134,7 +135,7 @@
 <h3 id="variables">Variables</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -143,19 +144,19 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$font-stack</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="no">sans-serif</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$font-stack</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="ni">sans-serif</span><span class="p">;</span>
 <span class="nv">$primary-color</span><span class="o">:</span> <span class="mh">#333</span><span class="p">;</span>
 
 <span class="nt">body</span> <span class="p">{</span>
-    <span class="nt">font</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span> <span class="err">$</span><span class="nt">font-stack</span><span class="p">;</span>
-    <span class="nt">color</span><span class="nd">:</span> <span class="err">$</span><span class="nt">primary-color</span><span class="p">;</span>
+    <span class="na">font</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span> <span class="nv">$font-stack</span><span class="p">;</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="operator">Operator</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -170,47 +171,47 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.container</span> <span class="p">{</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.container</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="o">]</span> <span class="p">{</span>
-    <span class="nt">float</span><span class="nd">:</span> <span class="nt">left</span><span class="p">;</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">600px</span> <span class="o">/</span> <span class="nt">960px</span> <span class="o">*</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+    <span class="na">float</span><span class="o">:</span> <span class="ni">left</span><span class="p">;</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">600</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">960</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;complementary&#39;</span><span class="o">]</span> <span class="p">{</span>
-    <span class="nt">float</span><span class="nd">:</span> <span class="nt">right</span><span class="p">;</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">300px</span> <span class="o">/</span> <span class="nt">960px</span> <span class="o">*</span> <span class="nt">100</span><span class="err">%</span><span class="p">;</span>
+    <span class="na">float</span><span class="o">:</span> <span class="ni">right</span><span class="p">;</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">300</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">960</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="string-interpolation">String interpolation</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$name</span><span class="o">:</span> <span class="n">foo</span><span class="p">;</span>
-<span class="nv">$attr</span><span class="o">:</span> <span class="no">border</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$name</span><span class="o">:</span> <span class="n">foo</span><span class="p">;</span>
+<span class="nv">$attr</span><span class="o">:</span> <span class="n">border</span><span class="p">;</span>
 <span class="nt">p</span><span class="nc">.</span><span class="si">#{</span><span class="nv">$name</span><span class="si">}</span> <span class="p">{</span>
-    <span class="nn">#</span><span class="p">{</span><span class="err">$</span><span class="nt">attr</span><span class="p">}</span><span class="nt">-color</span><span class="nd">:</span> <span class="nt">blue</span><span class="p">;</span>
+    <span class="si">#{</span><span class="nv">$attr</span><span class="si">}</span><span class="na">-color</span><span class="o">:</span> <span class="no">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This is compile to:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">.</span><span class="nc">foo</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="nt">p</span><span class="p">.</span><span class="nc">foo</span> <span class="p">{</span>
     <span class="k">border-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -218,7 +219,7 @@
 </div><h3 id="nesting">Nesting</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -229,13 +230,13 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#main</span> <span class="nt">p</span> <span class="p">{</span>
-    <span class="nt">color</span><span class="nd">:</span> <span class="nn">#00ff00</span><span class="p">;</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">90</span><span class="err">%</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#main</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="mh">#00ff00</span><span class="p">;</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span>
 
     <span class="nc">.redbod</span> <span class="p">{</span>
-        <span class="nt">background-color</span><span class="nd">:</span> <span class="nn">#ff0000</span><span class="p">;</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="nn">#000000</span><span class="p">;</span>
+        <span class="na">background-color</span><span class="o">:</span> <span class="mh">#ff0000</span><span class="p">;</span>
+        <span class="na">color</span><span class="o">:</span> <span class="mh">#000000</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -243,7 +244,7 @@
 </div><p>This is compile to:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -253,7 +254,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">main</span> <span class="nt">p</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">#</span><span class="nn">main</span> <span class="nt">p</span> <span class="p">{</span>
     <span class="k">color</span><span class="p">:</span> <span class="mh">#00ff00</span><span class="p">;</span>
     <span class="k">width</span><span class="p">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
@@ -267,7 +268,7 @@
 <p>We can use the &amp; symbol to state “for the selector I am nested inside with these other selectors” or “with this selector than the current selector”</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -279,14 +280,14 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nt">a</span> <span class="p">{</span>
-    <span class="nt">font-weight</span><span class="nd">:</span> <span class="nt">bold</span><span class="p">;</span>
-    <span class="nt">text-decoration</span><span class="nd">:</span> <span class="nt">none</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nt">a</span> <span class="p">{</span>
+    <span class="na">font-weight</span><span class="o">:</span> <span class="ni">bold</span><span class="p">;</span>
+    <span class="na">text-decoration</span><span class="o">:</span> <span class="ni">none</span><span class="p">;</span>
     <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-        <span class="nt">text-decoration</span><span class="nd">:</span> <span class="nt">underline</span><span class="p">;</span>
+        <span class="na">text-decoration</span><span class="o">:</span> <span class="ni">underline</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="nt">body</span><span class="nc">.firebox</span> <span class="k">&amp;</span> <span class="p">{</span>
-        <span class="nt">font-weight</span><span class="nd">:</span> <span class="nt">normal</span><span class="p">;</span>
+        <span class="na">font-weight</span><span class="o">:</span> <span class="ni">normal</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -294,7 +295,7 @@
 </div><p>This is compile to:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -306,7 +307,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">a</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="nt">a</span> <span class="p">{</span>
     <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
     <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
@@ -321,16 +322,16 @@
 </div><h3 id="imports">Imports</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@import</span> <span class="err">’</span><span class="n">filename</span><span class="o">.</span><span class="n">scss</span><span class="err">’</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@import</span> <span class="err">’</span><span class="n">filename</span><span class="o">.</span><span class="n">scss</span><span class="err">’</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="nested-media-queries">Nested Media Queries</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -338,10 +339,10 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.sidebar</span> <span class="p">{</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">300px</span><span class="p">;</span>
-    <span class="k">@media</span> <span class="n">screen</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">or</span><span class="n">ientation</span><span class="o">:</span> <span class="no">landscape</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nt">width</span><span class="nd">:</span> <span class="nt">500px</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.sidebar</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">@media</span> <span class="ni">screen</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">or</span><span class="n">ientation</span><span class="o">:</span> <span class="n">landscape</span><span class="p">)</span> <span class="p">{</span>
+        <span class="na">width</span><span class="o">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -349,7 +350,7 @@
 </div><p>This is compile to:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -359,7 +360,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">sidebar</span> <span class="p">{</span>
     <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="o">:</span> <span class="nt">landscape</span><span class="o">)</span> <span class="p">{</span>
@@ -372,7 +373,7 @@
 </div><h3 id="general-control">General control</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -398,28 +399,28 @@
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$type</span><span class="o">:</span> <span class="n">monster</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$type</span><span class="o">:</span> <span class="n">monster</span><span class="p">;</span>
 <span class="nt">p</span> <span class="p">{</span>
     <span class="k">@if</span> <span class="nv">$type</span> <span class="o">==</span> <span class="n">ocean</span> <span class="p">{</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="nt">blue</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">type</span> <span class="o">==</span> <span class="nt">matador</span> <span class="p">{</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="nt">red</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">@else</span> <span class="nt">if</span> <span class="err">$</span><span class="nt">type</span> <span class="o">==</span> <span class="nt">monster</span> <span class="p">{</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="nt">green</span><span class="p">;</span>
+        <span class="na">color</span><span class="o">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">@else if</span> <span class="nv">$type</span> <span class="o">==</span> <span class="n">matador</span> <span class="p">{</span>
+        <span class="na">color</span><span class="o">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">@else if</span> <span class="nv">$type</span> <span class="o">==</span> <span class="n">monster</span> <span class="p">{</span>
+        <span class="na">color</span><span class="o">:</span> <span class="no">green</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">@else</span> <span class="p">{</span>
-        <span class="nt">color</span><span class="nd">:</span> <span class="nt">black</span><span class="p">;</span>
+        <span class="na">color</span><span class="o">:</span> <span class="no">black</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="k">@for</span> <span class="nv">$i</span> <span class="ow">from</span> <span class="mi">1</span> <span class="ow">through</span> <span class="mi">3</span> <span class="p">{</span>
     <span class="nc">.item-</span><span class="si">#{</span><span class="nv">$i</span><span class="si">}</span> <span class="p">{</span>
-        <span class="nt">width</span><span class="nd">:</span> <span class="nt">2em</span> <span class="o">*</span> <span class="err">$</span><span class="nt">i</span><span class="p">;</span>
+        <span class="na">width</span><span class="o">:</span> <span class="mi">2</span><span class="kt">em</span> <span class="o">*</span> <span class="nv">$i</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">@each</span> <span class="err">$</span><span class="nt">animal</span> <span class="nt">in</span> <span class="nt">puma</span><span class="o">,</span> <span class="nt">sea-slug</span><span class="o">,</span> <span class="nt">egret</span><span class="o">,</span> <span class="nt">salamander</span> <span class="p">{</span>
+<span class="k">@each</span> <span class="nv">$animal</span> <span class="ow">in</span> <span class="n">puma</span><span class="o">,</span> <span class="n">sea-slug</span><span class="o">,</span> <span class="n">egret</span><span class="o">,</span> <span class="n">salamander</span> <span class="p">{</span>
     <span class="nc">.</span><span class="si">#{</span><span class="nv">$animal</span><span class="si">}</span><span class="nc">-icon</span> <span class="p">{</span>
-        <span class="nt">background-image</span><span class="nd">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;/image/</span><span class="si">#{</span><span class="nv">$animal</span><span class="si">}</span><span class="s1">.png&#39;</span><span class="o">)</span><span class="p">;</span>
+        <span class="na">background-image</span><span class="o">:</span> <span class="sx">url(&#39;/image/</span><span class="si">#{</span><span class="nv">$animal</span><span class="si">}</span><span class="sx">.png&#39;)</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -427,7 +428,7 @@
 </div><h3 id="mixins">Mixins</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -438,10 +439,10 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> box-shadow</span><span class="p">(</span><span class="nv">$shadows</span><span class="o">...</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nt">-moz-box-shadow</span><span class="nd">:</span> <span class="err">$</span><span class="nt">shadows</span><span class="p">;</span>
-    <span class="nt">-webkit-box-shadow</span><span class="nd">:</span> <span class="err">$</span><span class="nt">shadows</span><span class="p">;</span>
-    <span class="nt">box-shadow</span><span class="nd">:</span> <span class="err">$</span><span class="nt">shadows</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="k">@mixin</span><span class="nf"> box-shadow</span><span class="p">(</span><span class="nv">$shadows</span><span class="o">...</span><span class="p">)</span> <span class="p">{</span>
+    <span class="na">-moz-box-shadow</span><span class="o">:</span> <span class="nv">$shadows</span><span class="p">;</span>
+    <span class="na">-webkit-box-shadow</span><span class="o">:</span> <span class="nv">$shadows</span><span class="p">;</span>
+    <span class="na">box-shadow</span><span class="o">:</span> <span class="nv">$shadows</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.shadows</span> <span class="p">{</span>
@@ -452,14 +453,14 @@
 </div><p>This is compile to:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">box-shadow</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="nt">box-shadow</span> <span class="p">{</span>
     <span class="kp">-moz-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mh">#666</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">6</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mh">#999</span><span class="p">;</span>
     <span class="kp">-webkit-</span><span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mh">#666</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">6</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mh">#999</span><span class="p">;</span>
     <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mh">#666</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">6</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span> <span class="mh">#999</span><span class="p">;</span>
@@ -469,7 +470,7 @@
 </div><h3 id="functions">Functions</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -481,35 +482,35 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$grid-width</span><span class="o">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nv">$grid-width</span><span class="o">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
 <span class="nv">$gutter-width</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
 
-<span class="k">@function</span> <span class="nt">grid-width</span><span class="o">(</span><span class="err">$</span><span class="nt">n</span><span class="o">)</span> <span class="p">{</span>
-    <span class="k">@return</span> <span class="err">$</span><span class="nt">n</span> <span class="o">*</span> <span class="err">$</span><span class="nt">grid-width</span> <span class="o">+</span> <span class="o">(</span><span class="err">$</span><span class="nt">n</span> <span class="nt">-</span> <span class="nt">1</span><span class="o">)</span> <span class="o">*</span> <span class="err">$</span><span class="nt">gutter-width</span><span class="p">;</span>
+<span class="k">@function</span><span class="nf"> grid-width</span><span class="p">(</span><span class="nv">$n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@return</span> <span class="nv">$n</span> <span class="o">*</span> <span class="nv">$grid-width</span> <span class="o">+</span> <span class="p">(</span><span class="nv">$n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nv">$gutter-width</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nn">#sidebar</span> <span class="p">{</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">grid-width</span><span class="o">(</span><span class="nt">5</span><span class="o">)</span><span class="p">;</span>
+    <span class="na">width</span><span class="o">:</span> <span class="nf">grid-width</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>This is compile to:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#sidebar</span> <span class="p">{</span>
-    <span class="nt">width</span><span class="nd">:</span> <span class="nt">240px</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#sidebar</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">240</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="extending">Extending</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -520,21 +521,21 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.error</span> <span class="p">{</span>
-    <span class="nt">border</span><span class="nd">:</span> <span class="nt">1px</span> <span class="nn">#f00</span><span class="p">;</span>
-    <span class="nt">background-color</span><span class="nd">:</span> <span class="nn">#fdd</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nc">.error</span> <span class="p">{</span>
+    <span class="na">border</span><span class="o">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#f00</span><span class="p">;</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#fdd</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.seriousError</span> <span class="p">{</span>
     <span class="k">@extend</span> <span class="nc">.error</span><span class="p">;</span>
-    <span class="nt">border-width</span><span class="nd">:</span> <span class="nt">3px</span><span class="p">;</span>
+    <span class="na">border-width</span><span class="o">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="placeholders">Placeholders</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -545,14 +546,14 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#context</span> <span class="nt">a</span><span class="err">%</span><span class="nt">extreme</span> <span class="p">{</span>
-    <span class="nt">color</span><span class="nd">:</span> <span class="nt">blue</span><span class="p">;</span>
-    <span class="nt">font-weight</span><span class="nd">:</span> <span class="nt">bold</span><span class="p">;</span>
-    <span class="nt">font-size</span><span class="nd">:</span> <span class="nt">2em</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="nn">#context</span> <span class="nt">a</span><span class="o">%</span><span class="nc">extreme</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="na">font-weight</span><span class="o">:</span> <span class="ni">bold</span><span class="p">;</span>
+    <span class="na">font-size</span><span class="o">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="nc">.notice</span> <span class="p">{</span>
-    <span class="k">@extend</span> <span class="err">%</span><span class="nt">extreme</span><span class="p">;</span>
+    <span class="k">@extend</span> <span class="o">%</span><span class="nc">extreme</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -586,7 +587,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

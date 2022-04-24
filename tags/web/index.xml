@@ -47,7 +47,7 @@ Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#
     <description><![CDATA[Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1  npx create-react-app my-app --template redux   life cycle  Class component lifecycle    Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
 1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not]]></description>
 </item><item>
     <title>Web development review</title>

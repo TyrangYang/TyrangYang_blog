@@ -6,16 +6,17 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Prototype Inheritance in Javascript - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Prototype Inheritance in Javascript" />
-<meta property="og:description" content="Prototype   prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+<meta property="og:description" content="Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
  f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-21T16:37:45-07:00" />
 <meta property="article:modified_time" content="2020-08-21T16:37:45-07:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Prototype Inheritance in Javascript"/>
-<meta name="twitter:description" content="Prototype   prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+<meta name="twitter:description" content="Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
  f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object."/>
 <meta name="application-name" content="TyrangYang_Blog">
@@ -125,28 +126,27 @@ f1 instantiate a Foo:
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="prototype">Prototype</h2>
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/prototype.png"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/prototype.png"/><figcaption>
             <h4>prototype</h4>
         </figcaption>
 </figure>
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
-</span><span class="c1"></span><span class="nx">f1</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
+</span><span class="c1"></span><span class="nx">f1</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true
 </span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">f1</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">f1</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
 </span></code></pre></td></tr></table>
 </div>
 </div><p>f1 don&rsquo;t have <code>constructor</code>, however depends on <a href="#prototype-chain" rel="">prototype chain</a> engine will search <code>f1.__proto__</code>. This is line is equivalent to <code>Foo.prototype.constructor === Foo</code></p>
@@ -159,22 +159,22 @@ f1 instantiate a Foo:
 <p>Syntax is <code>Object.create(proto[, propertiesObject])</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
-<span class="nx">newObj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="nx">newObj</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="new">new</h2>
 <p>When js running this line:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(...);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(...);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><code>new</code> actually doing:</p>
@@ -187,7 +187,7 @@ f1 instantiate a Foo:
 <h2 id="prototype-chain">Prototype Chain</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -206,7 +206,7 @@ f1 instantiate a Foo:
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">func</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
     <span class="p">},</span>
@@ -214,7 +214,7 @@ f1 instantiate a Foo:
 
 <span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
 
-<span class="nx">newObj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
+<span class="nx">newObj</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
 </span><span class="c1"></span>
 <span class="nx">newObj</span><span class="p">;</span> <span class="c1">// {}
 </span><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">func</span><span class="p">;</span> <span class="c1">// f(){return this.x}
@@ -228,7 +228,7 @@ f1 instantiate a Foo:
 </div><h2 id="es5-inheritance">ES5 inheritance</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -255,7 +255,7 @@ f1 instantiate a Foo:
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">SuperType</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">SuperType</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
 <span class="p">}</span>
@@ -282,8 +282,7 @@ f1 instantiate a Foo:
 </span><span class="c1"></span><span class="nx">instance</span><span class="p">.</span><span class="nx">sayAge</span><span class="p">();</span> <span class="c1">// &#39;17&#39;
 </span></code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/es5"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/es5"/><figcaption>
             <h4>es5</h4>
         </figcaption>
 </figure>
@@ -291,7 +290,7 @@ f1 instantiate a Foo:
 <h2 id="es6-inheritance">ES6 inheritance</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -314,7 +313,7 @@ f1 instantiate a Foo:
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">SuperType</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">SuperType</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
@@ -337,8 +336,7 @@ f1 instantiate a Foo:
 </span><span class="c1"></span><span class="nx">instance</span><span class="p">.</span><span class="nx">sayAge</span><span class="p">();</span> <span class="c1">// &#39;17&#39;
 </span></code></pre></td></tr></table>
 </div>
-</div><figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/es6"/> <figcaption>
+</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/es6"/><figcaption>
             <h4>es6</h4>
         </figcaption>
 </figure>
@@ -373,7 +371,7 @@ f1 instantiate a Foo:
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

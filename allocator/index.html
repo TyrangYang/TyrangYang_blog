@@ -13,9 +13,10 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
 所謂 C&#43;&#43; new handler 機制是，你可以要求系統在記憶體配置需求無法被滿足時， 喚起一個你所指定的函式。換句話說一旦 ::operator new 無法達成任務，在丟出 std::bad_alloc 異常狀態之前，會先呼叫由客端指定的處理常式。此處理常式 通常即被稱為 new-handler。new-handler 解決記憶體不足的作法有特定的模式。
 注意，SGI 以 malloc 而非 ::operator new 來配置記憶體(我所能夠想像的一 個原因是歷史因素，另一個原因是 C&#43;&#43; 並未提供相應於 realloc() 的記憶體配 置動作)，因此 SGI 不能直接使用 C&#43;&#43; 的 set_new_handler()，必須模擬一個 類似的 set_malloc_handler()。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/allocator/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/allocator/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-07-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-07-21T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Allocator in c&#43;&#43;"/>
 <meta name="twitter:description" content="Allocator is for memory 配置内存空间 -&gt; 构建(constructor) -&gt; 解构(destructor) -&gt; 释放内存空间
@@ -36,7 +37,7 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/allocator\/"
-        },"genre": "posts","keywords": "c\x2b\x2b, STL","wordcount":  314 ,
+        },"genre": "posts","keywords": "c\u002b\u002b, STL","wordcount":  314 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/allocator\/","datePublished": "2019-07-21T00:00:00+00:00","dateModified": "2019-07-21T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -128,13 +129,13 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
 <p>SGI 第二級配置器的作法是，如果區塊夠大，超過 128 bytes，就移交第一級配置 器處理。當區塊小於 128 bytes，則以記憶池(memory pool)管理，此法又稱為次 層配置(sub-allocation):每次配置一大塊記憶體，並維護對應之自由串列(free- list)。下次若再有相同大小的記憶體需求，就直接從 free-lists 中撥出。如果客端 釋還小額區塊，就由配置器回收到 free-lists 中 — 是的，別忘了，配置器除了負 責配置，也負責回收。為了方便管理，SGI 第二級配置器會主動將任何小額區塊 的記憶體需求量上調至 8 的倍數(例如客端要求 30 bytes，就自動調整為 32 bytes)，並維護 16 個 free-lists，各自管理大小分別為 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128 bytes 的小額區塊。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">union</span> <span class="nc">obj</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">union</span> <span class="nc">obj</span> <span class="p">{</span>
     <span class="k">union</span> <span class="nc">obj</span> <span class="o">*</span> <span class="n">free_list_link</span><span class="p">;</span>
     <span class="kt">char</span> <span class="n">client_data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="cm">/* The client sees this. */</span>
 <span class="p">};</span>
@@ -192,7 +193,7 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

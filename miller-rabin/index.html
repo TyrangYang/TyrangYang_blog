@@ -8,9 +8,10 @@
         <title>Miller Rabin Algorithm - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Miller Rabin Algorithm" />
 <meta property="og:description" content="What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-13T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Miller Rabin Algorithm"/>
 <meta name="twitter:description" content="What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis."/>
@@ -111,7 +112,7 @@
 <h3 id="code">Code</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -131,7 +132,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// a^n mod m
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// a^n mod m
 </span><span class="c1"></span><span class="kt">uint64_t</span> <span class="nf">powermod</span><span class="p">(</span><span class="kt">uint64_t</span> <span class="n">a</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">n</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">m</span><span class="p">){</span>
 	<span class="kt">uint64_t</span> <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 	<span class="c1">// a^11 11 = 8 + 2 + 1 = 01011 // a^11 = a^(1+2+8) = a^1 * a^2 * a^8
@@ -172,7 +173,7 @@
 <p>Here is the sample code</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -243,7 +244,7 @@
 </span><span class="lnt">69
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -344,7 +345,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

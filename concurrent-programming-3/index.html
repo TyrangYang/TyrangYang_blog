@@ -13,9 +13,10 @@ Permission must ≥ 0.
 Semaphore solution for the MEP  #criticalSection &#43; permissions = 1 #criticalSection = #acquires − #releases  Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
 Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared  static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &lt; 50; i&#43;&#43;){ mutex." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-16T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concurrent Programming Course note 3"/>
 <meta name="twitter:description" content="Semaphore Initialize how many permissions you will use.
@@ -127,7 +128,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 <h3 id="java">Java</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -148,7 +149,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Turnstile</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Turnstile</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
     <span class="kd">static</span> <span class="kd">volatile</span> <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="c1">// keyword is recommended for variables that are shared
 </span><span class="c1"></span>    <span class="kd">static</span> <span class="n">Semaphore</span> <span class="n">mutex</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span> <span class="o">(</span><span class="n">1</span><span class="o">);</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
@@ -173,17 +174,17 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 <p>Possibility of starvation is caused by the fact that blocked processes are placed in a <strong>set</strong> of processes. But this can be remedied by changing the set to be a queue.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Semaphore</span><span class="o">(</span><span class="kt">int</span> <span class="n">permits</span> <span class="o">,</span> <span class="kt">boolean</span> <span class="n">fair</span><span class="o">)</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Semaphore</span><span class="o">(</span><span class="kt">int</span> <span class="n">permits</span> <span class="o">,</span> <span class="kt">boolean</span> <span class="n">fair</span><span class="o">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>When fairness is set to true, the semaphore gives permits to access mutual resources in the order the threads have asked for it (FIFO).</p>
 <h2 id="dining-philosophers">Dining Philosophers</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -206,7 +207,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">semaphore</span><span class="o">[]</span> <span class="n">forks</span> <span class="o">=</span> <span class="o">[</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">];</span> <span class="c1">// N = 5;
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">semaphore</span><span class="o">[]</span> <span class="n">forks</span> <span class="o">=</span> <span class="o">[</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">,</span><span class="n">1</span><span class="o">];</span> <span class="c1">// N = 5;
 </span><span class="c1"></span><span class="n">semaphore</span> <span class="n">chairs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">semaphore</span><span class="o">(</span><span class="n">4</span><span class="o">);</span> <span class="c1">// N-1
 </span><span class="c1">// if all get the left fork, it is deadlock. Therefore,
 </span><span class="c1">// At least one can get both forks when only four sit in table
@@ -232,7 +233,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </div><h2 id="producer--consumer">Producer &amp; Consumer</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -263,7 +264,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">
 <span class="n">Object</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Object</span><span class="o">[</span><span class="n">N</span><span class="o">];</span> <span class="c1">//size N
 </span><span class="c1"></span><span class="n">Semaphore</span> <span class="n">prem_to_produce</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">N</span><span class="o">);</span>
 <span class="n">Semaphore</span> <span class="n">prem_to_consume</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">);</span> <span class="c1">// 0 means you want produce first.
@@ -300,7 +301,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 <p>The first one grab the resource and the last one release it.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -328,7 +329,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Semaphore</span> <span class="n">resource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Semaphore</span> <span class="n">resource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
 <span class="n">Semaphore</span> <span class="n">mutexR</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">readers</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
 <span class="n">thread</span> <span class="n">Writer</span><span class="o">:</span> <span class="o">{</span>
@@ -360,7 +361,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 <h2 id="quiz-3">Quiz 3</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -394,7 +395,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Semaphore</span> <span class="n">permToLoad</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Semaphore</span> <span class="n">permToLoad</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
 <span class="n">Semaphore</span> <span class="n">doneLoading</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
 
 <span class="n">Semaphore</span> <span class="n">track</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">1</span><span class="o">);</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">1</span><span class="o">)};</span>
@@ -431,7 +432,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </div><h2 id="car">Car</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -503,7 +504,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </span><span class="lnt">70
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">
 <span class="n">Semaphore</span> <span class="n">permToProcess</span> <span class="o">=</span> <span class="o">{</span><span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">),</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">),</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">)};</span>
 <span class="n">Semaphore</span> <span class="n">doneProcessing</span> <span class="o">=</span> <span class="o">{</span><span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">),</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">),</span> <span class="k">new</span> <span class="n">Semaphore</span><span class="o">(</span><span class="n">0</span><span class="o">)};</span>
 
@@ -605,7 +606,7 @@ Absence of deadlock: It never happens that #permission = 0 and #criticalSection 
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

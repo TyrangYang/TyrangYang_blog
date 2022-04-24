@@ -12,9 +12,10 @@ Here is: Github
 Basically, you can combine any number of classNames.
 1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-11-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-11-15T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to have a dynamic class name"/>
 <meta name="twitter:description" content="In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
@@ -117,11 +118,11 @@ Basically, you can combine any number of classNames.
 <p>Basically, you can combine any number of classNames.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">classNames</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;classNames&#39;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">classNames</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;classNames&#39;</span><span class="p">);</span>
 <span class="nx">classNames</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">bar</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">duck</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span> <span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">quux</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; &#39;foo bar baz quux&#39;
 </span></code></pre></td></tr></table>
 </div>
@@ -129,12 +130,12 @@ Basically, you can combine any number of classNames.
 <p>You can just use template literals.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
 <span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">condition</span> <span class="o">?</span> <span class="s1">&#39;first&#39;</span> <span class="o">:</span> <span class="s1">&#39;second&#39;</span><span class="p">;</span> <span class="c1">// res = first
 </span></code></pre></td></tr></table>
@@ -142,12 +143,12 @@ Basically, you can combine any number of classNames.
 </div><p>Therefore when your write className in react:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">condition</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">condition</span> <span class="o">?</span> <span class="s1">&#39;&#39;</span> <span class="o">:</span> <span class="s1">&#39;error&#39;</span><span class="p">;</span> <span class="p">}</span><span class="o">&gt;</span> <span class="nx">TEST</span><span class="o">&lt;</span><span class="sr">/div&gt; /</span><span class="o">/</span> <span class="kr">class</span> <span class="nx">name</span> <span class="nx">can</span> <span class="nx">be</span> <span class="nx">exist</span> <span class="nx">or</span> <span class="nx">not</span>
 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">condition</span> <span class="o">?</span> <span class="s1">&#39;right&#39;</span> <span class="o">:</span> <span class="s1">&#39;error&#39;</span><span class="p">;</span> <span class="p">}</span><span class="o">&gt;</span> <span class="nx">TEST</span><span class="o">&lt;</span><span class="sr">/div&gt; /</span><span class="o">/</span> <span class="kr">class</span> <span class="nx">name</span> <span class="nx">can</span> <span class="nx">be</span> <span class="nx">right</span> <span class="nx">or</span> <span class="nx">error</span>
 </code></pre></td></tr></table>
@@ -183,7 +184,7 @@ Basically, you can combine any number of classNames.
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

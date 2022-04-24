@@ -11,9 +11,10 @@ What is Lambda in C&#43;&#43; Lambda expression is a new feature since c&#43;&#4
 How Lambda expressions are composed [capture](parameters) mutable -&gt; return type {statement}
 1 2 3 4  // ... #include &lt;functional&gt;// ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a&#43;b;};   capture Capture variables from context." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-26T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Lambda in C&#43;&#43;"/>
 <meta name="twitter:description" content="Introduction of Lambda expression in C&#43;&#43; and how to use it.
@@ -32,7 +33,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/lambda-cpp\/"
-        },"genre": "posts","keywords": "lambda, c\x2b\x2b","wordcount":  613 ,
+        },"genre": "posts","keywords": "lambda, c\u002b\u002b","wordcount":  613 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/lambda-cpp\/","datePublished": "2020-01-26T00:00:00+00:00","dateModified": "2020-01-26T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -115,13 +116,13 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 <p>[<em>capture</em>](<em>parameters</em>) <em>mutable</em> -&gt; <em>return type</em> {<em>statement</em>}</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// ...
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// ...
 </span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="c1">// ...
 </span><span class="c1"></span><span class="nl">std</span><span class="p">:</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">add</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;};</span>
@@ -132,34 +133,34 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 <table>
 <thead>
 <tr>
-<th align="center">capture statement</th>
-<th align="center">meaning</th>
+<th style="text-align:center">capture statement</th>
+<th style="text-align:center">meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">[]</td>
-<td align="center">not capture any variable from context</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">not capture any variable from context</td>
 </tr>
 <tr>
-<td align="center">[x, &amp;y]</td>
-<td align="center">capture x by passing value, y by passing reference</td>
+<td style="text-align:center">[x, &amp;y]</td>
+<td style="text-align:center">capture x by passing value, y by passing reference</td>
 </tr>
 <tr>
-<td align="center">[&amp;]</td>
-<td align="center">capture all variables by passing reference</td>
+<td style="text-align:center">[&amp;]</td>
+<td style="text-align:center">capture all variables by passing reference</td>
 </tr>
 <tr>
-<td align="center">[=]</td>
-<td align="center">capture all variables by passing value</td>
+<td style="text-align:center">[=]</td>
+<td style="text-align:center">capture all variables by passing value</td>
 </tr>
 <tr>
-<td align="center">[&amp;,x]</td>
-<td align="center">capture all variables by passing reference, expect <em>x</em></td>
+<td style="text-align:center">[&amp;,x]</td>
+<td style="text-align:center">capture all variables by passing reference, expect <em>x</em></td>
 </tr>
 <tr>
-<td align="center">[=,&amp;x]</td>
-<td align="center">capture all variables by passing value, expect <em>x</em></td>
+<td style="text-align:center">[=,&amp;x]</td>
+<td style="text-align:center">capture all variables by passing value, expect <em>x</em></td>
 </tr>
 </tbody>
 </table>
@@ -177,7 +178,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 <p>loop each element in a container (like <code>map</code> or <code>reduce</code>)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -197,7 +198,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">some_list</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">some_list</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">some_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 0 1 2 3 4
 </span><span class="c1"></span>
@@ -220,7 +221,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </div><h3 id="function">Function</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -237,7 +238,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -258,7 +259,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 <p>Same with function but you have to specify the type of function instead of <code>auto</code>. Because compiler cannot automatically detected the type recursive function when calling itself.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -276,7 +277,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -297,7 +298,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </div><p>Meanwhile, tail recursion:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -322,7 +323,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -377,7 +378,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

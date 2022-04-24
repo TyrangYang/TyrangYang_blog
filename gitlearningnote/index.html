@@ -12,9 +12,10 @@ Git Data Transport Map Git have four working zones. This map shows that using wh
 This photo is provide by osteele
 Git commend and usage Initialize the git repository git init" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-17T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git overview"/>
 <meta name="twitter:description" content="Here have some good pictures that is helpful for understanding git and contain the record for git commend
@@ -268,12 +269,12 @@ Without changing workspace, update local repository from remote repository</p>
 <p>Suppose we have this situation and you are <strong>currently on branch <em>topic</em></strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
      /
 D---E---F---G master
 </code></pre></td></tr></table>
@@ -282,12 +283,12 @@ D---E---F---G master
 <p>After you run <code>git rebase master</code>, branch will be like:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">              A&#39;--B&#39;--C&#39; topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">              A&#39;--B&#39;--C&#39; topic
              /
 D---E---F---G master
 </code></pre></td></tr></table>
@@ -296,12 +297,12 @@ D---E---F---G master
 <p>If we have two branches <code>master</code> and <code>topic</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
      /
 D---E---F---G master
 </code></pre></td></tr></table>
@@ -310,12 +311,12 @@ D---E---F---G master
 <p>If run <code>git merge</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
      /         \
 D---E---F---G---H master
 </code></pre></td></tr></table>
@@ -325,12 +326,12 @@ D---E---F---G---H master
 <p><code>H</code> combine <code>A B C</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
      /
 D---E---F---G---H master
 </code></pre></td></tr></table>
@@ -340,12 +341,12 @@ D---E---F---G---H master
 <p>After you run <code>git rebase master</code> when you <strong>on branch <em>topic</em></strong>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">              A&#39;--B&#39;--C&#39; topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">              A&#39;--B&#39;--C&#39; topic
              /
 D---E---F---G master
 </code></pre></td></tr></table>
@@ -353,10 +354,10 @@ D---E---F---G master
 </div><p>You can <code>checkout</code> <em>master</em> and run <code>git merge topic</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">D---E---F---G---A&#39;---B&#39;---C&#39; master/topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">D---E---F---G---A&#39;---B&#39;---C&#39; master/topic
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="git-config">Git config</h2>
@@ -366,11 +367,11 @@ D---E---F---G master
 <h3 id="set-user-name-and-email">set user name and email</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">git config --global user.name <span class="s2">&#34;your name&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git config --global user.name <span class="s2">&#34;your name&#34;</span>
 git config --global user.email <span class="s2">&#34;your@email.com&#34;</span>
 </code></pre></td></tr></table>
 </div>
@@ -378,7 +379,7 @@ git config --global user.email <span class="s2">&#34;your@email.com&#34;</span>
 <p><code>git config --global credential.helper cache</code> and <strong>next password/token entering will be cache</strong>
 <code>git config --global --unset credential.helper</code> will unset cache state</p>
 <h3 id="how-to-manage-multiple-github-accounts">How to manage multiple github accounts</h3>
-<p><a href="https://www.heady.io/blog/how-to-manage-multiple-github-accounts">https://www.heady.io/blog/how-to-manage-multiple-github-accounts</a></p>
+<p><a href="https://www.heady.io/blog/how-to-manage-multiple-github-accounts" target="_blank" rel="noopener noreffer">https://www.heady.io/blog/how-to-manage-multiple-github-accounts</a></p>
 <h2 id="delete-submodule">Delete submodule</h2>
 <ol>
 <li>Delete the relevant section from the .gitmodules file.</li>
@@ -420,7 +421,7 @@ git config --global user.email <span class="s2">&#34;your@email.com&#34;</span>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

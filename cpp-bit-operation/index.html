@@ -8,9 +8,10 @@
         <title>Bit operation in C&#43;&#43; - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Bit operation in C&#43;&#43;" />
 <meta property="og:description" content="Bit operator    operator function example     &laquo; left shift 0001 &ndash;&gt; 0010   &raquo; right shift 0010 &ndash;&gt; 0001   &amp; and (bit by bit) 1100 &amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp; x is a bit" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-08-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-08-18T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Bit operation in C&#43;&#43;"/>
 <meta name="twitter:description" content="Bit operator    operator function example     &laquo; left shift 0001 &ndash;&gt; 0010   &raquo; right shift 0010 &ndash;&gt; 0001   &amp; and (bit by bit) 1100 &amp; 1010 = 1000   | or (bit by bit) 1010 | 0101 = 1111   ~ reverse ~0000 = 1111   ^ XOR 0110 ^ 1100 = 1010    Operator: &amp; x is a bit"/>
@@ -26,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/cpp-bit-operation\/"
-        },"genre": "posts","keywords": "c\x2b\x2b, bit","wordcount":  558 ,
+        },"genre": "posts","keywords": "c\u002b\u002b, bit","wordcount":  558 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/cpp-bit-operation\/","datePublished": "2019-08-18T00:00:00+00:00","dateModified": "2019-08-18T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -106,39 +107,39 @@
 <table>
 <thead>
 <tr>
-<th align="center">operator</th>
+<th style="text-align:center">operator</th>
 <th>function</th>
 <th>example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">&laquo;</td>
+<td style="text-align:center">&laquo;</td>
 <td>left shift</td>
 <td>0001 &ndash;&gt; 0010</td>
 </tr>
 <tr>
-<td align="center">&raquo;</td>
+<td style="text-align:center">&raquo;</td>
 <td>right shift</td>
 <td>0010 &ndash;&gt; 0001</td>
 </tr>
 <tr>
-<td align="center">&amp;</td>
+<td style="text-align:center">&amp;</td>
 <td>and (bit by bit)</td>
 <td>1100 &amp; 1010 = 1000</td>
 </tr>
 <tr>
-<td align="center">|</td>
+<td style="text-align:center">|</td>
 <td>or (bit by bit)</td>
 <td>1010 | 0101 = 1111</td>
 </tr>
 <tr>
-<td align="center">~</td>
+<td style="text-align:center">~</td>
 <td>reverse</td>
 <td>~0000 = 1111</td>
 </tr>
 <tr>
-<td align="center">^</td>
+<td style="text-align:center">^</td>
 <td>XOR</td>
 <td>0110 ^ 1100 = 1010</td>
 </tr>
@@ -151,7 +152,7 @@
 <p>Usually use &amp; as a filter. Suppose we have a number is X, X &amp; 0011 will get the last two bits of X.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -175,7 +176,7 @@
 </span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
@@ -203,7 +204,7 @@
 <p>Wave Adder. One is 1 result will be 1.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -223,7 +224,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;bitset&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
@@ -254,7 +255,7 @@
 <p>bitset use for a huge mount of boolean data. Bitset need 8 bytes at beginning(64 bit memory). If the array of boolean data is small( &lt;8 bytes), you better use a integer or long integer to store and use bit operator to manipulate. Definitely, bitset is more easy to use.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -285,7 +286,7 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;bitset&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -346,7 +347,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

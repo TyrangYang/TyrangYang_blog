@@ -9,9 +9,10 @@
 <meta property="og:description" content="Content  Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique  Algorithm Overview * &ndash;&gt; new feature from C&#43;&#43;11
    Algorithm Name Usage Mutating? Head File Complexity     accumulate Accumulate values in range N numeric O(n)   adjacent_difference Compute adjacent difference of range and return to another place N numeric O(n)   adjacent_find Find first equal adjacent elements in range N algorithm O(n)   all_of* Test condition on all elements in range N algorithm O(n)   any_of* Test if any element in range fulfills condition N algorithm O(n)   binary_search Test if value exists in sorted sequence N algorithm On average O(logn &#43; 2)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-20T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-20T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="All algorithm in C&#43;&#43;"/>
 <meta name="twitter:description" content="Content  Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique  Algorithm Overview * &ndash;&gt; new feature from C&#43;&#43;11
@@ -28,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/all-algorithm\/"
-        },"genre": "posts","keywords": "c\x2b\x2b, STL, algorithm","wordcount":  6588 ,
+        },"genre": "posts","keywords": "c\u002b\u002b, STL, algorithm","wordcount":  6588 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/all-algorithm\/","datePublished": "2019-09-20T00:00:00+00:00","dateModified": "2019-09-20T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -168,650 +169,650 @@
 <table>
 <thead>
 <tr>
-<th align="center">Algorithm Name</th>
-<th align="center">Usage</th>
-<th align="center">Mutating?</th>
-<th align="center">Head File</th>
-<th align="center">Complexity</th>
+<th style="text-align:center">Algorithm Name</th>
+<th style="text-align:center">Usage</th>
+<th style="text-align:center">Mutating?</th>
+<th style="text-align:center">Head File</th>
+<th style="text-align:center">Complexity</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><a href="#number" rel="">accumulate</a></td>
-<td align="center">Accumulate values in range</td>
-<td align="center">N</td>
-<td align="center">numeric</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">accumulate</a></td>
+<td style="text-align:center">Accumulate values in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">numeric</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">adjacent_difference</a></td>
-<td align="center">Compute adjacent difference of range and return to another place</td>
-<td align="center">N</td>
-<td align="center">numeric</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">adjacent_difference</a></td>
+<td style="text-align:center">Compute adjacent difference of range and return to another place</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">numeric</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">adjacent_find</a></td>
-<td align="center">Find first equal adjacent elements in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">adjacent_find</a></td>
+<td style="text-align:center">Find first equal adjacent elements in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#test-range" rel="">all_of*</a></td>
-<td align="center">Test condition on all elements in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#test-range" rel="">all_of*</a></td>
+<td style="text-align:center">Test condition on all elements in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#test-range" rel="">any_of*</a></td>
-<td align="center">Test if any element in range fulfills condition</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#test-range" rel="">any_of*</a></td>
+<td style="text-align:center">Test if any element in range fulfills condition</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">binary_search</a></td>
-<td align="center">Test if value exists in sorted sequence</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">On average O(logn + 2). On non-random-access iterator is O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">binary_search</a></td>
+<td style="text-align:center">Test if value exists in sorted sequence</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">On average O(logn + 2). On non-random-access iterator is O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#copy" rel="">copy</a></td>
-<td align="center">Copy range of elements</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#copy" rel="">copy</a></td>
+<td style="text-align:center">Copy range of elements</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#copy" rel="">copy_backward</a></td>
-<td align="center">Copy range of elements backward</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#copy" rel="">copy_backward</a></td>
+<td style="text-align:center">Copy range of elements backward</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#copy" rel="">copy_if*</a></td>
-<td align="center">Copy certain elements of range</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#copy" rel="">copy_if*</a></td>
+<td style="text-align:center">Copy certain elements of range</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#copy" rel="">copy_n*</a></td>
-<td align="center">Copies the first n elements from the range beginning</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#copy" rel="">copy_n*</a></td>
+<td style="text-align:center">Copies the first n elements from the range beginning</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">count</a></td>
-<td align="center">Count appearances of value in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">count</a></td>
+<td style="text-align:center">Count appearances of value in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">count_if</a></td>
-<td align="center">Return number of elements in range satisfying condition</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">count_if</a></td>
+<td style="text-align:center">Return number of elements in range satisfying condition</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#test-range" rel="">equal</a></td>
-<td align="center">Test whether the elements in two ranges are equal</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#test-range" rel="">equal</a></td>
+<td style="text-align:center">Test whether the elements in two ranges are equal</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">equal_range</a></td>
-<td align="center">Get sub range of equal elements</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(2logn + 1) for random access iterator, otherwise O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">equal_range</a></td>
+<td style="text-align:center">Get sub range of equal elements</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(2logn + 1) for random access iterator, otherwise O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#generation" rel="">fill</a></td>
-<td align="center">Fill range with value</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#generation" rel="">fill</a></td>
+<td style="text-align:center">Fill range with value</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#generation" rel="">fill_n</a></td>
-<td align="center">Assigns val to the first n elements of the sequence pointed by first</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#generation" rel="">fill_n</a></td>
+<td style="text-align:center">Assigns val to the first n elements of the sequence pointed by first</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">find</a></td>
-<td align="center">Find the first element in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">find</a></td>
+<td style="text-align:center">Find the first element in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">find_end</a></td>
-<td align="center">Find last subsequence in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(m*(1+n-m))</td>
+<td style="text-align:center"><a href="#search" rel="">find_end</a></td>
+<td style="text-align:center">Find last subsequence in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(m*(1+n-m))</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">find_first_of</a></td>
-<td align="center">Returns an iterator to the first element in the range [first1,last1) that matches any of the elements in [first2,last2)</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(nm)</td>
+<td style="text-align:center"><a href="#search" rel="">find_first_of</a></td>
+<td style="text-align:center">Returns an iterator to the first element in the range [first1,last1) that matches any of the elements in [first2,last2)</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(nm)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">find_if</a></td>
-<td align="center">Find the first element in range in some condition</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">find_if</a></td>
+<td style="text-align:center">Find the first element in range in some condition</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">find_if_not*</a></td>
-<td align="center">Find the first element in range in some condition</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">find_if_not*</a></td>
+<td style="text-align:center">Find the first element in range in some condition</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#for-each" rel="">for_each</a></td>
-<td align="center">Apply function to range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#for-each" rel="">for_each</a></td>
+<td style="text-align:center">Apply function to range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#generation" rel="">generate</a></td>
-<td align="center">Assigns the value returned by successive calls to gen to the elements in the range [first,last)</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#generation" rel="">generate</a></td>
+<td style="text-align:center">Assigns the value returned by successive calls to gen to the elements in the range [first,last)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#generation" rel="">generate_n</a></td>
-<td align="center">Assigns the value returned by successive calls to gen to the first n elements of the sequence pointed by first</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#generation" rel="">generate_n</a></td>
+<td style="text-align:center">Assigns the value returned by successive calls to gen to the first n elements of the sequence pointed by first</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#test-range" rel="">includes</a></td>
-<td align="center">Test whether sorted range includes another sorted range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#test-range" rel="">includes</a></td>
+<td style="text-align:center">Test whether sorted range includes another sorted range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">inner_product</a></td>
-<td align="center">Compute cumulative inner product of range</td>
-<td align="center">N</td>
-<td align="center">numeric</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">inner_product</a></td>
+<td style="text-align:center">Compute cumulative inner product of range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">numeric</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#merge" rel="">inplace_merge</a></td>
-<td align="center">Merge consecutive sorted ranges</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n) if extra memory is available, otherwise is O(nlogn)</td>
+<td style="text-align:center"><a href="#merge" rel="">inplace_merge</a></td>
+<td style="text-align:center">Merge consecutive sorted ranges</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n) if extra memory is available, otherwise is O(nlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">iota</a></td>
-<td align="center">Store increasing sequence</td>
-<td align="center">Y</td>
-<td align="center">numeric</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">iota</a></td>
+<td style="text-align:center">Store increasing sequence</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">numeric</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#heap" rel="">is_heap*</a></td>
-<td align="center">Test if range is heap</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#heap" rel="">is_heap*</a></td>
+<td style="text-align:center">Test if range is heap</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#heap" rel="">is_heap_until*</a></td>
-<td align="center">Find first element not in heap order.</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#heap" rel="">is_heap_until*</a></td>
+<td style="text-align:center">Find first element not in heap order.</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#partition" rel="">is_partitioned*</a></td>
-<td align="center">Test whether range is partitioned</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#partition" rel="">is_partitioned*</a></td>
+<td style="text-align:center">Test whether range is partitioned</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#permutation" rel="">is_permutation*</a></td>
-<td align="center">Compares the elements in the range [first1,last1) with those in the range beginning at first2, and returns true if they just different permutation</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#permutation" rel="">is_permutation*</a></td>
+<td style="text-align:center">Compares the elements in the range [first1,last1) with those in the range beginning at first2, and returns true if they just different permutation</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">is_sorted*</a></td>
-<td align="center">Check whether range is sorted</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#sort" rel="">is_sorted*</a></td>
+<td style="text-align:center">Check whether range is sorted</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">is_sorted_until*</a></td>
-<td align="center">Find first unsorted element in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#sort" rel="">is_sorted_until*</a></td>
+<td style="text-align:center">Find first unsorted element in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#swap" rel="">iter_swap</a></td>
-<td align="center">Swaps the elements pointed to by a and b</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(1)</td>
+<td style="text-align:center"><a href="#swap" rel="">iter_swap</a></td>
+<td style="text-align:center">Swaps the elements pointed to by a and b</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#permutation" rel="">lexicographical_compare</a></td>
-<td align="center">Compare two range lexicographically.</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#permutation" rel="">lexicographical_compare</a></td>
+<td style="text-align:center">Compare two range lexicographically.</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">lower_bond</a></td>
-<td align="center">Return iterator to lower bound</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(logn + 1) for random access iterator, otherwise O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">lower_bond</a></td>
+<td style="text-align:center">Return iterator to lower bound</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(logn + 1) for random access iterator, otherwise O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#heap" rel="">make_heap</a></td>
-<td align="center">Make heap from range</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(3n)</td>
+<td style="text-align:center"><a href="#heap" rel="">make_heap</a></td>
+<td style="text-align:center">Make heap from range</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(3n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">max</a></td>
-<td align="center">Returns the largest of a and b. If both are equivalent, a is returned.</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(1)</td>
+<td style="text-align:center"><a href="#number" rel="">max</a></td>
+<td style="text-align:center">Returns the largest of a and b. If both are equivalent, a is returned.</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">max_element</a></td>
-<td align="center">Return largest element in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">max_element</a></td>
+<td style="text-align:center">Return largest element in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#merge" rel="">merge</a></td>
-<td align="center">Merge sorted ranges</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#merge" rel="">merge</a></td>
+<td style="text-align:center">Merge sorted ranges</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">min</a></td>
-<td align="center">Returns the smallest of a and b. If both are equivalent, a is returned.</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(1)</td>
+<td style="text-align:center"><a href="#number" rel="">min</a></td>
+<td style="text-align:center">Returns the smallest of a and b. If both are equivalent, a is returned.</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">minmax*</a></td>
-<td align="center">Return smallest and largest elements from give 2 value or initializer</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(1)</td>
+<td style="text-align:center"><a href="#number" rel="">minmax*</a></td>
+<td style="text-align:center">Return smallest and largest elements from give 2 value or initializer</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">minmax_element*</a></td>
-<td align="center">Return smallest and largest elements in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">minmax_element*</a></td>
+<td style="text-align:center">Return smallest and largest elements in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">min_element</a></td>
-<td align="center">Return smallest element in range</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">min_element</a></td>
+<td style="text-align:center">Return smallest element in range</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">mismatch</a></td>
-<td align="center">Return first position where two ranges differ</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">mismatch</a></td>
+<td style="text-align:center">Return first position where two ranges differ</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#move" rel="">move*</a></td>
-<td align="center">Move range of elements</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#move" rel="">move*</a></td>
+<td style="text-align:center">Move range of elements</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#move" rel="">move_backward*</a></td>
-<td align="center">Move range of elements backward</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#move" rel="">move_backward*</a></td>
+<td style="text-align:center">Move range of elements backward</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#permutation" rel="">next_permutation</a></td>
-<td align="center">Rearranges the elements in the range [first,last) into the next lexicographically greater permutation</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#permutation" rel="">next_permutation</a></td>
+<td style="text-align:center">Rearranges the elements in the range [first,last) into the next lexicographically greater permutation</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#test-range" rel="">none_of*</a></td>
-<td align="center">Test if no elements fulfill condition</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#test-range" rel="">none_of*</a></td>
+<td style="text-align:center">Test if no elements fulfill condition</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">nth_element</a></td>
-<td align="center">Find the nth element and put it the exact palce.(quick select)</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O()</td>
+<td style="text-align:center"><a href="#sort" rel="">nth_element</a></td>
+<td style="text-align:center">Find the nth element and put it the exact palce.(quick select)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O()</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">partial_sort</a></td>
-<td align="center">Partially sort elements in range while the remaining elements are left without any order</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(mlogn)</td>
+<td style="text-align:center"><a href="#sort" rel="">partial_sort</a></td>
+<td style="text-align:center">Partially sort elements in range while the remaining elements are left without any order</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(mlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">partial_sort_copy</a></td>
-<td align="center">Copy and partially sort range</td>
-<td align="center">Y (if in-place)</td>
-<td align="center">algorithm</td>
-<td align="center">O(mlogn)</td>
+<td style="text-align:center"><a href="#sort" rel="">partial_sort_copy</a></td>
+<td style="text-align:center">Copy and partially sort range</td>
+<td style="text-align:center">Y (if in-place)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(mlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#number" rel="">partial_sum</a></td>
-<td align="center">Compute partial sums of range and return to another place</td>
-<td align="center">N</td>
-<td align="center">numeric</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#number" rel="">partial_sum</a></td>
+<td style="text-align:center">Compute partial sums of range and return to another place</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">numeric</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#partition" rel="">partition</a></td>
-<td align="center">Partition range in two and the iterator returned points to the first element of the second group.</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#partition" rel="">partition</a></td>
+<td style="text-align:center">Partition range in two and the iterator returned points to the first element of the second group.</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#partition" rel="">partition_copy*</a></td>
-<td align="center">Partition range into two</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#partition" rel="">partition_copy*</a></td>
+<td style="text-align:center">Partition range into two</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#partition" rel="">partition_point*</a></td>
-<td align="center">Get partition point and Returns an iterator to the first element in second part</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(logn + 2)</td>
+<td style="text-align:center"><a href="#partition" rel="">partition_point*</a></td>
+<td style="text-align:center">Get partition point and Returns an iterator to the first element in second part</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(logn + 2)</td>
 </tr>
 <tr>
-<td align="center"><a href="#heap" rel="">pop_heap</a></td>
-<td align="center">Pop element from heap range. Range shrink and value is at end.</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(logn)</td>
+<td style="text-align:center"><a href="#heap" rel="">pop_heap</a></td>
+<td style="text-align:center">Pop element from heap range. Range shrink and value is at end.</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(logn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#permutation" rel="">prev_permutation</a></td>
-<td align="center">Rearranges the elements in the range [first,last) into the previous lexicographically-ordered permutation.</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#permutation" rel="">prev_permutation</a></td>
+<td style="text-align:center">Rearranges the elements in the range [first,last) into the previous lexicographically-ordered permutation.</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#heap" rel="">push_heap</a></td>
-<td align="center">Push element into heap range. Range extend</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(logn)</td>
+<td style="text-align:center"><a href="#heap" rel="">push_heap</a></td>
+<td style="text-align:center">Push element into heap range. Range extend</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(logn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#shuffle" rel="">random_shuffle</a></td>
-<td align="center">Randomly rearrange elements in range</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#shuffle" rel="">random_shuffle</a></td>
+<td style="text-align:center">Randomly rearrange elements in range</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#remove" rel="">remove</a></td>
-<td align="center">Removed element equal to val and returns an iterator to the new end of that range.</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#remove" rel="">remove</a></td>
+<td style="text-align:center">Removed element equal to val and returns an iterator to the new end of that range.</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#remove" rel="">remove_copy</a></td>
-<td align="center">Remove and copy to new place</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#remove" rel="">remove_copy</a></td>
+<td style="text-align:center">Remove and copy to new place</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#remove" rel="">remove_copy_if</a></td>
-<td align="center">Remove in a given condition and copy</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#remove" rel="">remove_copy_if</a></td>
+<td style="text-align:center">Remove in a given condition and copy</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#remove" rel="">remove_if</a></td>
-<td align="center">Remove in a given condition</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#remove" rel="">remove_if</a></td>
+<td style="text-align:center">Remove in a given condition</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#replace" rel="">replace</a></td>
-<td align="center">Assigns new_value to all the elements that compare equal to old_value</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#replace" rel="">replace</a></td>
+<td style="text-align:center">Assigns new_value to all the elements that compare equal to old_value</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#replace" rel="">replace_copy</a></td>
-<td align="center">Replace and copy</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#replace" rel="">replace_copy</a></td>
+<td style="text-align:center">Replace and copy</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#replace" rel="">replace_copy_if</a></td>
-<td align="center">Replace in a given condition and copy</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#replace" rel="">replace_copy_if</a></td>
+<td style="text-align:center">Replace in a given condition and copy</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#replace" rel="">replace_if</a></td>
-<td align="center">Replace in a given condition</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#replace" rel="">replace_if</a></td>
+<td style="text-align:center">Replace in a given condition</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#reverse" rel="">reverse</a></td>
-<td align="center">Reverses the order of the elements in the range [first,last)</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#reverse" rel="">reverse</a></td>
+<td style="text-align:center">Reverses the order of the elements in the range [first,last)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#reverse" rel="">reverse_copy</a></td>
-<td align="center">Copies the elements in [first,last) but in reverse order</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#reverse" rel="">reverse_copy</a></td>
+<td style="text-align:center">Copies the elements in [first,last) but in reverse order</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#rotate" rel="">rotate</a></td>
-<td align="center">Rotates the order of the elements and middle becomes the new first element</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#rotate" rel="">rotate</a></td>
+<td style="text-align:center">Rotates the order of the elements and middle becomes the new first element</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#rotate" rel="">rotate_copy</a></td>
-<td align="center">Rotate and copy</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#rotate" rel="">rotate_copy</a></td>
+<td style="text-align:center">Rotate and copy</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">search</a></td>
-<td align="center">Search range for subsequence</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n*m)</td>
+<td style="text-align:center"><a href="#search" rel="">search</a></td>
+<td style="text-align:center">Search range for subsequence</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n*m)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">search_n</a></td>
-<td align="center">Search range for n continue elements</td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">search_n</a></td>
+<td style="text-align:center">Search range for n continue elements</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#set" rel="">set_difference</a></td>
-<td align="center">Difference of two sorted ranges</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(2(n+m)-1)</td>
+<td style="text-align:center"><a href="#set" rel="">set_difference</a></td>
+<td style="text-align:center">Difference of two sorted ranges</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(2(n+m)-1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#set" rel="">set_intersection</a></td>
-<td align="center">Intersection of two sorted ranges</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(2(n+m)-1)</td>
+<td style="text-align:center"><a href="#set" rel="">set_intersection</a></td>
+<td style="text-align:center">Intersection of two sorted ranges</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(2(n+m)-1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#set" rel="">set_symmetric_difference</a></td>
-<td align="center">Symmetric difference of two sorted ranges</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(2(n+m)-1)</td>
+<td style="text-align:center"><a href="#set" rel="">set_symmetric_difference</a></td>
+<td style="text-align:center">Symmetric difference of two sorted ranges</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(2(n+m)-1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#set" rel="">set_union</a></td>
-<td align="center">Union of two sorted ranges</td>
-<td align="center">N(copy)</td>
-<td align="center">algorithm</td>
-<td align="center">O(2(n+m)-1)</td>
+<td style="text-align:center"><a href="#set" rel="">set_union</a></td>
+<td style="text-align:center">Union of two sorted ranges</td>
+<td style="text-align:center">N(copy)</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(2(n+m)-1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#shuffle" rel="">shuffle*</a></td>
-<td align="center">Randomly rearrange elements in range using generator</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#shuffle" rel="">shuffle*</a></td>
+<td style="text-align:center">Randomly rearrange elements in range using generator</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">sort</a></td>
-<td align="center">Sort elements in range</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(nlogn)</td>
+<td style="text-align:center"><a href="#sort" rel="">sort</a></td>
+<td style="text-align:center">Sort elements in range</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(nlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#heap" rel="">sort_heap</a></td>
-<td align="center">Sort elements of heap</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(nlogn)</td>
+<td style="text-align:center"><a href="#heap" rel="">sort_heap</a></td>
+<td style="text-align:center">Sort elements of heap</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(nlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#partition" rel="">stable_partition</a></td>
-<td align="center">Partition range in two - stable ordering</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n) with enough space. Otherwise O(nlogn)</td>
+<td style="text-align:center"><a href="#partition" rel="">stable_partition</a></td>
+<td style="text-align:center">Partition range in two - stable ordering</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n) with enough space. Otherwise O(nlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#sort" rel="">stable_sort</a></td>
-<td align="center">Sort elements preserving order of equivalents</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(nlogn) with enough space, otherwise O(nlognlogn)</td>
+<td style="text-align:center"><a href="#sort" rel="">stable_sort</a></td>
+<td style="text-align:center">Sort elements preserving order of equivalents</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(nlogn) with enough space, otherwise O(nlognlogn)</td>
 </tr>
 <tr>
-<td align="center"><a href="#swap" rel="">swap</a></td>
-<td align="center">Exchanges the values of a and b</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(1)</td>
+<td style="text-align:center"><a href="#swap" rel="">swap</a></td>
+<td style="text-align:center">Exchanges the values of a and b</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(1)</td>
 </tr>
 <tr>
-<td align="center"><a href="#swap" rel="">swap_ranges</a></td>
-<td align="center">Exchanges a range of value</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#swap" rel="">swap_ranges</a></td>
+<td style="text-align:center">Exchanges a range of value</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#move" rel="">transform</a></td>
-<td align="center">Transform range</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#move" rel="">transform</a></td>
+<td style="text-align:center">Transform range</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#unique" rel="">unique</a></td>
-<td align="center">Remove consecutive duplicates in range</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#unique" rel="">unique</a></td>
+<td style="text-align:center">Remove consecutive duplicates in range</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#unique" rel="">unique_copy</a></td>
-<td align="center">Copy range removing duplicates</td>
-<td align="center">Y</td>
-<td align="center">algorithm</td>
-<td align="center">O(n)</td>
+<td style="text-align:center"><a href="#unique" rel="">unique_copy</a></td>
+<td style="text-align:center">Copy range removing duplicates</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(n)</td>
 </tr>
 <tr>
-<td align="center"><a href="#search" rel="">upper_bond</a></td>
-<td align="center">Return iterator to upper bound. Since <strong>[first, last)</strong>, the value pointed by the iterator must larger than <em>val</em></td>
-<td align="center">N</td>
-<td align="center">algorithm</td>
-<td align="center">O(logn + 1) for random access iterator, otherwise O(n)</td>
+<td style="text-align:center"><a href="#search" rel="">upper_bond</a></td>
+<td style="text-align:center">Return iterator to upper bound. Since <strong>[first, last)</strong>, the value pointed by the iterator must larger than <em>val</em></td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">algorithm</td>
+<td style="text-align:center">O(logn + 1) for random access iterator, otherwise O(n)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="copy">Copy</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -840,7 +841,7 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -873,7 +874,7 @@
 <h2 id="for-each">For each</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -887,7 +888,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -906,7 +907,7 @@
 <p>fill fill_n generate generate_n</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -939,7 +940,7 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -978,7 +979,7 @@
 <p>More detail about heap: <a href="https://tyrangyang.github.io/TyrangYang_blog/containers/#heap" rel="">Here</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1023,7 +1024,7 @@
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt; // heap</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
@@ -1073,7 +1074,7 @@
 <p>Sort first!!</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1103,7 +1104,7 @@
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -1137,7 +1138,7 @@
 <h2 id="move">Move</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1181,7 +1182,7 @@
 </span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
@@ -1232,7 +1233,7 @@
 <p>iota just make a increasing sequence start from a given number.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1339,7 +1340,7 @@
 </span><span class="lnt">105
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
@@ -1451,7 +1452,7 @@
 <p>is_partitioned partition stable_partition partition_copy partition_point</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1533,7 +1534,7 @@
 </span><span class="lnt">80
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="cp">
@@ -1623,7 +1624,7 @@
 <p>THis code explain how to find next permutation(prev_permutation with same logic).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1649,7 +1650,7 @@
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirIt</span><span class="o">&gt;</span> <span class="c1">//BidirIt binary direction iterator
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">BidirIt</span><span class="o">&gt;</span> <span class="c1">//BidirIt binary direction iterator
 </span><span class="c1"></span><span class="kt">bool</span> <span class="n">next_permutation</span><span class="p">(</span><span class="n">BidirIt</span> <span class="n">first</span><span class="p">,</span> <span class="n">BidirIt</span> <span class="n">last</span><span class="p">)</span> <span class="c1">// [first, last)
 </span><span class="c1"></span><span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">first</span> <span class="o">==</span> <span class="n">last</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">//0 element
@@ -1678,7 +1679,7 @@
 </div><p>If you want go over all permutation, <strong>sort</strong> first.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1723,7 +1724,7 @@
 </span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;     // std::cout</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;     // std::cout</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;    // std::next_permutation, std::sort</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
@@ -1772,7 +1773,7 @@
 <h2 id="remove">Remove</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1818,7 +1819,7 @@
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -1868,7 +1869,7 @@
 <h2 id="replace">Replace</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1899,7 +1900,7 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -1934,7 +1935,7 @@
 <h2 id="reverse">Reverse</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1957,7 +1958,7 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -1985,7 +1986,7 @@
 <p>Here is how rotate achieve:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1999,7 +2000,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">ForwardIterator</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">ForwardIterator</span><span class="o">&gt;</span>
   <span class="kt">void</span> <span class="n">rotate</span> <span class="p">(</span><span class="n">ForwardIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">ForwardIterator</span> <span class="n">middle</span><span class="p">,</span>
                <span class="n">ForwardIterator</span> <span class="n">last</span><span class="p">)</span>
 <span class="p">{</span>
@@ -2016,19 +2017,19 @@
 </div><p>The idea is move a part to the end and adjust it</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">1 2 3 4 5 6 7 -&gt; 4 5 6 1 2 3 7 -&gt; 4 5 6 7 2 3 1 -&gt; 4 5 6 7 1 3 2 -&gt; 4 5 6 7 1 2 3
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">1 2 3 4 5 6 7 -&gt; 4 5 6 1 2 3 7 -&gt; 4 5 6 7 2 3 1 -&gt; 4 5 6 7 1 3 2 -&gt; 4 5 6 7 1 2 3
 
 ^     ^                ^     ^            ^   ^              ^ ^
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2049,7 +2050,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -2075,7 +2076,7 @@
 <p><em>lower_bound upper_bound equal_range.</em> These 3 method design like binary search. For example:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2102,7 +2103,7 @@
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">ForwardIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">ForwardIterator</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
   <span class="n">ForwardIterator</span> <span class="n">lower_bound</span> <span class="p">(</span><span class="n">ForwardIterator</span> <span class="n">first</span><span class="p">,</span> <span class="n">ForwardIterator</span> <span class="n">last</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">ForwardIterator</span> <span class="n">it</span><span class="p">;</span>
@@ -2137,7 +2138,7 @@
 <p>find_first_of find the first element that pattern have.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -2320,7 +2321,7 @@
 </span><span class="lnt">181
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="cp">
@@ -2508,7 +2509,7 @@
 <p>Container must be sorted first. Set is ordered in this code.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2548,7 +2549,7 @@
 </span><span class="lnt">38
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;set&gt;</span><span class="cp">
@@ -2601,7 +2602,7 @@
 <p><a href="https://www.geeksforgeeks.org/shuffle-vs-random_shuffle-c/" target="_blank" rel="noopener noreffer">reference</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2629,7 +2630,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt; // random_shuffle shuffle</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;numeric&gt; // iota</span><span class="cp">
@@ -2667,7 +2668,7 @@
 <p>Something different in java. You can see: <a href="https://tyrangyang.github.io/TyrangYang_blog/language-comparison-common-method/" rel="">Here</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2732,7 +2733,7 @@
 </span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
@@ -2804,7 +2805,7 @@
 <p>swap_ranges: Exchanges the values of each of the elements in the range [first1,last1) with those of their respective elements in the range beginning at first2.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2833,7 +2834,7 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -2866,7 +2867,7 @@
 <h2 id="test-range">Test range</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2905,7 +2906,7 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
@@ -2948,7 +2949,7 @@
 <h2 id="unique">Unique</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -2983,7 +2984,7 @@
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -3049,7 +3050,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

@@ -9,9 +9,10 @@
 <meta property="og:description" content="Show all function: Try String.prototype &amp; String in browser console.
  fromCharCode 1 2  console.log(String.fromCharCode(189, 43, 190, 61)); // expected output: &#34;½&#43;¾=&#34;   fromCodePoint 1 2  console.log(String.fromCodePoint(9731, 9733, 9842, 0x2f804)); // expected output: &#34;☃★♲你&#34;   raw 1 2 3 4 5 6  // Create a variable that uses a Windows // path without escaping the backslashes: const filePath = String.raw`C:\Development\profile\aboutme.html`; console.log(`The file was uploaded from: ${filePath}`); // expected output: &#34;The file was uploaded from: C:\Development\profile\aboutme." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-07T12:49:38-07:00" />
 <meta property="article:modified_time" content="2020-04-07T12:49:38-07:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="All String Method in Javascript"/>
 <meta name="twitter:description" content="Show all function: Try String.prototype &amp; String in browser console.
@@ -158,29 +159,29 @@
 <h2 id="fromcharcode">fromCharCode</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">189</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">61</span><span class="p">));</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span><span class="mi">189</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">61</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;½+¾=&#34;
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="fromcodepoint">fromCodePoint</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCodePoint</span><span class="p">(</span><span class="mi">9731</span><span class="p">,</span> <span class="mi">9733</span><span class="p">,</span> <span class="mi">9842</span><span class="p">,</span> <span class="mh">0x2f804</span><span class="p">));</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">.</span><span class="nx">fromCodePoint</span><span class="p">(</span><span class="mi">9731</span><span class="p">,</span> <span class="mi">9733</span><span class="p">,</span> <span class="mi">9842</span><span class="p">,</span> <span class="mh">0x2f804</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;☃★♲你&#34;
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="raw">raw</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -188,9 +189,9 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Create a variable that uses a Windows
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Create a variable that uses a Windows
 </span><span class="c1">// path without escaping the backslashes:
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">filePath</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="sb">`C:</span><span class="err">\</span><span class="sb">Development</span><span class="err">\</span><span class="sb">profile</span><span class="err">\</span><span class="sb">aboutme.html`</span><span class="p">;</span>
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">filePath</span> <span class="o">=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">raw</span><span class="sb">`C:\Development\profile\aboutme.html`</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`The file was uploaded from: </span><span class="si">${</span><span class="nx">filePath</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="c1">// expected output: &#34;The file was uploaded from: C:\Development\profile\aboutme.html&#34;
@@ -199,7 +200,7 @@
 </div><h2 id="charat">charAt</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -207,7 +208,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
@@ -218,7 +219,7 @@
 </div><h2 id="charcodeat">charCodeAt</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -230,7 +231,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">index</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
@@ -245,13 +246,13 @@
 </div><h2 id="codepointat">codePointAt</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">icons</span> <span class="o">=</span> <span class="s1">&#39;☃★♲&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">icons</span> <span class="o">=</span> <span class="s1">&#39;☃★♲&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">icons</span><span class="p">.</span><span class="nx">codePointAt</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;9733&#34;
@@ -260,7 +261,7 @@
 </div><h2 id="concat">concat</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -270,7 +271,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">str2</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="nx">str2</span><span class="p">));</span>
@@ -283,7 +284,7 @@
 </div><h2 id="startswith">startsWith</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -295,7 +296,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Saturday night plans&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Saturday night plans&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;Sat&#39;</span><span class="p">));</span>
 <span class="c1">// expected output: true
@@ -310,7 +311,7 @@
 </div><h2 id="endswith">endsWith</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -321,7 +322,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Cats are the best!&#39;</span><span class="p">;</span> <span class="c1">// len == 18
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Cats are the best!&#39;</span><span class="p">;</span> <span class="c1">// len == 18
 </span><span class="c1"></span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span><span class="p">.</span><span class="nx">endsWith</span><span class="p">(</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="mi">17</span><span class="p">));</span>
 <span class="c1">// expected output: true
@@ -335,7 +336,7 @@
 </div><h2 id="includes">includes</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -347,7 +348,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">word</span> <span class="o">=</span> <span class="s1">&#39;fox&#39;</span><span class="p">;</span>
 
@@ -362,7 +363,7 @@
 </div><h2 id="indexof">indexOf</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -382,7 +383,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span>
     <span class="s1">&#39;The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">searchTerm</span> <span class="o">=</span> <span class="s1">&#39;dog&#39;</span><span class="p">;</span>
@@ -405,7 +406,7 @@
 </div><h2 id="lastindexof">lastIndexOf</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -418,7 +419,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span>
     <span class="s1">&#39;The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">searchTerm</span> <span class="o">=</span> <span class="s1">&#39;dog&#39;</span><span class="p">;</span>
@@ -434,7 +435,7 @@
 </div><h2 id="localecompare">localeCompare</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -443,7 +444,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="s1">&#39;réservé&#39;</span><span class="p">;</span> <span class="c1">// with accents, lowercase
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="s1">&#39;réservé&#39;</span><span class="p">;</span> <span class="c1">// with accents, lowercase
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;RESERVE&#39;</span><span class="p">;</span> <span class="c1">// no accents, uppercase
 </span><span class="c1"></span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">localeCompare</span><span class="p">(</span><span class="nx">b</span><span class="p">));</span>
@@ -455,7 +456,7 @@
 </div><h2 id="match">match</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -463,7 +464,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog. It barked.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog. It barked.&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/[A-Z]/g</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">found</span> <span class="o">=</span> <span class="nx">paragraph</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="nx">regex</span><span class="p">);</span>
 
@@ -475,7 +476,7 @@
 <p>The matchAll() method returns an iterator of all results matching a string against a regular expression, including <strong>capturing groups</strong>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -484,7 +485,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">regexp</span> <span class="o">=</span> <span class="sr">/t(e)(st(\d?))/g</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">regexp</span> <span class="o">=</span> <span class="sr">/t(e)(st(\d?))/g</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;test1test2&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">str</span><span class="p">.</span><span class="nx">matchAll</span><span class="p">(</span><span class="nx">regexp</span><span class="p">)];</span>
@@ -496,7 +497,7 @@
 </div><h2 id="normalize">normalize</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -517,7 +518,7 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">name1</span> <span class="o">=</span> <span class="s1">&#39;\u0041\u006d\u00e9\u006c\u0069\u0065&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">name1</span> <span class="o">=</span> <span class="s1">&#39;\u0041\u006d\u00e9\u006c\u0069\u0065&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">name2</span> <span class="o">=</span> <span class="s1">&#39;\u0041\u006d\u0065\u0301\u006c\u0069\u0065&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">name1</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">name2</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
@@ -541,7 +542,7 @@
 </div><h2 id="padend">padEnd</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -552,7 +553,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Breaded Mushrooms&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;Breaded Mushrooms&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span><span class="p">.</span><span class="nx">padEnd</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;Breaded Mushrooms........&#34; // new str len == 25
@@ -566,7 +567,7 @@
 </div><h2 id="padstart">padStart</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -579,7 +580,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;5&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str1</span> <span class="o">=</span> <span class="s1">&#39;5&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str1</span><span class="p">.</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;05&#34;
@@ -595,13 +596,13 @@
 </div><h2 id="repeat">repeat</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">chorus</span> <span class="o">=</span> <span class="s2">&#34;Because I&#39;m happy. &#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">chorus</span> <span class="o">=</span> <span class="s2">&#34;Because I&#39;m happy. &#34;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Chorus lyrics for &#34;Happy&#34;: </span><span class="si">${</span><span class="nx">chorus</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="c1">//&#34;Chorus lyrics for &#34;Happy&#34;: Because I&#39;m happy. Because I&#39;m happy. Because I&#39;m happy. &#34;
@@ -611,7 +612,7 @@
 <p>only replace the first match. If wanna match all use global flag (g)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -623,7 +624,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span>
     <span class="s1">&#39;The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/dog/gi</span><span class="p">;</span>
@@ -639,7 +640,7 @@
 <p>using a <code>regexp</code> you <strong>must</strong> have to set the global (&ldquo;g&rdquo;) flag;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -651,7 +652,7 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">p</span> <span class="o">=</span>
     <span class="s1">&#39;The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/dog/gi</span><span class="p">;</span>
@@ -666,7 +667,7 @@
 </div><h2 id="search">search</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -679,7 +680,7 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">paragraph</span> <span class="o">=</span>
     <span class="s1">&#39;The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?&#39;</span><span class="p">;</span>
 
 <span class="c1">// any character that is not a word character or whitespace
@@ -695,7 +696,7 @@
 </div><h2 id="slice">slice</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -710,7 +711,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">31</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;the lazy dog.&#34;
@@ -728,7 +729,7 @@
 </div><h2 id="split">split</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -743,7 +744,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">words</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
@@ -761,7 +762,7 @@
 </div><h2 id="substring">substring</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -770,7 +771,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;Mozilla&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s1">&#39;Mozilla&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;oz&#34;
@@ -782,7 +783,7 @@
 </div><h2 id="tolocalelowercase">toLocaleLowerCase</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -791,7 +792,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">dotted</span> <span class="o">=</span> <span class="s1">&#39;İstanbul&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">dotted</span> <span class="o">=</span> <span class="s1">&#39;İstanbul&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`EN-US: </span><span class="si">${</span><span class="nx">dotted</span><span class="p">.</span><span class="nx">toLocaleLowerCase</span><span class="p">(</span><span class="s1">&#39;en-US&#39;</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 <span class="c1">// expected output: &#34;i̇stanbul&#34;
@@ -803,7 +804,7 @@
 </div><h2 id="tolocaleuppercase">toLocaleUpperCase</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -812,7 +813,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">city</span> <span class="o">=</span> <span class="s1">&#39;istanbul&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">city</span> <span class="o">=</span> <span class="s1">&#39;istanbul&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">city</span><span class="p">.</span><span class="nx">toLocaleUpperCase</span><span class="p">(</span><span class="s1">&#39;en-US&#39;</span><span class="p">));</span>
 <span class="c1">// expected output: &#34;ISTANBUL&#34;
@@ -824,13 +825,13 @@
 </div><h2 id="tolowercase">toLowerCase</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sentence</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">());</span>
 <span class="c1">// expected output: &#34;the quick brown fox jumps over the lazy dog.&#34;
@@ -839,13 +840,13 @@
 </div><h2 id="touppercase">toUpperCase</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">sentence</span> <span class="o">=</span> <span class="s1">&#39;The quick brown fox jumps over the lazy dog.&#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sentence</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">());</span>
 <span class="c1">// expected output: &#34;THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.&#34;
@@ -854,7 +855,7 @@
 </div><h2 id="tostring">toString</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -863,7 +864,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">stringObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">stringObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stringObj</span><span class="p">);</span>
 <span class="c1">// expected output: String { &#34;foo&#34; }
@@ -875,7 +876,7 @@
 </div><h2 id="trim">trim</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -884,7 +885,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
 <span class="c1">// expected output: &#34;   Hello world!   &#34;;
@@ -896,7 +897,7 @@
 </div><h2 id="trimend">trimEnd</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -905,7 +906,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
 <span class="c1">// expected output: &#34;   Hello world!   &#34;;
@@ -917,7 +918,7 @@
 </div><h2 id="trimstart">trimStart</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -926,7 +927,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">greeting</span> <span class="o">=</span> <span class="s1">&#39;   Hello world!   &#39;</span><span class="p">;</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">greeting</span><span class="p">);</span>
 <span class="c1">// expected output: &#34;   Hello world!   &#34;;
@@ -942,7 +943,7 @@
 <h2 id="valueof">valueOf</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -951,7 +952,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">stringObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">stringObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">stringObj</span><span class="p">);</span>
 <span class="c1">// expected output: String { &#34;foo&#34; }
@@ -990,7 +991,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

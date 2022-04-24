@@ -25,7 +25,7 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
     <description><![CDATA[Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }     flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }     flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
+display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
 </item><item>
     <title>Canvas in html5</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>

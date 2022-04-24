@@ -12,9 +12,10 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 这是 iterator 中常见的五种属性。
 1 2 3 4 5 6 7 8 9  template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category  typedef typename I::value_type value_type; // type  typedef typename I::difference_type difference_type; //  typedef typename I::pointer pointer; // T*  typedef typename I::reference reference; // T&amp; };   1 2 3 4 5 6 7 8 9 10 11 12 13 14  #include &lt;iostream&gt; // std::cout#include &lt;iterator&gt; // std::iterator_traits#include &lt;typeinfo&gt; // typeidusing namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/iterators/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/iterators/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-07-24T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-07-24T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Iterator in c&#43;&#43;"/>
 <meta name="twitter:description" content="Iterator 设计思维 STL 中 container 和 algorithm 是相对独立的，本身设计也是泛型化的。Iterator 就是用来将这两者联系在一起的。
@@ -34,7 +35,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/iterators\/"
-        },"genre": "posts","keywords": "c\x2b\x2b, STL","wordcount":  266 ,
+        },"genre": "posts","keywords": "c\u002b\u002b, STL","wordcount":  266 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/iterators\/","datePublished": "2019-07-24T00:00:00+00:00","dateModified": "2019-07-24T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -119,7 +120,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 <p>这是 iterator 中常见的五种属性。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -130,7 +131,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">I</span><span class="o">&gt;</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">I</span><span class="o">&gt;</span>
 <span class="k">struct</span> <span class="nc">iterator_traits</span>
 <span class="p">{</span>
     <span class="k">typedef</span> <span class="k">typename</span> <span class="n">I</span><span class="o">::</span><span class="n">iterator_category</span> <span class="n">iterator_category</span><span class="p">;</span> <span class="c1">//category
@@ -143,7 +144,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -159,7 +160,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;     // std::cout</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;     // std::cout</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;iterator&gt;     // std::iterator_traits</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;typeinfo&gt;     // typeid</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -177,7 +178,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -185,7 +186,7 @@ Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 val
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">NSt3__126random_access_iterator_tagE
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">NSt3__126random_access_iterator_tagE
 d
 l
 Pd
@@ -206,7 +207,7 @@ yanghaoli
 <p>const_iterator is read only.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -225,7 +226,7 @@ yanghaoli
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -274,7 +275,7 @@ yanghaoli
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

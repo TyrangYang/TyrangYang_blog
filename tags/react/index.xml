@@ -23,7 +23,7 @@ Code running there: &ndash;&gt;Link&lt;&ndash;
 What is Redux  Redux is a predictable state container for JavaScript apps.
  Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
 When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
-Workflow   Redux Workflow   Example for Redux core In index.]]></description>
+Workflow  Redux Workflow   Example for Redux core In index.]]></description>
 </item><item>
     <title>React Posts Archive</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link>
@@ -74,7 +74,7 @@ Click: Different between them]]></description>
     <description><![CDATA[Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1  npx create-react-app my-app --template redux   life cycle  Class component lifecycle    Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
 1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not]]></description>
 </item></channel>
 </rss>

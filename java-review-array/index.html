@@ -9,9 +9,10 @@
 <meta property="og:description" content="Declaring an array Both are allow
 1 2  string argc[]; string[] argc;   Int array 1 2  int[] nums = new int[7]; nums[0] = 10;   1 2  Rabbit[] racers = new Rabbit[10];//10 empty rabbit array; racers[0] = new Rabbit(&#34;B&#34;,&#34;F&#34;);   arraycopy() 1  System.arraycopy(nums, 0, nums, 0, nums.length);   Array vs ArrayList  An array needs to know its size at the time of creation, arrayList does not." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/java-review-array/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/java-review-array/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-07-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-07-10T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Review java - Array"/>
 <meta name="twitter:description" content="Declaring an array Both are allow
@@ -108,42 +109,42 @@
 <p>Both are allow</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">string</span> <span class="n">argc</span><span class="o">[];</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">string</span> <span class="n">argc</span><span class="o">[];</span>
 <span class="n">string</span><span class="o">[]</span> <span class="n">argc</span><span class="o">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="int-array">Int array</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">7</span><span class="o">];</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">7</span><span class="o">];</span>
 <span class="n">nums</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">10</span><span class="o">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Rabbit</span><span class="o">[]</span> <span class="n">racers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rabbit</span><span class="o">[</span><span class="n">10</span><span class="o">];</span><span class="c1">//10 empty rabbit array;
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">Rabbit</span><span class="o">[]</span> <span class="n">racers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rabbit</span><span class="o">[</span><span class="n">10</span><span class="o">];</span><span class="c1">//10 empty rabbit array;
 </span><span class="c1"></span><span class="n">racers</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rabbit</span><span class="o">(</span><span class="s">&#34;B&#34;</span><span class="o">,</span><span class="s">&#34;F&#34;</span><span class="o">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="arraycopy">arraycopy()</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">nums</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="array-vs-arraylist">Array vs ArrayList</h2>
@@ -156,7 +157,7 @@
 <h2 id="arraylist">ArrayList</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -164,7 +165,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Flower</span><span class="o">&gt;</span> <span class="n">flowerList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Flower</span><span class="o">&gt;();</span><span class="c1">// &lt;- ArrayList constructor
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Flower</span><span class="o">&gt;</span> <span class="n">flowerList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Flower</span><span class="o">&gt;();</span><span class="c1">// &lt;- ArrayList constructor
 </span><span class="c1"></span><span class="n">Flower</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flower</span><span class="o">();</span>
 <span class="n">Flower</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flower</span><span class="o">();</span>
 
@@ -202,7 +203,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

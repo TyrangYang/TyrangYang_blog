@@ -11,9 +11,10 @@
 How to use Jest function.js
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 &#43; num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/jest-overview/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/jest-overview/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-09-14T18:36:51-07:00" />
 <meta property="article:modified_time" content="2020-09-14T18:36:51-07:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jest Overview"/>
 <meta name="twitter:description" content="Jest is a JavaScript Testing Framework
@@ -144,12 +145,12 @@ How to use Jest function.js
             </div><div class="content" id="content"><blockquote>
 <p>Jest is a JavaScript Testing Framework</p>
 </blockquote>
-<p>Document: <a href="https://jestjs.io/docs/en/getting-started">https://jestjs.io/docs/en/getting-started</a></p>
+<p>Document: <a href="https://jestjs.io/docs/en/getting-started" target="_blank" rel="noopener noreffer">https://jestjs.io/docs/en/getting-started</a></p>
 <h2 id="how-to-use-jest">How to use Jest</h2>
 <p>function.js</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -170,7 +171,7 @@ How to use Jest function.js
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">functions</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">add</span><span class="o">:</span> <span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">num1</span> <span class="o">+</span> <span class="nx">num2</span><span class="p">,</span>
@@ -194,7 +195,7 @@ How to use Jest function.js
 </div><p>function.test.js</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -291,7 +292,7 @@ How to use Jest function.js
 </span><span class="lnt">95
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">functions</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./functions&#39;</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">functions</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./functions&#39;</span><span class="p">);</span>
 
 <span class="c1">// beforeEach(() =&gt; initDatabase());
 </span><span class="c1">// afterEach(() =&gt; closeDatabase());
@@ -381,28 +382,28 @@ How to use Jest function.js
 </span><span class="c1">// });
 </span><span class="c1"></span>
 <span class="c1">// Async Await
-</span><span class="c1"></span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;User fetched name should be Leanne Graham&#39;</span><span class="p">,</span> <span class="nx">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span><span class="c1"></span><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;User fetched name should be Leanne Graham&#39;</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">expect</span><span class="p">.</span><span class="nx">assertions</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">functions</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">functions</span><span class="p">.</span><span class="nx">fetchUser</span><span class="p">();</span>
     <span class="nx">expect</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;Leanne Graham&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="matchers">Matchers</h3>
 <blockquote>
-<p>Doc: <a href="https://jestjs.io/docs/en/using-matchers">https://jestjs.io/docs/en/using-matchers</a> and <a href="https://jestjs.io/docs/en/expect">https://jestjs.io/docs/en/expect</a></p>
+<p>Doc: <a href="https://jestjs.io/docs/en/using-matchers" target="_blank" rel="noopener noreffer">https://jestjs.io/docs/en/using-matchers</a> and <a href="https://jestjs.io/docs/en/expect" target="_blank" rel="noopener noreffer">https://jestjs.io/docs/en/expect</a></p>
 </blockquote>
 <h2 id="jest-with-react">Jest with react</h2>
 <blockquote>
-<p>Doc: <a href="https://reactjs.org/docs/testing.html">https://reactjs.org/docs/testing.html</a></p>
+<p>Doc: <a href="https://reactjs.org/docs/testing.html" target="_blank" rel="noopener noreffer">https://reactjs.org/docs/testing.html</a></p>
 </blockquote>
 <h3 id="testing-libraryreact">@testing-library/react</h3>
 <p>This library provide better test workflow for react. It is imported by <code>Create-react-app</code> in default</p>
 <blockquote>
-<p>Doc: <a href="https://testing-library.com/docs/react-testing-library/intro">https://testing-library.com/docs/react-testing-library/intro</a></p>
+<p>Doc: <a href="https://testing-library.com/docs/react-testing-library/intro" target="_blank" rel="noopener noreffer">https://testing-library.com/docs/react-testing-library/intro</a></p>
 </blockquote>
 <blockquote>
-<p>Tutorial Post: <a href="https://www.robinwieruch.de/react-testing-library">https://www.robinwieruch.de/react-testing-library</a></p>
+<p>Tutorial Post: <a href="https://www.robinwieruch.de/react-testing-library" target="_blank" rel="noopener noreffer">https://www.robinwieruch.de/react-testing-library</a></p>
 </blockquote>
 <h4 id="search-element">Search element</h4>
 <ul>
@@ -420,11 +421,11 @@ How to use Jest function.js
 <h3 id="testing-libraryreact-with-material-ui">@testing-library/react with Material UI</h3>
 <h4 id="query-a-multi-select">Query a Multi-select</h4>
 <blockquote>
-<p>Reference: <a href="https://stackoverflow.com/a/61491607/12104603">https://stackoverflow.com/a/61491607/12104603</a></p>
+<p>Reference: <a href="https://stackoverflow.com/a/61491607/12104603" target="_blank" rel="noopener noreffer">https://stackoverflow.com/a/61491607/12104603</a></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -451,7 +452,7 @@ How to use Jest function.js
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">render</span><span class="p">,</span> <span class="nx">within</span><span class="p">,</span> <span class="nx">screen</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;react-testing-library&#34;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">userEvent</span> <span class="nx">from</span> <span class="s1">&#39;@testing-library/user-event&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">Select</span> <span class="nx">from</span> <span class="s2">&#34;@material-ui/core/Select&#34;</span><span class="p">;</span>
@@ -479,7 +480,7 @@ How to use Jest function.js
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="common-mistakes-with-react-testing-library">Common mistakes with React Testing Library</h4>
-<p><a href="https://kentcdodds.com/blog/common-mistakes-with-react-testing-library">https://kentcdodds.com/blog/common-mistakes-with-react-testing-library</a></p>
+<p><a href="https://kentcdodds.com/blog/common-mistakes-with-react-testing-library" target="_blank" rel="noopener noreffer">https://kentcdodds.com/blog/common-mistakes-with-react-testing-library</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -510,7 +511,7 @@ How to use Jest function.js
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

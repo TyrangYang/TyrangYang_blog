@@ -10,6 +10,6 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/python-overview/</guid>
     <description><![CDATA[This posts only use as a remainder
-Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &#39;a name&#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &#39;Brad&#39; age = 37 print(&#39;name is&#39; + name + &#39; and age is &#39; + str(age)) print(&#39;name is {name} and age is {age}&#39;.]]></description>
+Variable Multiple assignment 1  x, y, name, is_cool = (1, 2.5, &#39;a name&#39;, True)   Casting 1 2 3 4  x = str(x) # x will be string y = int(y) # y will be an integer   String 1 2 3 4 5 6  name = &#39;Brad&#39; age = 37 print(&#39;name is&#39; + name + &#39; and age is &#39; + str(age)) print(&#39;name is {name}and age is {age}&#39;.]]></description>
 </item></channel>
 </rss>

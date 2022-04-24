@@ -9,18 +9,19 @@
 <meta property="og:description" content="Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1  npx create-react-app my-app --template redux   life cycle  Class component lifecycle    Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
 1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/react/" />
+<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/react/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-03T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-03T00:00:00+00:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="React overview"/>
 <meta name="twitter:description" content="Init react Commend
 1  npx create-react-app .   npx means you use this package but don&rsquo;t download it.
 or with redux
-1  npx create-react-app my-app --template redux   life cycle   Class component lifecycle     Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
+1  npx create-react-app my-app --template redux   life cycle  Class component lifecycle    Function component method   shouldComponentUpdate() Run before render() to check this component need to render or not.
 1 2 3  shouldComponentUpdate(nextProps, nextStates){ return boolean; }   PureComponent can automatically do a shallow comparison to determine need to update or not"/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
@@ -194,31 +195,29 @@ or with redux
 <p>Commend</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">npx create-react-app .
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">npx create-react-app .
 </code></pre></td></tr></table>
 </div>
 </div><p>npx means you use this package but don&rsquo;t download it.</p>
 <p>or with redux</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">npx create-react-app my-app --template redux
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">npx create-react-app my-app --template redux
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="life-cycle">life cycle</h2>
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png" width="100%" height="100%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rcc.png" width="100%" height="100%"/><figcaption>
             <h4>Class component lifecycle</h4>
         </figcaption>
 </figure>
 
-<figure>
-    <img src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg" width="100%" height="100%"/> <figcaption>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/2019-10-03-react/rfc.jpg" width="100%" height="100%"/><figcaption>
             <h4>Function component method</h4>
         </figcaption>
 </figure>
@@ -227,12 +226,12 @@ or with redux
 <p>Run before <code>render()</code> to check this component need to render or not.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">shouldComponentUpdate</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextStates</span><span class="p">){</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">shouldComponentUpdate</span><span class="p">(</span><span class="nx">nextProps</span><span class="p">,</span> <span class="nx">nextStates</span><span class="p">){</span>
     <span class="k">return</span> <span class="kr">boolean</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -243,14 +242,14 @@ or with redux
 <p>it is invoked right before the most recently rendered output is committed</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">getSnapshotBeforeUpdate</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">getSnapshotBeforeUpdate</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;snapshot&#39;</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prevProps</span><span class="p">,</span> <span class="nx">prevState</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
@@ -259,7 +258,7 @@ or with redux
 </div>
 </div><p><code>getSnapshotBeforeUpdate</code> must pair with <code>componentDidUpdate()</code></p>
 <h2 id="context-api">Context API</h2>
-<p>Doc: <a href="https://reactjs.org/docs/context.html#reactcreatecontext">https://reactjs.org/docs/context.html#reactcreatecontext</a></p>
+<p>Doc: <a href="https://reactjs.org/docs/context.html#reactcreatecontext" target="_blank" rel="noopener noreffer">https://reactjs.org/docs/context.html#reactcreatecontext</a></p>
 <p>Use a context:</p>
 <ol>
 <li>React.createContext({defaultValue})</li>
@@ -273,13 +272,13 @@ or with redux
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Consumer</span><span class="o">&gt;</span>
-    <span class="p">{(</span><span class="nx">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">/</span><span class="nx">_</span> <span class="nx">render</span> <span class="nx">something</span> <span class="nx">based</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">context</span> <span class="nx">value</span> <span class="nx">_</span><span class="o">/</span><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">MyContext</span><span class="p">.</span><span class="nx">Consumer</span><span class="o">&gt;</span>
+    <span class="p">{(</span><span class="nx">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">/</span><span class="mi">_</span> <span class="nx">render</span> <span class="nx">something</span> <span class="nx">based</span> <span class="nx">on</span> <span class="nx">the</span> <span class="nx">context</span> <span class="nx">value</span> <span class="mi">_</span><span class="o">/</span><span class="p">}</span>
 <span class="o">&lt;</span><span class="err">/MyContext.Consumer&gt;</span>
 </code></pre></td></tr></table>
 </div>
@@ -303,7 +302,7 @@ or with redux
 <h3 id="create-ref">create ref</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -314,7 +313,7 @@ or with redux
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">MyComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">MyComponent</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
         <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">myRef</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span>
@@ -328,16 +327,16 @@ or with redux
 </div><h3 id="access-ref">access ref</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">myRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">myRef</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="adding-a-ref-to-a-class-component">Adding a Ref to a Class Component</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -383,7 +382,7 @@ or with redux
 </span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">CustomTextInput</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">CustomTextInput</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
         <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
         <span class="c1">// create a ref to store the textInput DOM element
@@ -435,7 +434,7 @@ or with redux
 <h4 id="useimperativehandle--forwardref">useImperativeHandle + ForwardRef</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -447,7 +446,7 @@ or with redux
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">FancyInput</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">ref</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">FancyInput</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">ref</span><span class="p">)</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">inputRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
     <span class="nx">useImperativeHandle</span><span class="p">(</span><span class="nx">ref</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">({</span>
         <span class="nx">focus</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -464,16 +463,16 @@ or with redux
 <h3 id="usestate">useState</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setstate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setstate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="useeffect">useEffect</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -481,7 +480,7 @@ or with redux
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="o">&lt;</span><span class="nx">effect</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="o">&lt;</span><span class="nx">cleanup</span><span class="o">&gt;</span><span class="p">;</span>
@@ -494,7 +493,7 @@ or with redux
 <p>In <code>ContextProvider.jsx</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -519,7 +518,7 @@ or with redux
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useReducer</span><span class="p">,</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useReducer</span><span class="p">,</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">createContext</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span>
     <span class="nx">ID</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
@@ -547,7 +546,7 @@ or with redux
 </div><p>In <code>ContextConsumer.jsx</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -561,7 +560,7 @@ or with redux
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useContext</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useContext</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">store</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./ContextProvider.jsx&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">ContextConsumer</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -580,7 +579,7 @@ or with redux
 <h3 id="usereducer">useReducer</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -614,7 +613,7 @@ or with redux
 </span><span class="lnt">32
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">0</span> <span class="p">};</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">0</span> <span class="p">};</span>
 
 <span class="kd">function</span> <span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
@@ -655,14 +654,14 @@ or with redux
 <p>useReducer is the shortest way to create a state for toggle a boolean value</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="k">switch</span><span class="p">,</span> <span class="nx">toggleSwitch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">!</span><span class="nx">state</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="k">switch</span><span class="p">,</span> <span class="nx">toggleSwitch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">!</span><span class="nx">state</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
 <span class="c1">// switch is a boolean
 </span><span class="c1">// toggleSwitch is a function
@@ -691,7 +690,7 @@ or with redux
 <p>Component only be loaded when it will be rendered</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -711,7 +710,7 @@ or with redux
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Suspense</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Suspense</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 
 <span class="c1">// These lazy imports should put the end of other import code
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">OtherComponent</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">lazy</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="kr">import</span><span class="p">(</span><span class="s1">&#39;./OtherComponent&#39;</span><span class="p">));</span>
@@ -747,30 +746,30 @@ or with redux
 <table>
 <thead>
 <tr>
-<th align="center">Class component</th>
-<th align="center">Functional component</th>
+<th style="text-align:center">Class component</th>
+<th style="text-align:center">Functional component</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">state + setState</td>
-<td align="center">useState()</td>
+<td style="text-align:center">state + setState</td>
+<td style="text-align:center">useState()</td>
 </tr>
 <tr>
-<td align="center">componentDidMount()</td>
-<td align="center">useEffect() with a empty input list</td>
+<td style="text-align:center">componentDidMount()</td>
+<td style="text-align:center">useEffect() with a empty input list</td>
 </tr>
 <tr>
-<td align="center">componentDidUpdate()</td>
-<td align="center">useEffect() with a input list contained which you want to change</td>
+<td style="text-align:center">componentDidUpdate()</td>
+<td style="text-align:center">useEffect() with a input list contained which you want to change</td>
 </tr>
 <tr>
-<td align="center">componentWillUnmount()</td>
-<td align="center">useEffect() with a return callback function</td>
+<td style="text-align:center">componentWillUnmount()</td>
+<td style="text-align:center">useEffect() with a return callback function</td>
 </tr>
 <tr>
-<td align="center">shouldComponentUpdate()</td>
-<td align="center">export default React.memo(<component name>)</td>
+<td style="text-align:center">shouldComponentUpdate()</td>
+<td style="text-align:center">export default React.memo(<component name>)</td>
 </tr>
 </tbody>
 </table>
@@ -779,7 +778,7 @@ or with redux
 when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A</code> to everywhere. Extracting the logic is essential.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -795,7 +794,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// some logic will reuse
 </span><span class="c1"></span>    <span class="k">return</span> <span class="p">(</span>
         <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
@@ -824,7 +823,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>Concretely, <strong>a higher-order component is a function that takes a component and returns a new component.</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -841,7 +840,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">withA</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ComponentB</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">withA</span> <span class="o">=</span> <span class="p">(</span><span class="nx">ComponentB</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="c1">// some logic will reuse
 </span><span class="c1"></span>        <span class="k">return</span> <span class="p">(</span>
@@ -862,7 +861,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>Concretely, <strong>a render prop is a function prop that a component uses to know what to render.</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -878,7 +877,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">render</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">render</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// some logic will reuse
 </span><span class="c1"></span>    <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="k">return</span> <span class="p">(</span>
@@ -898,7 +897,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>Concretely, <strong>A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks.</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -910,7 +909,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">useA</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">useA</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="c1">// some logic calculation
 </span><span class="c1"></span>    <span class="k">return</span> <span class="p">[</span><span class="nx">reuseLogicResult</span><span class="p">];</span>
 <span class="p">};</span>
@@ -928,7 +927,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>These two component have same logic:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -986,7 +985,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">56
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">ReactDOM</span> <span class="nx">from</span> <span class="s1">&#39;react-dom&#39;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="kr">class</span> <span class="nx">ClassProfilePage</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
@@ -1056,7 +1055,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>This flowing code simulate this problem</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1085,7 +1084,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">10</span> <span class="p">};</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">10</span> <span class="p">};</span>
 
 <span class="kr">const</span> <span class="nx">fnA</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">count</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
     <span class="nx">click</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -1119,21 +1118,21 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>To get snapshot in class component, just assign the data that will alert to a new variable. (give several different value)</p>
 <p>To get current value in functional component, add a ref(react) / create a value outside the component and store value to it. (give a same reference)</p>
 <h3 id="initial-state-from-props">Initial state from props</h3>
-<p>Ref: <a href="https://reactjs.org/docs/react-component.html#constructor">https://reactjs.org/docs/react-component.html#constructor</a></p>
+<p>Ref: <a href="https://reactjs.org/docs/react-component.html#constructor" target="_blank" rel="noopener noreffer">https://reactjs.org/docs/react-component.html#constructor</a></p>
 <blockquote>
 <p>It is <strong>NOT RECOMMEND</strong> that initialized state from props directly. Update <em>props</em> won&rsquo;t be reflected in the <em>state</em>. <strong>Only use this pattern if you intentionally want to ignore prop updates.</strong></p>
 </blockquote>
 <p>Class Base:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
     <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
     <span class="c1">// Don&#39;t do this!
 </span><span class="c1"></span>    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">color</span><span class="o">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">color</span> <span class="p">};</span>
@@ -1143,11 +1142,11 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </div><p>Functional Base:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//  Don&#39;t do this!
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">//  Don&#39;t do this!
 </span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
@@ -1155,7 +1154,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>Class Base:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1165,7 +1164,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
     <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="p">}</span>
@@ -1178,7 +1177,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </div><p>Functional Base:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1186,7 +1185,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">color</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">color</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
 <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 
 <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -1242,7 +1241,7 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.69.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

@@ -11,7 +11,7 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid>
     <description><![CDATA[Create new post hugo new posts/new.md
 Add a picture   Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
-  hugo build-in shortcut &ndash;&gt; figure   
+  hugo build-in shortcut &ndash;&gt; figure  
   Add a reference link Documentation of ref and relref
 1 2  \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}})   ]]></description>
 </item></channel>
