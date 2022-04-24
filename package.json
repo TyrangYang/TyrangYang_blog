@@ -6,6 +6,7 @@
     "scripts": {
         "start": "npm run deploy",
         "serve": "hugo serve & open http://localhost:1313/TyrangYang_blog/",
+        "deploy": "gh-pages -d build",
         "algolia": "atomic-algolia",
         "clean": "rm -rf node_modules public"
     },
