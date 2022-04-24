@@ -1,5 +1,6 @@
 # Algorithm feature in c++ STL
 
+
 # **See all algorithm [click here]({{<ref "posts/all-algorithm.md">}})**
 
 ## Mutating and Non-mutating algorithms
