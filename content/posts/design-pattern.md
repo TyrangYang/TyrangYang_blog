@@ -2,7 +2,7 @@
 title: 'Design Pattern'
 date: 2021-07-22T16:35:53-07:00
 Categories: ['Overview']
-tags: ['javascript', 'typescript', '']
+tags: ['javascript', 'typescript']
 toc:
     enable: true
     auto: true

@@ -79,7 +79,7 @@ theme = "LoveIt"
     # 网站创立年份
     # since = 2019
     # 许可协议信息 (支持 HTML 格式)
-    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    license = '<a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>'
 
 [menu]
   [[menu.main]]
@@ -120,7 +120,7 @@ theme = "LoveIt"
     name = ""
     url = "https://tyrangyang.github.io/"
     title = "home page"
-    weight = "5"
+    weight = 5
 
 # Hugo 解析文档的配置
 [markup]

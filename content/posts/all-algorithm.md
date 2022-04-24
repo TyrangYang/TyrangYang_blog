@@ -14,28 +14,28 @@ toc:
 
 ## Content
 
--   [Content](#content)
--   [Algorithm Overview](#algorithm-overview)
--   [Copy](#copy)
--   [For each](#for-each)
--   [Generation](#generation)
--   [Heap](#heap)
--   [Merge](#merge)
--   [Move](#move)
--   [Number](#number)
--   [Partition](#partition)
--   [Permutation](#permutation)
--   [Remove](#remove)
--   [Replace](#replace)
--   [Reverse](#reverse)
--   [rotate](#rotate)
--   [Search](#search)
--   [Set](#set)
--   [Shuffle](#shuffle)
--   [Sort](#sort)
--   [Swap](#swap)
--   [Test range](#test-range)
--   [Unique](#unique)
+- [Content](#content)
+- [Algorithm Overview](#algorithm-overview)
+- [Copy](#copy)
+- [For each](#for-each)
+- [Generation](#generation)
+- [Heap](#heap)
+- [Merge](#merge)
+- [Move](#move)
+- [Number](#number)
+- [Partition](#partition)
+- [Permutation](#permutation)
+- [Remove](#remove)
+- [Replace](#replace)
+- [Reverse](#reverse)
+- [rotate](#rotate)
+- [Search](#search)
+- [Set](#set)
+- [Shuffle](#shuffle)
+- [Sort](#sort)
+- [Swap](#swap)
+- [Test range](#test-range)
+- [Unique](#unique)
 
 ## Algorithm Overview
 
@@ -1106,7 +1106,7 @@ int main(int argc, char const *argv[])
 
 ## Shuffle
 
-1. The only difference is that random_shuffle uses _rand()_ function to randomize the items, while the shuffle uses _urng_ which is a better random generator, though with the particular overload of random_shuffle, we can get the same behavior (as with the shuffle).
+1. The only difference is that random*shuffle uses \_rand()* function to randomize the items, while the shuffle uses _urng_ which is a better random generator, though with the particular overload of random_shuffle, we can get the same behavior (as with the shuffle).
 
 2. shuffle is an improvement over random_shuffle, and we should prefer using the former for better results. But shuffle supported from C++11.
 

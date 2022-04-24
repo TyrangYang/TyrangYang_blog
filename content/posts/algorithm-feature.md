@@ -2,12 +2,13 @@
 title: Algorithm feature in c++ STL
 date: 2019-08-25
 author: Haolin Yang
-categories: ["STL-study-note"]
+categories: ['STL-study-note']
 tags:
     - c++
     - STL
     - algorithm
 ---
+
 # **See all algorithm [click here]({{<ref "posts/all-algorithm.md">}})**
 
 ## Mutating and Non-mutating algorithms
