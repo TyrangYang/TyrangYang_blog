@@ -9,20 +9,21 @@
 <meta property="og:description" content="Reference Very useful blog:
 http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
 http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
-Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell" />
+Variable name usage %m Hostname %n Username %d Directory from / %~ Directory from ~ %t time (12) %T time (24) %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell
+single quotes &amp; double quotes 1 2 RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed Date man Date" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-12T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Z-shell overview"/>
 <meta name="twitter:description" content="Reference Very useful blog:
 http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
 http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
-Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell"/>
+Variable name usage %m Hostname %n Username %d Directory from / %~ Directory from ~ %t time (12) %T time (24) %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell
+single quotes &amp; double quotes 1 2 RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed Date man Date"/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -160,9 +161,9 @@ Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell"/>
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">RPROMPT=&#34;$(command)&#34;  # this will run command, then set RPROMPT to the result
-RPROMPT=&#39;$(command)&#39;  # this will set RPROMPT to run command each time it is printed
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">RPROMPT=&#34;$(command)&#34;  # this will run command, then set RPROMPT to the result
+</span></span><span class="line"><span class="cl">RPROMPT=&#39;$(command)&#39;  # this will set RPROMPT to run command each time it is printed
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="date">Date</h2>
 <p><code>man Date</code></p>
@@ -405,55 +406,55 @@ RPROMPT=&#39;$(command)&#39;  # this will set RPROMPT to run command each time i
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="k">function</span> prompt_char <span class="o">{</span>
-    git branch &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;±&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>
-    hg root &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;☿&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>
-    <span class="nb">echo</span> <span class="s1">&#39;&#39;</span>
-<span class="o">}</span>
-
-<span class="k">function</span> virtualenv_info <span class="o">{</span>
-    <span class="o">[</span> <span class="nv">$VIRTUAL_ENV</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;(&#39;</span><span class="sb">`</span>basename <span class="nv">$VIRTUAL_ENV</span><span class="sb">`</span><span class="s1">&#39;) &#39;</span>
-<span class="o">}</span>
-
-<span class="k">function</span> timeClock <span class="o">{</span>
-    <span class="nv">HOUR</span><span class="o">=</span><span class="k">$(</span>date +<span class="s1">&#39;%I&#39;</span><span class="k">)</span> <span class="c1"># 1 - 12</span>
-    <span class="nv">MIN</span><span class="o">=</span><span class="k">$(</span>date +<span class="s1">&#39;%M&#39;</span><span class="k">)</span> <span class="c1"># 0 - 59</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">1</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F550&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">1</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55C&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">2</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F551&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">2</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55D&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">3</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F552&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">3</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55E&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">4</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F553&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">4</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55F&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">5</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F554&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">5</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F560&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">6</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F555&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">6</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F561&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">7</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F556&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">7</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F562&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">8</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F557&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">8</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F563&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">9</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F558&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">9</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F564&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">10</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F559&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">10</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F565&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">11</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55A&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">11</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F566&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">12</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55B&#39;</span>
-    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">12</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F567&#39;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-
-<span class="nv">PROMPT</span><span class="o">=</span><span class="s1">&#39;%{$fg[yellow]%}🜲 %{$fg[red]%}%n%{$reset_color%} %{$fg_bold[green]%}%2~ $(git_prompt_info)%{$reset_color%}$(virtualenv_info)$(prompt_char) &#39;</span>
-
-<span class="nv">RPROMPT</span><span class="o">=</span><span class="s1">&#39;$(timeClock)&#39;</span>
-
-<span class="nv">ZSH_THEME_GIT_PROMPT_PREFIX</span><span class="o">=</span><span class="s2">&#34;%{</span><span class="nv">$fg</span><span class="s2">[blue]%}&#34;</span>
-<span class="nv">ZSH_THEME_GIT_PROMPT_SUFFIX</span><span class="o">=</span><span class="s2">&#34;%{</span><span class="nv">$reset_color</span><span class="s2">%}&#34;</span>
-<span class="nv">ZSH_THEME_GIT_PROMPT_DIRTY</span><span class="o">=</span><span class="s2">&#34;⥀ &#34;</span>
-<span class="nv">ZSH_THEME_GIT_PROMPT_CLEAN</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">function</span> prompt_char <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    git branch &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;±&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    hg root &gt;/dev/null 2&gt;/dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;☿&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> virtualenv_info <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[</span> <span class="nv">$VIRTUAL_ENV</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;(&#39;</span><span class="sb">`</span>basename <span class="nv">$VIRTUAL_ENV</span><span class="sb">`</span><span class="s1">&#39;) &#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">function</span> timeClock <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">HOUR</span><span class="o">=</span><span class="k">$(</span>date +<span class="s1">&#39;%I&#39;</span><span class="k">)</span> <span class="c1"># 1 - 12</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">MIN</span><span class="o">=</span><span class="k">$(</span>date +<span class="s1">&#39;%M&#39;</span><span class="k">)</span> <span class="c1"># 0 - 59</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">1</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F550&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">1</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55C&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">2</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F551&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">2</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55D&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">3</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F552&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">3</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55E&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">4</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F553&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">4</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55F&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">5</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F554&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">5</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F560&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">6</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F555&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">6</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F561&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">7</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F556&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">7</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F562&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">8</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F557&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">8</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F563&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">9</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F558&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">9</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F564&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">10</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F559&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">10</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F565&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">11</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55A&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">11</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F566&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">12</span> <span class="o">&amp;&amp;</span> MIN -lt <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F55B&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="o">[[</span> <span class="nv">$HOUR</span> -eq <span class="m">12</span> <span class="o">&amp;&amp;</span> MIN -ge <span class="m">30</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s1">&#39;\U1F567&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">PROMPT</span><span class="o">=</span><span class="s1">&#39;%{$fg[yellow]%}🜲 %{$fg[red]%}%n%{$reset_color%} %{$fg_bold[green]%}%2~ $(git_prompt_info)%{$reset_color%}$(virtualenv_info)$(prompt_char) &#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">RPROMPT</span><span class="o">=</span><span class="s1">&#39;$(timeClock)&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">ZSH_THEME_GIT_PROMPT_PREFIX</span><span class="o">=</span><span class="s2">&#34;%{</span><span class="nv">$fg</span><span class="s2">[blue]%}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ZSH_THEME_GIT_PROMPT_SUFFIX</span><span class="o">=</span><span class="s2">&#34;%{</span><span class="nv">$reset_color</span><span class="s2">%}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ZSH_THEME_GIT_PROMPT_DIRTY</span><span class="o">=</span><span class="s2">&#34;⥀ &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ZSH_THEME_GIT_PROMPT_CLEAN</span><span class="o">=</span><span class="s2">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -485,7 +486,7 @@ RPROMPT=&#39;$(command)&#39;  # this will set RPROMPT to run command each time i
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

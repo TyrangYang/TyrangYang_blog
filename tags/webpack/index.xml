@@ -11,7 +11,7 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid>
     <description><![CDATA[webpack is a static module bundler for modern JavaScript applications.
 Document: https://webpack.js.org/concepts/
-Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Installation 1 npm i -D webpack webpack-cli webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 Output The output property tells webpack where to emit the bundles it creates and how to name these files.]]></description>
 </item></channel>
 </rss>

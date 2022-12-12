@@ -8,17 +8,16 @@
         <title>Functor in C&#43;&#43; - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Functor in C&#43;&#43;" />
 <meta property="og:description" content="Basically, Functor have same functionality with interface in java.
 Think about this code. You want count all string whose length is less than 5.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  #include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;string&gt;using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia&#43;5); int res = count_if(iv." />
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;vector&gt; #include &lt;string&gt; using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia&#43;5); int res = count_if(iv." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/functor/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-07-20T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-07-20T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Functor in C&#43;&#43;"/>
 <meta name="twitter:description" content="Basically, Functor have same functionality with interface in java.
 Think about this code. You want count all string whose length is less than 5.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  #include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;string&gt;using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia&#43;5); int res = count_if(iv."/>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;vector&gt; #include &lt;string&gt; using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia&#43;5); int res = count_if(iv."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -31,7 +30,7 @@ Think about this code. You want count all string whose length is less than 5.
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/functor\/"
-        },"genre": "posts","keywords": "c\u002b\u002b, STL","wordcount":  231 ,
+        },"genre": "posts","keywords": "c\u002b\u002b, STL","wordcount":  235 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/functor\/","datePublished": "2019-07-20T00:00:00+00:00","dateModified": "2019-07-20T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -105,7 +104,7 @@ Think about this code. You want count all string whose length is less than 5.
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Functor in C&#43;&#43;</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/stl-study-note/"><i class="far fa-folder fa-fw"></i>STL-study-note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-07-20">2019-07-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;231 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-07-20">2019-07-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;235 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="content" id="content"><p>Basically, Functor have same functionality with interface in java.</p>
 <p>Think about this code. You want count all string whose length is less than 5.</p>
@@ -131,25 +130,25 @@ Think about this code. You want count all string whose length is less than 5.
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">bool</span> <span class="nf">lenLessThanFive</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">){</span>
-    <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">ia</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;aa&#34;</span><span class="p">,</span> <span class="s">&#34;aaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaaa&#34;</span><span class="p">};</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">iv</span><span class="p">(</span><span class="n">ia</span><span class="p">,</span> <span class="n">ia</span><span class="o">+</span><span class="mi">5</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">count_if</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">lenLessThanFive</span><span class="p">);</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;res= &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">lenLessThanFive</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">ia</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;aa&#34;</span><span class="p">,</span> <span class="s">&#34;aaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaaa&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">iv</span><span class="p">(</span><span class="n">ia</span><span class="p">,</span> <span class="n">ia</span><span class="o">+</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">count_if</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">lenLessThanFive</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;res= &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>lenLessThanFive</code> is a function pointer here. It is work right, but it lack scalability. We cannot change the threshold in the function every time. Meanwhile, Function need to be unary(only one parameter). Therefore, we can consider the Functor.</p>
 <div class="highlight"><div class="chroma">
@@ -176,27 +175,27 @@ Think about this code. You want count all string whose length is less than 5.
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="nc">LenLessThan</span>
-<span class="p">{</span>
-<span class="k">private</span><span class="o">:</span>
-    <span class="k">const</span> <span class="kt">int</span> <span class="n">lenThreshold</span><span class="p">;</span>
-<span class="k">public</span><span class="o">:</span>
-    <span class="kt">bool</span> <span class="k">operator</span> <span class="p">()</span> <span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">){</span>
-        <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">lenThreshold</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">explicit</span> <span class="nf">LenLessThan</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">)</span><span class="o">:</span><span class="n">lenThreshold</span><span class="p">(</span><span class="n">len</span><span class="p">){};</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">string</span> <span class="n">ia</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;aa&#34;</span><span class="p">,</span> <span class="s">&#34;aaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaaa&#34;</span><span class="p">};</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">iv</span><span class="p">(</span><span class="n">ia</span><span class="p">,</span> <span class="n">ia</span><span class="o">+</span><span class="mi">5</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">count_if</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">LenLessThan</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;res = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LenLessThan</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="kt">int</span> <span class="n">lenThreshold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="k">operator</span> <span class="p">()</span> <span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">str</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">str</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">lenThreshold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">explicit</span> <span class="nf">LenLessThan</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">)</span><span class="o">:</span><span class="n">lenThreshold</span><span class="p">(</span><span class="n">len</span><span class="p">){};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="n">ia</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;aa&#34;</span><span class="p">,</span> <span class="s">&#34;aaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaa&#34;</span><span class="p">,</span> <span class="s">&#34;aaaaa&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">iv</span><span class="p">(</span><span class="n">ia</span><span class="p">,</span> <span class="n">ia</span><span class="o">+</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">count_if</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">LenLessThan</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;res = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">res</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Class <code>LenLessThan</code> is a functor and you can solve this problem.</p>
 <p>A amount of functor used in STL.</p>
@@ -230,7 +229,7 @@ Think about this code. You want count all string whose length is less than 5.
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

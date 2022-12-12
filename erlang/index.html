@@ -16,7 +16,6 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/erlang/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-14T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Erlang overview"/>
 <meta name="twitter:description" content="Basic Documentation: https://erlang.org/doc/search/
@@ -140,10 +139,10 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="nv">A</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span> <span class="err">#</span> <span class="n">right</span>
-<span class="nv">B</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span> <span class="err">#</span> <span class="n">right</span>
-<span class="nv">A</span> <span class="o">=</span> <span class="nv">B</span><span class="p">,</span> <span class="err">#</span> <span class="n">wrong</span><span class="p">.</span> <span class="nv">Because</span> <span class="nv">A</span> <span class="n">is</span> <span class="n">already</span> <span class="n">bound</span><span class="p">.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="line"><span class="cl"><span class="nv">A</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span> <span class="err">#</span> <span class="n">right</span>
+</span></span><span class="line"><span class="cl"><span class="nv">B</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span> <span class="err">#</span> <span class="n">right</span>
+</span></span><span class="line"><span class="cl"><span class="nv">A</span> <span class="o">=</span> <span class="nv">B</span><span class="p">,</span> <span class="err">#</span> <span class="n">wrong</span><span class="p">.</span> <span class="nv">Because</span> <span class="nv">A</span> <span class="n">is</span> <span class="n">already</span> <span class="n">bound</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="function">Function</h2>
 <p>Sample function:</p>
@@ -152,8 +151,8 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="nf">sample</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">A</span><span class="p">.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="line"><span class="cl"><span class="nf">sample</span><span class="p">(</span><span class="nv">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nv">A</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The last line of Function is the return value. Use <code>;</code> to represent end point of a branch.</p>
 <div class="highlight"><div class="chroma">
@@ -166,13 +165,13 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="k">if</span>
-    <span class="p">(</span><span class="nv">A</span> <span class="o">==</span> <span class="n">true</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nv">B</span> <span class="o">==</span> <span class="n">true</span><span class="p">)</span> <span class="o">-&gt;</span>
-        <span class="n">true</span><span class="p">;</span>
-    <span class="n">true</span> <span class="o">-&gt;</span>
-        <span class="n">false</span>
-<span class="k">end</span><span class="p">.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="line"><span class="cl"><span class="k">if</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nv">A</span> <span class="o">==</span> <span class="n">true</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nv">B</span> <span class="o">==</span> <span class="n">true</span><span class="p">)</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">true</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">false</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="multi-thread">Multi-thread</h2>
 <p>Erlang use message passing module to deal with multi thread. Each thread have own mailbox, stack and heap.</p>
@@ -189,13 +188,13 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="nf">echo</span><span class="p">()</span> <span class="o">-&gt;</span>
-    <span class="k">receive</span>
-        <span class="p">{</span><span class="n">echo</span><span class="p">,</span> <span class="nv">From</span><span class="p">,</span> <span class="nv">Ref</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">}</span> <span class="o">-&gt;</span>
-    <span class="nv">From</span> <span class="o">!</span> <span class="p">{</span><span class="n">responds</span><span class="p">,</span> <span class="n">self</span><span class="p">(),</span> <span class="nv">Ref</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">},</span> <span class="n">echo</span><span class="p">();</span>
-        <span class="p">{</span><span class="n">stop</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">ok</span>
-<span class="k">end</span><span class="p">.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="line"><span class="cl"><span class="nf">echo</span><span class="p">()</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">receive</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="n">echo</span><span class="p">,</span> <span class="nv">From</span><span class="p">,</span> <span class="nv">Ref</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">}</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">From</span> <span class="o">!</span> <span class="p">{</span><span class="n">responds</span><span class="p">,</span> <span class="n">self</span><span class="p">(),</span> <span class="nv">Ref</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">},</span> <span class="n">echo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="n">stop</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="n">ok</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="spawn">spawn</h3>
 <p>Reference: <a href="http://erlang.org/doc/man/erlang.html#spawn-1" target="_blank" rel="noopener noreffer">http://erlang.org/doc/man/erlang.html#spawn-1</a></p>
@@ -215,12 +214,12 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">foldl(_F, A, []) -&gt; A;
-foldl(F, A, [H|T]) -&gt; fold(F, F(H, A), [T]).
-
-foldr(_F, A, []) -&gt; A;
-foldr(F, A, [H|T]) -&gt; F(H, foldr(F, A, T)).
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">foldl(_F, A, []) -&gt; A;
+</span></span><span class="line"><span class="cl">foldl(F, A, [H|T]) -&gt; fold(F, F(H, A), [T]).
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">foldr(_F, A, []) -&gt; A;
+</span></span><span class="line"><span class="cl">foldr(F, A, [H|T]) -&gt; F(H, foldr(F, A, T)).
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><code>_F</code> means <code>F</code> is unnecessary since first part of function not use <code>F</code>.</p>
@@ -245,16 +244,16 @@ foldr(F, A, [H|T]) -&gt; F(H, foldr(F, A, T)).
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">all</span><span class="o">:</span>
-	erlc *erl
-	erl -eval <span class="s2">&#34;lexgrm:start(), halt()&#34;</span> -noshell -detached
-
-<span class="nf">run</span><span class="o">:</span> <span class="n">all</span>
-	erl
-
-<span class="nf">clean</span><span class="o">:</span>
-	rm -f *beam grm.erl lex.erl
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="line"><span class="cl"><span class="nf">all</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	erlc *erl
+</span></span><span class="line"><span class="cl">	erl -eval <span class="s2">&#34;lexgrm:start(), halt()&#34;</span> -noshell -detached
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">run</span><span class="o">:</span> <span class="n">all</span>
+</span></span><span class="line"><span class="cl">	erl
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">clean</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">	rm -f *beam grm.erl lex.erl
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -286,7 +285,7 @@ foldr(F, A, [H|T]) -&gt; F(H, foldr(F, A, T)).
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

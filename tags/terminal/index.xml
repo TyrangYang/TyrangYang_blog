@@ -10,8 +10,7 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
     <description><![CDATA[chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|+|-] [r|w|x] 
-u =&gt; user
+usage chmod [u|g|o|a][=|+|-] [r|w|x] u =&gt; user
 g =&gt; group
 o =&gt; other
 a =&gt; all
@@ -43,7 +42,7 @@ ls -a list all included hiding file
 ls -l list detail
 Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
 mv &lt;name1&gt; &lt;name2&gt; rename
- move one file within this directory to another name.]]></description>
+move one file within this directory to another name.]]></description>
 </item><item>
     <title>Crontab overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
@@ -52,7 +51,8 @@ mv &lt;name1&gt; &lt;name2&gt; rename
     <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
     <description><![CDATA[What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
 Basic command crontab [-u user] {-l | -e | -r}
-   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:]]></description>
+command utility -l list your cron job -r remove your cron job -e edit your cron job -u specific a user How to schedule a command Cron job looks like:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &gt;&gt; ~/Desktop/test.]]></description>
 </item><item>
     <title>My Zsh setting</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link>

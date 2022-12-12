@@ -10,8 +10,8 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</guid>
     <description><![CDATA[Reference: https://www.restapitutorial.com/httpstatuscodes.html
- ⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
- 1XX Information  100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV)  2XX Success  ⭐︎200 OK &ndash; The request has succeeded.  General status code. Most common code used to indicate success.
-  ⭐︎201 Created &ndash; A new resource has been created and should return a URI.]]></description>
+⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
+1XX Information 100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV) 2XX Success ⭐︎200 OK &ndash; The request has succeeded. General status code. Most common code used to indicate success.
+⭐︎201 Created &ndash; A new resource has been created and should return a URI. Successful creation occurred (via either POST or PUT).]]></description>
 </item></channel>
 </rss>

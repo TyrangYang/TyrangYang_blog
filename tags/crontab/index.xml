@@ -11,6 +11,7 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
     <description><![CDATA[What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
 Basic command crontab [-u user] {-l | -e | -r}
-   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:]]></description>
+command utility -l list your cron job -r remove your cron job -e edit your cron job -u specific a user How to schedule a command Cron job looks like:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &gt;&gt; ~/Desktop/test.]]></description>
 </item></channel>
 </rss>

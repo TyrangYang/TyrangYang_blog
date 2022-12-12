@@ -12,6 +12,6 @@
     <description><![CDATA[Introduction of Lambda expression in C++ and how to use it.
 What is Lambda in C++ Lambda expression is a new feature since c++11. It is used to create anonymous function object to simplify programming process.
 How Lambda expressions are composed [capture](parameters) mutable -&gt; return type {statement}
-1 2 3 4  // ... #include &lt;functional&gt;// ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a+b;};   capture Capture variables from context.]]></description>
+1 2 3 4 // ... #include &lt;functional&gt; // ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a+b;}; capture Capture variables from context.]]></description>
 </item></channel>
 </rss>

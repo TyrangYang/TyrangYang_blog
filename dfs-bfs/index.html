@@ -14,7 +14,6 @@ Second, Push the start point into the auxiliary data structure and loop until st
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-14T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-14T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DFS &amp; BFS"/>
 <meta name="twitter:description" content="DFS &amp; BFS are two basic algorithms to traverse a graph(or a tree). DFS is Deep-first search and BFS is Breath-first search.
@@ -137,22 +136,22 @@ Second, Push the start point into the auxiliary data structure and loop until st
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">DFS</span><span class="p">(</span><span class="n">V</span><span class="p">){</span>
-    <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">...</span><span class="n">f</span><span class="p">];</span>
-    <span class="n">stack</span> <span class="o">&lt;-</span> <span class="n">empty</span><span class="p">;</span>
-    <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">stack</span> <span class="n">not</span> <span class="n">empty</span><span class="p">){</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-        <span class="k">for</span> <span class="n">each</span> <span class="n">v2</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">temp</span><span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">){</span>
-                <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
-                <span class="n">mark</span> <span class="n">v2</span> <span class="n">as</span> <span class="n">visited</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">DFS</span><span class="p">(</span><span class="n">V</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">...</span><span class="n">f</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span> <span class="o">&lt;-</span> <span class="n">empty</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">stack</span> <span class="n">not</span> <span class="n">empty</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">each</span> <span class="n">v2</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">temp</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mark</span> <span class="n">v2</span> <span class="n">as</span> <span class="n">visited</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="bfs">BFS</h3>
 <div class="highlight"><div class="chroma">
@@ -174,22 +173,22 @@ Second, Push the start point into the auxiliary data structure and loop until st
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">BFS</span><span class="p">(</span><span class="n">V</span><span class="p">){</span>
-    <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">...</span><span class="n">f</span><span class="p">];</span>
-    <span class="n">queue</span> <span class="o">&lt;-</span> <span class="n">empty</span><span class="p">;</span>
-    <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">queue</span> <span class="n">not</span> <span class="n">empty</span><span class="p">){</span>
-        <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-        <span class="k">for</span> <span class="n">each</span> <span class="n">v2</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">temp</span><span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">){</span>
-                <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
-                <span class="n">mark</span> <span class="n">v2</span> <span class="n">as</span> <span class="n">visited</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">BFS</span><span class="p">(</span><span class="n">V</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">f</span><span class="p">...</span><span class="n">f</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span> <span class="o">&lt;-</span> <span class="n">empty</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">queue</span> <span class="n">not</span> <span class="n">empty</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">queue</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">each</span> <span class="n">v2</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">temp</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">v2</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">queue</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">mark</span> <span class="n">v2</span> <span class="n">as</span> <span class="n">visited</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="pseudocode-using-recursion">Pseudocode using recursion</h2>
 <h3 id="dfs-1">DFS</h3>
@@ -206,15 +205,15 @@ Second, Push the start point into the auxiliary data structure and loop until st
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">V</span><span class="p">){</span>
-    <span class="n">set</span> <span class="n">V</span> <span class="n">as</span> <span class="n">visited</span>
-    <span class="k">for</span> <span class="n">all</span> <span class="n">W</span> <span class="n">which</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">V</span><span class="p">{</span>
-        <span class="k">if</span> <span class="n">W</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">{</span>
-            <span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">W</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">V</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">set</span> <span class="n">V</span> <span class="n">as</span> <span class="n">visited</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">all</span> <span class="n">W</span> <span class="n">which</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">V</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">W</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">W</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="find-path">find path</h4>
 <p>Modify from DFS. But BFS still work</p>
@@ -238,21 +237,21 @@ Second, Push the start point into the auxiliary data structure and loop until st
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">findPathDFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">Z</span><span class="p">){</span>
-    <span class="n">set</span> <span class="n">V</span> <span class="n">is</span> <span class="n">visited</span>
-    <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">V</span> <span class="o">==</span> <span class="n">Z</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">P</span><span class="p">;</span>
-    <span class="k">for</span> <span class="n">all</span> <span class="n">W</span> <span class="n">that</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">V</span><span class="p">{</span>
-        <span class="k">if</span> <span class="n">W</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">{</span>
-            <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">W</span><span class="p">);</span>
-            <span class="n">findPath</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
-            <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1">// pop W
-</span><span class="c1"></span>        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1">// pop V (find the node that all nodes adjacent to it are visited and It is not target)
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">findPathDFS</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">Z</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">set</span> <span class="n">V</span> <span class="n">is</span> <span class="n">visited</span>
+</span></span><span class="line"><span class="cl">    <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">V</span> <span class="o">==</span> <span class="n">Z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">P</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">all</span> <span class="n">W</span> <span class="n">that</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">V</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">W</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">W</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">findPath</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1">// pop W
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1">// pop V (find the node that all nodes adjacent to it are visited and It is not target)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="cycle-finding">cycle finding</h4>
 <p><code>G</code> is the graph , <code>V</code> is the start vertex;</p>
@@ -277,23 +276,23 @@ Second, Push the start point into the auxiliary data structure and loop until st
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">findCycle</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">V</span><span class="p">){</span>
-    <span class="n">set</span> <span class="n">V</span> <span class="n">is</span> <span class="n">visited</span>
-    <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
-    <span class="k">for</span> <span class="n">all</span> <span class="n">W</span> <span class="n">that</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">V</span><span class="p">{</span>
-        <span class="k">if</span> <span class="n">W</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">{</span>
-            <span class="n">findCycle</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
-        <span class="p">}</span>
-        <span class="k">else</span><span class="p">{</span>
-            <span class="k">do</span><span class="p">{</span>
-            <span class="n">temp</span> <span class="o">=</span> <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-            <span class="n">T</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-            <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">==</span> <span class="n">W</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">findCycle</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">V</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">set</span> <span class="n">V</span> <span class="n">is</span> <span class="n">visited</span>
+</span></span><span class="line"><span class="cl">    <span class="n">P</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">V</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">all</span> <span class="n">W</span> <span class="n">that</span> <span class="n">is</span> <span class="n">adjacent</span> <span class="n">to</span> <span class="n">V</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">W</span> <span class="n">is</span> <span class="n">not</span> <span class="n">visited</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">findCycle</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">do</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">temp</span> <span class="o">=</span> <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">T</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">temp</span> <span class="o">==</span> <span class="n">W</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">P</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -325,7 +324,7 @@ Second, Push the start point into the auxiliary data structure and loop until st
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

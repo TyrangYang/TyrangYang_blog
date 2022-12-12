@@ -10,8 +10,7 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
     <description><![CDATA[chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|+|-] [r|w|x] 
-u =&gt; user
+usage chmod [u|g|o|a][=|+|-] [r|w|x] u =&gt; user
 g =&gt; group
 o =&gt; other
 a =&gt; all

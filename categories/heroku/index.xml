@@ -12,7 +12,7 @@
     <description><![CDATA[Heroku can help us deploy our application(back end) rapidly and easy
 deploy The only we need to take care is the PORT of your app. You have to use the PORT in environment.
 In Node.js
-1  PORT = process.env.PORT || 3000; // 3000 can be anything else   heroku cli Home page
+1 PORT = process.env.PORT || 3000; // 3000 can be anything else heroku cli Home page
 heroku login
 heroku create
 git push heroku master]]></description>

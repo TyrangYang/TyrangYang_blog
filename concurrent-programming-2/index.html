@@ -10,19 +10,18 @@
 Bad situation.
 Atomic operation An operation is atomic if it execute until it completion without interruption
 Critical section A part of program that accesses shared memory and which we which to execute automatically.
-mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed." />
+mutual exclusion problem (MEP) Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-04T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concurrent Programming Course note 2"/>
 <meta name="twitter:description" content="Race condition Multiple thread access one same variables of object concurrently and at least one does update.
 Bad situation.
 Atomic operation An operation is atomic if it execute until it completion without interruption
 Critical section A part of program that accesses shared memory and which we which to execute automatically.
-mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed."/>
+mutual exclusion problem (MEP) Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -139,14 +138,14 @@ mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most on
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">){</span>
-    <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="c1">// .....
-</span><span class="c1"></span>    <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">await</span> <span class="o">!</span><span class="n">flag</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">flag</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// .....
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">await</span> <span class="o">!</span><span class="n">flag</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -197,40 +196,40 @@ mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most on
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">global</span> <span class="kt">int</span> <span class="n">turn</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
-<span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-<span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-
-<span class="n">thread</span> <span class="n">p</span><span class="o">:{</span>
-    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
-        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">while</span> <span class="n">wantQ</span><span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="n">2</span><span class="o">){</span>
-                <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-                <span class="n">await</span> <span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="n">1</span><span class="o">);</span>
-                <span class="n">wantP</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="n">turn</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span>
-        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="n">thread</span> <span class="n">p</span><span class="o">:{</span>
-    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
-        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">while</span> <span class="n">wantP</span><span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="n">1</span><span class="o">){</span>
-                <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-                <span class="n">await</span> <span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="n">2</span><span class="o">);</span>
-                <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="n">turn</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span>
-        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">global</span> <span class="kt">int</span> <span class="n">turn</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">thread</span> <span class="n">p</span><span class="o">:{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">wantQ</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">2</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">await</span> <span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wantP</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">turn</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">thread</span> <span class="n">p</span><span class="o">:{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">wantP</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">await</span> <span class="o">(</span><span class="n">turn</span> <span class="o">==</span> <span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">turn</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="petersons-algorithm">Peterson&rsquo;s Algorithm</h2>
 <div class="highlight"><div class="chroma">
@@ -256,26 +255,26 @@ mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most on
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">global</span> <span class="kt">int</span> <span class="n">last</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
-<span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-<span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-
-<span class="n">thread</span> <span class="n">p</span><span class="o">:{</span>
-    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
-        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="n">last</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
-        <span class="n">await</span> <span class="o">(!</span><span class="n">wantQ</span> <span class="o">||</span> <span class="n">last</span> <span class="o">==</span> <span class="n">2</span><span class="o">);</span>
-        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
-        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="n">last</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span>
-        <span class="n">await</span> <span class="o">(!</span><span class="n">wantP</span> <span class="o">||</span> <span class="n">last</span> <span class="o">==</span> <span class="n">1</span><span class="o">);</span>
-        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">global</span> <span class="kt">int</span> <span class="n">last</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">global</span> <span class="kt">boolean</span> <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">thread</span> <span class="n">p</span><span class="o">:{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">last</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">await</span> <span class="o">(!</span><span class="n">wantQ</span> <span class="o">||</span> <span class="n">last</span> <span class="o">==</span> <span class="mi">2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantP</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">last</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">await</span> <span class="o">(!</span><span class="n">wantP</span> <span class="o">||</span> <span class="n">last</span> <span class="o">==</span> <span class="mi">1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">wantQ</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -307,7 +306,7 @@ mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most on
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

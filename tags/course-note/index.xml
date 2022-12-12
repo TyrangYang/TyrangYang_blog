@@ -9,7 +9,7 @@
     <pubDate>Thu, 31 Oct 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</guid>
-    <description><![CDATA[Message passing 1 2 3 4 5 6 7  echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop  stop -&gt; true %^pattern^ ^a return value and stop receiving  end.   ]]></description>
+    <description><![CDATA[Message passing 1 2 3 4 5 6 7 echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop stop -&gt; true %^pattern^ ^a return value and stop receiving end. ]]></description>
 </item><item>
     <title>Concurrent Programming Course note 4</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</link>
@@ -17,14 +17,14 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</guid>
     <description><![CDATA[Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while  empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while  full.]]></description>
+producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty.]]></description>
 </item><item>
     <title>SASS (SCSS) features</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>
     <pubDate>Wed, 18 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
-    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p.]]></description>
+    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7 $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; } Operator 1 2 3 4 5 6 7 8 9 10 11 12 13 .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; } String interpolation 1 2 3 4 5 $name: foo; $attr: border; p.]]></description>
 </item><item>
     <title>Concurrent Programming Course note 3</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</link>
@@ -35,8 +35,8 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 acquire() will add one permission.
 release() will remove one permission.
 Permission must ≥ 0.
-Semaphore solution for the MEP  #criticalSection + permissions = 1 #criticalSection = #acquires − #releases  Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
-Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared  static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &lt; 50; i++){ mutex.]]></description>
+Semaphore solution for the MEP #criticalSection + permissions = 1 #criticalSection = #acquires − #releases Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
+Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &lt; 50; i++){ mutex.]]></description>
 </item><item>
     <title>Concurrent Programming Course note 2</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</link>
@@ -47,7 +47,7 @@ Java 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  public class Turnstile ext
 Bad situation.
 Atomic operation An operation is atomic if it execute until it completion without interruption
 Critical section A part of program that accesses shared memory and which we which to execute automatically.
-mutual exclusion problem (MEP)  Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.]]></description>
+mutual exclusion problem (MEP) Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.]]></description>
 </item><item>
     <title>Software Development Course note</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/software-development-1/</link>

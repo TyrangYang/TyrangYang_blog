@@ -11,12 +11,11 @@ Ref: https://opensource.com/article/18/8/what-how-makefile
 What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
-1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files)." />
+1 2 target: prerequisites &lt;TAB&gt; recipe As an example, a target might be a binary file that depends on prerequisites (source files)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-12T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Makefile overview"/>
 <meta name="twitter:description" content="What is makefile. How to write a makefile.
@@ -24,7 +23,7 @@ Ref: https://opensource.com/article/18/8/what-how-makefile
 What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
-1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files)."/>
+1 2 target: prerequisites &lt;TAB&gt; recipe As an example, a target might be a binary file that depends on prerequisites (source files)."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -126,9 +125,9 @@ How to write makefile To summarize, below is the syntax of a typical rule:
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">target</span><span class="o">:</span> <span class="n">prerequisites</span>
-<span class="err">&lt;TAB&gt;</span> <span class="err">recipe</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="line"><span class="cl"><span class="nf">target</span><span class="o">:</span> <span class="n">prerequisites</span>
+</span></span><span class="line"><span class="cl"><span class="err">&lt;TAB&gt;</span> <span class="err">recipe</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>As an example, a <em>target</em> might be a binary file that <strong>depends on</strong> <em>prerequisites</em> (source files). On the other hand, a prerequisite can also be a target that depends on other dependencies:</p>
 <div class="highlight"><div class="chroma">
@@ -140,12 +139,12 @@ How to write makefile To summarize, below is the syntax of a typical rule:
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">final_target</span><span class="o">:</span> <span class="n">sub_target</span> <span class="n">final_target</span>.<span class="n">c</span>
-        Recipe_to_create_final_target
-
-<span class="nf">sub_target</span><span class="o">:</span> <span class="n">sub_target</span>.<span class="n">c</span>
-        Recipe_to_create_sub_target
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="line"><span class="cl"><span class="nf">final_target</span><span class="o">:</span> <span class="n">sub_target</span> <span class="n">final_target</span>.<span class="n">c</span>
+</span></span><span class="line"><span class="cl">        Recipe_to_create_final_target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">sub_target</span><span class="o">:</span> <span class="n">sub_target</span>.<span class="n">c</span>
+</span></span><span class="line"><span class="cl">        Recipe_to_create_sub_target
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>It is not necessary for the target and prerequisites to be a file</strong>; it could be just a name for the recipe, as in our example. We call these &ldquo;phony targets.&rdquo;</p>
 <h2 id="example">Example</h2>
@@ -161,15 +160,15 @@ How to write makefile To summarize, below is the syntax of a typical rule:
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="nf">run</span><span class="o">:</span> <span class="n">test</span>
-	./test
-
-<span class="nf">test</span><span class="o">:</span> <span class="n">test</span>.<span class="n">o</span>
-	g++ test.o -o <span class="nb">test</span>
-
-<span class="nf">test.o</span><span class="o">:</span> <span class="n">test</span>.<span class="n">cc</span>
-	g++ -std<span class="o">=</span>c++11 -c test.cc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="line"><span class="cl"><span class="nf">run</span><span class="o">:</span> <span class="n">test</span>
+</span></span><span class="line"><span class="cl">	./test
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">test</span><span class="o">:</span> <span class="n">test</span>.<span class="n">o</span>
+</span></span><span class="line"><span class="cl">	g++ test.o -o <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">test.o</span><span class="o">:</span> <span class="n">test</span>.<span class="n">cc</span>
+</span></span><span class="line"><span class="cl">	g++ -std<span class="o">=</span>c++11 -c test.cc
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -201,7 +200,7 @@ How to write makefile To summarize, below is the syntax of a typical rule:
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

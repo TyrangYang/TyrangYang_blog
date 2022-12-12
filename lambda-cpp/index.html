@@ -9,18 +9,17 @@
 <meta property="og:description" content="Introduction of Lambda expression in C&#43;&#43; and how to use it.
 What is Lambda in C&#43;&#43; Lambda expression is a new feature since c&#43;&#43;11. It is used to create anonymous function object to simplify programming process.
 How Lambda expressions are composed [capture](parameters) mutable -&gt; return type {statement}
-1 2 3 4  // ... #include &lt;functional&gt;// ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a&#43;b;};   capture Capture variables from context." />
+1 2 3 4 // ... #include &lt;functional&gt; // ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a&#43;b;}; capture Capture variables from context." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-01-26T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Lambda in C&#43;&#43;"/>
 <meta name="twitter:description" content="Introduction of Lambda expression in C&#43;&#43; and how to use it.
 What is Lambda in C&#43;&#43; Lambda expression is a new feature since c&#43;&#43;11. It is used to create anonymous function object to simplify programming process.
 How Lambda expressions are composed [capture](parameters) mutable -&gt; return type {statement}
-1 2 3 4  // ... #include &lt;functional&gt;// ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a&#43;b;};   capture Capture variables from context."/>
+1 2 3 4 // ... #include &lt;functional&gt; // ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a&#43;b;}; capture Capture variables from context."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -33,7 +32,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/lambda-cpp\/"
-        },"genre": "posts","keywords": "lambda, c\u002b\u002b","wordcount":  613 ,
+        },"genre": "posts","keywords": "lambda, c\u002b\u002b","wordcount":  619 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/lambda-cpp\/","datePublished": "2020-01-26T00:00:00+00:00","dateModified": "2020-01-26T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -107,7 +106,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Lambda in C&#43;&#43;</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/c++/"><i class="far fa-folder fa-fw"></i>C++</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-26">2020-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;613 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-26">2020-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;619 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="content" id="content"><p>Introduction of Lambda expression in C++ and how to use it.</p>
 <h2 id="what-is-lambda-in-c">What is Lambda in C++</h2>
@@ -122,11 +121,11 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// ...
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="c1">// ...
-</span><span class="c1"></span><span class="nl">std</span><span class="p">:</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">add</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">std</span><span class="p">:</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">add</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="capture">capture</h3>
 <p>Capture variables from context.</p>
@@ -198,25 +197,25 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">some_list</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">some_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 0 1 2 3 4
-</span><span class="c1"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="p">[](</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">x</span><span class="o">++</span><span class="p">;</span>
-<span class="p">});</span>
-<span class="c1">// some_list // 1 2 3 4 5
-</span><span class="c1"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">total</span><span class="p">](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">total</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
-<span class="p">});</span>
-<span class="c1">// total 15
-</span><span class="c1"></span>
-<span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">;});</span>
-<span class="c1">// some_list // 5 4 3 2 1
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">some_list</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">some_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 0 1 2 3 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="p">[](</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// some_list // 1 2 3 4 5
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">for_each</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">total</span><span class="p">](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">total</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// total 15
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">begin</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="n">end</span><span class="p">(</span><span class="n">some_list</span><span class="p">),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">;});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// some_list // 5 4 3 2 1
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="function">Function</h3>
 <div class="highlight"><div class="chroma">
@@ -238,22 +237,22 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
-    <span class="k">auto</span> <span class="n">add</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">Add</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>
-
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;add: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Add: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">Add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">add</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">Add</span> <span class="o">=</span> <span class="p">[</span><span class="o">=</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;add: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Add: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">Add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="recursive">Recursive</h3>
 <p>Same with function but you have to specify the type of function instead of <code>auto</code>. Because compiler cannot automatically detected the type recursive function when calling itself.</p>
@@ -277,23 +276,23 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">recursion</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">recursion</span><span class="p">](</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">recursion</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">recursion</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-    <span class="p">};</span>
-
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(2):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(3):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(4):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">recursion</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">recursion</span><span class="p">](</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">recursion</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">recursion</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(2):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(3):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(4):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Meanwhile, tail recursion:</p>
 <div class="highlight"><div class="chroma">
@@ -320,33 +319,31 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </span><span class="lnt">20
 </span><span class="lnt">21
 </span><span class="lnt">22
-</span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="n">function</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="p">(</span><span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span><span class="kt">uint64_t</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">fibo</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">fibo</span><span class="p">](</span><span class="kt">uint64_t</span> <span class="n">a</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">b</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">cur</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">r</span><span class="p">){</span>
-    	<span class="k">if</span><span class="p">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="n">r</span><span class="p">)</span>
-	    	<span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="p">,</span> <span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="p">);</span>
-  		<span class="k">return</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">};</span>
-
-	<span class="n">function</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">recursion</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">fibo</span><span class="p">](</span><span class="kt">uint64_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
-            <span class="k">return</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="mi">1</span><span class="p">;</span>
-		<span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
-	<span class="p">};</span>
-
-	<span class="kt">uint64_t</span> <span class="n">in</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(&#34;</span><span class="o">&lt;&lt;</span> <span class="n">in</span> <span class="o">&lt;&lt;</span><span class="s">&#34;):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">function</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="p">(</span><span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span> <span class="kt">uint64_t</span><span class="p">,</span><span class="kt">uint64_t</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">fibo</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">fibo</span><span class="p">](</span><span class="kt">uint64_t</span> <span class="n">a</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">b</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">cur</span><span class="p">,</span> <span class="kt">uint64_t</span> <span class="n">r</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    	<span class="k">if</span><span class="p">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	    	<span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="p">,</span> <span class="n">cur</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">  		<span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">function</span><span class="o">&lt;</span><span class="kt">uint64_t</span><span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">recursion</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">fibo</span><span class="p">](</span><span class="kt">uint64_t</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">uint64_t</span> <span class="n">in</span> <span class="o">=</span> <span class="mi">35</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;recursion(&#34;</span><span class="o">&lt;&lt;</span> <span class="n">in</span> <span class="o">&lt;&lt;</span><span class="s">&#34;):&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">recursion</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -378,7 +375,7 @@ How Lambda expressions are composed [capture](parameters) mutable -&gt; return t
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

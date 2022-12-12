@@ -6,19 +6,20 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Prototype Inheritance in Javascript - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Prototype Inheritance in Javascript" />
-<meta property="og:description" content="Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+<meta property="og:description" content="Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
- f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object." />
+f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
+1 2 var newObj = Object." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-21T16:37:45-07:00" />
 <meta property="article:modified_time" content="2020-08-21T16:37:45-07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Prototype Inheritance in Javascript"/>
-<meta name="twitter:description" content="Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+<meta name="twitter:description" content="Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
- f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object."/>
+f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
+1 2 var newObj = Object."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -137,17 +138,17 @@ f1 instantiate a Foo:
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
-</span><span class="c1"></span><span class="nx">f1</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">f1</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="nx">f1</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">f1</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>f1 don&rsquo;t have <code>constructor</code>, however depends on <a href="#prototype-chain" rel="">prototype chain</a> engine will search <code>f1.__proto__</code>. This is line is equivalent to <code>Foo.prototype.constructor === Foo</code></p>
 <p>f1 instantiate a Foo:</p>
@@ -163,9 +164,9 @@ f1 instantiate a Foo:
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
-<span class="nx">newObj</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">newObj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="new">new</h2>
 <p>When js running this line:</p>
@@ -174,8 +175,8 @@ f1 instantiate a Foo:
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(...);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(...);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>new</code> actually doing:</p>
 <ol>
@@ -206,24 +207,24 @@ f1 instantiate a Foo:
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">func</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
-    <span class="p">},</span>
-<span class="p">};</span>
-
-<span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
-
-<span class="nx">newObj</span><span class="p">.</span><span class="mi">__</span><span class="nx">proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
-</span><span class="c1"></span>
-<span class="nx">newObj</span><span class="p">;</span> <span class="c1">// {}
-</span><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">func</span><span class="p">;</span> <span class="c1">// f(){return this.x}
-</span><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="nx">newObj</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="nx">newObj</span><span class="p">;</span> <span class="c1">// {x: 10, y: 20}
-</span><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">func</span><span class="p">();</span> <span class="c1">// 10
-</span><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">func</span><span class="p">();</span> <span class="c1">// undefined
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">func</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">newObj</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">newObj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">==</span> <span class="nx">obj</span><span class="p">;</span> <span class="c1">// true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">newObj</span><span class="p">;</span> <span class="c1">// {}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">func</span><span class="p">;</span> <span class="c1">// f(){return this.x}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">newObj</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">newObj</span><span class="p">;</span> <span class="c1">// {x: 10, y: 20}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">newObj</span><span class="p">.</span><span class="nx">func</span><span class="p">();</span> <span class="c1">// 10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">obj</span><span class="p">.</span><span class="nx">func</span><span class="p">();</span> <span class="c1">// undefined
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="es5-inheritance">ES5 inheritance</h2>
 <div class="highlight"><div class="chroma">
@@ -255,32 +256,32 @@ f1 instantiate a Foo:
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">SuperType</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
-<span class="p">}</span>
-<span class="nx">SuperType</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-<span class="p">};</span>
-<span class="kd">function</span> <span class="nx">SubType</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">SuperType</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">SubType</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">SuperType</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">SubType</span><span class="p">,</span>
-        <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">writable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">});</span>
-<span class="nx">SubType</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayAge</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
-<span class="p">};</span>
-<span class="kd">let</span> <span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SubType</span><span class="p">(</span><span class="s1">&#39;gim&#39;</span><span class="p">,</span> <span class="s1">&#39;17&#39;</span><span class="p">);</span>
-<span class="nx">instance</span><span class="p">.</span><span class="nx">sayName</span><span class="p">();</span> <span class="c1">// &#39;gim&#39;
-</span><span class="c1"></span><span class="nx">instance</span><span class="p">.</span><span class="nx">sayAge</span><span class="p">();</span> <span class="c1">// &#39;17&#39;
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">SuperType</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">SuperType</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">SubType</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">SuperType</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">SubType</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">SuperType</span><span class="p">.</span><span class="nx">prototype</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">constructor</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">value</span><span class="o">:</span> <span class="nx">SubType</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">enumerable</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">writable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">configurable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="nx">SubType</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayAge</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SubType</span><span class="p">(</span><span class="s1">&#39;gim&#39;</span><span class="p">,</span> <span class="s1">&#39;17&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instance</span><span class="p">.</span><span class="nx">sayName</span><span class="p">();</span> <span class="c1">// &#39;gim&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">instance</span><span class="p">.</span><span class="nx">sayAge</span><span class="p">();</span> <span class="c1">// &#39;17&#39;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/es5"/><figcaption>
             <h4>es5</h4>
@@ -313,28 +314,28 @@ f1 instantiate a Foo:
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">class</span> <span class="nx">SuperType</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
-    <span class="p">}</span>
-    <span class="nx">sayName</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="kr">class</span> <span class="nx">SubType</span> <span class="kr">extends</span> <span class="nx">SuperType</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kr">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">sayAge</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="kd">let</span> <span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SubType</span><span class="p">(</span><span class="s1">&#39;gim&#39;</span><span class="p">,</span> <span class="s1">&#39;17&#39;</span><span class="p">);</span>
-<span class="nx">instance</span><span class="p">.</span><span class="nx">sayName</span><span class="p">();</span> <span class="c1">// &#39;gim&#39;
-</span><span class="c1"></span><span class="nx">instance</span><span class="p">.</span><span class="nx">sayAge</span><span class="p">();</span> <span class="c1">// &#39;17&#39;
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">SuperType</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">sayName</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">SubType</span> <span class="kr">extends</span> <span class="nx">SuperType</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">sayAge</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SubType</span><span class="p">(</span><span class="s1">&#39;gim&#39;</span><span class="p">,</span> <span class="s1">&#39;17&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">instance</span><span class="p">.</span><span class="nx">sayName</span><span class="p">();</span> <span class="c1">// &#39;gim&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">instance</span><span class="p">.</span><span class="nx">sayAge</span><span class="p">();</span> <span class="c1">// &#39;17&#39;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/prototype-in-javascript/es6"/><figcaption>
             <h4>es6</h4>
@@ -371,7 +372,7 @@ f1 instantiate a Foo:
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

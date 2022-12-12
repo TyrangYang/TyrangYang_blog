@@ -8,17 +8,18 @@
         <title>Flex and Grid in CSS - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Flex and Grid in CSS" />
 <meta property="og:description" content="Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties." />
+display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-18T12:04:51-07:00" />
 <meta property="article:modified_time" content="2020-08-18T12:04:51-07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flex and Grid in CSS"/>
 <meta name="twitter:description" content="Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties."/>
+display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 ."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -182,10 +183,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="flex-direction">flex-direction</h3>
 <div class="highlight"><div class="chroma">
@@ -195,10 +196,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-direction.svg" width="50%" height="50%"/><figcaption>
             <h4>flex-direction</h4>
@@ -213,10 +214,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-wrap.svg" width="50%" height="50%"/><figcaption>
             <h4>flex-wrap</h4>
@@ -232,10 +233,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">column</span> <span class="kc">wrap</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">column</span> <span class="kc">wrap</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="order">order</h3>
 <div class="highlight"><div class="chroma">
@@ -245,10 +246,10 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">order</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span> <span class="c">/* default is 0 */</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">order</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span> <span class="c">/* default is 0 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/order.svg" width="40%" height="40%"/><figcaption>
             <h4>order</h4>
@@ -281,26 +282,26 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">1100</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 0 */</span>
-    <span class="c">/* Negative numbers are invalid */</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">item-3</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">1100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 0 */</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* Negative numbers are invalid */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-3</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In this example, container is <code>1100px,</code> item base width is <code>100px</code>. The left space is <code>1100 - 100 * 3 = 800</code>. This <code>800px</code> will base on the proportion <code>1 : 2 : 1</code> to distribute to each item.</p>
 <p><code>800 / 4 = 200</code> the final with will be <code>300px (100+200); 500px (100+400); 300px</code></p>
@@ -330,21 +331,21 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 1 */</span>
-    <span class="c">/* Negative numbers are invalid */</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* default 1 */</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 1 */</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* Negative numbers are invalid */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* default 1 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In this example, item will overflow <code>300 - 300 * 2 = 300px</code>.item will shrink base on the proportion <code>1 : 1</code>. Item will be <code>200px (300-100); 100px(300-200)</code></p>
 <h3 id="flex-basis">flex-basis</h3>
@@ -365,17 +366,17 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
-
-<span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>If set to 0, the item actual width will be decided by space distribution only. Because this item is no space at beginning.</p>
 <div class="highlight"><div class="chroma">
@@ -385,10 +386,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="0-vs-auto-after-distribute-space">0 vs auto after distribute space</h4>
 <p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.</p>
@@ -407,10 +408,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex</span><span class="p">:</span> <span class="kc">none</span> <span class="o">|</span> <span class="p">[</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-grow&#39;</span> <span class="o">&gt;</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-shrink&#39;</span> <span class="o">&gt;?</span> <span class="o">||</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-basis&#39;</span> <span class="o">&gt;</span> <span class="p">];</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex</span><span class="p">:</span> <span class="kc">none</span> <span class="o">|</span> <span class="p">[</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-grow&#39;</span> <span class="o">&gt;</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-shrink&#39;</span> <span class="o">&gt;?</span> <span class="o">||</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-basis&#39;</span> <span class="o">&gt;</span> <span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="flex-1-1">flex: 1</h4>
 <div class="highlight"><div class="chroma">
@@ -430,20 +431,20 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
-<span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
-<span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This is a common styling that given to an item which can take all the extra space for a flexbox.</p>
 <p>We analysis this line and see why it is work. item starting from 0 size, Not shrink and take extra space for 1 proportion. If no other item give <code>flex-grow</code>(default is 0), this item will take all extra space</p>
@@ -458,12 +459,12 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">space-between</span> <span class="o">|</span>
-        <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span><span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
-        <span class="n">unsafe</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">space-between</span> <span class="o">|</span>
+</span></span><span class="line"><span class="cl">        <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span><span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
+</span></span><span class="line"><span class="cl">        <span class="n">unsafe</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content.svg" width="40%" height="40%"/><figcaption>
             <h4>justify-content</h4>
@@ -487,12 +488,12 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">first</span>
-        <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">last</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="n">self-start</span> <span class="o">|</span> <span class="n">self-end</span> <span class="o">+...</span> <span class="n">safe</span>
-        <span class="o">|</span> <span class="n">unsafe</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">first</span>
+</span></span><span class="line"><span class="cl">        <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">last</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="n">self-start</span> <span class="o">|</span> <span class="n">self-end</span> <span class="o">+...</span> <span class="n">safe</span>
+</span></span><span class="line"><span class="cl">        <span class="o">|</span> <span class="n">unsafe</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items.svg" width="40%" height="40%"/><figcaption>
             <h4>align-items</h4>
@@ -508,10 +509,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">align-self</span><span class="p">:</span> <span class="kc">auto</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">align-self</span><span class="p">:</span> <span class="kc">auto</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-self.svg" width="40%" height="40%"/><figcaption>
             <h4>align-self</h4>
@@ -529,10 +530,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span> <span class="o">|</span> <span class="kc">inline</span><span class="o">-</span><span class="k">grid</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span> <span class="o">|</span> <span class="kc">inline</span><span class="o">-</span><span class="k">grid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="grid-template-columns--grid-template-rows">grid-template-columns &amp; grid-template-rows</h3>
 <p>values:</p>
@@ -548,11 +549,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
-    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Example:</p>
 <div class="highlight"><div class="chroma">
@@ -563,11 +564,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="kc">auto</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="kc">auto</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-01.svg" width="40%" height="40%"/><figcaption>
             <h4>grid example</h4>
@@ -583,11 +584,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="p">[</span><span class="kc">first</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="n">line2</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">line3</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="n">col4-start</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">five</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="kc">end</span><span class="p">];</span>
-    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="p">[</span><span class="n">row1-start</span><span class="p">]</span> <span class="mi">25</span><span class="kt">%</span> <span class="p">[</span><span class="n">row1-end</span><span class="p">]</span> <span class="mi">100</span><span class="kt">px</span> <span class="p">[</span><span class="n">third-line</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="kc">last</span><span class="o">-</span><span class="n">line</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="p">[</span><span class="kc">first</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="n">line2</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">line3</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="n">col4-start</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">five</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="kc">end</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="p">[</span><span class="n">row1-start</span><span class="p">]</span> <span class="mi">25</span><span class="kt">%</span> <span class="p">[</span><span class="n">row1-end</span><span class="p">]</span> <span class="mi">100</span><span class="kt">px</span> <span class="p">[</span><span class="n">third-line</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="kc">last</span><span class="o">-</span><span class="n">line</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-02.svg" width="50%" height="50%"/><figcaption>
             <h4>grid example</h4>
@@ -604,11 +605,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Example:</p>
 <div class="highlight"><div class="chroma">
@@ -619,11 +620,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">span</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* or 3/5 or line3/line5 */</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="n">third-line</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span> <span class="c">/* or 3/4 or 3/span 2 */</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">span</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* or 3/5 or line3/line5 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="n">third-line</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span> <span class="c">/* or 3/4 or 3/span 2 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-column-row.svg" width="50%" height="50%"/><figcaption>
             <h4>grid-column-row</h4>
@@ -656,28 +657,28 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-    <span class="k">grid-template-areas</span><span class="p">:</span>
-        <span class="s1">&#39;header header header header&#39;</span>
-        <span class="s1">&#39;main main . sidebar&#39;</span>
-        <span class="s1">&#39;footer footer footer footer&#39;</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-    <span class="k">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-b</span> <span class="p">{</span>
-    <span class="k">grid-area</span><span class="p">:</span> <span class="n">main</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-c</span> <span class="p">{</span>
-    <span class="k">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-d</span> <span class="p">{</span>
-    <span class="k">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;header header header header&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;main main . sidebar&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;footer footer footer footer&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-b</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">main</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-c</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-d</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-template-areas.svg" width="50%" height="50%"/><figcaption>
             <h4>grid-template-area</h4>
@@ -696,13 +697,13 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-template</span><span class="p">:</span>
-        <span class="s1">&#39;header header header header&#39;</span> <span class="mi">1</span><span class="n">fr</span>
-        <span class="s1">&#39;main main . sidebar&#39;</span> <span class="mi">1</span><span class="n">fr</span>
-        <span class="s1">&#39;footer footer footer footer&#39;</span> <span class="mi">1</span><span class="n">fr</span> <span class="o">/</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;header header header header&#39;</span> <span class="mi">1</span><span class="n">fr</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;main main . sidebar&#39;</span> <span class="mi">1</span><span class="n">fr</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;footer footer footer footer&#39;</span> <span class="mi">1</span><span class="n">fr</span> <span class="o">/</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="gap-grid-gap">gap (grid-gap)</h3>
 <div class="highlight"><div class="chroma">
@@ -716,14 +717,14 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="n">gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-
-    <span class="c">/*equal to*/</span>
-    <span class="n">row-gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">column-gap</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">/*equal to*/</span>
+</span></span><span class="line"><span class="cl">    <span class="n">row-gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">column-gap</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-gap.svg" width="40%" height="40%"/><figcaption>
             <h4>grid-gap</h4>
@@ -738,10 +739,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">justify-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">justify-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
 <figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-center.svg" width="60%" height="60%"/><figcaption>
@@ -773,10 +774,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">align-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">align-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
 <figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-center.svg" width="60%" height="60%"/><figcaption>
@@ -811,11 +812,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span>
-        <span class="kc">space-between</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span>
+</span></span><span class="line"><span class="cl">        <span class="kc">space-between</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
 <figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-center.svg" width="60%" height="60%"/><figcaption>
@@ -863,11 +864,11 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">align-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space-between</span>
-        <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">align-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space-between</span>
+</span></span><span class="line"><span class="cl">        <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
 <figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-center.svg" width="60%" height="60%"/><figcaption>
@@ -916,10 +917,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-    <span class="k">justify-self</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">justify-self</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
 <figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-center.svg" width="60%" height="60%"/><figcaption>
@@ -962,19 +963,19 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">90</span><span class="kt">px</span> <span class="mi">90</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-b</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">6</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">90</span><span class="kt">px</span> <span class="mi">90</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-b</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">6</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-01.svg" width="60%" height="60%"/><figcaption>
             <h4>explicit grid</h4>
@@ -989,10 +990,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-auto-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-02.svg" width="60%" height="60%"/><figcaption>
             <h4>implicit grid</h4>
@@ -1008,10 +1009,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">row</span> <span class="n">dense</span> <span class="o">|</span> <span class="kc">column</span> <span class="n">dense</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">row</span> <span class="n">dense</span> <span class="o">|</span> <span class="kc">column</span> <span class="n">dense</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Example:</p>
 <div class="highlight"><div class="chroma">
@@ -1037,26 +1038,26 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">container</span> <span class="nt">div</span> <span class="p">{</span>
-    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ccc</span> <span class="kc">solid</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">.</span><span class="nc">item-e</span> <span class="p">{</span>
-    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span>
-    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ccc</span> <span class="kc">solid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-e</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-01.svg" width="50%" height="50%"/><figcaption>
             <h4>implicit grid</h4>
@@ -1070,10 +1071,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-02.svg" width="50%" height="50%"/><figcaption>
             <h4>implicit grid</h4>
@@ -1091,10 +1092,10 @@ If set to a number, it will take the given number as starting size to distribute
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="o">-</span><span class="kc">fill</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="mi">200</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="o">-</span><span class="kc">fill</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="mi">200</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></blockquote>
 </div><div class="post-footer" id="post-footer">
@@ -1127,7 +1128,7 @@ If set to a number, it will take the given number as starting size to distribute
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

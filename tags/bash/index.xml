@@ -20,7 +20,8 @@ Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash
     <description><![CDATA[Reference Very useful blog:
 http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
 http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
-Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell]]></description>
+Variable name usage %m Hostname %n Username %d Directory from / %~ Directory from ~ %t time (12) %T time (24) %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell
+single quotes &amp; double quotes 1 2 RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed Date man Date]]></description>
 </item></channel>
 </rss>

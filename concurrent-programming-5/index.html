@@ -6,15 +6,14 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Concurrent Programming Course note 5 - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Concurrent Programming Course note 5" />
-<meta property="og:description" content="Message passing 1 2 3 4 5 6 7  echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop  stop -&gt; true %^pattern^ ^a return value and stop receiving  end.   " />
+<meta property="og:description" content="Message passing 1 2 3 4 5 6 7 echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop stop -&gt; true %^pattern^ ^a return value and stop receiving end. " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-31T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-31T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concurrent Programming Course note 5"/>
-<meta name="twitter:description" content="Message passing 1 2 3 4 5 6 7  echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop  stop -&gt; true %^pattern^ ^a return value and stop receiving  end.   "/>
+<meta name="twitter:description" content="Message passing 1 2 3 4 5 6 7 echo() -&gt; receive {From, Msg} -&gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop stop -&gt; true %^pattern^ ^a return value and stop receiving end. "/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -115,14 +114,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="nf">echo</span><span class="p">()</span> <span class="o">-&gt;</span>
-    <span class="k">receive</span>
-        <span class="p">{</span><span class="nv">From</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="nv">From</span> <span class="o">!</span> <span class="p">{</span><span class="nv">Msg</span><span class="p">},</span> <span class="n">echo</span><span class="p">();</span>
-        <span class="c">%^pattern^    %^response^   %^keep loop
-</span><span class="c"></span>        <span class="n">stop</span> <span class="o">-&gt;</span> <span class="n">true</span>
-        <span class="c">%^pattern^  ^a return value and stop receiving
-</span><span class="c"></span>    <span class="k">end</span><span class="p">.</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="line"><span class="cl"><span class="nf">echo</span><span class="p">()</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">receive</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nv">From</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="nv">From</span> <span class="o">!</span> <span class="p">{</span><span class="nv">Msg</span><span class="p">},</span> <span class="n">echo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c">%^pattern^    %^response^   %^keep loop
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="n">stop</span> <span class="o">-&gt;</span> <span class="n">true</span>
+</span></span><span class="line"><span class="cl">        <span class="c">%^pattern^  ^a return value and stop receiving
+</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">end</span><span class="p">.</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -154,7 +153,7 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

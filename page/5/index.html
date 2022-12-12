@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.108.0">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -10,7 +10,6 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TyrangYang_Blog"/>
 <meta name="twitter:description" content=""/>
@@ -119,7 +118,7 @@ Ref: https://opensource.com/article/18/8/what-how-makefile
 What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
-1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).</div><div class="post-footer">
+1 2 target: prerequisites &lt;TAB&gt; recipe As an example, a target might be a binary file that depends on prerequisites (source files).</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/">makefile</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -161,8 +160,9 @@ In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: 
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-12-12">2019-12-12</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/terminal/"><i class="far fa-folder fa-fw"></i>Terminal</a></span></div><div class="content">Reference Very useful blog:
 http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
 http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
-Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell</div><div class="post-footer">
+Variable name usage %m Hostname %n Username %d Directory from / %~ Directory from ~ %t time (12) %T time (24) %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell
+single quotes &amp; double quotes 1 2 RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed Date man Date</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/zsh/">zsh</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/bash/">bash</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -176,7 +176,7 @@ But in real situation, some code may need time to running but you don&rsquo;t wa
         <a href="https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/">What is &#34;this&#34; in javascript</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2019-11-17">2019-11-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div><div class="content">Author: Dmitri Pavlutin
 Reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
-Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</div><div class="post-footer">
+Concept Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs/">nodejs</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
@@ -213,7 +213,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

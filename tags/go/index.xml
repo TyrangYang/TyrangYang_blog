@@ -12,7 +12,7 @@
     <description><![CDATA[Download Go to this link
 workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
 In this workspace, file should structured as how you route your project:
-1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
-1 2 3 4 5 6 7 8  .]]></description>
+1 2 3 4 5 6 7 . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt; Example:
+1 2 3 4 5 6 7 8 .]]></description>
 </item></channel>
 </rss>

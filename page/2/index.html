@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.108.0">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -10,7 +10,6 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TyrangYang_Blog"/>
 <meta name="twitter:description" content=""/>
@@ -103,42 +102,42 @@
         <a href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/">Flex and Grid in CSS</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-18">2020-08-18</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div><div class="content">Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.</div><div class="post-footer">
+display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 .</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/">css</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/grid/">grid</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/flex/">flex</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/">Hugo Blog CheatSheet</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-17">2020-08-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/cheatsheet/"><i class="far fa-folder fa-fw"></i>CheatSheet</a></span></div><div class="content">Create new post hugo new posts/new.md
-Add a picture   Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
-  hugo build-in shortcut &ndash;&gt; figure  
-  Add a reference link Documentation of ref and relref
-1 2  \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}})   </div><div class="post-footer">
+Add a picture Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
+hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of ref and relref
+1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) </div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/">hugo</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/">cheatsheet</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/http-status-code/">Http Status Code Overview</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-13">2020-08-13</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Reference: https://www.restapitutorial.com/httpstatuscodes.html
- ⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
- 1XX Information  100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV)  2XX Success  ⭐︎200 OK &ndash; The request has succeeded.  General status code. Most common code used to indicate success.
-  ⭐︎201 Created &ndash; A new resource has been created and should return a URI.</div><div class="post-footer">
+⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
+1XX Information 100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV) 2XX Success ⭐︎200 OK &ndash; The request has succeeded. General status code. Most common code used to indicate success.
+⭐︎201 Created &ndash; A new resource has been created and should return a URI. Successful creation occurred (via either POST or PUT).</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/http-status-code/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/http/">http</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/html5-overview/">Html5 Overview 🏗</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-13">2020-08-13</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">table 1 2 3 4 5 6 7 8 9 10  table ├── thead │ └── tr │ └── th ├── tbody │ └── tr │ └── td └── tfoot └── tr └── td   Intersection Observer API 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  const option = { root: null, rootMargin: &#39;0px&#39;, threshold: 0.</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-13">2020-08-13</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">table 1 2 3 4 5 6 7 8 9 10 table ├── thead │ └── tr │ └── th ├── tbody │ └── tr │ └── td └── tfoot └── tr └── td Intersection Observer API 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 const option = { root: null, rootMargin: &#39;0px&#39;, threshold: 0.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/html5-overview/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/html/">html</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/">front-end</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/web/">web</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/dp-example/">Dynamic Programming Example</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-07-10">2020-07-10</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/"><i class="far fa-folder fa-fw"></i>Alg&DataStr</a></span></div><div class="content">Longest common subsequence This is a typical recursive problem. The pseudocode is:
-1 2  If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:]))   Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12  int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.</div><div class="post-footer">
+1 2 If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:])) Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12 int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.size()-1), text2.substr(1, text1.size()-1)); } return max(longestCommonSubsequence(text1, text2.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/dp-example/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/dp/">dp</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/dp/">Dynamic Programming 🏗</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-07-10">2020-07-10</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/"><i class="far fa-folder fa-fw"></i>Alg&DataStr</a></span></div><div class="content">What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
- Memorization Tabulation  fibonacci example The classic recursive problem:
-1 2 3 4  const fib = (n) =&gt; { if (n &lt;= 2) return 1; return fib(n - 1) + fib(n - 2); };   How to memorize :</div><div class="post-footer">
+Memorization Tabulation fibonacci example The classic recursive problem:
+1 2 3 4 const fib = (n) =&gt; { if (n &lt;= 2) return 1; return fib(n - 1) + fib(n - 2); }; How to memorize :</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/dp/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/dp/">dp</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -146,8 +145,8 @@ Add a picture   Basic markdown ![&lt;alt name](&lt; The route start from static 
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-06-21">2020-06-21</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Download Go to this link
 workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
 In this workspace, file should structured as how you route your project:
-1 2 3 4 5 6 7  . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt;   Example:
-1 2 3 4 5 6 7 8  .</div><div class="post-footer">
+1 2 3 4 5 6 7 . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt; Example:
+1 2 3 4 5 6 7 8 .</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/go/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/go/">Go</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -162,13 +161,14 @@ Git commend and usage Initialize the git repository git init</div><div class="po
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/">Vuex Overview</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-05-29">2020-05-29</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow  Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux</div><div class="post-footer">
+Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&gt; More Detail about Redux
+Redux Workflow Basic structure In store/index.js</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/">vue</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vuex/">vuex</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/redux/">redux</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/">Vue Overview</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-05-17">2020-05-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Vue Document: English 中文
-life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic vue function v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.</div><div class="post-footer">
+life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt; Basic vue function v-bind 1 2 3 4 5 6 7 &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/">vue</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
@@ -195,7 +195,7 @@ life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

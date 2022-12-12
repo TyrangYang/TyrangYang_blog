@@ -11,8 +11,8 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid>
     <description><![CDATA[Idea to traverse a tree
 Tree structure The tree structure:
-1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
+1 2 3 4 5 6 struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} }; BFS DFS Pre-order In-order Post-order Relationship:
 Iterative Loop for BFS:
-1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.pop(); // do something if(temp-&gt;left !]]></description>
 </item></channel>
 </rss>

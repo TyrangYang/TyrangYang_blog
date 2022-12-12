@@ -15,7 +15,6 @@ Git commend and usage Initialize the git repository git init" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-17T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git overview"/>
 <meta name="twitter:description" content="Here have some good pictures that is helpful for understanding git and contain the record for git commend
@@ -276,10 +275,10 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
-     /
-D---E---F---G master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+</span></span><span class="line"><span class="cl">     /
+</span></span><span class="line"><span class="cl">D---E---F---G master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The <em>base</em> of <em>topic</em> is commit <code>E</code>. Therefore <code>rebase</code> means you change the <em>base</em> depends on your given branch</p>
 <p>After you run <code>git rebase master</code>, branch will be like:</p>
@@ -290,10 +289,10 @@ D---E---F---G master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">              A&#39;--B&#39;--C&#39; topic
-             /
-D---E---F---G master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">              A&#39;--B&#39;--C&#39; topic
+</span></span><span class="line"><span class="cl">             /
+</span></span><span class="line"><span class="cl">D---E---F---G master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="compare-merge-merge---squash-and-rebase">Compare merge, merge &ndash;squash and rebase</h2>
 <p>If we have two branches <code>master</code> and <code>topic</code></p>
@@ -304,10 +303,10 @@ D---E---F---G master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
-     /
-D---E---F---G master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+</span></span><span class="line"><span class="cl">     /
+</span></span><span class="line"><span class="cl">D---E---F---G master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="merge-1">merge</h3>
 <p>If run <code>git merge</code></p>
@@ -318,10 +317,10 @@ D---E---F---G master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
-     /         \
-D---E---F---G---H master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+</span></span><span class="line"><span class="cl">     /         \
+</span></span><span class="line"><span class="cl">D---E---F---G---H master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="merge---squash">merge &ndash;squash</h3>
 <p>if fun <code>git merge --squash</code> and <code>git commit</code></p>
@@ -333,10 +332,10 @@ D---E---F---G---H master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">      A---B---C topic
-     /
-D---E---F---G---H master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+</span></span><span class="line"><span class="cl">     /
+</span></span><span class="line"><span class="cl">D---E---F---G---H master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Now you have <em>topic</em> branch and update the <em>master</em>. You may delete <em>topic</em> later</p>
 <h3 id="rebase-1">rebase</h3>
@@ -348,10 +347,10 @@ D---E---F---G---H master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">              A&#39;--B&#39;--C&#39; topic
-             /
-D---E---F---G master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">              A&#39;--B&#39;--C&#39; topic
+</span></span><span class="line"><span class="cl">             /
+</span></span><span class="line"><span class="cl">D---E---F---G master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>You can <code>checkout</code> <em>master</em> and run <code>git merge topic</code>:</p>
 <div class="highlight"><div class="chroma">
@@ -359,8 +358,8 @@ D---E---F---G master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">D---E---F---G---A&#39;---B&#39;---C&#39; master/topic
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D---E---F---G---A&#39;---B&#39;---C&#39; master/topic
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="git-revert">git revert</h2>
 <div class="highlight"><div class="chroma">
@@ -368,24 +367,24 @@ D---E---F---G master
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d   Master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a - b - c - d   Master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git revert HEAD
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git revert HEAD
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d - d&#39;   Master
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a - b - c - d - d&#39;   Master
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>d'</code> revert all change in d</p>
 <h2 id="git-cherry-pick">git cherry-pick</h2>
@@ -396,10 +395,10 @@ D---E---F---G master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d   Master
-     \
-       e - f - g Feature
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a - b - c - d   Master
+</span></span><span class="line"><span class="cl">     \
+</span></span><span class="line"><span class="cl">       e - f - g Feature
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -408,10 +407,10 @@ D---E---F---G master
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git checkout master
-
-git cherry-pick f
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git checkout master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git cherry-pick f
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -420,10 +419,10 @@ git cherry-pick f
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d - f   Master
-      \
-        e - f - g Feature
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a - b - c - d - f   Master
+</span></span><span class="line"><span class="cl">      \
+</span></span><span class="line"><span class="cl">        e - f - g Feature
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="git-config">Git config</h2>
 <p>Usually config your github email account and username in global</p>
@@ -436,9 +435,9 @@ git cherry-pick f
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git config --global user.name <span class="s2">&#34;your name&#34;</span>
-git config --global user.email <span class="s2">&#34;your@email.com&#34;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;your name&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;your@email.com&#34;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="set-password-cache">set password cache</h3>
 <p><code>git config --global credential.helper cache</code> and <strong>next password/token entering will be cache</strong>
@@ -486,7 +485,7 @@ git config --global user.email <span class="s2">&#34;your@email.com&#34;</span>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

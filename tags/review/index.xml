@@ -10,7 +10,7 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</guid>
     <description><![CDATA[Declaring an array Both are allow
-1 2  string argc[]; string[] argc;   Int array 1 2  int[] nums = new int[7]; nums[0] = 10;   1 2  Rabbit[] racers = new Rabbit[10];//10 empty rabbit array; racers[0] = new Rabbit(&#34;B&#34;,&#34;F&#34;);   arraycopy() 1  System.arraycopy(nums, 0, nums, 0, nums.length);   Array vs ArrayList  An array needs to know its size at the time of creation, arrayList does not.]]></description>
+1 2 string argc[]; string[] argc; Int array 1 2 int[] nums = new int[7]; nums[0] = 10; 1 2 Rabbit[] racers = new Rabbit[10];//10 empty rabbit array; racers[0] = new Rabbit(&#34;B&#34;,&#34;F&#34;); arraycopy() 1 System.arraycopy(nums, 0, nums, 0, nums.length); Array vs ArrayList An array needs to know its size at the time of creation, arrayList does not. To assign an object in array you must assign it to a specific index.]]></description>
 </item><item>
     <title>Review java - javadoc</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</link>
@@ -19,7 +19,7 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</guid>
     <description><![CDATA[JavaDocs JavaDocs is able to easily generate a code &ldquo;maintenance manual&rdquo;
 A doc comment is made up of two parts &ndash; a description and two or more tag.
-1 2 3 4 5  /** * Here is description * * @tag Comment for tag */   Tags  @author (classes and interfaces only, required) @version (classes and interfaces only, required) @param (methods and constructors only) @return (methods only) @exception @see @since @serial (or @serialField or @serialData) @deprecated  JDK Docs External documentation can be created with javadoc]]></description>
+1 2 3 4 5 /** * Here is description * * @tag Comment for tag */ Tags @author (classes and interfaces only, required) @version (classes and interfaces only, required) @param (methods and constructors only) @return (methods only) @exception @see @since @serial (or @serialField or @serialData) @deprecated JDK Docs External documentation can be created with javadoc]]></description>
 </item><item>
     <title>Review java - OO</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</link>
@@ -37,6 +37,6 @@ The more information Class A knows about Class B, the greater the possibility th
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</guid>
     <description><![CDATA[Basic types Every type have a default value:
-   Type Representation Initial value Storage Max. value     byte singed integer 0 8 bits 127   short singed integer 0 16 bits 32767   int singed integer 0 32 bits 2147483647   long singed integer 0 64 bits over 10^18   float floating point 0.0 32 bits over 10^38   double floating point 0.]]></description>
+Type Representation Initial value Storage Max. value byte singed integer 0 8 bits 127 short singed integer 0 16 bits 32767 int singed integer 0 32 bits 2147483647 long singed integer 0 64 bits over 10^18 float floating point 0.0 32 bits over 10^38 double floating point 0.0 64 bits over 10^308 boolean true or false false 1 bit char UNICODE (not ASCII) u0000 16 bits uFFFF Difference between i++ and ++i 1 2 b = 1; a = b++; // a = 1; b = 2 1 2 b = 1; a = ++b; // a = 2; b = 2 1 2 3 int a = 1; int res = a++ + a; // res = 3 ; a = 2.]]></description>
 </item></channel>
 </rss>

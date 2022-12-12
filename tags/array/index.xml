@@ -10,6 +10,6 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/all-arrary-method-in-javascript/</guid>
     <description><![CDATA[Show all function: Try Array.prototype &amp; Array in browser console.
- foreach 1 2 3 4 5 6 7 8 9 10  let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5   map 1 2 3 4 5 6 7  let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
+foreach 1 2 3 4 5 6 7 8 9 10 let numbers = [1, 2, 3, 4, 5]; // each element in a func numbers.forEach((element, index, arr) =&gt; { console.log(`a[${index}] = ${element}`); }); // a[0] = 1 // a[1] = 2 // a[2] = 3 // a[3] = 4 // a[4] = 5 map 1 2 3 4 5 6 7 let numbers = [1, 2, 3, 4, 5]; // [] =&gt; [] (some size) let numbers2 = numbers.]]></description>
 </item></channel>
 </rss>

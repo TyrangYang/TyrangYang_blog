@@ -10,8 +10,8 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</guid>
     <description><![CDATA[Jest is a JavaScript Testing Framework
- Document: https://jestjs.io/docs/en/getting-started
+Document: https://jestjs.io/docs/en/getting-started
 How to use Jest function.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
 </item></channel>
 </rss>

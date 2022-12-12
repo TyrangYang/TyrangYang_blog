@@ -24,7 +24,7 @@ ls -a list all included hiding file
 ls -l list detail
 Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
 mv &lt;name1&gt; &lt;name2&gt; rename
- move one file within this directory to another name.]]></description>
+move one file within this directory to another name.]]></description>
 </item><item>
     <title>Crontab overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
@@ -33,7 +33,8 @@ mv &lt;name1&gt; &lt;name2&gt; rename
     <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
     <description><![CDATA[What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
 Basic command crontab [-u user] {-l | -e | -r}
-   command utility     -l list your cron job   -r remove your cron job   -e edit your cron job   -u specific a user    How to schedule a command Cron job looks like:]]></description>
+command utility -l list your cron job -r remove your cron job -e edit your cron job -u specific a user How to schedule a command Cron job looks like:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &gt;&gt; ~/Desktop/test.]]></description>
 </item><item>
     <title>My Zsh setting</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link>
@@ -51,7 +52,8 @@ Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash
     <description><![CDATA[Reference Very useful blog:
 http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
 http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
-Variable    name usage     %m Hostname   %n Username   %d Directory from /   %~ Directory from ~   %t time (12)   %T time (24)    %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell]]></description>
+Variable name usage %m Hostname %n Username %d Directory from / %~ Directory from ~ %t time (12) %T time (24) %d and %~ can add a number to specify how many previous path will show. Like %1~
+Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell
+single quotes &amp; double quotes 1 2 RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed Date man Date]]></description>
 </item></channel>
 </rss>

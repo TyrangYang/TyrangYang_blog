@@ -10,13 +10,13 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/express/</guid>
     <description><![CDATA[Express.js is a web framework for Node.js
-Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware  app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); })   ]]></description>
+Example 1 2 3 4 5 6 7 8 9 10 11 12 13 14 const express = require(&#39;express&#39;); const app = express(); app.use(...); // get and post or middle ware app.get(&#39;/&#39;, (req, res) =&gt; { return res.send({hello:&#34;world&#34;}); }) const PORT = 4000; app.listen(PORT, ()=&gt; { console.log(`Server is ready on http://localhost:${PORT}`); }) ]]></description>
 </item><item>
     <title>Web development review</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
     <pubDate>Thu, 29 Aug 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
-    <description><![CDATA[MathJax.Hub.Config({ jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$']], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }, messageStyle: "none", "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } });   Document constructor $$f(x) = sin(x)$$]]></description>
+    <description><![CDATA[Document constructor $$f(x) = sin(x)$$]]></description>
 </item></channel>
 </rss>

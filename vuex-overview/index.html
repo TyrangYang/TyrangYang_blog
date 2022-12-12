@@ -7,16 +7,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Vuex Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Vuex Overview" />
 <meta property="og:description" content="Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow  Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux" />
+Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&gt; More Detail about Redux
+Redux Workflow Basic structure In store/index.js" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-29T16:54:43-04:00" />
 <meta property="article:modified_time" content="2020-05-29T16:54:43-04:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vuex Overview"/>
 <meta name="twitter:description" content="Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow  Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux"/>
+Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&gt; More Detail about Redux
+Redux Workflow Basic structure In store/index.js"/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -178,27 +179,27 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// import vue and vuex
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s1">&#39;vuex&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span><span class="p">;</span>
-<span class="c1">// import module
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">users</span> <span class="nx">from</span> <span class="s1">&#39;./modules/users&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">bills</span> <span class="nx">from</span> <span class="s1">&#39;./modules/bills&#39;</span><span class="p">;</span>
-
-<span class="c1">// adding vuex
-</span><span class="c1"></span><span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
-
-<span class="c1">// create store
-</span><span class="c1"></span><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
-    <span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">users</span><span class="p">,</span>
-        <span class="nx">bills</span><span class="p">,</span>
-    <span class="p">},</span>
-<span class="p">});</span>
-
-<span class="c1">// export store
-</span><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// import vue and vuex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s1">&#39;vuex&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// import module
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">users</span> <span class="nx">from</span> <span class="s1">&#39;./modules/users&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">bills</span> <span class="nx">from</span> <span class="s1">&#39;./modules/bills&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// adding vuex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// create store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">users</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">bills</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// export store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In <code>main.js</code></p>
 <div class="highlight"><div class="chroma">
@@ -216,18 +217,18 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// Adding...
-</span><span class="c1"></span>
-<span class="c1">// import store
-</span><span class="c1"></span><span class="kr">import</span> <span class="nx">store</span> <span class="nx">from</span> <span class="s1">&#39;./store&#39;</span><span class="p">;</span>
-
-<span class="c1">// add store to vue object
-</span><span class="c1"></span>
-<span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-    <span class="nx">store</span><span class="p">,</span> <span class="c1">// add this line
-</span><span class="c1"></span>    <span class="nx">render</span><span class="o">:</span> <span class="p">(</span><span class="nx">h</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">h</span><span class="p">(</span><span class="nx">App</span><span class="p">),</span>
-<span class="p">}).</span><span class="nx">$mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Adding...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// import store
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">store</span> <span class="nx">from</span> <span class="s1">&#39;./store&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// add store to vue object
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">store</span><span class="p">,</span> <span class="c1">// add this line
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">render</span><span class="o">:</span> <span class="p">(</span><span class="nx">h</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">h</span><span class="p">(</span><span class="nx">App</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">}).</span><span class="nx">$mount</span><span class="p">(</span><span class="s1">&#39;#app&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In a module</p>
 <div class="highlight"><div class="chroma">
@@ -267,40 +268,40 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">Users</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;userId1&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;testName1&#39;</span> <span class="p">},</span>
-        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;userId2&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;testName2&#39;</span> <span class="p">},</span>
-    <span class="p">],</span>
-<span class="p">};</span>
-
-<span class="kr">const</span> <span class="nx">getters</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">Users</span><span class="o">:</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">Users</span> <span class="p">};</span>
-
-<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="kr">async</span> <span class="nx">addUser</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">usr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">usr</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;....&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
-        <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;addUser&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="c1">// or
-</span><span class="c1"></span>    <span class="kr">async</span> <span class="nx">addUser</span><span class="p">({</span> <span class="nx">commit</span> <span class="p">},</span> <span class="nx">usr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">usr</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;....&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
-        <span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;addUser&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
-    <span class="p">},</span>
-<span class="p">};</span>
-
-<span class="kr">const</span> <span class="nx">mutations</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">addUser</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">usr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">state</span><span class="p">.</span><span class="nx">Users</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">usr</span><span class="p">);</span>
-    <span class="p">},</span>
-<span class="p">};</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-    <span class="nx">state</span><span class="p">,</span>
-    <span class="nx">getters</span><span class="p">,</span>
-    <span class="nx">actions</span><span class="p">,</span>
-    <span class="nx">mutations</span><span class="p">,</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Users</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;userId1&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;testName1&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;userId2&#39;</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;testName2&#39;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getters</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">Users</span><span class="o">:</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">Users</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">async</span> <span class="nx">addUser</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">usr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">usr</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;....&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">context</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;addUser&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// or
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">async</span> <span class="nx">addUser</span><span class="p">({</span> <span class="nx">commit</span> <span class="p">},</span> <span class="nx">usr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">usr</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;....&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;addUser&#39;</span><span class="p">,</span> <span class="nx">usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">mutations</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">addUser</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">usr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">state</span><span class="p">.</span><span class="nx">Users</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">usr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">state</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">getters</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">actions</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mutations</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="access">Access</h2>
 <h3 id="getters">Getters</h3>
@@ -316,15 +317,15 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span>
-    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">Users</span><span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">getters</span><span class="p">.</span><span class="nx">Users</span><span class="p">;</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;User&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Users</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">getters</span><span class="p">.</span><span class="nx">Users</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="actions">Actions</h3>
 <div class="highlight"><div class="chroma">
@@ -332,8 +333,8 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">&#39;mutation name&#39;</span><span class="p">,</span> <span class="nx">variable</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="s1">&#39;mutation name&#39;</span><span class="p">,</span> <span class="nx">variable</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="mutation">Mutation</h3>
 <div class="highlight"><div class="chroma">
@@ -341,8 +342,8 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;mutation name&#39;</span><span class="p">,</span> <span class="nx">variable</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="nx">$store</span><span class="p">.</span><span class="nx">commit</span><span class="p">(</span><span class="s1">&#39;mutation name&#39;</span><span class="p">,</span> <span class="nx">variable</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="module">Module</h3>
 <p>In default, all modules will combine to root store even you have different module except you have a <code>namespace</code></p>
@@ -380,36 +381,36 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span> <span class="nx">mapActions</span><span class="p">,</span> <span class="nx">mapGetters</span><span class="p">,</span> <span class="nx">mapMutations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vuex&#39;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-    <span class="c1">// ...
-</span><span class="c1"></span>    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
-        <span class="p">...</span><span class="nx">mapGetters</span><span class="p">([</span>
-            <span class="s1">&#39;doneTodosCount&#39;</span><span class="p">,</span> <span class="c1">// `this.doneTodosCount` -&gt; `this.$store.getters.doneTodosCount`
-</span><span class="c1"></span>            <span class="s1">&#39;anotherGetter&#39;</span><span class="p">,</span> <span class="c1">// `this.anotherGetter` -&gt; `this.$store.getters.anotherGetter`
-</span><span class="c1"></span>        <span class="p">]),</span>
-    <span class="p">},</span>
-    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-        <span class="p">...</span><span class="nx">mapMutations</span><span class="p">([</span>
-            <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.increment()` -&gt; `this.$store.commit(&#39;increment&#39;)`
-</span><span class="c1"></span>
-            <span class="s1">&#39;incrementBy&#39;</span><span class="p">,</span> <span class="c1">//  `this.incrementBy(amount)` -&gt; `this.$store.commit(&#39;incrementBy&#39;, amount)`
-</span><span class="c1"></span>        <span class="p">]),</span>
-        <span class="p">...</span><span class="nx">mapMutations</span><span class="p">({</span>
-            <span class="nx">add</span><span class="o">:</span> <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.add()` -&gt; `this.$store.commit(&#39;increment&#39;)`
-</span><span class="c1"></span>        <span class="p">}),</span>
-        <span class="p">...</span><span class="nx">mapActions</span><span class="p">([</span>
-            <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.increment()` -&gt; `this.$store.dispatch(&#39;increment&#39;)`
-</span><span class="c1"></span>
-            <span class="s1">&#39;incrementBy&#39;</span><span class="p">,</span> <span class="c1">//  `this.incrementBy(amount)` -&gt; `this.$store.dispatch(&#39;incrementBy&#39;, amount)`
-</span><span class="c1"></span>        <span class="p">]),</span>
-        <span class="p">...</span><span class="nx">mapActions</span><span class="p">({</span>
-            <span class="nx">add</span><span class="o">:</span> <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.add()` -&gt; `this.$store.dispatch(&#39;increment&#39;)`
-</span><span class="c1"></span>        <span class="p">}),</span>
-    <span class="p">},</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">mapActions</span><span class="p">,</span> <span class="nx">mapGetters</span><span class="p">,</span> <span class="nx">mapMutations</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;vuex&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">mapGetters</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;doneTodosCount&#39;</span><span class="p">,</span> <span class="c1">// `this.doneTodosCount` -&gt; `this.$store.getters.doneTodosCount`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="s1">&#39;anotherGetter&#39;</span><span class="p">,</span> <span class="c1">// `this.anotherGetter` -&gt; `this.$store.getters.anotherGetter`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">]),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">mapMutations</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.increment()` -&gt; `this.$store.commit(&#39;increment&#39;)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;incrementBy&#39;</span><span class="p">,</span> <span class="c1">//  `this.incrementBy(amount)` -&gt; `this.$store.commit(&#39;incrementBy&#39;, amount)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">]),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">mapMutations</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">add</span><span class="o">:</span> <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.add()` -&gt; `this.$store.commit(&#39;increment&#39;)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">mapActions</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.increment()` -&gt; `this.$store.dispatch(&#39;increment&#39;)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;incrementBy&#39;</span><span class="p">,</span> <span class="c1">//  `this.incrementBy(amount)` -&gt; `this.$store.dispatch(&#39;incrementBy&#39;, amount)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">]),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">mapActions</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">add</span><span class="o">:</span> <span class="s1">&#39;increment&#39;</span><span class="p">,</span> <span class="c1">//  `this.add()` -&gt; `this.$store.dispatch(&#39;increment&#39;)`
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -441,7 +442,7 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

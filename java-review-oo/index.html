@@ -14,7 +14,6 @@ The more information Class A knows about Class B, the greater the possibility th
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-07-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-07-05T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Review java - OO"/>
 <meta name="twitter:description" content="Class &amp; Object A class only exists at compile time;
@@ -201,40 +200,40 @@ The more information Class A knows about Class B, the greater the possibility th
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Flower</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">height</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">Flower</span><span class="o">(){</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">Flower</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setColor</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getColor</span><span class="o">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">color</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHeight</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">){</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">h</span> <span class="o">&lt;</span> <span class="n">0</span> <span class="o">||</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">10</span><span class="o">){</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;ERROR&#34;</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">else</span><span class="o">{</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getColor</span><span class="o">(){</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">color</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Flower</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">String</span> <span class="n">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">height</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Flower</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Flower</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setColor</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getColor</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHeight</span><span class="o">(</span><span class="kt">int</span> <span class="n">h</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">h</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;ERROR&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">this</span><span class="o">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">h</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getColor</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">color</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Test code:</p>
 <div class="highlight"><div class="chroma">
@@ -251,17 +250,17 @@ The more information Class A knows about Class B, the greater the possibility th
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nf">FlowerTest</span><span class="o">(){</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Flower</span> <span class="n">f1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flower</span><span class="o">();</span>
-        <span class="n">f1</span><span class="o">.</span><span class="na">setColor</span> <span class="o">=</span> <span class="s">&#34;red&#34;</span><span class="o">;</span>
-        <span class="n">f1</span><span class="o">.</span><span class="na">setHeight</span> <span class="o">=</span> <span class="n">11</span><span class="o">;</span> <span class="c1">// wrong
-</span><span class="c1"></span>        <span class="n">f1</span><span class="o">.</span><span class="na">setHeight</span> <span class="o">=</span> <span class="n">10</span><span class="o">;</span> <span class="c1">// OK
-</span><span class="c1"></span>
-        <span class="n">Flower</span> <span class="n">f2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flower</span><span class="o">(</span><span class="s">&#34;red&#34;</span><span class="o">,</span><span class="n">11</span><span class="o">)</span> <span class="c1">// Should print error. BUT it pass.
-</span><span class="c1"></span>    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nf">FlowerTest</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Flower</span> <span class="n">f1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flower</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f1</span><span class="o">.</span><span class="na">setColor</span> <span class="o">=</span> <span class="s">&#34;red&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f1</span><span class="o">.</span><span class="na">setHeight</span> <span class="o">=</span> <span class="mi">11</span><span class="o">;</span> <span class="c1">// wrong
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">f1</span><span class="o">.</span><span class="na">setHeight</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span> <span class="c1">// OK
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">Flower</span> <span class="n">f2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Flower</span><span class="o">(</span><span class="s">&#34;red&#34;</span><span class="o">,</span><span class="mi">11</span><span class="o">)</span> <span class="c1">// Should print error. BUT it pass.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Change constructor into:</p>
 <div class="highlight"><div class="chroma">
@@ -274,13 +273,13 @@ The more information Class A knows about Class B, the greater the possibility th
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>
-    <span class="kd">public</span> <span class="nf">Flower</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">setHeight</span><span class="o">(</span><span class="n">h</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">...</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Flower</span><span class="o">(</span><span class="n">String</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">setHeight</span><span class="o">(</span><span class="n">h</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="method-overloading">Method overloading</h2>
 <p>Whenever two or more methods have the same name but different input parameters.</p>
@@ -311,10 +310,10 @@ The more information Class A knows about Class B, the greater the possibility th
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">string</span> <span class="nf">toString</span><span class="o">(){</span>
-    <span class="k">return</span> <span class="s">&#34;&lt; user-defined format&#34;</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">string</span> <span class="nf">toString</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s">&#34;&lt; user-defined format&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -351,7 +350,7 @@ The more information Class A knows about Class B, the greater the possibility th
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

@@ -14,6 +14,6 @@ Ref: https://opensource.com/article/18/8/what-how-makefile
 What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
 You may have used make to compile a program from source code.
 How to write makefile To summarize, below is the syntax of a typical rule:
-1 2  target: prerequisites &lt;TAB&gt; recipe   As an example, a target might be a binary file that depends on prerequisites (source files).]]></description>
+1 2 target: prerequisites &lt;TAB&gt; recipe As an example, a target might be a binary file that depends on prerequisites (source files).]]></description>
 </item></channel>
 </rss>

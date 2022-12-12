@@ -11,14 +11,14 @@
     <pubDate>Thu, 22 Jul 2021 16:35:53 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</guid>
-    <description><![CDATA[Design pattern Factory pattern 1 2 3 4 5 6 7 8 9 10 11 12 13  const createDataBaseClass = (dbName: DBOption) =&gt; { switch (dbName) { case &#39;InMemo&#39;: return InMemoryDataBase; case &#39;SQL&#39;: return SQL_DB; // ...  // you can add anything else  default: break; } };   Singleton pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41  export const createDataBase = &lt;T extends BaseRecord&gt;() =&gt; { const db = new InMemoryDataBase&lt;T&gt;(); return db; }; const pokemonDB = createDataBase&lt;Pokemon&gt;(); pokemonDB.]]></description>
+    <description><![CDATA[Design pattern Factory pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 const createDataBaseClass = (dbName: DBOption) =&gt; { switch (dbName) { case &#39;InMemo&#39;: return InMemoryDataBase; case &#39;SQL&#39;: return SQL_DB; // ... // you can add anything else default: break; } }; Singleton pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 export const createDataBase = &lt;T extends BaseRecord&gt;() =&gt; { const db = new InMemoryDataBase&lt;T&gt;(); return db; }; const pokemonDB = createDataBase&lt;Pokemon&gt;(); pokemonDB.]]></description>
 </item><item>
     <title>Typescript overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link>
     <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
-    <description><![CDATA[type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11  const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2));   Array 1 2 3 4 5 6  type Book = { id: string; name: string; }; let books: Book[] = [];   unknown 1 2 3 4 5 6 7 8 9 10 11 12  let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.]]></description>
+    <description><![CDATA[type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2)); Array 1 2 3 4 5 6 type Book = { id: string; name: string; }; let books: Book[] = []; unknown 1 2 3 4 5 6 7 8 9 10 11 12 let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.]]></description>
 </item><item>
     <title>React Logic Reuse Example</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link>
@@ -28,7 +28,7 @@
     <description><![CDATA[React logic extraction Check this post
 Example code This example demonstrate one single feature using four different feature to archive code split
 Code running there: &ndash;&gt;Link&lt;&ndash;
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146  import { useState, useEffect } from React; const Styles = { redBorder: { border: &#39;1px solid #f00&#39;, }, }; const MouseDisplay = ({ x, y }) =&gt; { return ( &lt;div&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; const MouseDisplay2 = ({ x, y }) =&gt; { return ( &lt;div style={{ color: &#39;teal&#39; }}&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; // Normal export const MouseInfoAndDisplay = () =&gt; { const [x, setX] = useState(0); const [y, setY] = useState(0); const handleMove = (e) =&gt; { setX(e.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 import { useState, useEffect } from React; const Styles = { redBorder: { border: &#39;1px solid #f00&#39;, }, }; const MouseDisplay = ({ x, y }) =&gt; { return ( &lt;div&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; const MouseDisplay2 = ({ x, y }) =&gt; { return ( &lt;div style={{ color: &#39;teal&#39; }}&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; // Normal export const MouseInfoAndDisplay = () =&gt; { const [x, setX] = useState(0); const [y, setY] = useState(0); const handleMove = (e) =&gt; { setX(e.]]></description>
 </item><item>
     <title>Useful Post Archive</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</link>
@@ -49,14 +49,13 @@ How to Use GraphQL DataLoader https://rahmanfadhil.]]></description>
     <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
-    <description><![CDATA[Modal box  Demo
- Cursor &amp; hover effect  Demo
- Pure Css hamburger button This is a hamburger button using pure css to style it.
- Demo
- Loading  Demo
- Sidebar  Demo
- Profile  Demo
- ]]></description>
+    <description><![CDATA[Modal box Demo
+Cursor &amp; hover effect Demo
+Pure Css hamburger button This is a hamburger button using pure css to style it.
+Demo
+Loading Demo
+Sidebar Demo
+Profile Demo]]></description>
 </item><item>
     <title>Webpack Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link>
@@ -65,7 +64,7 @@ How to Use GraphQL DataLoader https://rahmanfadhil.]]></description>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid>
     <description><![CDATA[webpack is a static module bundler for modern JavaScript applications.
 Document: https://webpack.js.org/concepts/
-Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Installation 1 npm i -D webpack webpack-cli webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 Output The output property tells webpack where to emit the bundles it creates and how to name these files.]]></description>
 </item><item>
     <title>Jest Overview</title>
@@ -74,9 +73,9 @@ Output The output property tells webpack where to emit the bundles it creates an
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</guid>
     <description><![CDATA[Jest is a JavaScript Testing Framework
- Document: https://jestjs.io/docs/en/getting-started
+Document: https://jestjs.io/docs/en/getting-started
 How to use Jest function.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
 </item><item>
     <title>Redux Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link>
@@ -84,10 +83,10 @@ How to use Jest function.js
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid>
     <description><![CDATA[Redux Document: English 中文
-What is Redux  Redux is a predictable state container for JavaScript apps.
- Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
+What is Redux Redux is a predictable state container for JavaScript apps.
+Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
 When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
-Workflow  Redux Workflow   Example for Redux core In index.]]></description>
+Workflow Redux Workflow Example for Redux core In index.]]></description>
 </item><item>
     <title>React Posts Archive</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link>
@@ -97,17 +96,17 @@ Workflow  Redux Workflow   Example for Redux core In index.]]></description>
     <description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
 React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
 Why We Switched to React Hooks Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
-Why Can’t I Open My React App By Clicking Index.html? From My Own Post  Original Resource is NOT Free  Medium Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf  
-How To Use an IntersectionObserver in a React Hook PDF archive: &ndash;&gt;Link&lt;&ndash;
- Original Resource is NOT Free  Medium Original source: https://medium.]]></description>
+Why Can’t I Open My React App By Clicking Index.html? From My Own Post Original Resource is NOT Free Medium Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf How To Use an IntersectionObserver in a React Hook PDF archive: &ndash;&gt;Link&lt;&ndash;
+Original Resource is NOT Free Medium Original source: https://medium.]]></description>
 </item><item>
     <title>Prototype Inheritance in Javascript</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
     <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
-    <description><![CDATA[Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+    <description><![CDATA[Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
- f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object.]]></description>
+f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
+1 2 var newObj = Object.]]></description>
 </item></channel>
 </rss>

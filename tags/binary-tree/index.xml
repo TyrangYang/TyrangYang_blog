@@ -11,6 +11,6 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid>
     <description><![CDATA[2-3 tree &amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
 A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
- Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth  insertion deletion 2-4 tree ==&gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.]]></description>
+Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth insertion deletion 2-4 tree ==&gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.]]></description>
 </item></channel>
 </rss>

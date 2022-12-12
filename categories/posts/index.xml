@@ -9,9 +9,10 @@
     <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
-    <description><![CDATA[Prototype  prototype   1 2  Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true   1  f1.constructor === Foo; // true   f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+    <description><![CDATA[Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
- f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor  Object.]]></description>
+f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
+1 2 var newObj = Object.]]></description>
 </item><item>
     <title>Flex and Grid in CSS</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
@@ -20,7 +21,8 @@ f1 instantiate a Foo:
     <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
     <description><![CDATA[Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
+display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 .]]></description>
 </item><item>
     <title>How to demonstrate your front end application on Github by gh-page</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
@@ -38,7 +40,7 @@ command line usage This package also provide a command line tool:]]></descriptio
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid>
     <description><![CDATA[This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.
-Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62  checkChineseId = (id) =&gt; { const ID_LENGTH = 18; // check type  if (typeof id !]]></description>
+Sample code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 checkChineseId = (id) =&gt; { const ID_LENGTH = 18; // check type if (typeof id !]]></description>
 </item><item>
     <title>Safari Shortcut</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link>
@@ -71,7 +73,7 @@ But in real situation, some code may need time to running but you don&rsquo;t wa
     <guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid>
     <description><![CDATA[Author: Dmitri Pavlutin
 Reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
-Concept  Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.]]></description>
+Concept Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.]]></description>
 </item><item>
     <title>How to have a dynamic class name</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
@@ -82,7 +84,7 @@ Concept  Invocation of a function is executing the code that makes the body of a
 classNames This is a javascript for conditionally joining classNames.
 Here is: Github
 Basically, you can combine any number of classNames.
-1 2  const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39;   ES6 template literals You can just use template literals.]]></description>
+1 2 const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39; ES6 template literals You can just use template literals.]]></description>
 </item><item>
     <title>A simple application apollo server and react</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link>
@@ -101,7 +103,6 @@ github https://github.com/TyrangYang/SpaceX_graphql_react]]></description>
 Short cut Source from Traversy Media
 YouTube Channel
 YouTube
-Github
- ]]></description>
+Github]]></description>
 </item></channel>
 </rss>

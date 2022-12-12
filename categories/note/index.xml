@@ -9,22 +9,21 @@
     <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
-    <description><![CDATA[Modal box  Demo
- Cursor &amp; hover effect  Demo
- Pure Css hamburger button This is a hamburger button using pure css to style it.
- Demo
- Loading  Demo
- Sidebar  Demo
- Profile  Demo
- ]]></description>
+    <description><![CDATA[Modal box Demo
+Cursor &amp; hover effect Demo
+Pure Css hamburger button This is a hamburger button using pure css to style it.
+Demo
+Loading Demo
+Sidebar Demo
+Profile Demo]]></description>
 </item><item>
     <title>Js Trick</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
     <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[warning  Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).    You can read this Article to know What new feature brings in since ES6
- Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8  !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false  !!variable == Boolean(variable);   String =&gt; Integer 1 2 3 4  Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100  +&#39;abc&#39;; // NAN   Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
+    <description><![CDATA[warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
+Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false !!variable == Boolean(variable); String =&gt; Integer 1 2 3 4 Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100 +&#39;abc&#39;; // NAN Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
 </item><item>
     <title>Traverse a tree</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link>
@@ -33,22 +32,22 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid>
     <description><![CDATA[Idea to traverse a tree
 Tree structure The tree structure:
-1 2 3 4 5 6  struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} };   BFS DFS Pre-order In-order Post-order Relationship:
+1 2 3 4 5 6 struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} }; BFS DFS Pre-order In-order Post-order Relationship:
 Iterative Loop for BFS:
-1 2 3 4 5 6 7 8 9 10 11  void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.pop(); // do something if(temp-&gt;left !]]></description>
 </item><item>
     <title>SASS (SCSS) features</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link>
     <pubDate>Wed, 18 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
-    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p.]]></description>
+    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7 $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; } Operator 1 2 3 4 5 6 7 8 9 10 11 12 13 .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; } String interpolation 1 2 3 4 5 $name: foo; $attr: border; p.]]></description>
 </item><item>
     <title>Web development review</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</link>
     <pubDate>Thu, 29 Aug 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/web-develop-review/</guid>
-    <description><![CDATA[MathJax.Hub.Config({ jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$', '$'] ], displayMath: [ ['$$', '$$']], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }, messageStyle: "none", "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } });   Document constructor $$f(x) = sin(x)$$]]></description>
+    <description><![CDATA[Document constructor $$f(x) = sin(x)$$]]></description>
 </item></channel>
 </rss>

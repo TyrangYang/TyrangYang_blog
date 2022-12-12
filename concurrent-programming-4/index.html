@@ -7,16 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Concurrent Programming Course note 4 - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Concurrent Programming Course note 4" />
 <meta property="og:description" content="Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while  empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while  full." />
+producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-25T00:00:00+00:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Concurrent Programming Course note 4"/>
 <meta name="twitter:description" content="Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21  monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while  empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while  full."/>
+producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -29,7 +28,7 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-4\/"
-        },"genre": "posts","keywords": "concurrent, course note","wordcount":  725 ,
+        },"genre": "posts","keywords": "concurrent, course note","wordcount":  723 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-4\/","datePublished": "2019-09-25T00:00:00+00:00","dateModified": "2019-09-25T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -103,7 +102,7 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Concurrent Programming Course note 4</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming/"><i class="far fa-folder fa-fw"></i>Concurrent-programming</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-25">2019-09-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;725 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-25">2019-09-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;723 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="content" id="content"><h2 id="monitor">Monitor</h2>
 <p>signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling</p>
@@ -130,31 +129,29 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
-</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">
-<span class="n">monitor</span> <span class="n">PC</span> <span class="o">{</span>
-    <span class="n">Object</span> <span class="n">buffer</span><span class="o">;</span>
-
-    <span class="kt">void</span> <span class="nf">produce</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">){</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">buffer</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span> <span class="c1">// while
-</span><span class="c1"></span>            <span class="n">empty</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="n">buffer</span> <span class="o">=</span> <span class="n">o</span><span class="o">;</span>
-        <span class="n">full</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="n">Object</span> <span class="nf">consume</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// while
-</span><span class="c1"></span>            <span class="n">full</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">Object</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">buffer</span><span class="o">;</span>
-        <span class="n">empty</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-        <span class="k">return</span> <span class="n">temp</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">PC</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Object</span> <span class="n">buffer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">produce</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">buffer</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span> <span class="c1">// while
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">empty</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">buffer</span> <span class="o">=</span> <span class="n">o</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">full</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Object</span> <span class="nf">consume</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// while
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">full</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Object</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">buffer</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">empty</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">temp</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="semaphore">Semaphore</h2>
 <div class="highlight"><div class="chroma">
@@ -181,27 +178,27 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// Assumption: E &lt; S &lt; W (Signal and urgent wait)
-</span><span class="c1"></span><span class="n">monitor</span> <span class="n">Semaphore</span> <span class="o">{</span>
-    <span class="kt">int</span> <span class="n">permit</span><span class="o">;</span>
-
-    <span class="kt">void</span> <span class="nf">acquire</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">permit</span> <span class="o">==</span> <span class="n">0</span><span class="o">){</span>
-            <span class="n">permitsAvailable</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="n">permit</span><span class="o">--;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kt">void</span> <span class="nf">release</span><span class="o">(){</span>
-        <span class="k">if</span><span class="o">(!</span><span class="n">permitAvailable</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
-            <span class="n">permitsAvailable</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">else</span><span class="o">{</span>
-            <span class="n">permit</span><span class="o">++;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Assumption: E &lt; S &lt; W (Signal and urgent wait)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">monitor</span> <span class="n">Semaphore</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">permit</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">acquire</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">permit</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">permitsAvailable</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">permit</span><span class="o">--;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">release</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(!</span><span class="n">permitAvailable</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">permitsAvailable</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">permit</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="readers-and-writers">readers and writers</h2>
 <p>assume start first and stop</p>
@@ -240,44 +237,42 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
-</span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">
-<span class="n">monitor</span> <span class="n">RW</span> <span class="o">{</span>
-
-    <span class="kt">int</span> <span class="n">readers</span><span class="o">=</span><span class="n">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">writers</span><span class="o">=</span><span class="n">0</span><span class="o">;</span>
-
-    <span class="kt">void</span> <span class="nf">start_read</span><span class="o">(){</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">writer</span><span class="o">!=</span><span class="n">0</span> <span class="o">||</span> <span class="o">!</span><span class="n">okToWrite</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
-            <span class="n">okToRead</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">readers</span><span class="o">++;</span>
-        <span class="n">okToRead</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span> <span class="c1">// cascade signaling
-</span><span class="c1"></span>    <span class="o">}</span>
-
-    <span class="kt">void</span> <span class="nf">stop_read</span><span class="o">(){</span>
-        <span class="n">readers</span><span class="o">--;</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">readers</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span>
-            <span class="n">okToWrite</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kt">void</span> <span class="nf">start_write</span><span class="o">(){</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">writers</span><span class="o">!=</span><span class="n">0</span> <span class="o">||</span> <span class="n">readers</span><span class="o">!=</span><span class="n">0</span><span class="o">)</span>
-            <span class="n">okToWrite</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">writers</span><span class="o">++;</span>
-    <span class="o">}</span>
-
-    <span class="kt">void</span> <span class="nf">stop_write</span><span class="o">(){</span>
-        <span class="n">writers</span><span class="o">--;</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">okToRead</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
-            <span class="n">okToWrite</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-        <span class="k">else</span>
-            <span class="n">okToRead</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">RW</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">readers</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">writers</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">start_read</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">writer</span><span class="o">!=</span><span class="mi">0</span> <span class="o">||</span> <span class="o">!</span><span class="n">okToWrite</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">okToRead</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">readers</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">okToRead</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span> <span class="c1">// cascade signaling
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">stop_read</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">readers</span><span class="o">--;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">readers</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">okToWrite</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">start_write</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">writers</span><span class="o">!=</span><span class="mi">0</span> <span class="o">||</span> <span class="n">readers</span><span class="o">!=</span><span class="mi">0</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">okToWrite</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">writers</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">stop_write</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">writers</span><span class="o">--;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">okToRead</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">okToWrite</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">okToRead</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="3-way-sequence-booklet-q4">3 way sequence (booklet q4)</h2>
 <div class="highlight"><div class="chroma">
@@ -308,31 +303,31 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">monitor</span> <span class="n">3WS</span><span class="o">{</span>
-    <span class="kt">int</span> <span class="n">state</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
-    <span class="n">condition</span> <span class="n">first</span><span class="o">,</span> <span class="n">second</span><span class="o">,</span> <span class="n">third</span><span class="o">;</span>
-    <span class="kt">void</span> <span class="nf">first</span><span class="o">(){</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="n">1</span><span class="o">)</span>
-            <span class="n">first</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span>
-        <span class="n">second</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kt">void</span> <span class="nf">second</span><span class="o">(){</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="n">2</span><span class="o">)</span>
-            <span class="n">second</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="n">3</span><span class="o">;</span>
-        <span class="n">third</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kt">void</span> <span class="nf">third</span><span class="o">(){</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="n">3</span><span class="o">)</span>
-            <span class="n">third</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">state</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
-        <span class="n">first</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">monitor</span> <span class="mi">3</span><span class="n">WS</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">condition</span> <span class="n">first</span><span class="o">,</span> <span class="n">second</span><span class="o">,</span> <span class="n">third</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">first</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">first</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">state</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">second</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">second</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="mi">2</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">second</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">state</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">third</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">third</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="mi">3</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">third</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">first</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="booklet6-q5">Booklet6 q5</h2>
 <div class="highlight"><div class="chroma">
@@ -355,23 +350,23 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">monitor</span> <span class="n">myBarrier</span><span class="o">{</span>
-    <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">3</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">barrierCounter</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-    <span class="n">condition</span> <span class="n">stop</span><span class="o">;</span>
-
-    <span class="c1">// thread run before synchronize();
-</span><span class="c1"></span>    <span class="k">this</span><span class="o">.</span><span class="na">synchronize</span><span class="o">();</span>
-    <span class="c1">// thread run after synchronize();
-</span><span class="c1"></span>
-    <span class="n">synchronize</span><span class="o">(){</span>
-        <span class="n">barrierCounter</span><span class="o">++;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">barrierCounter</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">)</span>
-            <span class="n">stop</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="n">stop</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">myBarrier</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">barrierCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">condition</span> <span class="n">stop</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// thread run before synchronize();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="o">.</span><span class="na">synchronize</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// thread run after synchronize();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">synchronize</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">barrierCounter</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">barrierCounter</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">stop</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stop</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="pizza-question">Pizza question</h2>
 <p>E = W &lt; S</p>
@@ -412,40 +407,40 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">monitor</span> <span class="n">Pizzeria</span><span class="o">{</span>
-    <span class="kt">int</span> <span class="n">small</span><span class="o">,</span> <span class="n">large</span><span class="o">;</span>
-    <span class="n">condition</span> <span class="n">smallAvail</span><span class="o">,</span> <span class="n">largeAvail</span><span class="o">;</span>
-
-    <span class="n">purchaseLargePizza</span><span class="o">(){</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">large</span> <span class="o">==</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">small</span> <span class="o">&lt;</span> <span class="n">2</span><span class="o">){</span>
-            <span class="n">largeAvail</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">large</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">){</span>
-            <span class="n">large</span> <span class="o">--</span> <span class="o">;</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="n">small</span> <span class="o">=</span> <span class="n">small</span> <span class="o">-</span> <span class="n">2</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="n">purchaseLargePizza</span><span class="o">(){</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">small</span> <span class="o">==</span> <span class="n">0</span><span class="o">){</span>
-            <span class="n">smallAvail</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="n">small</span><span class="o">--;</span>
-    <span class="o">}</span>
-
-    <span class="n">bakeSmallPizza</span><span class="o">(){</span>
-        <span class="n">small</span><span class="o">++;</span>
-        <span class="n">smallAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-        <span class="n">largeAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="n">bakeLargePizza</span><span class="o">(){</span>
-        <span class="n">large</span><span class="o">++;</span>
-        <span class="n">largeAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">Pizzeria</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">small</span><span class="o">,</span> <span class="n">large</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">condition</span> <span class="n">smallAvail</span><span class="o">,</span> <span class="n">largeAvail</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">purchaseLargePizza</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">large</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">small</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">largeAvail</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">large</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">large</span> <span class="o">--</span> <span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">small</span> <span class="o">=</span> <span class="n">small</span> <span class="o">-</span> <span class="mi">2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">purchaseLargePizza</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">small</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">smallAvail</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">small</span><span class="o">--;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">bakeSmallPizza</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">small</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">smallAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">largeAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">bakeLargePizza</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">large</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">largeAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="heading"></h2>
 <div class="highlight"><div class="chroma">
@@ -536,91 +531,91 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </span><span class="lnt">84
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BarrierExample</span><span class="o">{</span>
-        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Barrier</span><span class="o">{</span>
-
-            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Lock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ReentrantLock</span><span class="o">();</span>
-            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Condition</span> <span class="n">door1</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
-            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Condition</span> <span class="n">door2</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
-
-            <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">d1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">d2</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-
-            <span class="kd">private</span> <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
-
-            <span class="kd">private</span>  <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">3</span><span class="o">;</span>
-
-            <span class="kt">void</span> <span class="nf">synch</span><span class="o">(){</span>
-                <span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="k">while</span><span class="o">(</span><span class="n">d1</span><span class="o">){</span>
-                        <span class="n">door1</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
-                    <span class="o">}</span>
-                    <span class="n">c</span><span class="o">++;</span>
-                    <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">n</span><span class="o">){</span>
-                        <span class="n">d2</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-                        <span class="n">d1</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                        <span class="n">door2</span><span class="o">.</span><span class="na">signalAll</span><span class="o">();</span>
-                    <span class="o">}</span>
-                    <span class="k">while</span><span class="o">(</span><span class="n">d2</span><span class="o">){</span>
-                        <span class="n">door2</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
-                    <span class="o">}</span>
-                    <span class="n">c</span><span class="o">--;</span>
-                    <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">0</span><span class="o">){</span>
-                        <span class="n">d1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-                        <span class="n">d2</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                        <span class="n">door1</span><span class="o">.</span><span class="na">signalAll</span><span class="o">();</span>
-                    <span class="o">}</span>
-                <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                <span class="o">}</span>
-                <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
-            <span class="o">}</span>
-
-            <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Barrier</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Barrier</span><span class="o">();</span>
-                <span class="n">Barrier</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Barrier</span><span class="o">();</span>
-                <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;1&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
-                <span class="n">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;b&#34;</span><span class="o">,</span><span class="s">&#34;2&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
-                <span class="n">Thread</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;c&#34;</span><span class="o">,</span><span class="s">&#34;3&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
-
-                <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-                <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-                <span class="n">t3</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="n">t1</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-                    <span class="n">t2</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-                    <span class="n">t3</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-
-        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">P</span> <span class="kd">implements</span> <span class="n">Runnable</span><span class="o">{</span>
-
-            <span class="kd">private</span> <span class="n">String</span> <span class="n">pres</span><span class="o">,</span><span class="n">post</span><span class="o">;</span>
-            <span class="n">Barrier</span> <span class="n">barrier1</span><span class="o">,</span> <span class="n">barrier2</span><span class="o">;</span>
-
-            <span class="kd">public</span> <span class="nf">P</span><span class="o">(</span><span class="n">String</span> <span class="n">pres</span><span class="o">,</span> <span class="n">String</span> <span class="n">post</span><span class="o">,</span> <span class="n">Barrier</span> <span class="n">barrier1</span><span class="o">,</span> <span class="n">Barrier</span> <span class="n">barrier2</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">this</span><span class="o">.</span><span class="na">pres</span> <span class="o">=</span> <span class="n">pres</span><span class="o">;</span>
-                <span class="k">this</span><span class="o">.</span><span class="na">post</span> <span class="o">=</span> <span class="n">post</span><span class="o">;</span>
-                <span class="k">this</span><span class="o">.</span><span class="na">barrier1</span> <span class="o">=</span> <span class="n">barrier1</span><span class="o">;</span>
-                <span class="k">this</span><span class="o">.</span><span class="na">barrier2</span> <span class="o">=</span> <span class="n">barrier2</span><span class="o">;</span>
-            <span class="o">}</span>
-
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
-                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">100</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pre</span><span class="o">);</span>
-                    <span class="n">barrier1</span><span class="o">.</span><span class="na">synch</span><span class="o">();</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
-                    <span class="n">barrier2</span><span class="o">.</span><span class="na">synch</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BarrierExample</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Barrier</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Lock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ReentrantLock</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Condition</span> <span class="n">door1</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Condition</span> <span class="n">door2</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">d1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">d2</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span>  <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kt">void</span> <span class="nf">synch</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">while</span><span class="o">(</span><span class="n">d1</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">door1</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">c</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">n</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">d2</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">d1</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">door2</span><span class="o">.</span><span class="na">signalAll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">while</span><span class="o">(</span><span class="n">d2</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">door2</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">c</span><span class="o">--;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">d1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">d2</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">door1</span><span class="o">.</span><span class="na">signalAll</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Barrier</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Barrier</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Barrier</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Barrier</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;1&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;b&#34;</span><span class="o">,</span><span class="s">&#34;2&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Thread</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;c&#34;</span><span class="o">,</span><span class="s">&#34;3&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">t3</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">t1</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">t2</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">t3</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">P</span> <span class="kd">implements</span> <span class="n">Runnable</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="n">String</span> <span class="n">pres</span><span class="o">,</span><span class="n">post</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Barrier</span> <span class="n">barrier1</span><span class="o">,</span> <span class="n">barrier2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="nf">P</span><span class="o">(</span><span class="n">String</span> <span class="n">pres</span><span class="o">,</span> <span class="n">String</span> <span class="n">post</span><span class="o">,</span> <span class="n">Barrier</span> <span class="n">barrier1</span><span class="o">,</span> <span class="n">Barrier</span> <span class="n">barrier2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">pres</span> <span class="o">=</span> <span class="n">pres</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">post</span> <span class="o">=</span> <span class="n">post</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">barrier1</span> <span class="o">=</span> <span class="n">barrier1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">barrier2</span> <span class="o">=</span> <span class="n">barrier2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pre</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">barrier1</span><span class="o">.</span><span class="na">synch</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">barrier2</span><span class="o">.</span><span class="na">synch</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -652,7 +647,7 @@ producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

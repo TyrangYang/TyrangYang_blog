@@ -9,14 +9,13 @@
     <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
-    <description><![CDATA[Modal box  Demo
- Cursor &amp; hover effect  Demo
- Pure Css hamburger button This is a hamburger button using pure css to style it.
- Demo
- Loading  Demo
- Sidebar  Demo
- Profile  Demo
- ]]></description>
+    <description><![CDATA[Modal box Demo
+Cursor &amp; hover effect Demo
+Pure Css hamburger button This is a hamburger button using pure css to style it.
+Demo
+Loading Demo
+Sidebar Demo
+Profile Demo]]></description>
 </item><item>
     <title>Flex and Grid in CSS</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link>
@@ -25,7 +24,8 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid>
     <description><![CDATA[Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
-display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container { flex-direction: row | row-reverse | column | column-reverse; }    flex-direction   flex-warp 1 2 3  .container { flex-wrap: nowrap | wrap | wrap-reverse; }    flex-wrap   flex-flow This is a shorthand for the flex-direction and flex-wrap properties.]]></description>
+display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 .]]></description>
 </item><item>
     <title>Canvas in html5</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
@@ -34,8 +34,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
     <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
     <description><![CDATA[Canvas is a new feature since html5 that allows you draw something on your web page
 Reference from MDN
-Project by using Canvas  Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously  Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2  const canvas = document.]]></description>
+Project by using Canvas Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
+1 2 const canvas = document.]]></description>
 </item><item>
     <title>CSS Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/css/</link>
@@ -61,6 +61,6 @@ border: &lt;border-width&gt; &lt;border-style&gt; &lt;border-color&gt;]]></descr
     <pubDate>Wed, 18 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid>
-    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7  $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; }   Operator 1 2 3 4 5 6 7 8 9 10 11 12 13  .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; }   String interpolation 1 2 3 4 5  $name: foo; $attr: border; p.]]></description>
+    <description><![CDATA[SCSS features Variables 1 2 3 4 5 6 7 $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; } Operator 1 2 3 4 5 6 7 8 9 10 11 12 13 .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; } String interpolation 1 2 3 4 5 $name: foo; $attr: border; p.]]></description>
 </item></channel>
 </rss>

@@ -8,18 +8,17 @@
         <title>Webpack Overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Webpack Overview" />
 <meta property="og:description" content="webpack is a static module bundler for modern JavaScript applications.
 Document: https://webpack.js.org/concepts/
-Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Installation 1 npm i -D webpack webpack-cli webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 Output The output property tells webpack where to emit the bundles it creates and how to name these files." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-12-09T19:12:38-07:00" />
 <meta property="article:modified_time" content="2020-12-09T19:12:38-07:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Webpack Overview"/>
 <meta name="twitter:description" content="webpack is a static module bundler for modern JavaScript applications.
 Document: https://webpack.js.org/concepts/
-Installation 1  npm i -D webpack webpack-cli   webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Installation 1 npm i -D webpack webpack-cli webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
 Output The output property tells webpack where to emit the bundles it creates and how to name these files."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
@@ -140,8 +139,8 @@ Output The output property tells webpack where to emit the bundles it creates an
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">npm i -D webpack webpack-cli
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm i -D webpack webpack-cli
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="webpack-core-concept">webpack core concept</h2>
 <h3 id="entry">Entry</h3>
@@ -201,48 +200,48 @@ Output The output property tells webpack where to emit the bundles it creates an
 </span><span class="lnt">41
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">&#39;production&#39;</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;webpack&#39;</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
-    <span class="nx">context</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="mi">__</span><span class="nx">dirname</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">),</span>
-    <span class="nx">devtool</span><span class="o">:</span> <span class="nx">debug</span> <span class="o">?</span> <span class="s1">&#39;inline-sourcemap&#39;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./js/client.js&#39;</span><span class="p">,</span>
-    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.jsx?$/</span><span class="p">,</span>
-                <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/(node_modules|bower_components)/</span><span class="p">,</span>
-                <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span>
-                <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;react&#39;</span><span class="p">,</span> <span class="s1">&#39;es2015&#39;</span><span class="p">,</span> <span class="s1">&#39;stage-0&#39;</span><span class="p">],</span>
-                    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
-                        <span class="s1">&#39;react-html-attrs&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;transform-decorators-legacy&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;transform-class-properties&#39;</span><span class="p">,</span>
-                    <span class="p">],</span>
-                <span class="p">},</span>
-            <span class="p">},</span>
-        <span class="p">],</span>
-    <span class="p">},</span>
-    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">path</span><span class="o">:</span> <span class="mi">__</span><span class="nx">dirname</span> <span class="o">+</span> <span class="s1">&#39;/src/&#39;</span><span class="p">,</span>
-        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;client.min.js&#39;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="nx">plugins</span><span class="o">:</span> <span class="nx">debug</span>
-        <span class="o">?</span> <span class="p">[]</span>
-        <span class="o">:</span> <span class="p">[</span>
-              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">DedupePlugin</span><span class="p">(),</span>
-              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">OccurrenceOrderPlugin</span><span class="p">(),</span>
-              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">UglifyJsPlugin</span><span class="p">({</span>
-                  <span class="nx">mangle</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-                  <span class="nx">sourcemap</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-              <span class="p">}),</span>
-          <span class="p">],</span>
-<span class="p">};</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">&#39;production&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;webpack&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">context</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;src&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">devtool</span><span class="o">:</span> <span class="nx">debug</span> <span class="o">?</span> <span class="s1">&#39;inline-sourcemap&#39;</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./js/client.js&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.jsx?$/</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/(node_modules|bower_components)/</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel-loader&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">presets</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;react&#39;</span><span class="p">,</span> <span class="s1">&#39;es2015&#39;</span><span class="p">,</span> <span class="s1">&#39;stage-0&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">                        <span class="s1">&#39;react-html-attrs&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s1">&#39;transform-decorators-legacy&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="s1">&#39;transform-class-properties&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">],</span>
+</span></span><span class="line"><span class="cl">                <span class="p">},</span>
+</span></span><span class="line"><span class="cl">            <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">path</span><span class="o">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">&#39;/src/&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;client.min.js&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">plugins</span><span class="o">:</span> <span class="nx">debug</span>
+</span></span><span class="line"><span class="cl">        <span class="o">?</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">DedupePlugin</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">OccurrenceOrderPlugin</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">              <span class="k">new</span> <span class="nx">webpack</span><span class="p">.</span><span class="nx">optimize</span><span class="p">.</span><span class="nx">UglifyJsPlugin</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">mangle</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">sourcemap</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="p">}),</span>
+</span></span><span class="line"><span class="cl">          <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -274,7 +273,7 @@ Output The output property tells webpack where to emit the bundles it creates an
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.87.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>

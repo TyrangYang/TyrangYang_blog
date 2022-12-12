@@ -9,8 +9,8 @@
     <pubDate>Fri, 20 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</guid>
-    <description><![CDATA[Content  Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique  Algorithm Overview * &ndash;&gt; new feature from C++11
-   Algorithm Name Usage Mutating? Head File Complexity     accumulate Accumulate values in range N numeric O(n)   adjacent_difference Compute adjacent difference of range and return to another place N numeric O(n)   adjacent_find Find first equal adjacent elements in range N algorithm O(n)   all_of* Test condition on all elements in range N algorithm O(n)   any_of* Test if any element in range fulfills condition N algorithm O(n)   binary_search Test if value exists in sorted sequence N algorithm On average O(logn + 2).]]></description>
+    <description><![CDATA[Content Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique Algorithm Overview * &ndash;&gt; new feature from C++11
+Algorithm Name Usage Mutating? Head File Complexity accumulate Accumulate values in range N numeric O(n) adjacent_difference Compute adjacent difference of range and return to another place N numeric O(n) adjacent_find Find first equal adjacent elements in range N algorithm O(n) all_of* Test condition on all elements in range N algorithm O(n) any_of* Test if any element in range fulfills condition N algorithm O(n) binary_search Test if value exists in sorted sequence N algorithm On average O(logn + 2).]]></description>
 </item><item>
     <title>Algorithm feature in c&#43;&#43; STL</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</link>
@@ -19,14 +19,15 @@
     <guid>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</guid>
     <description><![CDATA[See all algorithm click here Mutating and Non-mutating algorithms Mutating algorithms Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.
 If your give these algorithms a const iterator, only error will be returned.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  #include &lt;iostream&gt;#include &lt;vector&gt;using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 #include &lt;iostream&gt; #include &lt;vector&gt; using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.]]></description>
 </item><item>
     <title>Container in c&#43;&#43;</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/containers/</link>
     <pubDate>Wed, 31 Jul 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/containers/</guid>
-    <description><![CDATA[Classification  Sequence container  array (build in) vector heap priority queue list slist (not standard) deque stack (adopter) queue (adopter)   Associative container  RB-tree (not public) set map multiset multemap hashtable (not standard) hash_set (not standard) hash_map (not standard) hash_multimap (not standard) hash_multiset (not standard)    Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.]]></description>
+    <description><![CDATA[Classification Sequence container array (build in) vector heap priority queue list slist (not standard) deque stack (adopter) queue (adopter) Associative container RB-tree (not public) set map multiset multemap hashtable (not standard) hash_set (not standard) hash_map (not standard) hash_multimap (not standard) hash_multiset (not standard) Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.
+Vector This is similar with grow array. Vector use sequential space.]]></description>
 </item><item>
     <title>Iterator in c&#43;&#43;</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/iterators/</link>
@@ -37,7 +38,7 @@ If your give these algorithms a const iterator, only error will be returned.
 Iterator 是一种 smart pointer 可以不用 delete
 Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 value type)的。
 这是 iterator 中常见的五种属性。
-1 2 3 4 5 6 7 8 9  template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category  typedef typename I::value_type value_type; // type  typedef typename I::difference_type difference_type; //  typedef typename I::pointer pointer; // T*  typedef typename I::reference reference; // T&amp; };   1 2 3 4 5 6 7 8 9 10 11 12 13 14  #include &lt;iostream&gt; // std::cout#include &lt;iterator&gt; // std::iterator_traits#include &lt;typeinfo&gt; // typeidusing namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).]]></description>
+1 2 3 4 5 6 7 8 9 template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category typedef typename I::value_type value_type; // type typedef typename I::difference_type difference_type; // typedef typename I::pointer pointer; // T* typedef typename I::reference reference; // T&amp; }; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #include &lt;iostream&gt; // std::cout #include &lt;iterator&gt; // std::iterator_traits #include &lt;typeinfo&gt; // typeid using namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).]]></description>
 </item><item>
     <title>Allocator in c&#43;&#43;</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/allocator/</link>
@@ -58,6 +59,6 @@ Memory allocate and release 双层配置器。第一级是区块大于 128 bytes
     <guid>https://tyrangyang.github.io/TyrangYang_blog/functor/</guid>
     <description><![CDATA[Basically, Functor have same functionality with interface in java.
 Think about this code. You want count all string whose length is less than 5.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  #include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;vector&gt;#include &lt;string&gt;using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia+5); int res = count_if(iv.]]></description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;vector&gt; #include &lt;string&gt; using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia+5); int res = count_if(iv.]]></description>
 </item></channel>
 </rss>

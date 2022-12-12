@@ -10,7 +10,8 @@
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
     <description><![CDATA[Vuex Document: English 中文
-Concept  State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations  Work flow  Vuex Workflow    Vuex work flow is similar with Redux =&gt; More Detail about Redux]]></description>
+Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&gt; More Detail about Redux
+Redux Workflow Basic structure In store/index.js]]></description>
 </item><item>
     <title>Vue Overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
@@ -18,6 +19,6 @@ Concept  State - App-level state/data Getters - Get pieces of state or computed 
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
     <description><![CDATA[Vue Document: English 中文
-life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt;   Basic vue function v-bind 1 2 3 4 5 6 7  &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
+life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt; Basic vue function v-bind 1 2 3 4 5 6 7 &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
 </item></channel>
 </rss>
