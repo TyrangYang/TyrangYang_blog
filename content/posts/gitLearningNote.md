@@ -213,6 +213,42 @@ You can `checkout` _master_ and run `git merge topic`:
 D---E---F---G---A'---B'---C' master/topic
 ```
 
+## git revert
+
+```
+a - b - c - d   Master
+```
+
+```
+git revert HEAD
+```
+
+```
+a - b - c - d - d'   Master
+```
+
+`d'` revert all change in d
+
+## git cherry-pick
+
+```
+a - b - c - d   Master
+     \
+       e - f - g Feature
+```
+
+```
+git checkout master
+
+git cherry-pick f
+```
+
+```
+a - b - c - d - f   Master
+      \
+        e - f - g Feature
+```
+
 ## Git config
 
 Usually config your github email account and username in global

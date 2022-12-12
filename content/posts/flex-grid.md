@@ -70,34 +70,92 @@ This is a shorthand for the flex-direction and flex-wrap properties.
 
 ### flex-grow
 
-This defines the ability for a flex item to grow if necessary. Ex: number 2 means this item will take twice space compare to other item.
+This defines the ability for a flex item to grow when there is extra space from container.
 
 `0` means fix
 
 ```css
-.item {
-    flex-grow: 2; /* default 0 */
+.container {
+    display: flex;
+    width: 1100px;
+}
+.item-1 {
+    flex-basis: 100px;
+    flex-grow: 1; /* default 0 */
     /* Negative numbers are invalid */
 }
+
+.item-2 {
+    flex-basis: 100px;
+    flex-grow: 2;
+}
+
+.item-3 {
+    flex-basis: 100px;
+    flex-grow: 1;
+}
 ```
+
+In this example, container is `1100px,` item base width is `100px`. The left space is `1100 - 100 * 3 = 800`. This `800px` will base on the proportion `1 : 2 : 1` to distribute to each item.
+
+`800 / 4 = 200` the final with will be `300px (100+200); 500px (100+400); 300px`
 
 {{< figure src="/images/flex-grid/flex-grow.svg" title="flex-grow" width="50%" height="50%" >}}
 
 ### flex-shrink
 
-This defines the ability for a flex item to grow if necessary.
+This defines the ability for a flex item to shrink when item size overflow.
 
 `0` means fix
+
+```css
+.container {
+    display: flex;
+    width: 300px;
+}
+.item-1 {
+    flex-basis: 300px;
+    flex-shrink: 1; /* default 1 */
+    /* Negative numbers are invalid */
+}
+
+.item-2 {
+    flex-basis: 300px;
+    flex-shrink: 2; /* default 1 */
+}
+```
+
+In this example, item will overflow `300 - 300 * 2 = 300px`.item will shrink base on the proportion `1 : 1`. Item will be `200px (300-100); 100px(300-200)`
 
 ### flex-basis
 
 This defines the default size of an element before the remaining space is distributed.
+
+If set to auto, it will take width as starting size to distribute space.
+If set to a number, it will take the given number as starting size to distribute space.
+
+```css
+.item {
+    flex-basis: 300px;
+}
+
+// equivalent to
+
+.item {
+    width: 300px;
+    flex-basis: auto;
+}
+```
+
+If set to 0, the item actual width will be decided by space distribution only. Because this item is no space at beginning.
 
 ```css
 .item {
     flex-basis: 0;
 }
 ```
+
+#### 0 vs auto after distribute space
 
 If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.
 
@@ -115,6 +173,28 @@ Default is `0 1 auto`
 }
 ```
 
+#### flex: 1
+
+```css
+.item {
+    flex: 1;
+}
+// equivalent to
+.item {
+    flex: 1 0 0;
+}
+// equivalent to
+.item {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+```
+
+This is a common styling that given to an item which can take all the extra space for a flexbox.
+
+We analysis this line and see why it is work. item starting from 0 size, Not shrink and take extra space for 1 proportion. If no other item give `flex-grow`(default is 0), this item will take all extra space
+
 ### justify-content
 
 This defines the alignment along the main axis.
@@ -122,7 +202,7 @@ This defines the alignment along the main axis.
 ```css
 .container {
     justify-content: flex-start | flex-end | center | space-between |
-        space-around | space-evenly | start | end | left | right ... + safe |
+        space-around | space-evenly | start | end | left | right... + safe |
         unsafe;
 }
 ```
@@ -140,8 +220,8 @@ This aligns a flex container’s lines within when there is extra space in the *
 ```css
 .container {
     align-items: stretch | flex-start | flex-end | center | baseline | first
-        baseline | last baseline | start | end | self-start | self-end + ...
-        safe | unsafe;
+        baseline | last baseline | start | end | self-start | self-end +... safe
+        | unsafe;
 }
 ```
 
