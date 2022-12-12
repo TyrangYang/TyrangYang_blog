@@ -31,7 +31,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/"
-        },"genre": "posts","keywords": "css, grid, flex","wordcount":  1082 ,
+        },"genre": "posts","keywords": "css, grid, flex","wordcount":  1428 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/","datePublished": "2020-08-18T12:04:51-07:00","dateModified": "2020-08-18T12:04:51-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -108,8 +108,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Flex and Grid in CSS</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1082 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1428 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -126,8 +126,16 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
         <li><a href="#order">order</a></li>
         <li><a href="#flex-grow">flex-grow</a></li>
         <li><a href="#flex-shrink">flex-shrink</a></li>
-        <li><a href="#flex-basis">flex-basis</a></li>
-        <li><a href="#flex-1">flex</a></li>
+        <li><a href="#flex-basis">flex-basis</a>
+          <ul>
+            <li><a href="#0-vs-auto-after-distribute-space">0 vs auto after distribute space</a></li>
+          </ul>
+        </li>
+        <li><a href="#flex-1">flex</a>
+          <ul>
+            <li><a href="#flex-1-1">flex: 1</a></li>
+          </ul>
+        </li>
         <li><a href="#justify-content">justify-content</a></li>
         <li><a href="#align-content">align-content</a></li>
         <li><a href="#align-items">align-items</a></li>
@@ -248,32 +256,128 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 </figure>
 
 <h3 id="flex-grow">flex-grow</h3>
-<p>This defines the ability for a flex item to grow if necessary. Ex: number 2 means this item will take twice space compare to other item.</p>
+<p>This defines the ability for a flex item to grow when there is extra space from container.</p>
 <p><code>0</code> means fix</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* default 0 */</span>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">1100</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 0 */</span>
     <span class="c">/* Negative numbers are invalid */</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">item-3</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-grow.svg" width="50%" height="50%"/><figcaption>
+</div><p>In this example, container is <code>1100px,</code> item base width is <code>100px</code>. The left space is <code>1100 - 100 * 3 = 800</code>. This <code>800px</code> will base on the proportion <code>1 : 2 : 1</code> to distribute to each item.</p>
+<p><code>800 / 4 = 200</code> the final with will be <code>300px (100+200); 500px (100+400); 300px</code></p>
+<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-grow.svg" width="50%" height="50%"/><figcaption>
             <h4>flex-grow</h4>
         </figcaption>
 </figure>
 
 <h3 id="flex-shrink">flex-shrink</h3>
-<p>This defines the ability for a flex item to grow if necessary.</p>
+<p>This defines the ability for a flex item to shrink when item size overflow.</p>
 <p><code>0</code> means fix</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 1 */</span>
+    <span class="c">/* Negative numbers are invalid */</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* default 1 */</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In this example, item will overflow <code>300 - 300 * 2 = 300px</code>.item will shrink base on the proportion <code>1 : 1</code>. Item will be <code>200px (300-100); 100px(300-200)</code></p>
 <h3 id="flex-basis">flex-basis</h3>
 <p>This defines the default size of an element before the remaining space is distributed.</p>
+<p>If set to auto, it will take width as starting size to distribute space.
+If set to a number, it will take the given number as starting size to distribute space.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
+
+<span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>If set to 0, the item actual width will be decided by space distribution only. Because this item is no space at beginning.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -286,7 +390,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.</p>
+</div><h4 id="0-vs-auto-after-distribute-space">0 vs auto after distribute space</h4>
+<p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.</p>
 <figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/rel-vs-abs-flex.svg" width="70%" height="70%"/><figcaption>
             <h4>All space distributed vs Extra space distributed</h4>
         </figcaption>
@@ -307,7 +412,42 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="justify-content">justify-content</h3>
+</div><h4 id="flex-1-1">flex: 1</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
+<span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
+<span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
+    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This is a common styling that given to an item which can take all the extra space for a flexbox.</p>
+<p>We analysis this line and see why it is work. item starting from 0 size, Not shrink and take extra space for 1 proportion. If no other item give <code>flex-grow</code>(default is 0), this item will take all extra space</p>
+<h3 id="justify-content">justify-content</h3>
 <p>This defines the alignment along the main axis.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -320,7 +460,7 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">space-between</span> <span class="o">|</span>
-        <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span> <span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
+        <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span><span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
         <span class="n">unsafe</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -349,8 +489,8 @@ display 1 2 3  .container { display: flex; }   flex-direction 1 2 3  .container 
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
     <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">first</span>
-        <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">last</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="n">self-start</span> <span class="o">|</span> <span class="n">self-end</span> <span class="o">+</span> <span class="o">...</span>
-        <span class="n">safe</span> <span class="o">|</span> <span class="n">unsafe</span><span class="p">;</span>
+        <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">last</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="n">self-start</span> <span class="o">|</span> <span class="n">self-end</span> <span class="o">+...</span> <span class="n">safe</span>
+        <span class="o">|</span> <span class="n">unsafe</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>

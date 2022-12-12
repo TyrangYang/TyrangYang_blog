@@ -35,7 +35,7 @@ or with redux
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/"
-        },"genre": "posts","keywords": "web, react","wordcount":  2378 ,
+        },"genre": "posts","keywords": "web, react","wordcount":  2449 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/","datePublished": "2019-10-03T00:00:00+00:00","dateModified": "2019-10-03T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -112,7 +112,7 @@ or with redux
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">React overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2378 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2449 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -148,7 +148,8 @@ or with redux
         <li><a href="#usecontext">useContext</a></li>
         <li><a href="#usereducer">useReducer</a>
           <ul>
-            <li><a href="#some-trick">some trick</a></li>
+            <li><a href="#setstate-by-usereducer">setState by useReducer</a></li>
+            <li><a href="#relation-with-usestate">relation with useState,</a></li>
           </ul>
         </li>
         <li><a href="#useref">useRef</a></li>
@@ -650,8 +651,8 @@ or with redux
 </div><blockquote>
 <p>Unlike Redux <code>dispatch</code> function doesn&rsquo;t need to add in <code>useEffect</code> or <code>useCallback</code> dependence list since <code>dispatch</code> always be a same function</p>
 </blockquote>
-<h4 id="some-trick">some trick</h4>
-<p>useReducer is the shortest way to create a state for toggle a boolean value</p>
+<h4 id="setstate-by-usereducer">setState by useReducer</h4>
+<p>Usually we set a state by useState. But if the state is simple boolean,<code>useReducer</code>is the shortest way to create a state for toggle a boolean value</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -659,6 +660,9 @@ or with redux
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">[</span><span class="k">switch</span><span class="p">,</span> <span class="nx">toggleSwitch</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="o">!</span><span class="nx">state</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
@@ -666,9 +670,25 @@ or with redux
 <span class="c1">// switch is a boolean
 </span><span class="c1">// toggleSwitch is a function
 </span><span class="c1"></span><span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()=&gt;{</span><span class="nx">toggleSwitch</span><span class="p">()}}</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">switch</span><span class="p">}</span> <span class="o">/&gt;</span>
+
+<span class="c1">// or add one. if you want.
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">num</span><span class="p">,</span> <span class="nx">addOne</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">state</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="useref">useRef</h3>
+</div><h4 id="relation-with-usestate">relation with useState,</h4>
+<p><strong>Theoretically, <em>useReducer</em> is a more general <em>useState</em> hook.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="c1">// this is exactly same with useState.
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setSate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useReducer</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">state</span><span class="p">,</span> <span class="nx">initVal</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>That is why<code>dispatch</code>always be same. (setState always same in useState)</p>
+<h3 id="useref">useRef</h3>
 <blockquote>
 <p><code>useRef()</code> creates a plain JavaScript object. The only <strong>difference</strong> between <code>useRef()</code> and creating a <code>{current: ...}</code> object yourself is that useRef will give you <strong>the same ref object</strong> on every render.</p>
 </blockquote>

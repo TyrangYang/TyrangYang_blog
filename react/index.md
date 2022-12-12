@@ -288,9 +288,9 @@ function Counter() {
 
 > Unlike Redux `dispatch` function doesn't need to add in `useEffect` or `useCallback` dependence list since `dispatch` always be a same function
 
-#### some trick
+#### setState by useReducer
 
-useReducer is the shortest way to create a state for toggle a boolean value
+Usually we set a state by useState. But if the state is simple boolean,`useReducer`is the shortest way to create a state for toggle a boolean value
 
 ```js
 const [switch, toggleSwitch] = useReducer((state) => !state, false);
@@ -298,7 +298,21 @@ const [switch, toggleSwitch] = useReducer((state) => !state, false);
 // switch is a boolean
 // toggleSwitch is a function
 <button onClick={()=>{toggleSwitch()}} value={switch} />
+
+// or add one. if you want.
+const [num, addOne] = useReducer((state) => state + 1, 0);
 ```
+
+#### relation with useState,
+
+**Theoretically, _useReducer_ is a more general _useState_ hook.**
+
+```js
+// this is exactly same with useState.
+const [state, setSate] = useReducer((state) => state, initVal);
+```
+
+That is why`dispatch`always be same. (setState always same in useState)
 
 ### useRef
 

@@ -35,7 +35,7 @@ Git commend and usage Initialize the git repository git init"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/"
-        },"genre": "posts","keywords": "git","wordcount":  676 ,
+        },"genre": "posts","keywords": "git","wordcount":  757 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/","datePublished": "2020-06-17T00:00:00+00:00","dateModified": "2020-06-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -112,7 +112,7 @@ Git commend and usage Initialize the git repository git init"/>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-17">2020-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;676 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-17">2020-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;757 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -171,6 +171,8 @@ Git commend and usage Initialize the git repository git init"/>
         <li><a href="#rebase-1">rebase</a></li>
       </ul>
     </li>
+    <li><a href="#git-revert">git revert</a></li>
+    <li><a href="#git-cherry-pick">git cherry-pick</a></li>
     <li><a href="#git-config">Git config</a>
       <ul>
         <li><a href="#list-all-global-config">list all global config</a></li>
@@ -358,6 +360,69 @@ D---E---F---G master
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">D---E---F---G---A&#39;---B&#39;---C&#39; master/topic
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="git-revert">git revert</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d   Master
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git revert HEAD
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d - d&#39;   Master
+</code></pre></td></tr></table>
+</div>
+</div><p><code>d'</code> revert all change in d</p>
+<h2 id="git-cherry-pick">git cherry-pick</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d   Master
+     \
+       e - f - g Feature
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git checkout master
+
+git cherry-pick f
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">a - b - c - d - f   Master
+      \
+        e - f - g Feature
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="git-config">Git config</h2>
