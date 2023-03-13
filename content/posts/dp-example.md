@@ -38,7 +38,6 @@ int longestCommonSubsequence(string text1, string text2) {
 ```
 
 Time complexity: O(2^n)
-
 Using dp could store the state that already calculate before.
 
 ### Top to Button DP solution:
