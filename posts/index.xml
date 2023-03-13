@@ -3,7 +3,19 @@
         <title>All Posts - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link>
         <description>All Posts | TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Jul 2021 16:35:53 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Ffmpeg</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link>
+    <pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid>
+    <description><![CDATA[Reference official https://ffmpeg.org
+blog https://fireship.io/lessons/ffmpeg-useful-techniques/
+node js https://www.npmjs.com/package/fluent-ffmpeg
+example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
+vids.txt:
+1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; type convention ffmpeg -i in.mp4 out.mov]]></description>
+</item><item>
     <title>Design Pattern</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</link>
     <pubDate>Thu, 22 Jul 2021 16:35:53 -0700</pubDate>
@@ -96,15 +108,5 @@ React Conditional Rendering Original source: https://www.robinwieruch.de/conditi
 Why We Switched to React Hooks Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
 Why Can’t I Open My React App By Clicking Index.html? From My Own Post Original Resource is NOT Free Medium Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf How To Use an IntersectionObserver in a React Hook PDF archive: &ndash;&gt;Link&lt;&ndash;
 Original Resource is NOT Free Medium Original source: https://medium.]]></description>
-</item><item>
-    <title>Prototype Inheritance in Javascript</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
-    <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
-    <description><![CDATA[Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
-f1 instantiate a Foo:
-f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
-1 2 var newObj = Object.]]></description>
 </item></channel>
 </rss>

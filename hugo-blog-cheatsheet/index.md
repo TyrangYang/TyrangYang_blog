@@ -3,15 +3,16 @@
 
 ## Create new post
 
-`hugo new posts/new.md`
+> `hugo new posts/new.md`
 
 ## Add a picture
 
 1.  Basic markdown
-    `![<alt name](< The route start from static folder>)`
 
-2.  hugo build-in shortcut --> _figure_
-    `{{< figure src="" title="" >}}`
+    > `![<alt name](< The route start from static folder>)`
+
+2.  hugo build-in shortcut --> _figure_ (src is start from static folder)
+    > `\{\{< figure src="" title="" >}}`
 
 ## Add a reference link
 

@@ -131,3 +131,7 @@ interface Book {
 }
 ```
 
+## generic types optional
+
+https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+

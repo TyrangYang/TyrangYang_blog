@@ -3,7 +3,19 @@
         <title>Overview - Category - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/categories/overview/</link>
         <description>Overview - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Jul 2021 16:35:53 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Ffmpeg</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link>
+    <pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid>
+    <description><![CDATA[Reference official https://ffmpeg.org
+blog https://fireship.io/lessons/ffmpeg-useful-techniques/
+node js https://www.npmjs.com/package/fluent-ffmpeg
+example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
+vids.txt:
+1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; type convention ffmpeg -i in.mp4 out.mov]]></description>
+</item><item>
     <title>Design Pattern</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</link>
     <pubDate>Thu, 22 Jul 2021 16:35:53 -0700</pubDate>
@@ -86,16 +98,5 @@ workspace Run go env in terminal. The variable GOPATH is the default workspace p
 In this workspace, file should structured as how you route your project:
 1 2 3 4 5 6 7 . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt; Example:
 1 2 3 4 5 6 7 8 .]]></description>
-</item><item>
-    <title>Git overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</link>
-    <pubDate>Wed, 17 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</guid>
-    <description><![CDATA[Here have some good pictures that is helpful for understanding git and contain the record for git commend
-Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
-Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
-This photo is provide by osteele
-Git commend and usage Initialize the git repository git init]]></description>
 </item></channel>
 </rss>

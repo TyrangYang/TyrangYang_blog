@@ -3,7 +3,19 @@
         <title>overview - Tag - TyrangYang_Blog</title>
         <link>https://tyrangyang.github.io/TyrangYang_blog/tags/overview/</link>
         <description>overview - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Apr 2021 23:37:35 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/" rel="self" type="application/rss+xml" /><item>
+    <title>Ffmpeg</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link>
+    <pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid>
+    <description><![CDATA[Reference official https://ffmpeg.org
+blog https://fireship.io/lessons/ffmpeg-useful-techniques/
+node js https://www.npmjs.com/package/fluent-ffmpeg
+example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
+vids.txt:
+1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; type convention ffmpeg -i in.mp4 out.mov]]></description>
+</item><item>
     <title>Typescript overview</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link>
     <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>

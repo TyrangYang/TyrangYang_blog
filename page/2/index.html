@@ -99,6 +99,14 @@
         alt="/images/art2.png"
         title="/images/art2.png" /></a></div><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/TyrangYang" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https://linkedin.com/in/haolin-yang-2b3a061a3" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/@TyrangYang" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="mailto:haolinyang95@gamil.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/">Prototype Inheritance in Javascript</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-21">2020-08-21</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div><div class="content">Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+f1 instantiate a Foo:
+f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
+1 2 var newObj = Object.</div><div class="post-footer">
+        <a href="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/">Flex and Grid in CSS</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-18">2020-08-18</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div><div class="content">Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
@@ -109,8 +117,11 @@ display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { fl
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/">Hugo Blog CheatSheet</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-08-17">2020-08-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/cheatsheet/"><i class="far fa-folder fa-fw"></i>CheatSheet</a></span></div><div class="content">Create new post hugo new posts/new.md
-Add a picture Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
-hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of ref and relref
+Add a picture Basic markdown
+![&lt;alt name](&lt; The route start from static folder&gt;)
+hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
+\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
+Add a reference link Documentation of ref and relref
 1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) </div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/">hugo</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/">cheatsheet</a></div></div>
@@ -165,12 +176,6 @@ Concept State - App-level state/data Getters - Get pieces of state or computed v
 Redux Workflow Basic structure In store/index.js</div><div class="post-footer">
         <a href="https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/">vue</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vuex/">vuex</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/redux/">redux</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/">Vue Overview</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-05-17">2020-05-17</time></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class="content">Vue Document: English 中文
-life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt; Basic vue function v-bind 1 2 3 4 5 6 7 &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.</div><div class="post-footer">
-        <a href="https://tyrangyang.github.io/TyrangYang_blog/vue-overview/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/">vue</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="https://tyrangyang.github.io/TyrangYang_blog/">1</a>
@@ -196,7 +201,7 @@ life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &lt;t
                 </li></ul></div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>
 

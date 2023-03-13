@@ -7,8 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Hugo Blog CheatSheet - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Hugo Blog CheatSheet" />
 <meta property="og:description" content="Create new post hugo new posts/new.md
-Add a picture Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
-hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of ref and relref
+Add a picture Basic markdown
+![&lt;alt name](&lt; The route start from static folder&gt;)
+hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
+\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
+Add a reference link Documentation of ref and relref
 1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" /><meta property="article:section" content="posts" />
@@ -17,8 +20,11 @@ hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo Blog CheatSheet"/>
 <meta name="twitter:description" content="Create new post hugo new posts/new.md
-Add a picture Basic markdown ![&lt;alt name](&lt; The route start from static folder&gt;)
-hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of ref and relref
+Add a picture Basic markdown
+![&lt;alt name](&lt; The route start from static folder&gt;)
+hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
+\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
+Add a reference link Documentation of ref and relref
 1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) "/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
@@ -32,7 +38,7 @@ hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of 
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/hugo-blog-cheatsheet\/"
-        },"genre": "posts","keywords": "hugo, cheatsheet","wordcount":  43 ,
+        },"genre": "posts","keywords": "hugo, cheatsheet","wordcount":  54 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/hugo-blog-cheatsheet\/","datePublished": "2020-08-17T16:43:42-07:00","dateModified": "2020-08-17T16:43:42-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -109,7 +115,7 @@ hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of 
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Hugo Blog CheatSheet</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/cheatsheet/"><i class="far fa-folder fa-fw"></i>CheatSheet</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-17">2020-08-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;43 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-17">2020-08-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;54 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -124,18 +130,22 @@ hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of 
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="create-new-post">Create new post</h2>
+<blockquote>
 <p><code>hugo new posts/new.md</code></p>
+</blockquote>
 <h2 id="add-a-picture">Add a picture</h2>
 <ol>
 <li>
-<p>Basic markdown
-<code>![&lt;alt name](&lt; The route start from static folder&gt;)</code></p>
+<p>Basic markdown</p>
+<blockquote>
+<p><code>![&lt;alt name](&lt; The route start from static folder&gt;)</code></p>
+</blockquote>
 </li>
 <li>
-<p>hugo build-in shortcut &ndash;&gt; <em>figure</em>
-<code><figure><img src=""/>
-</figure>
-</code></p>
+<p>hugo build-in shortcut &ndash;&gt; <em>figure</em> (src is start from static folder)</p>
+<blockquote>
+<p><code>\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}</code></p>
+</blockquote>
 </li>
 </ol>
 <h2 id="add-a-reference-link">Add a reference link</h2>
@@ -181,7 +191,7 @@ hugo build-in shortcut &ndash;&gt; figure Add a reference link Documentation of 
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>
 
