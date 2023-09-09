@@ -2,7 +2,7 @@
 title: 'Hugo Blog CheatSheet'
 date: 2020-08-17T16:43:42-07:00
 Categories: ['CheatSheet']
-tags: ['hugo', 'cheatsheet']
+tags: ['hugo', 'cheatsheet', 'trick']
 toc:
     enable: true
     auto: true
@@ -32,3 +32,7 @@ math:
 \[Neat](\{\{< ref "blog/neat.md" >}})
 \[Who](\{\{< relref "about.md#who" >}})
 ```
+
+## Theme feature
+
+This theme extended short code. See [Theme Documentation - Extended Shortcodes](https://hugoloveit.com/theme-documentation-extended-shortcodes/#13-person)
