@@ -1,6 +1,16 @@
 # Typescript overview
 
 
+## Trick
+
+### generic types optional
+
+https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+
+### string[ ] & [ string, ...string[ ] ]
+
+The main difference is that type `[string, ...string[]]` at least have one element. `[]` will alert error. `string[]` could be empty. `[]` is ok.
+
 ## type
 
 ### Union type & Literal type
@@ -130,8 +140,4 @@ interface Book {
     name: string;
 }
 ```
-
-## generic types optional
-
-https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
 

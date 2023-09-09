@@ -36,7 +36,7 @@ export default React."/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/"
-        },"genre": "posts","keywords": "web, react","wordcount":  2448 ,
+        },"genre": "posts","keywords": "web, react","wordcount":  2534 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/react\/","datePublished": "2019-10-03T00:00:00+00:00","dateModified": "2019-10-03T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -112,8 +112,8 @@ export default React."/>
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">React overview</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2448 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/categories/trick/"><i class="far fa-folder fa-fw"></i>trick</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-10-03">2019-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2534 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;12 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -179,6 +179,11 @@ export default React."/>
           </ul>
         </li>
         <li><a href="#initial-state-from-props">Initial state from props</a></li>
+      </ul>
+    </li>
+    <li><a href="#trick">Trick</a>
+      <ul>
+        <li><a href="#inject-props-to-children">inject props to children</a></li>
       </ul>
     </li>
     <li><a href="#react-posts-archive">React Posts Archive</a></li>
@@ -468,7 +473,7 @@ export default React."/>
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setstate</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="useeffect">useEffect</h3>
@@ -482,12 +487,12 @@ export default React."/>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">effect</span><span class="o">&gt;</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">effect</span><span class="p">&gt;;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">cleanup</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">cleanup</span><span class="p">&gt;;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="p">[</span><span class="o">&lt;</span><span class="nx">input</span><span class="o">&gt;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="p">[&lt;</span><span class="nt">input</span><span class="p">&gt;]);</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="usecontext">useContext</h3>
@@ -1137,9 +1142,12 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <p>To get snapshot in class component, just assign the data that will alert to a new variable. (give several different value)</p>
 <p>To get current value in functional component, add a ref(react) / create a value outside the component and store value to it. (give a same reference)</p>
 <h3 id="initial-state-from-props">Initial state from props</h3>
-<p>Ref: <a href="https://reactjs.org/docs/react-component.html#constructor" target="_blank" rel="noopener noreffer">https://reactjs.org/docs/react-component.html#constructor</a></p>
+<p>Ref: <a href="https://react.dev/learn/choosing-the-state-structure#don-t-mirror-props-in-state" target="_blank" rel="noopener noreffer">https://react.dev/learn/choosing-the-state-structure#don-t-mirror-props-in-state</a></p>
 <blockquote>
-<p>It is <strong>NOT RECOMMEND</strong> that initialized state from props directly. Update <em>props</em> won&rsquo;t be reflected in the <em>state</em>. <strong>Only use this pattern if you intentionally want to ignore prop updates.</strong></p>
+<p>It is <strong>NOT RECOMMEND</strong> that initialized state from props directly. Update <em>props</em> won&rsquo;t be reflected in the <em>state</em>. <strong>Because initialize state only run once</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Only use this pattern if you intentionally want to ignore prop updates.</strong></p>
 </blockquote>
 <p>Class Base:</p>
 <div class="highlight"><div class="chroma">
@@ -1163,13 +1171,37 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">//  Don&#39;t do this!
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">);</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">Message</span><span class="p">({</span> <span class="nx">messageColor</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">state</span><span class="p">,</span> <span class="nx">setState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">messageColor</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>The correct way is:</p>
+</div><div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>The correct way is just use props:<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Message</span><span class="p">({</span> <span class="nx">messageColor</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">color</span> <span class="o">=</span> <span class="nx">messageColor</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<p>If really want to convert props to status. It should use be:</p>
 <p>Class Base:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1212,7 +1244,30 @@ when the logic in <code>A</code> need to reuse, we cannot copy and parse <code>A
 </span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="p">[</span><span class="nx">color</span><span class="p">]);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="react-posts-archive">React Posts Archive</h2>
+</div><h2 id="trick">Trick</h2>
+<h3 id="inject-props-to-children">inject props to children</h3>
+<p>For example, we have a Wrapper component:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Wrapper</span><span class="p">&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">Wrapper</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>if we want to inject a props to children. Could use <code>cloneElement()</code> to achieve.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">isOpen</span><span class="p">,</span> <span class="nx">setIsOpen</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="p">&lt;</span><span class="nt">Wrapper</span><span class="p">&gt;{</span><span class="nx">cloneElement</span><span class="p">(</span><span class="nx">children</span><span class="p">,</span> <span class="p">{</span> <span class="nx">isOpen</span><span class="o">:</span> <span class="nx">isOpen</span> <span class="p">})}&lt;/</span><span class="nt">Wrapper</span><span class="p">&gt;;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Reference from <a href="https://react.dev/reference/react/cloneElement" target="_blank" rel="noopener noreffer">React.dev</a></p>
+<h2 id="react-posts-archive">React Posts Archive</h2>
 <blockquote>
 <p><a href="https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/" rel="">See my other post</a></p>
 </blockquote>

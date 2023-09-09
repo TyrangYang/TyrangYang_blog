@@ -15,6 +15,6 @@ Add a picture Basic markdown
 hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
 \{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
 Add a reference link Documentation of ref and relref
-1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) ]]></description>
+1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) Theme feature This theme extended short code. See Theme Documentation - Extended Shortcodes]]></description>
 </item></channel>
 </rss>

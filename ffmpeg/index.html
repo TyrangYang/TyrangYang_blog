@@ -11,7 +11,11 @@ blog https://fireship.io/lessons/ffmpeg-useful-techniques/
 node js https://www.npmjs.com/package/fluent-ffmpeg
 example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
 vids.txt:
-1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; type convention ffmpeg -i in.mp4 out.mov" />
+1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; Type convention ffmpeg -i in.mp4 out.mov
+ffmpeg -i in.mp4 out.gif
+Scale It very common to reduce size of output file. Change scale usually the common and efficient way to do so.
+ffmpeg -i in.mov -vf scale=960:-1 out.gif
+Reference from ffmpeg wiki" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-12T14:48:36-07:00" />
@@ -23,7 +27,11 @@ blog https://fireship.io/lessons/ffmpeg-useful-techniques/
 node js https://www.npmjs.com/package/fluent-ffmpeg
 example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
 vids.txt:
-1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; type convention ffmpeg -i in.mp4 out.mov"/>
+1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; Type convention ffmpeg -i in.mp4 out.mov
+ffmpeg -i in.mp4 out.gif
+Scale It very common to reduce size of output file. Change scale usually the common and efficient way to do so.
+ffmpeg -i in.mov -vf scale=960:-1 out.gif
+Reference from ffmpeg wiki"/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -36,7 +44,7 @@ vids.txt:
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/ffmpeg\/"
-        },"genre": "posts","keywords": "overview, video, ffmpeg","wordcount":  34 ,
+        },"genre": "posts","keywords": "overview, video, ffmpeg","wordcount":  69 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/ffmpeg\/","datePublished": "2023-03-12T14:48:36-07:00","dateModified": "2023-03-12T14:48:36-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -113,7 +121,7 @@ vids.txt:
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Ffmpeg</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-03-12">2023-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;34 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-03-12">2023-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;69 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -132,7 +140,8 @@ vids.txt:
     <li><a href="#example">example</a>
       <ul>
         <li><a href="#concatenate">concatenate</a></li>
-        <li><a href="#type-convention">type convention</a></li>
+        <li><a href="#type-convention">Type convention</a></li>
+        <li><a href="#scale">Scale</a></li>
       </ul>
     </li>
   </ul>
@@ -165,10 +174,19 @@ vids.txt:
 </span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name3.mov&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="type-convention">type convention</h3>
+</div><h3 id="type-convention">Type convention</h3>
 <blockquote>
 <p>ffmpeg -i in.mp4 out.mov</p>
 </blockquote>
+<blockquote>
+<p>ffmpeg -i in.mp4 out.gif</p>
+</blockquote>
+<h3 id="scale">Scale</h3>
+<p>It very common to reduce size of output file. Change scale usually the common and efficient way to do so.</p>
+<blockquote>
+<p>ffmpeg -i in.mov -vf scale=960:-1 out.gif</p>
+</blockquote>
+<p><a href="http://trac.ffmpeg.org/wiki/Scaling" target="_blank" rel="noopener noreffer">Reference from ffmpeg wiki</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

@@ -14,6 +14,10 @@ blog https://fireship.io/lessons/ffmpeg-useful-techniques/
 node js https://www.npmjs.com/package/fluent-ffmpeg
 example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
 vids.txt:
-1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; type convention ffmpeg -i in.mp4 out.mov]]></description>
+1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; Type convention ffmpeg -i in.mp4 out.mov
+ffmpeg -i in.mp4 out.gif
+Scale It very common to reduce size of output file. Change scale usually the common and efficient way to do so.
+ffmpeg -i in.mov -vf scale=960:-1 out.gif
+Reference from ffmpeg wiki]]></description>
 </item></channel>
 </rss>

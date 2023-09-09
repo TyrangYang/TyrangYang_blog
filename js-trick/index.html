@@ -28,7 +28,7 @@ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // f
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"
-        },"genre": "posts","keywords": "javascript","wordcount":  1611 ,
+        },"genre": "posts","keywords": "javascript, trick","wordcount":  1691 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished": "2020-05-03T23:12:40-04:00","dateModified": "2020-05-03T23:12:40-04:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -105,7 +105,7 @@ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // f
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1611 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-03">2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1691 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -153,6 +153,12 @@ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // f
     <li><a href="#snapshot--current-value">Snapshot &amp; current value</a></li>
     <li><a href="#bind--callback">bind &lt;==&gt; callback</a></li>
     <li><a href="#format-time-string">Format time string</a></li>
+    <li><a href="#relative-time-expression">Relative time expression</a></li>
+    <li><a href="#lodash-api">Lodash api</a>
+      <ul>
+        <li><a href="#lodash-to-chrome">Lodash to Chrome</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><div class="details admonition warning open">
@@ -887,7 +893,30 @@ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // f
 </span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h2 id="relative-time-expression">Relative time expression</h2>
+<p>Sometime we want to know the relative time between two date. <strong>Like 3 days ago. 1 year ago.</strong></p>
+<p>There is no vanilla js function direct support that. It is ok to use existing time library to handle it.</p>
+<blockquote>
+<p><a href="https://day.js.org" target="_blank" rel="noopener noreffer">day.js</a> is good option here. Small and efficient.</p>
+</blockquote>
+<p>For relative time part. See: <a href="https://day.js.org/docs/en/customization/relative-time#docsNav" target="_blank" rel="noopener noreffer">https://day.js.org/docs/en/customization/relative-time#docsNav</a></p>
+<h2 id="lodash-api">Lodash api</h2>
+<p><a href="https://lodash.com" target="_blank" rel="noopener noreffer">Lodash</a> is a very power for utility library</p>
+<h3 id="lodash-to-chrome">Lodash to Chrome</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">text</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="nx">text</span><span class="p">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://medium.com/@matt.leo/how-to-import-lodash-to-chrome-console-3e5e30b4933e" target="_blank" rel="noopener noreffer">original post</a></p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -906,7 +935,7 @@ Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // f
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/trick/">trick</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>

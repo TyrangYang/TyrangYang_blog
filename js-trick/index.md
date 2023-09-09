@@ -437,3 +437,27 @@ console.log(
 );
 ```
 
+## Relative time expression
+
+Sometime we want to know the relative time between two date. **Like 3 days ago. 1 year ago.**
+
+There is no vanilla js function direct support that. It is ok to use existing time library to handle it.
+
+> [day.js](https://day.js.org) is good option here. Small and efficient.
+
+For relative time part. See: https://day.js.org/docs/en/customization/relative-time#docsNav
+
+## Lodash api
+
+[Lodash](https://lodash.com) is a very power for utility library
+
+### Lodash to Chrome
+
+```js
+fetch('https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js')
+    .then((response) => response.text())
+    .then((text) => eval(text));
+```
+
+[original post](https://medium.com/@matt.leo/how-to-import-lodash-to-chrome-console-3e5e30b4933e)
+

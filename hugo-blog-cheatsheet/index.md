@@ -23,3 +23,7 @@
 \[Who](\{\{< relref "about.md#who" >}})
 ```
 
+## Theme feature
+
+This theme extended short code. See [Theme Documentation - Extended Shortcodes](https://hugoloveit.com/theme-documentation-extended-shortcodes/#13-person)
+

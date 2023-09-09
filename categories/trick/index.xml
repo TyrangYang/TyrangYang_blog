@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>trick - Category - TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/categories/trick/</link>
+        <description>trick - Category - TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 03 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/trick/" rel="self" type="application/rss+xml" /><item>
+    <title>React overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/react/</link>
+    <pubDate>Thu, 03 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/react/</guid>
+    <description><![CDATA[Init react Commend
+1 npx create-react-app . npx means you use this package but don&rsquo;t download it.
+or with redux
+1 npx create-react-app my-app --template redux life cycle Class component lifecycle Function component method shouldComponentUpdate() Run before render() to check this component need to render or not.
+1 2 3 shouldComponentUpdate(nextProps, nextStates){ return boolean; } PureComponent can automatically do a shallow comparison to determine need to update or not
+export default React.]]></description>
+</item></channel>
+</rss>

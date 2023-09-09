@@ -1,0 +1,37 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>trick - Tag - TyrangYang_Blog</title>
+        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/trick/</link>
+        <description>trick - Tag - TyrangYang_Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 08 Apr 2021 23:37:35 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/trick/" rel="self" type="application/rss+xml" /><item>
+    <title>Typescript overview</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link>
+    <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
+    <description><![CDATA[Trick generic types optional https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.
+type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.]]></description>
+</item><item>
+    <title>Hugo Blog CheatSheet</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</link>
+    <pubDate>Mon, 17 Aug 2020 16:43:42 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid>
+    <description><![CDATA[Create new post hugo new posts/new.md
+Add a picture Basic markdown
+![&lt;alt name](&lt; The route start from static folder&gt;)
+hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
+\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
+Add a reference link Documentation of ref and relref
+1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) Theme feature This theme extended short code. See Theme Documentation - Extended Shortcodes]]></description>
+</item><item>
+    <title>Js Trick</title>
+    <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
+    <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
+    <description><![CDATA[warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
+Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false !!variable == Boolean(variable); String =&gt; Integer 1 2 3 4 Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100 +&#39;abc&#39;; // NAN Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
+</item></channel>
+</rss>

@@ -181,13 +181,13 @@ In this example, a parent component that renders `<FancyInput ref={inputRef} />`
 
 ### useState
 
-```js
-const [state, setstate] = useState(initialState);
+```jsx
+const [state, setState] = useState(initialState);
 ```
 
 ### useEffect
 
-```js
+```jsx
 useEffect(() => {
     <effect>;
     return () => {
@@ -586,9 +586,11 @@ To get current value in functional component, add a ref(react) / create a value 
 
 ### Initial state from props
 
-Ref: https://reactjs.org/docs/react-component.html#constructor
+Ref: https://react.dev/learn/choosing-the-state-structure#don-t-mirror-props-in-state
 
-> It is **NOT RECOMMEND** that initialized state from props directly. Update _props_ won't be reflected in the _state_. **Only use this pattern if you intentionally want to ignore prop updates.**
+> It is **NOT RECOMMEND** that initialized state from props directly. Update _props_ won't be reflected in the _state_. **Because initialize state only run once**
+
+> **Only use this pattern if you intentionally want to ignore prop updates.**
 
 Class Base:
 
@@ -604,10 +606,22 @@ Functional Base:
 
 ```js
 //  Don't do this!
-const [state, setState] = useState(props.color);
+function Message({ messageColor }) {
+    const [state, setState] = useState(messageColor);
+}
 ```
 
-The correct way is:
+{{< admonition type=success title="The correct way is just use props:" open=true >}}
+
+```js
+function Message({ messageColor }) {
+    const color = messageColor;
+}
+```
+
+{{< /admonition >}}
+
+If really want to convert props to status. It should use be:
 
 Class Base:
 
@@ -632,6 +646,25 @@ useEffect(() => {
     setState(color);
 }, [color]);
 ```
+
+## Trick
+
+### inject props to children
+
+For example, we have a Wrapper component:
+
+```jsx
+<Wrapper>{children}</Wrapper>
+```
+
+if we want to inject a props to children. Could use `cloneElement()` to achieve.
+
+```jsx
+const [isOpen, setIsOpen] = useState(false);
+return <Wrapper>{cloneElement(children, { isOpen: isOpen })}</Wrapper>;
+```
+
+Reference from [React.dev](https://react.dev/reference/react/cloneElement)
 
 ## React Posts Archive
 

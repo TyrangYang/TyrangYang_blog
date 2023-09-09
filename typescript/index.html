@@ -6,14 +6,18 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Typescript overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Typescript overview" />
-<meta property="og:description" content="type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() &#43; b.toString(); } else return &#43;a &#43; &#43;b; }; console.log(add(1, 2)); Array 1 2 3 4 5 6 type Book = { id: string; name: string; }; let books: Book[] = []; unknown 1 2 3 4 5 6 7 8 9 10 11 12 let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a." />
+<meta property="og:description" content="Trick generic types optional https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.
+type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/typescript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-08T23:37:35-07:00" />
 <meta property="article:modified_time" content="2021-04-08T23:37:35-07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Typescript overview"/>
-<meta name="twitter:description" content="type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() &#43; b.toString(); } else return &#43;a &#43; &#43;b; }; console.log(add(1, 2)); Array 1 2 3 4 5 6 type Book = { id: string; name: string; }; let books: Book[] = []; unknown 1 2 3 4 5 6 7 8 9 10 11 12 let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a."/>
+<meta name="twitter:description" content="Trick generic types optional https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.
+type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -26,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/"
-        },"genre": "posts","keywords": "overview, typescript, javascript","wordcount":  457 ,
+        },"genre": "posts","keywords": "overview, typescript, javascript, trick","wordcount":  490 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/","datePublished": "2021-04-08T23:37:35-07:00","dateModified": "2021-04-08T23:37:35-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -103,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Typescript overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;457 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;490 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -112,6 +116,12 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#trick">Trick</a>
+      <ul>
+        <li><a href="#generic-types-optional">generic types optional</a></li>
+        <li><a href="#string----string-string--">string[ ] &amp; [ string, &hellip;string[ ] ]</a></li>
+      </ul>
+    </li>
     <li><a href="#type">type</a>
       <ul>
         <li><a href="#union-type--literal-type">Union type &amp; Literal type</a></li>
@@ -124,10 +134,14 @@
     <li><a href="#assign-a-nested-plain-object">Assign a nested plain Object</a></li>
     <li><a href="#type-template-arrow-function-example">Type Template arrow function example</a></li>
     <li><a href="#type--interface">Type &amp; interface</a></li>
-    <li><a href="#generic-types-optional">generic types optional</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="type">type</h2>
+            </div><div class="content" id="content"><h2 id="trick">Trick</h2>
+<h3 id="generic-types-optional">generic types optional</h3>
+<p><a href="https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional" target="_blank" rel="noopener noreffer">https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional</a></p>
+<h3 id="string----string-string--">string[ ] &amp; [ string, &hellip;string[ ] ]</h3>
+<p>The main difference is that type <code>[string, ...string[]]</code> at least have one element. <code>[]</code> will alert error. <code>string[]</code> could be empty. <code>[]</code> is ok.</p>
+<h2 id="type">type</h2>
 <h3 id="union-type--literal-type">Union type &amp; Literal type</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -360,9 +374,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="generic-types-optional">generic types optional</h2>
-<p><a href="https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional" target="_blank" rel="noopener noreffer">https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional</a></p>
-</div><div class="post-footer" id="post-footer">
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -381,7 +393,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/">overview</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/typescript/">typescript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/">overview</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/typescript/">typescript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/trick/">trick</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>
