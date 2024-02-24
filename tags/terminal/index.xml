@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>terminal - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/</link>
-        <description>terminal - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/" rel="self" type="application/rss+xml" /><item>
-    <title>chmod Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
-    <description><![CDATA[chmod is linux command to control file permission
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>terminal - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/</link><description>terminal - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/" rel="self" type="application/rss+xml"/><item><title>chmod Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid><description><![CDATA[chmod is linux command to control file permission
 usage chmod [u|g|o|a][=|+|-] [r|w|x] u =&gt; user
 g =&gt; group
 o =&gt; other
@@ -20,14 +9,7 @@ x =&gt; execute
 example chmod +wr test.txt give write and read permission for user
 chmod -r test.txt remove read permission for user
 chmod g=wrx test.txt give write, read and execute permission for group
-use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
-</item><item>
-    <title>Basic Terminal command</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</link>
-    <pubDate>Mon, 16 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</guid>
-    <description><![CDATA[Basic cd route
+use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description></item><item><title>Basic Terminal command</title><link>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</guid><description><![CDATA[Basic cd route
 ls list
 pwd show current path
 cat concatenate and print file (usually as read file)
@@ -42,24 +24,8 @@ ls -a list all included hiding file
 ls -l list detail
 Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
 mv &lt;name1&gt; &lt;name2&gt; rename
-move one file within this directory to another name.]]></description>
-</item><item>
-    <title>Crontab overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link>
-    <pubDate>Thu, 23 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid>
-    <description><![CDATA[What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
+move one file within this directory to another name.]]></description></item><item><title>Crontab overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link><pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid><description>What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
 Basic command crontab [-u user] {-l | -e | -r}
 command utility -l list your cron job -r remove your cron job -e edit your cron job -u specific a user How to schedule a command Cron job looks like:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &gt;&gt; ~/Desktop/test.]]></description>
-</item><item>
-    <title>My Zsh setting</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link>
-    <pubDate>Wed, 08 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid>
-    <description><![CDATA[Zsh &amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
-Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&rsquo;s recommended to use zsh over bash.]]></description>
-</item></channel>
-</rss>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 # ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &amp;gt;&amp;gt; ~/Desktop/test.</description></item><item><title>My Zsh setting</title><link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid><description>Zsh &amp;amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
+Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&amp;rsquo;s recommended to use zsh over bash.</description></item></channel></rss>

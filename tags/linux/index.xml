@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>linux - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/linux/</link>
-        <description>linux - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/linux/" rel="self" type="application/rss+xml" /><item>
-    <title>chmod Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link>
-    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid>
-    <description><![CDATA[chmod is linux command to control file permission
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>linux - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/linux/</link><description>linux - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/linux/" rel="self" type="application/rss+xml"/><item><title>chmod Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid><description><![CDATA[chmod is linux command to control file permission
 usage chmod [u|g|o|a][=|+|-] [r|w|x] u =&gt; user
 g =&gt; group
 o =&gt; other
@@ -20,6 +9,4 @@ x =&gt; execute
 example chmod +wr test.txt give write and read permission for user
 chmod -r test.txt remove read permission for user
 chmod g=wrx test.txt give write, read and execute permission for group
-use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description>
-</item></channel>
-</rss>
+use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description></item></channel></rss>

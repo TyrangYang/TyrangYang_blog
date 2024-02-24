@@ -1,18 +1,5 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Traverse a tree - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/</link>
-        <description>Traverse a tree - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/" rel="self" type="application/rss+xml" /><item>
-    <title>Traverse a tree</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link>
-    <pubDate>Mon, 10 Feb 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid>
-    <description><![CDATA[Idea to traverse a tree
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Traverse a tree - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/</link><description>Traverse a tree - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/" rel="self" type="application/rss+xml"/><item><title>Traverse a tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link><pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid><description>Idea to traverse a tree
 Tree structure The tree structure:
 1 2 3 4 5 6 struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} }; BFS DFS Pre-order In-order Post-order Relationship:
 Iterative Loop for BFS:
-1 2 3 4 5 6 7 8 9 10 11 void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.pop(); // do something if(temp-&gt;left !]]></description>
-</item></channel>
-</rss>
+1 2 3 4 5 6 7 8 9 10 11 void BFS(TreeNode *root){ stack&amp;lt;TreeNode *&amp;gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.pop(); // do something if(temp-&amp;gt;left !</description></item></channel></rss>

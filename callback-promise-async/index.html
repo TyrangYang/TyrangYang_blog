@@ -1,608 +1,334 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Callback, Promise and Async/await in js - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Callback, Promise and Async/await in js" />
-<meta property="og:description" content="Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
-Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-11-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-17T00:00:00+00:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Callback, Promise and Async/await in js"/>
-<meta name="twitter:description" content="Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
-Synchronous &amp; asynchronous Function run synchronously means code is running as same as your writing.
-But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not."/>
-<meta name="application-name" content="TyrangYang_Blog">
-<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Callback, Promise and Async/await in js",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/"
-        },"genre": "posts","keywords": "javascript, nodejs","wordcount":  1111 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/","datePublished": "2019-11-17T00:00:00+00:00","dateModified": "2019-11-17T00:00:00+00:00","publisher": {
-            "@type": "Organization",
-            "name": "Haolin Yang"},"author": {
-                "@type": "Person",
-                "name": "Haolin Yang"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Callback, Promise and Async/await in js</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-17">2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1111 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#js-event-loop--call-stack--task-queue">Js event loop | Call stack | task queue</a></li>
-    <li><a href="#synchronous--asynchronous">Synchronous &amp; asynchronous</a></li>
-    <li><a href="#callback">Callback</a></li>
-    <li><a href="#promise">Promise</a></li>
-    <li><a href="#async--await">Async &amp; Await</a>
-      <ul>
-        <li><a href="#prevent-trycatch-hell">Prevent tryCatch hell</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h2 id="js-event-loop--call-stack--task-queue">Js event loop | Call stack | task queue</h2>
-<p>This <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener noreffer"><strong>website</strong></a> shows how js running with single thread to handle concurrency</p>
-<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
-<p>Function run synchronously means code is running as same as your writing.</p>
-<p>But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.</p>
-<p>But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</p>
-<p>For example, your code maybe like:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// get some data from api (async part)
-</span></span><span class="line"><span class="cl">// print data
-</span></span><span class="line"><span class="cl">// update data through api (async part)
-</span></span><span class="line"><span class="cl">// print success
-</span></span><span class="line"><span class="cl">// print title
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Js may running like:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// print data first (data is undefined)
-</span></span><span class="line"><span class="cl">// print success (probably is undefined)
-</span></span><span class="line"><span class="cl">// print title
-</span></span><span class="line"><span class="cl">// get some data from api (async part)
-</span></span><span class="line"><span class="cl">// update data through api (async part)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>You have to make all of code asynchronously so that you code can running synchronously.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(all async)
-</span></span><span class="line"><span class="cl">// get some data from api (async part)
-</span></span><span class="line"><span class="cl">// print data
-</span></span><span class="line"><span class="cl">// update data through api (async part)
-</span></span><span class="line"><span class="cl">// print success
-</span></span><span class="line"><span class="cl">(all async)
-</span></span><span class="line"><span class="cl">// print title
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The reason is that js have two thread running background. The main thread find async part of code and let another thread (which is a queue) to process. In my example, all three print will processed by main thread and two async part process by queue. Actually you want the fist two print is process in sequence, therefore you need to move these two print into queue so that they can running synchronously. For print title, it really doesn&rsquo;t matter when is actual running and it still processed by main thread.</p>
-<p>There are three different ways to move some part of code into queue. Callback, Promise and Async/await.</p>
-<h2 id="callback">Callback</h2>
-<p>When talk about <em>callback</em> actually it has two means:</p>
-<p>First, Callback exist in any language actually. It means you pass a function as a parameter.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">calculate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">callback</span><span class="p">(</span><span class="nx">num1</span><span class="p">,</span> <span class="nx">num2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">calculate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">})</span>
-</span></span><span class="line"><span class="cl"><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p>These functions are running synchronously.</p>
-</blockquote>
-<p>The second means is using asynchronous function as a callback to solve async problem. In short, we call this strategy as callback as well.</p>
-<p>setTimeout(callback, time) is a async function which means callback will be run after a given time.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Getting data&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Data got!&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p><code>Data got!</code> will be printed after <code>Getting data</code> printed 0.5 second</p>
-</blockquote>
-<p>This a fake example for getting data.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getData</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Getting data&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;DATA&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">callback</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">getData</span><span class="p">(</span><span class="nx">printData</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="promise">Promise</h2>
-<p>Promise is like a technique to deal with async. It actually use callback but make it more readable and useable.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Getting data&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;DATA&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">error</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;Some Error.&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">getData</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">printData</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>resolve will get val and passing to the next step which then() and reject is for handle error which catch by catch().</p>
-<p>Promise also provide some other feature. Like Promise.all([list of promise])</p>
-<p>all() will pass val contained all promise return val after all promise is finish</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">promise1</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">promise2</span> <span class="o">=</span> <span class="s1">&#39;Second&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">promise3</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">resolve</span><span class="p">(</span><span class="s1">&#39;Goodbye&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// [ &#39;First&#39;, &#39;Second&#39;, &#39;Goodbye&#39; ] (after one second)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">promise1</span><span class="p">,</span> <span class="nx">promise2</span><span class="p">,</span> <span class="nx">promise3</span><span class="p">]).</span><span class="nx">then</span><span class="p">((</span><span class="nx">val</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">val</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// as soon as one of the promises in an iterable fulfills or rejects
-</span></span></span><span class="line"><span class="cl"><span class="c1">// probably: &#39;Second&#39; goes fast
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="async--await">Async &amp; Await</h2>
-<p>async and await is another syntax to deal with Promise.</p>
-<p>Basically, await will add behind a function which return a promise and get the data will passing to then. You can have a variable to get the data and go next. All await must inside a function notified as async. Now your code is same with writing code synchronously.</p>
-<p>Like example from beginning:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// get some data from api (async part)
-</span></span><span class="line"><span class="cl">// print data
-</span></span><span class="line"><span class="cl">// update data through api (async part)
-</span></span><span class="line"><span class="cl">// print success
-</span></span><span class="line"><span class="cl">// print title
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>using Async &amp; Await is like</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">async function{
-</span></span><span class="line"><span class="cl">    let data = await// get some data from api (async part)
-</span></span><span class="line"><span class="cl">    // print data
-</span></span><span class="line"><span class="cl">    let success = await// update data through api (async part)
-</span></span><span class="line"><span class="cl">    // print success
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">// print title
-</span></span><span class="line"><span class="cl">// run function
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Another example from promise:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Getting data&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="s1">&#39;DATA&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">error</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">reject</span><span class="p">(</span><span class="s1">&#39;Some Error.&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="mi">500</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">getData</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">printData</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">main</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="prevent-trycatch-hell">Prevent tryCatch hell</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">getDataTryCatchHell</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">a</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">b</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">c</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Usually just append <code>.catch()</code> function behind the await function,</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">getData</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(...).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">=&gt;</span> <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(...).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">=&gt;</span> <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(...).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">=&gt;</span> <span class="nx">handleErr</span><span class="p">(</span><span class="nx">err</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>A better way is creating a function return data and error.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">awesome</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="kc">null</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="nx">err</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="p">[</span><span class="nx">data</span><span class="p">,</span> <span class="nx">err</span><span class="p">]</span> <span class="o">=</span> <span class="nx">awesome</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2019-11-17</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/">javascript</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs/">nodejs</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/" class="prev" rel="prev" title="What is &#34;this&#34; in javascript"><i class="fas fa-angle-left fa-fw"></i>What is &#34;this&#34; in javascript</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/" class="next" rel="next" title="Z-shell overview">Z-shell overview<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Callback, Promise and Async/await in js - TyrangYang_Blog</title><meta name=Description content><meta property="og:title" content="Callback, Promise and Async/await in js"><meta property="og:description" content="Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous & asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not."><meta property="og:type" content="article"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-11-17T00:00:00+00:00"><meta property="article:modified_time" content="2019-11-17T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Callback, Promise and Async/await in js"><meta name=twitter:description content="Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous & asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not."><meta name=application-name content="TyrangYang_Blog"><meta name=apple-mobile-web-app-title content="TyrangYang_Blog"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Callback, Promise and Async/await in js","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/"},"genre":"posts","keywords":"javascript, nodejs","wordcount":1111,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/callback-promise-async\/","datePublished":"2019-11-17T00:00:00+00:00","dateModified":"2019-11-17T00:00:00+00:00","publisher":{"@type":"Organization","name":"Haolin Yang"},"author":{"@type":"Person","name":"Haolin Yang"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i></a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class="toc-content always-active" id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Callback, Promise and Async/await in js</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/posts/><i class="far fa-folder fa-fw"></i>Posts</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-11-17>2019-11-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1111 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#js-event-loop--call-stack--task-queue>Js event loop | Call stack | task queue</a></li><li><a href=#synchronous--asynchronous>Synchronous & asynchronous</a></li><li><a href=#callback>Callback</a></li><li><a href=#promise>Promise</a></li><li><a href=#async--await>Async & Await</a><ul><li><a href=#prevent-trycatch-hell>Prevent tryCatch hell</a></li></ul></li></ul></nav></div></div><div class=content id=content><h2 id=js-event-loop--call-stack--task-queue>Js event loop | Call stack | task queue</h2><p>This <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target=_blank rel="noopener noreffer"><strong>website</strong></a> shows how js running with single thread to handle concurrency</p><h2 id=synchronous--asynchronous>Synchronous & asynchronous</h2><p>Function run synchronously means code is running as same as your writing.</p><p>But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.</p><p>But things going ridiculous. Sometimes, the all code need to be async so that make sure is running synchronously.</p><p>For example, your code maybe like:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>// get some data from api (async part)
+</span></span><span class=line><span class=cl>// print data
+</span></span><span class=line><span class=cl>// update data through api (async part)
+</span></span><span class=line><span class=cl>// print success
+</span></span><span class=line><span class=cl>// print title
+</span></span></code></pre></td></tr></table></div></div><p>Js may running like:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>// print data first (data is undefined)
+</span></span><span class=line><span class=cl>// print success (probably is undefined)
+</span></span><span class=line><span class=cl>// print title
+</span></span><span class=line><span class=cl>// get some data from api (async part)
+</span></span><span class=line><span class=cl>// update data through api (async part)
+</span></span></code></pre></td></tr></table></div></div><p>You have to make all of code asynchronously so that you code can running synchronously.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>(all async)
+</span></span><span class=line><span class=cl>// get some data from api (async part)
+</span></span><span class=line><span class=cl>// print data
+</span></span><span class=line><span class=cl>// update data through api (async part)
+</span></span><span class=line><span class=cl>// print success
+</span></span><span class=line><span class=cl>(all async)
+</span></span><span class=line><span class=cl>// print title
+</span></span></code></pre></td></tr></table></div></div><p>The reason is that js have two thread running background. The main thread find async part of code and let another thread (which is a queue) to process. In my example, all three print will processed by main thread and two async part process by queue. Actually you want the fist two print is process in sequence, therefore you need to move these two print into queue so that they can running synchronously. For print title, it really doesn&rsquo;t matter when is actual running and it still processed by main thread.</p><p>There are three different ways to move some part of code into queue. Callback, Promise and Async/await.</p><h2 id=callback>Callback</h2><p>When talk about <em>callback</em> actually it has two means:</p><p>First, Callback exist in any language actually. It means you pass a function as a parameter.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>calculate</span> <span class=o>=</span> <span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>callback</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>callback</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nx>calculate</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nx>a</span> <span class=o>-</span> <span class=nx>b</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p>These functions are running synchronously.</p></blockquote><p>The second means is using asynchronous function as a callback to solve async problem. In short, we call this strategy as callback as well.</p><p>setTimeout(callback, time) is a async function which means callback will be run after a given time.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Getting data&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Data got!&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>},</span> <span class=mi>500</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote><p><code>Data got!</code> will be printed after <code>Getting data</code> printed 0.5 second</p></blockquote><p>This a fake example for getting data.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>printData</span><span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>getData</span><span class=p>(</span><span class=nx>callback</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Getting data&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>data</span> <span class=o>=</span> <span class=s1>&#39;DATA&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>callback</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span> <span class=mi>500</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>getData</span><span class=p>(</span><span class=nx>printData</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=promise>Promise</h2><p>Promise is like a technique to deal with async. It actually use callback but make it more readable and useable.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>printData</span><span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>getData</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Getting data&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=kd>let</span> <span class=nx>data</span> <span class=o>=</span> <span class=s1>&#39;DATA&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>let</span> <span class=nx>error</span> <span class=o>=</span> <span class=kc>false</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>resolve</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>reject</span><span class=p>(</span><span class=s1>&#39;Some Error.&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=mi>500</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>getData</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>then</span><span class=p>(</span><span class=nx>printData</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=k>catch</span><span class=p>((</span><span class=nx>err</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>err</span><span class=p>));</span>
+</span></span></code></pre></td></tr></table></div></div><p>resolve will get val and passing to the next step which then() and reject is for handle error which catch by catch().</p><p>Promise also provide some other feature. Like Promise.all([list of promise])</p><p>all() will pass val contained all promise return val after all promise is finish</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>promise1</span> <span class=o>=</span> <span class=nb>Promise</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=s1>&#39;First&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>promise2</span> <span class=o>=</span> <span class=s1>&#39;Second&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>promise3</span> <span class=o>=</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>resolve</span><span class=p>(</span><span class=s1>&#39;Goodbye&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>},</span> <span class=mi>1000</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>Promise</span><span class=p>.</span><span class=nx>all</span><span class=p>([</span><span class=nx>promise1</span><span class=p>,</span> <span class=nx>promise2</span><span class=p>,</span> <span class=nx>promise3</span><span class=p>]).</span><span class=nx>then</span><span class=p>((</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>val</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=c1>// [ &#39;First&#39;, &#39;Second&#39;, &#39;Goodbye&#39; ] (after one second)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nb>Promise</span><span class=p>.</span><span class=nx>race</span><span class=p>([</span><span class=nx>promise1</span><span class=p>,</span> <span class=nx>promise2</span><span class=p>,</span> <span class=nx>promise3</span><span class=p>]).</span><span class=nx>then</span><span class=p>((</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>val</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=c1>// as soon as one of the promises in an iterable fulfills or rejects
+</span></span></span><span class=line><span class=cl><span class=c1>// probably: &#39;Second&#39; goes fast
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=async--await>Async & Await</h2><p>async and await is another syntax to deal with Promise.</p><p>Basically, await will add behind a function which return a promise and get the data will passing to then. You can have a variable to get the data and go next. All await must inside a function notified as async. Now your code is same with writing code synchronously.</p><p>Like example from beginning:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>// get some data from api (async part)
+</span></span><span class=line><span class=cl>// print data
+</span></span><span class=line><span class=cl>// update data through api (async part)
+</span></span><span class=line><span class=cl>// print success
+</span></span><span class=line><span class=cl>// print title
+</span></span></code></pre></td></tr></table></div></div><p>using Async & Await is like</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>async function{
+</span></span><span class=line><span class=cl>    let data = await// get some data from api (async part)
+</span></span><span class=line><span class=cl>    // print data
+</span></span><span class=line><span class=cl>    let success = await// update data through api (async part)
+</span></span><span class=line><span class=cl>    // print success
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// print title
+</span></span><span class=line><span class=cl>// run function
+</span></span></code></pre></td></tr></table></div></div><p>Another example from promise:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>printData</span><span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>getData</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Getting data&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=kd>let</span> <span class=nx>data</span> <span class=o>=</span> <span class=s1>&#39;DATA&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>let</span> <span class=nx>error</span> <span class=o>=</span> <span class=kc>false</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=o>!</span><span class=nx>error</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>resolve</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>reject</span><span class=p>(</span><span class=s1>&#39;Some Error.&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=mi>500</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>data</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>getData</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=nx>printData</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>main</span><span class=p>();</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=prevent-trycatch-hell>Prevent tryCatch hell</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>getDataTryCatchHell</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>a</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>handleErr</span><span class=p>(</span><span class=nx>err</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>b</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>handleErr</span><span class=p>(</span><span class=nx>err</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>c</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>handleErr</span><span class=p>(</span><span class=nx>err</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Usually just append <code>.catch()</code> function behind the await function,</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>getData</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>a</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>(...).</span><span class=k>catch</span><span class=p>(</span><span class=nx>err</span><span class=p>=&gt;</span> <span class=nx>handleErr</span><span class=p>(</span><span class=nx>err</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>b</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>(...).</span><span class=k>catch</span><span class=p>(</span><span class=nx>err</span><span class=p>=&gt;</span> <span class=nx>handleErr</span><span class=p>(</span><span class=nx>err</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>c</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>(...).</span><span class=k>catch</span><span class=p>(</span><span class=nx>err</span><span class=p>=&gt;</span> <span class=nx>handleErr</span><span class=p>(</span><span class=nx>err</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>A better way is creating a function return data and error.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>awesome</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>try</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>data</span> <span class=o>=</span> <span class=kr>await</span> <span class=nx>fetch</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=p>[</span><span class=nx>data</span><span class=p>,</span> <span class=kc>null</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>catch</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=p>[</span><span class=kc>null</span><span class=p>,</span> <span class=nx>err</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>async</span> <span class=kd>function</span> <span class=nx>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=p>[</span><span class=nx>data</span><span class=p>,</span> <span class=nx>err</span><span class=p>]</span> <span class=o>=</span> <span class=nx>awesome</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>err</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2019-11-17</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/>javascript</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/nodejs/>nodejs</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/ class=prev rel=prev title='What is "this" in javascript'><i class="fas fa-angle-left fa-fw"></i>What is "this" in javascript</a>
+<a href=https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/ class=next rel=next title="Z-shell overview">Z-shell overview<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/ target=_blank>Haolin Yang</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:null,type:"algolia"}}</script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>

@@ -1,416 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Dynamic Programming 🏗 - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Dynamic Programming 🏗" />
-<meta property="og:description" content="What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Dynamic Programming 🏗 - TyrangYang_Blog</title><meta name=Description content><meta property="og:title" content="Dynamic Programming 🏗"><meta property="og:description" content="What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
 Memorization Tabulation fibonacci example The classic recursive problem:
-1 2 3 4 const fib = (n) =&gt; { if (n &lt;= 2) return 1; return fib(n - 1) &#43; fib(n - 2); }; How to memorize :" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/dp/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-07-10T18:41:10-04:00" />
-<meta property="article:modified_time" content="2020-07-10T18:41:10-04:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Dynamic Programming 🏗"/>
-<meta name="twitter:description" content="What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
+1 2 3 4 const fib = (n) => { if (n <= 2) return 1; return fib(n - 1) + fib(n - 2); }; How to memorize :"><meta property="og:type" content="article"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/dp/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-07-10T18:41:10-04:00"><meta property="article:modified_time" content="2020-07-10T18:41:10-04:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Dynamic Programming 🏗"><meta name=twitter:description content="What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
 Memorization Tabulation fibonacci example The classic recursive problem:
-1 2 3 4 const fib = (n) =&gt; { if (n &lt;= 2) return 1; return fib(n - 1) &#43; fib(n - 2); }; How to memorize :"/>
-<meta name="application-name" content="TyrangYang_Blog">
-<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/dp/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/go/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/dp-example/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Dynamic Programming 🏗",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/dp\/"
-        },"genre": "posts","keywords": "dp, c\u002b\u002b","wordcount":  604 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/dp\/","datePublished": "2020-07-10T18:41:10-04:00","dateModified": "2020-07-10T18:41:10-04:00","publisher": {
-            "@type": "Organization",
-            "name": "Haolin Yang"},"author": {
-                "@type": "Person",
-                "name": "Haolin Yang"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Dynamic Programming 🏗</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/"><i class="far fa-folder fa-fw"></i>Alg&DataStr</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-10">2020-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;604 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#what-is-dp-problem">What is dp problem</a>
-      <ul>
-        <li><a href="#fibonacci-example">fibonacci example</a></li>
-        <li><a href="#memorization-recipe">Memorization Recipe</a></li>
-        <li><a href="#tabulation-recipe">Tabulation Recipe</a></li>
-      </ul>
-    </li>
-    <li><a href="#what-kind-of-question-is-dp">What kind of question is dp</a>
-      <ul>
-        <li><a href="#example">Example</a></li>
-      </ul>
-    </li>
-    <li><a href="#dp-table">DP table</a></li>
-    <li><a href="#state-machine">State machine</a></li>
-    <li><a href="#state-transaction-equation">State transaction equation</a></li>
-    <li><a href="#dp-problem-example">DP problem Example</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h2 id="what-is-dp-problem">What is dp problem</h2>
-<p>DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for <strong>recursive problem</strong>.</p>
-<ol>
-<li>Memorization</li>
-<li>Tabulation</li>
-</ol>
-<h3 id="fibonacci-example">fibonacci example</h3>
-<p>The classic recursive problem:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fib</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>How to memorize :</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fibMemo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">memo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">])</span> <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>How to tabulation:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fibTable</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">table</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">table</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">table</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">table</span><span class="p">[</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">table</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">table</span><span class="p">[</span><span class="nx">n</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="memorization-recipe">Memorization Recipe</h3>
-<ol>
-<li>Make it work
-<ol>
-<li>visualize the problem as a tree</li>
-<li>implement the tree using recursion</li>
-<li>test it</li>
-</ol>
-</li>
-<li>Make it efficient
-<ol>
-<li>add memo object</li>
-<li>add a base case to return memo value</li>
-<li>store return values into the memo</li>
-</ol>
-</li>
-</ol>
-<h3 id="tabulation-recipe">Tabulation Recipe</h3>
-<ol>
-<li>visualize the problem as table</li>
-<li>size the table base on inputs</li>
-<li>initialize the table with default values</li>
-<li>seed the trivial answer into the table</li>
-<li>iterate through the table</li>
-<li>fill further position based on the current position</li>
-</ol>
-<h2 id="what-kind-of-question-is-dp">What kind of question is dp</h2>
-<ol>
-<li><strong>Can</strong> the result be exist →→ True or False</li>
-<li><strong>How</strong> the result be come →→ One result</li>
-<li>What is the <strong>best</strong> result →→ One of a best result</li>
-<li>What is <strong>all</strong> results <em>(may not be dp problem)</em> →→ all results</li>
-</ol>
-<h3 id="example">Example</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">canSum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">,</span> <span class="nx">memo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">target</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">memo</span><span class="p">)</span> <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">target</span> <span class="o">-</span> <span class="nx">num</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">canSum</span><span class="p">(</span><span class="nx">tmp</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">,</span> <span class="nx">memo</span><span class="p">))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">canSum</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="p">{});</span>
-</span></span><span class="line"><span class="cl"><span class="nx">res</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">howSum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">,</span> <span class="nx">memo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">target</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">memo</span><span class="p">)</span> <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="p">[];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">target</span> <span class="o">-</span> <span class="nx">num</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">sumRes</span> <span class="o">=</span> <span class="nx">howSum</span><span class="p">(</span><span class="nx">tmp</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">,</span> <span class="nx">memo</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">sumRes</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">num</span><span class="p">,</span> <span class="p">...</span><span class="nx">sumRes</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">res</span> <span class="o">=</span> <span class="nx">howSum</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="p">{});</span>
-</span></span><span class="line"><span class="cl"><span class="nx">res</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">bestSum</span> <span class="o">=</span> <span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">,</span> <span class="nx">memo</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">target</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">key</span> <span class="k">in</span> <span class="nx">memo</span><span class="p">)</span> <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="p">[];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">shortestRes</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">num</span> <span class="k">of</span> <span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">tmp</span> <span class="o">=</span> <span class="nx">target</span> <span class="o">-</span> <span class="nx">num</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">tmpCombination</span> <span class="o">=</span> <span class="nx">bestSum</span><span class="p">(</span><span class="nx">tmp</span><span class="p">,</span> <span class="nx">numbers</span><span class="p">,</span> <span class="nx">memo</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">tmpCombination</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">shortestRes</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">shortestRes</span> <span class="o">===</span> <span class="kc">null</span> <span class="o">||</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">shortestRes</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="nx">tmpCombination</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">?</span> <span class="p">[</span><span class="nx">num</span><span class="p">,</span> <span class="p">...</span><span class="nx">tmpCombination</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">:</span> <span class="nx">shortestRes</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">shortestRes</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">memo</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">res</span> <span class="o">=</span> <span class="nx">bestSum</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">{});</span>
-</span></span><span class="line"><span class="cl"><span class="nx">res</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="dp-table">DP table</h2>
-<h2 id="state-machine">State machine</h2>
-<h2 id="state-transaction-equation">State transaction equation</h2>
-<h2 id="dp-problem-example">DP problem Example</h2>
-<p>I have another post to classify dp problem
-<a href="https://tyrangyang.github.io/TyrangYang_blog/dp-example/" rel="">See this Post</a></p>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2020-07-10</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/dp/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/dp/">dp</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/c&#43;&#43;/">c&#43;&#43;</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/go/" class="prev" rel="prev" title="Go overview 🏗"><i class="fas fa-angle-left fa-fw"></i>Go overview 🏗</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/dp-example/" class="next" rel="next" title="Dynamic Programming Example">Dynamic Programming Example<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
-</html>
+1 2 3 4 const fib = (n) => { if (n <= 2) return 1; return fib(n - 1) + fib(n - 2); }; How to memorize :"><meta name=application-name content="TyrangYang_Blog"><meta name=apple-mobile-web-app-title content="TyrangYang_Blog"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/dp/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/go/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/dp-example/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Dynamic Programming 🏗","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/dp\/"},"genre":"posts","keywords":"dp, c\u002b\u002b","wordcount":604,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/dp\/","datePublished":"2020-07-10T18:41:10-04:00","dateModified":"2020-07-10T18:41:10-04:00","publisher":{"@type":"Organization","name":"Haolin Yang"},"author":{"@type":"Person","name":"Haolin Yang"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i></a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Dynamic Programming 🏗</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/><i class="far fa-folder fa-fw"></i>Alg&DataStr</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-07-10>2020-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;604 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#what-is-dp-problem>What is dp problem</a><ul><li><a href=#fibonacci-example>fibonacci example</a></li><li><a href=#memorization-recipe>Memorization Recipe</a></li><li><a href=#tabulation-recipe>Tabulation Recipe</a></li></ul></li><li><a href=#what-kind-of-question-is-dp>What kind of question is dp</a><ul><li><a href=#example>Example</a></li></ul></li><li><a href=#dp-table>DP table</a></li><li><a href=#state-machine>State machine</a></li><li><a href=#state-transaction-equation>State transaction equation</a></li><li><a href=#dp-problem-example>DP problem Example</a></li></ul></nav></div></div><div class=content id=content><h2 id=what-is-dp-problem>What is dp problem</h2><p>DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for <strong>recursive problem</strong>.</p><ol><li>Memorization</li><li>Tabulation</li></ol><h3 id=fibonacci-example>fibonacci example</h3><p>The classic recursive problem:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fib</span> <span class=o>=</span> <span class=p>(</span><span class=nx>n</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>n</span> <span class=o>&lt;=</span> <span class=mi>2</span><span class=p>)</span> <span class=k>return</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>fib</span><span class=p>(</span><span class=nx>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>+</span> <span class=nx>fib</span><span class=p>(</span><span class=nx>n</span> <span class=o>-</span> <span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><p>How to memorize :</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fibMemo</span> <span class=o>=</span> <span class=p>(</span><span class=nx>n</span><span class=p>,</span> <span class=nx>memo</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>key</span> <span class=o>=</span> <span class=nx>n</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>])</span> <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>n</span> <span class=o>&lt;=</span> <span class=mi>2</span><span class=p>)</span> <span class=k>return</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=o>=</span> <span class=nx>fib</span><span class=p>(</span><span class=nx>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>+</span> <span class=nx>fib</span><span class=p>(</span><span class=nx>n</span> <span class=o>-</span> <span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><p>How to tabulation:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fibTable</span> <span class=o>=</span> <span class=p>(</span><span class=nx>n</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>table</span> <span class=o>=</span> <span class=nb>Array</span><span class=p>(</span><span class=nx>n</span> <span class=o>+</span> <span class=mi>1</span><span class=p>).</span><span class=nx>fill</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=nx>table</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;=</span> <span class=nx>n</span><span class=p>;</span> <span class=o>++</span><span class=nx>i</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>table</span><span class=p>[</span><span class=nx>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>]</span> <span class=o>+=</span> <span class=nx>table</span><span class=p>[</span><span class=nx>i</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>        <span class=nx>table</span><span class=p>[</span><span class=nx>i</span> <span class=o>+</span> <span class=mi>2</span><span class=p>]</span> <span class=o>+=</span> <span class=nx>table</span><span class=p>[</span><span class=nx>i</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>table</span><span class=p>[</span><span class=nx>n</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=memorization-recipe>Memorization Recipe</h3><ol><li>Make it work<ol><li>visualize the problem as a tree</li><li>implement the tree using recursion</li><li>test it</li></ol></li><li>Make it efficient<ol><li>add memo object</li><li>add a base case to return memo value</li><li>store return values into the memo</li></ol></li></ol><h3 id=tabulation-recipe>Tabulation Recipe</h3><ol><li>visualize the problem as table</li><li>size the table base on inputs</li><li>initialize the table with default values</li><li>seed the trivial answer into the table</li><li>iterate through the table</li><li>fill further position based on the current position</li></ol><h2 id=what-kind-of-question-is-dp>What kind of question is dp</h2><ol><li><strong>Can</strong> the result be exist →→ True or False</li><li><strong>How</strong> the result be come →→ One result</li><li>What is the <strong>best</strong> result →→ One of a best result</li><li>What is <strong>all</strong> results <em>(may not be dp problem)</em> →→ all results</li></ol><h3 id=example>Example</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>canSum</span> <span class=o>=</span> <span class=p>(</span><span class=nx>target</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>,</span> <span class=nx>memo</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>key</span> <span class=o>=</span> <span class=nx>target</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>key</span> <span class=k>in</span> <span class=nx>memo</span><span class=p>)</span> <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>target</span> <span class=o>===</span> <span class=mi>0</span><span class=p>)</span> <span class=k>return</span> <span class=kc>true</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>target</span> <span class=o>&lt;</span> <span class=mi>0</span><span class=p>)</span> <span class=k>return</span> <span class=kc>false</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>num</span> <span class=k>of</span> <span class=nx>numbers</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>tmp</span> <span class=o>=</span> <span class=nx>target</span> <span class=o>-</span> <span class=nx>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=nx>canSum</span><span class=p>(</span><span class=nx>tmp</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>,</span> <span class=nx>memo</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=o>=</span> <span class=kc>true</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=o>=</span> <span class=kc>false</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>res</span> <span class=o>=</span> <span class=nx>canSum</span><span class=p>(</span><span class=mi>300</span><span class=p>,</span> <span class=p>[</span><span class=mi>25</span><span class=p>],</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=nx>res</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>howSum</span> <span class=o>=</span> <span class=p>(</span><span class=nx>target</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>,</span> <span class=nx>memo</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>key</span> <span class=o>=</span> <span class=nx>target</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>key</span> <span class=k>in</span> <span class=nx>memo</span><span class=p>)</span> <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>target</span> <span class=o>===</span> <span class=mi>0</span><span class=p>)</span> <span class=k>return</span> <span class=p>[];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>target</span> <span class=o>&lt;</span> <span class=mi>0</span><span class=p>)</span> <span class=k>return</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>num</span> <span class=k>of</span> <span class=nx>numbers</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>tmp</span> <span class=o>=</span> <span class=nx>target</span> <span class=o>-</span> <span class=nx>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>sumRes</span> <span class=o>=</span> <span class=nx>howSum</span><span class=p>(</span><span class=nx>tmp</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>,</span> <span class=nx>memo</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=nx>sumRes</span> <span class=o>!==</span> <span class=kc>null</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=nx>num</span><span class=p>,</span> <span class=p>...</span><span class=nx>sumRes</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>res</span> <span class=o>=</span> <span class=nx>howSum</span><span class=p>(</span><span class=mi>300</span><span class=p>,</span> <span class=p>[</span><span class=mi>7</span><span class=p>,</span> <span class=mi>15</span><span class=p>],</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=nx>res</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>bestSum</span> <span class=o>=</span> <span class=p>(</span><span class=nx>target</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>,</span> <span class=nx>memo</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>key</span> <span class=o>=</span> <span class=nx>target</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>key</span> <span class=k>in</span> <span class=nx>memo</span><span class=p>)</span> <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>target</span> <span class=o>===</span> <span class=mi>0</span><span class=p>)</span> <span class=k>return</span> <span class=p>[];</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>target</span> <span class=o>&lt;</span> <span class=mi>0</span><span class=p>)</span> <span class=k>return</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>shortestRes</span> <span class=o>=</span> <span class=kc>null</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>num</span> <span class=k>of</span> <span class=nx>numbers</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>tmp</span> <span class=o>=</span> <span class=nx>target</span> <span class=o>-</span> <span class=nx>num</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>tmpCombination</span> <span class=o>=</span> <span class=nx>bestSum</span><span class=p>(</span><span class=nx>tmp</span><span class=p>,</span> <span class=nx>numbers</span><span class=p>,</span> <span class=nx>memo</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=nx>tmpCombination</span> <span class=o>!==</span> <span class=kc>null</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>shortestRes</span> <span class=o>=</span>
+</span></span><span class=line><span class=cl>                <span class=nx>shortestRes</span> <span class=o>===</span> <span class=kc>null</span> <span class=o>||</span>
+</span></span><span class=line><span class=cl>                <span class=nx>shortestRes</span><span class=p>.</span><span class=nx>length</span> <span class=o>&gt;</span> <span class=nx>tmpCombination</span><span class=p>.</span><span class=nx>length</span> <span class=o>+</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>                    <span class=o>?</span> <span class=p>[</span><span class=nx>num</span><span class=p>,</span> <span class=p>...</span><span class=nx>tmpCombination</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>                    <span class=o>:</span> <span class=nx>shortestRes</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>]</span> <span class=o>=</span> <span class=nx>shortestRes</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>memo</span><span class=p>[</span><span class=nx>key</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>res</span> <span class=o>=</span> <span class=nx>bestSum</span><span class=p>(</span><span class=mi>8</span><span class=p>,</span> <span class=p>[</span><span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>5</span><span class=p>],</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=nx>res</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=dp-table>DP table</h2><h2 id=state-machine>State machine</h2><h2 id=state-transaction-equation>State transaction equation</h2><h2 id=dp-problem-example>DP problem Example</h2><p>I have another post to classify dp problem
+<a href=https://tyrangyang.github.io/TyrangYang_blog/dp-example/ rel>See this Post</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-07-10</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/dp/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/dp/>dp</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/c++/>c++</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/go/ class=prev rel=prev title="Go overview 🏗"><i class="fas fa-angle-left fa-fw"></i>Go overview 🏗</a>
+<a href=https://tyrangyang.github.io/TyrangYang_blog/dp-example/ class=next rel=next title="Dynamic Programming Example">Dynamic Programming Example<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/ target=_blank>Haolin Yang</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:null,type:"algolia"}}</script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>

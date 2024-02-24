@@ -1,99 +1,23 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>javascript - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link>
-        <description>javascript - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Jul 2021 16:35:53 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml" /><item>
-    <title>Design Pattern</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</link>
-    <pubDate>Thu, 22 Jul 2021 16:35:53 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</guid>
-    <description><![CDATA[Design pattern Factory pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 const createDataBaseClass = (dbName: DBOption) =&gt; { switch (dbName) { case &#39;InMemo&#39;: return InMemoryDataBase; case &#39;SQL&#39;: return SQL_DB; // ... // you can add anything else default: break; } }; Singleton pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 export const createDataBase = &lt;T extends BaseRecord&gt;() =&gt; { const db = new InMemoryDataBase&lt;T&gt;(); return db; }; const pokemonDB = createDataBase&lt;Pokemon&gt;(); pokemonDB.]]></description>
-</item><item>
-    <title>Typescript overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link>
-    <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
-    <description><![CDATA[Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>javascript - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/</link><description>javascript - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 22 Jul 2021 16:35:53 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/" rel="self" type="application/rss+xml"/><item><title>Design Pattern</title><link>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</link><pubDate>Thu, 22 Jul 2021 16:35:53 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/design-pattern/</guid><description><![CDATA[Design pattern Factory pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 const createDataBaseClass = (dbName: DBOption) =&gt; { switch (dbName) { case &#39;InMemo&#39;: return InMemoryDataBase; case &#39;SQL&#39;: return SQL_DB; // ... // you can add anything else default: break; } }; Singleton pattern 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 export const createDataBase = &lt;T extends BaseRecord&gt;() =&gt; { const db = new InMemoryDataBase&lt;T&gt;(); return db; }; const pokemonDB = createDataBase&lt;Pokemon&gt;(); pokemonDB.]]></description></item><item><title>Typescript overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link><pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid><description><![CDATA[Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
 1 2 3 4 const fetchData = &lt;T = void&gt;(url: string): T =&gt; { const res: T = fetch(url); return res; }; https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
-string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty.]]></description>
-</item><item>
-    <title>HTML Effect with vanilla html js css</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link>
-    <pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid>
-    <description><![CDATA[Modal box Demo
-Cursor &amp; hover effect Demo
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty.]]></description></item><item><title>HTML Effect with vanilla html js css</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link><pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid><description>Modal box Demo
+Cursor &amp;amp; hover effect Demo
 Pure Css hamburger button This is a hamburger button using pure css to style it.
 Demo
 Loading Demo
 Sidebar Demo
-Profile Demo]]></description>
-</item><item>
-    <title>Jest Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</link>
-    <pubDate>Mon, 14 Sep 2020 18:36:51 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</guid>
-    <description><![CDATA[Jest is a JavaScript Testing Framework
+Profile Demo</description></item><item><title>Jest Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</link><pubDate>Mon, 14 Sep 2020 18:36:51 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/jest-overview/</guid><description><![CDATA[Jest is a JavaScript Testing Framework
 Document: https://jestjs.io/docs/en/getting-started
 How to use Jest function.js
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description>
-</item><item>
-    <title>Prototype Inheritance in Javascript</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link>
-    <pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid>
-    <description><![CDATA[Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 const axios = require(&#39;axios&#39;); const functions = { add: (num1, num2) =&gt; num1 + num2, isNull: () =&gt; null, checkValue: (x) =&gt; x, createUser: () =&gt; { const user = { firstName: &#39;Brad&#39; }; user[&#39;lastName&#39;] = &#39;Traversy&#39;; return user; }, fetchUser: () =&gt; axios .]]></description></item><item><title>Prototype Inheritance in Javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link><pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid><description>Prototype prototype 1 2 Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true 1 f1.constructor === Foo; // true f1 don&amp;rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
 f1 instantiate a Foo:
 f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
-1 2 var newObj = Object.]]></description>
-</item><item>
-    <title>Vuex Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link>
-    <pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid>
-    <description><![CDATA[Vuex Document: English 中文
-Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&gt; More Detail about Redux
-Redux Workflow Basic structure In store/index.js]]></description>
-</item><item>
-    <title>Vue Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link>
-    <pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid>
-    <description><![CDATA[Vue Document: English 中文
-life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt; Basic vue function v-bind 1 2 3 4 5 6 7 &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description>
-</item><item>
-    <title>Js Trick</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link>
-    <pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid>
-    <description><![CDATA[warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
-Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false !!variable == Boolean(variable); String =&gt; Integer 1 2 3 4 Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100 +&#39;abc&#39;; // NAN Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description>
-</item><item>
-    <title>Canvas in html5</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link>
-    <pubDate>Wed, 08 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid>
-    <description><![CDATA[Canvas is a new feature since html5 that allows you draw something on your web page
+1 2 var newObj = Object.</description></item><item><title>Vuex Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link><pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid><description>Vuex Document: English 中文
+Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&amp;gt; More Detail about Redux
+Redux Workflow Basic structure In store/index.js</description></item><item><title>Vue Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link><pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid><description><![CDATA[Vue Document: English 中文
+life cycle Basic structure 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt; Basic vue function v-bind 1 2 3 4 5 6 7 &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.]]></description></item><item><title>Js Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link><pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid><description><![CDATA[warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
+Conversion Any =&gt; Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false !!variable == Boolean(variable); String =&gt; Integer 1 2 3 4 Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100 +&#39;abc&#39;; // NAN Object &lt;=&gt; Array Array =&gt; Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description></item><item><title>Canvas in html5</title><link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link><pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid><description>Canvas is a new feature since html5 that allows you draw something on your web page
 Reference from MDN
 Project by using Canvas Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-1 2 const canvas = document.]]></description>
-</item><item>
-    <title>All String Method in Javascript</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/</link>
-    <pubDate>Tue, 07 Apr 2020 12:49:38 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/</guid>
-    <description><![CDATA[Show all function: Try String.prototype &amp; String in browser console.
-fromCharCode 1 2 console.log(String.fromCharCode(189, 43, 190, 61)); // expected output: &#34;½+¾=&#34; fromCodePoint 1 2 console.log(String.fromCodePoint(9731, 9733, 9842, 0x2f804)); // expected output: &#34;☃★♲你&#34; raw 1 2 3 4 5 6 // Create a variable that uses a Windows // path without escaping the backslashes: const filePath = String.raw`C:\Development\profile\aboutme.html`; console.log(`The file was uploaded from: ${filePath}`); // expected output: &#34;The file was uploaded from: C:\Development\profile\aboutme.]]></description>
-</item></channel>
-</rss>
+1 2 const canvas = document.</description></item><item><title>All String Method in Javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/</link><pubDate>Tue, 07 Apr 2020 12:49:38 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/all-string-method-in-javascript/</guid><description><![CDATA[Show all function: Try String.prototype &amp; String in browser console.
+fromCharCode 1 2 console.log(String.fromCharCode(189, 43, 190, 61)); // expected output: &#34;½+¾=&#34; fromCodePoint 1 2 console.log(String.fromCodePoint(9731, 9733, 9842, 0x2f804)); // expected output: &#34;☃★♲你&#34; raw 1 2 3 4 5 6 // Create a variable that uses a Windows // path without escaping the backslashes: const filePath = String.raw`C:\Development\profile\aboutme.html`; console.log(`The file was uploaded from: ${filePath}`); // expected output: &#34;The file was uploaded from: C:\Development\profile\aboutme.]]></description></item></channel></rss>

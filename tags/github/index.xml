@@ -1,28 +1,8 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>github - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/github/</link>
-        <description>github - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/github/" rel="self" type="application/rss+xml" /><item>
-    <title>Git overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</link>
-    <pubDate>Wed, 17 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</guid>
-    <description><![CDATA[Here have some good pictures that is helpful for understanding git and contain the record for git commend
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>github - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/github/</link><description>github - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/github/" rel="self" type="application/rss+xml"/><item><title>Git overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</link><pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/gitlearningnote/</guid><description>Here have some good pictures that is helpful for understanding git and contain the record for git commend
 Concept Map Here is a concept map given by Udacity.com. This picture shows the relationship between these basic git concept.
 Git Data Transport Map Git have four working zones. This map shows that using which commend to shift your code from one zone to another.
 This photo is provide by osteele
-Git commend and usage Initialize the git repository git init]]></description>
-</item><item>
-    <title>How to demonstrate your front end application on Github by gh-page</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
-    <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid>
-    <description><![CDATA[Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
+Git commend and usage Initialize the git repository git init</description></item><item><title>How to demonstrate your front end application on Github by gh-page</title><link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid><description><![CDATA[Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
 gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
 Read more detail in repository
-command line usage This package also provide a command line tool:]]></description>
-</item></channel>
-</rss>
+command line usage This package also provide a command line tool:]]></description></item></channel></rss>

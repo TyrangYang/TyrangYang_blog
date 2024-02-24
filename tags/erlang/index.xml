@@ -1,19 +1,6 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>erlang - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/</link>
-        <description>erlang - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/" rel="self" type="application/rss+xml" /><item>
-    <title>Erlang overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link>
-    <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid>
-    <description><![CDATA[Basic Documentation: https://erlang.org/doc/search/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>erlang - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/</link><description>erlang - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/" rel="self" type="application/rss+xml"/><item><title>Erlang overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link><pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid><description><![CDATA[Basic Documentation: https://erlang.org/doc/search/
 Functional language Erlang is a functional language. Code need compile and running line by line.
 Every line need finish by a .. like: A = 1..
 Module Every erlang file will consider as a module. You console will compile all module you want.
 You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
-In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(.]]></description>
-</item></channel>
-</rss>
+In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(.]]></description></item></channel></rss>

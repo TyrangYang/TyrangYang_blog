@@ -1,50 +1,9 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Alg&amp;DataStr - Category - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/</link>
-        <description>Alg&amp;DataStr - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/" rel="self" type="application/rss+xml" /><item>
-    <title>Dynamic Programming Example</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link>
-    <pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid>
-    <description><![CDATA[Longest common subsequence This is a typical recursive problem. The pseudocode is:
-1 2 If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:])) Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12 int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.size()-1), text2.substr(1, text1.size()-1)); } return max(longestCommonSubsequence(text1, text2.]]></description>
-</item><item>
-    <title>Dynamic Programming 🏗</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link>
-    <pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid>
-    <description><![CDATA[What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Alg&amp;DataStr - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/</link><description>Alg&amp;DataStr - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/algdatastr/" rel="self" type="application/rss+xml"/><item><title>Dynamic Programming Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link><pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid><description>Longest common subsequence This is a typical recursive problem. The pseudocode is:
+1 2 If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:])) Recursive solution: 1 2 3 4 5 6 7 8 9 10 11 12 int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.size()-1), text2.substr(1, text1.size()-1)); } return max(longestCommonSubsequence(text1, text2.</description></item><item><title>Dynamic Programming 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link><pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid><description>What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
 Memorization Tabulation fibonacci example The classic recursive problem:
-1 2 3 4 const fib = (n) =&gt; { if (n &lt;= 2) return 1; return fib(n - 1) + fib(n - 2); }; How to memorize :]]></description>
-</item><item>
-    <title>DFS &amp; BFS</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/</link>
-    <pubDate>Tue, 14 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/</guid>
-    <description><![CDATA[DFS &amp; BFS are two basic algorithms to traverse a graph(or a tree). DFS is Deep-first search and BFS is Breath-first search.
+1 2 3 4 const fib = (n) =&amp;gt; { if (n &amp;lt;= 2) return 1; return fib(n - 1) + fib(n - 2); }; How to memorize :</description></item><item><title>DFS &amp; BFS</title><link>https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/</link><pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dfs-bfs/</guid><description>DFS &amp;amp; BFS are two basic algorithms to traverse a graph(or a tree). DFS is Deep-first search and BFS is Breath-first search.
 Basic idea The idea behind two algorithms are identical but use different auxiliary data structure. DFS use stack and BFS use Queue.
 First, Every node have a mark to identify is already be visited or not(it could be a list or an attribute in node).
-Second, Push the start point into the auxiliary data structure and loop until structure is empty.]]></description>
-</item><item>
-    <title>Miller Rabin Algorithm</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</link>
-    <pubDate>Mon, 13 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</guid>
-    <description><![CDATA[What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis.]]></description>
-</item><item>
-    <title>RB tree</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</link>
-    <pubDate>Sat, 17 Aug 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid>
-    <description><![CDATA[2-3 tree &amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
+Second, Push the start point into the auxiliary data structure and loop until structure is empty.</description></item><item><title>Miller Rabin Algorithm</title><link>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</link><pubDate>Mon, 13 Jan 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/miller-rabin/</guid><description>What is millerRabin algorithm The Miller–Rabin primality test or Rabin–Miller primality test is a primality test: an algorithm which determines whether a given number is prime, similar to the Fermat primality test and the Solovay–Strassen primality test. It was first discovered by Russian mathematician M. M. Artjuhov in 1967.[1] Gary L. Miller rediscovered it in 1976; Miller&amp;rsquo;s version of the test is deterministic, but its correctness relies on the unproven extended Riemann hypothesis.</description></item><item><title>RB tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</link><pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid><description>2-3 tree &amp;amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
 A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
-Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth insertion deletion 2-4 tree ==&gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.]]></description>
-</item></channel>
-</rss>
+Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth insertion deletion 2-4 tree ==&amp;gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.</description></item></channel></rss>

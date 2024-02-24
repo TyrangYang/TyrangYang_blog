@@ -1,64 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>STL - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/stl/</link>
-        <description>STL - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl/" rel="self" type="application/rss+xml" /><item>
-    <title>All algorithm in C&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</link>
-    <pubDate>Fri, 20 Sep 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</guid>
-    <description><![CDATA[Content Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique Algorithm Overview * &ndash;&gt; new feature from C++11
-Algorithm Name Usage Mutating? Head File Complexity accumulate Accumulate values in range N numeric O(n) adjacent_difference Compute adjacent difference of range and return to another place N numeric O(n) adjacent_find Find first equal adjacent elements in range N algorithm O(n) all_of* Test condition on all elements in range N algorithm O(n) any_of* Test if any element in range fulfills condition N algorithm O(n) binary_search Test if value exists in sorted sequence N algorithm On average O(logn + 2).]]></description>
-</item><item>
-    <title>Algorithm feature in c&#43;&#43; STL</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</link>
-    <pubDate>Sun, 25 Aug 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</guid>
-    <description><![CDATA[See all algorithm click here Mutating and Non-mutating algorithms Mutating algorithms Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>STL - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/stl/</link><description>STL - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/stl/" rel="self" type="application/rss+xml"/><item><title>All algorithm in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</link><pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</guid><description>Content Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique Algorithm Overview * &amp;ndash;&amp;gt; new feature from C++11
+Algorithm Name Usage Mutating? Head File Complexity accumulate Accumulate values in range N numeric O(n) adjacent_difference Compute adjacent difference of range and return to another place N numeric O(n) adjacent_find Find first equal adjacent elements in range N algorithm O(n) all_of* Test condition on all elements in range N algorithm O(n) any_of* Test if any element in range fulfills condition N algorithm O(n) binary_search Test if value exists in sorted sequence N algorithm On average O(logn + 2).</description></item><item><title>Algorithm feature in c++ STL</title><link>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</link><pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</guid><description><![CDATA[See all algorithm click here Mutating and Non-mutating algorithms Mutating algorithms Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.
 If your give these algorithms a const iterator, only error will be returned.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 #include &lt;iostream&gt; #include &lt;vector&gt; using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.]]></description>
-</item><item>
-    <title>Container in c&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/containers/</link>
-    <pubDate>Wed, 31 Jul 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/containers/</guid>
-    <description><![CDATA[Classification Sequence container array (build in) vector heap priority queue list slist (not standard) deque stack (adopter) queue (adopter) Associative container RB-tree (not public) set map multiset multemap hashtable (not standard) hash_set (not standard) hash_map (not standard) hash_multimap (not standard) hash_multiset (not standard) Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.
-Vector This is similar with grow array. Vector use sequential space.]]></description>
-</item><item>
-    <title>Iterator in c&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/iterators/</link>
-    <pubDate>Wed, 24 Jul 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/iterators/</guid>
-    <description><![CDATA[Iterator 设计思维 STL 中 container 和 algorithm 是相对独立的，本身设计也是泛型化的。Iterator 就是用来将这两者联系在一起的。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 #include &lt;iostream&gt; #include &lt;vector&gt; using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.]]></description></item><item><title>Container in c++</title><link>https://tyrangyang.github.io/TyrangYang_blog/containers/</link><pubDate>Wed, 31 Jul 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/containers/</guid><description>Classification Sequence container array (build in) vector heap priority queue list slist (not standard) deque stack (adopter) queue (adopter) Associative container RB-tree (not public) set map multiset multemap hashtable (not standard) hash_set (not standard) hash_map (not standard) hash_multimap (not standard) hash_multiset (not standard) Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.
+Vector This is similar with grow array. Vector use sequential space.</description></item><item><title>Iterator in c++</title><link>https://tyrangyang.github.io/TyrangYang_blog/iterators/</link><pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/iterators/</guid><description><![CDATA[Iterator 设计思维 STL 中 container 和 algorithm 是相对独立的，本身设计也是泛型化的。Iterator 就是用来将这两者联系在一起的。
 Iterator 是一种 smart pointer 可以不用 delete
 Iterator 属性 iterator_traits 是用来抽取 iterator 中的类型(特指 value type)的。
 这是 iterator 中常见的五种属性。
-1 2 3 4 5 6 7 8 9 template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category typedef typename I::value_type value_type; // type typedef typename I::difference_type difference_type; // typedef typename I::pointer pointer; // T* typedef typename I::reference reference; // T&amp; }; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #include &lt;iostream&gt; // std::cout #include &lt;iterator&gt; // std::iterator_traits #include &lt;typeinfo&gt; // typeid using namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).]]></description>
-</item><item>
-    <title>Allocator in c&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/allocator/</link>
-    <pubDate>Sun, 21 Jul 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/allocator/</guid>
-    <description><![CDATA[Allocator is for memory 配置内存空间 -&gt; 构建(constructor) -&gt; 解构(destructor) -&gt; 释放内存空间
+1 2 3 4 5 6 7 8 9 template &lt;class I&gt; struct iterator_traits { typedef typename I::iterator_category iterator_category; //category typedef typename I::value_type value_type; // type typedef typename I::difference_type difference_type; // typedef typename I::pointer pointer; // T* typedef typename I::reference reference; // T&amp; }; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #include &lt;iostream&gt; // std::cout #include &lt;iterator&gt; // std::iterator_traits #include &lt;typeinfo&gt; // typeid using namespace std; int main() { typedef std::iterator_traits&lt;double*&gt; traits; cout &lt;&lt; typeid(traits::iterator_category).]]></description></item><item><title>Allocator in c++</title><link>https://tyrangyang.github.io/TyrangYang_blog/allocator/</link><pubDate>Sun, 21 Jul 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/allocator/</guid><description>Allocator is for memory 配置内存空间 -&amp;gt; 构建(constructor) -&amp;gt; 解构(destructor) -&amp;gt; 释放内存空间
 construct() and destroy() 用于建构和解构
 Memory allocate and release 双层配置器。第一级是区块大于 128 bytes 的，使用 malloc()和 free()。第二级是区块小于 128 bytes 的，使用 memory pool 和 freelist。
 第一級配置器 第一級配置器以 malloc(), free(), realloc() 等 C 函式執行實際的記憶體配置、釋放、重配置動作，並實作出類似 C++ new-handler7 機制。是的，它不能直接運用 C++ new-handler 機制，因為它並非使用 ::operator new 來配置記 憶體。
 所謂 C++ new handler 機制是，你可以要求系統在記憶體配置需求無法被滿足時， 喚起一個你所指定的函式。換句話說一旦 ::operator new 無法達成任務，在丟出 std::bad_alloc 異常狀態之前，會先呼叫由客端指定的處理常式。此處理常式 通常即被稱為 new-handler。new-handler 解決記憶體不足的作法有特定的模式。
-注意，SGI 以 malloc 而非 ::operator new 來配置記憶體(我所能夠想像的一 個原因是歷史因素，另一個原因是 C++ 並未提供相應於 realloc() 的記憶體配 置動作)，因此 SGI 不能直接使用 C++ 的 set_new_handler()，必須模擬一個 類似的 set_malloc_handler()。]]></description>
-</item><item>
-    <title>Functor in C&#43;&#43;</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/functor/</link>
-    <pubDate>Sat, 20 Jul 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/functor/</guid>
-    <description><![CDATA[Basically, Functor have same functionality with interface in java.
+注意，SGI 以 malloc 而非 ::operator new 來配置記憶體(我所能夠想像的一 個原因是歷史因素，另一個原因是 C++ 並未提供相應於 realloc() 的記憶體配 置動作)，因此 SGI 不能直接使用 C++ 的 set_new_handler()，必須模擬一個 類似的 set_malloc_handler()。</description></item><item><title>Functor in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/functor/</link><pubDate>Sat, 20 Jul 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/functor/</guid><description><![CDATA[Basically, Functor have same functionality with interface in java.
 Think about this code. You want count all string whose length is less than 5.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;vector&gt; #include &lt;string&gt; using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia+5); int res = count_if(iv.]]></description>
-</item></channel>
-</rss>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;vector&gt; #include &lt;string&gt; using namespace std; bool lenLessThanFive(const string&amp; str){ return str.size() &lt; 5; } int main(int argc, char const *argv[]) { string ia[5] = {&#34;a&#34;, &#34;aa&#34;, &#34;aaa&#34;, &#34;aaaa&#34;, &#34;aaaaa&#34;}; vector&lt;string&gt; iv(ia, ia+5); int res = count_if(iv.]]></description></item></channel></rss>

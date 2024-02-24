@@ -1,80 +1,25 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>react - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link>
-        <description>react - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 12 Mar 2021 04:04:08 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml" /><item>
-    <title>React Logic Reuse Example</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link>
-    <pubDate>Fri, 12 Mar 2021 04:04:08 -0800</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</guid>
-    <description><![CDATA[React logic extraction Check this post
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>react - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>react - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 12 Mar 2021 04:04:08 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>React Logic Reuse Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link><pubDate>Fri, 12 Mar 2021 04:04:08 -0800</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</guid><description><![CDATA[React logic extraction Check this post
 Example code This example demonstrate one single feature using four different feature to archive code split
 Code running there: &ndash;&gt;Link&lt;&ndash;
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 import { useState, useEffect } from React; const Styles = { redBorder: { border: &#39;1px solid #f00&#39;, }, }; const MouseDisplay = ({ x, y }) =&gt; { return ( &lt;div&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; const MouseDisplay2 = ({ x, y }) =&gt; { return ( &lt;div style={{ color: &#39;teal&#39; }}&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; // Normal export const MouseInfoAndDisplay = () =&gt; { const [x, setX] = useState(0); const [y, setY] = useState(0); const handleMove = (e) =&gt; { setX(e.]]></description>
-</item><item>
-    <title>Redux Overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link>
-    <pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid>
-    <description><![CDATA[Redux Document: English 中文
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 import { useState, useEffect } from React; const Styles = { redBorder: { border: &#39;1px solid #f00&#39;, }, }; const MouseDisplay = ({ x, y }) =&gt; { return ( &lt;div&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; const MouseDisplay2 = ({ x, y }) =&gt; { return ( &lt;div style={{ color: &#39;teal&#39; }}&gt; Mouse at x: {x} ; y: {y} &lt;/div&gt; ); }; // Normal export const MouseInfoAndDisplay = () =&gt; { const [x, setX] = useState(0); const [y, setY] = useState(0); const handleMove = (e) =&gt; { setX(e.]]></description></item><item><title>Redux Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link><pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid><description>Redux Document: English 中文
 What is Redux Redux is a predictable state container for JavaScript apps.
 Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
 When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
-Workflow Redux Workflow Example for Redux core In index.]]></description>
-</item><item>
-    <title>React Posts Archive</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link>
-    <pubDate>Thu, 03 Sep 2020 12:25:26 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid>
-    <description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
+Workflow Redux Workflow Example for Redux core In index.</description></item><item><title>React Posts Archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link><pubDate>Thu, 03 Sep 2020 12:25:26 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid><description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
 React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
 Why We Switched to React Hooks Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
 Why Can’t I Open My React App By Clicking Index.html? From My Own Post Original Resource is NOT Free Medium Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf How To Use an IntersectionObserver in a React Hook PDF archive: &ndash;&gt;Link&lt;&ndash;
-Original Resource is NOT Free Medium Original source: https://medium.]]></description>
-</item><item>
-    <title>How to have a dynamic class name</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link>
-    <pubDate>Fri, 15 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid>
-    <description><![CDATA[In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+Original Resource is NOT Free Medium Original source: https://medium.]]></description></item><item><title>How to have a dynamic class name</title><link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link><pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid><description><![CDATA[In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
 classNames This is a javascript for conditionally joining classNames.
 Here is: Github
 Basically, you can combine any number of classNames.
-1 2 const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39; ES6 template literals You can just use template literals.]]></description>
-</item><item>
-    <title>A simple application apollo server and react</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link>
-    <pubDate>Thu, 14 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/spacex/</guid>
-    <description><![CDATA[graphql Design Graphql is base on what your want
-github https://github.com/TyrangYang/SpaceX_graphql_react]]></description>
-</item><item>
-    <title>Why Can’t I Open My React App By Clicking Index.html?</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</link>
-    <pubDate>Mon, 28 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</guid>
-    <description><![CDATA[The app should Run when you open up your index.html file The conclusion is add &quot;homepage&quot;:&quot;.&quot;, in package.json.
+1 2 const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39; ES6 template literals You can just use template literals.]]></description></item><item><title>A simple application apollo server and react</title><link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link><pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/spacex/</guid><description>graphql Design Graphql is base on what your want
+github https://github.com/TyrangYang/SpaceX_graphql_react</description></item><item><title>Why Can’t I Open My React App By Clicking Index.html?</title><link>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</link><pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/open-react-app-by-index/</guid><description><![CDATA[The app should Run when you open up your index.html file The conclusion is add &quot;homepage&quot;:&quot;.&quot;, in package.json.
 medium.com/@louis.raymond
 Still not work when you have client side router If you are routing client side, index.html may still not work. In this case, you may using BrowserRouter. Change it to HashRouter.
-Click: Different between them]]></description>
-</item><item>
-    <title>React overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/react/</link>
-    <pubDate>Thu, 03 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/react/</guid>
-    <description><![CDATA[Init react Commend
-1 npx create-react-app . npx means you use this package but don&rsquo;t download it.
+Click: Different between them]]></description></item><item><title>React overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/react/</link><pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react/</guid><description>Init react Commend
+1 npx create-react-app . npx means you use this package but don&amp;rsquo;t download it.
 or with redux
 1 npx create-react-app my-app --template redux life cycle Class component lifecycle Function component method shouldComponentUpdate() Run before render() to check this component need to render or not.
 1 2 3 shouldComponentUpdate(nextProps, nextStates){ return boolean; } PureComponent can automatically do a shallow comparison to determine need to update or not
-export default React.]]></description>
-</item></channel>
-</rss>
+export default React.</description></item></channel></rss>

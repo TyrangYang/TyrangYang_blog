@@ -1,661 +1,475 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Concurrent Programming Course note 4 - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Concurrent Programming Course note 4" />
-<meta property="og:description" content="Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-09-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-09-25T00:00:00+00:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Concurrent Programming Course note 4"/>
-<meta name="twitter:description" content="Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
-producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty."/>
-<meta name="application-name" content="TyrangYang_Blog">
-<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/react/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Concurrent Programming Course note 4",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-4\/"
-        },"genre": "posts","keywords": "concurrent, course note","wordcount":  723 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-4\/","datePublished": "2019-09-25T00:00:00+00:00","dateModified": "2019-09-25T00:00:00+00:00","publisher": {
-            "@type": "Organization",
-            "name": "Haolin Yang"},"author": {
-                "@type": "Person",
-                "name": "Haolin Yang"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Concurrent Programming Course note 4</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming/"><i class="far fa-folder fa-fw"></i>Concurrent-programming</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-25">2019-09-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;723 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
-        </div><div class="content" id="content"><h2 id="monitor">Monitor</h2>
-<p>signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling</p>
-<h3 id="producer-and-consumer-with-a-buffer-whose-size-is-one">producer and consumer with a buffer whose size is one</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">PC</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Object</span> <span class="n">buffer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">produce</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">buffer</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span> <span class="c1">// while
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">empty</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="n">buffer</span> <span class="o">=</span> <span class="n">o</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">full</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">Object</span> <span class="nf">consume</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">buffer</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="c1">// while
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">full</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Object</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">buffer</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">empty</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">temp</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="semaphore">Semaphore</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Assumption: E &lt; S &lt; W (Signal and urgent wait)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">monitor</span> <span class="n">Semaphore</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">permit</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">acquire</span><span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">permit</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">            <span class="n">permitsAvailable</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">permit</span><span class="o">--;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">release</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(!</span><span class="n">permitAvailable</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()){</span>
-</span></span><span class="line"><span class="cl">            <span class="n">permitsAvailable</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">permit</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="readers-and-writers">readers and writers</h2>
-<p>assume start first and stop</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">RW</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">readers</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">writers</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">start_read</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">writer</span><span class="o">!=</span><span class="mi">0</span> <span class="o">||</span> <span class="o">!</span><span class="n">okToWrite</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="n">okToRead</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">readers</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">okToRead</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span> <span class="c1">// cascade signaling
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">stop_read</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="n">readers</span><span class="o">--;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">readers</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">okToWrite</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">start_write</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">writers</span><span class="o">!=</span><span class="mi">0</span> <span class="o">||</span> <span class="n">readers</span><span class="o">!=</span><span class="mi">0</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">okToWrite</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">writers</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">stop_write</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="n">writers</span><span class="o">--;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">okToRead</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span>
-</span></span><span class="line"><span class="cl">            <span class="n">okToWrite</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span>
-</span></span><span class="line"><span class="cl">            <span class="n">okToRead</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="3-way-sequence-booklet-q4">3 way sequence (booklet q4)</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">monitor</span> <span class="mi">3</span><span class="n">WS</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">condition</span> <span class="n">first</span><span class="o">,</span> <span class="n">second</span><span class="o">,</span> <span class="n">third</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">first</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">first</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">state</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">second</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">second</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="mi">2</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">second</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">state</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">third</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">third</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">state</span> <span class="o">!=</span> <span class="mi">3</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">third</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">first</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="booklet6-q5">Booklet6 q5</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">myBarrier</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">barrierCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">condition</span> <span class="n">stop</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// thread run before synchronize();
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">this</span><span class="o">.</span><span class="na">synchronize</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// thread run after synchronize();
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="n">synchronize</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="n">barrierCounter</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">barrierCounter</span> <span class="o">&lt;</span> <span class="n">N</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">            <span class="n">stop</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">stop</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="pizza-question">Pizza question</h2>
-<p>E = W &lt; S</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">monitor</span> <span class="n">Pizzeria</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">small</span><span class="o">,</span> <span class="n">large</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">condition</span> <span class="n">smallAvail</span><span class="o">,</span> <span class="n">largeAvail</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">purchaseLargePizza</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">large</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">small</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">            <span class="n">largeAvail</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">large</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">            <span class="n">large</span> <span class="o">--</span> <span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">            <span class="n">small</span> <span class="o">=</span> <span class="n">small</span> <span class="o">-</span> <span class="mi">2</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">purchaseLargePizza</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="o">(</span><span class="n">small</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">            <span class="n">smallAvail</span><span class="o">.</span><span class="na">wait</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="n">small</span><span class="o">--;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">bakeSmallPizza</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="n">small</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">smallAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">        <span class="n">largeAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">bakeLargePizza</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">        <span class="n">large</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">largeAvail</span><span class="o">.</span><span class="na">signal</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="heading"></h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BarrierExample</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Barrier</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Lock</span> <span class="n">lock</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ReentrantLock</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Condition</span> <span class="n">door1</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kd">final</span> <span class="n">Condition</span> <span class="n">door2</span> <span class="o">=</span> <span class="n">lock</span><span class="o">.</span><span class="na">newCondition</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">d1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">d2</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span>  <span class="kd">final</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kt">void</span> <span class="nf">synch</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">                <span class="n">lock</span><span class="o">.</span><span class="na">lock</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">while</span><span class="o">(</span><span class="n">d1</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">door1</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">c</span><span class="o">++;</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">n</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">d2</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">d1</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">door2</span><span class="o">.</span><span class="na">signalAll</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">while</span><span class="o">(</span><span class="n">d2</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">door2</span><span class="o">.</span><span class="na">await</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">c</span><span class="o">--;</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">d1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">d2</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">door1</span><span class="o">.</span><span class="na">signalAll</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span>
-</span></span><span class="line"><span class="cl">                <span class="n">lock</span><span class="o">.</span><span class="na">unlock</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">            <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Barrier</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Barrier</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Barrier</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Barrier</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Thread</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">,</span><span class="s">&#34;1&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Thread</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;b&#34;</span><span class="o">,</span><span class="s">&#34;2&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">                <span class="n">Thread</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">p</span><span class="o">(</span><span class="s">&#34;c&#34;</span><span class="o">,</span><span class="s">&#34;3&#34;</span><span class="o">,</span><span class="n">b1</span><span class="o">,</span> <span class="n">b2</span><span class="o">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">                <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="n">t3</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">t1</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">t2</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">t3</span><span class="o">.</span><span class="na">join</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span>
-</span></span><span class="line"><span class="cl">            <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">P</span> <span class="kd">implements</span> <span class="n">Runnable</span><span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">private</span> <span class="n">String</span> <span class="n">pres</span><span class="o">,</span><span class="n">post</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="n">Barrier</span> <span class="n">barrier1</span><span class="o">,</span> <span class="n">barrier2</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="nf">P</span><span class="o">(</span><span class="n">String</span> <span class="n">pres</span><span class="o">,</span> <span class="n">String</span> <span class="n">post</span><span class="o">,</span> <span class="n">Barrier</span> <span class="n">barrier1</span><span class="o">,</span> <span class="n">Barrier</span> <span class="n">barrier2</span><span class="o">)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">pres</span> <span class="o">=</span> <span class="n">pres</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">post</span> <span class="o">=</span> <span class="n">post</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">barrier1</span> <span class="o">=</span> <span class="n">barrier1</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">                <span class="k">this</span><span class="o">.</span><span class="na">barrier2</span> <span class="o">=</span> <span class="n">barrier2</span><span class="o">;</span>
-</span></span><span class="line"><span class="cl">            <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
-</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">pre</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">barrier1</span><span class="o">.</span><span class="na">synch</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">                    <span class="n">barrier2</span><span class="o">.</span><span class="na">synch</span><span class="o">();</span>
-</span></span><span class="line"><span class="cl">                <span class="o">}</span>
-</span></span><span class="line"><span class="cl">            <span class="o">}</span>
-</span></span><span class="line"><span class="cl">        <span class="o">}</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2019-09-25</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent/">concurrent</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/">course note</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/" class="prev" rel="prev" title="All algorithm in C&#43;&#43;"><i class="fas fa-angle-left fa-fw"></i>All algorithm in C&#43;&#43;</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/react/" class="next" rel="next" title="React overview">React overview<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
-</html>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Concurrent Programming Course note 4 - TyrangYang_Blog</title><meta name=Description content><meta property="og:title" content="Concurrent Programming Course note 4"><meta property="og:description" content="Monitor signal condition &ndash;> waiting monitor &ndash;> signaling
+producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty."><meta property="og:type" content="article"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-09-25T00:00:00+00:00"><meta property="article:modified_time" content="2019-09-25T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Concurrent Programming Course note 4"><meta name=twitter:description content="Monitor signal condition &ndash;> waiting monitor &ndash;> signaling
+producer and consumer with a buffer whose size is one 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty."><meta name=application-name content="TyrangYang_Blog"><meta name=apple-mobile-web-app-title content="TyrangYang_Blog"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/react/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Concurrent Programming Course note 4","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-4\/"},"genre":"posts","keywords":"concurrent, course note","wordcount":723,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/concurrent-programming-4\/","datePublished":"2019-09-25T00:00:00+00:00","dateModified":"2019-09-25T00:00:00+00:00","publisher":{"@type":"Organization","name":"Haolin Yang"},"author":{"@type":"Person","name":"Haolin Yang"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i></a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><article class="page single"><h1 class="single-title animated flipInX">Concurrent Programming Course note 4</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/concurrent-programming/><i class="far fa-folder fa-fw"></i>Concurrent-programming</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2019-09-25>2019-09-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;723 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div></div><div class=content id=content><h2 id=monitor>Monitor</h2><p>signal condition &ndash;> waiting monitor &ndash;> signaling</p><h3 id=producer-and-consumer-with-a-buffer-whose-size-is-one>producer and consumer with a buffer whose size is one</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>monitor</span> <span class=n>PC</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=n>Object</span> <span class=n>buffer</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>produce</span><span class=o>(</span><span class=n>Object</span> <span class=n>o</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>buffer</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>){</span> <span class=c1>// while
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>empty</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>buffer</span> <span class=o>=</span> <span class=n>o</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>full</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>Object</span> <span class=nf>consume</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>buffer</span> <span class=o>==</span> <span class=kc>null</span><span class=o>)</span> <span class=c1>// while
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>full</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>Object</span> <span class=n>temp</span> <span class=o>=</span> <span class=n>buffer</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>empty</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>temp</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=semaphore>Semaphore</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// Assumption: E &lt; S &lt; W (Signal and urgent wait)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>monitor</span> <span class=n>Semaphore</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>permit</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>acquire</span><span class=o>()</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>permit</span> <span class=o>==</span> <span class=mi>0</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>permitsAvailable</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>permit</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>release</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(!</span><span class=n>permitAvailable</span><span class=o>.</span><span class=na>isEmpty</span><span class=o>()){</span>
+</span></span><span class=line><span class=cl>            <span class=n>permitsAvailable</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>else</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>permit</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=readers-and-writers>readers and writers</h2><p>assume start first and stop</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>monitor</span> <span class=n>RW</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>readers</span><span class=o>=</span><span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>writers</span><span class=o>=</span><span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>start_read</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=o>(</span><span class=n>writer</span><span class=o>!=</span><span class=mi>0</span> <span class=o>||</span> <span class=o>!</span><span class=n>okToWrite</span><span class=o>.</span><span class=na>isEmpty</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>            <span class=n>okToRead</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>readers</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=n>okToRead</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span> <span class=c1>// cascade signaling
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>stop_read</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=n>readers</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>readers</span> <span class=o>==</span> <span class=mi>0</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>okToWrite</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>start_write</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>writers</span><span class=o>!=</span><span class=mi>0</span> <span class=o>||</span> <span class=n>readers</span><span class=o>!=</span><span class=mi>0</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>okToWrite</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>writers</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>stop_write</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=n>writers</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>okToRead</span><span class=o>.</span><span class=na>isEmpty</span><span class=o>())</span>
+</span></span><span class=line><span class=cl>            <span class=n>okToWrite</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=k>else</span>
+</span></span><span class=line><span class=cl>            <span class=n>okToRead</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=3-way-sequence-booklet-q4>3 way sequence (booklet q4)</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>monitor</span> <span class=mi>3</span><span class=n>WS</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>state</span> <span class=o>=</span> <span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>condition</span> <span class=n>first</span><span class=o>,</span> <span class=n>second</span><span class=o>,</span> <span class=n>third</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>first</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span><span class=o>(</span><span class=n>state</span> <span class=o>!=</span> <span class=mi>1</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>first</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>state</span> <span class=o>=</span> <span class=mi>2</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>second</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>second</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span><span class=o>(</span><span class=n>state</span> <span class=o>!=</span> <span class=mi>2</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>second</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>state</span> <span class=o>=</span> <span class=mi>3</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>third</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kt>void</span> <span class=nf>third</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span><span class=o>(</span><span class=n>state</span> <span class=o>!=</span> <span class=mi>3</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>third</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>state</span> <span class=o>=</span> <span class=mi>1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>first</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=booklet6-q5>Booklet6 q5</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>monitor</span> <span class=n>myBarrier</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kd>final</span> <span class=kd>static</span> <span class=kt>int</span> <span class=n>N</span> <span class=o>=</span> <span class=mi>3</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>barrierCounter</span> <span class=o>=</span> <span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>condition</span> <span class=n>stop</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c1>// thread run before synchronize();
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>this</span><span class=o>.</span><span class=na>synchronize</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// thread run after synchronize();
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>    <span class=n>synchronize</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=n>barrierCounter</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span><span class=o>(</span><span class=n>barrierCounter</span> <span class=o>&lt;</span> <span class=n>N</span><span class=o>)</span>
+</span></span><span class=line><span class=cl>            <span class=n>stop</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>stop</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=pizza-question>Pizza question</h2><p>E = W &lt; S</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=n>monitor</span> <span class=n>Pizzeria</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>    <span class=kt>int</span> <span class=n>small</span><span class=o>,</span> <span class=n>large</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>    <span class=n>condition</span> <span class=n>smallAvail</span><span class=o>,</span> <span class=n>largeAvail</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>purchaseLargePizza</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span><span class=o>(</span><span class=n>large</span> <span class=o>==</span> <span class=mi>0</span> <span class=o>&amp;&amp;</span> <span class=n>small</span> <span class=o>&lt;</span> <span class=mi>2</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>largeAvail</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=o>(</span><span class=n>large</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>large</span> <span class=o>--</span> <span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span> <span class=k>else</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>            <span class=n>small</span> <span class=o>=</span> <span class=n>small</span> <span class=o>-</span> <span class=mi>2</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>purchaseLargePizza</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=k>while</span><span class=o>(</span><span class=n>small</span> <span class=o>==</span> <span class=mi>0</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>            <span class=n>smallAvail</span><span class=o>.</span><span class=na>wait</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=n>small</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bakeSmallPizza</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=n>small</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=n>smallAvail</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>        <span class=n>largeAvail</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=n>bakeLargePizza</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>        <span class=n>large</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>        <span class=n>largeAvail</span><span class=o>.</span><span class=na>signal</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=heading></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span> <span class=kd>class</span> <span class=nc>BarrierExample</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>Barrier</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=kd>final</span> <span class=n>Lock</span> <span class=n>lock</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ReentrantLock</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=kd>final</span> <span class=n>Condition</span> <span class=n>door1</span> <span class=o>=</span> <span class=n>lock</span><span class=o>.</span><span class=na>newCondition</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=kd>final</span> <span class=n>Condition</span> <span class=n>door2</span> <span class=o>=</span> <span class=n>lock</span><span class=o>.</span><span class=na>newCondition</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=kt>boolean</span> <span class=n>d1</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=kt>boolean</span> <span class=n>d2</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=kt>int</span> <span class=n>c</span> <span class=o>=</span> <span class=mi>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span>  <span class=kd>final</span> <span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=mi>3</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kt>void</span> <span class=nf>synch</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>                <span class=n>lock</span><span class=o>.</span><span class=na>lock</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=k>try</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=k>while</span><span class=o>(</span><span class=n>d1</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>                        <span class=n>door1</span><span class=o>.</span><span class=na>await</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span>
+</span></span><span class=line><span class=cl>                    <span class=n>c</span><span class=o>++;</span>
+</span></span><span class=line><span class=cl>                    <span class=k>if</span><span class=o>(</span><span class=n>c</span> <span class=o>==</span> <span class=n>n</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>                        <span class=n>d2</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                        <span class=n>d1</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                        <span class=n>door2</span><span class=o>.</span><span class=na>signalAll</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span>
+</span></span><span class=line><span class=cl>                    <span class=k>while</span><span class=o>(</span><span class=n>d2</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>                        <span class=n>door2</span><span class=o>.</span><span class=na>await</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span>
+</span></span><span class=line><span class=cl>                    <span class=n>c</span><span class=o>--;</span>
+</span></span><span class=line><span class=cl>                    <span class=k>if</span><span class=o>(</span><span class=n>c</span> <span class=o>==</span> <span class=mi>0</span><span class=o>){</span>
+</span></span><span class=line><span class=cl>                        <span class=n>d1</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                        <span class=n>d2</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                        <span class=n>door1</span><span class=o>.</span><span class=na>signalAll</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=o>}</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span><span class=k>catch</span> <span class=o>(</span><span class=n>InterruptedException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>                <span class=n>lock</span><span class=o>.</span><span class=na>unlock</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=n>Barrier</span> <span class=n>b1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Barrier</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=n>Barrier</span> <span class=n>b2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Barrier</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=n>Thread</span> <span class=n>t1</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Thread</span><span class=o>(</span><span class=k>new</span> <span class=n>p</span><span class=o>(</span><span class=s>&#34;a&#34;</span><span class=o>,</span><span class=s>&#34;1&#34;</span><span class=o>,</span><span class=n>b1</span><span class=o>,</span> <span class=n>b2</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>                <span class=n>Thread</span> <span class=n>t2</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Thread</span><span class=o>(</span><span class=k>new</span> <span class=n>p</span><span class=o>(</span><span class=s>&#34;b&#34;</span><span class=o>,</span><span class=s>&#34;2&#34;</span><span class=o>,</span><span class=n>b1</span><span class=o>,</span> <span class=n>b2</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>                <span class=n>Thread</span> <span class=n>t3</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Thread</span><span class=o>(</span><span class=k>new</span> <span class=n>p</span><span class=o>(</span><span class=s>&#34;c&#34;</span><span class=o>,</span><span class=s>&#34;3&#34;</span><span class=o>,</span><span class=n>b1</span><span class=o>,</span> <span class=n>b2</span><span class=o>));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=n>t1</span><span class=o>.</span><span class=na>start</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=n>t2</span><span class=o>.</span><span class=na>start</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=n>t3</span><span class=o>.</span><span class=na>start</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>                <span class=k>try</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>t1</span><span class=o>.</span><span class=na>join</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=n>t2</span><span class=o>.</span><span class=na>join</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=n>t3</span><span class=o>.</span><span class=na>join</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span> <span class=k>catch</span> <span class=o>(</span><span class=n>InterruptedException</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>e</span><span class=o>.</span><span class=na>printStackTrace</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>P</span> <span class=kd>implements</span> <span class=n>Runnable</span><span class=o>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>private</span> <span class=n>String</span> <span class=n>pres</span><span class=o>,</span><span class=n>post</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=n>Barrier</span> <span class=n>barrier1</span><span class=o>,</span> <span class=n>barrier2</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>public</span> <span class=nf>P</span><span class=o>(</span><span class=n>String</span> <span class=n>pres</span><span class=o>,</span> <span class=n>String</span> <span class=n>post</span><span class=o>,</span> <span class=n>Barrier</span> <span class=n>barrier1</span><span class=o>,</span> <span class=n>Barrier</span> <span class=n>barrier2</span><span class=o>)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                <span class=k>this</span><span class=o>.</span><span class=na>pres</span> <span class=o>=</span> <span class=n>pres</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>this</span><span class=o>.</span><span class=na>post</span> <span class=o>=</span> <span class=n>post</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>this</span><span class=o>.</span><span class=na>barrier1</span> <span class=o>=</span> <span class=n>barrier1</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>                <span class=k>this</span><span class=o>.</span><span class=na>barrier2</span> <span class=o>=</span> <span class=n>barrier2</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>            <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>(){</span>
+</span></span><span class=line><span class=cl>                <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=o>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>100</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span> <span class=o>{</span>
+</span></span><span class=line><span class=cl>                    <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>pre</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                    <span class=n>barrier1</span><span class=o>.</span><span class=na>synch</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                    <span class=n>System</span><span class=o>.</span><span class=na>out</span><span class=o>.</span><span class=na>println</span><span class=o>(</span><span class=n>post</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>                    <span class=n>barrier2</span><span class=o>.</span><span class=na>synch</span><span class=o>();</span>
+</span></span><span class=line><span class=cl>                <span class=o>}</span>
+</span></span><span class=line><span class=cl>            <span class=o>}</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>    <span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2019-09-25</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/concurrent/>concurrent</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/>course note</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/ class=prev rel=prev title="All algorithm in C++"><i class="fas fa-angle-left fa-fw"></i>All algorithm in C++</a>
+<a href=https://tyrangyang.github.io/TyrangYang_blog/react/ class=next rel=next title="React overview">React overview<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/ target=_blank>Haolin Yang</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:null,type:"algolia"}}</script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>

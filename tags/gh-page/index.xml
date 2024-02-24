@@ -1,17 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>gh-page - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/gh-page/</link>
-        <description>gh-page - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/gh-page/" rel="self" type="application/rss+xml" /><item>
-    <title>How to demonstrate your front end application on Github by gh-page</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link>
-    <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid>
-    <description><![CDATA[Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>gh-page - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/gh-page/</link><description>gh-page - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/gh-page/" rel="self" type="application/rss+xml"/><item><title>How to demonstrate your front end application on Github by gh-page</title><link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid><description><![CDATA[Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
 gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
 Read more detail in repository
-command line usage This package also provide a command line tool:]]></description>
-</item></channel>
-</rss>
+command line usage This package also provide a command line tool:]]></description></item></channel></rss>

@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>overview - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/overview/</link>
-        <description>overview - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/" rel="self" type="application/rss+xml" /><item>
-    <title>Ffmpeg</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link>
-    <pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid>
-    <description><![CDATA[Reference official https://ffmpeg.org
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>overview - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/overview/</link><description>overview - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/" rel="self" type="application/rss+xml"/><item><title>Ffmpeg</title><link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link><pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid><description><![CDATA[Reference official https://ffmpeg.org
 blog https://fireship.io/lessons/ffmpeg-useful-techniques/
 node js https://www.npmjs.com/package/fluent-ffmpeg
 example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
@@ -18,15 +7,6 @@ vids.txt:
 ffmpeg -i in.mp4 out.gif
 Scale It very common to reduce size of output file. Change scale usually the common and efficient way to do so.
 ffmpeg -i in.mov -vf scale=960:-1 out.gif
-Reference from ffmpeg wiki]]></description>
-</item><item>
-    <title>Typescript overview</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link>
-    <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
-    <description><![CDATA[Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
+Reference from ffmpeg wiki]]></description></item><item><title>Typescript overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link><pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid><description><![CDATA[Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
 1 2 3 4 const fetchData = &lt;T = void&gt;(url: string): T =&gt; { const res: T = fetch(url); return res; }; https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
-string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty.]]></description>
-</item></channel>
-</rss>
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty.]]></description></item></channel></rss>

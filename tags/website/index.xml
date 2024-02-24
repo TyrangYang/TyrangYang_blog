@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>website - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/website/</link>
-        <description>website - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/website/" rel="self" type="application/rss+xml" /><item>
-    <title>Some cool websites archive</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</link>
-    <pubDate>Sat, 12 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</guid>
-    <description><![CDATA[Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>website - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/website/</link><description>website - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/website/" rel="self" type="application/rss+xml"/><item><title>Some cool websites archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</link><pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</guid><description>Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
 https://sourabhbajaj.com/mac-setup/
 shapeCatcher Draw a character and find the ASCII code
 http://shapecatcher.com/index.html
@@ -21,6 +10,4 @@ https://regexr.com
 https://www.florin-pop.com/blog/2019/09/100-days-100-projects/
 bootswatch Several bootstrap scheme.
 https://bootswatch.com
-shields.io Get or create Readme badge]]></description>
-</item></channel>
-</rss>
+shields.io Get or create Readme badge</description></item></channel></rss>

@@ -1,18 +1,5 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Go - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/go/</link>
-        <description>Go - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Jun 2020 00:25:10 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/go/" rel="self" type="application/rss+xml" /><item>
-    <title>Go overview 🏗</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/go/</link>
-    <pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid>
-    <description><![CDATA[Download Go to this link
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Go - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/go/</link><description>Go - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Jun 2020 00:25:10 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/go/" rel="self" type="application/rss+xml"/><item><title>Go overview 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/go/</link><pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid><description><![CDATA[Download Go to this link
 workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
 In this workspace, file should structured as how you route your project:
 1 2 3 4 5 6 7 . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt; Example:
-1 2 3 4 5 6 7 8 .]]></description>
-</item></channel>
-</rss>
+1 2 3 4 5 6 7 8 .]]></description></item></channel></rss>

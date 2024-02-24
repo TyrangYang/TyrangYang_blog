@@ -1,21 +1,8 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>hugo - Tag - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/</link>
-        <description>hugo - Tag - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 17 Aug 2020 16:43:42 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/" rel="self" type="application/rss+xml" /><item>
-    <title>Hugo Blog CheatSheet</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</link>
-    <pubDate>Mon, 17 Aug 2020 16:43:42 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid>
-    <description><![CDATA[Create new post hugo new posts/new.md
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>hugo - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/</link><description>hugo - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 17 Aug 2020 16:43:42 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/hugo/" rel="self" type="application/rss+xml"/><item><title>Hugo Blog CheatSheet</title><link>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</link><pubDate>Mon, 17 Aug 2020 16:43:42 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid><description><![CDATA[Create new post hugo new posts/new.md
 Add a picture Basic markdown
 ![&lt;alt name](&lt; The route start from static folder&gt;)
 hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
 \{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
 Add a reference link Documentation of ref and relref
 1 2 \[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) Theme feature This theme extended short code. See Theme Documentation - Extended Shortcodes
-admonition 1 2 3 &lt; admonition type=note title=&#34;Here is title&#34; open=true &gt; Here is text content &lt; /admonition &gt; note (default type) Here is text content abstract A abstract banner info A info banner Tip A tip banner success A success banner question A question banner warning A warning banner failure A failure banner danger A danger banner bug A bug banner example A example banner quote A quote banner ]]></description>
-</item></channel>
-</rss>
+admonition 1 2 3 &lt; admonition type=note title=&#34;Here is title&#34; open=true &gt; Here is text content &lt; /admonition &gt; note (default type) Here is text content abstract A abstract banner info A info banner Tip A tip banner success A success banner question A question banner warning A warning banner failure A failure banner danger A danger banner bug A bug banner example A example banner quote A quote banner ]]></description></item></channel></rss>

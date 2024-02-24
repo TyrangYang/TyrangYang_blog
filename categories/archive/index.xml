@@ -1,40 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Archive - Category - TyrangYang_Blog</title>
-        <link>https://tyrangyang.github.io/TyrangYang_blog/categories/archive/</link>
-        <description>Archive - Category - TyrangYang_Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 27 Feb 2021 22:57:47 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/archive/" rel="self" type="application/rss+xml" /><item>
-    <title>Useful Post Archive</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</link>
-    <pubDate>Sat, 27 Feb 2021 22:57:47 -0800</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</guid>
-    <description><![CDATA[React &ndash;&gt;Look this post&lt;&ndash;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Archive - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/archive/</link><description>Archive - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 27 Feb 2021 22:57:47 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/archive/" rel="self" type="application/rss+xml"/><item><title>Useful Post Archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</link><pubDate>Sat, 27 Feb 2021 22:57:47 -0800</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</guid><description><![CDATA[React &ndash;&gt;Look this post&lt;&ndash;
 WEB basic Please Stop Using Local Storage https://www.rdegges.com/2018/please-stop-using-local-storage/
 JWT authentication: When and how to use it https://blog.logrocket.com/jwt-authentication-best-practices/#:~:text=A%20JWT%20needs%20to%20be,storage%20(or%20session%20storage).
 Graphql Dispatch This: Using Apollo Client 3 as a State Management Solution https://www.apollographql.com/blog/dispatch-this-using-apollo-client-3-as-a-state-management-solution/
 Apollo Client update cache when delete an item from list https://github.com/apollographql/apollo-client/issues/6451#issuecomment-775242381
 Several things for Graphql Security https://ithelp.ithome.com.tw/articles/10208008
 should I put useQuery inside a useEffect and should I store returned data in state? https://github.com/trojanowski/react-apollo-hooks/issues/158
-How to Use GraphQL DataLoader https://rahmanfadhil.]]></description>
-</item><item>
-    <title>React Posts Archive</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link>
-    <pubDate>Thu, 03 Sep 2020 12:25:26 -0700</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid>
-    <description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
+How to Use GraphQL DataLoader https://rahmanfadhil.]]></description></item><item><title>React Posts Archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</link><pubDate>Thu, 03 Sep 2020 12:25:26 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/</guid><description><![CDATA[How to connect your React app to a backend on the same origin https://flaviocopes.com/how-to-serve-react-from-same-origin/
 React Conditional Rendering Original source: https://www.robinwieruch.de/conditional-rendering-react
 Why We Switched to React Hooks Original source: https://blog.bitsrc.io/why-we-switched-to-react-hooks-48798c42c7f
 Why Can’t I Open My React App By Clicking Index.html? From My Own Post Original Resource is NOT Free Medium Original source: https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf How To Use an IntersectionObserver in a React Hook PDF archive: &ndash;&gt;Link&lt;&ndash;
-Original Resource is NOT Free Medium Original source: https://medium.]]></description>
-</item><item>
-    <title>Some cool websites archive</title>
-    <link>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</link>
-    <pubDate>Sat, 12 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</guid>
-    <description><![CDATA[Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
+Original Resource is NOT Free Medium Original source: https://medium.]]></description></item><item><title>Some cool websites archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</link><pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</guid><description>Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
 https://sourabhbajaj.com/mac-setup/
 shapeCatcher Draw a character and find the ASCII code
 http://shapecatcher.com/index.html
@@ -46,6 +21,4 @@ https://regexr.com
 https://www.florin-pop.com/blog/2019/09/100-days-100-projects/
 bootswatch Several bootstrap scheme.
 https://bootswatch.com
-shields.io Get or create Readme badge]]></description>
-</item></channel>
-</rss>
+shields.io Get or create Readme badge</description></item></channel></rss>

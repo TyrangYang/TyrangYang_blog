@@ -1,1142 +1,435 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Flex and Grid in CSS - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Flex and Grid in CSS" />
-<meta property="og:description" content="Flex Cheat Sheet provide by CSS-tricks.com
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Flex and Grid in CSS - TyrangYang_Blog</title><meta name=Description content><meta property="og:title" content="Flex and Grid in CSS"><meta property="og:description" content="Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
 display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
-1 2 3 .container { flex-flow: column wrap; } order 1 2 3 ." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-08-18T12:04:51-07:00" />
-<meta property="article:modified_time" content="2020-08-18T12:04:51-07:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Flex and Grid in CSS"/>
-<meta name="twitter:description" content="Flex Cheat Sheet provide by CSS-tricks.com
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 ."><meta property="og:type" content="article"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-08-18T12:04:51-07:00"><meta property="article:modified_time" content="2020-08-18T12:04:51-07:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Flex and Grid in CSS"><meta name=twitter:description content="Flex Cheat Sheet provide by CSS-tricks.com
 A Flexbox code Example
 display 1 2 3 .container { display: flex; } flex-direction 1 2 3 .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp 1 2 3 .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
-1 2 3 .container { flex-flow: column wrap; } order 1 2 3 ."/>
-<meta name="application-name" content="TyrangYang_Blog">
-<meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png"><link rel="manifest" href="https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest"><link rel="canonical" href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/" /><link rel="prev" href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" /><link rel="next" href="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" /><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css"><script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Flex and Grid in CSS",
-        "inLanguage": "en",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/"
-        },"genre": "posts","keywords": "css, grid, flex","wordcount":  1428 ,
-        "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/","datePublished": "2020-08-18T12:04:51-07:00","dateModified": "2020-08-18T12:04:51-07:00","publisher": {
-            "@type": "Organization",
-            "name": "Haolin Yang"},"author": {
-                "@type": "Person",
-                "name": "Haolin Yang"
-            },"description": ""
-    }
-    </script></head>
-    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
-
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/"><i class='fas fa-book-open'></i>  Posts </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/"><i class='fas fa-tags'></i>  Tags </a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/"><i class='fab fa-buffer'></i>  Categories </a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i>  </a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="https://tyrangyang.github.io/TyrangYang_blog/" title="TyrangYang_Blog">TyrangYang_Blog</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/posts/" title=""><i class='fas fa-book-open'></i> Posts</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/tags/" title=""><i class='fas fa-tags'></i> Tags</a><a class="menu-item" href="https://tyrangyang.github.io/TyrangYang_blog/categories/" title=""><i class='fab fa-buffer'></i> Categories</a><a class="menu-item" href="https://github.com/TyrangYang/TyrangYang_blog" title="Blog github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw fa-fw'></i></a><a class="menu-item" href="https://tyrangyang.github.io/" title="home page" rel="noopener noreffer" target="_blank"><i class="fas fa-home"></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Flex and Grid in CSS</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/"><i class="far fa-folder fa-fw"></i>Posts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-18">2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1428 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#flex">Flex</a>
-      <ul>
-        <li><a href="#display">display</a></li>
-        <li><a href="#flex-direction">flex-direction</a></li>
-        <li><a href="#flex-warp">flex-warp</a></li>
-        <li><a href="#flex-flow">flex-flow</a></li>
-        <li><a href="#order">order</a></li>
-        <li><a href="#flex-grow">flex-grow</a></li>
-        <li><a href="#flex-shrink">flex-shrink</a></li>
-        <li><a href="#flex-basis">flex-basis</a>
-          <ul>
-            <li><a href="#0-vs-auto-after-distribute-space">0 vs auto after distribute space</a></li>
-          </ul>
-        </li>
-        <li><a href="#flex-1">flex</a>
-          <ul>
-            <li><a href="#flex-1-1">flex: 1</a></li>
-          </ul>
-        </li>
-        <li><a href="#justify-content">justify-content</a></li>
-        <li><a href="#align-content">align-content</a></li>
-        <li><a href="#align-items">align-items</a></li>
-        <li><a href="#align-self">align-self</a></li>
-      </ul>
-    </li>
-    <li><a href="#grid">grid</a>
-      <ul>
-        <li><a href="#display-1">display</a></li>
-        <li><a href="#grid-template-columns--grid-template-rows">grid-template-columns &amp; grid-template-rows</a></li>
-        <li><a href="#grid-column--grid-row">grid-column &amp; grid-row</a></li>
-        <li><a href="#grid-template-areas--grid-area">grid-template-areas &amp; grid-area</a></li>
-        <li><a href="#grid-template">grid-template</a></li>
-        <li><a href="#gap-grid-gap">gap (grid-gap)</a></li>
-        <li><a href="#justify-items">justify-items</a></li>
-        <li><a href="#align-items-1">align-items</a></li>
-        <li><a href="#place-items">place-items</a></li>
-        <li><a href="#justify-content-1">justify-content</a></li>
-        <li><a href="#align-content-1">align-content</a></li>
-        <li><a href="#place-content">place-content</a></li>
-        <li><a href="#justify-self">justify-self</a></li>
-        <li><a href="#grid-auto-columns--grid-auto-rows">grid-auto-columns &amp; grid-auto-rows</a></li>
-        <li><a href="#grid-auto-flow">grid-auto-flow</a></li>
-        <li><a href="#grid-1">grid</a></li>
-        <li><a href="#the-most-powerful-lines-in-grid">The Most Powerful Lines in Grid</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><p><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/01-container.svg" width="30%" height="30%"/>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/02-items.svg" width="30%" height="30%"/>
-</figure>
-</p>
-<h2 id="flex">Flex</h2>
-<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreffer"><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
-<p>A <a href="https://codepen.io/TyrangYang/pen/GRZjQgg" target="_blank" rel="noopener noreffer">Flexbox code Example</a></p>
-<h3 id="display">display</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="flex-direction">flex-direction</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-direction.svg" width="50%" height="50%"/><figcaption>
-            <h4>flex-direction</h4>
-        </figcaption>
-</figure>
-
-<h3 id="flex-warp">flex-warp</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-wrap.svg" width="50%" height="50%"/><figcaption>
-            <h4>flex-wrap</h4>
-        </figcaption>
-</figure>
-
-<h3 id="flex-flow">flex-flow</h3>
-<p>This is a shorthand for the flex-direction and flex-wrap properties.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-flow</span><span class="p">:</span> <span class="kc">column</span> <span class="kc">wrap</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="order">order</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">order</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span> <span class="c">/* default is 0 */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/order.svg" width="40%" height="40%"/><figcaption>
-            <h4>order</h4>
-        </figcaption>
-</figure>
-
-<h3 id="flex-grow">flex-grow</h3>
-<p>This defines the ability for a flex item to grow when there is extra space from container.</p>
-<p><code>0</code> means fix</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">1100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 0 */</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* Negative numbers are invalid */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-3</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>In this example, container is <code>1100px,</code> item base width is <code>100px</code>. The left space is <code>1100 - 100 * 3 = 800</code>. This <code>800px</code> will base on the proportion <code>1 : 2 : 1</code> to distribute to each item.</p>
-<p><code>800 / 4 = 200</code> the final with will be <code>300px (100+200); 500px (100+400); 300px</code></p>
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-grow.svg" width="50%" height="50%"/><figcaption>
-            <h4>flex-grow</h4>
-        </figcaption>
-</figure>
-
-<h3 id="flex-shrink">flex-shrink</h3>
-<p>This defines the ability for a flex item to shrink when item size overflow.</p>
-<p><code>0</code> means fix</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-1</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span> <span class="c">/* default 1 */</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* Negative numbers are invalid */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-2</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* default 1 */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>In this example, item will overflow <code>300 - 300 * 2 = 300px</code>.item will shrink base on the proportion <code>1 : 1</code>. Item will be <code>200px (300-100); 100px(300-200)</code></p>
-<h3 id="flex-basis">flex-basis</h3>
-<p>This defines the default size of an element before the remaining space is distributed.</p>
-<p>If set to auto, it will take width as starting size to distribute space.
-If set to a number, it will take the given number as starting size to distribute space.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>If set to 0, the item actual width will be decided by space distribution only. Because this item is no space at beginning.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="0-vs-auto-after-distribute-space">0 vs auto after distribute space</h4>
-<p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.</p>
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/rel-vs-abs-flex.svg" width="70%" height="70%"/><figcaption>
-            <h4>All space distributed vs Extra space distributed</h4>
-        </figcaption>
-</figure>
-
-<h3 id="flex-1">flex</h3>
-<p>This is the shorthand for flex-grow, flex-shrink and flex-basis combined.</p>
-<p>Default is <code>0 1 auto</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex</span><span class="p">:</span> <span class="kc">none</span> <span class="o">|</span> <span class="p">[</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-grow&#39;</span> <span class="o">&gt;</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-shrink&#39;</span> <span class="o">&gt;?</span> <span class="o">||</span> <span class="o">&lt;</span> <span class="s1">&#39;flex-basis&#39;</span> <span class="o">&gt;</span> <span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="flex-1-1">flex: 1</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">equivalent</span> <span class="nt">to</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-grow</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-shrink</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-basis</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This is a common styling that given to an item which can take all the extra space for a flexbox.</p>
-<p>We analysis this line and see why it is work. item starting from 0 size, Not shrink and take extra space for 1 proportion. If no other item give <code>flex-grow</code>(default is 0), this item will take all extra space</p>
-<h3 id="justify-content">justify-content</h3>
-<p>This defines the alignment along the main axis.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">space-between</span> <span class="o">|</span>
-</span></span><span class="line"><span class="cl">        <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">left</span> <span class="o">|</span> <span class="kc">right</span><span class="o">...</span> <span class="o">+</span> <span class="n">safe</span> <span class="o">|</span>
-</span></span><span class="line"><span class="cl">        <span class="n">unsafe</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content.svg" width="40%" height="40%"/><figcaption>
-            <h4>justify-content</h4>
-        </figcaption>
-</figure>
-
-<h3 id="align-content">align-content</h3>
-<p>This aligns a flex container’s lines within when there is extra space in the <strong>cross-axis</strong>, similar to how <code>justify-content</code> aligns individual items within the main-axis.</p>
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content.svg" width="40%" height="40%"/><figcaption>
-            <h4>align-content</h4>
-        </figcaption>
-</figure>
-
-<h3 id="align-items">align-items</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">align-items</span><span class="p">:</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">first</span>
-</span></span><span class="line"><span class="cl">        <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">last</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="n">self-start</span> <span class="o">|</span> <span class="n">self-end</span> <span class="o">+...</span> <span class="n">safe</span>
-</span></span><span class="line"><span class="cl">        <span class="o">|</span> <span class="n">unsafe</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items.svg" width="40%" height="40%"/><figcaption>
-            <h4>align-items</h4>
-        </figcaption>
-</figure>
-
-<h3 id="align-self">align-self</h3>
-<p>This allows the alignment to be overridden for individual flex items.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">align-self</span><span class="p">:</span> <span class="kc">auto</span> <span class="o">|</span> <span class="kc">flex-start</span> <span class="o">|</span> <span class="kc">flex-end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">baseline</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-self.svg" width="40%" height="40%"/><figcaption>
-            <h4>align-self</h4>
-        </figcaption>
-</figure>
-
-<h2 id="grid">grid</h2>
-<p><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank" rel="noopener noreffer"><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
-<p>A <a href="https://codepen.io/TyrangYang/pen/jOqMZVG" target="_blank" rel="noopener noreffer">Grid code Example</a></p>
-<h3 id="display-1">display</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span> <span class="o">|</span> <span class="kc">inline</span><span class="o">-</span><span class="k">grid</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="grid-template-columns--grid-template-rows">grid-template-columns &amp; grid-template-rows</h3>
-<p>values:</p>
-<ul>
-<li>&lt;track-size&gt; – can be a length, a percentage, or a fraction of the free space in the grid (using the <strong>fr</strong> unit)</li>
-<li>&lt;line-name&gt; – an arbitrary name of your choosing</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="o">...</span> <span class="o">|</span> <span class="o">...</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="kc">auto</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">25</span><span class="kt">%</span> <span class="mi">100</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-01.svg" width="40%" height="40%"/><figcaption>
-            <h4>grid example</h4>
-        </figcaption>
-</figure>
-
-<p>If assign name to each line:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="p">[</span><span class="kc">first</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="n">line2</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">line3</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="n">col4-start</span><span class="p">]</span> <span class="mi">50</span><span class="kt">px</span> <span class="p">[</span><span class="n">five</span><span class="p">]</span> <span class="mi">40</span><span class="kt">px</span> <span class="p">[</span><span class="kc">end</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="p">[</span><span class="n">row1-start</span><span class="p">]</span> <span class="mi">25</span><span class="kt">%</span> <span class="p">[</span><span class="n">row1-end</span><span class="p">]</span> <span class="mi">100</span><span class="kt">px</span> <span class="p">[</span><span class="n">third-line</span><span class="p">]</span> <span class="kc">auto</span> <span class="p">[</span><span class="kc">last</span><span class="o">-</span><span class="n">line</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-02.svg" width="50%" height="50%"/><figcaption>
-            <h4>grid example</h4>
-        </figcaption>
-</figure>
-
-<h3 id="grid-column--grid-row">grid-column &amp; grid-row</h3>
-<p>Determines a grid item’s location within the grid by referring to specific grid lines.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="kc">end</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="kc">start</span><span class="o">-</span><span class="n">line</span><span class="o">&gt;</span> <span class="o">/</span> <span class="n">span</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">span</span> <span class="mi">2</span><span class="p">;</span> <span class="c">/* or 3/5 or line3/line5 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="n">third-line</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span> <span class="c">/* or 3/4 or 3/span 2 */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-column-row.svg" width="50%" height="50%"/><figcaption>
-            <h4>grid-column-row</h4>
-        </figcaption>
-</figure>
-
-<h3 id="grid-template-areas--grid-area">grid-template-areas &amp; grid-area</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-areas</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;header header header header&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;main main . sidebar&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;footer footer footer footer&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">header</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-b</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">main</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-c</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">sidebar</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-d</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-area</span><span class="p">:</span> <span class="n">footer</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-template-areas.svg" width="50%" height="50%"/><figcaption>
-            <h4>grid-template-area</h4>
-        </figcaption>
-</figure>
-
-<h3 id="grid-template">grid-template</h3>
-<p>A shorthand for setting <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-template-areas</code> in a single declaration.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;header header header header&#39;</span> <span class="mi">1</span><span class="n">fr</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;main main . sidebar&#39;</span> <span class="mi">1</span><span class="n">fr</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;footer footer footer footer&#39;</span> <span class="mi">1</span><span class="n">fr</span> <span class="o">/</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span> <span class="mi">1</span><span class="n">fr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="gap-grid-gap">gap (grid-gap)</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c">/*equal to*/</span>
-</span></span><span class="line"><span class="cl">    <span class="n">row-gap</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">column-gap</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-gap.svg" width="40%" height="40%"/><figcaption>
-            <h4>grid-gap</h4>
-        </figcaption>
-</figure>
-
-<h3 id="justify-items">justify-items</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">justify-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-center.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-items-center</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-start.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-items-start</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-end.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-items-end</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-stretch.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-items-stretch</h4>
-        </figcaption>
-</figure>
-
-</div>
-<h3 id="align-items-1">align-items</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">align-items</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-center.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-items-center</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-start.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-items-start</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-end.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-items-end</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-stretch.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-items-stretch</h4>
-        </figcaption>
-</figure>
-
-</div>
-<h3 id="place-items">place-items</h3>
-<p><code>place-items</code> sets both the <code>align-items</code> and <code>justify-items</code> properties in a single declaration.</p>
-<h3 id="justify-content-1">justify-content</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">justify-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span>
-</span></span><span class="line"><span class="cl">        <span class="kc">space-between</span> <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-center.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-center</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-start.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-start</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-end.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-end</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-stretch.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-stretch</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-around.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-space-around</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-between.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-space-between</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-evenly.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-content-space-evenly</h4>
-        </figcaption>
-</figure>
-
-</div>
-<h3 id="align-content-1">align-content</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">align-content</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span> <span class="o">|</span> <span class="kc">space-around</span> <span class="o">|</span> <span class="kc">space-between</span>
-</span></span><span class="line"><span class="cl">        <span class="o">|</span> <span class="kc">space</span><span class="o">-</span><span class="n">evenly</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-center.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-center</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-start.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-start</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-end.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-end</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-stretch.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-stretch</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-around.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-space-around</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-between.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-space-between</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-evenly.svg" width="60%" height="60%"/><figcaption>
-            <h4>align-content-space-evenly</h4>
-        </figcaption>
-</figure>
-
-</div>
-<h3 id="place-content">place-content</h3>
-<p><code>place-content</code> sets both the <code>align-content</code> and <code>justify-content</code> properties in a single declaration.</p>
-<h3 id="justify-self">justify-self</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">justify-self</span><span class="p">:</span> <span class="kc">start</span> <span class="o">|</span> <span class="kc">end</span> <span class="o">|</span> <span class="kc">center</span> <span class="o">|</span> <span class="kc">stretch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div style="display: grid; grid-template-columns: repeat(2, 1fr);">
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-center.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-self-center</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-start.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-self-start</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-end.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-self-end</h4>
-        </figcaption>
-</figure>
-
-<figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-stretch.svg" width="60%" height="60%"/><figcaption>
-            <h4>justify-self-stretch</h4>
-        </figcaption>
-</figure>
-
-</div>
-<h3 id="grid-auto-columns--grid-auto-rows">grid-auto-columns &amp; grid-auto-rows</h3>
-<p>Specifies the size of any auto-generated grid tracks (aka implicit grid tracks).</p>
-<p>Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">90</span><span class="kt">px</span> <span class="mi">90</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-b</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">6</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-01.svg" width="60%" height="60%"/><figcaption>
-            <h4>explicit grid</h4>
-        </figcaption>
-</figure>
-
-<p>If use <code>grid-auto-columns</code>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-02.svg" width="60%" height="60%"/><figcaption>
-            <h4>implicit grid</h4>
-        </figcaption>
-</figure>
-
-<h3 id="grid-auto-flow">grid-auto-flow</h3>
-<p>If you have grid items that you don’t explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">row</span> <span class="n">dense</span> <span class="o">|</span> <span class="kc">column</span> <span class="n">dense</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Example:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="k">grid</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-rows</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="nt">div</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="mh">#ccc</span> <span class="kc">solid</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-a</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">item-e</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-column</span><span class="p">:</span> <span class="mi">5</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-row</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-01.svg" width="50%" height="50%"/><figcaption>
-            <h4>implicit grid</h4>
-        </figcaption>
-</figure>
-
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-auto-flow</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><img src="https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-02.svg" width="50%" height="50%"/><figcaption>
-            <h4>implicit grid</h4>
-        </figcaption>
-</figure>
-
-<h3 id="grid-1">grid</h3>
-<p>A shorthand for setting all of the following properties in a single declaration: <code>grid-template-rows</code>, <code>grid-template-columns</code>, <code>grid-template-areas</code>, <code>grid-auto-rows</code>, <code>grid-auto-columns</code>, and <code>grid-auto-flow</code></p>
-<h3 id="the-most-powerful-lines-in-grid">The Most Powerful Lines in Grid</h3>
-<blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">grid-template-columns</span><span class="p">:</span> <span class="nf">repeat</span><span class="p">(</span><span class="kc">auto</span><span class="o">-</span><span class="kc">fill</span><span class="p">,</span> <span class="nf">minmax</span><span class="p">(</span><span class="mi">200</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="n">fr</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div></blockquote>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>Updated on 2020-08-18</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="https://tyrangyang.github.io/TyrangYang_blog/flex-grid/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span></span>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/">css</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/grid/">grid</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/flex/">flex</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav"><a href="https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/" class="prev" rel="prev" title="Hugo Blog CheatSheet"><i class="fas fa-angle-left fa-fw"></i>Hugo Blog CheatSheet</a>
-            <a href="https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/" class="next" rel="next" title="Prototype Inheritance in Javascript">Prototype Inheritance in Javascript<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-</article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
-        </div>
-    </footer></div>
-
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
-            </a>
-        </div><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":1000},"comment":{},"search":{"algoliaAppID":"QXEV52XWDS","algoliaIndex":"blog","algoliaSearchKey":"db56d05ebbeed337adca1ef261004dcc","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"algolia"}};</script><script type="text/javascript" src="https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js"></script></body>
-</html>
+1 2 3 .container { flex-flow: column wrap; } order 1 2 3 ."><meta name=application-name content="TyrangYang_Blog"><meta name=apple-mobile-web-app-title content="TyrangYang_Blog"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/flex-grid/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Flex and Grid in CSS","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/"},"genre":"posts","keywords":"css, grid, flex","wordcount":1428,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/flex-grid\/","datePublished":"2020-08-18T12:04:51-07:00","dateModified":"2020-08-18T12:04:51-07:00","publisher":{"@type":"Organization","name":"Haolin Yang"},"author":{"@type":"Person","name":"Haolin Yang"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i></a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Flex and Grid in CSS</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/posts/><i class="far fa-folder fa-fw"></i>Posts</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-08-18>2020-08-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1428 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#flex>Flex</a><ul><li><a href=#display>display</a></li><li><a href=#flex-direction>flex-direction</a></li><li><a href=#flex-warp>flex-warp</a></li><li><a href=#flex-flow>flex-flow</a></li><li><a href=#order>order</a></li><li><a href=#flex-grow>flex-grow</a></li><li><a href=#flex-shrink>flex-shrink</a></li><li><a href=#flex-basis>flex-basis</a><ul><li><a href=#0-vs-auto-after-distribute-space>0 vs auto after distribute space</a></li></ul></li><li><a href=#flex-1>flex</a><ul><li><a href=#flex-1-1>flex: 1</a></li></ul></li><li><a href=#justify-content>justify-content</a></li><li><a href=#align-content>align-content</a></li><li><a href=#align-items>align-items</a></li><li><a href=#align-self>align-self</a></li></ul></li><li><a href=#grid>grid</a><ul><li><a href=#display-1>display</a></li><li><a href=#grid-template-columns--grid-template-rows>grid-template-columns & grid-template-rows</a></li><li><a href=#grid-column--grid-row>grid-column & grid-row</a></li><li><a href=#grid-template-areas--grid-area>grid-template-areas & grid-area</a></li><li><a href=#grid-template>grid-template</a></li><li><a href=#gap-grid-gap>gap (grid-gap)</a></li><li><a href=#justify-items>justify-items</a></li><li><a href=#align-items-1>align-items</a></li><li><a href=#place-items>place-items</a></li><li><a href=#justify-content-1>justify-content</a></li><li><a href=#align-content-1>align-content</a></li><li><a href=#place-content>place-content</a></li><li><a href=#justify-self>justify-self</a></li><li><a href=#grid-auto-columns--grid-auto-rows>grid-auto-columns & grid-auto-rows</a></li><li><a href=#grid-auto-flow>grid-auto-flow</a></li><li><a href=#grid-1>grid</a></li><li><a href=#the-most-powerful-lines-in-grid>The Most Powerful Lines in Grid</a></li></ul></li></ul></nav></div></div><div class=content id=content><p><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/01-container.svg width=30% height=30%></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/02-items.svg width=30% height=30%></figure></p><h2 id=flex>Flex</h2><p><a href=https://css-tricks.com/snippets/css/a-guide-to-flexbox/ target=_blank rel="noopener noreffer"><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p><p>A <a href=https://codepen.io/TyrangYang/pen/GRZjQgg target=_blank rel="noopener noreffer">Flexbox code Example</a></p><h3 id=display>display</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=flex-direction>flex-direction</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-direction</span><span class=p>:</span> <span class=kc>row</span> <span class=o>|</span> <span class=kc>row-reverse</span> <span class=o>|</span> <span class=kc>column</span> <span class=o>|</span> <span class=kc>column-reverse</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-direction.svg width=50% height=50%><figcaption><h4>flex-direction</h4></figcaption></figure><h3 id=flex-warp>flex-warp</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-wrap</span><span class=p>:</span> <span class=kc>nowrap</span> <span class=o>|</span> <span class=kc>wrap</span> <span class=o>|</span> <span class=kc>wrap-reverse</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-wrap.svg width=50% height=50%><figcaption><h4>flex-wrap</h4></figcaption></figure><h3 id=flex-flow>flex-flow</h3><p>This is a shorthand for the flex-direction and flex-wrap properties.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-flow</span><span class=p>:</span> <span class=kc>column</span> <span class=kc>wrap</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=order>order</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>order</span><span class=p>:</span> <span class=mi>5</span><span class=p>;</span> <span class=c>/* default is 0 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/order.svg width=40% height=40%><figcaption><h4>order</h4></figcaption></figure><h3 id=flex-grow>flex-grow</h3><p>This defines the ability for a flex item to grow when there is extra space from container.</p><p><code>0</code> means fix</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>1100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-1</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-grow</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span> <span class=c>/* default 0 */</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* Negative numbers are invalid */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-2</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-grow</span><span class=p>:</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-3</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-grow</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>In this example, container is <code>1100px,</code> item base width is <code>100px</code>. The left space is <code>1100 - 100 * 3 = 800</code>. This <code>800px</code> will base on the proportion <code>1 : 2 : 1</code> to distribute to each item.</p><p><code>800 / 4 = 200</code> the final with will be <code>300px (100+200); 500px (100+400); 300px</code></p><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/flex-grow.svg width=50% height=50%><figcaption><h4>flex-grow</h4></figcaption></figure><h3 id=flex-shrink>flex-shrink</h3><p>This defines the ability for a flex item to shrink when item size overflow.</p><p><code>0</code> means fix</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=kc>flex</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>300</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-1</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>300</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-shrink</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span> <span class=c>/* default 1 */</span>
+</span></span><span class=line><span class=cl>    <span class=c>/* Negative numbers are invalid */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-2</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>300</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-shrink</span><span class=p>:</span> <span class=mi>2</span><span class=p>;</span> <span class=c>/* default 1 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>In this example, item will overflow <code>300 - 300 * 2 = 300px</code>.item will shrink base on the proportion <code>1 : 1</code>. Item will be <code>200px (300-100); 100px(300-200)</code></p><h3 id=flex-basis>flex-basis</h3><p>This defines the default size of an element before the remaining space is distributed.</p><p>If set to auto, it will take width as starting size to distribute space.
+If set to a number, it will take the given number as starting size to distribute space.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>300</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=nt>equivalent</span> <span class=nt>to</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>width</span><span class=p>:</span> <span class=mi>300</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>If set to 0, the item actual width will be decided by space distribution only. Because this item is no space at beginning.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=0-vs-auto-after-distribute-space>0 vs auto after distribute space</h4><p>If set to 0, the extra space around content isn’t factored in. If set to auto, the extra space is distributed based on its flex-grow value.</p><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/rel-vs-abs-flex.svg width=70% height=70%><figcaption><h4>All space distributed vs Extra space distributed</h4></figcaption></figure><h3 id=flex-1>flex</h3><p>This is the shorthand for flex-grow, flex-shrink and flex-basis combined.</p><p>Default is <code>0 1 auto</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex</span><span class=p>:</span> <span class=kc>none</span> <span class=o>|</span> <span class=p>[</span> <span class=o>&lt;</span> <span class=s1>&#39;flex-grow&#39;</span> <span class=o>&gt;</span> <span class=o>&lt;</span> <span class=s1>&#39;flex-shrink&#39;</span> <span class=o>&gt;?</span> <span class=o>||</span> <span class=o>&lt;</span> <span class=s1>&#39;flex-basis&#39;</span> <span class=o>&gt;</span> <span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=flex-1-1>flex: 1</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=nt>equivalent</span> <span class=nt>to</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex</span><span class=p>:</span> <span class=mi>1</span> <span class=mi>0</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=o>//</span> <span class=nt>equivalent</span> <span class=nt>to</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-grow</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-shrink</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>flex-basis</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>This is a common styling that given to an item which can take all the extra space for a flexbox.</p><p>We analysis this line and see why it is work. item starting from 0 size, Not shrink and take extra space for 1 proportion. If no other item give <code>flex-grow</code>(default is 0), this item will take all extra space</p><h3 id=justify-content>justify-content</h3><p>This defines the alignment along the main axis.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>justify-content</span><span class=p>:</span> <span class=kc>flex-start</span> <span class=o>|</span> <span class=kc>flex-end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>space-between</span> <span class=o>|</span>
+</span></span><span class=line><span class=cl>        <span class=kc>space-around</span> <span class=o>|</span> <span class=kc>space</span><span class=o>-</span><span class=n>evenly</span> <span class=o>|</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=kc>left</span> <span class=o>|</span> <span class=kc>right</span><span class=o>...</span> <span class=o>+</span> <span class=n>safe</span> <span class=o>|</span>
+</span></span><span class=line><span class=cl>        <span class=n>unsafe</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content.svg width=40% height=40%><figcaption><h4>justify-content</h4></figcaption></figure><h3 id=align-content>align-content</h3><p>This aligns a flex container’s lines within when there is extra space in the <strong>cross-axis</strong>, similar to how <code>justify-content</code> aligns individual items within the main-axis.</p><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content.svg width=40% height=40%><figcaption><h4>align-content</h4></figcaption></figure><h3 id=align-items>align-items</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>align-items</span><span class=p>:</span> <span class=kc>stretch</span> <span class=o>|</span> <span class=kc>flex-start</span> <span class=o>|</span> <span class=kc>flex-end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>baseline</span> <span class=o>|</span> <span class=kc>first</span>
+</span></span><span class=line><span class=cl>        <span class=kc>baseline</span> <span class=o>|</span> <span class=kc>last</span> <span class=kc>baseline</span> <span class=o>|</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=n>self-start</span> <span class=o>|</span> <span class=n>self-end</span> <span class=o>+...</span> <span class=n>safe</span>
+</span></span><span class=line><span class=cl>        <span class=o>|</span> <span class=n>unsafe</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items.svg width=40% height=40%><figcaption><h4>align-items</h4></figcaption></figure><h3 id=align-self>align-self</h3><p>This allows the alignment to be overridden for individual flex items.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>align-self</span><span class=p>:</span> <span class=kc>auto</span> <span class=o>|</span> <span class=kc>flex-start</span> <span class=o>|</span> <span class=kc>flex-end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>baseline</span> <span class=o>|</span> <span class=kc>stretch</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-self.svg width=40% height=40%><figcaption><h4>align-self</h4></figcaption></figure><h2 id=grid>grid</h2><p><a href=https://css-tricks.com/snippets/css/complete-guide-grid/ target=_blank rel="noopener noreffer"><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p><p>A <a href=https://codepen.io/TyrangYang/pen/jOqMZVG target=_blank rel="noopener noreffer">Grid code Example</a></p><h3 id=display-1>display</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=k>grid</span> <span class=o>|</span> <span class=kc>inline</span><span class=o>-</span><span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=grid-template-columns--grid-template-rows>grid-template-columns & grid-template-rows</h3><p>values:</p><ul><li>&lt;track-size> – can be a length, a percentage, or a fraction of the free space in the grid (using the <strong>fr</strong> unit)</li><li>&lt;line-name> – an arbitrary name of your choosing</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=o>...</span> <span class=o>|</span> <span class=o>...</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-rows</span><span class=p>:</span> <span class=o>...</span> <span class=o>|</span> <span class=o>...</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>40</span><span class=kt>px</span> <span class=mi>50</span><span class=kt>px</span> <span class=kc>auto</span> <span class=mi>50</span><span class=kt>px</span> <span class=mi>40</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>25</span><span class=kt>%</span> <span class=mi>100</span><span class=kt>px</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-01.svg width=40% height=40%><figcaption><h4>grid example</h4></figcaption></figure><p>If assign name to each line:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=p>[</span><span class=kc>first</span><span class=p>]</span> <span class=mi>40</span><span class=kt>px</span> <span class=p>[</span><span class=n>line2</span><span class=p>]</span> <span class=mi>50</span><span class=kt>px</span> <span class=p>[</span><span class=n>line3</span><span class=p>]</span> <span class=kc>auto</span> <span class=p>[</span><span class=n>col4-start</span><span class=p>]</span> <span class=mi>50</span><span class=kt>px</span> <span class=p>[</span><span class=n>five</span><span class=p>]</span> <span class=mi>40</span><span class=kt>px</span> <span class=p>[</span><span class=kc>end</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-rows</span><span class=p>:</span> <span class=p>[</span><span class=n>row1-start</span><span class=p>]</span> <span class=mi>25</span><span class=kt>%</span> <span class=p>[</span><span class=n>row1-end</span><span class=p>]</span> <span class=mi>100</span><span class=kt>px</span> <span class=p>[</span><span class=n>third-line</span><span class=p>]</span> <span class=kc>auto</span> <span class=p>[</span><span class=kc>last</span><span class=o>-</span><span class=n>line</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/template-columns-rows-02.svg width=50% height=50%><figcaption><h4>grid example</h4></figcaption></figure><h3 id=grid-column--grid-row>grid-column & grid-row</h3><p>Determines a grid item’s location within the grid by referring to specific grid lines.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-column</span><span class=p>:</span> <span class=o>&lt;</span><span class=kc>start</span><span class=o>-</span><span class=n>line</span><span class=o>&gt;</span> <span class=o>/</span> <span class=o>&lt;</span><span class=kc>end</span><span class=o>-</span><span class=n>line</span><span class=o>&gt;</span> <span class=o>|</span> <span class=o>&lt;</span><span class=kc>start</span><span class=o>-</span><span class=n>line</span><span class=o>&gt;</span> <span class=o>/</span> <span class=n>span</span> <span class=o>&lt;</span><span class=n>value</span><span class=o>&gt;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-row</span><span class=p>:</span> <span class=o>&lt;</span><span class=kc>start</span><span class=o>-</span><span class=n>line</span><span class=o>&gt;</span> <span class=o>/</span> <span class=o>&lt;</span><span class=kc>end</span><span class=o>-</span><span class=n>line</span><span class=o>&gt;</span> <span class=o>|</span> <span class=o>&lt;</span><span class=kc>start</span><span class=o>-</span><span class=n>line</span><span class=o>&gt;</span> <span class=o>/</span> <span class=n>span</span> <span class=o>&lt;</span><span class=n>value</span><span class=o>&gt;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-column</span><span class=p>:</span> <span class=mi>3</span> <span class=o>/</span> <span class=n>span</span> <span class=mi>2</span><span class=p>;</span> <span class=c>/* or 3/5 or line3/line5 */</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-row</span><span class=p>:</span> <span class=n>third-line</span> <span class=o>/</span> <span class=mi>4</span><span class=p>;</span> <span class=c>/* or 3/4 or 3/span 2 */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-column-row.svg width=50% height=50%><figcaption><h4>grid-column-row</h4></figcaption></figure><h3 id=grid-template-areas--grid-area>grid-template-areas & grid-area</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span> <span class=mi>50</span><span class=kt>px</span> <span class=mi>50</span><span class=kt>px</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-rows</span><span class=p>:</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-areas</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;header header header header&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;main main . sidebar&#39;</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;footer footer footer footer&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-a</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-area</span><span class=p>:</span> <span class=n>header</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-b</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-area</span><span class=p>:</span> <span class=n>main</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-c</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-area</span><span class=p>:</span> <span class=n>sidebar</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-d</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-area</span><span class=p>:</span> <span class=n>footer</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-template-areas.svg width=50% height=50%><figcaption><h4>grid-template-area</h4></figcaption></figure><h3 id=grid-template>grid-template</h3><p>A shorthand for setting <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-template-areas</code> in a single declaration.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;header header header header&#39;</span> <span class=mi>1</span><span class=n>fr</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;main main . sidebar&#39;</span> <span class=mi>1</span><span class=n>fr</span>
+</span></span><span class=line><span class=cl>        <span class=s1>&#39;footer footer footer footer&#39;</span> <span class=mi>1</span><span class=n>fr</span> <span class=o>/</span> <span class=mi>1</span><span class=n>fr</span> <span class=mi>1</span><span class=n>fr</span> <span class=mi>1</span><span class=n>fr</span> <span class=mi>1</span><span class=n>fr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=gap-grid-gap>gap (grid-gap)</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>gap</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=c>/*equal to*/</span>
+</span></span><span class=line><span class=cl>    <span class=n>row-gap</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>column-gap</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-gap.svg width=40% height=40%><figcaption><h4>grid-gap</h4></figcaption></figure><h3 id=justify-items>justify-items</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>justify-items</span><span class=p>:</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>stretch</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div style=display:grid;grid-template-columns:repeat(2,1fr)><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-center.svg width=60% height=60%><figcaption><h4>justify-items-center</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-start.svg width=60% height=60%><figcaption><h4>justify-items-start</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-end.svg width=60% height=60%><figcaption><h4>justify-items-end</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-items-stretch.svg width=60% height=60%><figcaption><h4>justify-items-stretch</h4></figcaption></figure></div><h3 id=align-items-1>align-items</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>align-items</span><span class=p>:</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>stretch</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div style=display:grid;grid-template-columns:repeat(2,1fr)><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-center.svg width=60% height=60%><figcaption><h4>align-items-center</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-start.svg width=60% height=60%><figcaption><h4>align-items-start</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-end.svg width=60% height=60%><figcaption><h4>align-items-end</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-items-stretch.svg width=60% height=60%><figcaption><h4>align-items-stretch</h4></figcaption></figure></div><h3 id=place-items>place-items</h3><p><code>place-items</code> sets both the <code>align-items</code> and <code>justify-items</code> properties in a single declaration.</p><h3 id=justify-content-1>justify-content</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>justify-content</span><span class=p>:</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>stretch</span> <span class=o>|</span> <span class=kc>space-around</span> <span class=o>|</span>
+</span></span><span class=line><span class=cl>        <span class=kc>space-between</span> <span class=o>|</span> <span class=kc>space</span><span class=o>-</span><span class=n>evenly</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div style=display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-center.svg width=60% height=60%><figcaption><h4>justify-content-center</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-start.svg width=60% height=60%><figcaption><h4>justify-content-start</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-end.svg width=60% height=60%><figcaption><h4>justify-content-end</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-stretch.svg width=60% height=60%><figcaption><h4>justify-content-stretch</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-around.svg width=60% height=60%><figcaption><h4>justify-content-space-around</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-between.svg width=60% height=60%><figcaption><h4>justify-content-space-between</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-content-space-evenly.svg width=60% height=60%><figcaption><h4>justify-content-space-evenly</h4></figcaption></figure></div><h3 id=align-content-1>align-content</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>align-content</span><span class=p>:</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>stretch</span> <span class=o>|</span> <span class=kc>space-around</span> <span class=o>|</span> <span class=kc>space-between</span>
+</span></span><span class=line><span class=cl>        <span class=o>|</span> <span class=kc>space</span><span class=o>-</span><span class=n>evenly</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div style=display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-center.svg width=60% height=60%><figcaption><h4>align-content-center</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-start.svg width=60% height=60%><figcaption><h4>align-content-start</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-end.svg width=60% height=60%><figcaption><h4>align-content-end</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-stretch.svg width=60% height=60%><figcaption><h4>align-content-stretch</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-around.svg width=60% height=60%><figcaption><h4>align-content-space-around</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-between.svg width=60% height=60%><figcaption><h4>align-content-space-between</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/align-content-space-evenly.svg width=60% height=60%><figcaption><h4>align-content-space-evenly</h4></figcaption></figure></div><h3 id=place-content>place-content</h3><p><code>place-content</code> sets both the <code>align-content</code> and <code>justify-content</code> properties in a single declaration.</p><h3 id=justify-self>justify-self</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>item-a</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>justify-self</span><span class=p>:</span> <span class=kc>start</span> <span class=o>|</span> <span class=kc>end</span> <span class=o>|</span> <span class=kc>center</span> <span class=o>|</span> <span class=kc>stretch</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><div style=display:grid;grid-template-columns:repeat(2,1fr)><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-center.svg width=60% height=60%><figcaption><h4>justify-self-center</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-start.svg width=60% height=60%><figcaption><h4>justify-self-start</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-end.svg width=60% height=60%><figcaption><h4>justify-self-end</h4></figcaption></figure><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/justify-self-stretch.svg width=60% height=60%><figcaption><h4>justify-self-stretch</h4></figcaption></figure></div><h3 id=grid-auto-columns--grid-auto-rows>grid-auto-columns & grid-auto-rows</h3><p>Specifies the size of any auto-generated grid tracks (aka implicit grid tracks).</p><p>Example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>60</span><span class=kt>px</span> <span class=mi>60</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>90</span><span class=kt>px</span> <span class=mi>90</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-a</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-column</span><span class=p>:</span> <span class=mi>1</span> <span class=o>/</span> <span class=mi>2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-row</span><span class=p>:</span> <span class=mi>2</span> <span class=o>/</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-b</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-column</span><span class=p>:</span> <span class=mi>5</span> <span class=o>/</span> <span class=mi>6</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-row</span><span class=p>:</span> <span class=mi>2</span> <span class=o>/</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-01.svg width=60% height=60%><figcaption><h4>explicit grid</h4></figcaption></figure><p>If use <code>grid-auto-columns</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-auto-columns</span><span class=p>:</span> <span class=mi>60</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-columns-rows-02.svg width=60% height=60%><figcaption><h4>implicit grid</h4></figcaption></figure><h3 id=grid-auto-flow>grid-auto-flow</h3><p>If you have grid items that you don’t explicitly place on the grid, the auto-placement algorithm kicks in to automatically place the items.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-auto-flow</span><span class=p>:</span> <span class=kc>row</span> <span class=o>|</span> <span class=kc>column</span> <span class=o>|</span> <span class=kc>row</span> <span class=n>dense</span> <span class=o>|</span> <span class=kc>column</span> <span class=n>dense</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Example:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>display</span><span class=p>:</span> <span class=k>grid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=mi>60</span><span class=kt>px</span> <span class=mi>60</span><span class=kt>px</span> <span class=mi>60</span><span class=kt>px</span> <span class=mi>60</span><span class=kt>px</span> <span class=mi>60</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-rows</span><span class=p>:</span> <span class=mi>30</span><span class=kt>px</span> <span class=mi>30</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-auto-flow</span><span class=p>:</span> <span class=kc>column</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=nt>div</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=mh>#ccc</span> <span class=kc>solid</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-a</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-column</span><span class=p>:</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-row</span><span class=p>:</span> <span class=mi>1</span> <span class=o>/</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>item-e</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-column</span><span class=p>:</span> <span class=mi>5</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-row</span><span class=p>:</span> <span class=mi>1</span> <span class=o>/</span> <span class=mi>3</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-01.svg width=50% height=50%><figcaption><h4>implicit grid</h4></figcaption></figure><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-auto-flow</span><span class=p>:</span> <span class=kc>column</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><figure><img src=https://tyrangyang.github.io/TyrangYang_blog/images/flex-grid/grid-auto-flow-02.svg width=50% height=50%><figcaption><h4>implicit grid</h4></figcaption></figure><h3 id=grid-1>grid</h3><p>A shorthand for setting all of the following properties in a single declaration: <code>grid-template-rows</code>, <code>grid-template-columns</code>, <code>grid-template-areas</code>, <code>grid-auto-rows</code>, <code>grid-auto-columns</code>, and <code>grid-auto-flow</code></p><h3 id=the-most-powerful-lines-in-grid>The Most Powerful Lines in Grid</h3><blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=p>.</span><span class=nc>container</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>grid-template-columns</span><span class=p>:</span> <span class=nf>repeat</span><span class=p>(</span><span class=kc>auto</span><span class=o>-</span><span class=kc>fill</span><span class=p>,</span> <span class=nf>minmax</span><span class=p>(</span><span class=mi>200</span><span class=kt>px</span><span class=p>,</span> <span class=mi>1</span><span class=n>fr</span><span class=p>));</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div></blockquote></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-08-18</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/flex-grid/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/css/>css</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/grid/>grid</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/flex/>flex</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/ class=prev rel=prev title="Hugo Blog CheatSheet"><i class="fas fa-angle-left fa-fw"></i>Hugo Blog CheatSheet</a>
+<a href=https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/ class=next rel=next title="Prototype Inheritance in Javascript">Prototype Inheritance in Javascript<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2024</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/ target=_blank>Haolin Yang</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:null,type:"algolia"}}</script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>
