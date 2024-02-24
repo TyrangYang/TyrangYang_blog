@@ -89,11 +89,27 @@ _This photo is provide by [osteele](https://blog.osteele.com/2008/05/my-git-work
 
 `git pull <remote name> <branch name>`
 
+```
+       A---B---C master on origin
+      /
+D---E---F---G master
+    ^
+    origin/master in your repository
+```
+
+After run`git pull master`
+
+```
+      A---B---C origin/master
+     /         \
+D---E---F---G---H master
+```
+
 ### Merge
 
 `git merge <branch>` merge a given branch to current branch
 
-Eg: `git merge test` (when you on master branch) --> merge branch test into master.
+Eg: `git merge feature` (when you on master branch) --> merge branch feature into master.
 
 ### Remote
 
@@ -116,6 +132,8 @@ Eg: `git merge test` (when you on master branch) --> merge branch test into mast
 `git fetch origin b`
 Without changing workspace, update local repository from remote repository
 
+In another word, fetch will update `origin/master`
+
 ### Roll back
 
 `git reset --soft HEAD~1` Roll back 1 commit into index area
@@ -136,30 +154,120 @@ Without changing workspace, update local repository from remote repository
 
 ### Rebase
 
-Suppose we have this situation and you are **currently on branch _topic_**
+Suppose we have this situation and you are **currently on branch _feature_**
 
 ```
-      A---B---C topic
+      A---B---C feature
      /
 D---E---F---G master
 ```
 
-The _base_ of _topic_ is commit `E`. Therefore `rebase` means you change the _base_ depends on your given branch
+The _base_ of _feature_ is commit `E`. Therefore `rebase` means you change the _base_ depends on your given branch
 
 After you run `git rebase master`, branch will be like:
 
 ```
-              A'--B'--C' topic
+              A'--B'--C' feature
              /
 D---E---F---G master
 ```
 
-## Compare merge, merge --squash and rebase
+## Fast-forward(ff) in merge
 
-If we have two branches `master` and `topic`
+{{< admonition type=warning title="" open=true >}}
+**fast-forward is by default for `merge` command**
+{{< /admonition >}}
+
+Suppose you have two branches `master` and `feature`
 
 ```
-      A---B---C topic
+      A---B---C feature
+     /
+D---E  master
+```
+
+### What is ff merge?
+
+If you run `git merge feature` in master branch, it will be come
+
+```
+      A---B---C feature & master
+     /
+D---E
+```
+
+**HEAD** of master branch will direct forward to **TARGET_HEAD**
+
+### Disable ff (--no-ff)
+
+If you run `git merge --no-ff feature` in master branch, new commit will force to create.
+
+```
+      A---B---C feature
+     /         \
+D---E-----------F master
+```
+
+### Why need ff merge?
+
+It is related with `git pull` actually. `git pull` will call either `git rebase` or `git merge` to reconcile diverging branches.
+
+A very common case is like:
+
+```
+      A---B---C master on origin
+     /
+D---E  master
+    ^
+    origin/master in your repository
+```
+
+And run `git pull` is similar with run `git merge origin/master`. The best(actual) result of this command:
+
+```
+D---E---A---B---C master & origin/master
+```
+
+`pull` is comprised of `merge`. ff by default means, `pull` will try to use ff `merge` first and then create new commit. Logically more reasonable.
+
+Beside ff provide a fast and clean branch management.
+
+> Reference: https://git-scm.com/docs/git-merge#_fast_forward_merge
+
+### Why need --no-ff merge?
+
+**The biggest reason is keep clean branch history.**
+
+Consider there will more commit after feature branch:
+
+If we use `--no-ff`
+
+```
+      A---B---C---G---H feature
+     /         \
+D---E-----------F master
+```
+
+You can see `feature` branch is fully traceable. Commits (A B C G H).
+
+However, if ff happen.
+
+```
+      A---B---C---G---H feature
+     /        ^
+D---E         master
+```
+
+`feature` branch is incomplete when trace back. Only **Commits(G H)**. Commits(A B C) will be consider as part of master branch.
+
+For team collaboration, this lost is not a good practice
+
+## Compare merge, merge --squash and rebase
+
+If we have two branches `master` and `feature`
+
+```
+      A---B---C feature
      /
 D---E---F---G master
 ```
@@ -169,7 +277,7 @@ D---E---F---G master
 If run `git merge`
 
 ```
-      A---B---C topic
+      A---B---C feature
      /         \
 D---E---F---G---H master
 ```
@@ -181,27 +289,27 @@ if fun `git merge --squash` and `git commit`
 `H` combine `A B C`
 
 ```
-      A---B---C topic
+      A---B---C feature
      /
 D---E---F---G---H master
 ```
 
-Now you have _topic_ branch and update the _master_. You may delete _topic_ later
+Now you have _feature_ branch and update the _master_. You may delete _feature_ later
 
 ### rebase
 
-After you run `git rebase master` when you **on branch _topic_**:
+After you run `git rebase master` when you **on branch _feature_**:
 
 ```
-              A'--B'--C' topic
+              A'--B'--C' feature
              /
 D---E---F---G master
 ```
 
-You can `checkout` _master_ and run `git merge topic`:
+You can `checkout` _master_ and run `git merge feature`:
 
 ```
-D---E---F---G---A'---B'---C' master/topic
+D---E---F---G---A'---B'---C' master & feature
 ```
 
 ## git revert
@@ -210,9 +318,7 @@ D---E---F---G---A'---B'---C' master/topic
 a - b - c - d   Master
 ```
 
-```
-git revert HEAD
-```
+Then run `git revert HEAD`
 
 ```
 a - b - c - d - d'   Master
@@ -228,11 +334,7 @@ a - b - c - d   Master
        e - f - g Feature
 ```
 
-```
-git checkout master
-
-git cherry-pick f
-```
+Then run `git checkout master` & `git cherry-pick f`
 
 ```
 a - b - c - d - f   Master

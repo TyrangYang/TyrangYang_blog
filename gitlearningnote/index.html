@@ -34,7 +34,7 @@ Git commend and usage Initialize the git repository git init"/>
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/"
-        },"genre": "posts","keywords": "git","wordcount":  757 ,
+        },"genre": "posts","keywords": "git, github","wordcount":  1084 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/gitlearningnote\/","datePublished": "2020-06-17T00:00:00+00:00","dateModified": "2020-06-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -111,8 +111,8 @@ Git commend and usage Initialize the git repository git init"/>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-17">2020-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;757 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-17">2020-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1084 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -161,6 +161,14 @@ Git commend and usage Initialize the git repository git init"/>
         <li><a href="#roll-back">Roll back</a></li>
         <li><a href="#remove-some-file-in-index">Remove some file in Index</a></li>
         <li><a href="#rebase">Rebase</a></li>
+      </ul>
+    </li>
+    <li><a href="#fast-forwardff-in-merge">Fast-forward(ff) in merge</a>
+      <ul>
+        <li><a href="#what-is-ff-merge">What is ff merge?</a></li>
+        <li><a href="#disable-ff---no-ff">Disable ff (&ndash;no-ff)</a></li>
+        <li><a href="#why-need-ff-merge">Why need ff merge?</a></li>
+        <li><a href="#why-need---no-ff-merge">Why need &ndash;no-ff merge?</a></li>
       </ul>
     </li>
     <li><a href="#compare-merge-merge---squash-and-rebase">Compare merge, merge &ndash;squash and rebase</a>
@@ -241,9 +249,38 @@ Git commend and usage Initialize the git repository git init"/>
 <p><code>git push &lt;remote name&gt; &lt;branch name&gt;</code></p>
 <h3 id="pull">Pull</h3>
 <p><code>git pull &lt;remote name&gt; &lt;branch name&gt;</code></p>
-<h3 id="merge">Merge</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">       A---B---C master on origin
+</span></span><span class="line"><span class="cl">      /
+</span></span><span class="line"><span class="cl">D---E---F---G master
+</span></span><span class="line"><span class="cl">    ^
+</span></span><span class="line"><span class="cl">    origin/master in your repository
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>After run<code>git pull master</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C origin/master
+</span></span><span class="line"><span class="cl">     /         \
+</span></span><span class="line"><span class="cl">D---E---F---G---H master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="merge">Merge</h3>
 <p><code>git merge &lt;branch&gt;</code> merge a given branch to current branch</p>
-<p>Eg: <code>git merge test</code> (when you on master branch) &ndash;&gt; merge branch test into master.</p>
+<p>Eg: <code>git merge feature</code> (when you on master branch) &ndash;&gt; merge branch feature into master.</p>
 <h3 id="remote">Remote</h3>
 <h4 id="show-all-remote">show all remote</h4>
 <p><code>git remote</code></p>
@@ -255,6 +292,7 @@ Git commend and usage Initialize the git repository git init"/>
 <p><code>git fetch &lt;remote name&gt;</code></p>
 <p><code>git fetch origin b</code>
 Without changing workspace, update local repository from remote repository</p>
+<p>In another word, fetch will update <code>origin/master</code></p>
 <h3 id="roll-back">Roll back</h3>
 <p><code>git reset --soft HEAD~1</code> Roll back 1 commit into index area</p>
 <p><code>git reset --hard HEAD~2</code> Roll back 2 commits into workspace</p>
@@ -267,7 +305,7 @@ Without changing workspace, update local repository from remote repository</p>
 <p>Update <strong>.gitignore</strong>. delete something that you add in gitignore and commit before</p>
 </blockquote>
 <h3 id="rebase">Rebase</h3>
-<p>Suppose we have this situation and you are <strong>currently on branch <em>topic</em></strong></p>
+<p>Suppose we have this situation and you are <strong>currently on branch <em>feature</em></strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -275,12 +313,12 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature
 </span></span><span class="line"><span class="cl">     /
 </span></span><span class="line"><span class="cl">D---E---F---G master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>The <em>base</em> of <em>topic</em> is commit <code>E</code>. Therefore <code>rebase</code> means you change the <em>base</em> depends on your given branch</p>
+</div><p>The <em>base</em> of <em>feature</em> is commit <code>E</code>. Therefore <code>rebase</code> means you change the <em>base</em> depends on your given branch</p>
 <p>After you run <code>git rebase master</code>, branch will be like:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -289,13 +327,21 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">              A&#39;--B&#39;--C&#39; topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">              A&#39;--B&#39;--C&#39; feature
 </span></span><span class="line"><span class="cl">             /
 </span></span><span class="line"><span class="cl">D---E---F---G master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="compare-merge-merge---squash-and-rebase">Compare merge, merge &ndash;squash and rebase</h2>
-<p>If we have two branches <code>master</code> and <code>topic</code></p>
+</div><h2 id="fast-forwardff-in-merge">Fast-forward(ff) in merge</h2>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><strong>fast-forward is by default for <code>merge</code> command</strong></div>
+        </div>
+    </div>
+<p>Suppose you have two branches <code>master</code> and <code>feature</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -303,7 +349,115 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature
+</span></span><span class="line"><span class="cl">     /
+</span></span><span class="line"><span class="cl">D---E  master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="what-is-ff-merge">What is ff merge?</h3>
+<p>If you run <code>git merge feature</code> in master branch, it will be come</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature &amp; master
+</span></span><span class="line"><span class="cl">     /
+</span></span><span class="line"><span class="cl">D---E
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>HEAD</strong> of master branch will direct forward to <strong>TARGET_HEAD</strong></p>
+<h3 id="disable-ff---no-ff">Disable ff (&ndash;no-ff)</h3>
+<p>If you run <code>git merge --no-ff feature</code> in master branch, new commit will force to create.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature
+</span></span><span class="line"><span class="cl">     /         \
+</span></span><span class="line"><span class="cl">D---E-----------F master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="why-need-ff-merge">Why need ff merge?</h3>
+<p>It is related with <code>git pull</code> actually. <code>git pull</code> will call either <code>git rebase</code> or <code>git merge</code> to reconcile diverging branches.</p>
+<p>A very common case is like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C master on origin
+</span></span><span class="line"><span class="cl">     /
+</span></span><span class="line"><span class="cl">D---E  master
+</span></span><span class="line"><span class="cl">    ^
+</span></span><span class="line"><span class="cl">    origin/master in your repository
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And run <code>git pull</code> is similar with run <code>git merge origin/master</code>. The best(actual) result of this command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D---E---A---B---C master &amp; origin/master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pull</code> is comprised of <code>merge</code>. ff by default means, <code>pull</code> will try to use ff <code>merge</code> first and then create new commit. Logically more reasonable.</p>
+<p>Beside ff provide a fast and clean branch management.</p>
+<blockquote>
+<p>Reference: <a href="https://git-scm.com/docs/git-merge#_fast_forward_merge" target="_blank" rel="noopener noreffer">https://git-scm.com/docs/git-merge#_fast_forward_merge</a></p>
+</blockquote>
+<h3 id="why-need---no-ff-merge">Why need &ndash;no-ff merge?</h3>
+<p><strong>The biggest reason is keep clean branch history.</strong></p>
+<p>Consider there will more commit after feature branch:</p>
+<p>If we use <code>--no-ff</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C---G---H feature
+</span></span><span class="line"><span class="cl">     /         \
+</span></span><span class="line"><span class="cl">D---E-----------F master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>You can see <code>feature</code> branch is fully traceable. Commits (A B C G H).</p>
+<p>However, if ff happen.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C---G---H feature
+</span></span><span class="line"><span class="cl">     /        ^
+</span></span><span class="line"><span class="cl">D---E         master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>feature</code> branch is incomplete when trace back. Only <strong>Commits(G H)</strong>. Commits(A B C) will be consider as part of master branch.</p>
+<p>For team collaboration, this lost is not a good practice</p>
+<h2 id="compare-merge-merge---squash-and-rebase">Compare merge, merge &ndash;squash and rebase</h2>
+<p>If we have two branches <code>master</code> and <code>feature</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature
 </span></span><span class="line"><span class="cl">     /
 </span></span><span class="line"><span class="cl">D---E---F---G master
 </span></span></code></pre></td></tr></table>
@@ -317,7 +471,7 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature
 </span></span><span class="line"><span class="cl">     /         \
 </span></span><span class="line"><span class="cl">D---E---F---G---H master
 </span></span></code></pre></td></tr></table>
@@ -332,14 +486,14 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      A---B---C feature
 </span></span><span class="line"><span class="cl">     /
 </span></span><span class="line"><span class="cl">D---E---F---G---H master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Now you have <em>topic</em> branch and update the <em>master</em>. You may delete <em>topic</em> later</p>
+</div><p>Now you have <em>feature</em> branch and update the <em>master</em>. You may delete <em>feature</em> later</p>
 <h3 id="rebase-1">rebase</h3>
-<p>After you run <code>git rebase master</code> when you <strong>on branch <em>topic</em></strong>:</p>
+<p>After you run <code>git rebase master</code> when you <strong>on branch <em>feature</em></strong>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -347,18 +501,18 @@ Without changing workspace, update local repository from remote repository</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">              A&#39;--B&#39;--C&#39; topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">              A&#39;--B&#39;--C&#39; feature
 </span></span><span class="line"><span class="cl">             /
 </span></span><span class="line"><span class="cl">D---E---F---G master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>You can <code>checkout</code> <em>master</em> and run <code>git merge topic</code>:</p>
+</div><p>You can <code>checkout</code> <em>master</em> and run <code>git merge feature</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D---E---F---G---A&#39;---B&#39;---C&#39; master/topic
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D---E---F---G---A&#39;---B&#39;---C&#39; master &amp; feature
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="git-revert">git revert</h2>
@@ -370,15 +524,8 @@ Without changing workspace, update local repository from remote repository</p>
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a - b - c - d   Master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git revert HEAD
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
+</div><p>Then run <code>git revert HEAD</code></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -400,19 +547,8 @@ Without changing workspace, update local repository from remote repository</p>
 </span></span><span class="line"><span class="cl">       e - f - g Feature
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git checkout master
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">git cherry-pick f
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
+</div><p>Then run <code>git checkout master</code> &amp; <code>git cherry-pick f</code></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -474,7 +610,7 @@ Without changing workspace, update local repository from remote repository</p>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/git/">git</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/git/">git</a>,&nbsp;<a href="https://tyrangyang.github.io/TyrangYang_blog/tags/github/">github</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://tyrangyang.github.io/TyrangYang_blog/">Home</a></span>
         </section>
@@ -486,7 +622,7 @@ Without changing workspace, update local repository from remote repository</p>
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.108.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://tyrangyang.github.io/" target="_blank">Haolin Yang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div>
         </div>
     </footer></div>
 
