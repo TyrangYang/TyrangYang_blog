@@ -6,18 +6,18 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Typescript overview - TyrangYang_Blog</title><meta name="Description" content=""><meta property="og:title" content="Typescript overview" />
-<meta property="og:description" content="Trick generic types optional https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
-string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.
-type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a." />
+<meta property="og:description" content="Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
+1 2 3 4 const fetchData = &lt;T = void&gt;(url: string): T =&gt; { const res: T = fetch(url); return res; }; https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/typescript/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-08T23:37:35-07:00" />
 <meta property="article:modified_time" content="2021-04-08T23:37:35-07:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Typescript overview"/>
-<meta name="twitter:description" content="Trick generic types optional https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
-string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.
-type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a."/>
+<meta name="twitter:description" content="Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
+1 2 3 4 const fetchData = &lt;T = void&gt;(url: string): T =&gt; { const res: T = fetch(url); return res; }; https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty."/>
 <meta name="application-name" content="TyrangYang_Blog">
 <meta name="apple-mobile-web-app-title" content="TyrangYang_Blog"><link rel="shortcut icon" type="image/x-icon" href="https://tyrangyang.github.io/TyrangYang_blog/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png">
@@ -30,7 +30,7 @@ type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: numb
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/"
-        },"genre": "posts","keywords": "overview, typescript, javascript, trick","wordcount":  490 ,
+        },"genre": "posts","keywords": "overview, typescript, javascript, trick","wordcount":  528 ,
         "url": "https:\/\/tyrangyang.github.io\/TyrangYang_blog\/typescript\/","datePublished": "2021-04-08T23:37:35-07:00","dateModified": "2021-04-08T23:37:35-07:00","publisher": {
             "@type": "Organization",
             "name": "Haolin Yang"},"author": {
@@ -107,7 +107,7 @@ type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: numb
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Typescript overview</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://tyrangyang.github.io/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class="post-category">included in <a href="https://tyrangyang.github.io/TyrangYang_blog/categories/overview/"><i class="far fa-folder fa-fw"></i>Overview</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;490 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-08">2021-04-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;528 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -138,7 +138,22 @@ type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: numb
 </nav></div>
             </div><div class="content" id="content"><h2 id="trick">Trick</h2>
 <h3 id="generic-types-optional">generic types optional</h3>
-<p><a href="https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional" target="_blank" rel="noopener noreffer">https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional</a></p>
+<p><strong>To make a generic type optional, you have to assign the void as the default value.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">T</span> <span class="err">=</span> <span class="na">void</span><span class="p">&gt;(</span><span class="nx">url</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">res</span>: <span class="kt">T</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional" target="_blank" rel="noopener noreffer">https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional</a></p>
 <h3 id="string----string-string--">string[ ] &amp; [ string, &hellip;string[ ] ]</h3>
 <p>The main difference is that type <code>[string, ...string[]]</code> at least have one element. <code>[]</code> will alert error. <code>string[]</code> could be empty. <code>[]</code> is ok.</p>
 <h2 id="type">type</h2>

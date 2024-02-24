@@ -32,9 +32,9 @@ Reference from ffmpeg wiki]]></description>
     <pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate>
     <author>Author</author>
     <guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid>
-    <description><![CDATA[Trick generic types optional https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
-string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.
-type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.]]></description>
+    <description><![CDATA[Trick generic types optional To make a generic type optional, you have to assign the void as the default value.
+1 2 3 4 const fetchData = &lt;T = void&gt;(url: string): T =&gt; { const res: T = fetch(url); return res; }; https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
+string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty.]]></description>
 </item><item>
     <title>React Logic Reuse Example</title>
     <link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link>
