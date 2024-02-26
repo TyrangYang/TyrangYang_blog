@@ -2,10 +2,11 @@
 title: React overview
 date: 2019-10-03
 author: Haolin Yang
-categories: ['Overview', 'trick']
+categories: ['Overview']
 tags:
     - web
     - react
+    - trick
 toc:
     enable: true
     auto: true

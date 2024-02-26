@@ -1,7 +1,7 @@
 ---
 title: 'Js Trick'
 date: 2020-05-03T23:12:40-04:00
-Categories: ['Note']
+Categories: ['Note', 'Trick']
 tags: ['javascript', 'trick']
 toc:
     enable: true

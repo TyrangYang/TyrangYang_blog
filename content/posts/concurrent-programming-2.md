@@ -2,7 +2,7 @@
 title: Concurrent Programming Course note 2
 date: 2019-09-04
 author: Haolin Yang
-categories: ["Concurrent-programming"]
+categories: ['Concurrent-programming']
 tags:
     - concurrent
     - course note
