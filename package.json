@@ -21,7 +21,7 @@
     },
     "homepage": "https://github.com/TyrangYang/TyrangYang_blog#readme",
     "devDependencies": {
-        "gh-pages": "^2.2.0"
+        "gh-pages": "^5.0.0"
     },
     "dependencies": {
         "atomic-algolia": "^0.3.17"
