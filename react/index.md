@@ -698,3 +698,154 @@ In JSX, you cannot use HTML class attribute. you have to use className.
 
 [link](https://www.jianshu.com/p/ce5451287f1c)
 
+## Debugging hooke
+
+### usePrevious
+
+Save previous state
+
+```js
+const usePrevious = <T>(value: T, initialValue: T) => {
+    const ref = useRef(initialValue);
+    useEffect(() => {
+        ref.current = value;
+    });
+    return ref.current;
+};
+```
+
+### useEffectDebugger
+
+Get which field trigger useEffect from dependency list
+
+```js
+export const useEffectDebugger = (
+    effectHook: EffectCallback,
+    dependencies: DependencyList,
+    dependencyNames = []
+) => {
+    const previousDeps = usePrevious(dependencies, []);
+
+    const changedDeps = dependencies.reduce((prev, dependency, index) => {
+        if (dependency !== previousDeps[index]) {
+            const keyName = dependencyNames[index] || index;
+            return {
+                ...prev,
+                [keyName]: {
+                    before: previousDeps[index],
+                    after: dependency,
+                },
+            };
+        }
+
+        return prev;
+    }, {});
+
+    if (Object.keys(changedDeps).length) {
+        console.log('[use-effect-debugger] ', changedDeps);
+    }
+
+    useEffect(effectHook, [...dependencies, effectHook]);
+};
+```
+
+### useCallbackDebugger
+
+Get which field trigger useCallback from dependency list
+
+```js
+export const useCallbackDebugger = <T extends (...args: any[]) => any>(
+  callback: T,
+  dependencies: DependencyList,
+  dependencyNames: string[] = [],
+  debuggerName = 'use-callBack-debugger'
+) => {
+  const previousDeps = usePrevious(dependencies, []);
+
+  const changedDeps = dependencies.reduce((prev, dependency, index) => {
+    if (dependency !== previousDeps[index]) {
+      const keyName = dependencyNames[index] || index;
+      return {
+        ...prev,
+        [keyName]: {
+          before: previousDeps[index],
+          after: dependency
+        }
+      };
+    }
+
+    return prev;
+  }, {});
+
+  if (Object.keys(changedDeps).length) {
+    console.log(`[${debuggerName}] `, changedDeps);
+  }
+
+  return useCallback(callback, [...dependencies, callback]);
+};
+
+```
+
+### useMemoDebugger
+
+Get which field trigger useMemo from dependency list
+
+```js
+export const useMemoDebugger = <T extends (...args: any[]) => any>(
+  callback: T,
+  dependencies: DependencyList,
+  dependencyNames: string[] = [],
+  debuggerName = 'use-memo-debugger'
+) => {
+  const previousDeps = usePrevious(dependencies, []);
+
+  const changedDeps = dependencies.reduce((prev, dependency, index) => {
+    if (dependency !== previousDeps[index]) {
+      const keyName = dependencyNames[index] || index;
+      return {
+        ...prev,
+        [keyName]: {
+          before: previousDeps[index],
+          after: dependency
+        }
+      };
+    }
+
+    return prev;
+  }, {});
+
+  if (Object.keys(changedDeps).length) {
+    console.log(`[${debuggerName}] `, changedDeps);
+  }
+
+  return useMemo(callback, [...dependencies, callback]);
+};
+```
+
+### useTraceUpdate
+
+Get which props been pass to function component trigger rerender
+
+```js
+export function useTraceUpdate<T extends Record<string, any>>(props: T) {
+  const prev = useRef(props);
+  useEffect(() => {
+    const changedProps = Object.entries(props).reduce<Record<string, any>>(
+      (ps, [k, v]) => {
+        if (prev.current[k] !== v) {
+          ps[k] = [prev.current[k], v];
+        }
+        return ps;
+      },
+      {}
+    );
+    if (Object.keys(changedProps).length > 0) {
+      console.log('Changed props:', changedProps);
+    }
+    prev.current = props;
+  });
+}
+
+
+```
+
