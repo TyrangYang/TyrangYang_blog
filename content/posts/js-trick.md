@@ -5,7 +5,7 @@ Categories: ['Note', 'Trick']
 tags: ['javascript', 'trick']
 toc:
     enable: true
-    auto: false
+    auto: true
 linkToMarkdown: true
 math:
     enable: false
@@ -201,19 +201,6 @@ console.log(p1.name.firstName); // Error
 console.log(p1.getSex()); // Error
 console.log(p1.name?.firstName); // undefined
 console.log(p1.getSex?.()); // undefined
-```
-
-## Naming object
-
-If object key has same name with the variable in value, just use variable name.
-
-```js
-let a = 1,
-    b = 2,
-    c = 3;
-
-let res = { a, b, c }; // this is equal to // res = {a: a, b: b, c: c};
-console.log(res); // { a: 1, b: 2, c: 3 }
 ```
 
 ## Destruct
@@ -430,6 +417,8 @@ If `context` is **null**, `bind()` same like callback
 
 The direct way to format a date object is used the second attribute in `toLocaleString` also as `Intl.DateTimeFormat()`
 
+Every time `toLocaleString` is called, it has to perform a search in a big database of localization strings, which is potentially inefficient.
+
 ```js
 const today = new Date();
 
@@ -444,7 +433,19 @@ console.log(
         second: '2-digit',
         timeZoneName: 'short',
     })
-);
+); // 11/11/24, 10:55:35 PM PST
+
+const formatter = new Intl.DateTimeFormat('en-US', {
+    hour12: true,
+    year: '2-digit',
+    month: '2-digit',
+    day: '2-digit',
+    minute: '2-digit',
+    hour: '2-digit',
+    second: '2-digit',
+    timeZoneName: 'short',
+});
+console.log(formatter.format(today)); // 11/11/24, 10:55:35 PM PST
 ```
 
 ## Relative time expression
