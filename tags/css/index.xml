@@ -12,7 +12,8 @@ Reference from MDN
 Project by using Canvas Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
 1 2 const canvas = document.</description></item><item><title>CSS Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/css/</link><pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid><description><![CDATA[CSS cheat sheet: html &amp; css provided by Traversy Media
 Font font-size size
-font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;; font-family: Lobster monospace;
+font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;;
+font-family: Lobster monospace;
 GENERIC_NAME: sans-serif serif monospace;
 sans-serif force on connected and serif force on single alphabet.
 line-height: 25px;

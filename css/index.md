@@ -7,7 +7,9 @@ CSS cheat sheet: [html](/csscrashcourse/csscheatsheet/index.html) & [css](/csscr
 
 `font-size` size
 
-`font-family: <FAMILY_NAME>, <GENERIC_NAME>;` font-family: Lobster monospace;
+`font-family: <FAMILY_NAME>, <GENERIC_NAME>;`
+
+font-family: Lobster monospace;
 
 GENERIC_NAME: sans-serif serif monospace;
 
@@ -150,16 +152,6 @@ The `opacity` property in CSS is used to adjust the opacity, or conversely, the 
 > A value of 0.5 is half see-through.
 > A value of 0 is completely transparent.
 
-## pseudo-classes
-
-tag can be changed for its hover state using the :hover
-
-```css
-a:hover {
-    color: red;
-}
-```
-
 ## transform
 
 MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
@@ -184,7 +176,18 @@ There are five different position values:
 
 [This is another post shows different](https://medium.com/@leannezhang/difference-between-css-position-absolute-versus-relative-35f064384c6)
 
-## color
+## white-space
+
+|             | new line | space and tab | text wrapping | End line space |
+| ----------- | -------- | ------------- | ------------- | -------------- |
+| normal      | collapse | collapse      | wrap          | Remove         |
+| nowrap      | collapse | collapse      | no wrap       | Remove         |
+| pre         | preserve | preserve      | no wrap       | Preserve       |
+| pre-wrap    | preserve | preserve      | wrap          | Hang           |
+| pre-line    | preserve | collapse      | wrap          | Remove         |
+| break-space | preserve | preserve      | wrap          | Wrap           |
+
+> Here is my Example: [Try it Now](/html/whiteSpace.html)
 
 ## linear-gradient
 
@@ -325,12 +328,13 @@ Move some element to the front or back.
 
 ## pseudo-classes & pseudo-elements
 
-Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
 
 A CSS **pseudo-element** is a keyword added to a selector that lets you style **a specific part** of the selected element(s).
 
 > Pseudo-elements create abstractions about the document tree beyond those specified by the document language. For instance, document languages do not offer mechanisms to access the first letter or first line of an element’s content. Pseudo-elements allow authors to refer to this otherwise inaccessible information. Pseudo-elements may also provide authors a way to refer to content that does not exist in the source document (e.g., the ::before and ::after pseudo-elements give access to generated content).
+
+Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
 A CSS **pseudo-class** is a keyword added to a selector that specifies **a special state** of the selected element(s).
 

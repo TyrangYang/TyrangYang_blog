@@ -698,7 +698,7 @@ In JSX, you cannot use HTML class attribute. you have to use className.
 
 [link](https://www.jianshu.com/p/ce5451287f1c)
 
-## Debugging hooke
+## Debugging hook
 
 ### usePrevious
 

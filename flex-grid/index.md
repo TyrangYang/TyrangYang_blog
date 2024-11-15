@@ -115,7 +115,7 @@ This defines the ability for a flex item to shrink when item size overflow.
 }
 ```
 
-In this example, item will overflow `300 - 300 * 2 = 300px`.item will shrink base on the proportion `1 : 1`. Item will be `200px (300-100); 100px(300-200)`
+In this example, item will overflow `300 * 2 - 300= 300px`.item will shrink base on the proportion `1 : 2`. Item will be `200px (300-100); 100px(300-200)`
 
 ### flex-basis
 
@@ -159,7 +159,7 @@ Default is `0 1 auto`
 
 ```css
 .item {
-    flex: none | [ < 'flex-grow' > < 'flex-shrink' >? || < 'flex-basis' > ];
+    flex: none | [ < 'flex-grow' > < 'flex-shrink' >? || < 'flex-basis' >];
 }
 ```
 
