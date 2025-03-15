@@ -4,10 +4,10 @@ date: 2020-03-17
 author: Haolin Yang
 categories: ['Overview']
 tags:
-    - css
+  - css
 toc:
-    enable: true
-    auto: true
+  enable: true
+  auto: true
 ---
 
 CSS cheat sheet: [html](/csscrashcourse/csscheatsheet/index.html) & [css](/csscrashcourse/csscheatsheet/css/style.css) provided by [Traversy Media](https://youtu.be/yfoY53QXEnI)
@@ -82,23 +82,23 @@ Id will always take precedence.
 
 ```html
 <style>
-    body {
-        background-color: black;
-        font-family: monospace;
-        color: green;
-    }
-    #orange-text {
-        color: orange;
-    }
-    .pink-text {
-        color: pink !important;
-    }
-    .blue-text {
-        color: blue;
-    }
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink !important;
+  }
+  .blue-text {
+    color: blue;
+  }
 </style>
 <h1 id="orange-text" class="pink-text blue-text" style="color: white">
-    Hello World!
+  Hello World!
 </h1>
 ```
 
@@ -143,11 +143,11 @@ The `box-shadow` property applies one or more shadows to an element.
 
 The `box-shadow` property takes values for
 
--   `offset-x` (how far to push the shadow horizontally from the element),
--   `offset-y` (how far to push the shadow vertically from the element),
--   `blur-radius`,
--   `spread-radius` and
--   `color`, in that order.
+- `offset-x` (how far to push the shadow horizontally from the element),
+- `offset-y` (how far to push the shadow vertically from the element),
+- `blur-radius`,
+- `spread-radius` and
+- `color`, in that order.
 
 The blur-radius and spread-radius values are optional.
 
@@ -175,11 +175,11 @@ you have `top left bottom right` to set the position
 
 There are five different position values:
 
--   static: default
--   relative: relative to normal position
--   absolute: target wherever position inside of a relative element (
--   fixed: fix to browser window
--   sticky
+- static: default
+- relative: relative to normal position
+- absolute: target wherever position inside of a relative element (
+- fixed: fix to browser window
+- sticky
 
 {{<figure src="/images/2020-03-17-css/position.png" title="position" width="70%" height="70%" >}}
 
@@ -222,22 +222,22 @@ There are five different position values:
 
 ```html
 <style>
-    button {
-        border-radius: 5px;
-        color: white;
-        background-color: #0f5897;
-        padding: 5px 10px 8px 10px;
+  button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0f5897;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  @keyframes background-color {
+    100% {
+      background-color: #4791d0;
     }
-    button:hover {
-        animation-name: background-color;
-        animation-duration: 500ms;
-        animation-fill-mode: forwards;
-    }
-    @keyframes background-color {
-        100% {
-            background-color: #4791d0;
-        }
-    }
+  }
 </style>
 <button>Register</button>
 ```
@@ -268,12 +268,12 @@ Use two point to decide the curve
 
 ```html
 <style>
-    p:focus {
-        background-color: yellow;
-    }
+  p:focus {
+    background-color: yellow;
+  }
 </style>
 <p tabindex="0">
-    Instructions: Fill in ALL your information then click <b>Submit</b>
+  Instructions: Fill in ALL your information then click <b>Submit</b>
 </p>
 ```
 
@@ -321,17 +321,17 @@ Move some element to the front or back.
 
 ```css
 .btn {
-    display: inline-block;
-    padding: 5px 30px;
-    background: var(--primarily-color);
-    color: #fff;
-    border: 1px #fff solid;
-    border-radius: 5px;
-    margin-top: 25px;
-    opacity: 0.7;
+  display: inline-block;
+  padding: 5px 30px;
+  background: var(--primarily-color);
+  color: #fff;
+  border: 1px #fff solid;
+  border-radius: 5px;
+  margin-top: 25px;
+  opacity: 0.7;
 }
 .btn:hover {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 ```
 
@@ -358,21 +358,21 @@ pseudo-class use (:) like `:hover`, `:nth-child()`
 https://levelup.gitconnected.com/understanding-use-of-the-and-symbols-in-css-selectors-95552eb436f5
 {{< /admonition >}}
 
--   Descendant Selector (space)
--   Child Selector (>)
--   Adjacent Sibling Selector (+)
--   General Sibling Selector (~)
+- Descendant Selector (space)
+- Child Selector (>)
+- Adjacent Sibling Selector (+)
+- General Sibling Selector (~)
 
 For a Same HTML part
 
 ```html
 <div class="container">
-    <p>Apple</p>
-    <div>
-        <p>An apple a day keeps doctor away!</p>
-    </div>
-    <p>Banana</p>
-    <p>Cherry</p>
+  <p>Apple</p>
+  <div>
+    <p>An apple a day keeps doctor away!</p>
+  </div>
+  <p>Banana</p>
+  <p>Cherry</p>
 </div>
 ```
 
@@ -380,7 +380,7 @@ For a Same HTML part
 
 ```css
 div.container p {
-    font-size: 20px;
+  font-size: 20px;
 }
 ```
 
@@ -390,7 +390,7 @@ div.container p {
 
 ```css
 div.container > p {
-    border-bottom: 1px dashed black;
+  border-bottom: 1px dashed black;
 }
 ```
 
@@ -400,7 +400,7 @@ div.container > p {
 
 ```css
 div + p {
-    background-color: yellow;
+  background-color: yellow;
 }
 ```
 
@@ -410,7 +410,7 @@ div + p {
 
 ```css
 div ~ p {
-    background-color: yellow;
+  background-color: yellow;
 }
 ```
 
@@ -439,3 +439,23 @@ if property can inherit parent, set to _inherit_. Otherwise, set to _initial_
 ### revert
 
 set property to **browser default value** (user agent stylesheet)
+
+## counter
+
+Counting can happen in CSS.
+
+```css
+.container {
+  counter-reset: any_counter_name 0;
+}
+
+.container span {
+  counter-increment: any_counter_name 1;
+}
+
+.container span::before {
+  content: '(' counter(any_counter_name) ') ';
+}
+```
+
+> Here is my Example: [Try it Now](/html/CSScounter.html)
