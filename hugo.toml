@@ -1,0 +1,206 @@
+baseURL = "https://tyrangyang.github.io/TyrangYang_blog/"
+
+# all relative URLs would instead be canonicalized using baseURL
+# really necessary when you have sub-path in baseUrl
+# https://gohugo.io/content-management/urls/#canonicalization
+canonifyURLs = true
+
+enableEmoji = true
+title = "TyrangYang_Blog"
+# [en, zh-cn, fr, ...] determines default content language
+defaultContentLanguage = "en"
+# language code
+languageCode = "en"
+
+
+# Change the default theme to be use when building the site with Hugo
+theme = "LoveIt"
+
+
+[author]
+name = "Haolin Yang"
+link = "https://tyrangyang.github.io/"
+
+[params]
+title = "TyrangYang_Blog"
+[params.header.title]
+# URL of the LOGO
+# LOGO 的 URL
+logo = ""
+# title name
+# 标题名称
+name = "TyrangYang_Blog"
+# you can add extra information before the name (HTML format is supported), such as icons
+# 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+pre = ""
+# you can add extra information after the name (HTML format is supported), such as icons
+# 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+post = ""
+# whether to use typeit animation for title name
+# 是否为标题显示打字机动画
+typeit = false
+[params.search]
+enable = true
+# 搜索引擎的类型 ("lunr", "algolia")
+type = "algolia"
+# 文章内容最长索引长度
+contentLength = 4000
+# 搜索框的占位提示语
+placeholder = ""
+# 最大结果数目
+maxResultLength = 10
+# 搜索结果中高亮部分的 HTML 标签
+highlightTag = "em"
+absoluteURL = true
+[params.search.algolia]
+index = "blog"
+appID = "QXEV52XWDS"
+searchKey = "db56d05ebbeed337adca1ef261004dcc"
+[params.home]
+[params.home.profile]
+enable = true
+avatarURL = "/images/art2.png"
+subtitle = "Stay Home & Be safe!"
+typeit = true
+social = true
+[params.home.posts]
+enable = true
+paginate = 10
+[params.social]
+GitHub = "TyrangYang"
+Linkedin = "haolin-yang-2b3a061a3"
+Twitter = "@TyrangYang"
+Email = "haolinyang95@gamil.com"
+[params.page]
+hiddenFromHomePage = false
+hiddenFromSearch = false
+linkToMarkdown = true
+[params.page.toc]
+enable = false
+auto = false
+[params.page.code]
+# 是否显示代码块的复制按钮
+copy = true
+# 默认展开显示的代码行数
+maxShownLines = 1000
+[params.footer]
+enable = true
+# LoveIt 新增 | 0.2.0 自定义内容 (支持 HTML 格式)
+custom = ''
+# LoveIt 新增 | 0.2.0 是否显示 Hugo 和主题信息
+hugo = true
+# LoveIt 新增 | 0.2.0 是否显示版权信息
+copyright = true
+# LoveIt 新增 | 0.2.0 是否显示作者
+author = true
+# 网站创立年份
+# since = 2019
+# 许可协议信息 (支持 HTML 格式)
+license = '<a rel="license" style="position:relative; top:3px" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>'
+
+
+[menu]
+[[menu.main]]
+identifier = "posts"
+# you can add extra information before the name (HTML format is allowed), such as icons
+pre = "<i class='fas fa-book-open'></i>"
+name = " Posts"
+url = "/posts/"
+# title will be shown when you hover on this menu link
+title = ""
+weight = 1
+[[menu.main]]
+identifier = "tags"
+pre = "<i class='fas fa-tags'></i>"
+name = " Tags"
+url = "/tags/"
+title = ""
+weight = 2
+[[menu.main]]
+identifier = "categories"
+pre = "<i class='fab fa-buffer'></i>"
+name = " Categories"
+url = "/categories/"
+title = ""
+weight = 3
+
+[[menu.main]]
+identifier = "github"
+pre = "<i class='fab fa-github fa-fw fa-fw'></i>"
+name = " "
+url = "https://github.com/TyrangYang/TyrangYang_blog"
+title = "Blog github"
+weight = 4
+
+[[menu.main]]
+identifier = "home"
+pre = '<i class="fas fa-home"></i>'
+name = " "
+url = "https://tyrangyang.github.io/"
+title = "home page"
+weight = 5
+
+# Hugo 解析文档的配置
+[markup]
+# 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+noClasses = false
+style = "monokai"
+tabWidth = 4
+# Goldmark 是 Hugo 0.60 以来的默认 Markdown 解析库
+[markup.goldmark]
+[markup.goldmark.extensions]
+definitionList = true
+footnote = true
+linkify = true
+strikethrough = true
+table = true
+taskList = true
+typographer = true
+[markup.goldmark.renderer]
+# 是否在文档中直接使用 HTML 标签
+unsafe = true
+# 目录设置
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 6
+# 网站地图信息
+[sitemap]
+changefreq = "weekly"
+filename = "sitemap.xml"
+priority = 0.5
+
+# Permalinks 信息 (https://gohugo.io/content-management/urls/#permalinks)
+[Permalinks]
+# posts = ":year/:month/:filename"
+posts = ":filename"
+
+# 隐私信息设置 (https://gohugo.io/about/hugo-and-gdpr/)
+[privacy]
+[privacy.youtube]
+privacyEnhanced = true
+
+# 用于输出 Markdown 格式文档的设置
+[mediaTypes]
+[mediaTypes."text/plain"]
+suffixes = ["md"]
+
+# 用于输出 Markdown 格式文档的设置
+[outputFormats.MarkDown]
+mediaType = "text/plain"
+isPlainText = true
+isHTML = false
+
+# 用于 Hugo 输出文档的设置
+[outputs]
+# LoveIt 更改 | 0.2.0
+home = ["HTML", "RSS", "JSON"]
+page = ["HTML", "MarkDown"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]
+taxonomyTerm = ["HTML"]

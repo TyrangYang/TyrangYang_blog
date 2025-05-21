@@ -4,11 +4,11 @@ date: 2020-09-03T12:25:26-07:00
 Categories: ['Archive']
 tags: ['react']
 toc:
-    enable: true
-    auto: false
+  enable: true
+  auto: false
 linkToMarkdown: true
 math:
-    enable: false
+  enable: false
 ---
 
 ## How to connect your React app to a backend on the same origin

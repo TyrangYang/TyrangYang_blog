@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CD
+name: deployment to github page
 
 # Controls when the action will run.
 on:
@@ -28,9 +28,9 @@ jobs:
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: '0.119.0'
-            - run: npm ci
-            - run: hugo --minify
+                  hugo-version: '0.145.0'
+            - run: npm ci # clean install. remove node_modules and stick to package-lock
+            - run: hugo --minify # hugo will compile as small as possible
             - name: Algolia setup
               run: ALGOLIA_APP_ID=QXEV52XWDS ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_ADMIN_KEY }} ALGOLIA_INDEX_NAME=blog ALGOLIA_INDEX_FILE=./public/index.json npm run algolia
             - name: gh-page setup

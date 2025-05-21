@@ -4,9 +4,9 @@ date: 2020-04-08
 author: Haolin Yang
 categories: ['Overview']
 tags:
-    - html
-    - javascript
-    - css
+  - html
+  - javascript
+  - css
 ---
 
 Canvas is a new feature since **html5** that allows you draw something on your web page
@@ -15,10 +15,10 @@ Reference from [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
 
 ## Project by using Canvas
 
--   [Chaos Game](https://tyrangyang.github.io/chaos-game/):
-    Use canvas to draw the chaos game
--   [Draw panel with socket.io](https://scribble-panel.herokuapp.com):
-    A scribble panel with Websocket. Multi user can draw panel on simultaneously
+- [Chaos Game](https://tyrangyang.github.io/chaos-game/):
+  Use canvas to draw the chaos game
+- [Draw panel with socket.io](https://scribble-panel.herokuapp.com):
+  A scribble panel with Websocket. Multi user can draw panel on simultaneously
 
 ## Draw on canvas
 
