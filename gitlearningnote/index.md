@@ -105,6 +105,22 @@ After run`git pull master`
 D---E---F---G---H master
 ```
 
+### pull something have conflict
+
+Sometimes branch in local and remote are not sync. For example:
+
+```
+      A---B---C origin/master
+     /
+D---E --- F  master
+```
+
+In this case, we can run `git pull --rebase <remote> <branch> `. You can move your local commit at behind.
+
+```
+D---E---A---B---C---F' (F' is a new commit)
+```
+
 ### Merge
 
 `git merge <branch>` merge a given branch to current branch
