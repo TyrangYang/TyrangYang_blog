@@ -1,6 +1,46 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>markdown - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/markdown/</link><description>markdown - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/markdown/" rel="self" type="application/rss+xml"/><item><title>MarkDown overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</link><pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</guid><description>This is learning note for MarkDown
-Heading 1 or
-Heading 1 Heading 2 or
-Heading 2 Italic and bold italic or italic bold or bold italic and bold or italic and bold
-Unordered list line 1 line 2 line 3 sub 1 sub 2 or
-line 1 line 2 line 3 sub 1 sub 2 Ordered list line 1 line 2 sub 1 sub 2 line 3 BlockQuotes Use &amp;lsquo;&amp;gt;&amp;rsquo; for a quotes</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Markdown - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/markdown/</link><description>Markdown - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/markdown/" rel="self" type="application/rss+xml"/><item><title>MarkDown overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</link><pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/markdowntutorial/</guid><description><![CDATA[<p>This is learning note for MarkDown</p>
+<h1 id="heading-1">Heading 1</h1>
+<p>or</p>
+<h1 id="heading-1-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<p>or</p>
+<h2 id="heading-2-1">Heading 2</h2>
+<h2 id="italic-and-bold">Italic and bold</h2>
+<p><em>italic</em> or <em>italic</em>
+<strong>bold</strong> or <strong>bold</strong>
+<strong><em>italic and bold</em></strong> or <strong><em>italic and bold</em></strong></p>
+<h2 id="unordered-list">Unordered list</h2>
+<ul>
+<li>line 1</li>
+<li>line 2</li>
+<li>line 3
+<ul>
+<li>sub 1</li>
+<li>sub 2</li>
+</ul>
+</li>
+</ul>
+<p>or</p>
+<ul>
+<li>line 1</li>
+<li>line 2</li>
+<li>line 3
+<ul>
+<li>sub 1</li>
+<li>sub 2</li>
+</ul>
+</li>
+</ul>
+<h2 id="ordered-list">Ordered list</h2>
+<ol>
+<li>line 1</li>
+<li>line 2
+<ol>
+<li>sub 1</li>
+<li>sub 2</li>
+</ol>
+</li>
+<li>line 3</li>
+</ol>
+<h2 id="blockquotes">BlockQuotes</h2>
+<p>Use &lsquo;&gt;&rsquo; for a quotes</p>]]></description></item></channel></rss>

@@ -1,12 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>linux - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/linux/</link><description>linux - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/linux/" rel="self" type="application/rss+xml"/><item><title>chmod Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid><description><![CDATA[chmod is linux command to control file permission
-usage chmod [u|g|o|a][=|+|-] [r|w|x] u =&gt; user
-g =&gt; group
-o =&gt; other
-a =&gt; all
-r =&gt; read
-w =&gt; write
-x =&gt; execute
-example chmod +wr test.txt give write and read permission for user
-chmod -r test.txt remove read permission for user
-chmod g=wrx test.txt give write, read and execute permission for group
-use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Linux - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/linux/</link><description>Linux - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/linux/" rel="self" type="application/rss+xml"/><item><title>chmod Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid><description><![CDATA[<p>chmod is linux command to control file permission</p>
+<h2 id="usage">usage</h2>
+<p>chmod [u|g|o|a][=|+|-] [r|w|x] <fileName></p>
+<p>u =&gt; user</p>
+<p>g =&gt; group</p>
+<p>o =&gt; other</p>
+<p>a =&gt; all</p>
+<p>r =&gt; read</p>
+<p>w =&gt; write</p>
+<p>x =&gt; execute</p>
+<h3 id="example">example</h3>
+<p><code>chmod +wr test.txt</code> give write and read permission for user</p>
+<p><code>chmod -r test.txt</code> remove read permission for user</p>
+<p><code>chmod g=wrx test.txt</code> give write, read and execute permission for group</p>
+<h2 id="use-number">use number</h2>
+<p>specific the bits <code>011101110111</code> =&gt; -rwx-rwx-rwx</p>]]></description></item></channel></rss>

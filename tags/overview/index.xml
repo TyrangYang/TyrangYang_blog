@@ -1,10 +1,168 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>overview - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/overview/</link><description>overview - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/" rel="self" type="application/rss+xml"/><item><title>ffmpeg</title><link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link><pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid><description><![CDATA[Reference official https://ffmpeg.org
-blog https://fireship.io/lessons/ffmpeg-useful-techniques/
-node js https://www.npmjs.com/package/fluent-ffmpeg
-example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
-vids.txt:
-1 2 3 file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; Type convention ffmpeg -i in.mp4 out.mov
-ffmpeg -i in.mp4 out.gif
-Scale It very common to reduce size of output file. Change scale usually the common and efficient way to do so.
-ffmpeg -i in.mov -vf scale=960:-1 out.gif
-Reference from ffmpeg wiki]]></description></item><item><title>Typescript overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link><pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid><description><![CDATA[type Union type &amp; Literal type 1 2 3 4 5 6 7 8 9 10 11 const add = ( a: number | string, b: number | string, type?: &#39;number&#39; | &#39;string&#39; ): number | string =&gt; { if (type === &#39;string&#39;) { return a.toString() + b.toString(); } else return +a + +b; }; console.log(add(1, 2)); Array 1 2 3 4 5 6 type Book = { id: string; name: string; }; let books: Book[] = []; unknown 1 2 3 4 5 6 7 8 9 10 11 12 let test1: unknown; let test2: string; test1 = &#39;xyz&#39;; // ok // test2 = test1; // error function f1(a: any) { a.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Overview - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/overview/</link><description>Overview - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/overview/" rel="self" type="application/rss+xml"/><item><title>ffmpeg</title><link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link><pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid><description><![CDATA[<h2 id="reference">Reference</h2>
+<figure>
+</figure>
+
+<h3 id="official">official</h3>
+<p><a href="https://ffmpeg.org" target="_blank" rel="noopener noreffer ">https://ffmpeg.org</a></p>
+<h3 id="blog">blog</h3>
+<p><a href="https://fireship.io/lessons/ffmpeg-useful-techniques/" target="_blank" rel="noopener noreffer ">https://fireship.io/lessons/ffmpeg-useful-techniques/</a></p>
+<h3 id="node-js">node js</h3>
+<p><a href="https://www.npmjs.com/package/fluent-ffmpeg" target="_blank" rel="noopener noreffer ">https://www.npmjs.com/package/fluent-ffmpeg</a></p>
+<h2 id="example">example</h2>
+<h3 id="concatenate">concatenate</h3>
+<blockquote>
+<p>ffmpeg -f concat -i vids.txt -c copy out.mp4</p></blockquote>
+<p>vids.txt:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-t">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-t" data-lang="t"><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name1.mov&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name2.mov&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name3.mov&#39;</span></span></span></code></pre></div></div>
+<h3 id="type-convention">Type convention</h3>
+<blockquote>
+<p>ffmpeg -i in.mp4 out.mov</p></blockquote>
+<blockquote>
+<p>ffmpeg -i in.mp4 out.gif</p></blockquote>
+<h3 id="scale">Scale</h3>
+<p>It very common to reduce size of output file. Change scale usually the common and efficient way to do so.</p>]]></description></item><item><title>Typescript overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link><pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid><description><![CDATA[<h2 id="type">type</h2>
+<h3 id="union-type--literal-type">Union type &amp; Literal type</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">a</span>: <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">b</span>: <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">type</span><span class="o">?:</span> <span class="s1">&#39;number&#39;</span> <span class="o">|</span> <span class="s1">&#39;string&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="kr">type</span> <span class="o">===</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">return</span> <span class="o">+</span><span class="nx">a</span> <span class="o">+</span> <span class="o">+</span><span class="nx">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span></span></span></code></pre></div></div>
+<h3 id="array">Array</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">books</span>: <span class="kt">Book</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span></span></span></code></pre></div></div>
+<h3 id="unknown">unknown</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">test1</span>: <span class="kt">unknown</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">test2</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">test1</span> <span class="o">=</span> <span class="s1">&#39;xyz&#39;</span><span class="p">;</span> <span class="c1">// ok
+</span></span></span><span class="line"><span class="cl"><span class="c1">// test2 = test1; // error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">any</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">a</span><span class="p">.</span><span class="nx">b</span><span class="p">();</span> <span class="c1">// OK
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">f2</span><span class="p">(</span><span class="nx">a</span>: <span class="kt">unknown</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">a</span><span class="p">.</span><span class="nx">b</span><span class="p">();</span> <span class="c1">//error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// Object is of type &#39;unknown&#39;.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="type-a-function">Type a Function</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">listenerType</span><span class="p">&lt;</span><span class="nt">EventType</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span>: <span class="kt">EventType</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span></span></span></code></pre></div></div>
+<h2 id="assign-a-plain-object">Assign a plain Object</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Primitive</span> <span class="o">=</span> <span class="kt">bigint</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">|</span> <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">|</span> <span class="kt">symbol</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">PlainObject</span> <span class="o">=</span> <span class="nx">Record</span><span class="p">&lt;</span><span class="nt">string</span><span class="p">,</span> <span class="na">Primitive</span><span class="p">&gt;;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">obj1</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">1</span> <span class="p">};</span> <span class="c1">//✅
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">obj2</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">1</span> <span class="p">};</span> <span class="c1">//❌
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">obj3</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">();</span> <span class="c1">//❌
+</span></span></span></code></pre></div></div>
+<h2 id="assign-a-nested-plain-object">Assign a nested plain Object</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Primitive</span> <span class="o">=</span> <span class="kt">bigint</span> <span class="o">|</span> <span class="kr">boolean</span> <span class="o">|</span> <span class="kc">null</span> <span class="o">|</span> <span class="kt">number</span> <span class="o">|</span> <span class="kt">string</span> <span class="o">|</span> <span class="kt">symbol</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">JSONValue</span> <span class="o">=</span> <span class="nx">Primitive</span> <span class="o">|</span> <span class="nx">JSONObject</span> <span class="o">|</span> <span class="nx">JSONArray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">JSONObject</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">key</span>: <span class="kt">string</span><span class="p">]</span><span class="o">:</span> <span class="nx">JSONValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">JSONArray</span> <span class="kr">extends</span> <span class="nb">Array</span><span class="p">&lt;</span><span class="nt">JSONValue</span><span class="p">&gt;</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">obj1</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span>: <span class="kt">1</span> <span class="p">};</span> <span class="c1">//✅
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">obj2</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span> <span class="p">{</span> <span class="nx">b</span><span class="o">:</span> <span class="p">{</span> <span class="nx">c</span>: <span class="kt">3</span> <span class="p">}</span> <span class="p">}</span> <span class="p">};</span> <span class="c1">//✅
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">obj3</span>: <span class="kt">PlainObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">myClass</span><span class="p">();</span> <span class="c1">//❌
+</span></span></span></code></pre></div></div>
+<h2 id="type-template-arrow-function-example">Type Template arrow function example</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useFetchAPI</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">T</span> <span class="na">extends</span> <span class="na">unknown</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span>: <span class="kt">string</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span> <span class="o">|</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">body?</span>: <span class="kt">string</span> <span class="o">|</span> <span class="nx">JSONObject</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="o">:</span> <span class="p">[</span><span class="kt">string</span><span class="p">,</span> <span class="nx">T</span> <span class="o">|</span> <span class="kc">null</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">fetchStatus</span><span class="p">,</span> <span class="nx">setFetchStatus</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">fetchResult</span><span class="p">,</span> <span class="nx">setFetchResult</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">&lt;</span><span class="nt">T</span> <span class="err">|</span> <span class="na">null</span><span class="p">&gt;(</span><span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">apiMockFetch</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">status</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">requestId</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">result</span>: <span class="kt">T</span> <span class="o">|</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">resolve</span><span class="p">(</span><span class="nx">someData</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="p">{</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">result</span> <span class="p">}</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">apiMockFetch</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">setFetchStatus</span><span class="p">(</span><span class="nx">status</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">setFetchResult</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">fetchStatus</span> <span class="o">!==</span> <span class="s1">&#39;success&#39;</span><span class="p">)</span> <span class="nx">fetchData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="p">[</span><span class="nx">url</span><span class="p">,</span> <span class="nx">method</span><span class="p">,</span> <span class="nx">body</span><span class="p">,</span> <span class="nx">fetchStatus</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nx">fetchStatus</span><span class="p">,</span> <span class="nx">fetchResult</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<h2 id="type--interface">Type &amp; interface</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">Book</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>]]></description></item></channel></rss>

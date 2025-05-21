@@ -1,7 +1,12 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>ssh - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/ssh/</link><description>ssh - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/ssh/" rel="self" type="application/rss+xml"/><item><title>SSH Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid><description><![CDATA[ssh-keygen ssh-keygen
--b specific the number of bits(1024 2048 4069)
--m specific type
--y get public key
--f specific file name
-public key public key should give to server. Usually put in file ~/.ssh/authorized_key
-access via SSH ssh &lt;username&gt;@&lt;hostname | ip address&gt;]]></description></item><item><title>SSH in Vscode</title><link>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</link><pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</guid><description>Extension Reference https://letswp.io/remote-development-visual-studio-code-amazon-ec2/</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Ssh - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/ssh/</link><description>Ssh - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/ssh/" rel="self" type="application/rss+xml"/><item><title>SSH Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/ssh/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ssh/</guid><description><![CDATA[<h2 id="ssh-keygen">ssh-keygen</h2>
+<p><code>ssh-keygen</code></p>
+<p>-b specific the number of bits(1024 2048 4069)</p>
+<p>-m specific type</p>
+<p>-y get public key</p>
+<p>-f specific file name</p>
+<h3 id="public-key">public key</h3>
+<p>public key should give to server. Usually put in file <code>~/.ssh/authorized_key</code></p>
+<h2 id="access-via-ssh">access via SSH</h2>
+<p><code>ssh &lt;username&gt;@&lt;hostname | ip address&gt;</code></p>]]></description></item><item><title>SSH in Vscode</title><link>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</link><pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ssh-vscode/</guid><description><![CDATA[<h2 id="extension">Extension</h2>
+<h2 id="reference">Reference</h2>
+<p><a href="https://letswp.io/remote-development-visual-studio-code-amazon-ec2/" target="_blank" rel="noopener noreffer ">https://letswp.io/remote-development-visual-studio-code-amazon-ec2/</a></p>]]></description></item></channel></rss>

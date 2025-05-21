@@ -1,3 +1,11 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>binary tree - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/binary-tree/</link><description>binary tree - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 17 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/binary-tree/" rel="self" type="application/rss+xml"/><item><title>RB tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</link><pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid><description>2-3 tree &amp;amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
-A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
-Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth insertion deletion 2-4 tree ==&amp;gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Binary Tree - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/binary-tree/</link><description>Binary Tree - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 17 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/binary-tree/" rel="self" type="application/rss+xml"/><item><title>RB tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</link><pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid><description><![CDATA[<h2 id="2-3-tree--2-4-tree">2-3 tree &amp; 2-4 tree</h2>
+<p>2-node: 1 key and 2 children
+3-node: 2 keys and 3 children
+4-node: 3 keys and 4 children</p>
+<p>A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:</p>
+<ul>
+<li>Node-Size Property: every internal node has at most four children</li>
+<li>Depth Property: all the external nodes have the same depth</li>
+</ul>
+<h3 id="insertion">insertion</h3>
+<p></p>]]></description></item></channel></rss>

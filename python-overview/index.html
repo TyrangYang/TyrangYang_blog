@@ -1,81 +1,33 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Python Overview - TyrangYang_Blog</title><meta name=Description content><meta property="og:title" content="Python Overview"><meta property="og:description" content="This posts only use as a remainder
-Variable Multiple assignment 1 x, y, name, is_cool = (1, 2.5, 'a name', True) Casting 1 2 3 4 x = str(x) # x will be string y = int(y) # y will be an integer String 1 2 3 4 5 6 name = 'Brad' age = 37 print('name is' + name + ' and age is ' + str(age)) print('name is {name} and age is {age}'."><meta property="og:type" content="article"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/python-overview/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-04-28T16:43:12-04:00"><meta property="article:modified_time" content="2020-04-28T16:43:12-04:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python Overview"><meta name=twitter:description content="This posts only use as a remainder
-Variable Multiple assignment 1 x, y, name, is_cool = (1, 2.5, 'a name', True) Casting 1 2 3 4 x = str(x) # x will be string y = int(y) # y will be an integer String 1 2 3 4 5 6 name = 'Brad' age = 37 print('name is' + name + ' and age is ' + str(age)) print('name is {name} and age is {age}'."><meta name=application-name content="TyrangYang_Blog"><meta name=apple-mobile-web-app-title content="TyrangYang_Blog"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/chmod/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Python Overview","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/python-overview\/"},"genre":"posts","keywords":"python","wordcount":1243,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/python-overview\/","datePublished":"2020-04-28T16:43:12-04:00","dateModified":"2020-04-28T16:43:12-04:00","publisher":{"@type":"Organization","name":"Haolin Yang"},"author":{"@type":"Person","name":"Haolin Yang"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Python Overview - TyrangYang_Blog</title><meta name=Description content="This is my cool site"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/python-overview/">
+<meta property="og:site_name" content="TyrangYang_Blog"><meta property="og:title" content="Python Overview"><meta property="og:description" content="This posts only use as a remainder
+Variable Multiple assignment x, y, name, is_cool = (1, 2.5, 'a name', True) Casting x = str(x) # x will be string y = int(y) # y will be an integer String name = 'Brad' age = 37 print('name is' + name + ' and age is ' + str(age)) print('name is {name} and age is {age}'.format(name = name, age = age)) print(f'name is {name} and age is {age}') Methods # Capitalize string print(s.capitalize()) # Make all uppercase print(s.upper()) # Make all lower print(s.lower()) # Swap case print(s.swapcase()) # Get length print(len(s)) # Replace print(s.replace('world', 'everyone')) # Count sub = 'h' print(s.count(sub)) # Starts with print(s.startswith('hello')) # Ends with print(s.endswith('d')) # Split into a list print(s.split()) # Find position print(s.find('r')) # Is all alphanumeric print(s.isalnum()) # Is all alphabetic print(s.isalpha()) # Is all numeric print(s.isnumeric()) List A List is a collection which is ordered and changeable. Allows duplicate members."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-04-28T16:43:12-04:00"><meta property="article:modified_time" content="2020-04-28T16:43:12-04:00"><meta property="article:tag" content="Python"><meta name=twitter:card content="summary"><meta name=twitter:title content="Python Overview"><meta name=twitter:description content="This posts only use as a remainder
+Variable Multiple assignment x, y, name, is_cool = (1, 2.5, 'a name', True) Casting x = str(x) # x will be string y = int(y) # y will be an integer String name = 'Brad' age = 37 print('name is' + name + ' and age is ' + str(age)) print('name is {name} and age is {age}'.format(name = name, age = age)) print(f'name is {name} and age is {age}') Methods # Capitalize string print(s.capitalize()) # Make all uppercase print(s.upper()) # Make all lower print(s.lower()) # Swap case print(s.swapcase()) # Get length print(len(s)) # Replace print(s.replace('world', 'everyone')) # Count sub = 'h' print(s.count(sub)) # Starts with print(s.startswith('hello')) # Ends with print(s.endswith('d')) # Split into a list print(s.split()) # Find position print(s.find('r')) # Is all alphanumeric print(s.isalnum()) # Is all alphabetic print(s.isalpha()) # Is all numeric print(s.isnumeric()) List A List is a collection which is ordered and changeable. Allows duplicate members."><meta name=twitter:site content="@TyrangYang"><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=referrer content="no-referrer"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=mask-icon href=https://tyrangyang.github.io/TyrangYang_blog/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/chmod/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Python Overview","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/python-overview\/"},"genre":"posts","keywords":"python","wordcount":943,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/python-overview\/","datePublished":"2020-04-28T16:43:12-04:00","dateModified":"2020-04-28T16:43:12-04:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xxxx"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i></a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Python Overview</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/overview/><i class="far fa-folder fa-fw"></i>Overview</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-04-28>2020-04-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1243 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#variable>Variable</a><ul><li><a href=#multiple-assignment>Multiple assignment</a></li><li><a href=#casting>Casting</a></li></ul></li><li><a href=#string>String</a><ul><li><a href=#methods>Methods</a></li></ul></li><li><a href=#list>List</a></li><li><a href=#tuple>Tuple</a></li><li><a href=#set>set</a></li><li><a href=#dictionary>Dictionary</a></li><li><a href=#functions>Functions</a><ul><li><a href=#lambda-function>lambda function</a></li></ul></li><li><a href=#conditionals>conditionals</a></li><li><a href=#loop>Loop</a></li><li><a href=#modules>Modules</a></li><li><a href=#classes>Classes</a></li><li><a href=#file>File</a></li><li><a href=#python--json>Python & Json</a></li></ul></nav></div></div><div class=content id=content><p>This posts only use as a remainder</p><h2 id=variable>Variable</h2><h3 id=multiple-assignment>Multiple assignment</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>is_cool</span> <span class=o>=</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mf>2.5</span><span class=p>,</span> <span class=s1>&#39;a name&#39;</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=casting>Casting</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>x</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Python Overview</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>xxxx</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/overview/><i class="far fa-folder fa-fw" aria-hidden=true></i>Overview</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2020-04-28>2020-04-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;943 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;5 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#variable>Variable</a><ul><li><a href=#multiple-assignment>Multiple assignment</a></li><li><a href=#casting>Casting</a></li></ul></li><li><a href=#string>String</a><ul><li><a href=#methods>Methods</a></li></ul></li><li><a href=#list>List</a></li><li><a href=#tuple>Tuple</a></li><li><a href=#set>set</a></li><li><a href=#dictionary>Dictionary</a></li><li><a href=#functions>Functions</a><ul><li><a href=#lambda-function>lambda function</a></li></ul></li><li><a href=#conditionals>conditionals</a></li><li><a href=#loop>Loop</a></li><li><a href=#modules>Modules</a></li><li><a href=#classes>Classes</a></li><li><a href=#file>File</a></li><li><a href=#python--json>Python & Json</a></li></ul></nav></div></div><div class=content id=content><p>This posts only use as a remainder</p><h2 id=variable>Variable</h2><h3 id=multiple-assignment>Multiple assignment</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-python"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>is_cool</span> <span class=o>=</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mf>2.5</span><span class=p>,</span> <span class=s1>&#39;a name&#39;</span><span class=p>,</span> <span class=kc>True</span><span class=p>)</span></span></span></code></pre></div></div><h3 id=casting>Casting</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-python"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>x</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>x</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=c1># x will be string</span>
 </span></span><span class=line><span class=cl><span class=n>y</span> <span class=o>=</span> <span class=nb>int</span><span class=p>(</span><span class=n>y</span><span class=p>)</span>
-</span></span><span class=line><span class=cl><span class=c1># y will be an integer</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=string>String</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>name</span> <span class=o>=</span> <span class=s1>&#39;Brad&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1># y will be an integer</span></span></span></code></pre></div></div><h2 id=string>String</h2><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-python"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>name</span> <span class=o>=</span> <span class=s1>&#39;Brad&#39;</span>
 </span></span><span class=line><span class=cl><span class=n>age</span> <span class=o>=</span> <span class=mi>37</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;name is&#39;</span> <span class=o>+</span> <span class=n>name</span> <span class=o>+</span> <span class=s1>&#39; and age is &#39;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>age</span><span class=p>))</span>
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=s1>&#39;name is </span><span class=si>{name}</span><span class=s1> and age is </span><span class=si>{age}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>name</span><span class=p>,</span> <span class=n>age</span> <span class=o>=</span> <span class=n>age</span><span class=p>))</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;name is </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s1> and age is </span><span class=si>{</span><span class=n>age</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=methods>Methods</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># Capitalize string</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;name is </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s1> and age is </span><span class=si>{</span><span class=n>age</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span></span></span></code></pre></div></div><h3 id=methods>Methods</h3><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-python"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># Capitalize string</span>
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>s</span><span class=o>.</span><span class=n>capitalize</span><span class=p>())</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Make all uppercase</span>
@@ -116,28 +68,9 @@ Variable Multiple assignment 1 x, y, name, is_cool = (1, 2.5, 'a name', True) Ca
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>s</span><span class=o>.</span><span class=n>isalpha</span><span class=p>())</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Is all numeric</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>s</span><span class=o>.</span><span class=n>isnumeric</span><span class=p>())</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=list>List</h2><p>A List is a collection which is ordered and changeable. Allows duplicate members.</p><h2 id=tuple>Tuple</h2><p>A Tuple is a collection which is ordered and unchangeable. Allows duplicate members.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># Create tuple</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>s</span><span class=o>.</span><span class=n>isnumeric</span><span class=p>())</span></span></span></code></pre></div></div><h2 id=list>List</h2><p>A List is a collection which is ordered and changeable. Allows duplicate members.</p><h2 id=tuple>Tuple</h2><p>A Tuple is a collection which is ordered and unchangeable. Allows duplicate members.</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-python"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># Create tuple</span>
 </span></span><span class=line><span class=cl><span class=n>fruits</span> <span class=o>=</span> <span class=p>(</span><span class=s1>&#39;Apples&#39;</span><span class=p>,</span> <span class=s1>&#39;Oranges&#39;</span><span class=p>,</span> <span class=s1>&#39;Grapes&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Using a constructor</span>
@@ -156,30 +89,9 @@ Variable Multiple assignment 1 x, y, name, is_cool = (1, 2.5, 'a name', True) Ca
 </span></span><span class=line><span class=cl><span class=k>del</span> <span class=n>fruits2</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Get length</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>fruits</span><span class=p>))</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=set>set</h2><p>A Set is a collection which is unordered and unindexed. No duplicate members.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Create set</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>fruits</span><span class=p>))</span></span></span></code></pre></div></div><h2 id=set>set</h2><p>A Set is a collection which is unordered and unindexed. No duplicate members.</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Create set</span>
 </span></span><span class=line><span class=cl><span class=n>fruits_set</span> <span class=o>=</span> <span class=p>{</span><span class=s1>&#39;Apples&#39;</span><span class=p>,</span> <span class=s1>&#39;Oranges&#39;</span><span class=p>,</span> <span class=s1>&#39;Mango&#39;</span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Check if in set</span>
@@ -200,52 +112,9 @@ Variable Multiple assignment 1 x, y, name, is_cool = (1, 2.5, 'a name', True) Ca
 </span></span><span class=line><span class=cl><span class=c1># Delete not work</span>
 </span></span><span class=line><span class=cl><span class=c1># del fruits_set</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>fruits_set</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=dictionary>Dictionary</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span><span class=lnt>40
-</span><span class=lnt>41
-</span><span class=lnt>42
-</span><span class=lnt>43
-</span><span class=lnt>44
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Create dict</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>fruits_set</span><span class=p>)</span></span></span></code></pre></div></div><h2 id=dictionary>Dictionary</h2><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Create dict</span>
 </span></span><span class=line><span class=cl><span class=n>person</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=s1>&#39;first_name&#39;</span><span class=p>:</span> <span class=s1>&#39;John&#39;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=s1>&#39;last_name&#39;</span><span class=p>:</span> <span class=s1>&#39;Doe&#39;</span><span class=p>,</span>
@@ -288,62 +157,23 @@ Variable Multiple assignment 1 x, y, name, is_cool = (1, 2.5, 'a name', True) Ca
 </span></span><span class=line><span class=cl>    <span class=p>{</span><span class=s1>&#39;name&#39;</span><span class=p>:</span> <span class=s1>&#39;Kevin&#39;</span><span class=p>,</span> <span class=s1>&#39;age&#39;</span><span class=p>:</span> <span class=mi>25</span><span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>]</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>people</span><span class=p>[</span><span class=mi>1</span><span class=p>][</span><span class=s1>&#39;name&#39;</span><span class=p>])</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=functions>Functions</h2><p>A function is a block of code which only runs when it is called. In Python, we do not use curly brackets, we use indentation with tabs or spaces</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=k>def</span> <span class=nf>sayHello</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s1>&#39;Sam&#39;</span><span class=p>):</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>people</span><span class=p>[</span><span class=mi>1</span><span class=p>][</span><span class=s1>&#39;name&#39;</span><span class=p>])</span></span></span></code></pre></div></div><h2 id=functions>Functions</h2><p>A function is a block of code which only runs when it is called. In Python, we do not use curly brackets, we use indentation with tabs or spaces</p><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=k>def</span> <span class=nf>sayHello</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=s1>&#39;Sam&#39;</span><span class=p>):</span>
 </span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;Hello </span><span class=si>{</span><span class=n>name</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Return values</span>
 </span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>getSum</span><span class=p>(</span><span class=n>num1</span><span class=p>,</span> <span class=n>num2</span><span class=p>):</span>
 </span></span><span class=line><span class=cl>    <span class=n>total</span> <span class=o>=</span> <span class=n>num1</span> <span class=o>+</span> <span class=n>num2</span>
-</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>total</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=lambda-function>lambda function</h3><p>A lambda function is a small anonymous function.
-A lambda function can take any number of arguments, but can only have one expression. Very similar to JS arrow functions</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=n>getSum2</span> <span class=o>=</span> <span class=k>lambda</span> <span class=n>num1</span><span class=p>,</span> <span class=n>num2</span><span class=p>:</span> <span class=n>num1</span> <span class=o>+</span> <span class=n>num2</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>total</span></span></span></code></pre></div></div><h3 id=lambda-function>lambda function</h3><p>A lambda function is a small anonymous function.
+A lambda function can take any number of arguments, but can only have one expression. Very similar to JS arrow functions</p><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=n>getSum2</span> <span class=o>=</span> <span class=k>lambda</span> <span class=n>num1</span><span class=p>,</span> <span class=n>num2</span><span class=p>:</span> <span class=n>num1</span> <span class=o>+</span> <span class=n>num2</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>getSum</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=mi>3</span><span class=p>))</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=conditionals>conditionals</h2><p><code>if</code> <code>elif</code> <code>else</code></p><p>Comparison Operators (==, !=, >, &lt;, >=, &lt;=) - Used to compare values</p><p>Logical operators (and, or, not) - Used to combine conditional statements</p><p>Membership Operators (not, not in) - Membership operators are used to test if a sequence is presented in an object</p><p>Identity Operators (is, is not) - Compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:</p><h2 id=loop>Loop</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=n>people</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;John&#39;</span><span class=p>,</span> <span class=s1>&#39;Paul&#39;</span><span class=p>,</span> <span class=s1>&#39;Sara&#39;</span><span class=p>,</span> <span class=s1>&#39;Susan&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>getSum</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=mi>3</span><span class=p>))</span></span></span></code></pre></div></div><h2 id=conditionals>conditionals</h2><p><code>if</code> <code>elif</code> <code>else</code></p><p>Comparison Operators (==, !=, >, &lt;, >=, &lt;=) - Used to compare values</p><p>Logical operators (and, or, not) - Used to combine conditional statements</p><p>Membership Operators (not, not in) - Membership operators are used to test if a sequence is presented in an object</p><p>Identity Operators (is, is not) - Compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:</p><h2 id=loop>Loop</h2><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=n>people</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;John&#39;</span><span class=p>,</span> <span class=s1>&#39;Paul&#39;</span><span class=p>,</span> <span class=s1>&#39;Sara&#39;</span><span class=p>,</span> <span class=s1>&#39;Susan&#39;</span><span class=p>]</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Simple for loop</span>
 </span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>person</span> <span class=ow>in</span> <span class=n>people</span><span class=p>:</span>
@@ -373,35 +203,9 @@ A lambda function can take any number of arguments, but can only have one expres
 </span></span><span class=line><span class=cl><span class=n>count</span> <span class=o>=</span> <span class=mi>0</span>
 </span></span><span class=line><span class=cl><span class=k>while</span> <span class=n>count</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>:</span>
 </span></span><span class=line><span class=cl>  <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s1>&#39;Count: </span><span class=si>{</span><span class=n>count</span><span class=si>}</span><span class=s1>&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>  <span class=n>count</span> <span class=o>+=</span> <span class=mi>1</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=modules>Modules</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Core modules</span>
+</span></span><span class=line><span class=cl>  <span class=n>count</span> <span class=o>+=</span> <span class=mi>1</span></span></span></code></pre></div></div><h2 id=modules>Modules</h2><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Core modules</span>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>datetime</span>
 </span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>datetime</span> <span class=kn>import</span> <span class=n>date</span>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>time</span>
@@ -427,55 +231,14 @@ A lambda function can take any number of arguments, but can only have one expres
 </span></span><span class=line><span class=cl><span class=k>if</span> <span class=n>validate_email</span><span class=p>(</span><span class=n>email</span><span class=p>):</span>
 </span></span><span class=line><span class=cl>  <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Email is valid&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=k>else</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>  <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Email is bad&#39;</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div><p>validator.py</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
+</span></span><span class=line><span class=cl>  <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;Email is bad&#39;</span><span class=p>)</span></span></span></code></pre></div></div><p>validator.py</p><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=kn>import</span> <span class=nn>re</span>
 </span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>validate_email</span><span class=p>(</span><span class=n>email</span><span class=p>):</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>email</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>7</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nb>bool</span><span class=p>(</span><span class=n>re</span><span class=o>.</span><span class=k>match</span><span class=p>(</span><span class=s2>&#34;^.+@(\[?)[a-zA-Z0-9-.]+.([a-zA-Z]{2,3}|[0-9]{1,3})(]?)$&#34;</span><span class=p>,</span> <span class=n>email</span><span class=p>))</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=classes>Classes</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Create class</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nb>bool</span><span class=p>(</span><span class=n>re</span><span class=o>.</span><span class=k>match</span><span class=p>(</span><span class=s2>&#34;^.+@(\[?)[a-zA-Z0-9-.]+.([a-zA-Z]{2,3}|[0-9]{1,3})(]?)$&#34;</span><span class=p>,</span> <span class=n>email</span><span class=p>))</span></span></span></code></pre></div></div><h2 id=classes>Classes</h2><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Create class</span>
 </span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>User</span><span class=p>:</span>
 </span></span><span class=line><span class=cl>  <span class=c1># Constructor</span>
 </span></span><span class=line><span class=cl>  <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>name</span><span class=p>,</span> <span class=n>email</span><span class=p>,</span> <span class=n>age</span><span class=p>):</span>
@@ -513,41 +276,9 @@ A lambda function can take any number of arguments, but can only have one expres
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>janet</span><span class=o>.</span><span class=n>greeting</span><span class=p>())</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>brad</span><span class=o>.</span><span class=n>has_birthday</span><span class=p>()</span>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>brad</span><span class=o>.</span><span class=n>greeting</span><span class=p>())</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=file>File</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Open a file</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>brad</span><span class=o>.</span><span class=n>greeting</span><span class=p>())</span></span></span></code></pre></div></div><h2 id=file>File</h2><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=c1># Open a file</span>
 </span></span><span class=line><span class=cl><span class=n>myFile</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;myfile.txt&#39;</span><span class=p>,</span> <span class=s1>&#39;w&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Get some info</span>
@@ -579,24 +310,9 @@ A lambda function can take any number of arguments, but can only have one expres
 </span></span><span class=line><span class=cl><span class=n>myFile</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;myfile.txt&#39;</span><span class=p>,</span> <span class=s1>&#39;r+&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>myFile</span><span class=o>.</span><span class=n>readline</span><span class=p>())</span>
 </span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>myFile</span><span class=o>.</span><span class=n>readlines</span><span class=p>())</span>
-</span></span><span class=line><span class=cl><span class=n>myFile</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=python--json>Python & Json</h2><p>JSON is commonly used with data APIS. Here how we can parse JSON into a Python dictionary</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
+</span></span><span class=line><span class=cl><span class=n>myFile</span><span class=o>.</span><span class=n>close</span><span class=p>()</span></span></span></code></pre></div></div><h2 id=python--json>Python & Json</h2><p>JSON is commonly used with data APIS. Here how we can parse JSON into a Python dictionary</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-py"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-py data-lang=py><span class=line><span class=cl><span class=kn>import</span> <span class=nn>json</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>#  Sample JSON</span>
 </span></span><span class=line><span class=cl><span class=n>userJSON</span> <span class=o>=</span> <span class=s1>&#39;{&#34;first_name&#34;: &#34;John&#34;, &#34;last_name&#34;: &#34;Doe&#34;, &#34;age&#34;: 30}&#39;</span>
@@ -611,7 +327,5 @@ A lambda function can take any number of arguments, but can only have one expres
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>carJSON</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>car</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>carJSON</span><span class=p>)</span>
-</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-04-28</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/python/>python</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/chmod/ class=prev rel=prev title="chmod Overview"><i class="fas fa-angle-left fa-fw"></i>chmod Overview</a>
-<a href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ class=next rel=next title="Js Trick">Js Trick<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.119.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/ target=_blank>Haolin Yang</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:null,type:"algolia"}}</script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>carJSON</span><span class=p>)</span></span></span></code></pre></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-04-28</span></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on X" data-sharer=x data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-title="Python Overview" data-via=@TyrangYang data-hashtags=python><i class="fab fa-x-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Threads" data-sharer=threads data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-title="Python Overview"><i class="fab fa-threads fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-hashtag=python><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-title="Python Overview"><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-title="Python Overview"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@14.9.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-title="Python Overview"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Diaspora" data-sharer=diaspora data-url=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ data-title="Python Overview" data-description><i class="fab fa-diaspora fa-fw" aria-hidden=true></i></a><a href="https://t.me/share/url?url=https%3a%2f%2ftyrangyang.github.io%2fTyrangYang_blog%2fpython-overview%2f&amp;text=Python%20Overview" target=_blank title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/python/>Python</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/chmod/ class=prev rel=prev title="chmod Overview"><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>chmod Overview</a>
+<a href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ class=next rel=next title="Js Trick">Js Trick<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2022 - 2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/ target=_blank>xxxx</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i></a></div><div id=fixed-buttons-hidden><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><script src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script src=https://cdn.jsdelivr.net/npm/algoliasearch@5.20.2/dist/lite/builds/browser.umd.min.js></script><script src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js></script><script>window.config={comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"}}</script><script src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>

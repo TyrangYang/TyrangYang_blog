@@ -60,12 +60,12 @@ Use a context:
 1. React.createContext({defaultValue})
 2. import the context your create. Warp you root component which you want to use this context in <ContextName.provider ></ContextName.provider>
 3. component under root context component will access to this context
-    1. static contextType = MyContext
-    2. Warp component like
+   1. static contextType = MyContext
+   2. Warp component like
 
 ```js
 <MyContext.Consumer>
-    {(value) => /_ render something based on the context value _/}
+  {(value) => /_ render something based on the context value _/}
 </MyContext.Consumer>
 ```
 
@@ -81,21 +81,21 @@ Context API is not for solve all state sharing problem. Think like Context provi
 
 There are a few good use cases for refs:
 
--   Managing focus, text selection, or media playback.
--   Triggering imperative animations.
--   Integrating with third-party DOM libraries.
+- Managing focus, text selection, or media playback.
+- Triggering imperative animations.
+- Integrating with third-party DOM libraries.
 
 ### create ref
 
 ```js
 class MyComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.myRef = React.createRef();
-    }
-    render() {
-        return <div ref={this.myRef} />;
-    }
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+  }
+  render() {
+    return <div ref={this.myRef} />;
+  }
 }
 ```
 
@@ -109,48 +109,48 @@ const node = this.myRef.current;
 
 ```js
 class CustomTextInput extends React.Component {
-    constructor(props) {
-        super(props);
-        // create a ref to store the textInput DOM element
-        this.textInput = React.createRef();
-        this.focusTextInput = this.focusTextInput.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    // create a ref to store the textInput DOM element
+    this.textInput = React.createRef();
+    this.focusTextInput = this.focusTextInput.bind(this);
+  }
 
-    focusTextInput() {
-        // Explicitly focus the text input using the raw DOM API
-        // Note: we're accessing "current" to get the DOM node
-        this.textInput.current.focus();
-    }
+  focusTextInput() {
+    // Explicitly focus the text input using the raw DOM API
+    // Note: we're accessing "current" to get the DOM node
+    this.textInput.current.focus();
+  }
 
-    render() {
-        // tell React that we want to associate the <input> ref
-        // with the `textInput` that we created in the constructor
-        return (
-            <div>
-                <input type="text" ref={this.textInput} />
-                <input
-                    type="button"
-                    value="Focus the text input"
-                    onClick={this.focusTextInput}
-                />
-            </div>
-        );
-    }
+  render() {
+    // tell React that we want to associate the <input> ref
+    // with the `textInput` that we created in the constructor
+    return (
+      <div>
+        <input type="text" ref={this.textInput} />
+        <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput}
+        />
+      </div>
+    );
+  }
 }
 
 class AutoFocusTextInput extends React.Component {
-    constructor(props) {
-        super(props);
-        this.textInput = React.createRef();
-    }
+  constructor(props) {
+    super(props);
+    this.textInput = React.createRef();
+  }
 
-    componentDidMount() {
-        this.textInput.current.focusTextInput();
-    }
+  componentDidMount() {
+    this.textInput.current.focusTextInput();
+  }
 
-    render() {
-        return <CustomTextInput ref={this.textInput} />;
-    }
+  render() {
+    return <CustomTextInput ref={this.textInput} />;
+  }
 }
 ```
 
@@ -164,13 +164,13 @@ If you want to allow people to take a ref to your function component, you can us
 
 ```js
 function FancyInput(props, ref) {
-    const inputRef = useRef();
-    useImperativeHandle(ref, () => ({
-        focus: () => {
-            inputRef.current.focus();
-        },
-    }));
-    return <input ref={inputRef} />;
+  const inputRef = useRef();
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      inputRef.current.focus();
+    },
+  }));
+  return <input ref={inputRef} />;
 }
 FancyInput = React.forwardRef(FancyInpacut);
 ```
@@ -206,23 +206,23 @@ In `ContextProvider.jsx`
 import React, { useReducer, useEffect, createContext } from 'react';
 
 const initialState = {
-    ID: '',
+  ID: '',
 };
 
 export const store = createContext(initialState);
 const { Provider } = store;
 
 function ContextProvider({ children }) {
-    const [state, dispatch] = useReducer((state, action) => {
-        switch (action.type) {
-            case 'setID':
-                return { ...state, currentUserID: action.payload };
-            default:
-                throw new Error();
-        }
-    }, initialState);
+  const [state, dispatch] = useReducer((state, action) => {
+    switch (action.type) {
+      case 'setID':
+        return { ...state, currentUserID: action.payload };
+      default:
+        throw new Error();
+    }
+  }, initialState);
 
-    return <Provider value={{ state, dispatch }}>{children}</Provider>;
+  return <Provider value={{ state, dispatch }}>{children}</Provider>;
 }
 
 export default ContextProvider;
@@ -235,12 +235,12 @@ import React, { useContext, useEffect } from 'react';
 import { store } from './ContextProvider.jsx';
 
 const ContextConsumer = () => {
-    // get field that you pass in provider value
-    const { state, dispatch } = useContext(store);
-    useEffect(() => {
-        dispatch({ type: 'setID', payload: 'ID1' });
-    });
-    return <div> {state.ID} </div>;
+  // get field that you pass in provider value
+  const { state, dispatch } = useContext(store);
+  useEffect(() => {
+    dispatch({ type: 'setID', payload: 'ID1' });
+  });
+  return <div> {state.ID} </div>;
 };
 export default ContextConsumer;
 ```
@@ -255,34 +255,34 @@ export default ContextConsumer;
 const initialState = { count: 0 };
 
 function reducer(state, action) {
-    switch (action.type) {
-        case 'increment':
-            return { count: state.count + action.payload };
-        case 'decrement':
-            return { count: state.count - action.payload };
-        case 'clean':
-            return { count: 0 };
-        default:
-            throw new Error();
-    }
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + action.payload };
+    case 'decrement':
+      return { count: state.count - action.payload };
+    case 'clean':
+      return { count: 0 };
+    default:
+      throw new Error();
+  }
 }
 
 function Counter() {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    useEffect(() => {
-        dispatch({ type: 'clean' });
-    }, []);
-    return (
-        <>
-            Count: {state.count}
-            <button onClick={() => dispatch({ type: 'decrement', payload: 1 })}>
-                -
-            </button>
-            <button onClick={() => dispatch({ type: 'increment', payload: 1 })}>
-                +
-            </button>
-        </>
-    );
+  const [state, dispatch] = useReducer(reducer, initialState);
+  useEffect(() => {
+    dispatch({ type: 'clean' });
+  }, []);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({ type: 'decrement', payload: 1 })}>
+        -
+      </button>
+      <button onClick={() => dispatch({ type: 'increment', payload: 1 })}>
+        +
+      </button>
+    </>
+  );
 }
 ```
 
@@ -348,16 +348,16 @@ const OtherComponent = React.lazy(() => import('./OtherComponent'));
 const AnotherComponent = React.lazy(() => import('./AnotherComponent'));
 
 function MyComponent() {
-    return (
-        <div>
-            <Suspense fallback={<div>Loading...</div>}>
-                <section>
-                    <OtherComponent />
-                    <AnotherComponent />
-                </section>
-            </Suspense>
-        </div>
-    );
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section>
+          <OtherComponent />
+          <AnotherComponent />
+        </section>
+      </Suspense>
+    </div>
+  );
 }
 ```
 
@@ -386,18 +386,18 @@ when the logic in `A` need to reuse, we cannot copy and parse `A` to everywhere.
 
 ```js
 const A = () => {
-    // some logic will reuse
-    return (
-        <div>
-            // ... other component
-            <B_depends_on_A />
-        </div>
-    );
+  // some logic will reuse
+  return (
+    <div>
+      // ... other component
+      <B_depends_on_A />
+    </div>
+  );
 };
 
 // render <A/>
 const App = () => {
-    return <A />;
+  return <A />;
 };
 ```
 
@@ -435,18 +435,18 @@ Concretely, **a render prop is a function prop that a component uses to know wha
 
 ```js
 const A = ({ render }) => {
-    // some logic will reuse
-    const [state, setState] = useState(1);
-    return (
-        <div>
-            // ... other component
-            {render(state)}
-        </div>
-    );
+  // some logic will reuse
+  const [state, setState] = useState(1);
+  return (
+    <div>
+      // ... other component
+      {render(state)}
+    </div>
+  );
 };
 
 const App = () => {
-    return <A render={(args) => <B args={args} />} />;
+  return <A render={(args) => <B args={args} />} />;
 };
 ```
 
@@ -480,57 +480,55 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 export class ClassProfilePage extends React.Component {
-    showMessage = () => {
-        alert('Followed ' + this.props.user);
-    };
+  showMessage = () => {
+    alert('Followed ' + this.props.user);
+  };
 
-    handleClick = () => {
-        setTimeout(this.showMessage, 3000);
-    };
+  handleClick = () => {
+    setTimeout(this.showMessage, 3000);
+  };
 
-    render() {
-        return (
-            <button onClick={this.handleClick}>
-                Get Current value (class component)
-            </button>
-        );
-    }
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Get Current value (class component)
+      </button>
+    );
+  }
 }
 
 export function FunctionProfilePage(props) {
-    const showMessage = () => {
-        alert('Followed ' + props.user);
-    };
+  const showMessage = () => {
+    alert('Followed ' + props.user);
+  };
 
-    const handleClick = () => {
-        setTimeout(showMessage, 3000);
-    };
+  const handleClick = () => {
+    setTimeout(showMessage, 3000);
+  };
 
-    return (
-        <button onClick={handleClick}>
-            Get Snapshot (functional component)
-        </button>
-    );
+  return (
+    <button onClick={handleClick}>Get Snapshot (functional component)</button>
+  );
 }
 
 function App() {
-    const [state, setState] = useState(1);
-    return (
-        <div className="App">
-            <button
-                onClick={() => {
-                    setState((x) => x + x);
-                }}
-            >
-                double
-            </button>
-            <div>state:{state}</div>
-            {/* snapshot */}
-            <FunctionProfilePage user={state} />
-            {/* current value */}
-            <ClassProfilePage user={state} />
-        </div>
-    );
+  const [state, setState] = useState(1);
+  return (
+    <div className="App">
+      <button
+        onClick={() => {
+          setState((x) => x + x);
+        }}
+      >
+        double
+      </button>
+      <div>state:{state}</div>
+      {/* snapshot */}
+      <FunctionProfilePage user={state} />
+      {/* current value */}
+      <ClassProfilePage user={state} />
+    </div>
+  );
 }
 ```
 
@@ -550,20 +548,20 @@ This flowing code simulate this problem
 let props = { count: 10 };
 
 const fnA = ({ count }) => {
-    click = setTimeout(() => {
-        console.log(count);
-    }, 1000);
-    click;
+  click = setTimeout(() => {
+    console.log(count);
+  }, 1000);
+  click;
 };
 
 class fnB {
-    constructor(input) {
-        this.props = input;
-    }
+  constructor(input) {
+    this.props = input;
+  }
 
-    click = setTimeout(() => {
-        console.log(this.props.count);
-    }, 1000);
+  click = setTimeout(() => {
+    console.log(this.props.count);
+  }, 1000);
 }
 
 fnA(props);
@@ -607,7 +605,7 @@ Functional Base:
 ```js
 //  Don't do this!
 function Message({ messageColor }) {
-    const [state, setState] = useState(messageColor);
+  const [state, setState] = useState(messageColor);
 }
 ```
 
@@ -615,7 +613,7 @@ function Message({ messageColor }) {
 
 ```js
 function Message({ messageColor }) {
-    const color = messageColor;
+  const color = messageColor;
 }
 ```
 
@@ -643,7 +641,7 @@ const { color } = props;
 const [state, setState] = useState(null);
 
 useEffect(() => {
-    setState(color);
+  setState(color);
 }, [color]);
 ```
 
@@ -667,8 +665,6 @@ return <Wrapper>{cloneElement(children, { isOpen: isOpen })}</Wrapper>;
 Reference from [React.dev](https://react.dev/reference/react/cloneElement)
 
 ## React Posts Archive
-
-> [See my other post]({{< ref "/react-posts-archive.md" >}})
 
 ## Structure
 
@@ -706,11 +702,11 @@ Save previous state
 
 ```js
 const usePrevious = <T>(value: T, initialValue: T) => {
-    const ref = useRef(initialValue);
-    useEffect(() => {
-        ref.current = value;
-    });
-    return ref.current;
+  const ref = useRef(initialValue);
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
 };
 ```
 
@@ -720,32 +716,32 @@ Get which field trigger useEffect from dependency list
 
 ```js
 export const useEffectDebugger = (
-    effectHook: EffectCallback,
-    dependencies: DependencyList,
-    dependencyNames = []
+  effectHook: EffectCallback,
+  dependencies: DependencyList,
+  dependencyNames = []
 ) => {
-    const previousDeps = usePrevious(dependencies, []);
+  const previousDeps = usePrevious(dependencies, []);
 
-    const changedDeps = dependencies.reduce((prev, dependency, index) => {
-        if (dependency !== previousDeps[index]) {
-            const keyName = dependencyNames[index] || index;
-            return {
-                ...prev,
-                [keyName]: {
-                    before: previousDeps[index],
-                    after: dependency,
-                },
-            };
-        }
-
-        return prev;
-    }, {});
-
-    if (Object.keys(changedDeps).length) {
-        console.log('[use-effect-debugger] ', changedDeps);
+  const changedDeps = dependencies.reduce((prev, dependency, index) => {
+    if (dependency !== previousDeps[index]) {
+      const keyName = dependencyNames[index] || index;
+      return {
+        ...prev,
+        [keyName]: {
+          before: previousDeps[index],
+          after: dependency,
+        },
+      };
     }
 
-    useEffect(effectHook, [...dependencies, effectHook]);
+    return prev;
+  }, {});
+
+  if (Object.keys(changedDeps).length) {
+    console.log('[use-effect-debugger] ', changedDeps);
+  }
+
+  useEffect(effectHook, [...dependencies, effectHook]);
 };
 ```
 

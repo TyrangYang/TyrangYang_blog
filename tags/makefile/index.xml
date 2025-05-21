@@ -1,6 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>makefile - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/</link><description>makefile - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/" rel="self" type="application/rss+xml"/><item><title>Makefile overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link><pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid><description>What is makefile. How to write a makefile.
-Ref: https://opensource.com/article/18/8/what-how-makefile
-What is makefile A makefile is a file containing a set of directives used by a make build automation tool to generate a target/goal.
-You may have used make to compile a program from source code.
-How to write makefile To summarize, below is the syntax of a typical rule:
-1 2 target: prerequisites &amp;lt;TAB&amp;gt; recipe As an example, a target might be a binary file that depends on prerequisites (source files).</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Makefile - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/</link><description>Makefile - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/makefile/" rel="self" type="application/rss+xml"/><item><title>Makefile overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</link><pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/makefile-overview/</guid><description><![CDATA[<p>What is makefile. How to write a makefile.</p>
+<p>Ref: <a href="https://opensource.com/article/18/8/what-how-makefile" target="_blank" rel="noopener noreffer ">https://opensource.com/article/18/8/what-how-makefile</a></p>
+<h2 id="what-is-makefile">What is makefile</h2>
+<p>A <code>makefile</code> is a file containing a set of directives used by a <code>make</code> build automation tool to generate a target/goal.</p>
+<p>You may have used make to compile a program from source code.</p>
+<h2 id="how-to-write-makefile">How to write makefile</h2>
+<p>To summarize, below is the syntax of a typical rule:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-makefile">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="line"><span class="cl"><span class="nf">target</span><span class="o">:</span> <span class="n">prerequisites</span>
+</span></span><span class="line"><span class="cl"><span class="err">&lt;TAB&gt;</span> <span class="err">recipe</span></span></span></code></pre></div></div>
+<p>As an example, a <em>target</em> might be a binary file that <strong>depends on</strong> <em>prerequisites</em> (source files). On the other hand, a prerequisite can also be a target that depends on other dependencies:</p>]]></description></item></channel></rss>

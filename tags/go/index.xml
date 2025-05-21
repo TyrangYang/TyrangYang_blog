@@ -1,5 +1,18 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Go - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/go/</link><description>Go - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Jun 2020 00:25:10 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/go/" rel="self" type="application/rss+xml"/><item><title>Go overview 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/go/</link><pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid><description><![CDATA[Download Go to this link
-workspace Run go env in terminal. The variable GOPATH is the default workspace path. Project should under this folder.
-In this workspace, file should structured as how you route your project:
-1 2 3 4 5 6 7 . ├── bin ├── pkg └── src └── &lt;The home web page of version control&gt; └── &lt;User name&gt; └── &lt;Project name&gt; Example:
-1 2 3 4 5 6 7 8 .]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Go - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/go/</link><description>Go - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 21 Jun 2020 00:25:10 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/go/" rel="self" type="application/rss+xml"/><item><title>Go overview 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/go/</link><pubDate>Sun, 21 Jun 2020 00:25:10 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/go/</guid><description><![CDATA[<h2 id="download">Download</h2>
+<p><a href="https://golang.org/dl/" target="_blank" rel="noopener noreffer ">Go to this link</a></p>
+<h2 id="workspace">workspace</h2>
+<p>Run <code>go env</code> in terminal. The variable <code>GOPATH</code> is the default workspace path. Project should under this folder.</p>
+<p>In this workspace, file should structured as how you route your project:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── bin
+</span></span><span class="line"><span class="cl">├── pkg
+</span></span><span class="line"><span class="cl">└── src
+</span></span><span class="line"><span class="cl">    └── &lt;The home web page of version control&gt;
+</span></span><span class="line"><span class="cl">        └── &lt;User name&gt;
+</span></span><span class="line"><span class="cl">            └── &lt;Project name&gt;</span></span></code></pre></div></div>
+<p>Example:</p>]]></description></item></channel></rss>

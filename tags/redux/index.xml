@@ -1,7 +1,38 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>redux - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/redux/</link><description>redux - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Sep 2020 14:30:17 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/redux/" rel="self" type="application/rss+xml"/><item><title>Redux Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link><pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid><description>Redux Document: English 中文
-What is Redux Redux is a predictable state container for JavaScript apps.
-Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)
-When use Redux Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is not necessary
-Workflow Redux Workflow Example for Redux core In index.</description></item><item><title>Vuex Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link><pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid><description>Vuex Document: English 中文
-Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&amp;gt; More Detail about Redux
-Redux Workflow Basic structure In store/index.js</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Redux - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/redux/</link><description>Redux - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Sep 2020 14:30:17 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/redux/" rel="self" type="application/rss+xml"/><item><title>Redux Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</link><pubDate>Mon, 07 Sep 2020 14:30:17 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/redux-overview/</guid><description><![CDATA[<p>Redux Document: <a href="https://redux.js.org/introduction/getting-started" target="_blank" rel="noopener noreffer ">English</a> <a href="https://cn.redux.js.org" target="_blank" rel="noopener noreffer ">中文</a></p>
+<h2 id="what-is-redux">What is Redux</h2>
+<blockquote>
+<p>Redux is a predictable state container for JavaScript apps.</p></blockquote>
+<p>Redux also created by Facebook and it is a improvement from Flux. Redux is state management for any view library (mostly react)</p>
+<h2 id="when-use-redux">When use Redux</h2>
+<p>Redux is design for complex UI, multiple view source or many interaction with server. If a simple UI, Redux is <strong>not necessary</strong></p>
+<h2 id="workflow">Workflow</h2>
+<figure><figcaption>
+      <h4>Redux Workflow</h4>
+    </figcaption>
+</figure>
+
+<h2 id="example-for-redux-core">Example for Redux core</h2>
+<p>In <code>index.html</code></p>]]></description></item><item><title>Vuex Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link><pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid><description><![CDATA[<p>Vuex Document: <a href="https://vuex.vuejs.org" target="_blank" rel="noopener noreffer ">English</a> <a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener noreffer ">中文</a></p>
+<h2 id="concept">Concept</h2>
+<ul>
+<li><strong>State</strong> - App-level state/data</li>
+<li><strong>Getters</strong> - Get pieces of state or computed values from state</li>
+<li><strong>Actions</strong> - Called from components to commit mutation (async)</li>
+<li><strong>Mutations</strong> - Mutate the state (sync)</li>
+<li><strong>Modules</strong> - Each module can have its own state, getters, actions and mutations</li>
+</ul>
+<h2 id="work-flow">Work flow</h2>
+<figure><figcaption>
+      <h4>Vuex Workflow</h4>
+    </figcaption>
+</figure>
+
+<blockquote>
+<p>Vuex work flow is similar with Redux =&gt; <a href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" rel="">More Detail about Redux</a></p></blockquote>
+<figure><figcaption>
+      <h4>Redux Workflow</h4>
+    </figcaption>
+</figure>
+
+<h2 id="basic-structure">Basic structure</h2>
+<p>In <code>store/index.js</code></p>]]></description></item></channel></rss>

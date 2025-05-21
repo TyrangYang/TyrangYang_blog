@@ -1,7 +1,55 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>bash - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/bash/</link><description>bash - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bash/" rel="self" type="application/rss+xml"/><item><title>My Zsh setting</title><link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid><description>Zsh &amp;amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
-Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&amp;rsquo;s recommended to use zsh over bash.</description></item><item><title>Z-shell overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</link><pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</guid><description><![CDATA[Reference Very useful blog:
-http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname
-http://zsh.sourceforge.net/Intro/intro_12.html#SEC12
-Variable name usage %m Hostname %n Username %d Directory from / %~ Directory from ~ %t time (12) %T time (24) %d and %~ can add a number to specify how many previous path will show. Like %1~
-Guide to zsh Here is the link to A User&rsquo;s Guide to the Z-Shell
-single quotes &amp; double quotes 1 2 RPROMPT=&#34;$(command)&#34; # this will run command, then set RPROMPT to the result RPROMPT=&#39;$(command)&#39; # this will set RPROMPT to run command each time it is printed Date man Date]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Bash - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/bash/</link><description>Bash - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bash/" rel="self" type="application/rss+xml"/><item><title>My Zsh setting</title><link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid><description><![CDATA[<h2 id="zsh--bash">Zsh &amp; Bash</h2>
+<p>Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.</p>
+<h2 id="zsh">Zsh</h2>
+<p>The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&rsquo;s recommended to use zsh over bash. It&rsquo;s also highly recommended to install a framework with zsh as it makes dealing with configuration, plugins and themes a lot nicer.</p>]]></description></item><item><title>Z-shell overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</link><pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/zshell-overview/</guid><description><![CDATA[<h2 id="reference">Reference</h2>
+<p>Very useful blog:</p>
+<p><a href="http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname" target="_blank" rel="noopener noreffer ">http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/#username-and-hostname</a></p>
+<p><a href="http://zsh.sourceforge.net/Intro/intro_12.html#SEC12" target="_blank" rel="noopener noreffer ">http://zsh.sourceforge.net/Intro/intro_12.html#SEC12</a></p>
+<h2 id="variable">Variable</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">name</th>
+          <th style="text-align: center">usage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">%m</td>
+          <td style="text-align: center">Hostname</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%n</td>
+          <td style="text-align: center">Username</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%d</td>
+          <td style="text-align: center">Directory from /</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%~</td>
+          <td style="text-align: center">Directory from ~</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%t</td>
+          <td style="text-align: center">time (12)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%T</td>
+          <td style="text-align: center">time (24)</td>
+      </tr>
+  </tbody>
+</table>
+<p>%d and %~ can add a number to specify how many previous path will show. Like <code>%1~</code></p>
+<h2 id="guide-to-zsh">Guide to zsh</h2>
+<p>Here is the link to <a href="http://zsh.sourceforge.net/Guide/zshguide.html" target="_blank" rel="noopener noreffer ">A User&rsquo;s Guide to the Z-Shell</a></p>
+<h2 id="single-quotes--double-quotes">single quotes &amp; double quotes</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">RPROMPT=&#34;$(command)&#34;  # this will run command, then set RPROMPT to the result
+</span></span><span class="line"><span class="cl">RPROMPT=&#39;$(command)&#39;  # this will set RPROMPT to run command each time it is printed</span></span></code></pre></div></div>
+<h2 id="date">Date</h2>
+<p><code>man Date</code></p>]]></description></item></channel></rss>

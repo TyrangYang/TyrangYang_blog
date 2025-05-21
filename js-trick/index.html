@@ -1,59 +1,34 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Js Trick - TyrangYang_Blog</title><meta name=Description content><meta property="og:title" content="Js Trick"><meta property="og:description" content="warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
-Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!''; // false !!variable == Boolean(variable); String => Integer 1 2 3 4 Number('100'); //100 +'100'; // 100 +'abc'; // NAN Object <=> Array Array => Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object."><meta property="og:type" content="article"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/js-trick/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-05-03T23:12:40-04:00"><meta property="article:modified_time" content="2020-05-03T23:12:40-04:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Js Trick"><meta name=twitter:description content="warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
-Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!''; // false !!variable == Boolean(variable); String => Integer 1 2 3 4 Number('100'); //100 +'100'; // 100 +'abc'; // NAN Object <=> Array Array => Object 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object."><meta name=application-name content="TyrangYang_Blog"><meta name=apple-mobile-web-app-title content="TyrangYang_Blog"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/vue-overview/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/normalize/normalize.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/fontawesome-free/all.min.css><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Js Trick","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"},"genre":"posts","keywords":"javascript, trick","wordcount":1694,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished":"2020-05-03T23:12:40-04:00","dateModified":"2020-05-03T23:12:40-04:00","publisher":{"@type":"Organization","name":"Haolin Yang"},"author":{"@type":"Person","name":"Haolin Yang"},"description":""}</script></head><body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":""==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:""==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Js Trick - TyrangYang_Blog</title><meta name=Description content="This is my cool site"><meta property="og:url" content="https://tyrangyang.github.io/TyrangYang_blog/js-trick/">
+<meta property="og:site_name" content="TyrangYang_Blog"><meta property="og:title" content="Js Trick"><meta property="og:description" content="warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
+Conversion Any => Boolean !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!''; // false !!variable == Boolean(variable); String => Integer Number('100'); //100 +'100'; // 100 +'abc'; // NAN Object <=> Array Array => Object let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.assign({}, arr); let objFromArr2 = { ...arr }; console.log(objFromArr1); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 } console.log(objFromArr2); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 } let pair = [ ['key1', 'val1'], ['key2', 'val2'], ]; // Map works as well let objFromPair = Object.fromEntries(arr); // ES10 console.log(objFromPair); //{ key1: 'val1', key2: 'val2' } Object.fromEntries(arr) included in ES10 (ES2019). Before ES10 or convert a complex array, arr.reduce(()=>{}, {}) is a good method"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-05-03T23:12:40-04:00"><meta property="article:modified_time" content="2020-05-03T23:12:40-04:00"><meta property="article:tag" content="Javascript"><meta property="article:tag" content="Trick"><meta name=twitter:card content="summary"><meta name=twitter:title content="Js Trick"><meta name=twitter:description content="warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
+Conversion Any => Boolean !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!''; // false !!variable == Boolean(variable); String => Integer Number('100'); //100 +'100'; // 100 +'abc'; // NAN Object <=> Array Array => Object let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.assign({}, arr); let objFromArr2 = { ...arr }; console.log(objFromArr1); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 } console.log(objFromArr2); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 } let pair = [ ['key1', 'val1'], ['key2', 'val2'], ]; // Map works as well let objFromPair = Object.fromEntries(arr); // ES10 console.log(objFromPair); //{ key1: 'val1', key2: 'val2' } Object.fromEntries(arr) included in ES10 (ES2019). Before ES10 or convert a complex array, arr.reduce(()=>{}, {}) is a good method"><meta name=twitter:site content="@TyrangYang"><meta name=application-name content="My cool site"><meta name=apple-mobile-web-app-title content="My cool site"><meta name=referrer content="no-referrer"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=https://tyrangyang.github.io/TyrangYang_blog/favicon.ico><link rel=icon type=image/png sizes=32x32 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://tyrangyang.github.io/TyrangYang_blog/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=https://tyrangyang.github.io/TyrangYang_blog/apple-touch-icon.png><link rel=mask-icon href=https://tyrangyang.github.io/TyrangYang_blog/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=https://tyrangyang.github.io/TyrangYang_blog/site.webmanifest><link rel=canonical href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/><link rel=prev href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/><link rel=next href=https://tyrangyang.github.io/TyrangYang_blog/vue-overview/><link rel=stylesheet href=https://tyrangyang.github.io/TyrangYang_blog/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload='this.onload=null,this.rel="stylesheet"'><noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Js Trick","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/"},"genre":"posts","keywords":"javascript, trick","wordcount":1421,"url":"https:\/\/tyrangyang.github.io\/TyrangYang_blog\/js-trick\/","datePublished":"2020-05-03T23:12:40-04:00","dateModified":"2020-05-03T23:12:40-04:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"xxxx"},"description":""}</script></head><body data-header-desktop=fixed data-header-mobile=auto><script>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/><i class='fas fa-book-open'></i> Posts </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/><i class='fas fa-tags'></i> Tags </a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/><i class='fab fa-buffer'></i> Categories </a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
-<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i></a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Js Trick</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/ title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Haolin Yang</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/note/><i class="far fa-folder fa-fw"></i>Note</a>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/categories/trick/><i class="far fa-folder fa-fw"></i>Trick</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-05-03>2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1694 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#conversion>Conversion</a><ul><li><a href=#any--boolean>Any => Boolean</a></li><li><a href=#string--integer>String => Integer</a></li><li><a href=#object--array>Object &lt;=> Array</a><ul><li><a href=#array--object>Array => Object</a></li><li><a href=#object--array-1>Object => Array</a></li></ul></li></ul></li><li><a href=#let-vs-var>let vs var</a></li><li><a href=#shallow-copy--deep-copy>Shallow copy & Deep copy</a><ul><li><a href=#shallow-copy>Shallow copy</a></li><li><a href=#deep-copy>deep copy</a></li></ul></li><li><a href=#exponential>Exponential</a></li><li><a href=#nullish-coalescing>Nullish coalescing</a></li><li><a href=#optional-chaining>Optional chaining</a></li><li><a href=#destruct>Destruct</a><ul><li><a href=#add-space-for-every-four-digit>Add space for every four digit</a></li></ul></li><li><a href=#function-compose>Function compose</a></li><li><a href=#tagged-template>tagged template</a></li><li><a href=#debounce--throttle>Debounce & throttle</a><ul><li><a href=#debounce>Debounce</a></li><li><a href=#throttle>Throttle</a></li></ul></li><li><a href=#snapshot--current-value>Snapshot & current value</a></li><li><a href=#bind--callback>bind &lt;==> callback</a></li><li><a href=#format-time-string>Format time string</a></li><li><a href=#relative-time-expression>Relative time expression</a></li><li><a href=#lodash-api>Lodash api</a><ul><li><a href=#lodash-to-chrome>Lodash to Chrome</a></li></ul></li></ul></nav></div></div><div class=content id=content><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>warning<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).</div></div></div><blockquote><p>You can read this <a href=https://medium.com/engineered-publicis-sapient/javascript-es6-es7-es10-where-are-we-8ac044dfd964 target=_blank rel="noopener noreffer">Article to know What new feature brings in since ES6</a></p></blockquote><h2 id=conversion>Conversion</h2><h3 id=any--boolean>Any => Boolean</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=o>!!</span><span class=kc>false</span><span class=p>;</span> <span class=c1>// false
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i>
+</span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=TyrangYang_Blog>TyrangYang_Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw" aria-hidden=true></i>
+</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw" aria-hidden=true></i>
+</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin" aria-hidden=true></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/posts/ title><i class='fas fa-book-open'></i> Posts</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/tags/ title><i class='fas fa-tags'></i> Tags</a><a class=menu-item href=https://tyrangyang.github.io/TyrangYang_blog/categories/ title><i class='fab fa-buffer'></i> Categories</a><a class=menu-item href=https://github.com/TyrangYang/TyrangYang_blog title="Blog github" rel="noopener noreffer" target=_blank><i class='fab fa-github fa-fw fa-fw'></i> </a><a class=menu-item href=https://tyrangyang.github.io/ title="home page" rel="noopener noreffer" target=_blank><i class="fas fa-home"></i> </a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Js Trick</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://tyrangyang.github.io/TyrangYang_blog/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>xxxx</a></span>&nbsp;<span class=post-category>included in <a href=https://tyrangyang.github.io/TyrangYang_blog/categories/note/><i class="far fa-folder fa-fw" aria-hidden=true></i>Note</a>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/categories/trick/><i class="far fa-folder fa-fw" aria-hidden=true></i>Trick</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2020-05-03>2020-05-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;1421 words&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;7 minutes&nbsp;</div></div><div class="details toc" id=toc-static data-kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right" aria-hidden=true></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#conversion>Conversion</a><ul><li><a href=#any--boolean>Any => Boolean</a></li><li><a href=#string--integer>String => Integer</a></li><li><a href=#object--array>Object &lt;=> Array</a><ul><li><a href=#array--object>Array => Object</a></li><li><a href=#object--array-1>Object => Array</a></li></ul></li></ul></li><li><a href=#let-vs-var>let vs var</a></li><li><a href=#shallow-copy--deep-copy>Shallow copy & Deep copy</a><ul><li><a href=#shallow-copy>Shallow copy</a></li><li><a href=#deep-copy>deep copy</a></li></ul></li><li><a href=#exponential>Exponential</a></li><li><a href=#nullish-coalescing>Nullish coalescing</a></li><li><a href=#optional-chaining>Optional chaining</a></li><li><a href=#destruct>Destruct</a><ul><li><a href=#add-space-for-every-four-digit>Add space for every four digit</a></li></ul></li><li><a href=#function-compose>Function compose</a></li><li><a href=#tagged-template>tagged template</a></li><li><a href=#debounce--throttle>Debounce & throttle</a><ul><li><a href=#debounce>Debounce</a></li><li><a href=#throttle>Throttle</a></li></ul></li><li><a href=#snapshot--current-value>Snapshot & current value</a></li><li><a href=#bind--callback>bind &lt;==> callback</a></li><li><a href=#format-time-string>Format time string</a></li><li><a href=#relative-time-expression>Relative time expression</a></li><li><a href=#lodash-api>Lodash api</a><ul><li><a href=#lodash-to-chrome>Lodash to Chrome</a></li></ul></li></ul></nav></div></div><div class=content id=content><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden=true></i>warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden=true></i></div><div class=details-content><div class=admonition-content>Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).</div></div></div><blockquote><p>You can read this <a href=https://medium.com/engineered-publicis-sapient/javascript-es6-es7-es10-where-are-we-8ac044dfd964 target=_blank rel="noopener noreffer">Article to know What new feature brings in since ES6</a></p></blockquote><h2 id=conversion>Conversion</h2><h3 id=any--boolean>Any => Boolean</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=o>!!</span><span class=kc>false</span><span class=p>;</span> <span class=c1>// false
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>!!</span><span class=kc>undefined</span><span class=p>;</span> <span class=c1>// false
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>!!</span><span class=kc>null</span><span class=p>;</span> <span class=c1>// false
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>!!</span><span class=kc>NaN</span><span class=p>;</span> <span class=c1>// false
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>!!</span><span class=mi>0</span><span class=p>;</span> <span class=c1>// false
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>!!</span><span class=s1>&#39;&#39;</span><span class=p>;</span> <span class=c1>// false
 </span></span></span><span class=line><span class=cl><span class=c1></span>
-</span></span><span class=line><span class=cl><span class=o>!!</span><span class=nx>variable</span> <span class=o>==</span> <span class=nb>Boolean</span><span class=p>(</span><span class=nx>variable</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=string--integer>String => Integer</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nb>Number</span><span class=p>(</span><span class=s1>&#39;100&#39;</span><span class=p>);</span> <span class=c1>//100
+</span></span><span class=line><span class=cl><span class=o>!!</span><span class=nx>variable</span> <span class=o>==</span> <span class=nb>Boolean</span><span class=p>(</span><span class=nx>variable</span><span class=p>);</span></span></span></code></pre></div></div><h3 id=string--integer>String => Integer</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nb>Number</span><span class=p>(</span><span class=s1>&#39;100&#39;</span><span class=p>);</span> <span class=c1>//100
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>+</span><span class=s1>&#39;100&#39;</span><span class=p>;</span> <span class=c1>// 100
 </span></span></span><span class=line><span class=cl><span class=c1></span>
 </span></span><span class=line><span class=cl><span class=o>+</span><span class=s1>&#39;abc&#39;</span><span class=p>;</span> <span class=c1>// NAN
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=object--array>Object &lt;=> Array</h3><h4 id=array--object>Array => Object</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>];</span>
+</span></span></span></code></pre></div></div><h3 id=object--array>Object &lt;=> Array</h3><h4 id=array--object>Array => Object</h4><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>];</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>objFromArr1</span> <span class=o>=</span> <span class=nb>Object</span><span class=p>.</span><span class=nx>assign</span><span class=p>({},</span> <span class=nx>arr</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>
@@ -71,19 +46,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>objFromPair</span> <span class=o>=</span> <span class=nb>Object</span><span class=p>.</span><span class=nx>fromEntries</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span> <span class=c1>// ES10
 </span></span></span><span class=line><span class=cl><span class=c1></span>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>objFromPair</span><span class=p>);</span> <span class=c1>//{ key1: &#39;val1&#39;, key2: &#39;val2&#39; }
-</span></span></span></code></pre></td></tr></table></div></div><blockquote><p><code>Object.fromEntries(arr)</code> included in ES10 (ES2019). Before ES10 or convert a complex array, <code>arr.reduce(()=>{}, {})</code> is a good method</p></blockquote><h4 id=object--array-1>Object => Array</h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+</span></span></span></code></pre></div></div><blockquote><p><code>Object.fromEntries(arr)</code> included in ES10 (ES2019). Before ES10 or convert a complex array, <code>arr.reduce(()=>{}, {})</code> is a good method</p></blockquote><h4 id=object--array-1>Object => Array</h4><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nx>name</span><span class=o>:</span> <span class=mi>1</span><span class=p>,</span>
 </span></span><span class=line><span class=cl>    <span class=nx>age</span><span class=o>:</span> <span class=mi>2</span><span class=p>,</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
@@ -95,19 +60,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>keys</span><span class=p>);</span> <span class=c1>// [ &#39;name&#39;, &#39;age&#39; ]
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>values</span><span class=p>);</span> <span class=c1>// [  1, 2 ]
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>entries</span><span class=p>);</span> <span class=c1>// [ [ &#39;name&#39;, 1 ], [ &#39;age&#39;, 2 ] ]
-</span></span></span></code></pre></td></tr></table></div></div><blockquote><p><code>Object.values</code> & <code>Object.entries</code> are from ES8 (ES2017)</p></blockquote><h2 id=let-vs-var>let vs var</h2><ul><li>var is function-scoped</li><li>let (and const) are block-scoped</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>doMoreStuff</span><span class=p>()</span> <span class=p>{</span>
+</span></span></span></code></pre></div></div><blockquote><p><code>Object.values</code> & <code>Object.entries</code> are from ES8 (ES2017)</p></blockquote><h2 id=let-vs-var>let vs var</h2><ul><li>var is function-scoped</li><li>let (and const) are block-scoped</li></ul><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>doMoreStuff</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=mi>2</span> <span class=o>+</span> <span class=mi>4</span> <span class=o>===</span> <span class=mi>4</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=c1>// Here, `a` will be available for the whole function
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kd>var</span> <span class=nx>a</span> <span class=o>=</span> <span class=mi>5</span><span class=p>;</span>
@@ -119,26 +74,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nx>doMoreStuff</span><span class=p>();</span> <span class=c1>// ​​b is not defined​​
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=shallow-copy--deep-copy>Shallow copy & Deep copy</h2><h3 id=shallow-copy>Shallow copy</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// array
+</span></span></span></code></pre></div></div><h2 id=shallow-copy--deep-copy>Shallow copy & Deep copy</h2><h3 id=shallow-copy>Shallow copy</h3><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// array
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>nums1</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>];</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>nums2</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>nums1</span><span class=p>];</span>
@@ -156,37 +94,16 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>    <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>};</span>
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span> <span class=p>{</span> <span class=p>...</span><span class=nx>obj1</span> <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj3</span> <span class=o>=</span> <span class=nb>Object</span><span class=p>.</span><span class=nx>assign</span><span class=p>({},</span> <span class=nx>obj1</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=deep-copy>deep copy</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// array and obj`
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>copy</span> <span class=o>=</span> <span class=nx>JSON</span><span class=p>.</span><span class=nx>parse</span><span class=p>(</span><span class=nx>JSON</span><span class=p>.</span><span class=nx>stringify</span><span class=p>(</span><span class=nx>orig</span><span class=p>));</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=exponential>Exponential</h2><p>ES7 feature</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>res</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>pow</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj3</span> <span class=o>=</span> <span class=nb>Object</span><span class=p>.</span><span class=nx>assign</span><span class=p>({},</span> <span class=nx>obj1</span><span class=p>);</span></span></span></code></pre></div></div><h3 id=deep-copy>deep copy</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// array and obj`
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>copy</span> <span class=o>=</span> <span class=nx>JSON</span><span class=p>.</span><span class=nx>parse</span><span class=p>(</span><span class=nx>JSON</span><span class=p>.</span><span class=nx>stringify</span><span class=p>(</span><span class=nx>orig</span><span class=p>));</span></span></span></code></pre></div></div><h2 id=exponential>Exponential</h2><p>ES7 feature</p><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>res</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>pow</span><span class=p>(</span><span class=nx>x</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=c1>// new operator added in ES7
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>res</span> <span class=o>=</span> <span class=nx>x</span> <span class=o>**</span> <span class=mi>2</span><span class=p>;</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=nullish-coalescing>Nullish coalescing</h2><p>MDN: <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator target=_blank rel="noopener noreffer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator</a></p><p>The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is <em>null</em> or <em>undefined</em>, and otherwise returns its left-hand side operand.</p><p>This operator used to replace <code>||</code> in some situations that <code>or</code> logic cannot handle elegantly.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>calTax</span> <span class=o>=</span> <span class=p>(</span><span class=nx>price</span><span class=p>,</span> <span class=nx>taxRate</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>res</span> <span class=o>=</span> <span class=nx>x</span> <span class=o>**</span> <span class=mi>2</span><span class=p>;</span></span></span></code></pre></div></div><h2 id=nullish-coalescing>Nullish coalescing</h2><p>MDN: <a href=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator target=_blank rel="noopener noreffer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator</a></p><p>The nullish coalescing operator (??) is a logical operator that returns its right-hand side operand when its left-hand side operand is <em>null</em> or <em>undefined</em>, and otherwise returns its left-hand side operand.</p><p>This operator used to replace <code>||</code> in some situations that <code>or</code> logic cannot handle elegantly.</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>calTax</span> <span class=o>=</span> <span class=p>(</span><span class=nx>price</span><span class=p>,</span> <span class=nx>taxRate</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nx>taxRate</span> <span class=o>=</span> <span class=nx>taxRate</span> <span class=o>||</span> <span class=mf>0.05</span><span class=p>;</span> <span class=c1>// if taxRate not provided (undefined), set default to 0.05
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=c1>// But there is a problem when taxRate to 0
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=k>return</span> <span class=nx>price</span> <span class=o>*</span> <span class=p>(</span><span class=mi>1</span> <span class=o>+</span> <span class=nx>taxRate</span><span class=p>);</span>
@@ -204,26 +121,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>res3</span> <span class=o>=</span> <span class=nx>calTax2</span><span class=p>(</span><span class=mi>100</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span> <span class=c1>// 100 correct X
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>res4</span> <span class=o>=</span> <span class=nx>calTax2</span><span class=p>(</span><span class=mi>100</span><span class=p>);</span> <span class=c1>// 105 correct ✓
 </span></span></span><span class=line><span class=cl><span class=c1></span>
-</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>res3</span><span class=p>,</span> <span class=nx>res4</span><span class=p>);</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=optional-chaining>Optional chaining</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>class</span> <span class=nx>Person</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>res3</span><span class=p>,</span> <span class=nx>res4</span><span class=p>);</span></span></span></code></pre></div></div><h2 id=optional-chaining>Optional chaining</h2><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>class</span> <span class=nx>Person</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nx>constructor</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=k>this</span><span class=p>.</span><span class=nx>name</span> <span class=o>=</span> <span class=nx>name</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>        <span class=k>this</span><span class=p>.</span><span class=nx>age</span> <span class=o>=</span> <span class=nx>age</span><span class=p>;</span>
@@ -241,30 +141,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>p1</span><span class=p>.</span><span class=nx>getSex</span><span class=p>());</span> <span class=c1>// Error
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>p1</span><span class=p>.</span><span class=nx>name</span><span class=o>?</span><span class=p>.</span><span class=nx>firstName</span><span class=p>);</span> <span class=c1>// undefined
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>p1</span><span class=p>.</span><span class=nx>getSex</span><span class=o>?</span><span class=p>.());</span> <span class=c1>// undefined
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=destruct>Destruct</h2><blockquote><p><em>Array destructing</em> is ES6 feature, <strong>But</strong> <em>Object destructing</em> is ES9 feature&mldr;.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>array</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>];</span>
+</span></span></span></code></pre></div></div><h2 id=destruct>Destruct</h2><blockquote><p><em>Array destructing</em> is ES6 feature, <strong>But</strong> <em>Object destructing</em> is ES9 feature&mldr;.</p></blockquote><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>array</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>];</span>
 </span></span><span class=line><span class=cl><span class=kd>let</span> <span class=p>[</span><span class=nx>a1</span><span class=p>,</span> <span class=nx>a2</span><span class=p>,</span> <span class=p>...</span><span class=nx>a3</span><span class=p>]</span> <span class=o>=</span> <span class=nx>array</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>a1</span><span class=p>,</span> <span class=nx>a2</span><span class=p>,</span> <span class=nx>a3</span><span class=p>);</span> <span class=c1>// 1 2 [ 3, 4 ]
 </span></span></span><span class=line><span class=cl><span class=c1></span>
@@ -287,32 +166,18 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl><span class=p>}</span> <span class=o>=</span> <span class=nx>test</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>d</span><span class=p>,</span> <span class=nx>e</span><span class=p>,</span> <span class=nx>f</span><span class=p>);</span> <span class=c1>// 1 2 3 4 { f: 5, g: 6 }
-</span></span></span></code></pre></td></tr></table></div></div><h3 id=add-space-for-every-four-digit>Add space for every four digit</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;123456789&#39;</span><span class=p>;</span>
+</span></span></span></code></pre></div></div><h3 id=add-space-for-every-four-digit>Add space for every four digit</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>value</span> <span class=o>=</span> <span class=s1>&#39;123456789&#39;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=nx>value</span> <span class=o>=</span> <span class=nx>value</span>
 </span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>replace</span><span class=p>(</span><span class=sr>/\W/gi</span><span class=p>,</span> <span class=s1>&#39;&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>replace</span><span class=p>(</span><span class=sr>/(.{4})/g</span><span class=p>,</span> <span class=s1>&#39;$1 &#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>trim</span><span class=p>();</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>value</span><span class=p>);</span> <span class=c1>// 1234 5678 9
-</span></span></span></code></pre></td></tr></table></div></div><blockquote><p><code>.trim()</code> for supporting deletion</p></blockquote><h2 id=function-compose>Function compose</h2><p>Compose a list of function into one. I saw this in create middleware</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>f1</span> <span class=o>=</span> <span class=p>(</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=sb>`1&lt;</span><span class=si>${</span><span class=nx>val</span><span class=si>}</span><span class=sb>&gt;`</span><span class=p>;</span>
+</span></span></span></code></pre></div></div><blockquote><p><code>.trim()</code> for supporting deletion</p></blockquote><h2 id=function-compose>Function compose</h2><p>Compose a list of function into one. I saw this in create middleware</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>f1</span> <span class=o>=</span> <span class=p>(</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=sb>`1&lt;</span><span class=si>${</span><span class=nx>val</span><span class=si>}</span><span class=sb>&gt;`</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>f2</span> <span class=o>=</span> <span class=p>(</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=sb>`2&lt;</span><span class=si>${</span><span class=nx>val</span><span class=si>}</span><span class=sb>&gt;`</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>compose</span> <span class=o>=</span> <span class=p>(...</span><span class=nx>functionList</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
@@ -323,22 +188,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>composedFun</span> <span class=o>=</span> <span class=nx>compose</span><span class=p>(</span><span class=nx>f1</span><span class=p>,</span> <span class=nx>f2</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>composedFun</span><span class=p>(</span><span class=s1>&#39;hello world&#39;</span><span class=p>));</span> <span class=c1>// 2&lt;1&lt;hello world&gt;&gt;
-</span></span></span></code></pre></td></tr></table></div></div><p>But we can improve this compose function.</p><ol><li>not need those <code>return</code></li><li>the final reduced function <code>(val) => curFn(prevFn(val));</code> may have several arguments, therefore <code>val</code> change to <code>...args</code></li><li>reduce function should give the second parameter as initial state in case the function list is empty</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>f1</span> <span class=o>=</span> <span class=p>(</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=sb>`1&lt;</span><span class=si>${</span><span class=nx>val</span><span class=si>}</span><span class=sb>&gt;`</span><span class=p>;</span>
+</span></span></span></code></pre></div></div><p>But we can improve this compose function.</p><ol><li>not need those <code>return</code></li><li>the final reduced function <code>(val) => curFn(prevFn(val));</code> may have several arguments, therefore <code>val</code> change to <code>...args</code></li><li>reduce function should give the second parameter as initial state in case the function list is empty</li></ol><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>f1</span> <span class=o>=</span> <span class=p>(</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=sb>`1&lt;</span><span class=si>${</span><span class=nx>val</span><span class=si>}</span><span class=sb>&gt;`</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>f2</span> <span class=o>=</span> <span class=p>(</span><span class=nx>val</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=sb>`2&lt;</span><span class=si>${</span><span class=nx>val</span><span class=si>}</span><span class=sb>&gt;`</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>compose</span> <span class=o>=</span> <span class=p>(...</span><span class=nx>functionList</span><span class=p>)</span> <span class=p>=&gt;</span>
@@ -353,20 +205,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>composedFun</span><span class=p>(</span><span class=s1>&#39;hello world&#39;</span><span class=p>));</span> <span class=c1>// 2&lt;1&lt;hello world&gt;&gt;
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>composedFun2</span> <span class=o>=</span> <span class=nx>compose</span><span class=p>();</span>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>composedFun2</span><span class=p>(</span><span class=s1>&#39;hello world&#39;</span><span class=p>));</span> <span class=c1>// hello world
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=tagged-template>tagged template</h2><p>Since es6, js provide a special function called tagged template which use template string as parameter</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>normal</span><span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>{</span>
+</span></span></span></code></pre></div></div><h2 id=tagged-template>tagged template</h2><p>Since es6, js provide a special function called tagged template which use template string as parameter</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>normal</span><span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>args</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
@@ -379,28 +220,17 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nx>tag</span><span class=sb>`string1</span><span class=si>${</span><span class=mi>1</span><span class=si>}</span><span class=sb>string2</span><span class=si>${</span><span class=mi>2</span><span class=si>}</span><span class=sb>string3`</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=c1>// [ [ &#39;string1&#39;, &#39;string2&#39;, &#39;string3&#39; ], 1, 2 ]
-</span></span></span></code></pre></td></tr></table></div></div><p>Normally, the tagged template function will handle arguments like:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>tag</span><span class=p>(</span><span class=nx>strings</span><span class=p>,</span> <span class=p>...</span><span class=nx>args</span><span class=p>)</span> <span class=p>{</span>
+</span></span></span></code></pre></div></div><p>Normally, the tagged template function will handle arguments like:</p><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>tag</span><span class=p>(</span><span class=nx>strings</span><span class=p>,</span> <span class=p>...</span><span class=nx>args</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>strings</span><span class=p>,</span> <span class=nx>args</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nx>tag</span><span class=sb>`string1</span><span class=si>${</span><span class=mi>1</span><span class=si>}</span><span class=sb>string2</span><span class=si>${</span><span class=mi>2</span><span class=si>}</span><span class=sb>string3`</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=c1>// [ &#39;string1&#39;, &#39;string2&#39;, &#39;string3&#39; ] [ 1, 2 ]
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=debounce--throttle>Debounce & throttle</h2><blockquote><p>Here is my Example: <a href=https://tyrangyang.github.io/TyrangYang_blog/html/debounce&amp;throttle.html rel>Try it Now</a></p><p>Play in <a href=https://codepen.io/TyrangYang/pen/YzqJZJX target=_blank rel="noopener noreffer">CodePen</a></p></blockquote><h3 id=debounce>Debounce</h3><p>The debounce function delays the processing of event until the user has stopped trigger it.</p><p>The core logic is using HOF to only keep the last trigger.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span><span class=lnt>9
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>debounce</span> <span class=o>=</span> <span class=p>(</span><span class=nx>fn</span><span class=p>,</span> <span class=nx>delay</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span></span></code></pre></div></div><h2 id=debounce--throttle>Debounce & throttle</h2><blockquote><p>Here is my Example: <a href=https://tyrangyang.github.io/TyrangYang_blog/html/debounce&amp;throttle.html rel>Try it Now</a></p><p>Play in <a href=https://codepen.io/TyrangYang/pen/YzqJZJX target=_blank rel="noopener noreffer">CodePen</a></p></blockquote><h3 id=debounce>Debounce</h3><p>The debounce function delays the processing of event until the user has stopped trigger it.</p><p>The core logic is using HOF to only keep the last trigger.</p><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>debounce</span> <span class=o>=</span> <span class=p>(</span><span class=nx>fn</span><span class=p>,</span> <span class=nx>delay</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>timer</span> <span class=o>=</span> <span class=kc>null</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nx>clearTimeout</span><span class=p>(</span><span class=nx>timer</span><span class=p>);</span>
@@ -408,21 +238,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>            <span class=nx>fn</span><span class=p>(...</span><span class=nx>args</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=nx>delay</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><h3 id=throttle>Throttle</h3><p>The Throttle function only allows one event running in a period of time</p><p>The core logic is using HOF to only keep the first trigger.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>throttle</span> <span class=o>=</span> <span class=p>(</span><span class=nx>fn</span><span class=p>,</span> <span class=nx>delay</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div></div><h3 id=throttle>Throttle</h3><p>The Throttle function only allows one event running in a period of time</p><p>The core logic is using HOF to only keep the first trigger.</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>throttle</span> <span class=o>=</span> <span class=p>(</span><span class=nx>fn</span><span class=p>,</span> <span class=nx>delay</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=nx>timer</span> <span class=o>=</span> <span class=kc>null</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(</span><span class=nx>timer</span> <span class=o>!==</span> <span class=kc>null</span><span class=p>)</span> <span class=p>{</span>
@@ -434,40 +252,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>            <span class=nx>fn</span><span class=p>(...</span><span class=nx>args</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=nx>delay</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>    <span class=p>};</span>
-</span></span><span class=line><span class=cl><span class=p>};</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=snapshot--current-value>Snapshot & current value</h2><p>This problem due to the fact that every time you log out base on same reference or different variable</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=p>};</span></span></span></code></pre></div></div><h2 id=snapshot--current-value>Snapshot & current value</h2><p>This problem due to the fact that every time you log out base on same reference or different variable</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;val:&#39;</span><span class=p>,</span> <span class=nx>i</span><span class=p>));</span> <span class=c1>// current value
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=c1>// 10 10 ... 10 10
@@ -499,33 +286,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>    <span class=p>});</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=c1>// 1 2 3 4 ... 9
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=bind--callback>bind &lt;==> callback</h2><p><code>fn.bind(context, ...args)</code> will return a new function with a given context and given several arguments.</p><p>If <code>context</code> is <strong>null</strong>, <code>bind()</code> same like callback</p><p><code>newFn = fn.bind(null, ...args);</code> == <code>newFn = (...newArgs) => fn(...args,...newArgs);</code></p><h2 id=format-time-string>Format time string</h2><p>The direct way to format a date object is used the second attribute in <code>toLocaleString</code> also as <code>Intl.DateTimeFormat()</code></p><p>Every time <code>toLocaleString</code> is called, it has to perform a search in a big database of localization strings, which is potentially inefficient.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>today</span> <span class=o>=</span> <span class=k>new</span> <span class=nb>Date</span><span class=p>();</span>
+</span></span></span></code></pre></div></div><h2 id=bind--callback>bind &lt;==> callback</h2><p><code>fn.bind(context, ...args)</code> will return a new function with a given context and given several arguments.</p><p>If <code>context</code> is <strong>null</strong>, <code>bind()</code> same like callback</p><p><code>newFn = fn.bind(null, ...args);</code> == <code>newFn = (...newArgs) => fn(...args,...newArgs);</code></p><h2 id=format-time-string>Format time string</h2><p>The direct way to format a date object is used the second attribute in <code>toLocaleString</code> also as <code>Intl.DateTimeFormat()</code></p><p>Every time <code>toLocaleString</code> is called, it has to perform a search in a big database of localization strings, which is potentially inefficient.</p><div class="code-block code-line-numbers" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>today</span> <span class=o>=</span> <span class=k>new</span> <span class=nb>Date</span><span class=p>();</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span>
 </span></span><span class=line><span class=cl>    <span class=nx>today</span><span class=p>.</span><span class=nx>toLocaleString</span><span class=p>(</span><span class=s1>&#39;en-US&#39;</span><span class=p>,</span> <span class=p>{</span>
@@ -551,12 +314,9 @@ Conversion Any => Boolean 1 2 3 4 5 6 7 8 !!false; // false !!undefined; // fals
 </span></span><span class=line><span class=cl>    <span class=nx>timeZoneName</span><span class=o>:</span> <span class=s1>&#39;short&#39;</span><span class=p>,</span>
 </span></span><span class=line><span class=cl><span class=p>});</span>
 </span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>formatter</span><span class=p>.</span><span class=nx>format</span><span class=p>(</span><span class=nx>today</span><span class=p>));</span> <span class=c1>// 11/11/24, 10:55:35 PM PST
-</span></span></span></code></pre></td></tr></table></div></div><h2 id=relative-time-expression>Relative time expression</h2><p>Sometime we want to know the relative time between two date. <strong>Like 3 days ago. 1 year ago.</strong></p><p>There is no vanilla js function direct support that. It is ok to use existing time library to handle it.</p><blockquote><p><a href=https://day.js.org target=_blank rel="noopener noreffer">day.js</a> is good option here. Small and efficient.</p></blockquote><p>For relative time part. See: <a href=https://day.js.org/docs/en/customization/relative-time#docsNav target=_blank rel="noopener noreffer">https://day.js.org/docs/en/customization/relative-time#docsNav</a></p><h2 id=lodash-api>Lodash api</h2><p><a href=https://lodash.com target=_blank rel="noopener noreffer">Lodash</a> is a very power for utility library</p><h3 id=lodash-to-chrome>Lodash to Chrome</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>fetch</span><span class=p>(</span><span class=s1>&#39;https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js&#39;</span><span class=p>)</span>
+</span></span></span></code></pre></div></div><h2 id=relative-time-expression>Relative time expression</h2><p>Sometime we want to know the relative time between two date. <strong>Like 3 days ago. 1 year ago.</strong></p><p>There is no vanilla js function direct support that. It is ok to use existing time library to handle it.</p><blockquote><p><a href=https://day.js.org target=_blank rel="noopener noreffer">day.js</a> is good option here. Small and efficient.</p></blockquote><p>For relative time part. See: <a href=https://day.js.org/docs/en/customization/relative-time#docsNav target=_blank rel="noopener noreffer">https://day.js.org/docs/en/customization/relative-time#docsNav</a></p><h2 id=lodash-api>Lodash api</h2><p><a href=https://lodash.com target=_blank rel="noopener noreffer">Lodash</a> is a very power for utility library</p><h3 id=lodash-to-chrome>Lodash to Chrome</h3><div class="code-block code-line-numbers open" style="counter-reset:code-block 0"><div class="code-header language-js"><span class=code-title><i class="arrow fas fa-angle-right fa-fw" aria-hidden=true></i></span>
+<span class=ellipses><i class="fas fa-ellipsis-h fa-fw" aria-hidden=true></i></span>
+<span class=copy title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden=true></i></span></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>fetch</span><span class=p>(</span><span class=s1>&#39;https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js&#39;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>then</span><span class=p>((</span><span class=nx>response</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>response</span><span class=p>.</span><span class=nx>text</span><span class=p>())</span>
-</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>then</span><span class=p>((</span><span class=nx>text</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nb>eval</span><span class=p>(</span><span class=nx>text</span><span class=p>));</span>
-</span></span></code></pre></td></tr></table></div></div><p><a href=https://medium.com/@matt.leo/how-to-import-lodash-to-chrome-console-3e5e30b4933e target=_blank rel="noopener noreffer">original post</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-05-03</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/>javascript</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/trick/>trick</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ class=prev rel=prev title="Python Overview"><i class="fas fa-angle-left fa-fw"></i>Python Overview</a>
-<a href=https://tyrangyang.github.io/TyrangYang_blog/vue-overview/ class=next rel=next title="Vue Overview">Vue Overview<i class="fas fa-angle-right fa-fw"></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.119.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/ target=_blank>Haolin Yang</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/lib/clipboard/clipboard.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:1e3},comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:null,type:"algolia"}}</script><script type=text/javascript src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>
+</span></span><span class=line><span class=cl>    <span class=p>.</span><span class=nx>then</span><span class=p>((</span><span class=nx>text</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nb>eval</span><span class=p>(</span><span class=nx>text</span><span class=p>));</span></span></span></code></pre></div></div><p><a href=https://medium.com/@matt.leo/how-to-import-lodash-to-chrome-console-3e5e30b4933e target=_blank rel="noopener noreffer">original post</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-05-03</span></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=https://tyrangyang.github.io/TyrangYang_blog/js-trick/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on X" data-sharer=x data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-title="Js Trick" data-via=@TyrangYang data-hashtags=javascript,trick><i class="fab fa-x-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Threads" data-sharer=threads data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-title="Js Trick"><i class="fab fa-threads fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-hashtag=javascript><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-title="Js Trick"><i class="fab fa-hacker-news fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-title="Js Trick"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@14.9.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-title="Js Trick"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="Share on Diaspora" data-sharer=diaspora data-url=https://tyrangyang.github.io/TyrangYang_blog/js-trick/ data-title="Js Trick" data-description><i class="fab fa-diaspora fa-fw" aria-hidden=true></i></a><a href="https://t.me/share/url?url=https%3a%2f%2ftyrangyang.github.io%2fTyrangYang_blog%2fjs-trick%2f&amp;text=Js%20Trick" target=_blank title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden=true></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/javascript/>Javascript</a>,&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/tags/trick/>Trick</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=https://tyrangyang.github.io/TyrangYang_blog/>Home</a></span></section></div><div class=post-nav><a href=https://tyrangyang.github.io/TyrangYang_blog/python-overview/ class=prev rel=prev title="Python Overview"><i class="fas fa-angle-left fa-fw" aria-hidden=true></i>Python Overview</a>
+<a href=https://tyrangyang.github.io/TyrangYang_blog/vue-overview/ class=next rel=next title="Vue Overview">Vue Overview<i class="fas fa-angle-right fa-fw" aria-hidden=true></i></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden=true></i> LoveIt</a></div><div class=footer-line itemscope itemtype=http://schema.org/CreativeWork><i class="far fa-copyright fa-fw" aria-hidden=true></i><span itemprop=copyrightYear>2022 - 2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://tyrangyang.github.io/TyrangYang_blog/ target=_blank>xxxx</a></span>&nbsp;|&nbsp;<span class=license><a rel=license style=position:relative;top:3px href=http://creativecommons.org/licenses/by-nc-nd/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png></a><br>This work is licensed under a <a rel=license href=http://creativecommons.org/licenses/by-nc-nd/4.0/>Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw" aria-hidden=true></i></a></div><div id=fixed-buttons-hidden><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw" aria-hidden=true></i></a></div><script src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js></script><script src=https://cdn.jsdelivr.net/npm/algoliasearch@5.20.2/dist/lite/builds/browser.umd.min.js></script><script src=https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js></script><script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js></script><script src=https://cdn.jsdelivr.net/npm/sharer.js@0.5.2/sharer.min.js></script><script>window.config={comment:{},search:{algoliaAppID:"QXEV52XWDS",algoliaIndex:"blog",algoliaSearchKey:"db56d05ebbeed337adca1ef261004dcc",highlightTag:"em",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"algolia"}}</script><script src=https://tyrangyang.github.io/TyrangYang_blog/js/theme.min.js></script></body></html>
