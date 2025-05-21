@@ -4,11 +4,11 @@ date: 2020-06-17
 author: Haolin Yang
 categories: ['Overview']
 tags:
-    - git
-    - github
+  - git
+  - github
 toc:
-    enable: true
-    auto: true
+  enable: true
+  auto: true
 ---
 
 Here have some good pictures that is helpful for understanding git and contain the record for git commend
@@ -113,6 +113,22 @@ After run`git pull master`
       A---B---C origin/master
      /         \
 D---E---F---G---H master
+```
+
+### pull something have conflict
+
+Sometimes branch in local and remote are not sync. For example:
+
+```
+      A---B---C origin/master
+     /
+D---E --- F  master
+```
+
+In this case, we can run `git pull --rebase <remote> <branch> `. You can move your local commit at behind.
+
+```
+D---E---A---B---C---F' (F' is a new commit)
 ```
 
 ### Merge
