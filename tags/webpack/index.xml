@@ -1,12 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Webpack - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/webpack/</link><description>Webpack - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 09 Dec 2020 19:12:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/webpack/" rel="self" type="application/rss+xml"/><item><title>Webpack Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link><pubDate>Wed, 09 Dec 2020 19:12:38 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid><description><![CDATA[<p>webpack is a static module bundler for modern JavaScript applications.</p>
-<p>Document: <a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener noreffer ">https://webpack.js.org/concepts/</a></p>
-<h2 id="installation">Installation</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm i -D webpack webpack-cli</span></span></code></pre></div></div>
-<h2 id="webpack-core-concept">webpack core concept</h2>
-<h3 id="entry">Entry</h3>
-<p>An entry point indicates which module webpack should use to <strong>begin</strong> building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).</p>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Webpack - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/webpack/</link><description>Webpack - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 09 Dec 2020 19:12:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/webpack/" rel="self" type="application/rss+xml"/><item><title>Webpack Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link><pubDate>Wed, 09 Dec 2020 19:12:38 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid><description>webpack is a static module bundler for modern JavaScript applications.
+Document: https://webpack.js.org/concepts/
+Installation npm i -D webpack webpack-cli webpack core concept Entry An entry point indicates which module webpack should use to begin building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).
+Output The output property tells webpack where to emit the bundles it creates and how to name these files.</description></item></channel></rss>

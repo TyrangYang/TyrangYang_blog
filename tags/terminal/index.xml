@@ -1,118 +1,31 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Terminal - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/</link><description>Terminal - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/" rel="self" type="application/rss+xml"/><item><title>chmod Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid><description><![CDATA[<p>chmod is linux command to control file permission</p>
-<h2 id="usage">usage</h2>
-<p>chmod [u|g|o|a][=|+|-] [r|w|x] <fileName></p>
-<p>u =&gt; user</p>
-<p>g =&gt; group</p>
-<p>o =&gt; other</p>
-<p>a =&gt; all</p>
-<p>r =&gt; read</p>
-<p>w =&gt; write</p>
-<p>x =&gt; execute</p>
-<h3 id="example">example</h3>
-<p><code>chmod +wr test.txt</code> give write and read permission for user</p>
-<p><code>chmod -r test.txt</code> remove read permission for user</p>
-<p><code>chmod g=wrx test.txt</code> give write, read and execute permission for group</p>
-<h2 id="use-number">use number</h2>
-<p>specific the bits <code>011101110111</code> =&gt; -rwx-rwx-rwx</p>]]></description></item><item><title>Basic Terminal command</title><link>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</guid><description><![CDATA[<h2 id="basic">Basic</h2>
-<p><code>cd</code> route</p>
-<p><code>ls</code> list</p>
-<p><code>pwd</code> show current path</p>
-<p><code>cat</code> concatenate and print file (usually as read file)</p>
-<p><code>touch</code> change file access and modification time; (usually as create file)</p>
-<h2 id="routing">Routing</h2>
-<p><code>cd &lt;directory&gt;</code></p>
-<p><code>cd .</code> current</p>
-<p><code>cd ..</code> last</p>
-<p><code>cd ~</code> home</p>
-<p><code>cd /</code> root</p>
-<h2 id="list">List</h2>
-<p><code>ls</code></p>
-<p><code>ls -a</code> list all included hiding file</p>
-<p><code>ls -l</code> list detail</p>
-<h2 id="move--copy">Move &amp; Copy</h2>
-<p><code>cp &lt;name1&gt; &lt;name2&gt;</code> copy</p>
-<p><code>mv &lt;name1&gt; &lt;name2&gt;</code> rename</p>
-<blockquote>
-<p>move one file within this directory to another name.</p>]]></description></item><item><title>Crontab overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link><pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid><description><![CDATA[<h2 id="what-is-crontab">What is crontab</h2>
-<p>Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.</p>
-<h2 id="basic-command">Basic command</h2>
-<p>crontab [-u <em>user</em>] {-l | -e | -r}</p>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: center">command</th>
-          <th style="text-align: center">utility</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center">-l</td>
-          <td style="text-align: center">list your cron job</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">-r</td>
-          <td style="text-align: center">remove your cron job</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">-e</td>
-          <td style="text-align: center">edit your cron job</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">-u</td>
-          <td style="text-align: center">specific a user</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="how-to-schedule-a-command">How to schedule a command</h2>
-<p>Cron job looks like:</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># ┌───────────── minute (0 - 59)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ ┌───────────── hour (0 - 23)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ │ ┌───────────── day of month (1 - 31)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ ┌───────────── month (1 - 12)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ │                                       7 is also Sunday on some systems)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ │</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ │</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># * * * * *  command_to_execute</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># export date into a file every minutes</span>
-</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">txt</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Mon to Fri, 2:00, 2:30 , 4:00, 4:30</span>
-</span></span><span class="line"><span class="cl"><span class="o">*/</span><span class="mi">30</span> <span class="mi">2</span><span class="p">,</span><span class="mi">4</span> <span class="o">*</span> <span class="o">*</span> <span class="mi">1</span><span class="o">-</span><span class="mi">5</span> <span class="n">echo</span> <span class="s2">&#34;hello world&#34;</span></span></span></code></pre></div></div>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: center">symbol</th>
-          <th style="text-align: center">meaning</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center">*</td>
-          <td style="text-align: center">any value</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">,</td>
-          <td style="text-align: center">value list separator</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">-</td>
-          <td style="text-align: center">range of value</td>
-      </tr>
-      <tr>
-          <td style="text-align: center">/</td>
-          <td style="text-align: center">step values</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="crontabguru">crontab.guru</h2>
-<p><a href="https://crontab.guru" target="_blank" rel="noopener noreffer ">crontab.guru</a> which is a website to check whether your schedule is correct.</p>]]></description></item><item><title>My Zsh setting</title><link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid><description><![CDATA[<h2 id="zsh--bash">Zsh &amp; Bash</h2>
-<p>Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.</p>
-<h2 id="zsh">Zsh</h2>
-<p>The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&rsquo;s recommended to use zsh over bash. It&rsquo;s also highly recommended to install a framework with zsh as it makes dealing with configuration, plugins and themes a lot nicer.</p>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Terminal - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/</link><description>Terminal - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 18 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/terminal/" rel="self" type="application/rss+xml"/><item><title>chmod Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/chmod/</link><pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/chmod/</guid><description><![CDATA[chmod is linux command to control file permission
+usage chmod [u|g|o|a][=|+|-] [r|w|x] u =&gt; user
+g =&gt; group
+o =&gt; other
+a =&gt; all
+r =&gt; read
+w =&gt; write
+x =&gt; execute
+example chmod +wr test.txt give write and read permission for user
+chmod -r test.txt remove read permission for user
+chmod g=wrx test.txt give write, read and execute permission for group
+use number specific the bits 011101110111 =&gt; -rwx-rwx-rwx]]></description></item><item><title>Basic Terminal command</title><link>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</link><pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/basic-terminal-command/</guid><description><![CDATA[Basic cd route
+ls list
+pwd show current path
+cat concatenate and print file (usually as read file)
+touch change file access and modification time; (usually as create file)
+Routing cd &lt;directory&gt;
+cd . current
+cd .. last
+cd ~ home
+cd / root
+List ls
+ls -a list all included hiding file
+ls -l list detail
+Move &amp; Copy cp &lt;name1&gt; &lt;name2&gt; copy
+mv &lt;name1&gt; &lt;name2&gt; rename
+move one file within this directory to another name.]]></description></item><item><title>Crontab overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link><pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid><description>What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
+Basic command crontab [-u user] {-l | -e | -r}
+command utility -l list your cron job -r remove your cron job -e edit your cron job -u specific a user How to schedule a command Cron job looks like:
+# ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &amp;gt;&amp;gt; ~/Desktop/test.</description></item><item><title>My Zsh setting</title><link>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</link><pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/my-zsh-setting/</guid><description>Zsh &amp;amp; Bash Since MacOs 10.15(Catalina). The default shell switch from bash to zsh. It is hard to say which one is better however Zsh has been used more widely than bash especially from Linux user.
+Zsh The Z shell (also known as zsh) is a Unix shell that is built on top of bash (the default shell for macOS (Before MacOs Catalina)) with additional features. It&amp;rsquo;s recommended to use zsh over bash.</description></item></channel></rss>

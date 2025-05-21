@@ -1,9 +1,6 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Erlang - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/</link><description>Erlang - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/" rel="self" type="application/rss+xml"/><item><title>Erlang overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link><pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid><description><![CDATA[<h2 id="basic">Basic</h2>
-<p>Documentation: <a href="https://erlang.org/doc/search/" target="_blank" rel="noopener noreffer ">https://erlang.org/doc/search/</a></p>
-<h3 id="functional-language">Functional language</h3>
-<p>Erlang is a functional language. Code need compile and running line by line.</p>
-<p>Every line need finish by a <code>.</code>. like: <code>A = 1.</code>.</p>
-<h3 id="module">Module</h3>
-<p>Every erlang file will consider as a module. You console will compile all module you want.</p>
-<p>You have to add <code>-module(&lt;filename&gt;).</code> into first line. Module should be same with filename without suffix.</p>
-<p>In erl console, run <code>c(&lt;filename&gt;).</code> to compile it. Run a function is like: <code>&lt;moduleName&gt;: &lt;functionName&gt;(...&lt;argument&gt;)</code></p>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Erlang - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/</link><description>Erlang - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/erlang/" rel="self" type="application/rss+xml"/><item><title>Erlang overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/erlang/</link><pubDate>Sat, 14 Dec 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/erlang/</guid><description><![CDATA[Basic Documentation: https://erlang.org/doc/search/
+Functional language Erlang is a functional language. Code need compile and running line by line.
+Every line need finish by a .. like: A = 1..
+Module Every erlang file will consider as a module. You console will compile all module you want.
+You have to add -module(&lt;filename&gt;). into first line. Module should be same with filename without suffix.
+In erl console, run c(&lt;filename&gt;). to compile it. Run a function is like: &lt;moduleName&gt;: &lt;functionName&gt;(.]]></description></item></channel></rss>

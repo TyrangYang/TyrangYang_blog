@@ -1,196 +1,32 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Posts - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link><description>Posts - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml"/><item><title>Prototype Inheritance in Javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link><pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid><description><![CDATA[<h2 id="prototype">Prototype</h2>
-<figure><figcaption>
-      <h4>prototype</h4>
-    </figcaption>
-</figure>
-
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">f1</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true
-</span></span></span></code></pre></div></div>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">f1</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">===</span> <span class="nx">Foo</span><span class="p">;</span> <span class="c1">// true
-</span></span></span></code></pre></div></div>
-<p>f1 don&rsquo;t have <code>constructor</code>, however depends on <a href="#prototype-chain" rel="">prototype chain</a> engine will search <code>f1.__proto__</code>. This is line is equivalent to <code>Foo.prototype.constructor === Foo</code></p>
-<p>f1 instantiate a Foo:</p>]]></description></item><item><title>Flex and Grid in CSS</title><link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link><pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid><description><![CDATA[<p><figure>
-</figure>
-
-<figure>
-</figure>
-</p>
-<h2 id="flex">Flex</h2>
-<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreffer "><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
-<p>A <a href="https://codepen.io/TyrangYang/pen/GRZjQgg" target="_blank" rel="noopener noreffer ">Flexbox code Example</a></p>
-<h3 id="display">display</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-css">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h3 id="flex-direction">flex-direction</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-css">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<figure><figcaption>
-      <h4>flex-direction</h4>
-    </figcaption>
-</figure>
-
-<h3 id="flex-warp">flex-warp</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-css">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<figure><figcaption>
-      <h4>flex-wrap</h4>
-    </figcaption>
-</figure>
-
-<h3 id="flex-flow">flex-flow</h3>
-<p>This is a shorthand for the flex-direction and flex-wrap properties.</p>]]></description></item><item><title>How to demonstrate your front end application on Github by gh-page</title><link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid><description><![CDATA[<p>Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is <code>{&lt;github username&gt;.github.io}/{&lt;repository name&gt;}</code></p>
-<h2 id="gh-pages">gh-pages</h2>
-<p><a href="https://github.com/tschaub/gh-pages" target="_blank" rel="noopener noreffer ">gh-pages</a> provide by <a href="https://github.com/tschaub" target="_blank" rel="noopener noreffer ">Tim Schaub</a> is a npm package that can help you push something directly into gh-page branch</p>
-<p><a href="https://github.com/tschaub/gh-pages" target="_blank" rel="noopener noreffer ">Read more detail in repository</a></p>
-<h3 id="command-line-usage">command line usage</h3>
-<p>This package also provide a command line tool:</p>]]></description></item><item><title>How to check the Chinese ID is correct</title><link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link><pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid><description><![CDATA[<p>This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.</p>
-<h2 id="sample-code">Sample code</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">checkChineseId</span> <span class="o">=</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">ID_LENGTH</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// check type
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">id</span> <span class="o">!==</span> <span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;type error&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">//check length
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">id</span><span class="p">.</span><span class="nx">length</span> <span class="o">!==</span> <span class="nx">ID_LENGTH</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;length error&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// check each digit
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">id</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">id</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">e</span> <span class="o">&lt;</span> <span class="s1">&#39;0&#39;</span> <span class="o">||</span> <span class="nx">e</span> <span class="o">&gt;</span> <span class="s1">&#39;9&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;digit error&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!==</span> <span class="s1">&#39;x&#39;</span> <span class="o">&amp;&amp;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;X&#39;</span> <span class="o">&amp;&amp;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;0&#39;</span> <span class="o">&amp;&amp;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;9&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;digit error&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//   num: 01 01 00 01 00 05 01 09 04 09 01 02 03 01 00 00 02 10
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//serial: 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//weight = 2^serial % 11
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//weight: 07 09 10 05 08 04 02 01 06 03 07 09 10 05 08 04 02 01 (fix)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// calculate code
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">weight_sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">id</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">weight</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">i</span><span class="p">)</span> <span class="o">%</span> <span class="mi">11</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">weight_sum</span> <span class="o">+=</span> <span class="nx">id</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">*</span> <span class="nx">weight</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// checkCode = (12 - weight_sum % 11) % 11
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">checkCode</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="p">(</span><span class="nx">weight_sum</span> <span class="o">%</span> <span class="mi">11</span><span class="p">))</span> <span class="o">%</span> <span class="mi">11</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// compare
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">checkCode</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">res</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;x&#39;</span> <span class="o">||</span> <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;X&#39;</span>
-</span></span><span class="line"><span class="cl">                <span class="o">?</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">                <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">res</span> <span class="o">=</span> <span class="nx">id</span><span class="p">[</span><span class="nx">ID_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="nx">checkCode</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb"> is </span><span class="si">${</span><span class="nx">res</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">checkChineseId</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>]]></description></item><item><title>Safari Shortcut</title><link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link><pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</guid><description><![CDATA[<p>Some keyboards shortcuts when using safari</p>
-<h2 id="navigating-webpages">Navigating Webpages</h2>
-<p>Use <code>arrow keys</code> to go <em>up</em> and <em>down</em>.</p>
-<p>Use <code>Option+up/down</code> or <code>Shift+Space / Space</code> to scroll quickly.</p>
-<p>Use <code>Command+up/down</code> goto the top &amp; button.</p>
-<h2 id="open-pages-in-tabs">Open Pages in Tabs</h2>
-<p>Use <code>Command+T</code> to open a new Tab.</p>
-<p>Use <code>Shift+Command+Left/right arrow</code> or <code>Control+Tab / Control+Shift+Tab</code> to move from tab to tab.</p>
-<p>Use <code>Command+W</code> to close current tab.</p>
-<p>Use <code>Command+Z</code> to reopen a closed tab.</p>
-<p>Use <code>Command+Option+W</code> to close all tabs expect current tab.</p>]]></description></item><item><title>Callback, Promise and Async/await in js</title><link>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</link><pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid><description><![CDATA[<h2 id="js-event-loop--call-stack--task-queue">Js event loop | Call stack | task queue</h2>
-<p>This <a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="noopener noreffer "><strong>website</strong></a> shows how js running with single thread to handle concurrency</p>
-<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
-<p>Function run synchronously means code is running as same as your writing.</p>
-<p>But in real situation, some code may need time to running but you don&rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.</p>]]></description></item><item><title>What is "this" in javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link><pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid><description><![CDATA[<p>Author: Dmitri Pavlutin</p>
-<p>Reference: <a href="https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/" target="_blank" rel="noopener noreffer ">https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/</a></p>
-<h2 id="concept">Concept</h2>
-<ul>
-<li><strong>Invocation</strong> of a function is executing the code that makes the body of a function, or simply calling the function. For example <code>parseInt</code> function invocation is <code>parseInt('15')</code>.</li>
-<li><strong>Context</strong> of an invocation is the value of this within function body. For example the invocation of <code>map.set('key', 'value')</code> has the context <code>map</code>.</li>
-<li><strong>Scope</strong> of a function is the set of variables, objects, functions accessible within a function body.</li>
-</ul>
-<h2 id="invocations">Invocations</h2>
-<ul>
-<li><strong>function invocation:</strong> alert(&lsquo;Hello World!&rsquo;)</li>
-<li><strong>method invocation:</strong> console.log(&lsquo;Hello World!&rsquo;)</li>
-<li><strong>constructor invocation:</strong> new RegExp(&rsquo;\d')</li>
-<li><strong>indirect invocation:</strong> alert.call(undefined, &lsquo;Hello World!&rsquo;)</li>
-</ul>
-<h2 id="this-in-different-invocations"><em>this</em> in different invocations</h2>
-<p><code>this</code> is base on <strong>the context of calling this function</strong></p>]]></description></item><item><title>How to have a dynamic class name</title><link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link><pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid><description><![CDATA[<p>In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.</p>
-<h2 id="classnames">classNames</h2>
-<p>This is a javascript for conditionally joining classNames.</p>
-<p>Here is: <a href="https://github.com/JedWatson/classnames" target="_blank" rel="noopener noreffer ">Github</a></p>
-<p>Basically, you can combine any number of classNames.</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">classNames</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;classNames&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">classNames</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">bar</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">duck</span><span class="o">:</span> <span class="kc">false</span> <span class="p">},</span> <span class="s1">&#39;baz&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">quux</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span> <span class="c1">// =&gt; &#39;foo bar baz quux&#39;
-</span></span></span></code></pre></div></div>
-<h2 id="es6-template-literals">ES6 template literals</h2>
-<p>You can just use template literals.</p>]]></description></item><item><title>A simple application apollo server and react</title><link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link><pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/spacex/</guid><description><![CDATA[<h2 id="graphql">graphql</h2>
-<p>Design Graphql is base on what your want</p>
-<h2 id="github">github</h2>
-<p><a href="https://github.com/TyrangYang/SpaceX_graphql_react" target="_blank" rel="noopener noreffer ">https://github.com/TyrangYang/SpaceX_graphql_react</a></p>]]></description></item><item><title>VSCode shortCut</title><link>https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/</link><pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/</guid><description><![CDATA[<p><a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank" rel="noopener noreffer ">Vscode page for shortcut</a></p>
-<h2 id="short-cut">Short cut</h2>
-<p>Source from <strong>Traversy Media</strong></p>
-<p><a href="https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA" target="_blank" rel="noopener noreffer ">YouTube Channel</a></p>
-<p><a href="https://www.youtube.com/watch?v=Xa5EU-qAv-I" target="_blank" rel="noopener noreffer ">YouTube</a></p>
-<p><a href="https://gist.github.com/bradtraversy/b28a0a361880141af928ada800a671d9" target="_blank" rel="noopener noreffer ">Github</a></p>
-<script src="https://gist.github.com/bradtraversy/b28a0a361880141af928ada800a671d9.js"></script>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Posts - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link><description>Posts - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 21 Aug 2020 16:37:45 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml"/><item><title>Prototype Inheritance in Javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link><pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid><description>Prototype prototype Foo.prototype.constructor === Foo; // true f1.__proto__ === Foo.prototype; // true f1.constructor === Foo; // true f1 don&amp;rsquo;t have constructor, however depends on prototype chain engine will search f1.__proto__. This is line is equivalent to Foo.prototype.constructor === Foo
+f1 instantiate a Foo:
+f1.__proto__link Foo.prototype f1 have a constructor which is Foo since Foo.prototype have a constructor Object.create() Syntax is Object.create(proto[, propertiesObject])
+var newObj = Object.create(obj); newObj.__proto__ == obj; // true new When js running this line:</description></item><item><title>Flex and Grid in CSS</title><link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link><pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid><description>Flex Cheat Sheet provide by CSS-tricks.com
+A Flexbox code Example
+display .container { display: flex; } flex-direction .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
+.container { flex-flow: column wrap; } order .item { order: 5; /* default is 0 */ } order flex-grow This defines the ability for a flex item to grow when there is extra space from container.</description></item><item><title>How to demonstrate your front end application on Github by gh-page</title><link>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/gh-pages/</guid><description><![CDATA[Github provide a tech called github pages that can hosted your project directly from repository. Basely push you project into gh-pages branch and the index.html will show on the page which is {&lt;github username&gt;.github.io}/{&lt;repository name&gt;}
+gh-pages gh-pages provide by Tim Schaub is a npm package that can help you push something directly into gh-page branch
+Read more detail in repository
+command line usage This package also provide a command line tool:]]></description></item><item><title>How to check the Chinese ID is correct</title><link>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</link><pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/check-digit-id/</guid><description><![CDATA[This check method will help you find out whether one digit is wrong or 2 adjacent digit are in reverse order.
+Sample code checkChineseId = (id) =&gt; { const ID_LENGTH = 18; // check type if (typeof id !== &#39;string&#39;) { console.error(&#39;type error&#39;); return; } //check length if (id.length !== ID_LENGTH) { console.error(&#39;length error&#39;); return; } // check each digit for (let i = 0; i &lt; id.length - 1; i++) { const e = id[i]; if (e &lt; &#39;0&#39; || e &gt; &#39;9&#39;) { console.]]></description></item><item><title>Safari Shortcut</title><link>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</link><pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/safari-shotcut/</guid><description>Some keyboards shortcuts when using safari
+Navigating Webpages Use arrow keys to go up and down.
+Use Option+up/down or Shift+Space / Space to scroll quickly.
+Use Command+up/down goto the top &amp;amp; button.
+Open Pages in Tabs Use Command+T to open a new Tab.
+Use Shift+Command+Left/right arrow or Control+Tab / Control+Shift+Tab to move from tab to tab.
+Use Command+W to close current tab.
+Use Command+Z to reopen a closed tab.
+Use Command+Option+W to close all tabs expect current tab.</description></item><item><title>Callback, Promise and Async/await in js</title><link>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</link><pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/callback-promise-async/</guid><description>Js event loop | Call stack | task queue This website shows how js running with single thread to handle concurrency
+Synchronous &amp;amp; asynchronous Function run synchronously means code is running as same as your writing.
+But in real situation, some code may need time to running but you don&amp;rsquo;t want all code is block. Therefore, you may need some technique to let this part running asynchronously which means this part of code is block and the rest of code is not.</description></item><item><title>What is "this" in javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</link><pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/what-is-this-in-js/</guid><description>Author: Dmitri Pavlutin
+Reference: https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
+Concept Invocation of a function is executing the code that makes the body of a function, or simply calling the function. For example parseInt function invocation is parseInt('15'). Context of an invocation is the value of this within function body. For example the invocation of map.set('key', 'value') has the context map. Scope of a function is the set of variables, objects, functions accessible within a function body.</description></item><item><title>How to have a dynamic class name</title><link>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</link><pubDate>Fri, 15 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/how-to-have-dynamic-classname/</guid><description><![CDATA[In same case, you may want to have a different style depend on your state or a variable. Now we can have two ways to achieve that.
+classNames This is a javascript for conditionally joining classNames.
+Here is: Github
+Basically, you can combine any number of classNames.
+const classNames = require(&#39;classNames&#39;); classNames(&#39;foo&#39;, { bar: true, duck: false }, &#39;baz&#39;, { quux: true }); // =&gt; &#39;foo bar baz quux&#39; ES6 template literals You can just use template literals.]]></description></item><item><title>A simple application apollo server and react</title><link>https://tyrangyang.github.io/TyrangYang_blog/spacex/</link><pubDate>Thu, 14 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/spacex/</guid><description>graphql Design Graphql is base on what your want
+github https://github.com/TyrangYang/SpaceX_graphql_react</description></item><item><title>VSCode shortCut</title><link>https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/</link><pubDate>Fri, 01 Nov 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vscode-shortcut/</guid><description>Vscode page for shortcut
+Short cut Source from Traversy Media
+YouTube Channel
+YouTube
+Github</description></item></channel></rss>
