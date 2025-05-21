@@ -1,1 +1,50 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Front-End - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/</link><description>Front-End - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2020 14:02:26 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/" rel="self" type="application/rss+xml"/><item><title>HTML5 Overview 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</link><pubDate>Thu, 13 Aug 2020 14:02:26 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</guid><description><![CDATA[table table ├── thead │ └── tr │ └── th ├── tbody │ └── tr │ └── td └── tfoot └── tr └── td Intersection Observer API const option = { root: null, rootMargin: &#39;0px&#39;, threshold: 0.7, // or an array [0.1, 0.2, ...] }; const callback = (entries, observer) =&gt; { entries.forEach((entry) =&gt; { // Each entry describes an intersection change for one observed // target element: // entry.boundingClientRect // entry.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Front-End - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/</link><description>Front-End - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2020 14:02:26 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/front-end/" rel="self" type="application/rss+xml"/><item><title>HTML5 Overview 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</link><pubDate>Thu, 13 Aug 2020 14:02:26 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html5-overview/</guid><description><![CDATA[<h2 id="table">table</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">table
+</span></span><span class="line"><span class="cl">├── thead
+</span></span><span class="line"><span class="cl">│   └── tr
+</span></span><span class="line"><span class="cl">│       └── th
+</span></span><span class="line"><span class="cl">├── tbody
+</span></span><span class="line"><span class="cl">│   └── tr
+</span></span><span class="line"><span class="cl">│       └── td
+</span></span><span class="line"><span class="cl">└── tfoot
+</span></span><span class="line"><span class="cl">    └── tr
+</span></span><span class="line"><span class="cl">        └── td</span></span></code></pre></div></div>
+<h2 id="intersection-observer-api">Intersection Observer API</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">option</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">root</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">rootMargin</span><span class="o">:</span> <span class="s1">&#39;0px&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">threshold</span><span class="o">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="c1">// or an array [0.1, 0.2, ...]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entries</span><span class="p">,</span> <span class="nx">observer</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">entries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">entry</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Each entry describes an intersection change for one observed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// target element:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.boundingClientRect
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.intersectionRatio
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.intersectionRect
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.isIntersecting
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.rootBounds
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.target
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//   entry.time
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="nx">callBack</span><span class="p">,</span> <span class="nx">option</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">observer</span><span class="p">.</span><span class="nx">observer</span><span class="p">(</span><span class="nx">nodeOne</span><span class="p">);</span> <span class="c1">//observing only nodeOne
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">observer</span><span class="p">.</span><span class="nx">observer</span><span class="p">(</span><span class="nx">nodeTwo</span><span class="p">);</span> <span class="c1">//observing both nodeOne and nodeTwo
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">observer</span><span class="p">.</span><span class="nx">unobserve</span><span class="p">(</span><span class="nx">nodeOne</span><span class="p">);</span> <span class="c1">//observing only nodeTwo
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">observer</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span> <span class="c1">//not observing any node
+</span></span></span></code></pre></div></div>
+<blockquote>
+<p>When node fulfilled observer option, callback function will run directly</p>]]></description></item></channel></rss>

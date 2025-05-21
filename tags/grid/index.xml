@@ -1,4 +1,48 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Grid - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/grid/</link><description>Grid - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/grid/" rel="self" type="application/rss+xml"/><item><title>Flex and Grid in CSS</title><link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link><pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid><description>Flex Cheat Sheet provide by CSS-tricks.com
-A Flexbox code Example
-display .container { display: flex; } flex-direction .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
-.container { flex-flow: column wrap; } order .item { order: 5; /* default is 0 */ } order flex-grow This defines the ability for a flex item to grow when there is extra space from container.</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Grid - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/grid/</link><description>Grid - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Aug 2020 12:04:51 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/grid/" rel="self" type="application/rss+xml"/><item><title>Flex and Grid in CSS</title><link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link><pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid><description><![CDATA[<p><figure>
+</figure>
+
+<figure>
+</figure>
+</p>
+<h2 id="flex">Flex</h2>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreffer "><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
+<p>A <a href="https://codepen.io/TyrangYang/pen/GRZjQgg" target="_blank" rel="noopener noreffer ">Flexbox code Example</a></p>
+<h3 id="display">display</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-css">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="flex-direction">flex-direction</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-css">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<figure><figcaption>
+      <h4>flex-direction</h4>
+    </figcaption>
+</figure>
+
+<h3 id="flex-warp">flex-warp</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-css">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<figure><figcaption>
+      <h4>flex-wrap</h4>
+    </figcaption>
+</figure>
+
+<h3 id="flex-flow">flex-flow</h3>
+<p>This is a shorthand for the flex-direction and flex-wrap properties.</p>]]></description></item></channel></rss>

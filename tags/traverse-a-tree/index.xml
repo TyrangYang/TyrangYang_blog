@@ -1,5 +1,36 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Traverse a Tree - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/</link><description>Traverse a Tree - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/" rel="self" type="application/rss+xml"/><item><title>Traverse a tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link><pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid><description><![CDATA[Idea to traverse a tree
-Tree structure The tree structure:
-struct TreeNode { int val; TreeNode *left; TreeNode *right; TreeNode(int x) : val(x), left(NULL), right(NULL) {} }; BFS DFS Pre-order In-order Post-order Relationship:
-Iterative Loop for BFS:
-void BFS(TreeNode *root){ stack&lt;TreeNode *&gt; q; q.push(root); while(!q.empty()){ TreeNode *temp = q.front(); q.pop(); // do something if(temp-&gt;left != NULL) q.push(temp -&gt; left); if(temp-&gt;right != NULL) q.push(temp -&gt; right); } } Loop for DFS:]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Traverse a Tree - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/</link><description>Traverse a Tree - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/traverse-a-tree/" rel="self" type="application/rss+xml"/><item><title>Traverse a tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</link><pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/traverse-a-tree/</guid><description><![CDATA[<p>Idea to traverse a tree</p>
+<h2 id="tree-structure">Tree structure</h2>
+<p>The tree structure:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">TreeNode</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TreeNode</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TreeNode</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TreeNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">left</span><span class="p">(</span><span class="nb">NULL</span><span class="p">),</span> <span class="n">right</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<h3 id="bfs-dfs-pre-order-in-order-post-order">BFS DFS Pre-order In-order Post-order</h3>
+<p>Relationship:</p>
+<p></p>
+<h4 id="iterative">Iterative</h4>
+<p>Loop for BFS:</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">TreeNode</span> <span class="o">*</span><span class="n">root</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stack</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">root</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TreeNode</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// do something
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">left</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">right</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>Loop for DFS:</p>]]></description></item></channel></rss>

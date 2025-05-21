@@ -1,4 +1,80 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Crontab - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/crontab/</link><description>Crontab - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/crontab/" rel="self" type="application/rss+xml"/><item><title>Crontab overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link><pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid><description>What is crontab Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.
-Basic command crontab [-u user] {-l | -e | -r}
-command utility -l list your cron job -r remove your cron job -e edit your cron job -u specific a user How to schedule a command Cron job looks like:
-# ┌───────────── minute (0 - 59) # │ ┌───────────── hour (0 - 23) # │ │ ┌───────────── day of month (1 - 31) # │ │ │ ┌───────────── month (1 - 12) # │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * command_to_execute # export date into a file every minutes * * * * * date &amp;gt;&amp;gt; ~/Desktop/test.</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Crontab - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/crontab/</link><description>Crontab - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 23 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/crontab/" rel="self" type="application/rss+xml"/><item><title>Crontab overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/crontab/</link><pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/crontab/</guid><description><![CDATA[<h2 id="what-is-crontab">What is crontab</h2>
+<p>Crontab is a toll to schedule commands. You can run your terminal command on a specific schedule like run a command every day or every weekends.</p>
+<h2 id="basic-command">Basic command</h2>
+<p>crontab [-u <em>user</em>] {-l | -e | -r}</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">command</th>
+          <th style="text-align: center">utility</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">-l</td>
+          <td style="text-align: center">list your cron job</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">-r</td>
+          <td style="text-align: center">remove your cron job</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">-e</td>
+          <td style="text-align: center">edit your cron job</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">-u</td>
+          <td style="text-align: center">specific a user</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="how-to-schedule-a-command">How to schedule a command</h2>
+<p>Cron job looks like:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># ┌───────────── minute (0 - 59)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ ┌───────────── hour (0 - 23)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ │ ┌───────────── day of month (1 - 31)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ ┌───────────── month (1 - 12)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ │                                       7 is also Sunday on some systems)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ │</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># │ │ │ │ │</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># * * * * *  command_to_execute</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># export date into a file every minutes</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">date</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Mon to Fri, 2:00, 2:30 , 4:00, 4:30</span>
+</span></span><span class="line"><span class="cl"><span class="o">*/</span><span class="mi">30</span> <span class="mi">2</span><span class="p">,</span><span class="mi">4</span> <span class="o">*</span> <span class="o">*</span> <span class="mi">1</span><span class="o">-</span><span class="mi">5</span> <span class="n">echo</span> <span class="s2">&#34;hello world&#34;</span></span></span></code></pre></div></div>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">symbol</th>
+          <th style="text-align: center">meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">*</td>
+          <td style="text-align: center">any value</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">,</td>
+          <td style="text-align: center">value list separator</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">-</td>
+          <td style="text-align: center">range of value</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">/</td>
+          <td style="text-align: center">step values</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="crontabguru">crontab.guru</h2>
+<p><a href="https://crontab.guru" target="_blank" rel="noopener noreffer ">crontab.guru</a> which is a website to check whether your schedule is correct.</p>]]></description></item></channel></rss>

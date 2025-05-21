@@ -1,23 +1,1031 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>C++ - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/c++/</link><description>C++ - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/c++/" rel="self" type="application/rss+xml"/><item><title>Dynamic Programming Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link><pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid><description>Longest common subsequence This is a typical recursive problem. The pseudocode is:
-If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:]) else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:])) Recursive solution: int longestCommonSubsequence(string text1, string text2) { if(text1.size() == 0 || text2.size() == 0 ){ return 0; } if(text1[0] == text2[0]){ return 1 + longestCommonSubsequence(text1.substr(1, text1.size()-1), text2.substr(1, text1.size()-1)); } return max(longestCommonSubsequence(text1, text2.substr(1, text1.size()-1)), longestCommonSubsequence(text1.substr(1, text1.size()-1), text2)); } Time complexity: O(2^n) Using dp could store the state that already calculate before.</description></item><item><title>Dynamic Programming 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link><pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid><description>What is dp problem DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for recursive problem.
-Memorization Tabulation fibonacci example The classic recursive problem:
-const fib = (n) =&amp;gt; { if (n &amp;lt;= 2) return 1; return fib(n - 1) + fib(n - 2); }; How to memorize :</description></item><item><title>Structured binding</title><link>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</guid><description><![CDATA[Structured binding is a new feature since c++17
-cppreference.com
-auto [ identifier-list ] = expression
-Bind array int main(int argc, char const *argv[]) { int test[3] = {1, 2, 3}; auto [a, b, c] = test; // an new array e copy from test and a = e[0]; b = e[1]; c = e[2]; auto &amp;[x, y, z] = test; // x = test[0]; x = test[1]; x = test[2] cout &lt;&lt; ++a &lt;&lt; &#34; &#34; &lt;&lt; ++b &lt;&lt; &#34; &#34; &lt;&lt; ++c &lt;&lt; &#34; &#34; &lt;&lt; endl; for (int &amp;i : test) cout &lt;&lt; i &lt;&lt; &#34; &#34;; cout &lt;&lt; endl; cout &lt;&lt; ++x &lt;&lt; &#34; &#34; &lt;&lt; ++y &lt;&lt; &#34; &#34; &lt;&lt; ++z &lt;&lt; &#34; &#34; &lt;&lt; endl; for (int &amp;i : test) cout &lt;&lt; i &lt;&lt; &#34; &#34;; cout &lt;&lt; endl; return 0; } tuple int main(int argc, char const *argv[]) { tuple&lt;int, int, int&gt; test(1, 2, 3); auto &amp;[a, b, c] = test; // 1 2 3 pair&lt;int, char&gt; test2(1, &#39;c&#39;); auto &amp;[a2, b2] = test2; // 1 c return 0; } struct struct test { int a; int b; }; int main(int argc, char const *argv[]) { test one; one.]]></description></item><item><title>How to find next permutation</title><link>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</link><pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</guid><description><![CDATA[This is introduce how to find the next lexicographically permutation.
-Suppose the permutation is 1 2 3. The next one is 1 3 2.
-Algorithm in C++ C++ provide an algorithm called next_permutation to support that. Reference
-Example:
-#include &lt;iostream&gt; // std::cout #include &lt;algorithm&gt; // std::next_permutation, std::sort int main () { int myints[] = {1,2,3}; std::sort (myints,myints+3); std::cout &lt;&lt; &#34;The 3! possible permutations with 3 elements:\n&#34;; do { std::cout &lt;&lt; myints[0] &lt;&lt; &#39; &#39; &lt;&lt; myints[1] &lt;&lt; &#39; &#39; &lt;&lt; myints[2] &lt;&lt; &#39;\n&#39;; } while ( std::next_permutation(myints,myints+3) ); std::cout &lt;&lt; &#34;After loop: &#34; &lt;&lt; myints[0] &lt;&lt; &#39; &#39; &lt;&lt; myints[1] &lt;&lt; &#39; &#39; &lt;&lt; myints[2] &lt;&lt; &#39;\n&#39;; return 0; How it work.]]></description></item><item><title>Lambda in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</link><pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</guid><description><![CDATA[Introduction of Lambda expression in C++ and how to use it.
-What is Lambda in C++ Lambda expression is a new feature since c++11. It is used to create anonymous function object to simplify programming process.
-How Lambda expressions are composed [capture](parameters) mutable -&gt; return type {statement}
-// ... #include &lt;functional&gt; // ... std:function&lt;int(int, int)&gt; add = [](int a, int b) -&gt; int {return a+b;}; capture Capture variables from context.]]></description></item><item><title>All algorithm in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</link><pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</guid><description>Content Content Algorithm Overview Copy For each Generation Heap Merge Move Number Partition Permutation Remove Replace Reverse rotate Search Set Shuffle Sort Swap Test range Unique Algorithm Overview * &amp;ndash;&amp;gt; new feature from C++11
-Algorithm Name Usage Mutating? Head File Complexity accumulate Accumulate values in range N numeric O(n) adjacent_difference Compute adjacent difference of range and return to another place N numeric O(n) adjacent_find Find first equal adjacent elements in range N algorithm O(n) all_of* Test condition on all elements in range N algorithm O(n) any_of* Test if any element in range fulfills condition N algorithm O(n) binary_search Test if value exists in sorted sequence N algorithm On average O(logn + 2).</description></item><item><title>Algorithm feature in c++ STL</title><link>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</link><pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</guid><description><![CDATA[See all algorithm click here Mutating and Non-mutating algorithms Mutating algorithms Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.
-If your give these algorithms a const iterator, only error will be returned.
-#include &lt;iostream&gt; #include &lt;vector&gt; using namespace std; int main(int argc, char const *argv[]) { std::vector&lt;int&gt; iv = {22,30,30,17,33,40,17,23,22,12,20}; vector&lt;int&gt;::iterator ib = iv.]]></description></item><item><title>Bit operation in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</guid><description><![CDATA[Bit operator operator function example &laquo; left shift 0001 &ndash;&gt; 0010 &raquo; right shift 0010 &ndash;&gt; 0001 &amp; and (bit by bit) 1100 &amp; 1010 = 1000 | or (bit by bit) 1010 | 0101 = 1111 ~ reverse ~0000 = 1111 ^ XOR 0110 ^ 1100 = 1010 Operator: &amp; x is a bit
-x &amp; 1 = x
-x &amp; 0 = 0
-Usually use &amp; as a filter.]]></description></item><item><title>RB tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</link><pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid><description>2-3 tree &amp;amp; 2-4 tree 2-node: 1 key and 2 children 3-node: 2 keys and 3 children 4-node: 3 keys and 4 children
-A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:
-Node-Size Property: every internal node has at most four children Depth Property: all the external nodes have the same depth insertion deletion 2-4 tree ==&amp;gt; RB tree If break down 3-node and 4-node, 2-4 tree will become RB tree.</description></item><item><title>Operator overwrite in c++</title><link>https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/</link><pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/</guid><description><![CDATA[Example increment and decrement operator
-#include &lt;iostream&gt; using namespace std; class INT { private: int m_i; public: INT(int i):m_i(i){}; friend bool operator==(INT&amp; test1, INT&amp; test2){ return test1.m_i == test2.m_i; } friend bool operator!=(INT&amp; test1, INT&amp; test2){ return test1.m_i != test2.m_i; } friend INT operator+(INT&amp; test1, INT&amp; test2){ int temp = test1.m_i + test2.m_i; INT res(temp); return res; } INT&amp; operator=(INT&amp; test){ this-&gt;m_i = test.m_i; return *this; } int&amp; operator*() const{ return (int&amp;)this-&gt;m_i; } // int a() const {}; This means a() cannot change any member in class.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>C++ - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/c++/</link><description>C++ - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 10 Jul 2020 18:49:03 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/c++/" rel="self" type="application/rss+xml"/><item><title>Dynamic Programming Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</link><pubDate>Fri, 10 Jul 2020 18:49:03 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dp-example/</guid><description><![CDATA[<h2 id="longest-common-subsequence">Longest common subsequence</h2>
+<p>This is a typical recursive problem. The pseudocode is:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">If S1[i] == S2[j], lcs(S1[i:],S2[j:]) = 1 + lcs(S1[i+1:],S2[j+1:])
+</span></span><span class="line"><span class="cl">else lcs(S1[i:],S2[j:]) = max(lcs(S1[i:],S2[j+1:]), lcs(S1[i+1s:],S2[j:]))</span></span></code></pre></div></div>
+<h3 id="recursive-solution">Recursive solution:</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">longestCommonSubsequence</span><span class="p">(</span><span class="n">string</span> <span class="n">text1</span><span class="p">,</span> <span class="n">string</span> <span class="n">text2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">text1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">text2</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">text1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">text2</span><span class="p">[</span><span class="mi">0</span><span class="p">]){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">longestCommonSubsequence</span><span class="p">(</span><span class="n">text1</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">text1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">text2</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">text1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">longestCommonSubsequence</span><span class="p">(</span><span class="n">text1</span><span class="p">,</span> <span class="n">text2</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">text1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">            <span class="n">longestCommonSubsequence</span><span class="p">(</span><span class="n">text1</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">text1</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">text2</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>Time complexity: O(2^n)
+Using dp could store the state that already calculate before.</p>]]></description></item><item><title>Dynamic Programming 🏗</title><link>https://tyrangyang.github.io/TyrangYang_blog/dp/</link><pubDate>Fri, 10 Jul 2020 18:41:10 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/dp/</guid><description><![CDATA[<h2 id="what-is-dp-problem">What is dp problem</h2>
+<p>DP problem is a programming strategy which use extra space to save time. These problems need to store some state instead of calculate again. For most situation, DP is a strategy to reduce the time consuming for <strong>recursive problem</strong>.</p>
+<ol>
+<li>Memorization</li>
+<li>Tabulation</li>
+</ol>
+<h3 id="fibonacci-example">fibonacci example</h3>
+<p>The classic recursive problem:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fib</span> <span class="o">=</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">fib</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<p>How to memorize :</p>]]></description></item><item><title>Structured binding</title><link>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</link><pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/structured-binding/</guid><description><![CDATA[<p>Structured binding is a new feature since c++17</p>
+<p><a href="https://zh.cppreference.com/w/cpp/language/structured_binding" target="_blank" rel="noopener noreffer ">cppreference.com</a></p>
+<p><code>auto [ identifier-list ] = expression</code></p>
+<h2 id="bind-array">Bind array</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">test</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">auto</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="p">;</span> <span class="c1">// an new array e copy from test and a = e[0]; b = e[1]; c = e[2];
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">auto</span> <span class="o">&amp;</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="p">;</span> <span class="c1">// x = test[0]; x = test[1]; x = test[2]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="nl">i</span> <span class="p">:</span> <span class="n">test</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="nl">i</span> <span class="p">:</span> <span class="n">test</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="tuple">tuple</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">auto</span> <span class="o">&amp;</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="p">;</span> <span class="c1">// 1 2 3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">char</span><span class="o">&gt;</span> <span class="n">test2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sc">&#39;c&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">auto</span> <span class="o">&amp;</span><span class="p">[</span><span class="n">a2</span><span class="p">,</span> <span class="n">b2</span><span class="p">]</span> <span class="o">=</span> <span class="n">test2</span><span class="p">;</span> <span class="c1">// 1 c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="struct">struct</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">test</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">test</span> <span class="n">one</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">one</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">one</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="o">&amp;</span><span class="p">[</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">]</span> <span class="o">=</span> <span class="n">one</span><span class="p">;</span> <span class="c1">// 1 ,2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>]]></description></item><item><title>How to find next permutation</title><link>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</link><pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/next-permutation/</guid><description><![CDATA[<p>This is introduce how to find the next lexicographically permutation.</p>
+<p>Suppose the permutation is <code>1 2 3</code>. The next one is <code>1 3 2</code>.</p>
+<h2 id="algorithm-in-c">Algorithm in C++</h2>
+<p>C++ provide an algorithm called <code>next_permutation</code> to support that. <a href="http://www.cplusplus.com/reference/algorithm/next_permutation/?kw=next_permutation" target="_blank" rel="noopener noreffer ">Reference</a></p>
+<p>Example:</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">     </span><span class="c1">// std::cout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">    </span><span class="c1">// std::next_permutation, std::sort
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">myints</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">std</span><span class="o">::</span><span class="n">sort</span> <span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;The 3! possible permutations with 3 elements:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">do</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">while</span> <span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">next_permutation</span><span class="p">(</span><span class="n">myints</span><span class="p">,</span><span class="n">myints</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;After loop: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">myints</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span></span></span></code></pre></div></div>
+<h2 id="how-it-work">How it work.</h2>
+<p>There are four step to achieve.</p>]]></description></item><item><title>Lambda in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</link><pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/lambda-cpp/</guid><description><![CDATA[<p>Introduction of Lambda expression in C++ and how to use it.</p>
+<h2 id="what-is-lambda-in-c">What is Lambda in C++</h2>
+<p>Lambda expression is a new feature since <strong>c++11</strong>. It is used to create anonymous function object to simplify programming process.</p>
+<h2 id="how-lambda-expressions-are-composed">How Lambda expressions are composed</h2>
+<p>[<em>capture</em>](<em>parameters</em>) <em>mutable</em> -&gt; <em>return type</em> {<em>statement</em>}</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">std</span><span class="p">:</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">add</span> <span class="o">=</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">int</span> <span class="p">{</span><span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;};</span></span></span></code></pre></div></div>
+<h3 id="capture">capture</h3>
+<p>Capture variables from context.</p>]]></description></item><item><title>All algorithm in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</link><pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/</guid><description><![CDATA[<h2 id="content">Content</h2>
+<ul>
+<li><a href="#content" rel="">Content</a></li>
+<li><a href="#algorithm-overview" rel="">Algorithm Overview</a></li>
+<li><a href="#copy" rel="">Copy</a></li>
+<li><a href="#for-each" rel="">For each</a></li>
+<li><a href="#generation" rel="">Generation</a></li>
+<li><a href="#heap" rel="">Heap</a></li>
+<li><a href="#merge" rel="">Merge</a></li>
+<li><a href="#move" rel="">Move</a></li>
+<li><a href="#number" rel="">Number</a></li>
+<li><a href="#partition" rel="">Partition</a></li>
+<li><a href="#permutation" rel="">Permutation</a></li>
+<li><a href="#remove" rel="">Remove</a></li>
+<li><a href="#replace" rel="">Replace</a></li>
+<li><a href="#reverse" rel="">Reverse</a></li>
+<li><a href="#rotate" rel="">rotate</a></li>
+<li><a href="#search" rel="">Search</a></li>
+<li><a href="#set" rel="">Set</a></li>
+<li><a href="#shuffle" rel="">Shuffle</a></li>
+<li><a href="#sort" rel="">Sort</a></li>
+<li><a href="#swap" rel="">Swap</a></li>
+<li><a href="#test-range" rel="">Test range</a></li>
+<li><a href="#unique" rel="">Unique</a></li>
+</ul>
+<h2 id="algorithm-overview">Algorithm Overview</h2>
+<p><strong><code>*</code> &ndash;&gt; new feature from C++11</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Algorithm Name</th>
+          <th style="text-align: center">Usage</th>
+          <th style="text-align: center">Mutating?</th>
+          <th style="text-align: center">Head File</th>
+          <th style="text-align: center">Complexity</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">accumulate</a></td>
+          <td style="text-align: center">Accumulate values in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">numeric</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">adjacent_difference</a></td>
+          <td style="text-align: center">Compute adjacent difference of range and return to another place</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">numeric</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">adjacent_find</a></td>
+          <td style="text-align: center">Find first equal adjacent elements in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#test-range" rel="">all_of*</a></td>
+          <td style="text-align: center">Test condition on all elements in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#test-range" rel="">any_of*</a></td>
+          <td style="text-align: center">Test if any element in range fulfills condition</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">binary_search</a></td>
+          <td style="text-align: center">Test if value exists in sorted sequence</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">On average O(logn + 2). On non-random-access iterator is O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#copy" rel="">copy</a></td>
+          <td style="text-align: center">Copy range of elements</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#copy" rel="">copy_backward</a></td>
+          <td style="text-align: center">Copy range of elements backward</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#copy" rel="">copy_if*</a></td>
+          <td style="text-align: center">Copy certain elements of range</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#copy" rel="">copy_n*</a></td>
+          <td style="text-align: center">Copies the first n elements from the range beginning</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">count</a></td>
+          <td style="text-align: center">Count appearances of value in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">count_if</a></td>
+          <td style="text-align: center">Return number of elements in range satisfying condition</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#test-range" rel="">equal</a></td>
+          <td style="text-align: center">Test whether the elements in two ranges are equal</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">equal_range</a></td>
+          <td style="text-align: center">Get sub range of equal elements</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(2logn + 1) for random access iterator, otherwise O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#generation" rel="">fill</a></td>
+          <td style="text-align: center">Fill range with value</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#generation" rel="">fill_n</a></td>
+          <td style="text-align: center">Assigns val to the first n elements of the sequence pointed by first</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">find</a></td>
+          <td style="text-align: center">Find the first element in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">find_end</a></td>
+          <td style="text-align: center">Find last subsequence in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(m*(1+n-m))</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">find_first_of</a></td>
+          <td style="text-align: center">Returns an iterator to the first element in the range [first1,last1) that matches any of the elements in [first2,last2)</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(nm)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">find_if</a></td>
+          <td style="text-align: center">Find the first element in range in some condition</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">find_if_not*</a></td>
+          <td style="text-align: center">Find the first element in range in some condition</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#for-each" rel="">for_each</a></td>
+          <td style="text-align: center">Apply function to range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#generation" rel="">generate</a></td>
+          <td style="text-align: center">Assigns the value returned by successive calls to gen to the elements in the range [first,last)</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#generation" rel="">generate_n</a></td>
+          <td style="text-align: center">Assigns the value returned by successive calls to gen to the first n elements of the sequence pointed by first</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#test-range" rel="">includes</a></td>
+          <td style="text-align: center">Test whether sorted range includes another sorted range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">inner_product</a></td>
+          <td style="text-align: center">Compute cumulative inner product of range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">numeric</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#merge" rel="">inplace_merge</a></td>
+          <td style="text-align: center">Merge consecutive sorted ranges</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n) if extra memory is available, otherwise is O(nlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">iota</a></td>
+          <td style="text-align: center">Store increasing sequence</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">numeric</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#heap" rel="">is_heap*</a></td>
+          <td style="text-align: center">Test if range is heap</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#heap" rel="">is_heap_until*</a></td>
+          <td style="text-align: center">Find first element not in heap order.</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#partition" rel="">is_partitioned*</a></td>
+          <td style="text-align: center">Test whether range is partitioned</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#permutation" rel="">is_permutation*</a></td>
+          <td style="text-align: center">Compares the elements in the range [first1,last1) with those in the range beginning at first2, and returns true if they just different permutation</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">is_sorted*</a></td>
+          <td style="text-align: center">Check whether range is sorted</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">is_sorted_until*</a></td>
+          <td style="text-align: center">Find first unsorted element in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#swap" rel="">iter_swap</a></td>
+          <td style="text-align: center">Swaps the elements pointed to by a and b</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#permutation" rel="">lexicographical_compare</a></td>
+          <td style="text-align: center">Compare two range lexicographically.</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">lower_bond</a></td>
+          <td style="text-align: center">Return iterator to lower bound</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(logn + 1) for random access iterator, otherwise O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#heap" rel="">make_heap</a></td>
+          <td style="text-align: center">Make heap from range</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(3n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">max</a></td>
+          <td style="text-align: center">Returns the largest of a and b. If both are equivalent, a is returned.</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">max_element</a></td>
+          <td style="text-align: center">Return largest element in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#merge" rel="">merge</a></td>
+          <td style="text-align: center">Merge sorted ranges</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">min</a></td>
+          <td style="text-align: center">Returns the smallest of a and b. If both are equivalent, a is returned.</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">minmax*</a></td>
+          <td style="text-align: center">Return smallest and largest elements from give 2 value or initializer</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">minmax_element*</a></td>
+          <td style="text-align: center">Return smallest and largest elements in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">min_element</a></td>
+          <td style="text-align: center">Return smallest element in range</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">mismatch</a></td>
+          <td style="text-align: center">Return first position where two ranges differ</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#move" rel="">move*</a></td>
+          <td style="text-align: center">Move range of elements</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#move" rel="">move_backward*</a></td>
+          <td style="text-align: center">Move range of elements backward</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#permutation" rel="">next_permutation</a></td>
+          <td style="text-align: center">Rearranges the elements in the range [first,last) into the next lexicographically greater permutation</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#test-range" rel="">none_of*</a></td>
+          <td style="text-align: center">Test if no elements fulfill condition</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">nth_element</a></td>
+          <td style="text-align: center">Find the nth element and put it the exact palce.(quick select)</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O()</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">partial_sort</a></td>
+          <td style="text-align: center">Partially sort elements in range while the remaining elements are left without any order</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(mlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">partial_sort_copy</a></td>
+          <td style="text-align: center">Copy and partially sort range</td>
+          <td style="text-align: center">Y (if in-place)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(mlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#number" rel="">partial_sum</a></td>
+          <td style="text-align: center">Compute partial sums of range and return to another place</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">numeric</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#partition" rel="">partition</a></td>
+          <td style="text-align: center">Partition range in two and the iterator returned points to the first element of the second group.</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#partition" rel="">partition_copy*</a></td>
+          <td style="text-align: center">Partition range into two</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#partition" rel="">partition_point*</a></td>
+          <td style="text-align: center">Get partition point and Returns an iterator to the first element in second part</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(logn + 2)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#heap" rel="">pop_heap</a></td>
+          <td style="text-align: center">Pop element from heap range. Range shrink and value is at end.</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(logn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#permutation" rel="">prev_permutation</a></td>
+          <td style="text-align: center">Rearranges the elements in the range [first,last) into the previous lexicographically-ordered permutation.</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#heap" rel="">push_heap</a></td>
+          <td style="text-align: center">Push element into heap range. Range extend</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(logn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#shuffle" rel="">random_shuffle</a></td>
+          <td style="text-align: center">Randomly rearrange elements in range</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#remove" rel="">remove</a></td>
+          <td style="text-align: center">Removed element equal to val and returns an iterator to the new end of that range.</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#remove" rel="">remove_copy</a></td>
+          <td style="text-align: center">Remove and copy to new place</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#remove" rel="">remove_copy_if</a></td>
+          <td style="text-align: center">Remove in a given condition and copy</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#remove" rel="">remove_if</a></td>
+          <td style="text-align: center">Remove in a given condition</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#replace" rel="">replace</a></td>
+          <td style="text-align: center">Assigns new_value to all the elements that compare equal to old_value</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#replace" rel="">replace_copy</a></td>
+          <td style="text-align: center">Replace and copy</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#replace" rel="">replace_copy_if</a></td>
+          <td style="text-align: center">Replace in a given condition and copy</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#replace" rel="">replace_if</a></td>
+          <td style="text-align: center">Replace in a given condition</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#reverse" rel="">reverse</a></td>
+          <td style="text-align: center">Reverses the order of the elements in the range [first,last)</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#reverse" rel="">reverse_copy</a></td>
+          <td style="text-align: center">Copies the elements in [first,last) but in reverse order</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#rotate" rel="">rotate</a></td>
+          <td style="text-align: center">Rotates the order of the elements and middle becomes the new first element</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#rotate" rel="">rotate_copy</a></td>
+          <td style="text-align: center">Rotate and copy</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">search</a></td>
+          <td style="text-align: center">Search range for subsequence</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n*m)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">search_n</a></td>
+          <td style="text-align: center">Search range for n continue elements</td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#set" rel="">set_difference</a></td>
+          <td style="text-align: center">Difference of two sorted ranges</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(2(n+m)-1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#set" rel="">set_intersection</a></td>
+          <td style="text-align: center">Intersection of two sorted ranges</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(2(n+m)-1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#set" rel="">set_symmetric_difference</a></td>
+          <td style="text-align: center">Symmetric difference of two sorted ranges</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(2(n+m)-1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#set" rel="">set_union</a></td>
+          <td style="text-align: center">Union of two sorted ranges</td>
+          <td style="text-align: center">N(copy)</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(2(n+m)-1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#shuffle" rel="">shuffle*</a></td>
+          <td style="text-align: center">Randomly rearrange elements in range using generator</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">sort</a></td>
+          <td style="text-align: center">Sort elements in range</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(nlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#heap" rel="">sort_heap</a></td>
+          <td style="text-align: center">Sort elements of heap</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(nlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#partition" rel="">stable_partition</a></td>
+          <td style="text-align: center">Partition range in two - stable ordering</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n) with enough space. Otherwise O(nlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#sort" rel="">stable_sort</a></td>
+          <td style="text-align: center">Sort elements preserving order of equivalents</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(nlogn) with enough space, otherwise O(nlognlogn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#swap" rel="">swap</a></td>
+          <td style="text-align: center">Exchanges the values of a and b</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(1)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#swap" rel="">swap_ranges</a></td>
+          <td style="text-align: center">Exchanges a range of value</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#move" rel="">transform</a></td>
+          <td style="text-align: center">Transform range</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#unique" rel="">unique</a></td>
+          <td style="text-align: center">Remove consecutive duplicates in range</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#unique" rel="">unique_copy</a></td>
+          <td style="text-align: center">Copy range removing duplicates</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(n)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><a href="#search" rel="">upper_bond</a></td>
+          <td style="text-align: center">Return iterator to upper bound. Since <strong>[first, last)</strong>, the value pointed by the iterator must larger than <em>val</em></td>
+          <td style="text-align: center">N</td>
+          <td style="text-align: center">algorithm</td>
+          <td style="text-align: center">O(logn + 1) for random access iterator, otherwise O(n)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="copy">Copy</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iv</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iv2</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">copy</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">iv2</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// iv2: 1 2 3 4 5 6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iv3</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">copy_if</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">iv3</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">a</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;});</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// iv3: 2 4 6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iv4</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">copy_n</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="mi">5</span><span class="p">,</span> <span class="n">iv4</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// iv4: 1 2 3 4 5 6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iv5</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">copy_backward</span><span class="p">(</span><span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">iv5</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// iv5: 1 2 3 4 5 6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p><a href="#content" rel="">Back to top</a></p>]]></description></item><item><title>Algorithm feature in c++ STL</title><link>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</link><pubDate>Sun, 25 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/algorithm-feature/</guid><description><![CDATA[<h1 id="see-all-algorithm"><strong>See all algorithm <a href="https://tyrangyang.github.io/TyrangYang_blog/all-algorithm/" rel="">click here</a></strong></h1>
+<h2 id="mutating-and-non-mutating-algorithms">Mutating and Non-mutating algorithms</h2>
+<h3 id="mutating-algorithms">Mutating algorithms</h3>
+<p>Mutating algorithms means this algorithm will change the content that iterator pointed to. Like copy, swap, replace, fill, remove, permutation, partition, random shuffling and sort.</p>
+<p>If your give these algorithms a const iterator, only error will be returned.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">iv</span> <span class="o">=</span> <span class="p">{</span><span class="mi">22</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">20</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">ib</span> <span class="o">=</span> <span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">ie</span> <span class="o">=</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">sort</span><span class="p">(</span><span class="n">ib</span><span class="p">,</span><span class="n">ie</span><span class="p">);</span> <span class="c1">//works
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">iv</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">iv</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// vector&lt;int&gt;::const_iterator ib = iv.begin();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// vector&lt;int&gt;::const_iterator ie = iv.end();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// sort(ib,ie); // error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="non-mutating-algorithm">Non-mutating algorithm</h3>
+<p>Algorithm not change any element that iterator pointed to. Like: find, search, for_each, count, equal_mismatch, max, min.</p>]]></description></item><item><title>Bit operation in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</guid><description><![CDATA[<h2 id="bit-operator">Bit operator</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">operator</th>
+          <th>function</th>
+          <th>example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">&laquo;</td>
+          <td>left shift</td>
+          <td>0001 &ndash;&gt; 0010</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">&raquo;</td>
+          <td>right shift</td>
+          <td>0010 &ndash;&gt; 0001</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">&amp;</td>
+          <td>and (bit by bit)</td>
+          <td>1100 &amp; 1010 = 1000</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">|</td>
+          <td>or (bit by bit)</td>
+          <td>1010 | 0101 = 1111</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">~</td>
+          <td>reverse</td>
+          <td>~0000 = 1111</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">^</td>
+          <td>XOR</td>
+          <td>0110 ^ 1100 = 1010</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="operator-">Operator: &amp;</h3>
+<p>x is a bit</p>
+<p>x &amp; 1 = x</p>
+<p>x &amp; 0 = 0</p>
+<p>Usually use &amp; as a filter. Suppose we have a number is X, X &amp; 0011 will get the last two bits of X.</p>]]></description></item><item><title>RB tree</title><link>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</link><pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/rb-tree/</guid><description><![CDATA[<h2 id="2-3-tree--2-4-tree">2-3 tree &amp; 2-4 tree</h2>
+<p>2-node: 1 key and 2 children
+3-node: 2 keys and 3 children
+4-node: 3 keys and 4 children</p>
+<p>A (2,4) tree (also called 2-4 tree or 2-3-4 tree) is a multi-way search with the following properties:</p>
+<ul>
+<li>Node-Size Property: every internal node has at most four children</li>
+<li>Depth Property: all the external nodes have the same depth</li>
+</ul>
+<h3 id="insertion">insertion</h3>
+<p></p>]]></description></item><item><title>Operator overwrite in c++</title><link>https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/</link><pubDate>Tue, 13 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/operator-overwrite/</guid><description><![CDATA[<h2 id="example">Example</h2>
+<p>increment and decrement operator</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-cpp">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">INT</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">m_i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">INT</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span><span class="o">:</span><span class="n">m_i</span><span class="p">(</span><span class="n">i</span><span class="p">){};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="n">INT</span><span class="o">&amp;</span> <span class="n">test1</span><span class="p">,</span> <span class="n">INT</span><span class="o">&amp;</span> <span class="n">test2</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">test1</span><span class="p">.</span><span class="n">m_i</span> <span class="o">==</span> <span class="n">test2</span><span class="p">.</span><span class="n">m_i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="kt">bool</span> <span class="k">operator</span><span class="o">!=</span><span class="p">(</span><span class="n">INT</span><span class="o">&amp;</span> <span class="n">test1</span><span class="p">,</span> <span class="n">INT</span><span class="o">&amp;</span> <span class="n">test2</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">test1</span><span class="p">.</span><span class="n">m_i</span> <span class="o">!=</span> <span class="n">test2</span><span class="p">.</span><span class="n">m_i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="n">INT</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="n">INT</span><span class="o">&amp;</span> <span class="n">test1</span><span class="p">,</span> <span class="n">INT</span><span class="o">&amp;</span> <span class="n">test2</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">test1</span><span class="p">.</span><span class="n">m_i</span> <span class="o">+</span> <span class="n">test2</span><span class="p">.</span><span class="n">m_i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">INT</span> <span class="nf">res</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">INT</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">INT</span><span class="o">&amp;</span> <span class="n">test</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">-&gt;</span><span class="n">m_i</span> <span class="o">=</span> <span class="n">test</span><span class="p">.</span><span class="n">m_i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="k">const</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">m_i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// int a() const {}; This means a() cannot change any member in class.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">INT</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">++</span><span class="p">(){</span> <span class="c1">//prefix. ++test;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="o">-&gt;</span><span class="n">m_i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Why prefix is not const. Because it always return original class and actually it support ++++test.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">const</span> <span class="n">INT</span> <span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">){</span> <span class="c1">//postfix. test++;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">INT</span> <span class="n">temp</span> <span class="o">=</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ++(*this);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="o">-&gt;</span><span class="n">m_i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Postfix must be const. Because it return a temporary variable and it not support test++++.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// You can try int i = 1; i++++;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// This is invalid.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="n">INT</span><span class="o">&amp;</span> <span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;[&#39;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span><span class="p">.</span><span class="n">m_i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;]&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">INT</span> <span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">INT</span> <span class="n">test1</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">INT</span> <span class="n">test2</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">++</span><span class="n">test</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//[2]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span><span class="o">++</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//[2]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//[3]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">test</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">test</span> <span class="o">+</span> <span class="n">test2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//[6]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">boolalpha</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">test</span> <span class="o">==</span> <span class="n">test2</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">test</span> <span class="o">=</span> <span class="n">test1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">test</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//[10]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="second-example">Second Example</h2>
+<p>convert operator</p>]]></description></item></channel></rss>

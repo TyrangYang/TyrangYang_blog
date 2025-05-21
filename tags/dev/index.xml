@@ -1,7 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Dev - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/dev/</link><description>Dev - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/dev/" rel="self" type="application/rss+xml"/><item><title>Heroku overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/heroku/</link><pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/heroku/</guid><description>Heroku can help us deploy our application(back end) rapidly and easy
-deploy The only we need to take care is the PORT of your app. You have to use the PORT in environment.
-In Node.js
-PORT = process.env.PORT || 3000; // 3000 can be anything else heroku cli Home page
-heroku login
-heroku create
-git push heroku master</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Dev - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/dev/</link><description>Dev - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 15 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/dev/" rel="self" type="application/rss+xml"/><item><title>Heroku overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/heroku/</link><pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/heroku/</guid><description><![CDATA[<p>Heroku can help us deploy our application(back end) rapidly and easy</p>
+<h2 id="deploy">deploy</h2>
+<p>The only we need to take care is the <strong>PORT</strong> of your app. You have to use the <strong>PORT</strong> in environment.</p>
+<p>In Node.js</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">PORT</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3000</span><span class="p">;</span> <span class="c1">// 3000 can be anything else
+</span></span></span></code></pre></div></div>
+<h2 id="heroku-cli">heroku cli</h2>
+<p><a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank" rel="noopener noreffer ">Home page</a></p>
+<p><code>heroku login</code></p>
+<p><code>heroku create</code></p>]]></description></item></channel></rss>
