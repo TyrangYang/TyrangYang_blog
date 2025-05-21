@@ -1,27 +1,138 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Css - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/css/</link><description>Css - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Dec 2020 15:52:02 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/" rel="self" type="application/rss+xml"/><item><title>HTML Effect with vanilla html js css</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link><pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid><description>Modal box Demo
-Cursor &amp;amp; hover effect Demo
-Pure Css hamburger button This is a hamburger button using pure css to style it.
-Demo
-Loading Demo
-Sidebar Demo
-Profile Demo</description></item><item><title>Flex and Grid in CSS</title><link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link><pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid><description>Flex Cheat Sheet provide by CSS-tricks.com
-A Flexbox code Example
-display .container { display: flex; } flex-direction .container { flex-direction: row | row-reverse | column | column-reverse; } flex-direction flex-warp .container { flex-wrap: nowrap | wrap | wrap-reverse; } flex-wrap flex-flow This is a shorthand for the flex-direction and flex-wrap properties.
-.container { flex-flow: column wrap; } order .item { order: 5; /* default is 0 */ } order flex-grow This defines the ability for a flex item to grow when there is extra space from container.</description></item><item><title>Canvas in html5</title><link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link><pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid><description>Canvas is a new feature since html5 that allows you draw something on your web page
-Reference from MDN
-Project by using Canvas Chaos Game: Use canvas to draw the chaos game Draw panel with socket.io: A scribble panel with Websocket. Multi user can draw panel on simultaneously Draw on canvas Get start Jquery to get canvas. ctx mean canvas content which used to draw on canvas
-const canvas = document.</description></item><item><title>CSS Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/css/</link><pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid><description><![CDATA[CSS cheat sheet: html &amp; css provided by Traversy Media
-Font font-size size
-font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;;
-font-family: Lobster monospace;
-GENERIC_NAME: sans-serif serif monospace;
-sans-serif force on connected and serif force on single alphabet.
-line-height: 25px;
-Import font Could use google font and add link into index.html or in style.css
-Control space There are three important properties to control the space: padding, margin and border
-Border border-size
-border-color
-border-width
-border-style
-border: &lt;border-width&gt; &lt;border-style&gt; &lt;border-color&gt;]]></description></item><item><title>SASS (SCSS) features</title><link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link><pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid><description><![CDATA[SCSS features Variables $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; } Operator .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; } String interpolation $name: foo; $attr: border; p.#{$name} { #{$attr}-color: blue; } This is compile to:
-p.foo { border-color: blue; } Nesting #main p { color: #00ff00; width: 90%; .]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Css - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/css/</link><description>Css - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 14 Dec 2020 15:52:02 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/css/" rel="self" type="application/rss+xml"/><item><title>HTML Effect with vanilla html js css</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link><pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid><description><![CDATA[<h2 id="modal-box">Modal box</h2>
+<blockquote>
+<p><a href="/html/htmlEffect/modal.html" rel="">Demo</a></p></blockquote>
+<h2 id="cursor--hover-effect">Cursor &amp; hover effect</h2>
+<blockquote>
+<p><a href="/html/htmlEffect/cursorHover.html" rel="">Demo</a></p></blockquote>
+<h2 id="pure-css-hamburger-button">Pure Css hamburger button</h2>
+<p>This is a hamburger button using pure css to style it.</p>
+<blockquote>
+<p><a href="/html/htmlEffect/hamburgerBtnManu.html" rel="">Demo</a></p></blockquote>
+<h2 id="loading">Loading</h2>
+<blockquote>
+<p><a href="/html/htmlEffect/loading.html" rel="">Demo</a></p></blockquote>
+<h2 id="sidebar">Sidebar</h2>
+<blockquote>
+<p><a href="/html/htmlEffect/sidebar.html" rel="">Demo</a></p></blockquote>
+<h2 id="profile">Profile</h2>
+<blockquote>
+<p><a href="/html/htmlEffect/profile.html" rel="">Demo</a></p></blockquote>]]></description></item><item><title>Flex and Grid in CSS</title><link>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</link><pubDate>Tue, 18 Aug 2020 12:04:51 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/flex-grid/</guid><description><![CDATA[<p><figure>
+</figure>
+
+<figure>
+</figure>
+</p>
+<h2 id="flex">Flex</h2>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreffer "><strong>Cheat Sheet</strong></a> provide by CSS-tricks.com</p>
+<p>A <a href="https://codepen.io/TyrangYang/pen/GRZjQgg" target="_blank" rel="noopener noreffer ">Flexbox code Example</a></p>
+<h3 id="display">display</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-css">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="flex-direction">flex-direction</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-css">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span> <span class="o">|</span> <span class="kc">row-reverse</span> <span class="o">|</span> <span class="kc">column</span> <span class="o">|</span> <span class="kc">column-reverse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<figure><figcaption>
+      <h4>flex-direction</h4>
+    </figcaption>
+</figure>
+
+<h3 id="flex-warp">flex-warp</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-css">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">flex-wrap</span><span class="p">:</span> <span class="kc">nowrap</span> <span class="o">|</span> <span class="kc">wrap</span> <span class="o">|</span> <span class="kc">wrap-reverse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<figure><figcaption>
+      <h4>flex-wrap</h4>
+    </figcaption>
+</figure>
+
+<h3 id="flex-flow">flex-flow</h3>
+<p>This is a shorthand for the flex-direction and flex-wrap properties.</p>]]></description></item><item><title>Canvas in html5</title><link>https://tyrangyang.github.io/TyrangYang_blog/canvas/</link><pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/canvas/</guid><description><![CDATA[<p>Canvas is a new feature since <strong>html5</strong> that allows you draw something on your web page</p>
+<p>Reference from <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener noreffer ">MDN</a></p>
+<h2 id="project-by-using-canvas">Project by using Canvas</h2>
+<ul>
+<li><a href="https://tyrangyang.github.io/chaos-game/" target="_blank" rel="noopener noreffer ">Chaos Game</a>:
+Use canvas to draw the chaos game</li>
+<li><a href="https://scribble-panel.herokuapp.com" target="_blank" rel="noopener noreffer ">Draw panel with socket.io</a>:
+A scribble panel with Websocket. Multi user can draw panel on simultaneously</li>
+</ul>
+<h2 id="draw-on-canvas">Draw on canvas</h2>
+<h3 id="get-start">Get start</h3>
+<p>Jquery to get canvas. ctx mean canvas content which used to draw on canvas</p>]]></description></item><item><title>CSS Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/css/</link><pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/css/</guid><description><![CDATA[<p>CSS cheat sheet: <a href="/csscrashcourse/csscheatsheet/index.html" rel="">html</a> &amp; <a href="/csscrashcourse/csscheatsheet/css/style.css" rel="">css</a> provided by <a href="https://youtu.be/yfoY53QXEnI" target="_blank" rel="noopener noreffer ">Traversy Media</a></p>
+<h2 id="font">Font</h2>
+<p><code>font-size</code> size</p>
+<p><code>font-family: &lt;FAMILY_NAME&gt;, &lt;GENERIC_NAME&gt;;</code></p>
+<p>font-family: Lobster monospace;</p>
+<p>GENERIC_NAME: sans-serif serif monospace;</p>
+<p>sans-serif force on connected and serif force on single alphabet.</p>
+<p><code>line-height: 25px;</code></p>
+<h3 id="import-font">Import font</h3>
+<p>Could use google font and add link into index.html or in style.css</p>
+<h2 id="control-space">Control space</h2>
+<p>There are three important properties to control the space: <code>padding</code>, <code>margin</code> and <code>border</code></p>
+<h3 id="border">Border</h3>
+<p><code>border-size</code></p>
+<p><code>border-color</code></p>
+<p><code>border-width</code></p>
+<p><code>border-style</code></p>
+<p><code>border: &lt;border-width&gt; &lt;border-style&gt; &lt;border-color&gt;</code></p>]]></description></item><item><title>SASS (SCSS) features</title><link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link><pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid><description><![CDATA[<h2 id="scss-features">SCSS features</h2>
+<h3 id="variables">Variables</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-scss">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nv">$font-stack</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="ni">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$primary-color</span><span class="o">:</span> <span class="mh">#333</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">font</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span> <span class="nv">$font-stack</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">color</span><span class="o">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="operator">Operator</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-scss">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.container</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="o">]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">float</span><span class="o">:</span> <span class="ni">left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">600</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">960</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;complementary&#39;</span><span class="o">]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">float</span><span class="o">:</span> <span class="ni">right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">300</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">960</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="string-interpolation">String interpolation</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-scss">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nv">$name</span><span class="o">:</span> <span class="n">foo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$attr</span><span class="o">:</span> <span class="n">border</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">p</span><span class="nc">.</span><span class="si">#{</span><span class="nv">$name</span><span class="si">}</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="si">#{</span><span class="nv">$attr</span><span class="si">}</span><span class="na">-color</span><span class="o">:</span> <span class="no">blue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>This is compile to:</p>]]></description></item></channel></rss>

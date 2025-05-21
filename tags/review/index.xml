@@ -1,8 +1,200 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Review - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/review/</link><description>Review - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/review/" rel="self" type="application/rss+xml"/><item><title>Review java - Array</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</link><pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</guid><description><![CDATA[Declaring an array Both are allow
-string argc[]; string[] argc; Int array int[] nums = new int[7]; nums[0] = 10; Rabbit[] racers = new Rabbit[10];//10 empty rabbit array; racers[0] = new Rabbit(&#34;B&#34;,&#34;F&#34;); arraycopy() System.arraycopy(nums, 0, nums, 0, nums.length); Array vs ArrayList An array needs to know its size at the time of creation, arrayList does not. To assign an object in array you must assign it to a specific index. Array use array syntax ([]).]]></description></item><item><title>Review java - javadoc</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</link><pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</guid><description>JavaDocs JavaDocs is able to easily generate a code &amp;ldquo;maintenance manual&amp;rdquo;
-A doc comment is made up of two parts &amp;ndash; a description and two or more tag.
-/** * Here is description * * @tag Comment for tag */ Tags @author (classes and interfaces only, required) @version (classes and interfaces only, required) @param (methods and constructors only) @return (methods only) @exception @see @since @serial (or @serialField or @serialData) @deprecated JDK Docs External documentation can be created with javadoc</description></item><item><title>Review java - OO</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</link><pubDate>Fri, 05 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</guid><description>Class &amp;amp; Object A class only exists at compile time;
-An object only exists at runtime.
-Data Encapsulation Data Encapsulation/information hiding: where the internal state and operation are hidden from others.
-The more information Class A knows about Class B, the greater the possibility that changing Class A will adversely affect Class B. In an ideal world, making internal changes to Class A should have no, or very little, effect on other classes.</description></item><item><title>Review java - Variable</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</guid><description>Basic types Every type have a default value:
-Type Representation Initial value Storage Max. value byte singed integer 0 8 bits 127 short singed integer 0 16 bits 32767 int singed integer 0 32 bits 2147483647 long singed integer 0 64 bits over 10^18 float floating point 0.0 32 bits over 10^38 double floating point 0.0 64 bits over 10^308 boolean true or false false 1 bit char UNICODE (not ASCII) u0000 16 bits uFFFF Difference between i++ and ++i b = 1; a = b++; // a = 1; b = 2 b = 1; a = ++b; // a = 2; b = 2 int a = 1; int res = a++ + a; // res = 3 ; a = 2.</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Review - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/review/</link><description>Review - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/review/" rel="self" type="application/rss+xml"/><item><title>Review java - Array</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</link><pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-array/</guid><description><![CDATA[<h2 id="declaring-an-array">Declaring an array</h2>
+<p>Both are allow</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">string</span><span class="w"> </span><span class="n">argc</span><span class="o">[]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">string</span><span class="o">[]</span><span class="w"> </span><span class="n">argc</span><span class="p">;</span></span></span></code></pre></div></div>
+<h3 id="int-array">Int array</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">7</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">nums</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">10</span><span class="p">;</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Rabbit</span><span class="o">[]</span><span class="w"> </span><span class="n">racers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rabbit</span><span class="o">[</span><span class="n">10</span><span class="o">]</span><span class="p">;</span><span class="c1">//10 empty rabbit array;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">racers</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rabbit</span><span class="p">(</span><span class="s">&#34;B&#34;</span><span class="p">,</span><span class="s">&#34;F&#34;</span><span class="p">);</span></span></span></code></pre></div></div>
+<h2 id="arraycopy">arraycopy()</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">System</span><span class="p">.</span><span class="na">arraycopy</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">);</span></span></span></code></pre></div></div>
+<h2 id="array-vs-arraylist">Array vs ArrayList</h2>
+<ol>
+<li>An array needs to know its size at the time of creation, arrayList does not.</li>
+<li>To assign an object in array you must assign it to a specific index.</li>
+<li>Array use array syntax ([]).</li>
+<li>ArrayList is parameterized. <code>ArrayList&lt;string&gt;</code></li>
+</ol>
+<h2 id="arraylist">ArrayList</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Flower</span><span class="o">&gt;</span><span class="w"> </span><span class="n">flowerList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Flower</span><span class="o">&gt;</span><span class="p">();</span><span class="c1">// &lt;- ArrayList constructor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Flower</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Flower</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Flower</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Flower</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">flowerList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">f</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">flowerList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">m</span><span class="p">);</span></span></span></code></pre></div></div>]]></description></item><item><title>Review java - javadoc</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</link><pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-javadoc/</guid><description><![CDATA[<h2 id="javadocs">JavaDocs</h2>
+<p>JavaDocs is able to easily generate a code &ldquo;maintenance manual&rdquo;</p>
+<p>A doc comment is made up of two parts &ndash; a description and two or more tag.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">* Here is description
+</span></span></span><span class="line"><span class="cl"><span class="cm">*
+</span></span></span><span class="line"><span class="cl"><span class="cm">* @tag Comment for tag
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span></span></span></code></pre></div></div>
+<h3 id="tags">Tags</h3>
+<ul>
+<li>@author (classes and interfaces only, required)</li>
+<li>@version (classes and interfaces only, required)</li>
+<li>@param (methods and constructors only)</li>
+<li>@return (methods only)</li>
+<li>@exception</li>
+<li>@see</li>
+<li>@since</li>
+<li>@serial (or @serialField or @serialData)</li>
+<li>@deprecated</li>
+</ul>
+<h2 id="jdk-docs">JDK Docs</h2>
+<p>External documentation can be created with javadoc</p>]]></description></item><item><title>Review java - OO</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</link><pubDate>Fri, 05 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-oo/</guid><description><![CDATA[<h2 id="class--object">Class &amp; Object</h2>
+<p>A <strong>class</strong> only exists at <em>compile time</em>;</p>
+<p>An <strong>object</strong> only exists at <em>runtime</em>.</p>
+<h2 id="data-encapsulation">Data Encapsulation</h2>
+<p>Data Encapsulation/information hiding: where the internal state and operation are hidden from others.</p>
+<p>The more information Class A knows about Class B, the greater the possibility that changing Class A will adversely affect Class B. In an ideal world, making internal changes to Class A should have no, or very little, effect on other classes.</p>]]></description></item><item><title>Review java - Variable</title><link>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</link><pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/java-review-variable/</guid><description><![CDATA[<h2 id="basic-types">Basic types</h2>
+<p>Every type have a default value:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Type</th>
+          <th style="text-align: center">Representation</th>
+          <th style="text-align: center">Initial value</th>
+          <th style="text-align: center">Storage</th>
+          <th style="text-align: center">Max. value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">byte</td>
+          <td style="text-align: center">singed integer</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">8 bits</td>
+          <td style="text-align: center">127</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">short</td>
+          <td style="text-align: center">singed integer</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">16 bits</td>
+          <td style="text-align: center">32767</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">singed integer</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">32 bits</td>
+          <td style="text-align: center">2147483647</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">long</td>
+          <td style="text-align: center">singed integer</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">64 bits</td>
+          <td style="text-align: center">over 10^18</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">float</td>
+          <td style="text-align: center">floating point</td>
+          <td style="text-align: center">0.0</td>
+          <td style="text-align: center">32 bits</td>
+          <td style="text-align: center">over 10^38</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">double</td>
+          <td style="text-align: center">floating point</td>
+          <td style="text-align: center">0.0</td>
+          <td style="text-align: center">64 bits</td>
+          <td style="text-align: center">over 10^308</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">boolean</td>
+          <td style="text-align: center">true or false</td>
+          <td style="text-align: center">false</td>
+          <td style="text-align: center">1 bit</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">char</td>
+          <td style="text-align: center">UNICODE (not ASCII)</td>
+          <td style="text-align: center">u0000</td>
+          <td style="text-align: center">16 bits</td>
+          <td style="text-align: center">uFFFF</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="difference-between-i-and-i">Difference between i++ and ++i</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">.</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">.</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">4</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">.</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">//</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">3</span><span class="p">;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">.</span></span></span></code></pre></div></div>
+<h2 id="for-loop">For loop</h2>
+<p>for(<strong>int</strong> i=0; i &lt; n ; i++)</p>]]></description></item></channel></rss>
