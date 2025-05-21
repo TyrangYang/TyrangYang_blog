@@ -28,7 +28,7 @@ jobs:
             - name: Setup Hugo
               uses: peaceiris/actions-hugo@v2
               with:
-                  hugo-version: '0.130.0'
+                  hugo-version: '0.145.0'
                   extended: true
             - run: npm ci # clean install. remove node_modules and stick to package-lock
             - run: hugo --minify # hugo will compile as small as possible

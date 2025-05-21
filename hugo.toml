@@ -23,6 +23,7 @@ link = "https://tyrangyang.github.io/"
 
 [params]
 title = "TyrangYang_Blog"
+version = "0.3.1"
 [params.header.title]
 # URL of the LOGO
 # LOGO 的 URL
@@ -203,4 +204,3 @@ home = ["HTML", "RSS", "JSON"]
 page = ["HTML", "MarkDown"]
 section = ["HTML", "RSS"]
 taxonomy = ["HTML", "RSS"]
-taxonomyTerm = ["HTML"]
