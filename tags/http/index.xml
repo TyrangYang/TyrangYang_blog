@@ -1,18 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Http - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/http/</link><description>Http - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2020 14:11:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/http/" rel="self" type="application/rss+xml"/><item><title>Http Status Code Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</link><pubDate>Thu, 13 Aug 2020 14:11:38 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</guid><description><![CDATA[<p>Reference: <a href="https://www.restapitutorial.com/httpstatuscodes.html" target="_blank" rel="noopener noreffer ">https://www.restapitutorial.com/httpstatuscodes.html</a></p>
-<blockquote>
-<p>⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.</p></blockquote>
-<h2 id="1xx-information">1XX Information</h2>
-<ul>
-<li><strong>100 <em>continue</em></strong> &ndash; Client should continue</li>
-<li><strong>101 <em>switching protocols</em></strong></li>
-<li>102 <em>processing (webDAV)</em></li>
-</ul>
-<h2 id="2xx-success">2XX Success</h2>
-<ul>
-<li><strong>⭐︎200 <em>OK</em></strong> &ndash; The request has succeeded.
-<blockquote>
-<p>General status code. Most common code used to indicate success.</p></blockquote>
-</li>
-<li><strong>⭐︎201 <em>Created</em></strong> &ndash; A new resource has been created and should return a URI.
-<blockquote>
-<p>Successful creation occurred (via either POST or PUT). Set the Location header to contain a link to the newly-created resource (on POST). Response body content may or may not be present.</p>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Http - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/http/</link><description>Http - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Aug 2020 14:11:38 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/http/" rel="self" type="application/rss+xml"/><item><title>Http Status Code Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</link><pubDate>Thu, 13 Aug 2020 14:11:38 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/http-status-code/</guid><description><![CDATA[Reference: https://www.restapitutorial.com/httpstatuscodes.html
+⭐︎ -&gt; &ldquo;Top 10&rdquo; HTTP Status Code. More REST service-specific information is contained in the entry.
+1XX Information 100 continue &ndash; Client should continue 101 switching protocols 102 processing (webDAV) 2XX Success ⭐︎200 OK &ndash; The request has succeeded. General status code. Most common code used to indicate success.
+⭐︎201 Created &ndash; A new resource has been created and should return a URI. Successful creation occurred (via either POST or PUT).]]></description></item></channel></rss>

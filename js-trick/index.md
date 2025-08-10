@@ -47,8 +47,8 @@ console.log(objFromArr1); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 }
 console.log(objFromArr2); // { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 }
 
 let pair = [
-    ['key1', 'val1'],
-    ['key2', 'val2'],
+  ['key1', 'val1'],
+  ['key2', 'val2'],
 ]; // Map works as well
 
 let objFromPair = Object.fromEntries(arr); // ES10
@@ -62,8 +62,8 @@ console.log(objFromPair); //{ key1: 'val1', key2: 'val2' }
 
 ```js
 let obj = {
-    name: 1,
-    age: 2,
+  name: 1,
+  age: 2,
 };
 
 let keys = Object.keys(obj);
@@ -79,19 +79,19 @@ console.log(entries); // [ [ 'name', 1 ], [ 'age', 2 ] ]
 
 ## let vs var
 
--   var is function-scoped
--   let (and const) are block-scoped
+- var is function-scoped
+- let (and const) are block-scoped
 
 ```js
 function doMoreStuff() {
-    if (2 + 4 === 4) {
-        // Here, `a` will be available for the whole function
-        var a = 5;
-        // But `b` will be available only inside this if block
-        let b = 5;
-    }
-    console.log(a); // undefined
-    console.log(b); // ​​b is not defined​​
+  if (2 + 4 === 4) {
+    // Here, `a` will be available for the whole function
+    var a = 5;
+    // But `b` will be available only inside this if block
+    let b = 5;
+  }
+  console.log(a); // undefined
+  console.log(b); // ​​b is not defined​​
 }
 
 doMoreStuff(); // ​​b is not defined​​
@@ -113,11 +113,11 @@ let num3 = nums1.slice();
 
 // Object
 let obj1 = {
-    test1: 1,
-    test2: {
-        test3: 2,
-        test4: 3,
-    },
+  test1: 1,
+  test2: {
+    test3: 2,
+    test4: 3,
+  },
 };
 let obj2 = { ...obj1 };
 let obj3 = Object.assign({}, obj1);
@@ -150,18 +150,18 @@ This operator used to replace `||` in some situations that `or` logic cannot han
 
 ```js
 let calTax = (price, taxRate) => {
-    taxRate = taxRate || 0.05; // if taxRate not provided (undefined), set default to 0.05
-    // But there is a problem when taxRate to 0
-    return price * (1 + taxRate);
+  taxRate = taxRate || 0.05; // if taxRate not provided (undefined), set default to 0.05
+  // But there is a problem when taxRate to 0
+  return price * (1 + taxRate);
 };
 
 let res1 = calTax(100, 0); // 105 WRONG X
 let res2 = calTax(100); // 105 correct ✓
 
 let calTax2 = (price, taxRate) => {
-    taxRate = taxRate ?? 0.05; // if taxRate not provided (undefined), set default to 0.05
-    // But there is a problem when taxRate to 0
-    return price * (1 + taxRate);
+  taxRate = taxRate ?? 0.05; // if taxRate not provided (undefined), set default to 0.05
+  // But there is a problem when taxRate to 0
+  return price * (1 + taxRate);
 };
 
 let res3 = calTax2(100, 0); // 100 correct X
@@ -174,14 +174,14 @@ console.log(res3, res4);
 
 ```js
 class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
 
-    getAge() {
-        return this.age;
-    }
+  getAge() {
+    return this.age;
+  }
 }
 
 let p1 = new Person(undefined, 12);
@@ -203,21 +203,21 @@ let [a1, a2, ...a3] = array;
 console.log(a1, a2, a3); // 1 2 [ 3, 4 ]
 
 let test = {
-    a: 1,
-    b: 2,
-    c: {
-        d: 3,
-        e: 4,
-    },
-    f: 5,
-    g: 6,
+  a: 1,
+  b: 2,
+  c: {
+    d: 3,
+    e: 4,
+  },
+  f: 5,
+  g: 6,
 };
 
 let {
-    a,
-    b,
-    c: { d, e },
-    ...f
+  a,
+  b,
+  c: { d, e },
+  ...f
 } = test;
 
 console.log(a, b, d, e, f); // 1 2 3 4 { f: 5, g: 6 }
@@ -228,9 +228,9 @@ console.log(a, b, d, e, f); // 1 2 3 4 { f: 5, g: 6 }
 ```js
 let value = '123456789';
 value = value
-    .replace(/\W/gi, '')
-    .replace(/(.{4})/g, '$1 ')
-    .trim();
+  .replace(/\W/gi, '')
+  .replace(/(.{4})/g, '$1 ')
+  .trim();
 
 console.log(value); // 1234 5678 9
 ```
@@ -246,9 +246,9 @@ const f1 = (val) => `1<${val}>`;
 const f2 = (val) => `2<${val}>`;
 
 const compose = (...functionList) => {
-    return functionList.reduce((prevFn, curFn) => {
-        return (val) => curFn(prevFn(val));
-    });
+  return functionList.reduce((prevFn, curFn) => {
+    return (val) => curFn(prevFn(val));
+  });
 };
 
 const composedFun = compose(f1, f2);
@@ -266,12 +266,12 @@ const f1 = (val) => `1<${val}>`;
 const f2 = (val) => `2<${val}>`;
 
 const compose = (...functionList) =>
-    functionList.reduce(
-        (prevFn, curFn) =>
-            (...args) =>
-                curFn(prevFn(...args)),
-        (val) => val
-    );
+  functionList.reduce(
+    (prevFn, curFn) =>
+      (...args) =>
+        curFn(prevFn(...args)),
+    (val) => val
+  );
 
 const composedFun = compose(f1, f2);
 console.log(composedFun('hello world')); // 2<1<hello world>>
@@ -285,14 +285,14 @@ Since es6, js provide a special function called tagged template which use templa
 
 ```js
 function normal(...args) {
-    console.log(args);
+  console.log(args);
 }
 
 normal(1, 2, 'string1', 'string2');
 // [ 1, 2, 'string1', 'string2' ]
 
 function tag(...args) {
-    console.log(args);
+  console.log(args);
 }
 
 tag`string1${1}string2${2}string3`;
@@ -303,7 +303,7 @@ Normally, the tagged template function will handle arguments like:
 
 ```js
 function tag(strings, ...args) {
-    console.log(strings, args);
+  console.log(strings, args);
 }
 
 tag`string1${1}string2${2}string3`;
@@ -324,13 +324,13 @@ The core logic is using HOF to only keep the last trigger.
 
 ```js
 const debounce = (fn, delay) => {
-    let timer = null;
-    return (...args) => {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            fn(...args);
-        }, delay);
-    };
+  let timer = null;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
 };
 ```
 
@@ -342,17 +342,17 @@ The core logic is using HOF to only keep the first trigger.
 
 ```js
 const throttle = (fn, delay) => {
-    let timer = null;
-    return (...args) => {
-        if (timer !== null) {
-            return;
-        }
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            timer = null;
-            fn(...args);
-        }, delay);
-    };
+  let timer = null;
+  return (...args) => {
+    if (timer !== null) {
+      return;
+    }
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      timer = null;
+      fn(...args);
+    }, delay);
+  };
 };
 ```
 
@@ -362,35 +362,35 @@ This problem due to the fact that every time you log out base on same reference 
 
 ```js
 for (var i = 0; i < 10; i++) {
-    setTimeout(() => console.log('val:', i)); // current value
+  setTimeout(() => console.log('val:', i)); // current value
 }
 // 10 10 ... 10 10
 
 for (let i = 0; i < 10; i++) {
-    setTimeout(() => console.log('val:', i)); // snapshot
+  setTimeout(() => console.log('val:', i)); // snapshot
 }
 // 1 2 ... 8 9
 
 // var is function scope, let is block scope
 
 for (var i = 0; i < 10; i++) {
-    setTimeout(((val) => console.log('val:', val)).bind(null, i)); // snapshot
+  setTimeout(((val) => console.log('val:', val)).bind(null, i)); // snapshot
 }
 // 1 2 3 4 ... 9
 
 const ref = { current: null };
 for (var i = 0; i < 10; i++) {
-    ref.current = i;
-    setTimeout(((val) => console.log('val:', val.current)).bind(null, ref)); // current val
+  ref.current = i;
+  setTimeout(((val) => console.log('val:', val.current)).bind(null, ref)); // current val
 }
 // 9 9 ... 9 9
 
 for (var i = 0; i < 10; i++) {
-    // snapshot
-    const t = i;
-    setTimeout(() => {
-        console.log('t:', t);
-    });
+  // snapshot
+  const t = i;
+  setTimeout(() => {
+    console.log('t:', t);
+  });
 }
 // 1 2 3 4 ... 9
 ```
@@ -413,19 +413,7 @@ Every time `toLocaleString` is called, it has to perform a search in a big datab
 const today = new Date();
 
 console.log(
-    today.toLocaleString('en-US', {
-        hour12: true,
-        year: '2-digit',
-        month: '2-digit',
-        day: '2-digit',
-        minute: '2-digit',
-        hour: '2-digit',
-        second: '2-digit',
-        timeZoneName: 'short',
-    })
-); // 11/11/24, 10:55:35 PM PST
-
-const formatter = new Intl.DateTimeFormat('en-US', {
+  today.toLocaleString('en-US', {
     hour12: true,
     year: '2-digit',
     month: '2-digit',
@@ -434,6 +422,18 @@ const formatter = new Intl.DateTimeFormat('en-US', {
     hour: '2-digit',
     second: '2-digit',
     timeZoneName: 'short',
+  })
+); // 11/11/24, 10:55:35 PM PST
+
+const formatter = new Intl.DateTimeFormat('en-US', {
+  hour12: true,
+  year: '2-digit',
+  month: '2-digit',
+  day: '2-digit',
+  minute: '2-digit',
+  hour: '2-digit',
+  second: '2-digit',
+  timeZoneName: 'short',
 });
 console.log(formatter.format(today)); // 11/11/24, 10:55:35 PM PST
 ```
@@ -456,8 +456,8 @@ For relative time part. See: https://day.js.org/docs/en/customization/relative-t
 
 ```js
 fetch('https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js')
-    .then((response) => response.text())
-    .then((text) => eval(text));
+  .then((response) => response.text())
+  .then((text) => eval(text));
 ```
 
 [original post](https://medium.com/@matt.leo/how-to-import-lodash-to-chrome-console-3e5e30b4933e)

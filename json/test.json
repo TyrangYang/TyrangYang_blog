@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Alice",
+    "age": 25,
+    "isStudent": false
+  },
+  {
+    "name": "Bob",
+    "age": 30,
+    "isStudent": true
+  },
+  {
+    "name": "Charlie",
+    "age": 22,
+    "isStudent": true
+  },
+  {
+    "name": "Diana",
+    "age": 28,
+    "isStudent": false
+  },
+  {
+    "name": "Ethan",
+    "age": 35,
+    "isStudent": false
+  },
+  {
+    "name": "Fiona",
+    "age": 27,
+    "isStudent": true
+  },
+  {
+    "name": "George",
+    "age": 29,
+    "isStudent": false
+  },
+  {
+    "name": "Hannah",
+    "age": 24,
+    "isStudent": true
+  },
+  {
+    "name": "Ian",
+    "age": 31,
+    "isStudent": false
+  },
+  {
+    "name": "Julia",
+    "age": 26,
+    "isStudent": true
+  }
+]

@@ -1,175 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Course Note - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/</link><description>Course Note - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 31 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/" rel="self" type="application/rss+xml"/><item><title>Concurrent Programming Course note 5</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</link><pubDate>Thu, 31 Oct 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</guid><description><![CDATA[<h2 id="message-passing">Message passing</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-erl">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-erl" data-lang="erl"><span class="line"><span class="cl"><span class="nf">echo</span><span class="p">()</span> <span class="o">-&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">receive</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="nv">From</span><span class="p">,</span> <span class="nv">Msg</span><span class="p">}</span> <span class="o">-&gt;</span> <span class="nv">From</span> <span class="o">!</span> <span class="p">{</span><span class="nv">Msg</span><span class="p">},</span> <span class="n">echo</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="c">%^pattern^    %^response^   %^keep loop
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>        <span class="n">stop</span> <span class="o">-&gt;</span> <span class="n">true</span>
-</span></span><span class="line"><span class="cl">        <span class="c">%^pattern^  ^a return value and stop receiving
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>    <span class="k">end</span><span class="p">.</span></span></span></code></pre></div></div>]]></description></item><item><title>Concurrent Programming Course note 4</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</link><pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</guid><description><![CDATA[<h2 id="monitor">Monitor</h2>
-<p>signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling</p>
-<h3 id="producer-and-consumer-with-a-buffer-whose-size-is-one">producer and consumer with a buffer whose size is one</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">monitor</span><span class="w"> </span><span class="n">PC</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">produce</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">buffer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">){</span><span class="w"> </span><span class="c1">// while</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">empty</span><span class="p">.</span><span class="na">wait</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">full</span><span class="p">.</span><span class="na">signal</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="nf">consume</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">buffer</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="c1">// while</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">full</span><span class="p">.</span><span class="na">wait</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">empty</span><span class="p">.</span><span class="na">signal</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
-<h2 id="semaphore">Semaphore</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Assumption: E &lt; S &lt; W (Signal and urgent wait)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">monitor</span><span class="w"> </span><span class="n">Semaphore</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">permit</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">acquire</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">permit</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">0</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">permitsAvailable</span><span class="p">.</span><span class="na">wait</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">permit</span><span class="o">--</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">release</span><span class="p">(){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">permitAvailable</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">()){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">permitsAvailable</span><span class="p">.</span><span class="na">signal</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">permit</span><span class="o">++</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
-<h2 id="readers-and-writers">readers and writers</h2>
-<p>assume start first and stop</p>]]></description></item><item><title>SASS (SCSS) features</title><link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link><pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid><description><![CDATA[<h2 id="scss-features">SCSS features</h2>
-<h3 id="variables">Variables</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-scss">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nv">$font-stack</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="ni">sans-serif</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$primary-color</span><span class="o">:</span> <span class="mh">#333</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="na">font</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span> <span class="nv">$font-stack</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">color</span><span class="o">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h3 id="operator">Operator</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-scss">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.container</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;main&#39;</span><span class="o">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="na">float</span><span class="o">:</span> <span class="ni">left</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">600</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">960</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nt">article</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">&#39;complementary&#39;</span><span class="o">]</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="na">float</span><span class="o">:</span> <span class="ni">right</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">300</span><span class="kt">px</span> <span class="o">/</span> <span class="mi">960</span><span class="kt">px</span> <span class="o">*</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<h3 id="string-interpolation">String interpolation</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-scss">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nv">$name</span><span class="o">:</span> <span class="n">foo</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$attr</span><span class="o">:</span> <span class="n">border</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">p</span><span class="nc">.</span><span class="si">#{</span><span class="nv">$name</span><span class="si">}</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="si">#{</span><span class="nv">$attr</span><span class="si">}</span><span class="na">-color</span><span class="o">:</span> <span class="no">blue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
-<p>This is compile to:</p>]]></description></item><item><title>Concurrent Programming Course note 3</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</link><pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</guid><description><![CDATA[<h2 id="semaphore">Semaphore</h2>
-<p>Initialize how many permissions you will use.</p>
-<p><em>acquire()</em> will add one permission.</p>
-<p><em>release()</em> will remove one permission.</p>
-<p>Permission must ≥ 0.</p>
-<h3 id="semaphore-solution-for-the-mep">Semaphore solution for the MEP</h3>
-<ol>
-<li>#criticalSection + permissions = 1</li>
-<li>#criticalSection = #acquires − #releases</li>
-</ol>
-<p>Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0.
-Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0</p>
-<h3 id="java">Java</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Turnstile</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Thread</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// keyword is recommended for variables that are shared</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">Semaphore</span><span class="w"> </span><span class="n">mutex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Semaphore</span><span class="w"> </span><span class="p">(</span><span class="n">1</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">50</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">mutex</span><span class="p">.</span><span class="na">acquire</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">counter</span><span class="w"> </span><span class="o">++</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">mutex</span><span class="p">.</span><span class="na">release</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">id</span><span class="o">+</span><span class="s">&#34;- In comes: &#34;</span><span class="o">+</span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">args</span><span class="o">[]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Thread</span><span class="w"> </span><span class="n">m1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Turnstile</span><span class="w"> </span><span class="p">(</span><span class="n">1</span><span class="p">);</span><span class="w"> </span><span class="n">m1</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Thread</span><span class="w"> </span><span class="n">m2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Turnstile</span><span class="w"> </span><span class="p">(</span><span class="n">2</span><span class="p">);</span><span class="w"> </span><span class="n">m2</span><span class="p">.</span><span class="na">start</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">){}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
-<h4 id="strong-semaphore">Strong semaphore</h4>
-<p>Possibility of starvation is caused by the fact that blocked processes are placed in a <strong>set</strong> of processes. But this can be remedied by changing the set to be a queue.</p>]]></description></item><item><title>Concurrent Programming Course note 2</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</link><pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</guid><description><![CDATA[<h2 id="race-condition">Race condition</h2>
-<p>Multiple thread access one same variables of object concurrently and at least one does update.</p>
-<p>Bad situation.</p>
-<h2 id="atomic-operation">Atomic operation</h2>
-<p>An operation is atomic if it execute until it completion without interruption</p>
-<h2 id="critical-section">Critical section</h2>
-<p>A part of program that accesses shared memory and which we which to execute automatically.</p>
-<h3 id="mutual-exclusion-problem-mep">mutual exclusion problem (MEP)</h3>
-<ol>
-<li>Mutex: at and point in time, there is at most one thread in the critical section</li>
-<li>Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.</li>
-<li>Free from starvation: A thread trying to enter its critical section will eventually be able to do so.</li>
-</ol>
-<p><strong>Deadlock</strong> is not exit for a interleaving in a transition system.</p>]]></description></item><item><title>Software Development Course note</title><link>https://tyrangyang.github.io/TyrangYang_blog/software-development-1/</link><pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/software-development-1/</guid><description><![CDATA[<h2 id="agile-vs-traditional-sdlc-models">Agile Vs Traditional SDLC Models</h2>
-<p>Agile is based on the <strong>adaptive software development methods</strong>, whereas the traditional SDLC models like the <strong>waterfall model is based on a predictive approach</strong>. Predictive teams in the traditional SDLC models usually work with detailed planning and have a complete forecast of the exact tasks and features to be delivered in the next few months or during the product life cycle.</p>
-<p>Predictive methods entirely depend on the requirement analysis and planning done in the beginning of cycle. Any changes to be incorporated go through a strict change control management and prioritization.</p>]]></description></item><item><title>Concurrent Programming Course note 1</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</guid><description><![CDATA[<h2 id="what-is-concurrency">What is concurrency</h2>
-<p>Systems of interacting computer programs which share resource and run concurrently.</p>
-<h3 id="parallelism-and-concurrency">parallelism and concurrency</h3>
-<p>Parallelism: Occurring physically at the same time.</p>
-<p>Concurrency: Occurring logically at the same time.</p>
-<h3 id="synchronization">synchronization</h3>
-<p>Process synchronization: Ensure the instructions are executed in certain order.</p>
-<p>Synchronization is irrelevant if processes do not interact with each other.</p>
-<p>Concurrency, and hence process synchronized, is useful only when processes interact with each other.</p>
-<h3 id="interaction">interaction</h3>
-<p>Share memory is kind of interact.</p>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Course Note - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/</link><description>Course Note - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 31 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/course-note/" rel="self" type="application/rss+xml"/><item><title>Concurrent Programming Course note 5</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</link><pubDate>Thu, 31 Oct 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-5/</guid><description>Message passing echo() -&amp;gt; receive {From, Msg} -&amp;gt; From ! {Msg}, echo(); %^pattern^ %^response^ %^keep loop stop -&amp;gt; true %^pattern^ ^a return value and stop receiving end.</description></item><item><title>Concurrent Programming Course note 4</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</link><pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-4/</guid><description><![CDATA[Monitor signal condition &ndash;&gt; waiting monitor &ndash;&gt; signaling
+producer and consumer with a buffer whose size is one monitor PC { Object buffer; void produce(Object o){ if(buffer != null){ // while empty.wait(); } buffer = o; full.signal(); } Object consume() { if(buffer == null) // while full.wait(); Object temp = buffer; empty.signal(); return temp; } } Semaphore // Assumption: E &lt; S &lt; W (Signal and urgent wait) monitor Semaphore { int permit; void acquire() { if(permit == 0){ permitsAvailable.]]></description></item><item><title>SASS (SCSS) features</title><link>https://tyrangyang.github.io/TyrangYang_blog/sass/</link><pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/sass/</guid><description><![CDATA[SCSS features Variables $font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: 100% $font-stack; color: $primary-color; } Operator .container { width: 100%; } article[role=&#39;main&#39;] { float: left; width: 600px / 960px * 100%; } article[role=&#39;complementary&#39;] { float: right; width: 300px / 960px * 100%; } String interpolation $name: foo; $attr: border; p.#{$name} { #{$attr}-color: blue; } This is compile to:
+p.foo { border-color: blue; } Nesting #main p { color: #00ff00; width: 90%; .]]></description></item><item><title>Concurrent Programming Course note 3</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</link><pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-3/</guid><description>Semaphore Initialize how many permissions you will use.
+acquire() will add one permission.
+release() will remove one permission.
+Permission must ≥ 0.
+Semaphore solution for the MEP #criticalSection + permissions = 1 #criticalSection = #acquires − #releases Mutual exclusion: #criticalSection ≤ 1 since #permission ≥ 0. Absence of deadlock: It never happens that #permission = 0 and #criticalSection = 0
+Java public class Turnstile extends Thread { static volatile int counter = 0; // keyword is recommended for variables that are shared static Semaphore mutex = new Semaphore (1); public void run() { for(int i = 0; i &amp;lt; 50; i++){ mutex.</description></item><item><title>Concurrent Programming Course note 2</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</link><pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-2/</guid><description>Race condition Multiple thread access one same variables of object concurrently and at least one does update.
+Bad situation.
+Atomic operation An operation is atomic if it execute until it completion without interruption
+Critical section A part of program that accesses shared memory and which we which to execute automatically.
+mutual exclusion problem (MEP) Mutex: at and point in time, there is at most one thread in the critical section Absence of livelock: If various of threads try to entry the critical section, at lease one of them will succeed.</description></item><item><title>Software Development Course note</title><link>https://tyrangyang.github.io/TyrangYang_blog/software-development-1/</link><pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/software-development-1/</guid><description>Agile Vs Traditional SDLC Models Agile is based on the adaptive software development methods, whereas the traditional SDLC models like the waterfall model is based on a predictive approach. Predictive teams in the traditional SDLC models usually work with detailed planning and have a complete forecast of the exact tasks and features to be delivered in the next few months or during the product life cycle.
+Predictive methods entirely depend on the requirement analysis and planning done in the beginning of cycle.</description></item><item><title>Concurrent Programming Course note 1</title><link>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</link><pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/concurrent-programming-1/</guid><description>What is concurrency Systems of interacting computer programs which share resource and run concurrently.
+parallelism and concurrency Parallelism: Occurring physically at the same time.
+Concurrency: Occurring logically at the same time.
+synchronization Process synchronization: Ensure the instructions are executed in certain order.
+Synchronization is irrelevant if processes do not interact with each other.
+Concurrency, and hence process synchronized, is useful only when processes interact with each other.
+interaction Share memory is kind of interact.</description></item></channel></rss>

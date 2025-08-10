@@ -1,17 +1,13 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Website - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/website/</link><description>Website - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/website/" rel="self" type="application/rss+xml"/><item><title>Some cool websites archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</link><pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</guid><description><![CDATA[<h2 id="development-setting-up-for-mac">Development setting up for Mac</h2>
-<p>This guide covers the basics of setting up a development environment on a new Mac.</p>
-<p><a href="https://sourabhbajaj.com/mac-setup/" target="_blank" rel="noopener noreffer ">https://sourabhbajaj.com/mac-setup/</a></p>
-<h2 id="shapecatcher">shapeCatcher</h2>
-<p>Draw a character and find the ASCII code</p>
-<p><a href="http://shapecatcher.com/index.html" target="_blank" rel="noopener noreffer ">http://shapecatcher.com/index.html</a></p>
-<h2 id="drawio">draw.io</h2>
-<p>Draw diagram online</p>
-<p><a href="https://www.draw.io" target="_blank" rel="noopener noreffer ">https://www.draw.io</a></p>
-<h2 id="regular-expression">regular expression</h2>
-<p>Good online tool to test and learn regular expression</p>
-<p><a href="https://regexr.com" target="_blank" rel="noopener noreffer ">https://regexr.com</a></p>
-<h2 id="100-front-end-component-design">100 front end component design</h2>
-<p>100 react component design challenge</p>
-<p><a href="https://www.florin-pop.com/blog/2019/09/100-days-100-projects/" target="_blank" rel="noopener noreffer ">https://www.florin-pop.com/blog/2019/09/100-days-100-projects/</a></p>
-<h2 id="bootswatch">bootswatch</h2>
-<p>Several bootstrap scheme.</p>]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Website - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/website/</link><description>Website - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/website/" rel="self" type="application/rss+xml"/><item><title>Some cool websites archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</link><pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cool-website-archive/</guid><description>Development setting up for Mac This guide covers the basics of setting up a development environment on a new Mac.
+https://sourabhbajaj.com/mac-setup/
+shapeCatcher Draw a character and find the ASCII code
+http://shapecatcher.com/index.html
+draw.io Draw diagram online
+https://www.draw.io
+regular expression Good online tool to test and learn regular expression
+https://regexr.com
+100 front end component design 100 react component design challenge
+https://www.florin-pop.com/blog/2019/09/100-days-100-projects/
+bootswatch Several bootstrap scheme.
+https://bootswatch.com
+shields.io Get or create Readme badge</description></item></channel></rss>
