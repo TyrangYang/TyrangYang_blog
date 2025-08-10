@@ -83,7 +83,7 @@ See this code about generator.
 ```js
 function* gen(init) {
   let genRes1 = yield init + 2; // now just simple sync but it could be a async fun here
-  let genRes2 = yield genRes1 + 2;
+  let genRes2 = yield genRes1 + 3;
   return [genRes1, genRes2];
 }
 
@@ -92,8 +92,8 @@ const res1 = g.next();
 const res2 = g.next(res1.value); // res1.value goes to genRes1
 const res3 = g.next(res2.value); // res2.value goes to genRes2
 console.log(res1); // { value: 3, done: false }
-console.log(res2); // { value: 5, done: false }
-console.log(res3); // { value: [ 3, 5 ], done: true }
+console.log(res2); // { value: 6, done: false }
+console.log(res3); // { value: [ 3, 6 ], done: true }
 ```
 
 When runs to yield keyword. Function will stop and wait. When you trigger next(), it will continuous logic after yield.
@@ -111,9 +111,9 @@ Since the next() function have pattern. We can run recursive function to let it 
 function* gen(init) {
   let genRes1 = yield init + 2;
   console.log(genRes1); // 3
-  let genRes2 = yield genRes1 + 2;
-  console.log(genRes2); // 5
-  return [genRes1, genRes2]; // [3, 5]
+  let genRes2 = yield genRes1 + 3;
+  console.log(genRes2); // 6
+  return [genRes1, genRes2]; // [3, 6]
 }
 
 const run = (gen, init) => {

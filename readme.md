@@ -6,6 +6,12 @@ I have moved all previous contents
 
 ## hugo
 
+### Add a new page to your site.
+
+```
+hugo new content content/posts/<post-name>.md
+```
+
 ## loveIt Documentation
 
 update themes:
