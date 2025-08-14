@@ -1,6 +1,6 @@
 ---
 title: Asynchronous in JS
-date: 2025-7-20
+date: 2025-07-20
 author: Haolin Yang
 categories: ['Posts']
 tags:
