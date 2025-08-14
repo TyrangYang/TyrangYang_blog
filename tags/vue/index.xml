@@ -1,5 +1,66 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Vue - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/vue/</link><description>Vue - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 May 2020 16:54:43 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/" rel="self" type="application/rss+xml"/><item><title>Vuex Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link><pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid><description>Vuex Document: English 中文
-Concept State - App-level state/data Getters - Get pieces of state or computed values from state Actions - Called from components to commit mutation (async) Mutations - Mutate the state (sync) Modules - Each module can have its own state, getters, actions and mutations Work flow Vuex Workflow Vuex work flow is similar with Redux =&amp;gt; More Detail about Redux
-Redux Workflow Basic structure In store/index.js</description></item><item><title>Vue Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link><pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid><description><![CDATA[Vue Document: English 中文
-life cycle Basic structure &lt;template&gt; &lt;div&gt;&lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { name: &#39;&#39;, props: [...], data() { return {}; }, computed:{ ... } methods: { ... } }; &lt;/script&gt; &lt;style lang=&#34;css&#34;&gt;&lt;/style&gt; Basic vue function v-bind &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.id&#34; @mousedown.prevent=&#34;multiSelectEvent&#34; &gt;{{ user.name }}&lt;/option &gt; v-bind:value is equal to :value
-v-on &lt;option v-for=&#34;(user, idx) in Users&#34; :key=&#34;idx&#34; :value=&#34;user.id&#34; @mousedown.prevent=&#34;multiSelectEvent&#34; &gt;{{ user.name }}&lt;/option &gt; v-on:click is equal to @click]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Vue - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/vue/</link><description>Vue - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 May 2020 16:54:43 -0400</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/vue/" rel="self" type="application/rss+xml"/><item><title>Vuex Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</link><pubDate>Fri, 29 May 2020 16:54:43 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vuex-overview/</guid><description><![CDATA[<p>Vuex Document: <a href="https://vuex.vuejs.org" target="_blank" rel="noopener noreffer ">English</a> <a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener noreffer ">中文</a></p>
+<h2 id="concept">Concept</h2>
+<ul>
+<li><strong>State</strong> - App-level state/data</li>
+<li><strong>Getters</strong> - Get pieces of state or computed values from state</li>
+<li><strong>Actions</strong> - Called from components to commit mutation (async)</li>
+<li><strong>Mutations</strong> - Mutate the state (sync)</li>
+<li><strong>Modules</strong> - Each module can have its own state, getters, actions and mutations</li>
+</ul>
+<h2 id="work-flow">Work flow</h2>
+<figure><figcaption>
+      <h4>Vuex Workflow</h4>
+    </figcaption>
+</figure>
+
+<blockquote>
+<p>Vuex work flow is similar with Redux =&gt; <a href="https://tyrangyang.github.io/TyrangYang_blog/redux-overview/" rel="">More Detail about Redux</a></p></blockquote>
+<figure><figcaption>
+      <h4>Redux Workflow</h4>
+    </figcaption>
+</figure>
+
+<h2 id="basic-structure">Basic structure</h2>
+<p>In <code>store/index.js</code></p>]]></description></item><item><title>Vue Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</link><pubDate>Sun, 17 May 2020 16:51:23 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/vue-overview/</guid><description><![CDATA[<p>Vue Document: <a href="https://vuejs.org/" target="_blank" rel="noopener noreffer ">English</a> <a href="https://cn.vuejs.org/" target="_blank" rel="noopener noreffer ">中文</a></p>
+<h2 id="life-cycle">life cycle</h2>
+<p></p>
+<h2 id="basic-structure">Basic structure</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-html">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">props</span><span class="o">:</span> <span class="p">[...],</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">computed</span><span class="o">:</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="p">...</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;css&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">style</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+<h2 id="basic-vue-function">Basic vue function</h2>
+<h3 id="v-bind">v-bind</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-html">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">option</span>
+</span></span><span class="line"><span class="cl">    <span class="na">v-for</span><span class="o">=</span><span class="s">&#34;(user, idx) in Users&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">:key</span><span class="o">=</span><span class="s">&#34;idx&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">:value</span><span class="o">=</span><span class="s">&#34;user.id&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="na">mousedown</span><span class="err">.</span><span class="na">prevent</span><span class="o">=</span><span class="s">&#34;multiSelectEvent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>{{ user.name }}<span class="p">&lt;/</span><span class="nt">option</span>
+</span></span><span class="line"><span class="cl"><span class="p">&gt;</span></span></span></code></pre></div></div>
+<p><code>v-bind:value</code> is equal to <code>:value</code></p>]]></description></item></channel></rss>

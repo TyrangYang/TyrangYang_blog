@@ -1,4 +1,47 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Bit - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/bit/</link><description>Bit - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bit/" rel="self" type="application/rss+xml"/><item><title>Bit operation in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</guid><description><![CDATA[Bit operator operator function example &laquo; left shift 0001 &ndash;&gt; 0010 &raquo; right shift 0010 &ndash;&gt; 0001 &amp; and (bit by bit) 1100 &amp; 1010 = 1000 | or (bit by bit) 1010 | 0101 = 1111 ~ reverse ~0000 = 1111 ^ XOR 0110 ^ 1100 = 1010 Operator: &amp; x is a bit
-x &amp; 1 = x
-x &amp; 0 = 0
-Usually use &amp; as a filter.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Bit - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/bit/</link><description>Bit - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 18 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/bit/" rel="self" type="application/rss+xml"/><item><title>Bit operation in C++</title><link>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</link><pubDate>Sun, 18 Aug 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/cpp-bit-operation/</guid><description><![CDATA[<h2 id="bit-operator">Bit operator</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">operator</th>
+          <th>function</th>
+          <th>example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">&laquo;</td>
+          <td>left shift</td>
+          <td>0001 &ndash;&gt; 0010</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">&raquo;</td>
+          <td>right shift</td>
+          <td>0010 &ndash;&gt; 0001</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">&amp;</td>
+          <td>and (bit by bit)</td>
+          <td>1100 &amp; 1010 = 1000</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">|</td>
+          <td>or (bit by bit)</td>
+          <td>1010 | 0101 = 1111</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">~</td>
+          <td>reverse</td>
+          <td>~0000 = 1111</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">^</td>
+          <td>XOR</td>
+          <td>0110 ^ 1100 = 1010</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="operator-">Operator: &amp;</h3>
+<p>x is a bit</p>
+<p>x &amp; 1 = x</p>
+<p>x &amp; 0 = 0</p>
+<p>Usually use &amp; as a filter. Suppose we have a number is X, X &amp; 0011 will get the last two bits of X.</p>]]></description></item></channel></rss>

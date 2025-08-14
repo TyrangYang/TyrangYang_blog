@@ -1,5 +1,122 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Trick - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/trick/</link><description>Trick - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 26 Feb 2024 14:29:08 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/trick/" rel="self" type="application/rss+xml"/><item><title>HTML/Document Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-trick/</link><pubDate>Mon, 26 Feb 2024 14:29:08 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-trick/</guid><description><![CDATA[Understanding offsetWidth, clientWidth, scrollWidth Note All these property will round the value to an integer. If you need a fractional value, use element.getBoundingClientRect(). Get Scrollbar width Reference: https://www.30secondsofcode.org/js/s/get-scrollbar-width/
-Get window scroll bar width const getScrollbarWidth = () =&gt; window.innerWidth - document.documentElement.clientWidth; getScrollbarWidth(); Get a element scroll bar width const getScrollbarWidth = (el) =&gt; { const leftBorder = parseInt( getComputedStyle(el).getPropertyValue(&#39;border-left-width&#39;), 10 ); const rightBorder = parseInt( getComputedStyle(el).getPropertyValue(&#39;border-right-width&#39;), 10 ); return el.offsetWidth - el.]]></description></item><item><title>Typescript Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript-trick/</link><pubDate>Mon, 26 Feb 2024 14:11:05 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript-trick/</guid><description><![CDATA[generic types optional To make a generic type optional, you have to assign the void as the default value.
-const fetchData = &lt;T = void&gt;(url: string): T =&gt; { const res: T = fetch(url); return res; }; https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional
-string[ ] &amp; [ string, &hellip;string[ ] ] The main difference is that type [string, ...string[]] at least have one element. [] will alert error. string[] could be empty. [] is ok.]]></description></item><item><title>Js Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link><pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid><description><![CDATA[warning Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015). You can read this Article to know What new feature brings in since ES6
-Conversion Any =&gt; Boolean !!false; // false !!undefined; // false !!null; // false !!NaN; // false !!0; // false !!&#39;&#39;; // false !!variable == Boolean(variable); String =&gt; Integer Number(&#39;100&#39;); //100 +&#39;100&#39;; // 100 +&#39;abc&#39;; // NAN Object &lt;=&gt; Array Array =&gt; Object let arr = [1, 2, 3, 4, 5]; let objFromArr1 = Object.]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Trick - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/trick/</link><description>Trick - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 26 Feb 2024 14:29:08 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/trick/" rel="self" type="application/rss+xml"/><item><title>HTML/Document Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-trick/</link><pubDate>Mon, 26 Feb 2024 14:29:08 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-trick/</guid><description><![CDATA[<h2 id="understanding-offsetwidth-clientwidth-scrollwidth">Understanding offsetWidth, clientWidth, scrollWidth</h2>
+<p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Note<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">All these property will round the value to an integer. If you need a fractional value, use <a href="#element-getboundingclientrect" rel="">element.getBoundingClientRect()</a>.</div>
+        </div>
+    </div>
+<figure>
+</figure>
+</p>
+<h2 id="get-scrollbar-width">Get Scrollbar width</h2>
+<p>Reference: <a href="https://www.30secondsofcode.org/js/s/get-scrollbar-width/" target="_blank" rel="noopener noreffer ">https://www.30secondsofcode.org/js/s/get-scrollbar-width/</a></p>
+<h3 id="get-window-scroll-bar-width">Get window scroll bar width</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getScrollbarWidth</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">-</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">getScrollbarWidth</span><span class="p">();</span></span></span></code></pre></div></div>
+<h3 id="get-a-element-scroll-bar-width">Get a element scroll bar width</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">getScrollbarWidth</span> <span class="o">=</span> <span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">leftBorder</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">el</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">&#39;border-left-width&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">rightBorder</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">el</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s1">&#39;border-right-width&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">el</span><span class="p">.</span><span class="nx">offsetWidth</span> <span class="o">-</span> <span class="nx">el</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">-</span> <span class="nx">leftBorder</span> <span class="o">-</span> <span class="nx">rightBorder</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">getScrollbarWidth</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span></span></span></code></pre></div></div>
+<h2 id="element-getboundingclientrect">Element: getBoundingClientRect()</h2>
+<p><code>el.getBoundingClientRect()</code> will return: <code>left</code>, <code>top</code>, <code>right</code>, <code>bottom</code>, <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code>.</p>]]></description></item><item><title>Typescript Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript-trick/</link><pubDate>Mon, 26 Feb 2024 14:11:05 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript-trick/</guid><description><![CDATA[<h2 id="generic-types-optional">generic types optional</h2>
+<p><strong>To make a generic type optional, you have to assign the void as the default value.</strong></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">fetchData</span> <span class="o">=</span> <span class="p">&lt;</span><span class="nt">T</span> <span class="err">=</span> <span class="na">void</span><span class="p">&gt;(</span><span class="nx">url</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">res</span>: <span class="kt">T</span> <span class="o">=</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<p><a href="https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional" target="_blank" rel="noopener noreffer ">https://garbagevalue.com/blog/optional-generic-typescript#quick-solutions-make-generic-type-optional</a></p>
+<h2 id="string----string-string--">string[ ] &amp; [ string, &hellip;string[ ] ]</h2>
+<p>The main difference is that type <code>[string, ...string[]]</code> at least have one element. <code>[]</code> will alert error. <code>string[]</code> could be empty. <code>[]</code> is ok.</p>]]></description></item><item><title>Js Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</link><pubDate>Sun, 03 May 2020 23:12:40 -0400</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-trick/</guid><description><![CDATA[<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>warning<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Many of JavaScript cool feature or syntactic sugar included since ES6(ES2015).</div>
+        </div>
+    </div>
+<blockquote>
+<p>You can read this <a href="https://medium.com/engineered-publicis-sapient/javascript-es6-es7-es10-where-are-we-8ac044dfd964" target="_blank" rel="noopener noreffer ">Article to know What new feature brings in since ES6</a></p></blockquote>
+<h2 id="conversion">Conversion</h2>
+<h3 id="any--boolean">Any =&gt; Boolean</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="o">!!</span><span class="kc">false</span><span class="p">;</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">!!</span><span class="kc">undefined</span><span class="p">;</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">!!</span><span class="kc">null</span><span class="p">;</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">!!</span><span class="kc">NaN</span><span class="p">;</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">!!</span><span class="mi">0</span><span class="p">;</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">!!</span><span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="c1">// false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">!!</span><span class="nx">variable</span> <span class="o">==</span> <span class="nb">Boolean</span><span class="p">(</span><span class="nx">variable</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="string--integer">String =&gt; Integer</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nb">Number</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">);</span> <span class="c1">//100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">+</span><span class="s1">&#39;100&#39;</span><span class="p">;</span> <span class="c1">// 100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="o">+</span><span class="s1">&#39;abc&#39;</span><span class="p">;</span> <span class="c1">// NAN
+</span></span></span></code></pre></div></div>
+<h3 id="object--array">Object &lt;=&gt; Array</h3>
+<h4 id="array--object">Array =&gt; Object</h4>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">objFromArr1</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">objFromArr2</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">arr</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">objFromArr1</span><span class="p">);</span> <span class="c1">// { &#39;0&#39;: 1, &#39;1&#39;: 2, &#39;2&#39;: 3, &#39;3&#39;: 4, &#39;4&#39;: 5 }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">objFromArr2</span><span class="p">);</span> <span class="c1">// { &#39;0&#39;: 1, &#39;1&#39;: 2, &#39;2&#39;: 3, &#39;3&#39;: 4, &#39;4&#39;: 5 }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">pair</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;val1&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;val2&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">];</span> <span class="c1">// Map works as well
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">objFromPair</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span> <span class="c1">// ES10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">objFromPair</span><span class="p">);</span> <span class="c1">//{ key1: &#39;val1&#39;, key2: &#39;val2&#39; }
+</span></span></span></code></pre></div></div>
+<blockquote>
+<p><code>Object.fromEntries(arr)</code> included in ES10 (ES2019). Before ES10 or convert a complex array, <code>arr.reduce(()=&gt;{}, {})</code> is a good method</p>]]></description></item></channel></rss>

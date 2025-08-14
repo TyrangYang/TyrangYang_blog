@@ -1,8 +1,27 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Cheatsheet - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/</link><description>Cheatsheet - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 17 Aug 2020 16:43:42 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/" rel="self" type="application/rss+xml"/><item><title>Hugo Blog CheatSheet</title><link>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</link><pubDate>Mon, 17 Aug 2020 16:43:42 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid><description><![CDATA[Create new post hugo new posts/new.md
-Add a picture Basic markdown
-![&lt;alt name](&lt; The route start from static folder&gt;)
-hugo build-in shortcut &ndash;&gt; figure (src is start from static folder)
-\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}
-Add a reference link Documentation of ref and relref
-\[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}}) \[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}}) Theme feature This theme extended short code. See Theme Documentation - Extended Shortcodes
-admonition &lt; admonition type=note title=&#34;Here is title&#34; open=true &gt; Here is text content &lt; /admonition &gt; note (default type) Here is text content abstract A abstract banner info A info banner Tip A tip banner success A success banner question A question banner warning A warning banner failure A failure banner danger A danger banner bug A bug banner example A example banner quote A quote banner ]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Cheatsheet - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/</link><description>Cheatsheet - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 17 Aug 2020 16:43:42 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/cheatsheet/" rel="self" type="application/rss+xml"/><item><title>Hugo Blog CheatSheet</title><link>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</link><pubDate>Mon, 17 Aug 2020 16:43:42 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/hugo-blog-cheatsheet/</guid><description><![CDATA[<h2 id="create-new-post">Create new post</h2>
+<blockquote>
+<p><code>hugo new posts/new.md</code></p></blockquote>
+<h2 id="add-a-picture">Add a picture</h2>
+<ol>
+<li>
+<p>Basic markdown</p>
+<blockquote>
+<p><code>![&lt;alt name](&lt; The route start from static folder&gt;)</code></p></blockquote>
+</li>
+<li>
+<p>hugo build-in shortcut &ndash;&gt; <em>figure</em> (src is start from static folder)</p>
+<blockquote>
+<p><code>\{\{&lt; figure src=&quot;&quot; title=&quot;&quot; &gt;}}</code></p></blockquote>
+</li>
+</ol>
+<h2 id="add-a-reference-link">Add a reference link</h2>
+<p><a href="https://gohugo.io/content-management/shortcodes#ref-and-relref" target="_blank" rel="noopener noreffer ">Documentation of ref and relref</a></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\[Neat](\{\{&lt; ref &#34;blog/neat.md&#34; &gt;}})
+</span></span><span class="line"><span class="cl">\[Who](\{\{&lt; relref &#34;about.md#who&#34; &gt;}})</span></span></code></pre></div></div>
+<h2 id="theme-feature">Theme feature</h2>
+<p>This theme extended short code. See <a href="https://hugoloveit.com/theme-documentation-extended-shortcodes" target="_blank" rel="noopener noreffer ">Theme Documentation - Extended Shortcodes</a></p>]]></description></item></channel></rss>

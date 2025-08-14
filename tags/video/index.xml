@@ -1,10 +1,30 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Video - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/video/</link><description>Video - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/video/" rel="self" type="application/rss+xml"/><item><title>ffmpeg</title><link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link><pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid><description><![CDATA[Reference official https://ffmpeg.org
-blog https://fireship.io/lessons/ffmpeg-useful-techniques/
-node js https://www.npmjs.com/package/fluent-ffmpeg
-example concatenate ffmpeg -f concat -i vids.txt -c copy out.mp4
-vids.txt:
-file &#39;name1.mov&#39; file &#39;name2.mov&#39; file &#39;name3.mov&#39; Type convention ffmpeg -i in.mp4 out.mov
-ffmpeg -i in.mp4 out.gif
-Scale It very common to reduce size of output file. Change scale usually the common and efficient way to do so.
-ffmpeg -i in.mov -vf scale=960:-1 out.gif
-Reference from ffmpeg wiki]]></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Video - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/video/</link><description>Video - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Mar 2023 14:48:36 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/video/" rel="self" type="application/rss+xml"/><item><title>ffmpeg</title><link>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</link><pubDate>Sun, 12 Mar 2023 14:48:36 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/ffmpeg/</guid><description><![CDATA[<h2 id="reference">Reference</h2>
+<figure>
+</figure>
+
+<h3 id="official">official</h3>
+<p><a href="https://ffmpeg.org" target="_blank" rel="noopener noreffer ">https://ffmpeg.org</a></p>
+<h3 id="blog">blog</h3>
+<p><a href="https://fireship.io/lessons/ffmpeg-useful-techniques/" target="_blank" rel="noopener noreffer ">https://fireship.io/lessons/ffmpeg-useful-techniques/</a></p>
+<h3 id="node-js">node js</h3>
+<p><a href="https://www.npmjs.com/package/fluent-ffmpeg" target="_blank" rel="noopener noreffer ">https://www.npmjs.com/package/fluent-ffmpeg</a></p>
+<h2 id="example">example</h2>
+<h3 id="concatenate">concatenate</h3>
+<blockquote>
+<p>ffmpeg -f concat -i vids.txt -c copy out.mp4</p></blockquote>
+<p>vids.txt:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-t">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-t" data-lang="t"><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name1.mov&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name2.mov&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span> <span class="s">&#39;name3.mov&#39;</span></span></span></code></pre></div></div>
+<h3 id="type-convention">Type convention</h3>
+<blockquote>
+<p>ffmpeg -i in.mp4 out.mov</p></blockquote>
+<blockquote>
+<p>ffmpeg -i in.mp4 out.gif</p></blockquote>
+<h3 id="scale">Scale</h3>
+<p>It very common to reduce size of output file. Change scale usually the common and efficient way to do so.</p>]]></description></item></channel></rss>
