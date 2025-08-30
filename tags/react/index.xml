@@ -1,4 +1,46 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>React - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>React - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 12 Mar 2021 04:04:08 -0800</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>React Logic Reuse Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link><pubDate>Fri, 12 Mar 2021 04:04:08 -0800</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</guid><description><![CDATA[<h2 id="react-logic-extraction">React logic extraction</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>React - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>React - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 23 Aug 2025 18:19:18 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/test/</link><pubDate>Sat, 23 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/test/</guid><description><![CDATA[<h2 id="contents">Contents</h2>
+<h2 id="introduction">Introduction</h2>
+<p>This is a test blog post written in <strong>Markdown</strong>. It <em>demonstrates</em> <code>common</code> features used in blog writing.</p>
+<blockquote>
+<p>test</p></blockquote>
+<h2 id="header">header</h2>
+<h3 id="header-2">header 2</h3>
+<h3 id="header-3">header 3</h3>
+<h4 id="header-4">header 4</h4>
+<h4 id="header-5">header 5</h4>
+<h2 id="list">list</h2>
+<ul>
+<li>Easy to write</li>
+<li>Supports formatting</li>
+<li>Clean and readable</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Works with most static site generators</li>
+</ul>
+<hr>
+<h2 id="code-example">Code Example</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Simple JavaScript function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="features">Features</h2>
+<blockquote>
+<p>Clean formatting
+Blockquotes for every section
+Inline links like <a href="https://openai.com" target="_blank" rel="noopener noreffer ">OpenAI</a>
+Quoted links:
+👉 <a href="https://example.com" target="_blank" rel="noopener noreffer ">Visit Example Site</a></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
+<p>This allows React to:</p>
+<ul>
+<li>Prioritize urgent updates (e.g., typing) over non-urgent ones (e.g., background data fetch results)</li>
+<li>Avoid dropping frames during animations or scrolling</li>
+<li>Keep the UI feeling “alive” even when there’s a lot of work to do</li>
+</ul>
+<p>The underlying mechanism is <strong>cooperative scheduling</strong> — React voluntarily yields control back to the browser when time is up, and continues work later.</p>]]></description></item><item><title>React Logic Reuse Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link><pubDate>Fri, 12 Mar 2021 04:04:08 -0800</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</guid><description><![CDATA[<h2 id="react-logic-extraction">React logic extraction</h2>
 <p><a href="https://tyrangyang.github.io/TyrangYang_blog/react/#logic-extraction" rel="">Check this post</a></p>
 <h2 id="example-code">Example code</h2>
 <p>This example demonstrate one single feature using four different feature to archive code split</p>

@@ -1,4 +1,46 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link><description>All Posts | TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 20 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml"/><item><title>Asynchronous in JS</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</link><pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</guid><description><![CDATA[<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link><description>All Posts | TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 23 Aug 2025 18:19:18 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml"/><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/test/</link><pubDate>Sat, 23 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/test/</guid><description><![CDATA[<h2 id="contents">Contents</h2>
+<h2 id="introduction">Introduction</h2>
+<p>This is a test blog post written in <strong>Markdown</strong>. It <em>demonstrates</em> <code>common</code> features used in blog writing.</p>
+<blockquote>
+<p>test</p></blockquote>
+<h2 id="header">header</h2>
+<h3 id="header-2">header 2</h3>
+<h3 id="header-3">header 3</h3>
+<h4 id="header-4">header 4</h4>
+<h4 id="header-5">header 5</h4>
+<h2 id="list">list</h2>
+<ul>
+<li>Easy to write</li>
+<li>Supports formatting</li>
+<li>Clean and readable</li>
+<li><i class="far fa-square fa-fw" aria-hidden="true"></i> Works with most static site generators</li>
+</ul>
+<hr>
+<h2 id="code-example">Code Example</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Simple JavaScript function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="features">Features</h2>
+<blockquote>
+<p>Clean formatting
+Blockquotes for every section
+Inline links like <a href="https://openai.com" target="_blank" rel="noopener noreffer ">OpenAI</a>
+Quoted links:
+👉 <a href="https://example.com" target="_blank" rel="noopener noreffer ">Visit Example Site</a></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
+<p>This allows React to:</p>
+<ul>
+<li>Prioritize urgent updates (e.g., typing) over non-urgent ones (e.g., background data fetch results)</li>
+<li>Avoid dropping frames during animations or scrolling</li>
+<li>Keep the UI feeling “alive” even when there’s a lot of work to do</li>
+</ul>
+<p>The underlying mechanism is <strong>cooperative scheduling</strong> — React voluntarily yields control back to the browser when time is up, and continues work later.</p>]]></description></item><item><title>Asynchronous in JS</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</link><pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</guid><description><![CDATA[<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
 <p>Function run synchronously means code is running as same as your writing.</p>
 <p>But in real situation, some code may need time to running (like fetch). If synchronously run all code, program will be block and wait this time consuming part finish and continue.</p>
 <p>In the most of the time, You code logic need wait to continue but you don&rsquo;t want to block all progress. Maybe UI rendering or some other total unrelated code. Unfortunately, JS is single thread langrage and concurrency is not exist. Therefore, you need some technique to some part running asynchronously,</p>]]></description></item><item><title>HTML/Document Trick</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-trick/</link><pubDate>Mon, 26 Feb 2024 14:29:08 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-trick/</guid><description><![CDATA[<h2 id="understanding-offsetwidth-clientwidth-scrollwidth">Understanding offsetWidth, clientWidth, scrollWidth</h2>
@@ -586,33 +628,4 @@
 <h3 id="several-things-for-graphql-security">Several things for Graphql Security</h3>
 <p><a href="https://ithelp.ithome.com.tw/articles/10208008" target="_blank" rel="noopener noreffer ">https://ithelp.ithome.com.tw/articles/10208008</a></p>
 <h3 id="should-i-put-usequery-inside-a-useeffect-and-should-i-store-returned-data-in-state">should I put useQuery inside a useEffect and should I store returned data in state?</h3>
-<p><a href="https://github.com/trojanowski/react-apollo-hooks/issues/158" target="_blank" rel="noopener noreffer ">https://github.com/trojanowski/react-apollo-hooks/issues/158</a></p>]]></description></item><item><title>HTML Effect with vanilla html js css</title><link>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</link><pubDate>Mon, 14 Dec 2020 15:52:02 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/html-effect/</guid><description><![CDATA[<h2 id="modal-box">Modal box</h2>
-<blockquote>
-<p><a href="/html/htmlEffect/modal.html" rel="">Demo</a></p></blockquote>
-<h2 id="cursor--hover-effect">Cursor &amp; hover effect</h2>
-<blockquote>
-<p><a href="/html/htmlEffect/cursorHover.html" rel="">Demo</a></p></blockquote>
-<h2 id="pure-css-hamburger-button">Pure Css hamburger button</h2>
-<p>This is a hamburger button using pure css to style it.</p>
-<blockquote>
-<p><a href="/html/htmlEffect/hamburgerBtnManu.html" rel="">Demo</a></p></blockquote>
-<h2 id="loading">Loading</h2>
-<blockquote>
-<p><a href="/html/htmlEffect/loading.html" rel="">Demo</a></p></blockquote>
-<h2 id="sidebar">Sidebar</h2>
-<blockquote>
-<p><a href="/html/htmlEffect/sidebar.html" rel="">Demo</a></p></blockquote>
-<h2 id="profile">Profile</h2>
-<blockquote>
-<p><a href="/html/htmlEffect/profile.html" rel="">Demo</a></p></blockquote>]]></description></item><item><title>Webpack Overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</link><pubDate>Wed, 09 Dec 2020 19:12:38 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/webpack-overview/</guid><description><![CDATA[<p>webpack is a static module bundler for modern JavaScript applications.</p>
-<p>Document: <a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener noreffer ">https://webpack.js.org/concepts/</a></p>
-<h2 id="installation">Installation</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm i -D webpack webpack-cli</span></span></code></pre></div></div>
-<h2 id="webpack-core-concept">webpack core concept</h2>
-<h3 id="entry">Entry</h3>
-<p>An entry point indicates which module webpack should use to <strong>begin</strong> building out its internal dependency graph. webpack will figure out which other modules and libraries that entry point depends on (directly and indirectly).</p>]]></description></item></channel></rss>
+<p><a href="https://github.com/trojanowski/react-apollo-hooks/issues/158" target="_blank" rel="noopener noreffer ">https://github.com/trojanowski/react-apollo-hooks/issues/158</a></p>]]></description></item></channel></rss>
