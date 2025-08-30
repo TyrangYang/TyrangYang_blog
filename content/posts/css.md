@@ -188,13 +188,13 @@ There are five different position values:
 ## white-space
 
 |             | new line | space and tab | text wrapping | End line space |
-| ----------- | -------- | ------------- | ------------- | -------------- |
-| normal      | collapse | collapse      | wrap          | Remove         |
-| nowrap      | collapse | collapse      | no wrap       | Remove         |
-| pre         | preserve | preserve      | no wrap       | Preserve       |
-| pre-wrap    | preserve | preserve      | wrap          | Hang           |
-| pre-line    | preserve | collapse      | wrap          | Remove         |
-| break-space | preserve | preserve      | wrap          | Wrap           |
+| ----------- | :------: | :-----------: | :-----------: | :------------: |
+| normal      | collapse |   collapse    |     wrap      |     Remove     |
+| nowrap      | collapse |   collapse    |    no wrap    |     Remove     |
+| pre         | preserve |   preserve    |    no wrap    |    Preserve    |
+| pre-wrap    | preserve |   preserve    |     wrap      |      Hang      |
+| pre-line    | preserve |   collapse    |     wrap      |     Remove     |
+| break-space | preserve |   preserve    |     wrap      |      Wrap      |
 
 > Here is my Example: [Try it Now](/html/whiteSpace.html)
 
