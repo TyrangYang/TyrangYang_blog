@@ -27,11 +27,11 @@ In the most of the time, You code logic need wait to continue but you don't want
 
 ### Js event loop | Call stack | task queue
 
-This [**website**](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) shows how js engine running with single thread to handle concurrency
+This [**website (click it)**](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) shows how js engine running with single thread to handle concurrency.
 
 Task queue will be the key for simulating asynchronous. The asynchronous part will leave the queue first and back after it is ready.
 
-Async action will be know by js engine (like setTimeout, XMLrequest, fetch api). But need to handle what will be do next when back to task queue
+Async action will be know by js engine (like setTimeout, XMLrequest, fetch api). But need to handle what will be do next when back to task queue.
 
 ## Callback
 
@@ -39,7 +39,7 @@ Technically Callback function is not a method to achieve async. It just a functi
 
 > One concept need mention. The callback function include logic. Also could called as Thunk.
 
-Think about a scenario: step1 -> step2 -> step3. Each step need previous one finished.
+Think about a scenario: `step1 -> step2 -> step3`. Each step need previous one finished.
 
 Code will be like
 
@@ -88,7 +88,7 @@ function* gen(init) {
 }
 
 let g = gen(1);
-const res1 = g.next();
+const res1 = ;
 const res2 = g.next(res1.value); // res1.value goes to genRes1
 const res3 = g.next(res2.value); // res2.value goes to genRes2
 console.log(res1); // { value: 3, done: false }
@@ -96,15 +96,15 @@ console.log(res2); // { value: 6, done: false }
 console.log(res3); // { value: [ 3, 6 ], done: true }
 ```
 
-When runs to yield keyword. Function will stop and wait. When you trigger next(), it will continuous logic after yield.
+When runs to yield keyword. Function will stop and wait. When you trigger `next()`, it will continuous logic after yield.
 
-if run next(val), val will be previous yield result.
+if run `next(val)`, `val` will be previous yield result. (`genRes`)
 
-Now you can see gen(). Is it looks like a synchronously? **More importantly**, Each step in gen() be stop and resume manually. Is it looks like asynchronous concept?
+Now you can see `gen()`. Is it looks like a synchronously? **More importantly**, Each step in `gen()` be stop and resume manually. Is it looks like asynchronous concept?
 
-If we run gen() and let generator resume by itself. Does we achieve the goal of writing synchronous code and allow code jump outside function (async)?
+If we run `gen()` and let generator resume by itself. Does we achieve the goal of writing synchronous code and allow code jump outside function (async)?
 
-Since the next() function have pattern. We can run recursive function to let it run automatically.
+Since the `next()` function have pattern. We can run recursive function to let it run automatically.
 
 ```js
 // same generator
@@ -172,7 +172,7 @@ function runner(generator) {
 runner(thunkGen);
 ```
 
-thunkGen() will be that async function.
+`thunkGen()` will be that async function.
 
 ## Promise
 
@@ -220,11 +220,11 @@ If you see the code for step by step. It is still have nested structure. "Then h
 
 ### Other useful feature in promise
 
-Promise can mimic concurrency. Like Promise.all([list of promise])
+Promise can mimic concurrency. Like `Promise.all([list of promise])`
 
 Fire async all together. Get them all or get the fast one
 
-all() will pass val contained all promise return val after all promise is finish
+`all()` will pass val contained all promise return val after all promise is finish
 
 ```js
 let promise1 = Promise.resolve('First');
@@ -295,8 +295,8 @@ runner(promiseGen);
 
 The behavior of async/await is similar to combining generators and promises. You basically can consider like a syntactic surger.
 
-async => runner + \*
-await => yield
+> - async => runner + \*
+> - await => yield
 
 Another example from promise:
 
