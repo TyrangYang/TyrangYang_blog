@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>White space demo</title>
-    </head>
-    <style>
-        div {
-            border: 1px #f00 solid;
-            width: 100px;
-            margin-top: 10px;
-        }
-    </style>
-    <body>
-        <h3>normal: collapse space & new line; wrap</h3>
-        <!-- prettier-ignore -->
-        <div style="white-space: normal;">(tab)     This is normal (break line)
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White space demo</title>
+  </head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h3 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+    div {
+      border: 1px #f00 solid;
+      width: 100px;
+      margin-top: 10px;
+    }
+  </style>
+  <body>
+    <h3>normal:</h3>
+    <p>collapse space & new line; wrap</p>
+    <!-- prettier-ignore -->
+    <div style="white-space: normal;">(tab)     This is normal (break line)
                 white space (white space at end)                         </div>
-        <h3>nowrap: collapse space & new line; no wrap</h3>
-        <!-- prettier-ignore -->
-        <div style="white-space: nowrap;">(tab)     This is nowrap  (break line)
+    <h3>nowrap:</h3>
+    <p>collapse space & new line; no wrap</p>
+    <!-- prettier-ignore -->
+    <div style="white-space: nowrap;">(tab)     This is nowrap  (break line)
                 white space (white space at end)                         </div>
-        <h3>pre: preserve space & new line; no wrap</h3>
-        <!-- prettier-ignore -->
-        <div style="white-space: pre;">(tab)     This is pre (break line)
+    <h3>pre:</h3>
+    <p>preserve space & new line; no wrap</p>
+    <!-- prettier-ignore -->
+    <div style="white-space: pre;">(tab)     This is pre (break line)
                 white space (white space at end)                         </div>
-        <h3>pre-wrap: preserve space & new line; wrap</h3>
-        <!-- prettier-ignore -->
-        <div style="white-space: pre-wrap;">(tab)    This is pre-wrap  (break line)
+    <h3>pre-wrap:</h3>
+    <p>preserve space & new line; wrap</p>
+    <!-- prettier-ignore -->
+    <div style="white-space: pre-wrap;">(tab)    This is pre-wrap  (break line)
                 white space (white space at end)                         </div>
-        <h3>pre-line: collapse space but preserve new line; wrap</h3>
-        <!-- prettier-ignore -->
-        <div style="white-space: pre-line;">(tab)    This is pre-line  (break line)
+    <h3>pre-line:</h3>
+    <p>collapse space but preserve new line; wrap</p>
+    <!-- prettier-ignore -->
+    <div style="white-space: pre-line;">(tab)    This is pre-line  (break line)
                 white space (white space at end)                         </div>
-        <h3>break-spaces: preserve space new line; wrap;</h3>
-        <!-- prettier-ignore -->
-        <div style="white-space: break-spaces;">(tab)    This is break-spaces  (break line)
+    <h3>break-spaces:</h3>
+    <p>preserve space new line; wrap;</p>
+    <!-- prettier-ignore -->
+    <div style="white-space: break-spaces;">(tab)    This is break-spaces  (break line)
                 white space (white space at end)                         </div>
-    </body>
+  </body>
 </html>
