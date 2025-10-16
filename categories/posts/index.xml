@@ -1,4 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Posts - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link><description>Posts - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 24 Aug 2025 18:19:18 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml"/><item><title>Test markdown</title><link>https://tyrangyang.github.io/TyrangYang_blog/test/</link><pubDate>Sun, 24 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/test/</guid><description><![CDATA[<h2 id="contents">Contents</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Posts - Category - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/categories/posts/</link><description>Posts - Category - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 13 Aug 2025 18:19:18 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/categories/posts/" rel="self" type="application/rss+xml"/><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
+<p>This allows React to:</p>
+<ul>
+<li>Prioritize urgent updates (e.g., typing) over non-urgent ones (e.g., background data fetch results)</li>
+<li>Avoid dropping frames during animations or scrolling</li>
+<li>Keep the UI feeling “alive” even when there’s a lot of work to do</li>
+</ul>
+<p>The underlying mechanism is <strong>cooperative scheduling</strong> — React voluntarily yields control back to the browser when time is up, and continues work later.</p>]]></description></item><item><title>Asynchronous in JS</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</link><pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</guid><description><![CDATA[<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
+<p>Function run synchronously means code is running as same as your writing.</p>
+<p>But in real situation, some code may need time to running (like fetch). If synchronously run all code, program will be block and wait this time consuming part finish and continue.</p>
+<p>In the most of the time, You code logic need wait to continue but you don&rsquo;t want to block all progress. Maybe UI rendering or some other total unrelated code. Unfortunately, JS is single thread langrage and concurrency is not exist. Therefore, you need some technique to some part running asynchronously,</p>]]></description></item><item><title>Test markdown</title><link>https://tyrangyang.github.io/TyrangYang_blog/test/</link><pubDate>Thu, 24 Aug 2023 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/test/</guid><description><![CDATA[<h2 id="contents">Contents</h2>
 <h2 id="introduction">Introduction</h2>
 <p>This is a test blog post written in <strong>Markdown</strong>. It <em>demonstrates</em> <code>common</code> features used in blog writing.</p>
 <blockquote>
@@ -38,18 +49,7 @@
 Blockquotes for every section
 Inline links like <a href="https://openai.com" target="_blank" rel="noopener noreffer ">OpenAI</a>
 Quoted links:
-👉 <a href="https://example.com" target="_blank" rel="noopener noreffer ">Visit Example Site</a></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
-<p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
-<p>This allows React to:</p>
-<ul>
-<li>Prioritize urgent updates (e.g., typing) over non-urgent ones (e.g., background data fetch results)</li>
-<li>Avoid dropping frames during animations or scrolling</li>
-<li>Keep the UI feeling “alive” even when there’s a lot of work to do</li>
-</ul>
-<p>The underlying mechanism is <strong>cooperative scheduling</strong> — React voluntarily yields control back to the browser when time is up, and continues work later.</p>]]></description></item><item><title>Asynchronous in JS</title><link>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</link><pubDate>Sun, 20 Jul 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/js-asynchronous/</guid><description><![CDATA[<h2 id="synchronous--asynchronous">Synchronous &amp; asynchronous</h2>
-<p>Function run synchronously means code is running as same as your writing.</p>
-<p>But in real situation, some code may need time to running (like fetch). If synchronously run all code, program will be block and wait this time consuming part finish and continue.</p>
-<p>In the most of the time, You code logic need wait to continue but you don&rsquo;t want to block all progress. Maybe UI rendering or some other total unrelated code. Unfortunately, JS is single thread langrage and concurrency is not exist. Therefore, you need some technique to some part running asynchronously,</p>]]></description></item><item><title>Prototype Inheritance in Javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link><pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid><description><![CDATA[<h2 id="prototype">Prototype</h2>
+👉 <a href="https://example.com" target="_blank" rel="noopener noreffer ">Visit Example Site</a></p>]]></description></item><item><title>Prototype Inheritance in Javascript</title><link>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</link><pubDate>Fri, 21 Aug 2020 16:37:45 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/prototype-inheritence-in-javascript/</guid><description><![CDATA[<h2 id="prototype">Prototype</h2>
 <figure><figcaption>
       <h4>prototype</h4>
     </figcaption>
