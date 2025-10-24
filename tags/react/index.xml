@@ -1,4 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>React - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>React - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 13 Aug 2025 18:19:18 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>React - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>React - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>Understanding React Fiber - Trees, Diff, and Commit Phases</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</link><pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>React Fiber is the core of modern React rendering, enabling <strong>incremental rendering, time slicing, and high-performance updates</strong>. In this blog, we will explore:</p>
+<ul>
+<li>Fiber nodes and structure</li>
+<li>Fiber loop and traversal</li>
+<li>Diff/reconciliation algorithm</li>
+<li>Work-in-progress (WIP) tree</li>
+<li>Current fiber tree vs real DOM</li>
+<li>Commit phase and tree flow</li>
+</ul>
+<hr>
+<h2 id="1-what-is-a-fiber-node">1. What is a Fiber Node?</h2>
+<p>A <strong>Fiber node</strong> is a unit of work in React’s incremental rendering. It contains:</p>
+<ul>
+<li><code>type</code> → element type (<code>div</code>, <code>span</code>, Component)</li>
+<li><code>key</code> → unique identifier for list reconciliation</li>
+<li><code>props</code> → element properties</li>
+<li><code>stateNode</code> → reference to actual DOM node or component instance</li>
+<li><code>child</code>, <code>sibling</code>, <code>return</code> → pointers for tree traversal</li>
+<li><code>alternate</code> → link to the previous fiber (used for diffing)</li>
+<li><code>effectTag</code> → indicates updates needed (<code>Placement</code>, <code>Update</code>, <code>Deletion</code>)</li>
+</ul>
+<p><strong>Example fiber node:</strong></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
 <p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
 <p>This allows React to:</p>
 <ul>

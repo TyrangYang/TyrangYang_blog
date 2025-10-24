@@ -1,4 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/</link><description>This is my cool site</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 13 Aug 2025 18:19:18 -0700</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/index.xml" rel="self" type="application/rss+xml"/><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/</link><description>This is my cool site</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Understanding React Fiber - Trees, Diff, and Commit Phases</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</link><pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>React Fiber is the core of modern React rendering, enabling <strong>incremental rendering, time slicing, and high-performance updates</strong>. In this blog, we will explore:</p>
+<ul>
+<li>Fiber nodes and structure</li>
+<li>Fiber loop and traversal</li>
+<li>Diff/reconciliation algorithm</li>
+<li>Work-in-progress (WIP) tree</li>
+<li>Current fiber tree vs real DOM</li>
+<li>Commit phase and tree flow</li>
+</ul>
+<hr>
+<h2 id="1-what-is-a-fiber-node">1. What is a Fiber Node?</h2>
+<p>A <strong>Fiber node</strong> is a unit of work in React’s incremental rendering. It contains:</p>
+<ul>
+<li><code>type</code> → element type (<code>div</code>, <code>span</code>, Component)</li>
+<li><code>key</code> → unique identifier for list reconciliation</li>
+<li><code>props</code> → element properties</li>
+<li><code>stateNode</code> → reference to actual DOM node or component instance</li>
+<li><code>child</code>, <code>sibling</code>, <code>return</code> → pointers for tree traversal</li>
+<li><code>alternate</code> → link to the previous fiber (used for diffing)</li>
+<li><code>effectTag</code> → indicates updates needed (<code>Placement</code>, <code>Update</code>, <code>Deletion</code>)</li>
+</ul>
+<p><strong>Example fiber node:</strong></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
 <p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
 <p>This allows React to:</p>
 <ul>
@@ -619,19 +641,4 @@ Quoted links:
 </span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>]]></description></item><item><title>Useful Post Archive</title><link>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</link><pubDate>Sat, 27 Feb 2021 22:57:47 -0800</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/useful-post-archive/</guid><description><![CDATA[<h2 id="react">React</h2>
-<p><a href="https://tyrangyang.github.io/TyrangYang_blog/react-posts-archive/" rel="">&ndash;&gt;<strong>Look this post</strong>&lt;&ndash;</a></p>
-<h2 id="web-basic">WEB basic</h2>
-<h3 id="please-stop-using-local-storage">Please Stop Using Local Storage</h3>
-<p><a href="https://www.rdegges.com/2018/please-stop-using-local-storage/" target="_blank" rel="noopener noreffer ">https://www.rdegges.com/2018/please-stop-using-local-storage/</a></p>
-<h3 id="jwt-authentication-when-and-how-to-use-it">JWT authentication: When and how to use it</h3>
-<p><a href="https://blog.logrocket.com/jwt-authentication-best-practices/#:~:text=A%20JWT%20needs%20to%20be,storage%20%28or%20session%20storage%29" target="_blank" rel="noopener noreffer ">https://blog.logrocket.com/jwt-authentication-best-practices/#:~:text=A%20JWT%20needs%20to%20be,storage%20(or%20session%20storage)</a>.</p>
-<h2 id="graphql">Graphql</h2>
-<h3 id="dispatch-this-using-apollo-client-3-as-a-state-management-solution">Dispatch This: Using Apollo Client 3 as a State Management Solution</h3>
-<p><a href="https://www.apollographql.com/blog/dispatch-this-using-apollo-client-3-as-a-state-management-solution/" target="_blank" rel="noopener noreffer ">https://www.apollographql.com/blog/dispatch-this-using-apollo-client-3-as-a-state-management-solution/</a></p>
-<h3 id="apollo-client-update-cache-when-delete-an-item-from-list">Apollo Client update cache when delete an item from list</h3>
-<p><a href="https://github.com/apollographql/apollo-client/issues/6451#issuecomment-775242381" target="_blank" rel="noopener noreffer ">https://github.com/apollographql/apollo-client/issues/6451#issuecomment-775242381</a></p>
-<h3 id="several-things-for-graphql-security">Several things for Graphql Security</h3>
-<p><a href="https://ithelp.ithome.com.tw/articles/10208008" target="_blank" rel="noopener noreffer ">https://ithelp.ithome.com.tw/articles/10208008</a></p>
-<h3 id="should-i-put-usequery-inside-a-useeffect-and-should-i-store-returned-data-in-state">should I put useQuery inside a useEffect and should I store returned data in state?</h3>
-<p><a href="https://github.com/trojanowski/react-apollo-hooks/issues/158" target="_blank" rel="noopener noreffer ">https://github.com/trojanowski/react-apollo-hooks/issues/158</a></p>]]></description></item></channel></rss>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>]]></description></item></channel></rss>
