@@ -1,4 +1,13 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>React - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>React - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>Understanding React Fiber - Trees, Diff, and Commit Phases</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</link><pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>React - Tag - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/tags/react/</link><description>React - Tag - TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/tags/react/" rel="self" type="application/rss+xml"/><item><title>Understanding SSR</title><link>https://tyrangyang.github.io/TyrangYang_blog/understanding-ssr/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/understanding-ssr/</guid><description><![CDATA[<h2 id="why-need-server-site-rendering">Why need Server site rendering</h2>
+<p><strong>SEO !!</strong> + little bit meaningful first rendering</p>
+<p>SSR is larger concept to react. If we take about SSR only, it need to compare with SPA not React.</p>
+<p>While when using react to do the SSR. Very basic thought is like every route is SPA. How about write react only and make it become a SSR? Nextjs coming in.</p>
+<h2 id="hydration-does">hydration does</h2>
+<p>make page alive</p>
+<h3 id="old-way--nextjs13">old way &lt; next.js13</h3>
+<p>each route send full html and react and hydration function</p>]]></description></item><item><title>Understanding React Fiber - Trees, Diff, and Commit Phases</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</link><pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</guid><description><![CDATA[<h2 id="good-reference">Good reference</h2>
+<p>This <a href="https://blog.logrocket.com/deep-dive-react-fiber/" target="_blank" rel="noopener noreffer ">Blog</a> explain fiber from fundamental of js.</p>
+<h2 id="introduction">Introduction</h2>
 <p>React Fiber is the core of modern React rendering, enabling <strong>incremental rendering, time slicing, and high-performance updates</strong>. In this blog, we will explore:</p>
 <ul>
 <li>Fiber nodes and structure</li>
@@ -10,17 +19,7 @@
 </ul>
 <hr>
 <h2 id="1-what-is-a-fiber-node">1. What is a Fiber Node?</h2>
-<p>A <strong>Fiber node</strong> is a unit of work in React’s incremental rendering. It contains:</p>
-<ul>
-<li><code>type</code> → element type (<code>div</code>, <code>span</code>, Component)</li>
-<li><code>key</code> → unique identifier for list reconciliation</li>
-<li><code>props</code> → element properties</li>
-<li><code>stateNode</code> → reference to actual DOM node or component instance</li>
-<li><code>child</code>, <code>sibling</code>, <code>return</code> → pointers for tree traversal</li>
-<li><code>alternate</code> → link to the previous fiber (used for diffing)</li>
-<li><code>effectTag</code> → indicates updates needed (<code>Placement</code>, <code>Update</code>, <code>Deletion</code>)</li>
-</ul>
-<p><strong>Example fiber node:</strong></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<p>A <strong>Fiber node</strong> is a unit of work in React’s incremental rendering. It contains:</p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
 <p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
 <p>This allows React to:</p>
 <ul>
@@ -276,32 +275,4 @@ Quoted links:
 <p><a href="https://medium.com/@louis.raymond/why-cant-i-open-my-react-app-by-clicking-index-html-d1778f6324cf" target="_blank" rel="noopener noreffer ">medium.com/@louis.raymond</a></p>
 <h2 id="still-not-work-when-you-have-client-side-router">Still not work when you have client side router</h2>
 <p>If you are routing client side, index.html may still not work. In this case, you may using <code>BrowserRouter</code>. Change it to <code>HashRouter</code>.</p>
-<p>Click: <a href="https://stackoverflow.com/questions/51974369/hashrouter-vs-browserrouter" target="_blank" rel="noopener noreffer ">Different between them</a></p>]]></description></item><item><title>React overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/react/</link><pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react/</guid><description><![CDATA[<h2 id="init-react">Init react</h2>
-<p>Commend</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npx create-react-app .</span></span></code></pre></div></div>
-<p>npx means you use this package but don&rsquo;t download it.</p>
-<p>or with redux</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npx create-react-app my-app --template redux</span></span></code></pre></div></div>
-<h2 id="life-cycle">life cycle</h2>
-<figure><figcaption>
-      <h4>Class component lifecycle</h4>
-    </figcaption>
-</figure>
-
-<figure><figcaption>
-      <h4>Function component method</h4>
-    </figcaption>
-</figure>
-
-<h3 id="shouldcomponentupdate">shouldComponentUpdate()</h3>
-<p>Run before <code>render()</code> to check this component need to render or not.</p>]]></description></item></channel></rss>
+<p>Click: <a href="https://stackoverflow.com/questions/51974369/hashrouter-vs-browserrouter" target="_blank" rel="noopener noreffer ">Different between them</a></p>]]></description></item></channel></rss>

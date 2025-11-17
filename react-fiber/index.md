@@ -1,6 +1,10 @@
 # Understanding React Fiber - Trees, Diff, and Commit Phases
 
 
+## Good reference
+
+This [Blog](https://blog.logrocket.com/deep-dive-react-fiber/) explain fiber from fundamental of js.
+
 ## Introduction
 
 React Fiber is the core of modern React rendering, enabling **incremental rendering, time slicing, and high-performance updates**. In this blog, we will explore:
@@ -45,7 +49,7 @@ const fiber = {
 ## 2. Fiber Loop and Traversal
 
 - Fiber uses an iterative loop, not recursion, to traverse the tree.
-- Traversal is pre-order (parent → child → sibling).
+- Traversal is pre-order ( child → sibling → parent ).
 - The loop is incremental and interruptible — React can pause work and yield control to the browser.
 
 Pseudo-code (non-recursive traversal):
@@ -66,6 +70,17 @@ function performUnitOfWork(fiber) {
   }
   return null;
 }
+```
+
+```text
+performUnitOfWork()
+ └─ beginWork()        ← go down: build children
+     └─ performUnitOfWork(child)
+         ...
+     └─ completeUnitOfWork()  ← go up: finish fiber
+          └─ completeWork()
+completeUnitOfWork()
+  └─ completeWork()
 ```
 
 ## 3. Diff / Reconciliation Algorithm

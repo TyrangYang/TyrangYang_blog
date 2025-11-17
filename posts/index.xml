@@ -1,4 +1,13 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link><description>All Posts | TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 12 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml"/><item><title>Understanding React Fiber - Trees, Diff, and Commit Phases</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</link><pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</guid><description><![CDATA[<h2 id="introduction">Introduction</h2>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - TyrangYang_Blog</title><link>https://tyrangyang.github.io/TyrangYang_blog/posts/</link><description>All Posts | TyrangYang_Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tyrangyang.github.io/TyrangYang_blog/posts/" rel="self" type="application/rss+xml"/><item><title>Understanding SSR</title><link>https://tyrangyang.github.io/TyrangYang_blog/understanding-ssr/</link><pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/understanding-ssr/</guid><description><![CDATA[<h2 id="why-need-server-site-rendering">Why need Server site rendering</h2>
+<p><strong>SEO !!</strong> + little bit meaningful first rendering</p>
+<p>SSR is larger concept to react. If we take about SSR only, it need to compare with SPA not React.</p>
+<p>While when using react to do the SSR. Very basic thought is like every route is SPA. How about write react only and make it become a SSR? Nextjs coming in.</p>
+<h2 id="hydration-does">hydration does</h2>
+<p>make page alive</p>
+<h3 id="old-way--nextjs13">old way &lt; next.js13</h3>
+<p>each route send full html and react and hydration function</p>]]></description></item><item><title>Understanding React Fiber - Trees, Diff, and Commit Phases</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</link><pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-fiber/</guid><description><![CDATA[<h2 id="good-reference">Good reference</h2>
+<p>This <a href="https://blog.logrocket.com/deep-dive-react-fiber/" target="_blank" rel="noopener noreffer ">Blog</a> explain fiber from fundamental of js.</p>
+<h2 id="introduction">Introduction</h2>
 <p>React Fiber is the core of modern React rendering, enabling <strong>incremental rendering, time slicing, and high-performance updates</strong>. In this blog, we will explore:</p>
 <ul>
 <li>Fiber nodes and structure</li>
@@ -10,17 +19,7 @@
 </ul>
 <hr>
 <h2 id="1-what-is-a-fiber-node">1. What is a Fiber Node?</h2>
-<p>A <strong>Fiber node</strong> is a unit of work in React’s incremental rendering. It contains:</p>
-<ul>
-<li><code>type</code> → element type (<code>div</code>, <code>span</code>, Component)</li>
-<li><code>key</code> → unique identifier for list reconciliation</li>
-<li><code>props</code> → element properties</li>
-<li><code>stateNode</code> → reference to actual DOM node or component instance</li>
-<li><code>child</code>, <code>sibling</code>, <code>return</code> → pointers for tree traversal</li>
-<li><code>alternate</code> → link to the previous fiber (used for diffing)</li>
-<li><code>effectTag</code> → indicates updates needed (<code>Placement</code>, <code>Update</code>, <code>Deletion</code>)</li>
-</ul>
-<p><strong>Example fiber node:</strong></p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
+<p>A <strong>Fiber node</strong> is a unit of work in React’s incremental rendering. It contains:</p>]]></description></item><item><title>React Concurrent</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</link><pubDate>Wed, 13 Aug 2025 18:19:18 -0700</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-concurrent/</guid><description><![CDATA[<h2 id="what-is-react-concurrent">What is React Concurrent?</h2>
 <p>“Concurrent Features” is a set of rendering capabilities introduced to make React apps more responsive. Instead of blocking the browser until all rendering is done, React can pause, resume, and even abandon a render in progress.</p>
 <p>This allows React to:</p>
 <ul>
@@ -167,19 +166,20 @@ Quoted links:
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">createDataBaseClass</span> <span class="o">=</span> <span class="p">(</span><span class="nx">dbName</span><span class="o">:</span> <span class="nx">DBOption</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">switch</span> <span class="p">(</span><span class="nx">dbName</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;InMemo&#39;</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">InMemoryDataBase</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">case</span> <span class="s1">&#39;SQL&#39;</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">SQL_DB</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">switch</span> <span class="p">(</span><span class="nx">dbName</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;InMemo&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">InMemoryDataBase</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="s1">&#39;SQL&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">SQL_DB</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// you can add anything else
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">default</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// you can add anything else
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">default</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
 <h3 id="singleton-pattern">Singleton pattern</h3>
+<p>The Singleton Pattern limits the number of instances of a particular object to just one. This single instance is called the singleton.</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
@@ -198,10 +198,14 @@ Quoted links:
 </span></span><span class="line"><span class="cl">    <span class="nx">defense</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;Bulbasaur&#39;</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// A CPP way to do
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">createDataBase2</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">T</span> <span class="kr">extends</span> <span class="nx">BaseRecord</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;Bulbasaur&#39;</span><span class="p">));</span></span></span></code></pre></div></div>
+<h4 id="a-cpp-way-to-do">A CPP way to do</h4>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">createDataBase2</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">T</span> <span class="kr">extends</span> <span class="nx">BaseRecord</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">class</span> <span class="nx">InMemoryDataBase2</span> <span class="kr">implements</span> <span class="nx">DataBase</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="kr">private</span> <span class="nx">db</span><span class="o">:</span> <span class="nx">Record</span><span class="o">&lt;</span><span class="nx">string</span><span class="p">,</span> <span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{};</span>
 </span></span><span class="line"><span class="cl">        <span class="kr">static</span> <span class="nx">instance</span><span class="o">:</span> <span class="nx">InMemoryDataBase2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InMemoryDataBase2</span><span class="p">();</span>
@@ -226,128 +230,157 @@ Quoted links:
 </span></span><span class="line"><span class="cl">    <span class="nx">defense</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
 <h3 id="observer-pubsub-pattern">Observer (pub/sub) pattern</h3>
+<h4 id="observer">Observer</h4>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// ++++++++++  Observer  ++++++++++
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">createObserver</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">subscribe</span><span class="o">:</span> <span class="p">(</span><span class="nx">listener</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">;</span> <span class="c1">// take listener and return an unsubscribe function
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">publish</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="o">:</span> <span class="nx">EventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">listeners</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">subscribe</span><span class="o">:</span> <span class="p">(</span><span class="nx">listener</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span> <span class="p">(()</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">listeners</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">listeners</span> <span class="o">=</span> <span class="nx">listeners</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">l</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">l</span> <span class="o">!==</span> <span class="nx">listener</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">publish</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="o">:</span> <span class="nx">EventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">listeners</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">l</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">l</span><span class="p">(</span><span class="nx">event</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">createObserver</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">()</span><span class="o">:</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">subscribe</span><span class="o">:</span> <span class="p">(</span><span class="nx">listener</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">,</span> <span class="c1">// take listener and return an unsubscribe function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">publish</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="o">:</span> <span class="nx">EventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">listeners</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">subscribe</span><span class="o">:</span> <span class="p">(</span><span class="nx">listener</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">EventType</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span> <span class="p">(()</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">listeners</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">listeners</span> <span class="o">=</span> <span class="nx">listeners</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">l</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">l</span> <span class="o">!==</span> <span class="nx">listener</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">publish</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="o">:</span> <span class="nx">EventType</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">listeners</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">l</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">l</span><span class="p">(</span><span class="nx">event</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<h4 id="real-use-case">Real use case</h4>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">BeforeAddValueEvent</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">newValue</span>: <span class="kt">T</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">value</span>: <span class="kt">T</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">AfterAddValueEvent</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">value</span>: <span class="kt">T</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">InMemoryDBWithObserver</span><span class="p">&lt;</span><span class="nt">T</span> <span class="na">extends</span> <span class="na">BaseRecord</span><span class="p">&gt;</span> <span class="kr">extends</span> <span class="nx">InMemoryDataBase</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">public</span> <span class="kr">set</span><span class="p">(</span><span class="nx">newValue</span>: <span class="kt">T</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">BeforeAddValueObserver</span><span class="p">.</span><span class="nx">publish</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">newValue</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">value</span>: <span class="kt">this.db</span><span class="p">[</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">id</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">[</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">AfterAddValueObserver</span><span class="p">.</span><span class="nx">publish</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">value</span>: <span class="kt">newValue</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">public</span> <span class="kr">get</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="o">|</span> <span class="kc">undefined</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// observer
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">private</span> <span class="nx">BeforeAddValueObserver</span> <span class="o">=</span> <span class="nx">createObserver</span><span class="p">&lt;</span><span class="nt">BeforeAddValueEvent</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">private</span> <span class="nx">AfterAddValueObserver</span> <span class="o">=</span> <span class="nx">createObserver</span><span class="p">&lt;</span><span class="nt">AfterAddValueEvent</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">onBeforeAddValue</span><span class="p">(</span><span class="nx">listener</span>: <span class="kt">listenerType</span><span class="p">&lt;</span><span class="nt">BeforeAddValueEvent</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;)</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">BeforeAddValueObserver</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">onAfterAddValue</span><span class="p">(</span><span class="nx">listener</span>: <span class="kt">listenerType</span><span class="p">&lt;</span><span class="nt">AfterAddValueEvent</span><span class="p">&lt;</span><span class="nt">T</span><span class="p">&gt;&gt;)</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">AfterAddValueObserver</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// visiter pattern
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">visit</span><span class="p">(</span><span class="nx">visitor</span><span class="o">:</span> <span class="p">(</span><span class="nx">item</span>: <span class="kt">T</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">visitor</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// strategy pattern
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">getBest</span><span class="p">(</span><span class="nx">strategy</span><span class="o">:</span> <span class="p">(</span><span class="nx">item</span>: <span class="kt">T</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">findRes</span><span class="o">:</span> <span class="p">{</span> <span class="nx">max</span>: <span class="kt">number</span><span class="p">;</span> <span class="nx">res</span>: <span class="kt">T</span> <span class="o">|</span> <span class="kc">null</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">max</span><span class="o">:</span> <span class="o">-</span><span class="kc">Infinity</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">res</span>: <span class="kt">null</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">//  +++++++++++++++++++++++++++++
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">BeforeAddValueEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">newValue</span><span class="o">:</span> <span class="nx">T</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">value</span><span class="o">:</span> <span class="nx">T</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">AfterAddValueEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">value</span><span class="o">:</span> <span class="nx">T</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">let</span> <span class="nx">score</span> <span class="o">=</span> <span class="nx">strategy</span><span class="p">(</span><span class="nx">cur</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">prev</span><span class="p">.</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">score</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span> <span class="nx">max</span>: <span class="kt">score</span><span class="p">,</span> <span class="nx">res</span>: <span class="kt">cur</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">prev</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="nx">findRes</span><span class="p">).</span><span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">InMemoryDBWithObserver</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kr">extends</span> <span class="nx">BaseRecord</span><span class="o">&gt;</span> <span class="kr">extends</span> <span class="nx">InMemoryDataBase</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="nx">set</span><span class="p">(</span><span class="nx">newValue</span><span class="o">:</span> <span class="nx">T</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">BeforeAddValueObserver</span><span class="p">.</span><span class="nx">publish</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">newValue</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">value</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">[</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">id</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">        <span class="p">});</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">[</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">newValue</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">AfterAddValueObserver</span><span class="p">.</span><span class="nx">publish</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">value</span><span class="o">:</span> <span class="nx">newValue</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">});</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">pokemonDB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InMemoryDBWithObserver</span><span class="p">&lt;</span><span class="nt">Pokemon</span><span class="p">&gt;();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kr">public</span> <span class="nx">get</span><span class="p">(</span><span class="nx">id</span><span class="o">:</span> <span class="nx">string</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="o">|</span> <span class="kc">undefined</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// observer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kr">private</span> <span class="nx">BeforeAddValueObserver</span> <span class="o">=</span> <span class="nx">createObserver</span><span class="o">&lt;</span><span class="nx">BeforeAddValueEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">private</span> <span class="nx">AfterAddValueObserver</span> <span class="o">=</span> <span class="nx">createObserver</span><span class="o">&lt;</span><span class="nx">AfterAddValueEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">onBeforeAddValue</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">listener</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">BeforeAddValueEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">void</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">BeforeAddValueObserver</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">onAfterAddValue</span><span class="p">(</span><span class="nx">listener</span><span class="o">:</span> <span class="nx">listenerType</span><span class="o">&lt;</span><span class="nx">AfterAddValueEvent</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;&gt;</span><span class="p">)</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">void</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">AfterAddValueObserver</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">listener</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// visiter pattern
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">visit</span><span class="p">(</span><span class="nx">visitor</span><span class="o">:</span> <span class="p">(</span><span class="nx">item</span><span class="o">:</span> <span class="nx">T</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="o">:</span> <span class="k">void</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">visitor</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// strategy pattern
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">getBest</span><span class="p">(</span><span class="nx">strategy</span><span class="o">:</span> <span class="p">(</span><span class="nx">item</span><span class="o">:</span> <span class="nx">T</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">T</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">findRes</span><span class="o">:</span> <span class="p">{</span> <span class="nx">max</span><span class="o">:</span> <span class="nx">number</span><span class="p">;</span> <span class="nx">res</span><span class="o">:</span> <span class="nx">T</span> <span class="o">|</span> <span class="kc">null</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">max</span><span class="o">:</span> <span class="o">-</span><span class="kc">Infinity</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">res</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">db</span><span class="p">).</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="kd">let</span> <span class="nx">score</span> <span class="o">=</span> <span class="nx">strategy</span><span class="p">(</span><span class="nx">cur</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">prev</span><span class="p">.</span><span class="nx">max</span> <span class="o">&lt;</span> <span class="nx">score</span><span class="p">)</span> <span class="k">return</span> <span class="p">{</span> <span class="nx">max</span><span class="o">:</span> <span class="nx">score</span><span class="p">,</span> <span class="nx">res</span><span class="o">:</span> <span class="nx">cur</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">prev</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">},</span> <span class="nx">findRes</span><span class="p">).</span><span class="nx">res</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">pokemonDB</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InMemoryDBWithObserver</span><span class="o">&lt;</span><span class="nx">Pokemon</span><span class="o">&gt;</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">onBeforeAddValue</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Before add value&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">onBeforeAddValue</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Before add value&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">unsubscribe</span> <span class="o">=</span> <span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">onAfterAddValue</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;After ADD A Value&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">unsubscribe</span> <span class="o">=</span> <span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">onAfterAddValue</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;After ADD A Value&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">onAfterAddValue</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;-----------&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">onAfterAddValue</span><span class="p">((</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;-----------&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">attack</span><span class="o">:</span> <span class="mi">59</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">defense</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="kr">set</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">attack</span>: <span class="kt">59</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">defense</span>: <span class="kt">10</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">attack</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">defense</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="kr">set</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Bulbasaur&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">attack</span>: <span class="kt">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">defense</span>: <span class="kt">30</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">unsubscribe</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Spinpsaur&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">attack</span><span class="o">:</span> <span class="mi">159</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">defense</span><span class="o">:</span> <span class="mi">110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="kr">set</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;Spinpsaur&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">attack</span>: <span class="kt">159</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">defense</span>: <span class="kt">110</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Visit pattern:&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">visit</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">visit</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;strategy pattern:&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">getBest</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">defense</span><span class="p">));</span></span></span></code></pre></div></div>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">pokemonDB</span><span class="p">.</span><span class="nx">getBest</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">defense</span><span class="p">));</span></span></span></code></pre></div></div>
+<h3 id="proxy-pattern">Proxy pattern</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">Class</span> <span class="nx">dbProxy</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DB</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">dbCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Map</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">get</span><span class="p">(</span><span class="nx">key</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dbCache</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span> <span class="k">return</span> <span class="nx">dbCache</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">dbCache</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">db</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dbProxy</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span> <span class="c1">// cache
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">db</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span> <span class="c1">// cache
+</span></span></span></code></pre></div></div>
 <h3 id="adaptor-pattern">Adaptor pattern</h3>]]></description></item><item><title>Typescript overview</title><link>https://tyrangyang.github.io/TyrangYang_blog/typescript/</link><pubDate>Thu, 08 Apr 2021 23:37:35 -0700</pubDate><author>xxxx</author><guid>https://tyrangyang.github.io/TyrangYang_blog/typescript/</guid><description><![CDATA[<h2 id="type">type</h2>
 <h3 id="union-type--literal-type">Union type &amp; Literal type</h3>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
@@ -486,159 +519,4 @@ Quoted links:
 </span></span><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">Book</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">id</span>: <span class="kt">string</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>]]></description></item><item><title>React Logic Reuse Example</title><link>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</link><pubDate>Fri, 12 Mar 2021 04:04:08 -0800</pubDate><author>Haolin Yang</author><guid>https://tyrangyang.github.io/TyrangYang_blog/react-logic-reuse/</guid><description><![CDATA[<h2 id="react-logic-extraction">React logic extraction</h2>
-<p><a href="https://tyrangyang.github.io/TyrangYang_blog/react/#logic-extraction" rel="">Check this post</a></p>
-<h2 id="example-code">Example code</h2>
-<p>This example demonstrate one single feature using four different feature to archive code split</p>
-<p>Code running there: <a href="../html/HOC_HOOK_RENDER_PROPS/HOC_HOOK_RENDER_PROPS.html" target="_blank">&ndash;&gt;Link&lt;&ndash;</a></p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-jsx">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="nx">React</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Styles</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">redBorder</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">border</span><span class="o">:</span> <span class="s1">&#39;1px solid #f00&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">MouseDisplay</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">Mouse</span> <span class="nx">at</span> <span class="nx">x</span><span class="o">:</span> <span class="p">{</span><span class="nx">x</span><span class="p">}</span> <span class="p">;</span> <span class="nx">y</span><span class="o">:</span> <span class="p">{</span><span class="nx">y</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">MouseDisplay2</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;teal&#39;</span> <span class="p">}}&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">Mouse</span> <span class="nx">at</span> <span class="nx">x</span><span class="o">:</span> <span class="p">{</span><span class="nx">x</span><span class="p">}</span> <span class="p">;</span> <span class="nx">y</span><span class="o">:</span> <span class="p">{</span><span class="nx">y</span><span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Normal
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">MouseInfoAndDisplay</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">setX</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">y</span><span class="p">,</span> <span class="nx">setY</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">handleMove</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setX</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setY</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">Styles</span><span class="p">.</span><span class="nx">redBorder</span><span class="p">}</span> <span class="na">onMouseMove</span><span class="o">=</span><span class="p">{</span><span class="nx">handleMove</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">MouseDisplay</span> <span class="na">x</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="p">}</span> <span class="na">y</span><span class="o">=</span><span class="p">{</span><span class="nx">y</span><span class="p">}</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// HOC
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">withMouseInfo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">setX</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="p">[</span><span class="nx">y</span><span class="p">,</span> <span class="nx">setY</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">handleMove</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">setX</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">setY</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">};</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">Styles</span><span class="p">.</span><span class="nx">redBorder</span><span class="p">}</span> <span class="na">onMouseMove</span><span class="o">=</span><span class="p">{</span><span class="nx">handleMove</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">Component</span> <span class="p">{</span><span class="na">...props</span><span class="p">}</span> <span class="na">x</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="p">}</span> <span class="na">y</span><span class="o">=</span><span class="p">{</span><span class="nx">y</span><span class="p">}</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">HOCMouseDisplay</span> <span class="o">=</span> <span class="nx">withMouseInfo</span><span class="p">(</span><span class="nx">MouseDisplay</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">HOCMouseDisplay2</span> <span class="o">=</span> <span class="nx">withMouseInfo</span><span class="p">(</span><span class="nx">MouseDisplay2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Render Props
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">MouseRenderProps</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">render</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">setX</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">y</span><span class="p">,</span> <span class="nx">setY</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">handleMove</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setX</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setY</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">Styles</span><span class="p">.</span><span class="nx">redBorder</span><span class="p">}</span> <span class="na">onMouseMove</span><span class="o">=</span><span class="p">{</span><span class="nx">handleMove</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">{</span><span class="nx">render</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">Mouse</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">MouseRenderProps</span> <span class="na">render</span><span class="o">=</span><span class="p">{(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">MouseDisplay</span> <span class="na">x</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="p">}</span> <span class="na">y</span><span class="o">=</span><span class="p">{</span><span class="nx">y</span><span class="p">}</span> <span class="p">/&gt;}</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">MouseRenderProps</span>
-</span></span><span class="line"><span class="cl">                <span class="na">render</span><span class="o">=</span><span class="p">{(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">&lt;</span><span class="nt">MouseDisplay2</span> <span class="na">x</span><span class="o">=</span><span class="p">{</span><span class="nx">x</span><span class="p">}</span> <span class="na">y</span><span class="o">=</span><span class="p">{</span><span class="nx">y</span><span class="p">}</span> <span class="p">/&gt;}</span>
-</span></span><span class="line"><span class="cl">            <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Customize HOOK
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">useMouseState</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">setX</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">y</span><span class="p">,</span> <span class="nx">setY</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">node</span><span class="p">,</span> <span class="nx">setNode</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">handleMove</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setX</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">setY</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">};</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">node</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">node</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;mousemove&#39;</span><span class="p">,</span> <span class="nx">handleMove</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="p">[</span><span class="nx">node</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">setNode</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">MouseUsingHook</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">y1</span><span class="p">,</span> <span class="nx">ref1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useMouseState</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">[</span><span class="nx">x2</span><span class="p">,</span> <span class="nx">y2</span><span class="p">,</span> <span class="nx">ref2</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useMouseState</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref1</span><span class="p">}</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">Styles</span><span class="p">.</span><span class="nx">redBorder</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">MouseDisplay</span> <span class="na">x</span><span class="o">=</span><span class="p">{</span><span class="nx">x1</span><span class="p">}</span> <span class="na">y</span><span class="o">=</span><span class="p">{</span><span class="nx">y1</span><span class="p">}</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref2</span><span class="p">}</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">Styles</span><span class="p">.</span><span class="nx">redBorder</span><span class="p">}&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">&lt;</span><span class="nt">MouseDisplay2</span> <span class="na">x</span><span class="o">=</span><span class="p">{</span><span class="nx">x2</span><span class="p">}</span> <span class="na">y</span><span class="o">=</span><span class="p">{</span><span class="nx">y2</span><span class="p">}</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span>
-</span></span><span class="line"><span class="cl">            <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">display</span><span class="o">:</span> <span class="s1">&#39;flex&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;100vh&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;space-around&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">Normal</span><span class="o">:</span> <span class="p">&lt;</span><span class="nt">MouseInfoAndDisplay</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">HOC</span><span class="o">:</span> <span class="p">&lt;</span><span class="nt">HOCMouseDisplay</span> <span class="p">/&gt;</span> <span class="p">&lt;</span><span class="nt">HOCMouseDisplay2</span><span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">Render</span> <span class="nx">Props</span><span class="o">:</span> <span class="p">&lt;</span><span class="nt">Mouse</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">                <span class="nx">Hook</span><span class="o">:</span> <span class="p">&lt;</span><span class="nt">MouseUsingHook</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>]]></description></item></channel></rss>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>]]></description></item></channel></rss>
