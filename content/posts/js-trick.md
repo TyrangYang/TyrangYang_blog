@@ -247,6 +247,41 @@ console.log(value); // 1234 5678 9
 
 > `.trim()` for supporting deletion
 
+## Function currying
+
+What you want is like
+
+```js
+const join = (a, b, c) => {
+  return `${a}_${b}_${c}`;
+};
+const curriedJoin = curry(join);
+curriedJoin(1, 2, 3); // '1_2_3'
+curriedJoin(1)(2, 3); // '1_2_3'
+curriedJoin(1, 2)(3); // '1_2_3'
+```
+
+Implement will be
+
+```js
+function curry(fn) {
+  const totalLenOfArgs = fn.length; // this is the key: need to know how many argument that function will need.
+
+  const curriedJoin = (...args) => {
+    // this intermediate function could return fn res or another function
+    if (args.length >= totalLenOfArgs) {
+      return fn(...args);
+    }
+
+    return (...args2) => {
+      return curriedJoin(...args, ...args2);
+    };
+  };
+
+  return curriedJoin; // currying function will return a function
+}
+```
+
 ## Function compose
 
 Compose a list of function into one. I saw this in create middleware
@@ -352,16 +387,21 @@ The core logic is using HOF to only keep the first trigger.
 
 ```js
 const throttle = (fn, delay) => {
+  let lastArgs = null;
   let timer = null;
   return (...args) => {
-    if (timer !== null) {
-      return;
+    if (timer === null) {
+      func(...args); // run immediately
+      timer = setTimeout(() => {
+        clearTimeout(timer); // clean timer for next interval
+        if (lastArgs !== null) {
+          func(...lastArgs);
+          lastArgs = null; // clean last arguments
+        }
+      }, wait);
+    } else {
+      lastArgs = args; // keep remember that lastArgs during interval
     }
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      timer = null;
-      fn(...args);
-    }, delay);
   };
 };
 ```
