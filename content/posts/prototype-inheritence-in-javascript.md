@@ -2,13 +2,13 @@
 title: 'Prototype Inheritance in Javascript'
 date: 2020-08-21T16:37:45-07:00
 Categories: ['Posts']
-tags: ['javascript']
+tags: ['javascript', 'interview']
 toc:
-    enable: true
-    auto: true
+  enable: true
+  auto: true
 linkToMarkdown: true
 math:
-    enable: false
+  enable: false
 ---
 
 ## Prototype
@@ -57,50 +57,136 @@ let person1 = new Person(...);
 
 ## Prototype Chain
 
+This is object example. **But Object is NOT we used here**
+
 ```js
-var obj = {
-    func: function () {
-        return this.x;
-    },
+Person = {
+  name: 'text',
+  age: 12,
 };
 
-var newObj = Object.create(obj);
+const p1 = {};
+p1.__proto__ = Person; // it is wrong
+```
 
-newObj.__proto__ == obj; // true
+### 1
 
-newObj; // {}
-newObj.func; // f(){return this.x}
-newObj.x = 10;
-newObj.y = 20;
-newObj; // {x: 10, y: 20}
-newObj.func(); // 10
-obj.func(); // undefined
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+console.log(Person.prototype); // {} (empty obj)
+console.log(Person.prototype.constructor === Person); // true
+```
+
+### 2
+
+**Just for understanding. This is NOT right way**
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = Object.create(Person);
+console.log(p1.__proto__ === Person); // true
+```
+
+### new instance should use function Prototype as chain
+
+This is the right way
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = Object.create(Person.prototype); // build chain
+console.log(p1.__proto__ === Person.prototype); // true
+```
+
+also you could link manually
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = {};
+p1.__proto__ = Person.prototype; // link chain manually
+
+p1.constructor('p1', 30);
+
+console.log(p1.age);
+```
+
+### How to initialized
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = Object.create(Person.prototype);
+Person.apply(p1, ['p1', 31]);
+
+const p2 = Object.create(Person.prototype);
+p2.constructor('p2', 32);
+console.log(p1); // Person { name: 'p1', age: 31 }
+console.log(p2); // Person { name: 'p2', age: 32 }
+```
+
+### If you want a static function
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.print = function () {
+  console.log(this.name, this.age);
+};
+
+const p1 = Object.create(Person.prototype);
+const p2 = Object.create(Person.prototype);
+p1.constructor('p1', 31);
+p2.constructor('p2', 32);
+
+p1.print();
+p2.print();
 ```
 
 ## ES5 inheritance
 
 ```js
 function SuperType(name) {
-    this.name = name;
-    this.colors = ['red', 'blue', 'green'];
+  this.name = name;
+  this.colors = ['red', 'blue', 'green'];
 }
 SuperType.prototype.sayName = function () {
-    alert(this.name);
+  alert(this.name);
 };
 function SubType(name, age) {
-    SuperType.call(this, name);
-    this.age = age;
+  SuperType.call(this, name);
+  this.age = age;
 }
 SubType.prototype = Object.create(SuperType.prototype, {
-    constructor: {
-        value: SubType,
-        enumerable: false,
-        writable: true,
-        configurable: true,
-    },
+  constructor: {
+    value: SubType,
+    enumerable: false,
+    writable: true,
+    configurable: true,
+  },
 });
 SubType.prototype.sayAge = function () {
-    alert(this.age);
+  alert(this.age);
 };
 let instance = new SubType('gim', '17');
 instance.sayName(); // 'gim'
@@ -113,22 +199,22 @@ instance.sayAge(); // '17'
 
 ```js
 class SuperType {
-    constructor(name) {
-        this.name = name;
-        this.colors = ['red', 'blue', 'green'];
-    }
-    sayName() {
-        alert(this.name);
-    }
+  constructor(name) {
+    this.name = name;
+    this.colors = ['red', 'blue', 'green'];
+  }
+  sayName() {
+    alert(this.name);
+  }
 }
 class SubType extends SuperType {
-    constructor(name, age) {
-        super(name);
-        this.age = age;
-    }
-    sayAge() {
-        alert(this.age);
-    }
+  constructor(name, age) {
+    super(name);
+    this.age = age;
+  }
+  sayAge() {
+    alert(this.age);
+  }
 }
 let instance = new SubType('gim', '17');
 instance.sayName(); // 'gim'

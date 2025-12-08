@@ -3,7 +3,7 @@ title: 'React Concurrent'
 date: 2025-08-13T18:19:18-07:00
 author: Haolin Yang
 Categories: ['Posts']
-tags: ['react']
+tags: ['react', 'interview']
 toc:
   enable: true
   auto: false

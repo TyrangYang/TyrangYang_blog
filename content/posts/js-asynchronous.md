@@ -9,6 +9,7 @@ tags:
   - promise
   - generator
   - thunk
+  - interview
 toc:
   enable: true
   auto: false

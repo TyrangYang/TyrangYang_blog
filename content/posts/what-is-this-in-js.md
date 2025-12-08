@@ -4,11 +4,12 @@ date: 2019-11-17
 author: Haolin Yang
 categories: ['Posts']
 tags:
-    - javascript
-    - nodejs
+  - javascript
+  - nodejs
+  - interview
 toc:
-    enable: true
-    auto: true
+  enable: true
+  auto: true
 ---
 
 Author: Dmitri Pavlutin
@@ -17,16 +18,16 @@ Reference: [https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/
 
 ## Concept
 
--   **Invocation** of a function is executing the code that makes the body of a function, or simply calling the function. For example `parseInt` function invocation is `parseInt('15')`.
--   **Context** of an invocation is the value of this within function body. For example the invocation of `map.set('key', 'value')` has the context `map`.
--   **Scope** of a function is the set of variables, objects, functions accessible within a function body.
+- **Invocation** of a function is executing the code that makes the body of a function, or simply calling the function. For example `parseInt` function invocation is `parseInt('15')`.
+- **Context** of an invocation is the value of this within function body. For example the invocation of `map.set('key', 'value')` has the context `map`.
+- **Scope** of a function is the set of variables, objects, functions accessible within a function body.
 
 ## Invocations
 
--   **function invocation:** alert('Hello World!')
--   **method invocation:** console.log('Hello World!')
--   **constructor invocation:** new RegExp('\\d')
--   **indirect invocation:** alert.call(undefined, 'Hello World!')
+- **function invocation:** alert('Hello World!')
+- **method invocation:** console.log('Hello World!')
+- **constructor invocation:** new RegExp('\\d')
+- **indirect invocation:** alert.call(undefined, 'Hello World!')
 
 ## _this_ in different invocations
 
@@ -38,16 +39,16 @@ Example:
 
 ```js
 const numbers = {
-    numberA: 5,
-    numberB: 10,
-    sum: function () {
-        console.log(this === numbers); // => true
-        const calculate = () => {
-            console.log(this === numbers); // => true
-            return this.numberA + this.numberB;
-        };
-        return calculate();
-    },
+  numberA: 5,
+  numberB: 10,
+  sum: function () {
+    console.log(this === numbers); // => true
+    const calculate = () => {
+      console.log(this === numbers); // => true
+      return this.numberA + this.numberB;
+    };
+    return calculate();
+  },
 };
 numbers.sum(); // => 15
 ```
@@ -60,9 +61,9 @@ numbers.sum(); // => 15
 
 ```js
 function sum(a, b) {
-    console.log(this === window); // => true
-    this.myNumber = 20; // add 'myNumber' property to global object
-    return a + b;
+  console.log(this === window); // => true
+  this.myNumber = 20; // add 'myNumber' property to global object
+  return a + b;
 }
 // sum() is invoked as a function
 // this in sum() is a global object (window)
@@ -76,16 +77,16 @@ this is `undefined`
 
 ```js
 function nonStrictSum(a, b) {
-    // non-strict mode
-    console.log(this === window); // => true
-    return a + b;
+  // non-strict mode
+  console.log(this === window); // => true
+  return a + b;
 }
 
 function strictSum(a, b) {
-    'use strict';
-    // strict mode is enabled
-    console.log(this === undefined); // => true
-    return a + b;
+  'use strict';
+  // strict mode is enabled
+  console.log(this === undefined); // => true
+  return a + b;
 }
 
 // nonStrictSum() is invoked as a function in non-strict mode
@@ -106,20 +107,20 @@ strictSum(8, 12); // => 20
 
 ```js
 const numbers = {
-    numberA: 5,
-    numberB: 10,
+  numberA: 5,
+  numberB: 10,
 
-    sum: function () {
-        console.log(this === numbers); // => true
+  sum: function () {
+    console.log(this === numbers); // => true
 
-        function calculate() {
-            // this is window or undefined in strict mode
-            console.log(this === numbers); // => false
-            return this.numberA + this.numberB;
-        }
+    function calculate() {
+      // this is window or undefined in strict mode
+      console.log(this === numbers); // => false
+      return this.numberA + this.numberB;
+    }
 
-        return calculate();
-    },
+    return calculate();
+  },
 };
 
 numbers.sum(); // => NaN or throws TypeError in strict mode
@@ -133,19 +134,19 @@ Use `calculate.call(this)` that an indirect invocation of a function.
 
 ```js
 const numbers = {
-    numberA: 5,
-    numberB: 10,
-    sum: function () {
-        console.log(this === numbers); // => true
+  numberA: 5,
+  numberB: 10,
+  sum: function () {
+    console.log(this === numbers); // => true
 
-        function calculate() {
-            console.log(this === numbers); // => true
-            return this.numberA + this.numberB;
-        }
+    function calculate() {
+      console.log(this === numbers); // => true
+      return this.numberA + this.numberB;
+    }
 
-        // use .call() method to modify the context
-        return calculate.call(this);
-    },
+    // use .call() method to modify the context
+    return calculate.call(this);
+  },
 };
 numbers.sum(); // => 15
 ```
@@ -154,18 +155,18 @@ of use arrow function
 
 ```js
 const numbers = {
-    numberA: 5,
-    numberB: 10,
-    sum: function () {
-        console.log(this === numbers); // => true
+  numberA: 5,
+  numberB: 10,
+  sum: function () {
+    console.log(this === numbers); // => true
 
-        const calculate = () => {
-            console.log(this === numbers); // => true
-            return this.numberA + this.numberB;
-        };
+    const calculate = () => {
+      console.log(this === numbers); // => true
+      return this.numberA + this.numberB;
+    };
 
-        return calculate();
-    },
+    return calculate();
+  },
 };
 
 numbers.sum(); // => 15
@@ -177,10 +178,10 @@ Example:
 
 ```js
 const myObject = {
-    // helloFunction is a method
-    helloFunction: function () {
-        return 'Hello World!';
-    },
+  // helloFunction is a method
+  helloFunction: function () {
+    return 'Hello World!';
+  },
 };
 // method invocation
 const message = myObject.helloFunction();
@@ -193,12 +194,12 @@ const message = myObject.helloFunction();
 ```js
 // Object
 const calc = {
-    num: 0,
-    increment() {
-        console.log(this === calc); // => true
-        this.num += 1;
-        return this.num;
-    },
+  num: 0,
+  increment() {
+    console.log(this === calc); // => true
+    this.num += 1;
+    return this.num;
+  },
 };
 // method invocation. this is calc
 calc.increment(); // => 1
@@ -206,10 +207,10 @@ calc.increment(); // => 2
 
 // Object inherits a method from its prototype
 const myDog = Object.create({
-    sayName() {
-        console.log(this === myDog); // => true
-        return this.name;
-    },
+  sayName() {
+    console.log(this === myDog); // => true
+    return this.name;
+  },
 });
 myDog.name = 'Milo';
 // method invocation. this is myDog
@@ -217,13 +218,13 @@ myDog.sayName(); // => 'Milo'
 
 // class syntax
 class Planet {
-    constructor(name) {
-        this.name = name;
-    }
-    getName() {
-        console.log(this === earth); // => true
-        return this.name;
-    }
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    console.log(this === earth); // => true
+    return this.name;
+  }
 }
 const earth = new Planet('Earth');
 // method invocation. the context is earth
@@ -236,13 +237,13 @@ earth.getName(); // => 'Earth'
 
 ```js
 function Pet(type, legs) {
-    this.type = type;
-    this.legs = legs;
+  this.type = type;
+  this.legs = legs;
 
-    this.logInfo = function () {
-        console.log(this === myCat); // => false
-        console.log(`The ${this.type} has ${this.legs} legs`);
-    };
+  this.logInfo = function () {
+    console.log(this === myCat); // => false
+    console.log(`The ${this.type} has ${this.legs} legs`);
+  };
 }
 
 const myCat = new Pet('Cat', 4);
@@ -255,8 +256,8 @@ In this code `myCat.logInfo` is extracted from object `myCat` as a function. The
 
 ```js
 setTimeout(function () {
-    console.log(this === myCat); // => false
-    console.log(`The ${this.type} has ${this.legs} legs`);
+  console.log(this === myCat); // => false
+  console.log(`The ${this.type} has ${this.legs} legs`);
 }, 1000);
 ```
 
@@ -270,11 +271,11 @@ Example:
 
 ```js
 function Country(name, traveled) {
-    this.name = name ? name : 'United Kingdom';
-    this.traveled = Boolean(traveled); // transform to a boolean
+  this.name = name ? name : 'United Kingdom';
+  this.traveled = Boolean(traveled); // transform to a boolean
 }
 Country.prototype.travel = function () {
-    this.traveled = true;
+  this.traveled = true;
 };
 // Constructor invocation
 const france = new Country('France', false);
@@ -284,14 +285,14 @@ france.travel(); // Travel to France
 
 // class since ECMAScript 2015
 class City {
-    constructor(name, traveled) {
-        this.name = name;
-        this.traveled = false;
-    }
+  constructor(name, traveled) {
+    this.name = name;
+    this.traveled = false;
+  }
 
-    travel() {
-        this.traveled = true;
-    }
+  travel() {
+    this.traveled = true;
+  }
 }
 // Constructor invocation
 const paris = new City('Paris', false);
@@ -304,8 +305,8 @@ paris.travel();
 
 ```js
 function Foo() {
-    // this is fooInstance
-    this.property = 'Default Value';
+  // this is fooInstance
+  this.property = 'Default Value';
 }
 
 // Constructor invocation
@@ -317,9 +318,9 @@ console.log(fooInstance.property); // => 'Default Value'
 
 ```js
 function Vehicle(type, wheelsCount) {
-    this.type = type;
-    this.wheelsCount = wheelsCount;
-    return this;
+  this.type = type;
+  this.wheelsCount = wheelsCount;
+  return this;
 }
 // Function invocation
 const car = Vehicle('Car', 4);
@@ -334,13 +335,13 @@ The correct way is to prevent the function invocation.
 
 ```js
 function Vehicle(type, wheelsCount) {
-    if (!(this instanceof Vehicle)) {
-        throw Error('Error: Incorrect invocation');
-    }
+  if (!(this instanceof Vehicle)) {
+    throw Error('Error: Incorrect invocation');
+  }
 
-    this.type = type;
-    this.wheelsCount = wheelsCount;
-    return this;
+  this.type = type;
+  this.wheelsCount = wheelsCount;
+  return this;
 }
 
 // Constructor invocation
@@ -363,7 +364,7 @@ The main difference between the two is that `.call()` accepts a list of argument
 
 ```js
 function increment(number) {
-    return ++number;
+  return ++number;
 }
 increment.call(undefined, 10); // => 11
 increment.apply(undefined, [10]); // => 11
@@ -375,15 +376,15 @@ increment.apply(undefined, [10]); // => 11
 
 ```js
 function Runner(name) {
-    console.log(this instanceof Rabbit); // => true
-    this.name = name;
+  console.log(this instanceof Rabbit); // => true
+  this.name = name;
 }
 
 function Rabbit(name, countLegs) {
-    console.log(this instanceof Rabbit); // => true
-    // Indirect invocation. Call parent constructor.
-    Runner.call(this, name);
-    this.countLegs = countLegs;
+  console.log(this instanceof Rabbit); // => true
+  // Indirect invocation. Call parent constructor.
+  Runner.call(this, name);
+  this.countLegs = countLegs;
 }
 
 const myRabbit = new Rabbit('White Rabbit', 4);
@@ -398,8 +399,8 @@ The different between `.call()` and `.bind()` is that `.bind()` bind context and
 
 ```js
 function multiply(number) {
-    'use strict';
-    return this * number;
+  'use strict';
+  return this * number;
 }
 // create a bound function with context
 const double = multiply.bind(2);
@@ -414,14 +415,14 @@ double(10); // => 20
 
 ```js
 const numbers = {
-    array: [3, 5, 10],
+  array: [3, 5, 10],
 
-    getNumbers() {
-        return this.array;
-    },
+  getNumbers() {
+    return this.array;
+  },
 };
 let another = {
-    array: 'Array from another scope',
+  array: 'Array from another scope',
 };
 // method invocation
 const getNumbersResult = numbers.getNumbers();
@@ -447,8 +448,8 @@ console.log(anotherBindFunction()); // => "Array from another scope"
 
 ```js
 function getThis() {
-    'use strict';
-    return this;
+  'use strict';
+  return this;
 }
 
 const one = getThis.bind(1);
@@ -468,7 +469,7 @@ Example of arrow function
 
 ```js
 const sumArguments = (...args) => {
-    return args.reduce((result, item) => result + item);
+  return args.reduce((result, item) => result + item);
 };
 
 console.log(sumArguments.name); // => 'sumArguments'
@@ -481,17 +482,17 @@ arrow function is already bind _this_ is the enclosing context
 
 ```js
 class Point {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-    log() {
-        console.log(this === myPoint); // => true
-        setTimeout(() => {
-            console.log(this === myPoint); // => true
-            console.log(this.x + ':' + this.y); // => '95:165'
-        }, 1000);
-    }
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  log() {
+    console.log(this === myPoint); // => true
+    setTimeout(() => {
+      console.log(this === myPoint); // => true
+      console.log(this.x + ':' + this.y); // => '95:165'
+    }, 1000);
+  }
 }
 const myPoint = new Point(95, 165);
 myPoint.log();
@@ -503,15 +504,15 @@ Another example shows how allow function bind to context.
 
 ```js
 function test() {
-    console.log('1.', this);
-    function inner1() {
-        console.log('2.', this);
-    }
-    let inner2 = () => {
-        console.log('3.', this);
-    };
-    inner1();
-    inner2();
+  console.log('1.', this);
+  function inner1() {
+    console.log('2.', this);
+  }
+  let inner2 = () => {
+    console.log('3.', this);
+  };
+  inner1();
+  inner2();
 }
 test(); // 1.window 2.window 3.window
 new test(); // 1.test 2.window(function invocation) 3.test(function invocation but bind this)
@@ -521,8 +522,8 @@ If the arrow function is defined in the topmost scope (outside any function), th
 
 ```js
 const getContext = () => {
-    console.log(this === window); // => true
-    return this;
+  console.log(this === window); // => true
+  return this;
 };
 
 console.log(getContext() === window); // => true
@@ -533,30 +534,30 @@ An arrow function is bound with the lexical context **once and forever**.
 ```js
 const numbers = [1, 2];
 (function () {
-    const get = () => {
-        console.log(this === numbers); // => true
-        return this;
-    };
+  const get = () => {
     console.log(this === numbers); // => true
-    get(); // => [1, 2]
-    // Try to change arrow function context manually
-    get.call([0]); // => [1, 2]
-    get.apply([0]); // => [1, 2]
-    get.bind([0])(); // => [1, 2]
-}.call(numbers));
+    return this;
+  };
+  console.log(this === numbers); // => true
+  get(); // => [1, 2]
+  // Try to change arrow function context manually
+  get.call([0]); // => [1, 2]
+  get.apply([0]); // => [1, 2]
+  get.bind([0])(); // => [1, 2]
+}).call(numbers);
 ```
 
 #### Pitfall: defining method with an arrow function
 
 ```js
 function Period(hours, minutes) {
-    this.hours = hours;
-    this.minutes = minutes;
+  this.hours = hours;
+  this.minutes = minutes;
 }
 
 Period.prototype.format = () => {
-    console.log(this === window); // => true
-    return this.hours + ' hours and ' + this.minutes + ' minutes';
+  console.log(this === window); // => true
+  return this.hours + ' hours and ' + this.minutes + ' minutes';
 };
 
 const walkPeriod = new Period(2, 30);
@@ -567,10 +568,10 @@ In this particular situation, better use regular function.
 
 ## Conclusion
 
--   Function invocation --> windows
--   Method invocation --> Scope where method belongs to
--   Constructor invocation --> Object scope
--   Indirection invocation --> Depends on your given context
+- Function invocation --> windows
+- Method invocation --> Scope where method belongs to
+- Constructor invocation --> Object scope
+- Indirection invocation --> Depends on your given context
 
 Because the function invocation has the biggest impact on this, from now on **do not ask yourself**:
 

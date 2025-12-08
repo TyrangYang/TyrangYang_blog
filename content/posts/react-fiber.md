@@ -5,6 +5,7 @@ author: Haolin Yang
 categories: ['Note']
 tags:
   - react
+  - interview
 toc:
   enable: true
   auto: false
