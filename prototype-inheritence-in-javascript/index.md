@@ -132,7 +132,7 @@ console.log(p1); // Person { name: 'p1', age: 31 }
 console.log(p2); // Person { name: 'p2', age: 32 }
 ```
 
-### If you want a static function
+### If you want a instance function
 
 ```js
 function Person(name, age) {
@@ -152,6 +152,22 @@ p2.constructor('p2', 32);
 p1.print();
 p2.print();
 ```
+
+## Summary
+
+```js
+const myNew = (constructor, ...args) => {
+  const newObj = Object.create(constructor.prototype);
+  const result = constructor.call(newObj, 'p1', 31);
+
+  return typeof result === 'object' ? result : newObj;
+};
+const p1 = (Person, 'p1', 31);
+// equivalent to
+const p1 = new Person('p1', 31);
+```
+
+`Person.prototype` can be consider as a share level.
 
 ## ES5 inheritance
 
