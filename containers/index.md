@@ -3,27 +3,27 @@
 
 ## Classification
 
--   Sequence container
-    -   array (build in)
-    -   [vector](#vector)
-    -   [heap](#heap)
-    -   [priority queue](#priorityqueue)
-    -   [list](#list)
-    -   slist (not standard)
-    -   [deque](#deque)
-    -   [stack](#stack) (adopter)
-    -   [queue](#queue) (adopter)
--   Associative container
-    -   [RB-tree](#rb-tree) (not public)
-    -   [set](#set)
-    -   [map](#map)
-    -   multiset
-    -   multemap
-    -   hashtable (not standard)
-    -   hash_set (not standard)
-    -   hash_map (not standard)
-    -   hash_multimap (not standard)
-    -   hash_multiset (not standard)
+- Sequence container
+  - array (build in)
+  - [vector](#vector)
+  - [heap](#heap)
+  - [priority queue](#priorityqueue)
+  - [list](#list)
+  - slist (not standard)
+  - [deque](#deque)
+  - [stack](#stack) (adopter)
+  - [queue](#queue) (adopter)
+- Associative container
+  - [RB-tree](#rb-tree) (not public)
+  - [set](#set)
+  - [map](#map)
+  - multiset
+  - multemap
+  - hashtable (not standard)
+  - hash_set (not standard)
+  - hash_map (not standard)
+  - hash_multimap (not standard)
+  - hash_multiset (not standard)
 
 Associative container have a key-value pair. It do not have back and front so they never have push_back, pop_back.
 
