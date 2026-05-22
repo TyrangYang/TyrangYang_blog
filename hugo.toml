@@ -15,6 +15,7 @@ languageCode = "en"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
+# theme = "LoveIt-0.3.1"
 
 
 [author]
