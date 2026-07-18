@@ -1,5 +1,5 @@
 ---
-title: 'Content'
+title: '大师课学习'
 date: 2026-03-11
 author: Haolin Yang
 categories: ['Posts']
