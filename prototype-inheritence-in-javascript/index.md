@@ -1,6 +1,14 @@
 # Prototype Inheritance in Javascript
 
 
+## What is prototype chain and why exist?
+
+Prototype Chain is the built-in mechanism that allows objects to inherit features (properties and methods) from other objects.
+
+Main initial reason is to save the memory space. The inherent idea from OOP langrage(java specifically on those days) is very efficient and obvious way. Prototype chain is a lightweight and flexible method to achieve.
+
+> For Instance, If every single object or array you created had to store its own copies of all methods (like toString, valueOf, or array methods), it would consume a massive amount of memory.
+
 ## Prototype
 
 {{<figure src="/images/prototype-in-javascript/prototype.png" title="prototype"  >}}
