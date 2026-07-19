@@ -5,6 +5,9 @@ author: Haolin Yang
 categories: ['Posts']
 tags:
   - javascript
+toc:
+  enable: true
+  auto: true
 ---
 
 ## 什么是工程化

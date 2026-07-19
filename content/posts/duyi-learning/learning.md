@@ -5,6 +5,9 @@ author: Haolin Yang
 categories: ['Posts']
 tags:
   - javascript
+toc:
+  enable: true
+  auto: true
 ---
 
 ## 时间循环 event loop
@@ -44,7 +47,7 @@ event loop 是浏览器上的概念。
 
 比如用户的click 的callback。要立刻处理吗？
 
-#### 结局办法 massage queue
+#### 解决办法：massage queue
 
 渲染主线程里任务可以生成新的任务
 其他线程也可以添加任务。
@@ -65,10 +68,10 @@ event loop 是浏览器上的概念。
 <!-- {{<figure src="/images/2020-03-17-css/position.png" title="position" width="70%" height="70%" >}} -->
 
 阻塞
-![image](/images/learning/image.png)
+![image](/images/duyi/image.png)
 
 不阻塞
-![image](/images/learning/image2.png)
+![image](/images/duyi/image2.png)
 
 ### 任务优先级
 
@@ -90,20 +93,19 @@ event loop 是浏览器上的概念。
 
 ### 面试问题
 
-![image](/images/learning/image3.png)
-![image](/images/learning/image4.png)
-![image](/images/learning/image5.png)
+![image](/images/duyi/image3.png)
+![image](/images/duyi/image4.png)
+![image](/images/duyi/image5.png)
 
-单线程是异步产生的原因
-时间循环是异步的实现方式
+**单线程是异步产生的原因 时间循环是异步的实现方式**
 
 ## 浏览器如何渲染的
 
-![image](/images/learning/image-2.png)
+![image](/images/duyi/image-2.png)
 
 ## 渲染流水线
 
-![image](/images/learning/render-pipeline.png)
+![image](/images/duyi/render-pipeline.png)
 
 ### html解析
 
