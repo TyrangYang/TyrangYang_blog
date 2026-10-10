@@ -14,8 +14,8 @@ languageCode = "en"
 
 
 # Change the default theme to be use when building the site with Hugo
-theme = "LoveIt"
-# theme = "LoveIt-0.3.1"
+# theme = "LoveIt"
+theme = "LoveIt-0.3.1"
 
 
 [author]
@@ -56,8 +56,8 @@ highlightTag = "em"
 absoluteURL = true
 [params.search.algolia]
 index = "blog"
-appID = "QXEV52XWDS"
-searchKey = "db56d05ebbeed337adca1ef261004dcc"
+appID = "COIHXVZK6Z"
+searchKey = "6c3465ab662ac067f79a9fb92ca2d0f3"
 [params.home]
 [params.home.profile]
 enable = true
