@@ -56,8 +56,8 @@ highlightTag = "em"
 absoluteURL = true
 [params.search.algolia]
 index = "blog"
-appID = "COIHXVZK6Z"
-searchKey = "6c3465ab662ac067f79a9fb92ca2d0f3"
+appID = "KFAAS9XBNE"
+searchKey = "13f552ea2b3ce5171f0e67e2db88a633"
 [params.home]
 [params.home.profile]
 enable = true

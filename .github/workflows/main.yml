@@ -33,7 +33,7 @@ jobs:
             - run: npm ci # clean install. remove node_modules and stick to package-lock
             - run: hugo --minify # hugo will compile as small as possible
             - name: Algolia setup
-              run: ALGOLIA_APP_ID=COIHXVZK6Z ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_ADMIN_KEY }} ALGOLIA_INDEX_NAME=blog ALGOLIA_INDEX_FILE=./public/index.json npm run algolia
+              run: ALGOLIA_APP_ID=KFAAS9XBNE ALGOLIA_ADMIN_KEY=${{ secrets.ALGOLIA_ADMIN_KEY }} ALGOLIA_INDEX_NAME=index ALGOLIA_INDEX_FILE=./public/index.json npm run algolia
             - name: gh-page setup
               uses: peaceiris/actions-gh-pages@v3
               with:
