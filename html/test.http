@@ -1,3 +1,8 @@
+GET / HTTP/1.1
+Host: www.taobao.com
+
+
+###
 POST  /posts HTTP/1.1
 Host: jsonplaceholder.typicode.com
 Content-Type: application/json
@@ -21,9 +26,11 @@ Content-Type: multipart/form-data; boundary=aaa
 
 --aaa
 Content-Disposition: form-data; name="name"
+
 a132
 --aaa
-Content-Disposition: form-data; name="age" 
+Content-Disposition: form-data; name="age"
+
 123
 --aaa--
 ###

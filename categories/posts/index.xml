@@ -56,7 +56,7 @@ hash string: 和网络没太多影响</p>]]></description></item><item><title>�
 <p>那为什么不多线程呢？js 都是dom操作。大量的dom element如果被同时操作。太多lock了。lock本身的cost就不小。</p>
 <h4 id="如何调度任务">如何调度任务</h4>
 <p>比如用户的click 的callback。要立刻处理吗？</p>
-<h4 id="解决办法massage-queue">解决办法：massage queue</h4>
+<h4 id="解决办法message-queue">解决办法：message queue</h4>
 <p>渲染主线程里任务可以生成新的任务
 其他线程也可以添加任务。</p>
 <ol>

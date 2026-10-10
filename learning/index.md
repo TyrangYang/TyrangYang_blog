@@ -38,7 +38,7 @@ event loop 是浏览器上的概念。
 
 比如用户的click 的callback。要立刻处理吗？
 
-#### 解决办法：massage queue
+#### 解决办法：message queue
 
 渲染主线程里任务可以生成新的任务
 其他线程也可以添加任务。
@@ -102,9 +102,9 @@ event loop 是浏览器上的概念。
 
 html => dom tree & cssom tree
 
-> html解析过程遇到css会启动预下载器。主渲染线程不会等待，不会阻塞html。遇到js就是暂停等待下载线程完成再执行。（除非遇到async/defer）。因为js可能会修改dom tree。
+> html解析过程遇到css会启动预下载器。主渲染线程不会等待，不会阻塞html。遇到js就会暂停，等待下载线程完成再执行。（除非遇到async/defer）。因为js可能会修改dom tree。
 
-`document.styleSheets` 可以访问cssom tree
+`document.styleSheets` 可以访问 cssom tree
 
 ### 样式计算 recalculate style
 
@@ -160,7 +160,7 @@ css will-change 属性可以最大限度影响分层。（除非每一个部分�
 
 最后把位图通过合成线程，合成(Compositing)成平面图片。最后是生成quad，交给GPU执行。
 
-transform 在这一步做个。（这就是为什么 transform效率高）
+transform 是在这一步做的。（这就是为什么 transform效率高）
 
 渲染进程（沙盒）
 

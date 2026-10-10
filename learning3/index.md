@@ -60,9 +60,124 @@ clint request, server response
 
 [test.http](/html/test.http)
 
-##### 请求行
+```
+GET / HTTP/1.1
+Host: www.taobao.com
 
-##### 请求头
 
-##### 请求体
+###
+POST  /posts HTTP/1.1
+Host: jsonplaceholder.typicode.com
+Content-Type: application/json
+
+{
+  "name": "a132",
+  "age": 12
+}
+
+###
+POST  /posts HTTP/1.1
+Host: jsonplaceholder.typicode.com
+Content-Type: application/x-www-form-urlencoded
+
+name=a132&age=12
+
+###
+POST  /posts HTTP/1.1
+Host: jsonplaceholder.typicode.com
+Content-Type: multipart/form-data; boundary=aaa
+
+--aaa
+Content-Disposition: form-data; name="name"
+
+a132
+--aaa
+Content-Disposition: form-data; name="age"
+
+123
+--aaa--
+###
+```
+
+#### 响应吗
+
+[Details here]({{<ref "posts/http-status-code.md">}})
+
+## XHR & Fetch
+
+Ajax (Asynchronous javascript and XML).
+
+以前不让js管网络请求的事。后来才允许js管理网络请求。
+
+两种实现方式XMLHTTPRequest和Fetch API.
+
+|         功能         |   XHR    |       Fetch       |
+| :------------------: | :------: | :---------------: |
+|      请求和响应      |    ✅    |        ✅         |
+|     监控请求进度     |    ✅    | ❌ (比如上传文件) |
+|     监控响应进度     |    ✅    |        ✅         |
+| service work是否可用 |    ❌    |        ✅         |
+|   控制cookies 携带   |    ❌    |        ✅         |
+|      控制重定向      |    ❌    |        ✅         |
+|       请求取消       |    ✅    |        ✅         |
+|    自定义referrer    |    ❌    |        ✅         |
+|        stream        |    ❌    |        ✅         |
+|       api风格        |  Event   |      Promise      |
+|        活跃度        | 停止维护 |                   |
+
+<!-- #### example code
+
+[example code](/html/test.http) -->
+
+## 同源策略和跨域问题
+
+同源策略是一个浏览器的安全机制。同源放行，异源拒绝
+
+源（origin） = 协议 + 域名 + 端口
+
+异源 就是跨域了
+
+### 跨域可能出现的场景
+
+1. 网络通讯
+   1. <a> 跳转
+   2. 加载资源 css/js/image ...
+   3. Ajax
+   4. ...
+2. JS api
+   1. iframe
+   2. window.open
+   3. window.parent
+   4. ...
+3. 存储
+   1. web storage (localStorage, sessionStorage ...)
+   2. indexDB
+
+浏览器对标签的跨域请求限制较少。对AJAX限制严格
+
+### 跨域问题解决方式
+
+1. CORS
+2. JSONP
+3. proxy
+
+#### CORS
+
+CORS的理念就是
+
+服务器表示允许，校验通过。 服务器没提就拒绝。
+
+但这个解决方法必须确保server是自己的。client site解决不了
+
+首先确定是简单请求还是preflight请求
+
+简单请求就是发出去携带`origin`。server返回response，携带`Access-Control-Allow-Origin`.如果origin判断通过。浏览器就放行。
+
+预检请求就麻烦。先发预检请求。带上一堆其他的头。server返回复杂允许条件。必须全部满足才能放行。
+
+#### JSONP
+
+是CORS出现之前的方案。有点老。这个解决方法也必须确保server是自己的。client site解决不了
+
+server响应一个函数调用。然后不用AJAX发请求。用script tag。
 
